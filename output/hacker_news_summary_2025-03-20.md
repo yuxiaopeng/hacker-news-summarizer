@@ -1,8 +1,7 @@
-# Hacker News 每日摘要
-    
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-03-20.md)
+# Hacker News 热门文章摘要 (2025-03-20)
 
-*最后自动更新时间: 2025-03-20 09:44:18*
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
 ## 1. Minding the gaps: A new way to draw separators in CSS
 
 **原文标题**: Minding the gaps: A new way to draw separators in CSS
@@ -103,9 +102,3 @@
 
 ---
 
-## 历史记录
-
-| 序号 | 文件 |
-| --- | --- |
-| 1 | [_summary_2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 2 | [_summary_2025-03-19](output/hacker_news_summary_2025-03-19.md) |
