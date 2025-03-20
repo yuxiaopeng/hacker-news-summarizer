@@ -5,10 +5,11 @@ import requests
 import google.generativeai as genai
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-from datetime import datetime,UTC
+from datetime import datetime,timezone
 import markdown
 import json
 import inspect
+import sys
 
 # 加载环境变量
 load_dotenv()
@@ -132,7 +133,8 @@ def translate_to_chinese(text):
 
 def create_markdown_file(stories_with_summaries):
     """创建 Markdown 文件"""
-    today = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    
     md_content = f"""# Hacker News 热门文章摘要 ({today})
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
@@ -155,25 +157,30 @@ def create_markdown_file(stories_with_summaries):
         f.write(md_content)
     
     # 创建 index.md 文件作为 GitHub Pages 的主页
-    index_content = f"""# Hacker News 每日摘要
+#     index_content = f"""# Hacker News 每日摘要
 
-## 最新摘要 ({today})
+# ## 最新摘要 ({today})
 
-[查看今日摘要](hacker_news_summary_{today}.md)
+# [查看今日摘要](hacker_news_summary_{today}.md)
 
-"""
+# """
     
-    with open('output/index.md', 'w', encoding='utf-8') as f:
-        f.write(index_content)
+#     with open('output/index.md', 'w', encoding='utf-8') as f:
+#         f.write(index_content)
     
-    print(f"Markdown 文件已保存到 {file_path}")
+#     print(f"Markdown 文件已保存到 {file_path}")
     return file_path
 
 
 def write_head_contents(stories_with_summaries):
     """写入 README.md 文件的头部信息和当日 Top 10 摘要"""
-    write_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S")
-    today = datetime.now().strftime('%Y-%m-%d')
+    # 根据 Python 版本选择合适的 UTC 时间获取方式
+    if sys.version_info >= (3, 12):
+        write_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S")
+        today = datetime.now(UTC).strftime('%Y-%m-%d')
+    else:
+        write_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     
     # 头部内容
     head_contents = inspect.cleandoc(f"""# Hacker News 每日摘要
