@@ -34,12 +34,16 @@ jobs:
     #     echo "auto update start" >> github_actions.log
     #     > github_actions.log
     #     sh auto_run.sh ${{ secrets.GITHUB_TOKEN }} >> github_actions.log
-    #     echo "auto update end" >> rgithub_actions.log
+    #     echo "auto update end" >> github_actions.log
 
-    - name: Run Python script
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python main.py
+    - name: Generate summary
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: |
+        echo "Generate summary start" >> github_actions.log
+        > github_actions.log
+        python main.py >> github_actions.log
+        echo "Generate summary end" >> github_actions.log
 
     - name: Commit
       run: |
