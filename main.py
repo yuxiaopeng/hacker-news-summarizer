@@ -174,13 +174,8 @@ def create_markdown_file(stories_with_summaries):
 
 def write_head_contents(stories_with_summaries):
     """写入 README.md 文件的头部信息和当日 Top 10 摘要"""
-    # 根据 Python 版本选择合适的 UTC 时间获取方式
-    if sys.version_info >= (3, 12):
-        write_time = datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S")
-        today = datetime.now(UTC).strftime('%Y-%m-%d')
-    else:
-        write_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
-        today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    write_time = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+    today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     
     # 头部内容
     head_contents = inspect.cleandoc(f"""# Hacker News 每日摘要
