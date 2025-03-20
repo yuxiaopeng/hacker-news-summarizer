@@ -29,12 +29,17 @@ jobs:
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Auto Update
-      run: |
-        echo "auto update start" >> github_actions.log
-        > github_actions.log
-        sh auto_run.sh ${{ secrets.GITHUB_TOKEN }} >> github_actions.log
-        echo "auto update end" >> rgithub_actions.log
+    # - name: Auto Update
+    #   run: |
+    #     echo "auto update start" >> github_actions.log
+    #     > github_actions.log
+    #     sh auto_run.sh ${{ secrets.GITHUB_TOKEN }} >> github_actions.log
+    #     echo "auto update end" >> rgithub_actions.log
+
+    - name: Run Python script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py
 
     - name: Commit
       run: |
