@@ -18,8 +18,8 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# 创建 Gemini 模型 gemini-1.5-pro/gemini-2.0-flash
-model = genai.GenerativeModel('gemini-1.5-pro')
+# 创建 Gemini 模型 gemini-1.5-pro/gemini-2.0-flash/gemini-2.0-pro-exp
+model = genai.GenerativeModel('gemini-2.0-pro-exp')
 
 def fetch_top_stories(limit=100):
     """获取 Hacker News 上的热门文章链接"""
@@ -64,7 +64,7 @@ def fetch_top_stories(limit=100):
         if page > 4:  # 通常前 4 页就能获取 100 篇文章
             break
             
-        time.sleep(1)  # 避免请求过于频繁
+        time.sleep(2)  # 避免请求过于频繁
     
     return stories[:limit]
 
@@ -115,6 +115,35 @@ def generate_summary(title, content):
     except Exception as e:
         print(f"生成摘要时出错: {e}")
         return "生成摘要时出错"
+
+def generate_summary_from_url(title, url, max_retries=3):
+    """使用 Gemini 直接从 URL 生成文章摘要"""
+    retries = 0
+    while retries < max_retries:
+        try:
+            prompt = f"""
+            请访问并阅读以下文章:
+            标题: {title}
+            链接: {url}
+            
+            请提供这篇文章的简洁摘要（不超过 300 字），捕捉文章的主要观点和关键信息。
+            如果无法访问链接，请说明"无法访问文章链接"。
+            """
+            
+            response = model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            retries += 1
+            if "RATE_LIMIT_EXCEEDED" in str(e):
+                wait_time = 10 * retries  # 递增等待时间
+                print(f"达到速率限制，等待 {wait_time} 秒后重试 ({retries}/{max_retries})...")
+                time.sleep(wait_time)
+                continue
+            print(f"生成摘要时出错: {e}")
+            print(f"错误类型: {type(e).__name__}")
+            print(f"错误详情: {str(e)}")
+            return "生成摘要时出错"
+    return "达到最大重试次数，生成摘要失败"
 
 def translate_to_chinese(text):
     """使用 Gemini 将文本翻译成中文"""
@@ -245,7 +274,7 @@ def main():
     print("开始运行 Hacker News 文章摘要提取器...")
     
     # 获取热门文章
-    stories = fetch_top_stories(limit=100)
+    stories = fetch_top_stories(limit=10)
     print(f"成功获取 {len(stories)} 篇文章")
     
     stories_with_summaries = []
@@ -254,14 +283,20 @@ def main():
         print(f"\n正在处理第 {i}/{len(stories)} 篇文章: {story['title']}")
         
         # 提取文章内容
-        content = extract_article_content(story['url'])
+        # content = extract_article_content(story['url'])
         
         # 生成摘要
-        summary = generate_summary(story['title'], content)
+        # summary = generate_summary(story['title'], content)
+
+        # 直接从 URL 生成摘要，跳过内容提取步骤
+        summary = generate_summary_from_url(story['title'], story['url'])
+        time.sleep(5)  # 增加等待时间到 5 秒
         
         # 翻译标题和摘要
         chinese_title = translate_to_chinese(story['title'])
+        time.sleep(5)  # 每次 API 调用之间添加等待
         chinese_summary = translate_to_chinese(summary)
+        time.sleep(5)  # 每次 API 调用之间添加等待
         
         stories_with_summaries.append({
             **story,
