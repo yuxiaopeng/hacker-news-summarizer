@@ -18,8 +18,8 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# 创建 Gemini 模型
-model = genai.GenerativeModel('gemini-2.0-flash')
+# 创建 Gemini 模型 gemini-1.5-pro/gemini-2.0-flash
+model = genai.GenerativeModel('gemini-1.5-pro')
 
 def fetch_top_stories(limit=100):
     """获取 Hacker News 上的热门文章链接"""
@@ -126,9 +126,30 @@ def translate_to_chinese(text):
         """
         
         response = model.generate_content(prompt)
-        return response.text
+        translated_text = response.text
+        
+        # 去除可能的前缀说明
+        prefixes_to_remove = [
+            "以下是将原文翻译成中文的版本，保持了原文的意思和风格：\n\n",
+            "以下是将原文翻译成中文的版本，保持了原文的意思和风格：\n",
+            "以下是将原文翻译成中文的版本，保持原文的意思和风格：\n\n",
+            "以下是将原文翻译成中文的版本，保持原文的意思和风格：\n",
+            "以下是翻译：\n\n",
+            "以下是翻译：\n",
+            "翻译如下：\n\n",
+            "翻译如下：\n",
+        ]
+        
+        for prefix in prefixes_to_remove:
+            if translated_text.startswith(prefix):
+                translated_text = translated_text[len(prefix):]
+                break
+        
+        return translated_text
     except Exception as e:
         print(f"翻译时出错: {e}")
+        print(f"错误类型: {type(e).__name__}")
+        print(f"错误详情: {str(e)}")
         return text
 
 def create_markdown_file(stories_with_summaries):
@@ -206,7 +227,7 @@ def write_head_contents(stories_with_summaries):
         if file.startswith('hacker_news_summary_') and file.endswith('.md'):
             file_path = os.path.join('output', file)
             file_time = os.path.getmtime(file_path)
-            date_str = file[11:-3]  # 从文件名提取日期
+            date_str = file[19:-3]  # 从文件名提取日期
             history_files.append((file, date_str, file_time))
     
     # 按时间倒序排序
@@ -224,7 +245,7 @@ def main():
     print("开始运行 Hacker News 文章摘要提取器...")
     
     # 获取热门文章
-    stories = fetch_top_stories(limit=10)
+    stories = fetch_top_stories(limit=100)
     print(f"成功获取 {len(stories)} 篇文章")
     
     stories_with_summaries = []
