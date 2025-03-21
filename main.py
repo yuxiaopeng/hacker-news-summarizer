@@ -149,8 +149,13 @@ def translate_to_chinese(text):
     """使用 Gemini 将文本翻译成中文"""
     try:
         prompt = f"""
-        请将以下文本翻译成中文，保持原文的意思和风格:
-        
+        请将以下文本翻译成中文，要求：
+        1. 只提供一个最准确的中文翻译
+        2. 直接输出翻译结果，不要解释或提供多个选项
+        3. 保持原文的意思和风格
+        4. 如果是标题，保持简洁明了的标题风格
+
+        原文：
         {text}
         """
         
@@ -174,7 +179,10 @@ def translate_to_chinese(text):
                 translated_text = translated_text[len(prefix):]
                 break
         
-        return translated_text
+        # 移除可能的选项前缀
+        translated_text = re.sub(r'^选项\s*\d+[\s:：]*', '', translated_text.strip())
+        
+        return translated_text.strip()
     except Exception as e:
         print(f"翻译时出错: {e}")
         print(f"错误类型: {type(e).__name__}")
