@@ -1,8 +1,7 @@
-# Hacker News 每日摘要
-    
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-03-22.md)
+# Hacker News 热门文章摘要 (2025-03-22)
 
-*最后自动更新时间: 2025-03-22 17:23:17*
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
 ## 1. PyTorch 内幕：Ezyang 的博客
 
 **原文标题**: PyTorch Internals: Ezyang's Blog
@@ -130,11 +129,3 @@ Landrun 的主要优势在于无需 root 权限或容器技术（如 Docker）�
 
 ---
 
-## 历史记录
-
-| 序号 | 文件 |
-| --- | --- |
-| 1 | [_2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 2 | [_2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 3 | [_2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 4 | [_2025-03-19](output/hacker_news_summary_2025-03-19.md) |
