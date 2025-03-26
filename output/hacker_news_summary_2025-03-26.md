@@ -1,8 +1,7 @@
-# Hacker News 每日摘要
-    
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-03-26.md)
+# Hacker News 热门文章摘要 (2025-03-26)
 
-*最后自动更新时间: 2025-03-26 17:28:11*
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
 ## 1. 通过 Elixir 协调超级碗的视觉效果
 
 **原文标题**: Coordinating the Superbowl's visual fidelity with Elixir
@@ -132,15 +131,3 @@
 
 ---
 
-## 历史记录
-
-| 序号 | 文件 |
-| --- | --- |
-| 1 | [_2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 2 | [_2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 3 | [_2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 4 | [_2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 5 | [_2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 6 | [_2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 7 | [_2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 8 | [_2025-03-19](output/hacker_news_summary_2025-03-19.md) |
