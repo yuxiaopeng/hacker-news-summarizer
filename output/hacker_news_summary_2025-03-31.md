@@ -1,8 +1,7 @@
-# Hacker News 每日摘要
-    
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-03-31.md)
+# Hacker News 热门文章摘要 (2025-03-31)
 
-*最后自动更新时间: 2025-03-31 17:30:32*
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
 ## 1. 奶酪上长的白色东西不是霉菌 (2018)
 
 **原文标题**: There's White Stuff Growing on Your Cheese That Isn't Mold (2018)
@@ -162,20 +161,3 @@ Distro (YC S24) 正在招聘一名**首席解决方案工程师**。Distro 是�
 
 ---
 
-## 历史记录
-
-| 序号 | 文件 |
-| --- | --- |
-| 1 | [_2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 2 | [_2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 3 | [_2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 4 | [_2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 5 | [_2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 6 | [_2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 7 | [_2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 8 | [_2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 9 | [_2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 10 | [_2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 11 | [_2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 12 | [_2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 13 | [_2025-03-19](output/hacker_news_summary_2025-03-19.md) |
