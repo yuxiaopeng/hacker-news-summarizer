@@ -18,8 +18,8 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# 创建 Gemini 模型 gemini-1.5-pro/gemini-2.0-flash/gemini-2.0-pro-exp
-model = genai.GenerativeModel('gemini-2.0-pro-exp')
+# 创建 Gemini 模型 gemini-2.0-flash-lite/gemini-2.0-flash/gemini-2.0-pro-exp
+model = genai.GenerativeModel('gemini-2.0-flash-lite')
 
 def fetch_top_stories(limit=100):
     """获取 Hacker News 上的热门文章链接"""
@@ -298,13 +298,13 @@ def main():
 
         # 直接从 URL 生成摘要，跳过内容提取步骤
         summary = generate_summary_from_url(story['title'], story['url'])
-        time.sleep(5)  # 增加等待时间到 5 秒
+        time.sleep(3)  # 增加等待时间到 3 秒,RPM=15
         
         # 翻译标题和摘要
         chinese_title = translate_to_chinese(story['title'])
-        time.sleep(5)  # 每次 API 调用之间添加等待
+        time.sleep(3)  # 每次 API 调用之间添加等待
         chinese_summary = translate_to_chinese(summary)
-        time.sleep(5)  # 每次 API 调用之间添加等待
+        time.sleep(3)  # 每次 API 调用之间添加等待
         
         stories_with_summaries.append({
             **story,
