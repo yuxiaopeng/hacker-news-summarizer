@@ -325,13 +325,16 @@ def main():
         print(f"\n正在处理第 {i}/{len(stories)} 篇文章: {story['title']}")
         
         # 提取文章内容
-        # content = extract_article_content(story['url'])
+        content = extract_article_content(story['url'])
         
         # 生成摘要
-        # summary = generate_summary(story['title'], content)
-
-        # 直接从 URL 生成摘要，跳过内容提取步骤
-        summary = generate_summary_from_url(story['title'], story['url'])
+        if content:
+            print(f"成功提取文章内容，长度: {len(content)} 字符")
+            summary = generate_summary(story['title'], content)
+        else:
+            print("无法提取文章内容，尝试直接生成摘要（可能会失败）")
+            summary = generate_summary_from_url(story['title'], story['url'])
+        
         time.sleep(3)  # 增加等待时间到 3 秒,RPM=15
         
         # 翻译标题和摘要
