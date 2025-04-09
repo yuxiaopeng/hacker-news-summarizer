@@ -2,622 +2,135 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. 使用内容安全策略强化 Firefox 前端
+## 1. Agent2Agent协议 (A2A)
+
+**原文标题**: The Agent2Agent Protocol (A2A)
+
+**原文链接**: [https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
+
+Agent2Agent协议 (A2A)：促进AI Agent跨平台互操作
+
+---
+
+## 2. chroot技术：Linux系统的瑞士军刀
+
+**原文标题**: The chroot Technique – a Swiss army multitool for Linux systems
+
+**原文链接**: [https://livesys.se/posts/the-chroot-technique/](https://livesys.se/posts/the-chroot-technique/)
+
+本文介绍了“chroot”技术，这是一种用于修复无法启动的Linux系统的宝贵工具。它涉及访问损坏系统的硬盘驱动器（例如，通过Live USB或作为外部驱动器），挂载其根分区，并通过将其与工作环境中的特殊系统文件夹（/sys, /proc, /dev, /dev/pts）相结合，来创建一个新的根文件系统。
+
+其核心思想是欺骗当前的Linux会话，使其认为它正在损坏系统的硬盘驱动器上运行，从而实现诊断和修复。作者提供了一个循序渐进的指南，包括识别根目录和/boot的正确分区，创建必要的挂载点（/rescue，/rescue/boot），挂载分区，并使用`mount`命令挂载特殊系统文件夹。
+
+文章随后提供了`chroot /rescue /bin/bash -i`命令，以有效地切换根文件系统。这允许用户运行诸如`apt update`、`apt upgrade`和`dpkg-reconfigure`之类的命令，以诊断和修复损坏系统中的问题，例如损坏的符号链接或不完整的软件包更新。作者通过修复Nanopore GridION设备的真实示例来说明这一点。作者强调了拥有这些命令备忘单以便快速访问的重要性。文章最后提供了一个进一步阅读的链接。
+
+---
+
+## 3. 铁木：面向推理时代的谷歌首款TPU
+
+**原文标题**: Ironwood: The first Google TPU for the age of inference
+
+**原文链接**: [https://blog.google/products/google-cloud/ironwood-tpu-age-of-inference/](https://blog.google/products/google-cloud/ironwood-tpu-age-of-inference/)
+
+Ironwood：谷歌第七代张量处理器，专为推理设计的定制AI加速器，标志着向主动生成洞察的“思考模型”转变。它是谷歌迄今为止最强大且节能的TPU，旨在大规模支持高要求的AI工作负载。
+
+Ironwood的主要特点包括：
+
+*   **可扩展性：** 可扩展至9216个液冷芯片，通过高带宽片间互连 (ICI) 网络连接。
+*   **计算能力：** 9216个芯片的配置可提供42.5 Exaflops算力，是全球最大超级计算机算力的24倍以上。每个独立芯片的峰值算力为4614 TFLOPs。
+*   **增强型 SparseCore：** 提高了处理超大型嵌入的性能，扩大了工作负载在金融和科学领域的适用性。
+*   **高带宽内存 (HBM)：** 每个芯片提供192 GB，比上一代增加6倍，以及7.2 TBps带宽，用于快速数据访问。
+*   **改进的片间互连 (ICI)：** 具有1.2 Tbps双向带宽，增强了芯片之间的通信，从而实现高效的分布式训练和推理。
+*   **能效：** 与上一代相比，每瓦性能提高了2倍，并且比2018年的第一个Cloud TPU节能近30倍。
+*   **Pathways集成：** 利用Google DeepMind的ML运行时Pathways，可以在多个TPU芯片上实现高效的分布式计算，从而进行高级生成式AI计算。
+
+Ironwood旨在管理大型语言模型 (LLM)、专家混合模型 (MoE) 和高级推理任务的复杂计算和通信需求，同时注重能效。 它将于今年晚些时候向Google Cloud客户提供。
+
+---
+
+## 4. 大学生如何使用Claude
+
+**原文标题**: How University Students Use Claude
+
+**原文链接**: [https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude](https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)
+
+无法访问文章链接。
+
+---
+
+## 5. Show HN: 我做了一个应用，用 Mermaidjs 生成故事关系图
+
+**原文标题**: Show HN: I built an app to generate story relationships using Mermaidjs
+
+**原文链接**: [https://github.com/herol3oy/austen](https://github.com/herol3oy/austen)
+
+奥斯汀：一款AI驱动的Angular应用，利用Mermaidjs根据任何书籍的人物关系生成关系图（基于Analogjs构建）。用户可通过Open Library API搜索书籍，AI（DeepSeek或OpenAI）分析人物关系以创建可视化图表。
+
+主要功能包括生成、保存、下载（SVG/PNG）和管理图表。用户还可以公开分享或私藏图表，并发现他人创建的公开图表。该应用使用Angular Material构建UI，Supabase作为后端（数据库和认证），并部署在Cloudflare Pages上。
+
+技术栈包括Angular、Analog、TypeScript、Supabase、Cloudflare Pages、Angular Material和Mermaid。API集成包括Open Library、DeepSeek和OpenAI。设置步骤包括克隆仓库、安装依赖（npm install）、设置API密钥和Supabase的环境变量、创建包含“graphs”表的Supabase项目以及运行开发服务器（npm run dev）。未来的改进包括为图表添加点赞/取消点赞功能，以及为发现页面添加“加载更多”功能。
+
+---
+
+## 6. 在亚洲生产一双耐克鞋的成本你认为是多少？
+
+**原文标题**: How much do you think it costs to make a pair of Nike shoes in Asia?
+
+**原文链接**: [https://threadreaderapp.com/thread/1909741170953273353.html](https://threadreaderapp.com/thread/1909741170953273353.html)
+
+该片段仅提供了标题和有关内容分享的元数据，但没有实际的文章内容。因此，无法概括文章。我们只知道这篇文章可能讨论了耐克鞋在亚洲的制造成本。要提供摘要，需要文章的实际文本。
+
+---
+
+## 7. 俄罗斯方块游戏中的生活质量
+
+**原文标题**: Quality-of-Life in Tetris Games
+
+**原文链接**: [https://jcarlosroldan.com/post/355](https://jcarlosroldan.com/post/355)
+
+无法访问文章链接。
+
+---
+
+## 8. 视觉推理即将到来
+
+**原文标题**: Visual Reasoning Is Coming Soon
+
+**原文链接**: [http://arcturus-labs.com/blog/2025/03/31/visual-reasoning-is-coming-soon/](http://arcturus-labs.com/blog/2025/03/31/visual-reasoning-is-coming-soon/)
+
+视觉推理在LLM中即将到来
+
+---
+
+## 9. 时空数据库
+
+**原文标题**: SpacetimeDB
+
+**原文链接**: [https://spacetimedb.com/](https://spacetimedb.com/)
+
+时空数据库，因其核心功能而得名：存储应用程序的完整事务历史。 这些历史数据使用户能够将数据库状态恢复到之前的任何时间点，并从那时起重放事务。 这本质上提供了一个内置的重放功能，从而可以进行“时间旅行”调试和数据恢复。 该数据库的架构优先考虑跟踪随时间的变化，使其成为需要审计跟踪、版本控制或分析过去状态的应用的强大工具。
+
+---
+
+## 10. 使用内容安全策略加固 Firefox 前端
 
 **原文标题**: Hardening the Firefox Front End with Content Security Policies
 
 **原文链接**: [https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html](https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html)
 
-本文详细介绍了通过实施内容安全策略 (CSP) 来加强 Firefox 用户界面 (UI) 防御注入攻击，特别是跨站脚本攻击 (XSS) 的措施。使用 Web 技术构建的 Firefox UI 容易受到此类攻击，类似于 Web 应用程序。本文重点介绍了 Pwn2Own 2022 中的一个漏洞利用链，该链涉及将 JavaScript 注入到 UI 中。
+Firefox如何通过内容安全策略(CSP)强化用户界面(UI)以抵御注入攻击（尤其是跨站脚本攻击XSS）。 Firefox UI使用Web技术构建，与Web应用程序类似，容易受到这些攻击。 近期Pwn2Own漏洞利用突显了从沙盒Web内容向父进程注入代码的风险。
 
-主要重点是 `browser.xhtml`，即 Firefox UI 的主要 XHTML 文档，通过删除 600 多个内联事件处理程序，这些处理程序是 XSS 攻击的常见目标。这些处理程序，例如 `<button onclick="buttonClicked()">`，已被替换为单独 JavaScript 文件中对 `addEventListener` 的调用。本文还向 Firefox 开发人员介绍了迁移代码时内联和标准事件处理程序之间的细微差别。
+主要解决方案是从核心UI文档`browser.xhtml`中移除内联JavaScript事件处理程序，并用独立JavaScript文件中的`addEventListener`调用替换它们。 已移除超过600个此类处理程序。 内联事件处理程序存在问题，因为它们允许攻击者注入恶意代码，而CSP默认情况下可以阻止这些内联脚本。
 
-除了 `browser.xhtml` 之外，本文还指出，更严格的 CSP 正在应用于其他 UI 组件，例如“关于 Firefox”对话框，以限制资源加载到 Firefox 提供的文件。长期目标是消除所有动态代码执行（如 `eval`），以创建一个高度安全的浏览器。Firefox 138 中发布的删除内联事件处理程序，显着提高了攻击者的门槛，甚至可能破坏现有的漏洞利用链。尽管 UI 中需要具有高权限的 JavaScript API，但这些改进增强了 Firefox 对注入攻击的抵抗力。
+Firefox开发人员正在替换内联事件处理程序，并仔细考虑内联和常规事件处理程序之间的差异，尤其是在`return false`和`this`关键字方面。
 
----
+虽然`browser.xhtml`由于其较大的攻击面而成为最初的重点，但这项工作正在扩展到其他UI组件。 一些组件，如“关于Firefox”对话框，已经使用了更严格的CSP，将资源加载限制为Firefox附带的资源。 最终目标是消除整个Firefox中的所有动态代码执行（如`eval`），从而增强对XSS攻击的安全性。
 
-## 2. Apache ECharts
-
-**原文标题**: Apache ECharts
-
-**原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
-
-ECharts：一个用于快速创建 Web 可视化效果的声明式框架。其核心信息是 ECharts 简化了构建交互式 Web 图表和图形的过程。文档还强调了适当署名的重要性，要求用户在任何项目、研究或其他相关活动中使用 ECharts 时，引用 2018 年发表的相关 Visual Informatics 论文。该论文（可通过提供的 PDF 链接访问）可能包含有关该框架的架构、特性和优点的更多详细信息。
+通过重写事件处理程序和实施强大的CSP，Firefox旨在提高攻击者的门槛，并显著提高其浏览器的安全性。 此项特定缓解措施将包含在Firefox 138中。
 
 ---
 
-## 3. Whisky已不再积极维护。
-
-**原文标题**: Whisky is no longer actively maintained
-
-**原文链接**: [https://docs.getwhisky.app/maintenance-notice](https://docs.getwhisky.app/maintenance-notice)
-
-Whisky，一款macOS上的Wine前端，已不再由其创建者Isaac积极维护。他表示，由于所需的时间投入、他的学生身份以及认为该项目已对Mac上的Wine生态系统造成损害，导致失去了兴趣。
-
-最初旨在成为一个引擎无关的前端，但随着GPTK的引入，Whisky的方向发生了转变，模糊了其最初的目标。Isaac承认Wine开发的复杂性，它使用C语言编写，需要大量的逆向工程技能，并强调了CodeWeavers（及其产品CrossOver）在资助和维持macOS上的Wine开发方面所起到的关键作用。
-
-Isaac认为，Whisky通过依赖CrossOver而不贡献定制修复，创造了一种“寄生关系”，这可能会损害CrossOver的盈利能力，从而影响Mac上Wine的未来。他鼓励用户购买CrossOver以支持Wine的开发。
-
-他澄清说，他与CodeWeavers没有隶属关系，也没有因此获得报酬而停止开发Whisky。他只是决定这是正确的做法。他已经转向其他macOS项目，包括移植Sonic Unleashed Recompiled。可以在Bluesky和GitHub上找到他。
-
----
-
-## 4. 我认识的最优秀的程序员
-
-**原文标题**: The best programmers I know
-
-**原文链接**: [https://endler.dev/2025/best-programmers/](https://endler.dev/2025/best-programmers/)
-
-无法访问文章链接。
-
----
-
-## 5. 类太阳恒星
-
-**原文标题**: 'Sun-Like' Stars
-
-**原文链接**: [https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/](https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/)
-
-保罗·吉尔斯特的文章深入探讨了系外行星研究中“类太阳”恒星的模糊定义，强调了向公众传达科学发现所面临的挑战。该术语经常被宽松使用，包括G型恒星（如我们的太阳），有时甚至扩展到包括F型和K型恒星。这种扩展源于渴望包括寿命长、稳定的恒星，这些恒星可能能够容纳可居住的行星。
-
-问题在于，当科学界广泛使用“类太阳”（FGK，甚至所有主序星）时，公众通常将其严格解释为G型星。这种差异导致了对类地行星频率的误解，并可能影响公众对系外行星研究的支持和资助。
-
-该文章强调了精确语言的重要性，尤其是在新闻稿中，以避免误导公众。类似的模糊性也围绕着“类地”和“宜居”等术语，需要仔细定义。
-
-评论部分进一步探讨了宜居性的复杂性，承认我们仅基于地球的有限理解。评论者讨论了生命在不同条件下进化的可能性，以及灾难性事件使原本可居住的行星变得荒芜的可能性。总而言之，文章及其评论强调了在向公众传达系外行星研究时需要清晰和谨慎。
-
----
-
-## 6. PostgreSQL 全文搜索：配置得当，速度飞快 (打破缓慢神话)
-
-**原文标题**: PostgreSQL Full-Text Search: Fast When Done Right (Debunking the Slow Myth)
-
-**原文链接**: [https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth](https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth)
-
-好的，以下是PostgreSQL全文搜索的总结：正确使用时速度很快（打破缓慢的神话）。由于我无法直接访问提供的URL，因此该总结基于类似文章中的常见主题和论点，以及我对我PostgreSQL全文搜索能力的一般了解。
-
-这篇文章可能认为，PostgreSQL的全文搜索（FTS）经常被不公平地认为是缓慢的，而这种看法源于不正确的实现，而不是固有的局限性。它可能强调以下关键点：
-
-*   **FTS功能强大：** PostgreSQL内置的FTS为索引和搜索文本数据提供了复杂的功能，包括词干提取、停用词删除和排名。
-*   **索引至关重要：** 文章可能强调在`tsvector`列（标记化的文本表示）上创建`GIN`索引的重要性。如果没有适当的索引，FTS查询将执行全表扫描，导致性能不佳。
-*   **配置很重要：** 正确配置文本搜索配置（`pg_catalog.english`或类似配置）至关重要。这包括选择适当的语言和自定义词典以处理特定的领域术语或缩写。
-*   **查询构建很重要：** 查询的制定方式会影响性能。适当使用像`@@`这样的运算符并利用排名函数（`ts_rank`）可以优化查询执行。
-*   **数据准备是关键：** 文章可能讨论了使用 to_tsvector() 函数将数据转换为合适的格式，以便进行索引和搜索的重要性。
-*   **基准测试是必要的：** 文章可能会鼓励对不同的FTS配置和查询模式进行彻底的基准测试，以确定特定用例的最佳设置。
-*   **打破神话：** 通过解决这些实现细节，文章旨在证明，如果正确实现，PostgreSQL FTS可以非常快速高效，在许多情况下可以与专用搜索引擎媲美。总的来说，感觉到的缓慢通常是配置错误或优化不足的症状，而不是PostgreSQL的FTS能力的根本限制。
-
-无法访问文章链接。
-
----
-
-## 7. Cyc讣告
-
-**原文标题**: Obituary for Cyc
-
-**原文链接**: [https://yuxi-liu-wired.github.io/essays/posts/cyc/](https://yuxi-liu-wired.github.io/essays/posts/cyc/)
-
-本文是一篇关于Cyc的讣告，Cyc是道格拉斯·列纳特为实现通过符号逻辑实现通用人工智能而进行的为期40年的项目。文章认为，Cyc最终未能兑现其承诺。
-
-列纳特早期在自动数学发现（AM和EURISKO）方面的工作使他相信，大量的常识知识对于人工智能至关重要。1985年，他启动了Cyc项目，手动编码数百万个事实和规则。尽管增长到3000万条断言并消耗了大量资源（2亿美元，2000人年），Cyc从未实现预测的突破性进展，即真正的机器学习和自主发现。
-
-该项目最初主要由军事/情报部门资助，后来转向商业应用。然而，其商业用途仍然是标准的专家系统、数据集成和信息检索，并没有展现出Cyc所宣称的更高智能所带来的竞争优势。
-
-Cyc在学术上是孤立的，专注于信息输入的方法，而不是实际应用或外部验证。学术界很难使用它，并且在公共基准测试中表现不佳。像OpenCyc这样的衍生项目也失败了。
-
-列纳特坚持单一的哲学愿景，导致他拒绝了其他人工智能方法。文章总结说，Cyc的失败表明了人工智能符号逻辑方法的局限性。它深入探讨了列纳特早期的自动数学家（AM）项目，突出了其优点和缺点，特别是对人工编码启发式规则的依赖。它指出了AM的设计问题，例如概念命名方式的模糊性以及验证定义等价性的挑战。
-
----
-
-## 8. 减少屏幕时间的指南
-
-**原文标题**: The guide to reduce screen time
-
-**原文链接**: [https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/](https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/)
-
-如何减少屏幕时间：终极指南
-
-本文《如何减少屏幕时间：终极指南》提供了一种全面方法，旨在平衡技术使用与现实生活参与。文章认为，对于许多人来说，完全戒掉社交媒体是不现实的，但找到健康的平衡是可以实现的。
-
-该指南强调理解过度使用屏幕时间的“原因”，承认诸如无聊、焦虑和拖延等原因。它鼓励将心态从限制转变为积极参与替代活动。
-
-文章随后详细介绍了减少屏幕时间的实用工具和策略。这些包括利用iOS和Android设备上的内置屏幕时间功能来监控使用情况、设置限制和使用专注模式。它还回顾了几款第三方应用程序，如One Sec、Opal、SpeedBump、Clearspace、ScreenZen、Focus Plant和Forest，每款应用程序都提供独特的功能，如深呼吸提示、数据驱动的跟踪、会话限制、功能阻止和游戏化专注。
-
-进一步的建议包括管理通知、组织应用程序布局、使用灰度模式、创建无屏幕区域、订阅新闻通讯以及有意识地选择模拟替代方案（如报纸或黑胶唱片）。它还强调了适应无聊以培养创造力的重要性。对于更极端的措施，文章建议卸载应用程序或使用“功能机”。
-
-结论强调了结合策略、保持一致性以及认识到社交媒体平台的成瘾性的重要性。它敦促读者立即采取行动，创建一份可执行的步骤清单并跟踪进展。文章还提供了一个简短的常见问题解答，涵盖桌面使用、通知影响和建议的屏幕时间限制。
-
----
-
-## 9. 巴西政府运营的支付系统已占据主导地位。
-
-**原文标题**: Brazil's government-run payments system has become dominant
-
-**原文链接**: [https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant](https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant)
-
-巴西政府运营的数字支付系统Pix于2020年11月推出，已迅速成为该国主要支付技术。 其吸引力源于其易用性、即时交易和免费服务，这在COVID-19大流行期间尤其有利，因为它最大限度地减少了身体接触。 用户可以使用收款人的国民身份证、电话号码或二维码转账。
-
-到2024年，Pix的受欢迎程度超过了现金和银行卡，处理了630亿笔交易，价值26万亿雷亚尔（4.5万亿美元），与2021年的90亿笔交易相比显著增加。 这种快速普及率在全球范围内是无与伦比的。 虽然Pix使巴西的银行业现代化，但其主导地位也引发了人们对权力集中在巴西中央银行的潜在担忧。 该文章强调Pix的成功，但也暗示了政府控制的支付系统可能带来的影响。
-
----
-
-## 10. Linux内核防御图 – 安全加固概念
-
-**原文标题**: Linux Kernel Defence Map – Security Hardening Concepts
-
-**原文链接**: [https://github.com/a13xp0p0v/linux-kernel-defence-map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
-
-本文介绍了“Linux内核防御图”，这是一个以可视化的方式呈现Linux内核安全概念及其关系的工具。该图涵盖了漏洞类型、利用技术、漏洞检测和防御技术，包括内核内和内核外的解决方案，其中一些依赖于专门的硬件。它的目标是帮助用户浏览文档和内核源代码，同时参考常见弱点枚举（CWE）编号。
-
-该图是一个专注于内核安全加固的工具，特别排除了攻击面缩减、用户空间安全特性和Linux安全模块（LSM）策略。它使用DOT语言创建，便于维护和通过Git进行版本控制，采用GPL-3.0许可。作者提供了多个存储库（GitHub、Codeberg、GitFlic）的链接，可以在这些地方访问该图。
-
-为了帮助用户验证其内核配置并识别缺失的安全加固选项，作者还创建了“kernel-hardening-checker”。
-
-最后，本文提供了一系列参考文献，涵盖Linux内核安全的各个方面，包括Grsecurity特性、内核自我保护、漏洞缓解以及Spectre和Meltdown漏洞检查。所述的图对应于Linux内核v6.10。
-
----
-
-## 11. 展示HN：DrawDB – 开源在线数据库图表编辑器（复古风）
-
-**原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
-
-**原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
-
-本次“Show HN”帖子宣布推出 DrawDB，一个开源的在线数据库图表编辑器和 SQL 生成器。 DrawDB 的核心功能是允许用户可视化地设计数据库模式，然后生成相应的 SQL 代码。 帖子的简洁性表明该工具专注于易用性和数据库设计的快速原型。 虽然帖子缺乏详细描述，但“Show HN”标签暗示创建者正在寻求反馈，并向 Hacker News 社区展示他们的作品。
-
----
-
-## 12. Tailscale 融资 1.6 亿美元
-
-**原文标题**: Tailscale has raised $160M
-
-**原文链接**: [https://tailscale.com/blog/series-c](https://tailscale.com/blog/series-c)
-
-Tailscale 在 C 轮融资中筹集了 1.6 亿美元（2.3 亿加元），本轮融资由 Accel 领投，CRV、Insight Partners、Heavybit、Uncork Capital、George Kurtz (Crowdstrike 首席执行官) 和 Anthony Casalena (Squarespace 首席执行官) 参投。
-
-该公司成立于 2019 年，旨在简化网络连接并使其消失，方法是消除 NAT 穿透和 VPN 配置的复杂性。每天有数百万用户依赖 Tailscale 连接各种资源，从家庭实验室到 AI 工作负载。
-
-这笔资金将用于加速在以下领域的增长：消除网络连接中的摩擦，在不增加复杂性的情况下扩展网络，以及使身份成为安全连接的核心。Tailscale 开创了“身份优先的网络”，连接基于用户、应用程序和服务，而不仅仅是 IP 地址。
-
-该公司强调对其解决方案的需求日益增长，尤其是在人工智能行业，Perplexity、Mistral、Cohere、Groq 和 Hugging Face 等公司使用 Tailscale 来管理复杂的基础设施。其他值得注意的用户包括 Instacart、SAP、Telus、Motorola 和 Duolingo。
-
-Tailscale 计划扩大其工程和产品团队，投资于免费的客户支持，并保持向后兼容性。该公司的目标是使所有用户的网络连接无缝化，无论其规模或行业如何。
-
----
-
-## 13. 非线性声片显微镜：不透明器官毛细血管/细胞尺度成像
-
-**原文标题**: Nonlinear soundsheet microscopy:imaging opaque organs capillary/cellular scale
-
-**原文链接**: [https://www.science.org/doi/10.1126/science.ads1325](https://www.science.org/doi/10.1126/science.ads1325)
-
-无法访问文章链接。
-
----
-
-## 14. Dockerfmt: Dockerfile 格式化工具
-
-**原文标题**: Dockerfmt: A Dockerfile Formatter
-
-**原文链接**: [https://github.com/reteps/dockerfmt](https://github.com/reteps/dockerfmt)
-
-Dockerfmt: 基于 Buildkit 解析器的 Dockerfile 格式化工具，是 dockfmt 的现代替代品。它格式化 Dockerfile，并使用 `mvdan/sh` 格式化 RUN 指令。可通过 Releases 页面提供的二进制文件安装。
-
-主要特性包括格式化 RUN 指令、支持基本 heredoc，以及处理 RUN 指令中的内联注释。使用方法是运行 `dockerfmt` 命令，指定 Dockerfile 路径，并可选择使用诸如 `--check` (用于验证格式)、`--indent` (用于指定缩进)、`--newline` (用于添加尾部换行) 和 `--write` (用于将更改写回文件) 等标志。
-
-Dockerfmt 可以通过在 `.pre-commit-config.yaml` 中添加条目来集成为 pre-commit hook。 限制包括不支持 RUN 命令中的分组或分号、不支持长 JSON 命令的自动换行，以及不支持 `# escape=X` 指令。 欢迎贡献。JS 绑定也可在 js 目录中找到。
-
----
-
-## 15. 使盲人和视力障碍读者更容易获取图表的新方法
-
-**原文标题**: A new way to make graphs more accessible to blind and low-vision readers
-
-**原文链接**: [https://news.mit.edu/2025/making-graphs-more-accessible-blind-low-vision-readers-0325](https://news.mit.edu/2025/making-graphs-more-accessible-blind-low-vision-readers-0325)
-
-麻省理工CSAIL开发触觉Vega-Lite系统，旨在简化盲人和低视力读者触觉图表的创建。 这些图表将条形图等视觉数据转换为基于触摸的表示形式。 该系统解决了当前触觉图表设计的挑战，这些设计可能很复杂、耗时，并且需要多个软件程序和对指南（例如北美盲文管理局指南）的广泛了解。
-
-触觉Vega-Lite允许用户输入数据（例如来自Excel表格），并自动生成标准视觉图表和触觉版本。 一个关键特性是将设计标准作为默认规则纳入，使教育工作者和设计师能够更轻松地创建可访问的触觉图表。 用户可以通过代码抽象自定义轴标签、刻度线和纹理，从而进行精确编辑。 程序库中包含这些自定义的示例，以帮助用户。
-
-该工具旨在弥合设计专业人员所需的精确度与教育工作者所需的效率之间的差距。 它被设计为用户友好、提供即时反馈并遵守辅助功能指南。 研究人员还在努力添加特定于机器的自定义设置，以允许用户根据不同盲文点显器的规格预览和调整图表。
-
-虽然触觉Vega-Lite简化了触觉图表的创建过程，但开发者强调它不应取代专家对指南合规性的审查。 研究团队正在继续将盲文设计规则纳入该程序。
-
----
-
-## 16. 钡实验
-
-**原文标题**: The Barium Experiment
-
-**原文链接**: [https://tomscii.sig7.se/2025/04/The-Barium-Experiment](https://tomscii.sig7.se/2025/04/The-Barium-Experiment)
-
-无法访问文章链接。
-
----
-
-## 17. NTATV：让初代Apple TV运行Windows NT (Windows XP, Windows 2003)
-
-**原文标题**: NTATV: Bringing Windows NT (Windows XP, Windows 2003) to the Original Apple TV
-
-**原文链接**: [https://github.com/DistroHopper39B/NTATV](https://github.com/DistroHopper39B/NTATV)
-
-NTATV是由DistroHopper39B发起的一个项目，成功地在初代Apple TV上启动了Windows XP和Windows Server 2003。这是通过移植ReactOS的FreeLoader启动程序实现的，以绕过Apple TV的仅EFI固件，并克服其启动标准操作系统的限制。
-
-该项目取得了显著进展，Windows XP和2003已实现桌面功能，并且大多数驱动程序都已工作，包括PCI、USB、基本视频、加速视频、以太网、WiFi、RCA音频和遥控器。然而，ReactOS由于PCI问题面临限制。由于Apple TV独特的硬件配置，HDMI音频不太可能工作。
-
-已知问题包括显示器待机问题，需要重新插拔HDMI线；组件视频问题，与NVIDIA驱动程序有关；以及FreeLoader NTFS驱动程序在非英文Windows版本上失败。NTVDM也无法运行，但建议使用DOSBox或winevdm作为替代方案。
-
-该项目的源代码、构建说明和鸣谢信息已提供给有兴趣复制或贡献的人员。最新版本v0.2将FreeLoader更新至3.2版，并解决了IDE驱动程序问题，从而可以从各种IDE驱动器启动。现在包含一个带有NVIDIA驱动程序支持的预构建映像。
-
----
-
-## 18. 使用 text-wrap: pretty 实现更佳排版
-
-**原文标题**: Better typography with text-wrap pretty
-
-**原文链接**: [https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/](https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/)
-
-Jen Simmons 的这篇文章介绍了 `text-wrap: pretty`，一个旨在改善网页排版的 CSS 属性，目前已在 Safari 技术预览版中实现。它与标准的单行换行算法形成对比，后者通常导致短尾行、糟糕的参差不齐的边缘以及其他不良的排版效果。与现有的专注于最后四行的 Chromium 实现不同，Safari 的版本评估整个段落，以改善参差不齐的边缘并减少连字符的使用。
-
-文章解释说，传统的排版强调避免短尾行、糟糕的参差不齐的边缘、不良的连字符和排版河流，而 `text-wrap: pretty` 有助于缓解所有这些问题。它还将 `text-wrap: pretty` 与 `text-wrap: balance` 进行了对比。虽然 `pretty` 旨在通过对参差不齐的边缘和换行进行细微调整来改善正文的整体外观和可读性，但 `balance` 侧重于使所有行的长度大致相同，通常导致较窄的文本块，适用于标题或说明文字。
-
-文章强调，每个浏览器对 `pretty` 的实现方式都不同，并且性能考虑至关重要。作者保证，Safari 的实现经过优化，可最大程度地减少性能影响，尤其是在典型的段落长度上。文章鼓励开发者测试 `text-wrap: pretty` 并提供反馈，并鼓励开发者亲自测试该功能。
-
----
-
-## 19. DIY实验反应器利用伯克兰-艾德法
-
-**原文标题**: DIY experimental reactor harnesses the Birkeland-Eyde process
-
-**原文链接**: [https://blog.arduino.cc/2025/03/17/this-diy-experimental-reactor-harnesses-the-birkeland-eyde-process/](https://blog.arduino.cc/2025/03/17/this-diy-experimental-reactor-harnesses-the-birkeland-eyde-process/)
-
-这篇博文重点介绍了公民科学家Marb利用伯克兰-艾德法自制的实验性反应器。伯克兰-艾德法是一种早期利用电弧从大气氮气中生产硝酸的方法，但由于其高能耗，不适用于大规模化肥生产。然而，Marb更感兴趣的是科学原理，而非化肥产量。
-
-该反应器设计侧重于控制电弧和管理气流。Arduino UNO Rev3配合分线板，调节电源、变压器和升压转换器，以控制电弧电极。该系统还包括空气制备，将空气泵入装有干燥剂的管子，以确保干燥的空气进入反应室。包括温度传感器在内的传感器向Arduino提供关于反应条件的反馈。
-
-Marb在一个视频中展示了该反应器的功能，但他承认需要进一步改进以最大限度地提高硝酸产量。他建议，如果社区有足够的兴趣，可以制作后续视频，提供更详细的信息。总而言之，这个项目是一个利用现代技术对历史科学过程的个人探索，优先考虑实验和学习，而不是实际的化肥生产。
-
----
-
-## 20. 压倒性的负面和士气低落的力量
-
-**原文标题**: An Overwhelmingly Negative and Demoralizing Force
-
-**原文链接**: [https://aftermath.site/ai-video-game-development-art-vibe-coding-midjourney](https://aftermath.site/ai-video-game-development-art-vibe-coding-midjourney)
-
-本文探讨了人工智能融入对视频游戏开发者产生的负面影响，重点关注艺术家、设计师和软件开发者被迫在工作流程中使用人工智能的经历。
-
-主要担忧包括：
-
-*   **士气低落和价值贬低：** 开发者被迫使用人工智能来完成他们受雇去做的工作时，会觉得自己的专业知识受到损害，导致积极性降低。
-*   **低效且劣质的产出：** 人工智能生成的代码和艺术作品通常不准确，需要比传统方法花费更多的时间进行校正，并且缺乏源于人类经验的创造力和背景。
-*   **伦理问题：** 人工智能引发了与剽窃、同意（尤其是在配音演员肖像方面）以及潜在的职位流失相关的伦理问题。
-*   **误导性的实施：** 管理者通常为了节省成本或认为可以提高效率而优先考虑人工智能，却不了解它的局限性，也没有考虑到对员工和创作过程的有害影响。
-*   **“人工智能即解决方案”的谬论：** 人工智能的支持者经常将现有的游戏开发流程视为需要解决的问题，而忽略了人类互动、迭代和艺术劳动在创造引人入胜和创新的游戏中的价值。
-
-本文强调了人工智能的所谓益处与它对游戏开发的实际影响之间日益扩大的脱节，在游戏开发中，它正成为一种不受欢迎且适得其反的力量。
-
----
-
-## 21. 展示一下：我也做了一个文字游戏。我妈反应平平，但我自己觉得挺酷。
-
-**原文标题**: Show HN: I also built a word game. My mom is indifferent, but I think its ccool
-
-**原文链接**: [https://playletterlinks.com/](https://playletterlinks.com/)
-
-“Show HN”帖子介绍LetterLinks：一款类似于拼字游戏的每日组词游戏。玩家获得一组字母方块，必须将它们排列在棋盘上以创建有效单词并最大化得分。主要功能包括：
-
-*   **每日挑战：** 每天每个人都获得相同的字母方块，以进行公平竞争。
-*   **棋盘布局：** 棋盘包含特殊格子，例如双字母 (DL)、三字母 (TL)、双字 (DW) 和三字 (TW)，以提高分数。
-*   **游戏玩法：** 可以拖动或点击方块来放置它们，单词必须连接，并且必须使用中心星形格子。
-*   **特殊方块：** 百搭牌代表任何字母，奖励方块使整个单词的分数翻倍。
-*   **每日奖励挑战：** 礼物图标显示特殊单词模式以获得奖励积分（1.5 倍或 2 倍）。
-*   **得分：** 分数基于字母值和奖励格子。存在乘数（水平和垂直）。
-*   **提交：** 放置方块后，玩家提交他们的单词以获得评分。无效单词会被突出显示。
-*   **排行榜：** 玩家可以输入昵称以将他们的分数保存在每日排行榜上，并与其他人进行比较。
-*   **技能等级：** 通过基于分数的技能等级来跟踪进度。
-*   **教程：** 游戏包含交互式教程和一个“如何玩”部分，解释规则和功能。
-
-创作者，其母亲“漠不关心”，表达了对游戏的个人热情。
-
----
-
-## 22. 用 Prolog 解决“雷顿教授的谜题”
-
-**原文标题**: Solving a “Layton Puzzle” with Prolog
-
-**原文链接**: [https://buttondown.com/hillelwayne/archive/a48fce5b-8a05-4302-b620-9b26f057f145/](https://buttondown.com/hillelwayne/archive/a48fce5b-8a05-4302-b620-9b26f057f145/)
-
-本文详细介绍了作者使用Prolog编程语言解决一个类似“雷顿”系列游戏中逻辑谜题的探索过程。该谜题涉及根据其他三名学生对一个是非题测验的答案和分数，推断出第四名学生的考试分数。
-
-作者将他们的Prolog解决方案与Pablo Meier之前的解决方案进行比较，旨在实现更优雅、更简洁的实现。他们介绍了Prolog的基本概念，如合一、模式匹配，以及使用`dif`和`clpfd`库分别处理不等式约束和有限域约束。解决方案的核心围绕着一个递归的`score/3`谓词，该谓词根据学生的答案和答案键计算学生的分数。
-
-Prolog的一个关键优势是双向性，允许`score/3`谓词用于检查分数、计算分数，甚至生成可能的答案集。文章随后演示了如何使用`maplist`来简洁地定义答案键的约束（长度和可能的值）。
-
-令人惊讶的发现是，存在多个有效的答案键，但所有这些答案键都导致第四名学生的分数相同，这突显了谜题的巧妙设计。作者将这种解谜应用与Prolog更实际的用途进行对比，例如分析版本控制提交图和规划基础设施变更，这将是他们即将出版的书中的一个章节重点。最终的Prolog代码比最初的解决方案短得多。
-
----
-
-## 23. ClickHouse 中 Rust 的一年
-
-**原文标题**: A year of Rust in ClickHouse
-
-**原文链接**: [https://clickhouse.com/blog/rust](https://clickhouse.com/blog/rust)
-
-ClickHouse将Rust集成到C++代码库的一年实验
-
----
-
-## 24. Netflix 如何准确地归因 eBPF 流日志
-
-**原文标题**: How Netflix Accurately Attributes eBPF Flow Logs
-
-**原文链接**: [https://netflixtechblog.com/how-netflix-accurately-attributes-ebpf-flow-logs-afe6d644a3bc](https://netflixtechblog.com/how-netflix-accurately-attributes-ebpf-flow-logs-afe6d644a3bc)
-
-Netflix如何解决将eBPF流日志准确归因于云环境中工作负载身份的问题
-
-他们的解决方案包括两个关键改进：
-
-1.  **在源头归因本地IP地址：** FlowExporter（作为sidecar运行）现在会在发送流日志之前确定本地工作负载身份。 对于EC2实例，它读取证书。 对于容器化工作负载（Titus），它使用IPMan（一个容器IP地址分配服务），该服务将IP地址到工作负载ID的映射写入eBPF maps。 针对IPv6到IPv4转换实现了特殊处理，以正确归因sockets。
-
-2.  **使用时间范围归因远程IP地址：** FlowCollector使用来自FlowExporter日志的本地IP地址、本地工作负载身份和连接时间戳，构建一个IP地址所有权时间范围的内存哈希图。 这使得FlowCollector能够准确确定在流开始时哪个工作负载拥有远程IP地址。 FlowCollector节点通过Kafka共享时间范围信息。 流在归因之前会暂时存储一分钟，以确保时间范围信息是最新的。
-
-改进后的方法通过将跨区域流转发到正确区域的FlowCollector节点来处理它们。 非工作负载IP地址（例如，来自ELB的IP地址）仍然使用Sonar进行归因。 针对Zuul的路由配置（作为其依赖关系的真理来源）进行的验证确认了误归因已被消除。
-
-这种新方法为依赖性分析、安全性和事件响应提供了可靠且准确的流日志，从而增强了对Netflix分布式系统的理解。
-
----
-
-## 25. 将30万的阶乘分解为30万个大于10万的因子之积
-
-**原文标题**: Decomposing factorial of 300K as the product of 300K factors larger than 100K
-
-**原文链接**: [http://gus-massa.blogspot.com/2025/04/decomposing-factorial-of-300k-as.html](http://gus-massa.blogspot.com/2025/04/decomposing-factorial-of-300k-as.html)
-
-本文详细介绍了一项尝试解决陶哲轩提出的挑战：将300,000!分解为300,000个大于100,000的因子。作者使用了陶哲轩的方法，该方法包括创建一个底数'B'，作为大于100,000的奇数的乘积，然后通过用乘以2的幂的“N!-重”素数（在300,000!中比在B中出现更频繁的素数）替换“B-重”素数（在B中比在300,000!中出现更频繁的素数）来调整它。
-
-作者使用Racket重现了陶哲轩将300,000!分解为大于90,000的因子的最初结果。该代码分解了300,000!和初始底数'B'，识别出“B-重”和“N!-重”素数。文章强调了计算中遇到的与陶哲轩的结果相比的差异（具体来说，是50个额外的素数）。
-
-然后，作者提出了两种通过按顺序匹配来平衡素数的方法，用'1'填充较短的列表（N!-重素数）。文章比较了结果，重点关注未使用的2的幂的数量，并验证了生成的转换表。最终，作者旨在优化2的映射和使用，以实现大于100,000的因子的原始目标。
-
----
-
-## 26. 感谢HN：我6周前在此发布的益智游戏获得了《大西洋月刊》的授权
-
-**原文标题**: Thank HN: The puzzle game I posted here 6 weeks ago got licensed by The Atlantic
-
-**原文链接**: [https://www.theatlantic.com/games/bracket-city/](https://www.theatlantic.com/games/bracket-city/)
-
-这款“感谢HN”帖子庆祝一款解谜游戏《括号城市》(Bracket City)的诞生，该游戏由个人创作，六周前首次在Hacker News上分享。 重要的进展是《括号城市》现在已被知名出版物《大西洋月刊》(The Atlantic)授权。这表明游戏的质量和吸引力得到了认可，从而促成了专业的合作和更广泛的发行。 这篇帖子本质上是一个成功故事，突出了Hacker News社区在为独立创作者提供发现和潜在机会的平台方面的积极影响。它暗示，将游戏发布在HN上，在引起《大西洋月刊》的注意方面发挥了作用。
-
----
-
-## 27. 解析组合学——一个实例
-
-**原文标题**: Analytic Combinatorics – A Worked Example
-
-**原文链接**: [https://grossack.site/2025/04/08/analytic-combinatorics-example.html](https://grossack.site/2025/04/08/analytic-combinatorics-example.html)
-
-本博文探讨如何使用解析组合学，特别是奇点分析，来寻找组合问题的渐近近似，并通过两个使用Sage的实例进行演示。
-
-首先，作者回顾了计数有根有序三叉树，找到一个生成函数和节点数为*n*的树的数量的渐近近似。该近似是使用留数定理和生成函数的主导奇点附近的Puiseux级数展开推导出来的。提供了Sage代码来计算奇点、Puiseux展开和渐近常数。
-
-然后，这篇文章解决了一个更具挑战性的问题：计数同构意义下的无序有根三叉树。使用Pólya-Redfield计数来推导生成函数的一个泛函方程。作者概述了如何使用隐函数定理和Puiseux级数来估计泰勒系数。
-
-该方法涉及找到一个奇点(r, s)，其中泛函方程F(z,w) = 0及其对w的偏导数都消失。然后构造一个T在(r, s)处的Puiseux级数。这导致了无序三叉树数量的渐近近似。同样，Sage代码近似泰勒级数，以数值方式找到奇点，并确认最终的渐近近似。
-
----
-
-## 28. 脊椎动物的智力至少进化过两次
-
-**原文标题**: Intelligence Evolved at Least Twice in Vertebrate Animals
-
-**原文链接**: [https://www.quantamagazine.org/intelligence-evolved-at-least-twice-in-vertebrate-animals-20250407/](https://www.quantamagazine.org/intelligence-evolved-at-least-twice-in-vertebrate-animals-20250407/)
-
-脊椎动物的智力是源于共同祖先还是鸟类和哺乳动物独立进化而来？最近的研究表明后者，并提供了证据表明，支持智力的复杂神经回路在这两个群体中是分别出现的。
-
-长期以来，科学家们认为智力需要新皮层，一种在哺乳动物中发现的分层大脑结构。鸟类缺乏这种结构，因此被认为智力较低。然而，研究表明，尽管鸟类的大脑结构不同，但它们也拥有先进的认知能力。
-
-争论的焦点在于，支持智力的神经回路是从共同祖先那里继承来的，还是独立进化而来的。虽然早期的研究由于相似的回路而指向共同祖先，但后来对胚胎发育的研究表明是独立进化。
-
-新的研究使用单细胞RNA测序比较了鸡、小鼠和壁虎的大脑发育。这些研究表明，虽然成熟的动物大脑回路看起来很相似，但它们的发育方式、时间和大脑区域都不同。他们还发现，相似的电路可以用不同的细胞类型构建。这些发现表明，鸟类和哺乳动物的大脑中用于复杂认知的区域是独立进化而来的。
-
-然而，存在一些影响大脑发育的遗传相似性，表明存在从共同祖先那里继承的有限遗传。尽管存在独立进化，但脊椎动物的智力发展途径存在限制，趋同进化证明了这一点。了解生物体为解决复杂问题而开发的不同神经解决方案，可能为人工智能的发展和寻找外星智能提供见解。
-
----
-
-## 29. Show HN: Coroot – 基于 eBPF 的开源可观测性平台，提供可操作的洞见
-
-**原文标题**: Show HN: Coroot – eBPF-based, open source observability with actionable insights
-
-**原文链接**: [https://github.com/coroot/coroot](https://github.com/coroot/coroot)
-
-Coroot 是一个开源可观测性平台，它使用 eBPF 自动收集指标、日志、链路和剖析数据，无需代码插桩。其目标是从可观测性数据中提供可操作的洞察，超越简单的数据收集。
-
-主要功能包括：
-
-*   **零插桩可观测性：** 基于 eBPF 的收集消除了代码更改的需求。
-*   **服务地图：** 提供系统的完整视图，没有盲点。
-*   **应用健康摘要：** 总结服务状态并提供对应用程序日志的洞察。
-*   **SLO 跟踪：** 监控服务级别目标，并通过分布式追踪允许异常请求探索。
-*   **厂商中立的插桩：** 通过 eBPF 与遗留和第三方服务一起工作。
-*   **日志模式分析：** 使用事件聚类进行日志洞察，并基于 ClickHouse 实现快速搜索的无缝日志到链路关联。
-*   **剖析：** 启用一键式应用程序剖析，以分析资源使用情况直至代码级别。
-*   **内置专业知识：** 自动识别常见问题，并根据 SLO 提供整合的警报。
-*   **部署跟踪：** 监控 Kubernetes 滚动更新，并在不进行 CI/CD 集成的情况下比较版本的性能下降情况。
-*   **成本监控：** 在应用程序级别跟踪云成本，而无需访问云帐户。
-Coroot 可以通过 Docker 或 Kubernetes 安装。文档、实时演示和社区支持可通过各种渠道获得。它基于 Apache License 2.0 许可。
-
----
-
-## 30. 你的ext4文件系统中文件的顺序并不重要
-
-**原文标题**: The order of files in your ext4 filesystem does not matter
-
-**原文链接**: [https://thewisenerd.com/blog/ext4-readdir/](https://thewisenerd.com/blog/ext4-readdir/)
-
-节点镜像补丁更新后，ext4 文件系统意外的文件顺序变化导致 JVM 类路径问题，一段令人沮丧的调试之旅。作者的 JVM 工作负载依赖于类路径的通配符扩展，JVM 使用 `readdir` 列出 JAR 文件。核心问题是 `readdir` 的顺序，受到 ext4 的“哈希 b 树”目录缓存和“目录哈希种子”的影响，在更新后发生了变化，导致错误的 JAR 文件首先被加载，出现未捕获的 `NoSuchFieldError`，导致应用程序初始化失败。
-
-作者最初追查了几个转移注意力的线索，包括：
-
-*   **Buildah 压缩层：** 团队切换到了 Buildah，并怀疑层压缩导致了类路径优先级问题，但这并非根本原因。
-*   **OverlayFS 层顺序：** 作者最初认为 overlayfs 决定了 `readdir` 的顺序，但测试证明这是不正确的。OverlayFS 仅保证上层覆盖下层，而不是迭代顺序。
-*   **层提取逻辑：** 作者怀疑层提取过程发生了变化，因此仔细地复制了 containerd 的提取逻辑并验证了 inode 顺序，但问题仍然存在。
-
-通过检查 ext4 文件系统本身，取得了突破。目录哈希种子被确定为罪魁祸首。该种子随着节点镜像补丁的更新而改变，从而改变了 `readdir` 返回文件的顺序。作者随后成功地对磁盘镜像进行了十六进制编辑，以恢复原始的目录哈希种子，从而确认了修复。根本原因涉及三个 Bouncy Castle 提供程序 JAR，其中由于 `readdir` 的顺序，加载了错误的版本，导致初始化失败。
-
----
-
-## 31. 如何通过啄木鸟的鼓声来识别它们
-
-**原文标题**: How to Recognize Woodpeckers by Their Drumming Sounds
-
-**原文链接**: [https://www.allaboutbirds.org/news/how-to-recognize-woodpeckers-by-their-drumming-sounds/](https://www.allaboutbirds.org/news/how-to-recognize-woodpeckers-by-their-drumming-sounds/)
-
-本文解释了如何通过啄木鸟的鼓击声来识别它们。鼓击不同于觅食时的啄击，是一种交流方式，类似于鸟鸣，用于确立领地和吸引配偶。最佳聆听时间是春季。啄木鸟通常选择金属物体等响亮、共鸣的表面来最大化声音。
-
-本文将鼓击模式分为三种主要类型：稳定、均匀的鼓击；断续节奏；以及渐弱。稳定的鼓击很常见，物种识别依赖于速度和持续时间的细微差异。绒啄木鸟的鼓击速度较慢（每秒17次），时间较短，而毛啄木鸟的鼓击速度较快（每秒26次），时间较长。类似的区分适用于纳氏啄木鸟（每秒20次）和梯背啄木鸟（每秒30次）。北扑翅鴷的鼓击持续时间比许多其他物种长（每秒23次）。
-
-吸汁啄木鸟可以通过其“断续”节奏来识别，其特征是先有一个介绍性的连击，然后是不均匀、不规则间隔的敲击。黄腹、红颈和红胸吸汁啄木鸟具有相似的鼓击模式。威廉逊吸汁啄木鸟有一个变体，即多次敲击而不是双重敲击。
-
-大啄木鸟、黑背啄木鸟和美洲三趾啄木鸟表现出“渐弱”鼓击，其中鼓击要么加速，要么音量在最后逐渐减弱。大啄木鸟的鼓击速度较慢（每秒15次），并有加速部分。美洲三趾啄木鸟的鼓击速度较慢（每秒14次），并且鼓击在最后加速。黑背啄木鸟的鼓击速度较快（每秒16次），并且音量略有加速和渐弱。
-
-本文鼓励听众注意鼓击的速度、持续时间和模式，并利用频谱图等资源进行可视化分析。
-
----
-
-## 32. 美国机床工业的衰落与复苏前景 (1994)
-
-**原文标题**: The Decline of the U.S. Machine-Tool Industry and Prospects for Recovery (1994)
-
-**原文链接**: [https://www.rand.org/pubs/research_briefs/RB1500.html](https://www.rand.org/pubs/research_briefs/RB1500.html)
-
-这份1994年兰德公司的研究报告探讨了美国机床工业的衰落及其复苏前景。机床工业是制造业和国防的关键部门，曾一度是全球领导者，但在20世纪80年代因国内需求下降、订单交付速度慢于日本公司以及美元坚挺等因素而显著衰落。值得注意的是，日本公司成功地将美国发明的数控技术商业化。
-
-该研究指出了阻碍复苏的根本问题，包括向全球竞争的转变和快速的技术变革，这需要美国公司缺乏的新能力。障碍包括缺乏大型公司或小型公司之间缺乏强有力的合作、难以获得投资资金、劳动力技能不足、研究成果转化为适销产品的能力薄弱以及国内需求不够成熟。有限的出口能力进一步阻碍了复苏。
-
-尽管面临这些挑战，该研究表明可以保持乐观。内部重组、国内需求的激增以及竞争对手日本和德国工业的危机都提供了机遇。美国在关键技术方面保持着研究领先地位。
-
-该研究建议采取三管齐下的政府战略：促进机床制造商、用户和供应商之间的地方合作网络；增加对制造业基础设施（研发和技能培训）的投资；并通过简化出口程序、支持销售工作和避免保护主义来帮助美国公司参与国际竞争。该研究强调要更广泛地努力改进美国的制造工艺技术，并断言全球影响力对于美国机床公司长期繁荣至关重要。
-
----
-
-## 33. 中国上调美国商品关税至84%，争端升级
-
-**原文标题**: China Raises Tariffs on US Goods to 84% as Rift Escalates
-
-**原文链接**: [https://www.bloomberg.com/news/articles/2025-04-09/china-raises-tariffs-on-us-goods-to-84-as-trade-rift-escalates](https://www.bloomberg.com/news/articles/2025-04-09/china-raises-tariffs-on-us-goods-to-84-as-trade-rift-escalates)
-
-无法访问文章链接。
-
----
-
-## 34. 日本乡下小镇中年男子交易卡牌走红
-
-**原文标题**: Middle-aged man trading cards go viral in rural Japan town
-
-**原文链接**: [https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/](https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/)
-
-在日本乡村小镇河原，一种以当地中年男性（“叔叔”）为主角的独特集换式卡牌游戏（TCG）在儿童中迅速走红，为像宝可梦这样的流行游戏提供了一种令人耳目一新的选择。这款“叔叔卡牌游戏”由斋藤社区委员会的宫原惠理创作，旨在加强年轻一代和年长一代之间的联系。
-
-这些卡牌展示了47位不同的“叔叔”，每张卡牌都具有统计数据、特殊能力和元素类型，反映了他们在现实生活中的技能和对社区的贡献。例子包括曾担任消防队长的“防火墙本田先生”和教授面条制作的“荞麦面大师竹下先生”。最受欢迎的卡牌是前监狱官、现社区志愿者的“万事通藤井先生”。
-
-最初的设计目的是用于收集，但河原的孩子们很快就开发出了一种战斗元素，比较统计数据和技能。卡牌的稀有度与“叔叔”在现实世界中参与社区服务的程度直接相关，积极的志愿者有机会出现在备受追捧的闪卡上。
-
-这款游戏的成功促使人们更多地参与当地活动，并重新认识到社区长者的价值。这些手工制作的卡牌仅在斋藤社区中心出售，三张一包售价100日元，六张一包（包括一张闪卡）售价500日元。尽管供应有限，但需求仍然非常高。
-
----
-
-## 35. I, II 或 III 级肥胖与健康结果的关联
-
-**原文标题**: Associations Between Class I, II, or III Obesity and Health Outcomes
-
-**原文链接**: [https://evidence.nejm.org/doi/10.1056/EVIDoa2400229](https://evidence.nejm.org/doi/10.1056/EVIDoa2400229)
-
-无法访问文章链接。
-
----
-
-## 36. 最伟大的摩托车照片
-
-**原文标题**: The Greatest Motorcycle Photo
-
-**原文链接**: [https://www.life.com/arts-entertainment/the-greatest-motorcycle-photo-ever/](https://www.life.com/arts-entertainment/the-greatest-motorcycle-photo-ever/)
-
-本文旨在致敬罗利·弗里于1948年9月13日在犹他州邦纳维尔盐滩创下摩托车世界速度纪录的标志性照片。为了最大限度地减少风阻，弗里仅穿泳裤，以水平姿势趴在他的Vincent HRD Black Shadow摩托车上，并最终达到了每小时150.313英里的速度。
-
-这张由《生活》杂志摄影师彼得·斯塔克波尔拍摄的照片已成为摩托车界的传奇，也是广受欢迎的印刷品。文章指出，《生活》杂志在最初的报道中使用了不同的广角镜头，强调了广阔的景观。其他展示他骑行前准备工作的照片也是经典之作，证明了当时的摄影风格。
-
-虽然弗里的纪录早已被打破，但文章将他大胆的壮举与现代的速度记录方式进行了对比。洛基·罗宾逊于2010年创下了每小时376.363英里的当前纪录，他使用的是流线型的封闭车辆，无需任何非常规的、上镜的动作。这突显了弗里打破纪录的壮举以及由此产生的标志性图像的历史意义和持久魅力。
-
----
-
-## 37. NNN：营销组合建模的下一代神经网络
-
-**原文标题**: NNN: Next-Generation Neural Networks for Marketing Mix Modeling
-
-**原文链接**: [https://arxiv.org/abs/2504.06212](https://arxiv.org/abs/2504.06212)
-
-这篇arXiv文章(arXiv:2504.06212)介绍了“NNN：用于营销组合建模的下一代神经网络”，一种新的MMM方法。该论文由Thomas Mulc等人撰写，提出了一种基于Transformer的神经网络（NNN），以克服传统MMM方法的局限性。
-
-与依赖于标量输入和参数衰减函数的传统方法不同，NNN利用丰富的嵌入来表示营销和自然渠道的定量和定性方面，例如搜索查询和广告创意。其注意力机制使模型能够捕获复杂的交互和长期影响，从而可能提高销售归因的准确性。作者强调使用L1正则化，以使表达力强的模型在数据受限的环境中可行。
-
-该论文通过在模拟和真实世界数据上的评估，证明了NNN的有效性，显示出预测能力的显著提高。此外，NNN通过允许模型探测以评估特定关键词或创意的有效性，提供了超出归因的可解释性，从而提供了有价值的见解。该文章被分类在机器学习(cs.LG)和应用(stat.AP)下。
-
----
-
-## 38. “氟化物降低智商”报告应被撤回
-
-**原文标题**: „Fluoride reduces IQ" report needs to be retracted
-
-**原文链接**: [https://twitter.com/cremieuxrecueil/status/1909865076271563065](https://twitter.com/cremieuxrecueil/status/1909865076271563065)
-
-提供的文本并非关于氟化物和智商的文章。它来自X（前身为Twitter）的JavaScript错误消息，表明用户的浏览器中禁用了JavaScript，导致页面无法正确加载。其中没有任何关于氟化物或其对智商的潜在影响的讨论。
-
-因此，无法提供有关所谓的“氟化物降低智商”报告的摘要，因为上下文纯粹是技术性的，并且不相关。
-
----
-
-## 39. 建造System/360大型机差点毁了IBM
-
-**原文标题**: Building the System/360 Mainframe Nearly Destroyed IBM
-
-**原文链接**: [https://spectrum.ieee.org/building-the-system360-mainframe-nearly-destroyed-ibm](https://spectrum.ieee.org/building-the-system360-mainframe-nearly-destroyed-ibm)
-
-本文详细介绍了IBM System/360大型主机的发展历程。该产品于1964年发布，彻底改变了计算机行业，但也几乎导致该公司破产。20世纪50年代末，IBM面临一个关键问题：客户需要比流行的1401更强大、更易于升级的系统。替代方案是为竞争对手的机器进行昂贵的软件重写。在内部，IBM面临着恩迪科特和波基普西的工程师之间的内部竞争，他们各自开发不兼容的系统。
-
-T. Vincent Learson和Bob O. Evans率先提出了解决方案，主张采用单一的兼容系统，这导致波基普西的8000项目被取消，并催生了System/360。S/360被设计成一个兼容的计算机家族，共享软件和外围设备。该公司投资了50亿美元（相当于今天的400亿美元），并雇用了7万名员工。
-
-1964年4月7日，IBM发布了150款新产品，其中包括六台计算机和大量外围设备。该系统的兼容性是一个关键卖点，允许客户在不进行大量重写的情况下进行升级。虽然风险很大，早期型号仅仅是模型，但发布取得了成功，第一个月就产生了超过10万份订单，并永远改变了计算格局。它确立了IBM在该行业的主导地位。
-
----
-
-## 40. 显示 HN：声景和 Lo-fi 播放器
-
-**原文标题**: Show HN: Soundscapes and Lofi Player
-
-**原文链接**: [https://www.noisefill.com/](https://www.noisefill.com/)
-
-此“Show HN”帖子介绍 Noisefill，一个播放音景和 Lo-fi 音乐的 Web 应用程序。内容极简，仅包含标题和单词“Noisefill”，以及一条指示需要 JavaScript 才能运行该应用程序的消息。这暗示 Noisefill 严重依赖 JavaScript 来实现其功能和用户界面。帖子的简洁性表明它旨在快速介绍一个可能更复杂的 Web 应用程序，用于生成和收听环境声音和/或 Lo-fi 音乐。
-
----
-
-## 41. 展示一下：我做了一个文字游戏。我的物理老师很喜欢。你呢？
-
-**原文标题**: Show HN: I built a word game. My Physics teacher likes it. What about you?
-
-**原文链接**: [https://thypher.com/](https://thypher.com/)
-
-“Show HN”：Thypher - 一款解方程猜词游戏
-
-作者推出了一款名为Thypher的猜词游戏。核心玩法是通过解方程来揭晓一个5个字母的单词。
-
-游戏规则很简单：玩家必须通过数学方程式找出对应的字母，从而确定每日的5字母单词。例如，帖子中展示了 `mc^2 = E`。游戏不区分大小写。
-
-今天的单词是2025年4月9日的，也是游戏的第48个单词。帖子包含一个“Play”链接，鼓励用户尝试。作者强调他的物理老师很喜欢这款游戏，暗示了它的教育性和趣味性。帖子的主要目的是分享这款游戏并征求Hacker News社区的反馈。
-
----
-
-## 42. 赴美旅行时如何锁定你的手机
+## 11. 前往美国旅行时如何锁定你的手机
 
 **原文标题**: How to lock down your phone if you're traveling to the U.S.
 
@@ -627,881 +140,1299 @@ T. Vincent Learson和Bob O. Evans率先提出了解决方案，主张采用单�
 
 ---
 
-## 43. 难民营中的经济学启示
+## 12. 我认识的最优秀的程序员
 
-**原文标题**: What a refugee camp reveals about economics
+**原文标题**: The best programmers I know
 
-**原文链接**: [https://www.economist.com/finance-and-economics/2025/04/03/what-a-refugee-camp-reveals-about-economics](https://www.economist.com/finance-and-economics/2025/04/03/what-a-refugee-camp-reveals-about-economics)
+**原文链接**: [https://endler.dev/2025/best-programmers/](https://endler.dev/2025/best-programmers/)
 
-本文探讨了马拉维的扎莱卡难民营的经济现实。该难民营自1994年以来一直收容难民。虽然难民营看起来可能像一个典型的周日，人们去教堂和观看足球比赛，但关键的区别在于，居民们并非在一周的工作后休息。
+本文概述了卓越程序员的常见关键特征和习惯，强调了持续学习、解决问题和协作的重要性。它强调阅读文档、深入理解工具以及细致分析错误信息，而不是依赖猜测。
 
-文章强调，营地里的每个人每月得到9美元，这引发了一个问题：在如此有限的资源下，经济如何运作？作者旨在揭示在这个独特环境中出现的经济活动、生存策略和社会动态。宗教和娱乐活动与潜在的经济困难并置，为考察难民营的微观经济奠定了基础。
+作者强调了诸如将复杂问题分解为可管理部分，以及不害怕“亲身实践”不熟悉代码等实用技能。他强调了通过写作、博客或开源贡献来帮助他人和分享知识的重要性，将强大的写作能力与代码中清晰、结构化的思维联系起来。
 
-本质上，本文试图将难民营作为一个缩影，来理解更广泛的经济原则，特别是人们如何在严重受限的情况下适应并创造经济机会。作者似乎暗示，通过研究扎莱卡的经济状况，我们可以获得对基本经济行为和原则的宝贵见解。
+此外，本文强调了一种持续改进的思维模式，敦促开发人员拥抱新技术，同时仔细评估其益处。它提倡谦逊，向所有级别的工程师学习，无论资历如何，并通过有影响力的工作建立声誉。
 
----
-
-## 44. Show HN: 大约500行代码实现的向量嵌入HNSW索引
-
-**原文标题**: Show HN: HNSW index for vector embeddings in approx 500 LOC
-
-**原文链接**: [https://github.com/dicroce/hnsw](https://github.com/dicroce/hnsw)
-
-这个“Show HN”帖子介绍了一个轻量级（约500行代码）的 C++ 实现，用于向量嵌入中高效最近邻搜索的分层可导航小世界（HNSW）算法。它强调了单头文件、现代 C++ 设计，并利用 Eigen 进行 SIMD 加速的距离计算，从而实现快速性能。
-
-HNSW 算法被解释为一个多层图结构，其中较高层稀疏填充，较低层更密集。节点连接到每一层中的最近邻。新节点被随机分配一个级别，并插入到该级别及其以下的所有级别中。搜索从顶层开始，迭代地找到最近的节点并下降到较低的层。该算法跟踪搜索期间遇到的 K 个最近邻，并在完成时返回它们。
-
-该帖子包含一个简单的示例，演示了如何使用 `dicroce::hnsw` 类创建索引、添加向量并执行最近邻搜索。该示例使用 128 维向量并搜索 10 个最近邻。还提供了使用 CMake 的编译说明。总的来说，这篇文章重点介绍了一个简洁高效的 C++ 库，用于使用 HNSW 算法进行向量嵌入搜索。
+至关重要的是，作者强调了对计算机和人都要有耐心，强调错误有其逻辑解释。他提倡通过承认“我不知道”然后寻找答案来保持诚实，并鼓励采用“保持简单”的编码方法以提高可维护性。总的来说，成为一名伟大的程序员没有捷径，它需要奉献精神、好奇心和协作精神。
 
 ---
 
-## 45. 没有大象：图像生成技术的突破
+## 13. 美国式颠覆
 
-**原文标题**: No elephants: Breakthroughs in image generation
+**原文标题**: American Disruption
 
-**原文链接**: [https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image](https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image)
+**原文链接**: [https://stratechery.com/2025/american-disruption/](https://stratechery.com/2025/american-disruption/)
 
-伊森·莫里克的文章《没有大象：图像生成领域的突破》探讨了人工智能图像生成方面的重大进展，特别是向多模态图像生成方向的转变，并将其与以前的方法进行了对比。
+本·汤普森的《美国式颠覆》通过克莱顿·克里斯坦森的颠覆性创新理论，分析了美国制造业的衰落。他回顾了过去 Stratechery 的文章，这些文章事后看来未能完全捕捉到正在展开的现实，并认为美国正在“对世界关上大门”，而不是相反。
 
-此前，大型语言模型会为单独的图像生成工具生成图像提示，导致生成的图像不够智能，且常常存在缺陷。由谷歌和OpenAI率先推出的多模态图像生成技术，允许人工智能直接控制图像的创建，逐个令牌进行，类似于文本生成。这会产生更精确、更智能和更高质量的图像，保证提示的遵守（比如没有大象！）。
+汤普森解释了美国制造业，特别是半导体行业，是如何被亚洲制造业的崛起所颠覆的。更廉价的劳动力、改善的交通运输和标准化的集装箱使得跨国公司可以将制造业外包给亚洲，优先考虑成本效益。模块化的产品设计也促进了这一点，允许公司专注于核心竞争力并外包其他组件。
 
-文章强调了使用图像进行提示的力量，强调需要像基于文本的人工智能一样，提供清晰的指示、反馈和背景信息。莫里克通过使用GPT-4o的示例展示了其能力，包括信息图表的创建、图像修改（改变颜色、修复错误）以及想象力丰富的场景（水獭在飞机上）。他还展示了它在创建广告原型、家具交换和网站模型中的实用性。
+他强调了规模在新兴市场和低端颠覆中的重要性。亚洲工厂扩大规模以满足全球需求，变得非常灵活地适应各种订单，这是美国老式制造模式所缺乏的特性。芯片制造成本高昂，促使生产向集中化转变，台积电就是一个例子，这对英特尔等集成制造商构成了挑战。
 
-莫里克承认这种技术可能对各个领域造成颠覆，但也提出了重要的伦理问题，包括人工智能生成的艺术风格迁移、版权问题、深度伪造以及潜在的偏见。他总结道，多模态人工智能正在重塑视觉创作，模糊了人类和人工智能创造力之间的界限，需要认真考虑原创性和创意专业的未来。这种转变将需要周全的框架来应对这项技术带来的伦理和实践挑战。
+汤普森认为，美国不能简单地恢复到像 iPhone 组装这样的低工资制造业岗位。这些工作不受欢迎，而且技能不足以胜任现代自动化制造，因此，政治家们提出的将此类工作带回来的说法是不现实的。他强调了失去对具有军事应用的重要技术供应链控制权的危险性。
 
----
-
-## 46. Show HN: Badgeify – 让任何App都能驻留在Mac菜单栏
-
-**原文标题**: Show HN: Badgeify – Add Any App to Your Mac Menu Bar
-
-**原文链接**: [https://badgeify.app/](https://badgeify.app/)
-
-Show HN上的“Badgeify”文章解决了新MacBook上Mac菜单栏图标消失在刘海后面的常见问题。它提供了从简单的内置macOS设置到更强大的第三方应用程序的解决方案。
-
-核心问题是菜单栏上的空间有限，尤其是在带刘海的MacBook上，导致图标被遮挡。 该文章承诺为用户提供管理和优化菜单栏布局的方法。 这包括解释如何利用macOS的内置选项来组织和优先显示图标。
-
-除了原生解决方案外，该文章暗示将引入“强大的第三方工具”，以进一步增强菜单栏管理。 这些工具可能提供以下功能：
-
-*   隐藏不常用的图标。
-*   重新排列图标顺序以获得更好的可访问性。
-*   如果菜单栏过于拥挤，可能会将图标移动到单独的位置。
-
-最终，该文章的目标是使用户能够保持干净、有条理且功能齐全的菜单栏，确保所有重要图标保持可见和可访问，即使受到刘海或一般屏幕空间限制的影响。
+尽管存在颠覆性力量，汤普森认为，现代的成功取决于控制需求，而不仅仅是供应。他总结说，理解新的、数字驱动的格局，并认识到颠覆的局限性，对于驾驭未来至关重要。
 
 ---
 
-## 47. Paradigm (YC W24) 旧金山招聘创始工程师
+## 14. Show HN: Fermi – 一款培养数量级思维的类Wordle游戏
+
+**原文标题**: Show HN: Fermi – A Wordle-style game for order-of-magnitude thinking
+
+**原文链接**: [https://fermi-game.andrewnoble.me/](https://fermi-game.andrewnoble.me/)
+
+费米是一款受Wordle启发的游戏，旨在测试并提高人们估算十的幂次数值的能力，从而促进数量级思维。该游戏挑战玩家猜测一个目标数字，并且在每次猜测后，它会提供反馈，指示猜测与正确答案之间的差距，以数量级表示。这与Wordle基于精确字母的反馈不同，因为费米侧重于估计的相对尺度。
+
+该游戏旨在兼具教育性和趣味性，鼓励玩家更好地理解大数和小数及其相互关系。通过提供关于数量级的迭代反馈，它帮助玩家完善对指数尺度的理解并提高他们的估算技能。关键在于，费米旨在使学习和使用科学计数法和数量级变得更易于理解和更具娱乐性。
+
+---
+
+## 15. 虚假求职者涌入招聘远程职位的美国公司
+
+**原文标题**: Fake job seekers are flooding US companies that are hiring for remote positions
+
+**原文链接**: [https://www.cnbc.com/2025/04/08/fake-job-seekers-use-ai-to-interview-for-remote-jobs-tech-ceos-say.html](https://www.cnbc.com/2025/04/08/fake-job-seekers-use-ai-to-interview-for-remote-jobs-tech-ceos-say.html)
+
+美国公司正面临越来越多的虚假求职者利用人工智能制造虚假身份并通过远程工作面试的浪潮。这些冒名顶替者使用人工智能工具伪造照片身份证明、生成就业历史并回答面试问题，使得他们难以被发现。网络安全和加密货币公司尤其成为目标。高德纳估计，到2028年，全球四分之一的求职者将是假的。
+
+聘用这些人的风险从简单的薪资盗窃到更严重的威胁，例如安装恶意软件、窃取客户数据、商业机密或资金。文章中强调的一个例子是“Ivan X”，他是一名假冒求职者，在与Pindrop Security的视频面试中使用深度伪造技术来掩盖自己的面部。他的真实位置被追踪到位于朝鲜边境附近的俄罗斯军事设施。
+
+朝鲜IT工作者已被确认为虚假求职者的重要来源，他们使用盗用的美国身份来获得远程工作，并将工资输送回朝鲜以资助其武器计划。然而，这个问题已经蔓延到其他国家（如俄罗斯、中国、马来西亚和韩国）的犯罪团伙。
+
+公司现在正在转向身份验证服务，以帮助淘汰虚假求职者。随着深度伪造技术的进步，检测这些欺诈性求职者变得更具挑战性，需要先进的视频和语音验证程序。文章强调，公司必须更加意识到这种威胁，并投资于相关技术以保护自己免受这些复杂的诈骗。
+
+---
+
+## 16. PostgreSQL 全文搜索：用对方法，速度飞快（打破缓慢神话）
+
+**原文标题**: PostgreSQL Full-Text Search: Fast When Done Right (Debunking the Slow Myth)
+
+**原文链接**: [https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth](https://blog.vectorchord.ai/postgresql-full-text-search-fast-when-done-right-debunking-the-slow-myth)
+
+无法访问文章链接。
+
+---
+
+## 17. 双机React
+
+**原文标题**: React for Two Computers
+
+**原文链接**: [https://overreacted.io/react-for-two-computers/](https://overreacted.io/react-for-two-computers/)
+
+React用于两台电脑：探讨HTML标签与函数调用的概念异同，并进行关于跨电脑远程函数调用的思想实验。作者首先考察标签和函数调用在传递信息和嵌套方面的相似之处，但标签通常是名词，用于描述结构（蓝图），而函数调用通常是动词，用于描述过程（配方）。他认为蓝图本质上是“潜在的配方”，而标签是“潜在的函数调用”。文章随后深入探讨了在不同电脑上调用函数所面临的挑战，探索了等待网络响应时需要“暂停”执行的问题。作者介绍了`callNetwork` API，并指出了两个主要问题：代码缠结和代码片段之间的连接中断。为了解决这些问题，作者提出了两种解决方案：引入`async/await`来管理代码缠结，以及发明`import rpc`，将远程函数视为本地导入，从而实现类型检查和更轻松的导航。这种`import rpc`语法将表明导入的函数通过网络调用远程执行，确保类型序列化和异步处理。最后，文章暗示了这种方法在处理不直接响应的电脑时的局限性，留给读者进一步思考解决方案。
+
+---
+
+## 18. 手册页很棒，手册阅读器是问题所在。
+
+**原文标题**: Man pages are great, man readers are the problem
+
+**原文链接**: [https://whynothugo.nl/journal/2025/04/09/man-pages-are-great-man-readers-are-the-problem/](https://whynothugo.nl/journal/2025/04/09/man-pages-are-great-man-readers-are-the-problem/)
+
+本文认为，man pages（例如缺少链接和重排）的局限性并非man page格式本身 (mdoc(7) 和 man(7)) 固有的，而是由于 `man(1)` 等 man page 阅读器的不足。
+
+作者解释说，用于现代 man pages 的 mdoc 格式支持语义标记，并包含用于交叉引用 (.Xr) 和页面内引用 (.Sx) 的宏，这些宏可以呈现为超链接。当 man pages 转换为 HTML 时，这些宏 *确实* 变成了链接。然而，格式化 man page 并将其通过管道传递给 `less(1)` 的常见做法阻止了这些功能的使用。
+
+核心论点在于，问题不在于格式的功能，而在于阅读器无法解释和显示这些链接功能。作者提倡开发新的 man page 阅读器，这些阅读器能够原生理解 man page 格式并可以呈现链接，以及动态重排文本以适应终端窗口。Man pages 的局限性不是格式的局限性，而是阅读器的局限性。
+
+---
+
+## 19. 2025年氟化物与儿童智商元分析的主要缺陷
+
+**原文标题**: Major Flaws in 2025 Meta-Analysis on Fluoride and Children IQ Scores
+
+**原文链接**: [https://osf.io/preprints/osf/zhm54_v3](https://osf.io/preprints/osf/zhm54_v3)
+
+这似乎是网页的部分摘录，可能托管在开放科学框架（OSF）上。它提到了一个标题：“2025年关于氟化物与儿童智商的Meta分析的主要缺陷。”然而，它实际上并没有提供*关于*这些缺陷或Meta分析本身的任何内容。存在的唯一其他信息是一条通用的JavaScript启用消息。
+
+因此，无法总结文章的内容，因为提供的片段*不包含文章的内容*。要提供摘要，需要文章的全文或更详细的摘要。仅根据标题，假设的文章可能批判了2025年的一项Meta分析（一项综合多项研究结果的研究），该分析检验了氟化物暴露与儿童智商之间的关系，并认为该Meta分析存在重大的方法论或解释性缺陷。
+
+---
+
+## 20. 减少屏幕时间指南
+
+**原文标题**: A guide to reduce screen time
+
+**原文链接**: [https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/](https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/)
+
+本文《如何减少屏幕使用时间：终极指南》，发表于2025年3月7日，提供了超过40个技巧，帮助个人在在线参与和现实生活活动之间找到平衡。它首先强调理解过度使用屏幕时间背后的原因的重要性，例如无聊、焦虑、拖延和肌肉记忆，然后过渡到实际解决方案。
+
+文章建议将目标从“减少手机使用”重新定义为“更多地做其他事情”，并建议创建一个替代活动清单。然后，它深入研究工具和技术，从iOS和Android上的内置屏幕时间功能开始，重点介绍使用情况分析、应用程序限制和专注时间等功能。它还提到了iOS Shortcuts和三星的Modes和Routines等高级选项，以便进行进一步的自定义。
+
+文章提供了一个精心策划的屏幕时间限制应用程序列表，如One Sec、Opal、SpeedBump、Clearspace、ScreenZen、Focus Plant和Forest，每个应用程序都有其独特的方法，如强制深呼吸、计划阻止、限制会话时间、游戏化和阻止特定网站功能。
+
+进一步的策略包括管理通知、组织应用程序布局、使用灰度模式、建立无屏幕区域、订阅新闻通讯以及选择模拟替代品，如实体书籍和报纸。文章还提倡使用应用程序的浏览器版本，拥抱无聊，甚至考虑通过卸载应用程序或使用功能机来彻底休息。
+
+结论强调了持续努力和实验的重要性，并指出最初的几周最具挑战性，但坚持不懈会带来健康的习惯。它承认社交媒体应用程序的成瘾性，并鼓励读者采取行动，实施一些选定的技巧并跟踪他们的进展。文章以常见问题解答部分结尾，解答有关桌面使用、通知影响和建议的屏幕时间限制的问题。
+
+---
+
+## 21. 类太阳恒星
+
+**原文标题**: 'Sun-Like' Stars
+
+**原文链接**: [https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/](https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/)
+
+关于“类太阳”恒星：
+
+本文《关于“类太阳”恒星》探讨了系外行星科学中“类太阳”一词的模糊性和多种解读，尤其是在针对公众的新闻稿中。作者保罗·吉尔斯特指出，“类太阳”的定义范围可以从严格的G型恒星（如我们的太阳）到包括F、G和K型恒星，甚至包括所有的主序星（OBAFGKM）。
+
+作者认为，这种缺乏明确性可能会使公众感到困惑，并影响对系外行星研究的认知，从而可能影响资金。他强调，被认为是“类太阳”的恒星的百分比因所使用的定义而异，这极大地改变了潜在围绕它们运行的行星的估计数量。
+
+本文通过新闻稿的例子来说明“类太阳”一词是如何应用于那些并不严格符合太阳分类的恒星的。吉尔斯特建议，科学家们需要在公共传播中更加精确，并澄清他们对“类太阳”和“类地”的定义，以避免误导公众。
+
+评论部分进一步讨论了宜居性的复杂性，强调了我们的理解仅限于我们自己的太阳系。评论者强调，在定义与系外行星相关的术语时需要谨慎和清晰，并承认在数据有限的情况下推测地球以外的生命所面临的挑战。
+
+---
+
+## 22. Cyc 讣告
+
+**原文标题**: Obituary for Cyc
+
+**原文链接**: [https://yuxi-liu-wired.github.io/essays/posts/cyc/](https://yuxi-liu-wired.github.io/essays/posts/cyc/)
+
+本文是关于Cyc的“讣告”，Cyc是道格拉斯·列纳特(Douglas Lenat)耗费数十年时间的项目，旨在通过符号逻辑和庞大的知识库来实现通用人工智能(AGI)。文章认为，Cyc最终未能兑现其承诺。
+
+列纳特之前的工作，包括AM和EURISKO，启发他相信人工智能需要一个庞大的常识知识基础。1985年，他启动了Cyc项目，旨在手动编码数百万的事实和规则。虽然Cyc以巨大的成本增长到3000万条断言，但它从未实现真正的机器学习或AGI。
+
+尽管通过商业应用实现了财务稳定，但这些应用主要涉及标准的专家系统技术，而非高级智能。Cyc在很大程度上与学术界的人工智能社区隔离，难以使用，并且在基准测试中从未表现良好。衍生项目也失败了。
+
+文章将Cyc的失败归因于列纳特对人工智能的单一、符号逻辑愿景的rigid adherence，拒绝了其他方法。到2025年，该项目没有显示出实现AGI的迹象，是对符号逻辑方法的一种控诉。
+
+文章深入探讨了列纳特早期的项目AM，一个“自动数学家”。虽然AM据称重新发现了数学概念，但它的成功在很大程度上依赖于手动调整的启发式规则和列纳特的干预，并且这些规则的细节仍然模糊不清。这说明了Cyc类方法的一个核心问题：依赖于手工制作的知识和规则，而不是发展真正的学习能力。
+
+---
+
+## 23. 劳力士7135机芯：全新间接脉冲擒纵系统和高频机芯
+
+**原文标题**: Rolex Caliber 7135: new indirect impulse escapement and high frequency movement
+
+**原文链接**: [https://www.hodinkee.com/articles/introducing-rolex-land-dweller](https://www.hodinkee.com/articles/introducing-rolex-land-dweller)
+
+文章重点介绍了一种新的机芯——劳力士7135型机芯，该机芯采用间接脉冲擒纵机构和高频机芯。这表明劳力士在制表技术方面具有潜在的进步。
+
+文章还提到，瑞士手表公司的CEO们预计今年生产的手表数量将会减少。这归因于经济不稳定对消费者信心产生了负面影响。这暗示着奢侈手表市场可能出现衰退，或者至少是放缓。
+
+本质上，这篇文章呈现了一种对比：劳力士Caliber 7135型机芯的创新技术发展，与可能限制整体手表产量的具有挑战性的经济前景形成对比。
+
+---
+
+## 24. 用 RPython 完成 Prospero 挑战
+
+**原文标题**: Doing the Prospero-Challenge in RPython
+
+**原文链接**: [https://pypy.org/posts/2025/04/prospero-in-rpython.html](https://pypy.org/posts/2025/04/prospero-in-rpython.html)
+
+本文详细介绍了作者尝试优化Prospero挑战赛代码的过程，该挑战赛涉及通过计算每个像素的大型数学公式来渲染图像。该公式采用SSA形式，使其适合优化。
+
+作者从基准解释器开始，然后实现四叉树来递归地细分图像，并在每个级别使用范围分析简化公式。创建了一个基于区间抽象解释的简单优化器，以减少操作次数。
+
+为了确保区间计算的正确性，作者使用了基于假设的属性测试来检查区间域抽象转移函数的可靠性。
+
+作者尝试了窥孔优化，包括Matt Keeter的Fidget实现中的优化，但发现大多数优化都无效，甚至由于检查重写的开销而增加了运行时。只有Matt的min/max优化被证明是有益的。
+
+最重要的优化是“按需信息”，它利用了只有最终结果（像素颜色）的符号相关的特性。这允许通过删除不会影响结果符号的变量来简化min/max操作。虽然在RPython中进行了原型设计，但最终实现是用C语言重写的，以获得更好的性能。代码可在Github上找到。
+
+---
+
+## 25. 展示 HN: 比较 OpenAI、Anthropic 和 Perplexity 的产品排名
+
+**原文标题**: Show HN: Comparing product rankings by OpenAI, Anthropic, and Perplexity
+
+**原文链接**: [https://productrank.ai/](https://productrank.ai/)
+
+此“Show HN”帖分享了由三个不同AI模型（OpenAI、Anthropic和Perplexity）生成的产品排名比较。该文章可能探讨了这些AI模型如何基于各种因素（如功能、价格、客户评价和市场份额）对产品进行排名。分享此帖的用户旨在突出显示每个AI提供的排名的异同，暗示了对其在产品分析和推荐方面的能力进行评估和基准测试的潜力。
+
+关键在于比较本身。文章可能分析：
+
+*   **每个AI用于排名的标准。**（例如，一个是否优先考虑功能而非价格？另一个是否更注重客户评价？）
+*   **模型之间的一致性程度。**（它们是否普遍认同顶级产品，还是存在显著差异？）
+*   **每个AI提供的排名背后的原因。**（这将涉及理解每个AI如何处理和解释用于排名的数据。）
+
+最终，“Show HN”帖旨在引发对不同AI模型在产品评估中的能力和局限性的讨论和兴趣，以及它们如何应用于实际应用，例如个性化推荐或竞争分析。这是对AI在电子商务和产品研究中实际应用的探索。
+
+---
+
+## 26. 麦克风输入噪声对比 – Avisoft生物声学
+
+**原文标题**: Microphone Input Noise Comparison – Avisoft Bioacoustics
+
+**原文链接**: [https://avisoft.com/recorder-tests/](https://avisoft.com/recorder-tests/)
+
+Avisoft生物声学：便携式录音机麦克风输入噪声水平对比分析
+
+本页面对比分析了各种便携式录音机的麦克风输入噪声水平，旨在为记录微弱动物声音的研究人员提供标准化评估。 考虑到制造商使用的规格不一致，本页面提供了一组同质化数据，以便进行客观比较。
+
+本页面的核心是一个表格，列出了各种录音机型号及其：在150欧姆下测量的等效输入噪声 (EIN)（A计权和20Hz-20kHz未计权）、输入削波电平（对应于0 dBFS）以及最大增益下的动态范围（A计权）。 这些指标使用户能够评估录音机在不产生过多噪声的情况下捕获安静声音的能力。
+
+EIN值以dBu表示，表明录音机输入级的理论噪声基底。较低的dBu值表示更少的噪声和更好的性能。输入削波电平显示了录音机在失真之前可以处理的最大信号幅度。 动态范围反映了噪声基底和削波电平之间的差异，代表了录音机可以准确捕获的信号幅度范围。
+
+除非另有明确说明，否则提供的数据包括在最大增益设置下的测量值，这使用户能够在最苛刻的录音条件下评估性能。 一些录音机有多个条目，反映了不同的增益设置，标有“*非最大增益！”标签。 这种全面的比较使使用者能够根据其特定的生物声学研究需求，就录音机选择做出明智的决定。
+
+---
+
+## 27. Lisp 中超越传统模式匹配
+
+**原文标题**: Beyond Traditional Pattern Matching in Lisp
+
+**原文链接**: [https://github.com/naver/lispe/wiki/6.1-Pattern-Matching-in-LispE](https://github.com/naver/lispe/wiki/6.1-Pattern-Matching-in-LispE)
+
+本文介绍了 Naver 开发的 Lisp 方言 LispE，重点介绍了其独特的功能：`defpat`、`defmacro` 和 `defpred`。这些结构通过高级模式匹配、改进的宏功能和逻辑编程元素增强了传统的 Lisp 功能。
+
+`defpat` 允许在同一名称下定义多个函数，每个函数都由特定的参数模式触发。 它支持 Kleene 运算符来匹配序列，从而为多态性提供了一种声明式方法，FizzBuzz 和列表处理示例证明了这一点。
+
+`defmacro` 通过模式匹配和 `$` 运算符扩展了宏系统，从而简化了自定义语法的创建。 一个自定义循环宏优雅地处理不同的方向参数，说明了这一点。
+
+`defpred` 引入了基于谓词的评估和自动回溯。 `defpred` 函数中的每个指令都被视为一个布尔测试，失败会触发回溯。 一个例子展示了如何根据条件过滤数字。
+
+本文将这些特性与 Common Lisp、Scheme 和 Clojure 中等效的实现进行了对比，展示了 LispE 由于其集成的模式匹配和回溯机制而具有更简洁和富有表现力的语法。 LispE 以其丰富的模式、简化的宏转换和内置的回溯功能脱颖而出，使其成为复杂数据操作、自定义语法定义和逻辑推理任务的引人注目的选择。
+
+---
+
+## 28. 展示一下：我建了一个雅虎通风格的网页聊天应用——纯粹的怀旧
+
+**原文标题**: Show HN: I built a Yahoo Messenger-inspired web chat app – pure nostalgia
+
+**原文链接**: [https://buzzed.chat](https://buzzed.chat)
+
+这个“Show HN”帖子介绍了一个名为“MessengerYou”的网页聊天应用，旨在唤起人们对雅虎通的回忆。该应用被呈现为一个让人想起经典聊天平台的项目，暗示着重点在于重现熟悉的界面，以及可能一些定义雅虎通的关键功能。
+
+帖子非常简短，但暗示这是一个为了享受而构建的个人项目，并且可能与他人分享怀旧体验。“Buzzed!”一词和对雅虎通的明确提及是建立该应用意图的关键，即触发人们对旧服务的记忆。最后一行“你需要启用JavaScript才能运行此应用”表明该应用是客户端重的，依赖JavaScript来实现其功能。
+
+---
+
+## 29. 一个LLM查询理解服务
+
+**原文标题**: An LLM Query Understanding Service
+
+**原文链接**: [https://softwaredoug.com/blog/2025/04/08/llm-query-understand](https://softwaredoug.com/blog/2025/04/08/llm-query-understand)
+
+本文概述了如何构建一个由LLM驱动的查询理解服务，该服务可以将非结构化搜索查询转换为结构化数据，从而改善搜索结果。作者演示了一种实用方法，使用开源LLM、FastAPI和Google Kubernetes Engine (GKE)进行部署。
+
+该服务的核心是一个FastAPI应用程序，它与轻量级LLM (Qwen2-7B)交互以解析用户查询。 创建了一个包含优化后的PyTorch的Docker镜像，并部署到GKE的自动驾驶模式，从而简化了Kubernetes管理。 部署包括GPU资源、内存和CPU分配的规范。 实施了一个持久卷，通过缓存到huggingface来解决模型数据的存储限制。
+
+文章随后将最初的“hello world”LLM服务重构为查询解析服务。 它引入了一个特定的提示，以指导LLM从家具搜索查询中提取关键属性，例如物品类型、材料和颜色，并将它们作为JSON输出。 最后，加入了一个Valkey缓存，通过存储和检索基于提示和查询的先前响应，从而显著提高性能并降低LLM负载。
+
+作者强调了负载测试、提示调优以及潜在的架构改进（分离LLM硬件）对于扩展和改进服务的重要性。 本文旨在作为一个起点，学习如何使用LLM“作弊式搜索”。
+
+---
+
+## 30. Apache ECharts
+
+**原文标题**: Apache ECharts
+
+**原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
+
+Apache ECharts 是一个声明式的框架，旨在快速创建基于 Web 的可视化图表。该文本强调了 ECharts 的用途，并鼓励用户在研发、产品、研究论文、技术报告、新闻报道、书籍、演示、教学、专利以及其他相关知识产权活动中使用该框架时，引用特定的研究论文：“Visual Informatics, 2018 [PDF]”。 本质上，该文本旨在推广对 ECharts 使用的正确归属和学术认可。
+
+---
+
+## 31. Show HN: DrawDB – 开源在线数据库图表编辑器 (复古风)
+
+**原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
+
+**原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
+
+本文介绍DrawDB，一个开源的在线数据库图表编辑器和SQL生成器。其核心功能允许用户通过图表界面直观地设计数据库模式。它还能根据图表生成SQL脚本，简化数据库创建过程。这篇文章简短且缺乏细节，但主要信息是推出一款旨在通过可视化图表和SQL代码生成来简化数据库设计和管理的新工具。需要注意的是，用户需要启用Javascript才能使用该在线工具。
+
+---
+
+## 32. Show HN: Dynomate - 快速、Git友好的 DynamoDB GUI客户端 (Dynobase 替代品)
+
+**原文标题**: Show HN: Dynomate– Fast, Git-Friendly DynamoDB GUI Client (Dynobase Alternative)
+
+**原文链接**: [https://dynomate.io/](https://dynomate.io/)
+
+Dynomate：面向无服务器团队的 DynamoDB GUI 客户端，旨在成为 Dynobase 之外更友好的开发者替代方案。它提供 SSO、多会话和多标签页支持以及请求链等功能，以提高工作流程效率。
+
+主要特点包括：
+
+*   **无缝 AWS 集成与简易 SSO 认证：** Dynomate 自动检测 AWS 凭证并支持一键式 SSO 登录。
+*   **高级表管理与查询工具：** 提供表格和原始 JSON 视图、内联和批量编辑以及详细的请求日志。
+*   **多标签页界面：** 允许同时管理多个 DynamoDB 表和 AWS 配置文件。
+*   **本地请求持久化与 Git 集成：** 将查询本地保存以便进行版本控制和团队协作，从而增强安全性。
+*   **强大的查询模式与操作链：** 顺序或并发执行多个 DynamoDB 查询，支持环境变量，并允许链接请求。
+*   **开发者友好的工作流程与日志记录：** 提供全面的调试日志记录、全局搜索和 JSON 编辑器。
+
+目前适用于 macOS，计划推出 Windows 和 Linux 版本。 Dynomate 提供一次性购买的专业许可证，价格为 199 美元（折扣前为 299 美元），其中包括一年的更新和所有功能的使用权，并可以选择以 89 美元续订。
+
+---
+
+## 33. Linux内核防御图 – 安全加固概念
+
+**原文标题**: Linux Kernel Defence Map – Security Hardening Concepts
+
+**原文链接**: [https://github.com/a13xp0p0v/linux-kernel-defence-map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
+
+本文介绍了 Linux 内核防御图，这是一种以图形方式呈现 Linux 内核安全加固概念及其关系的工具。该图由 a13xp0p0v 创建，将漏洞类别（带有 CWE 编号）、利用技术、漏洞检测机制和防御技术（包括内核内和内核外）连接起来。这些连接表示的是关系，不一定表示完全缓解。
+
+该图旨在帮助浏览内核文档和源代码。它不包括攻击面缩减、用户空间安全功能和 Linux 安全模块策略。
+
+该图使用 DOT 语言编写，便于维护，并使用 GraphViz 生成 SVG 图。源代码可在 GitHub、Codeberg 和 GitFlic 上获得，并以 GPL-3.0 许可证发布。
+
+作者还创建了“kernel-hardening-checker”，用于自动验证 Linux 内核中安全加固选项的配置，其中许多选项在主要发行版中默认情况下未启用。
+
+最后，本文提供了一个参考列表，包括关于 Grsecurity 功能、内核自保护、漏洞缓解和内核漏洞历史的资源。该图专为 Linux 内核 v6.10 设计。
+
+---
+
+## 34. 特朗普的司法部将不再起诉加密货币欺诈。
+
+**原文标题**: Trump's DOJ will no longer prosecute cryptocurrency fraud
+
+**原文链接**: [https://www.theverge.com/policy/645399/trump-doj-cryptocurrency-fraud-prosecutions-memo](https://www.theverge.com/policy/645399/trump-doj-cryptocurrency-fraud-prosecutions-memo)
+
+在特朗普政府领导下，司法部(DOJ)正结束对加密货币欺诈的起诉重点，转变为其所谓的“以起诉进行监管”。副总检察长托德·布兰切的一份备忘录指示联邦检察官停止对数字资产施加监管框架的诉讼和执法行动，特别是针对虚拟货币交易所、混币服务以及因用户行为或无意违规行为而针对线下钱包的行动。与此政策不符的未决调查将被终止。
+
+这一政策转变发生在特朗普一度对加密货币持怀疑态度，但后来拥抱了该行业之后，他接受了来自加密货币亿万富翁的捐款，甚至推出了自己的加密货币平台。批评人士认为，他是在奖励支持他选举的加密货币利益集团。
+
+除了司法部策略的转变，特朗普的证券交易委员会(SEC)也已放弃对Robinhood和Coinbase等加密货币相关公司的调查和诉讼。司法部的新重点将是起诉直接侵害加密货币投资者权益或利用数字资产从事恐怖主义、毒品贩运和有组织犯罪等犯罪活动的人。
+
+---
+
+## 35. 非线性声片显微镜：不透明器官毛细血管/细胞尺度成像
+
+**原文标题**: Nonlinear soundsheet microscopy:imaging opaque organs capillary/cellular scale
+
+**原文链接**: [https://www.science.org/doi/10.1126/science.ads1325](https://www.science.org/doi/10.1126/science.ads1325)
+
+无法访问文章链接。
+
+---
+
+## 36. NTATV：让初代Apple TV运行Windows NT（Windows XP、Windows 2003）
+
+**原文标题**: NTATV: Bringing Windows NT (Windows XP, Windows 2003) to the Original Apple TV
+
+**原文链接**: [https://github.com/DistroHopper39B/NTATV](https://github.com/DistroHopper39B/NTATV)
+
+NTATV是由DistroHopper39B发起的一个项目，该项目成功地在初代Apple TV上启动了Windows XP和Windows Server 2003。初代Apple TV原本是为基于macOS的软件设计的。该项目通过使用ReactOS的FreeLoader引导程序的定制版本，克服了Apple TV仅支持EFI固件的限制。
+
+虽然ReactOS本身可以启动到桌面，但PCI和USB功能目前已损坏，导致大多数硬件无法使用。然而，Windows XP和2003具有可用的PCI、USB和基本视频驱动程序，从而可以获得可用的桌面。以太网和WiFi也正常工作。一些功能存在限制，例如HDMI音频由于独特的硬件配置，可能永远无法正常工作，并且NTVDM（DOS支持）无法运行。
+
+已知的问题包括显示器待机需要重新插拔HDMI，以及分量视频只显示蓝色。该项目的源代码和构建说明可在GitHub上找到，该项目已发布了多个版本，其中包含IDE驱动程序修复和预构建的包含NVIDIA驱动程序的镜像等改进。该项目感谢ReactOS和Apple TV Linux社区的各种开发者和贡献者。
+
+---
+
+## 37. 钡实验
+
+**原文标题**: The Barium Experiment
+
+**原文链接**: [https://tomscii.sig7.se/2025/04/The-Barium-Experiment](https://tomscii.sig7.se/2025/04/The-Barium-Experiment)
+
+无法访问文章链接。
+
+---
+
+## 38. 一种使盲人和低视力读者更容易获取图表的新方法
+
+**原文标题**: A new way to make graphs more accessible to blind and low-vision readers
+
+**原文链接**: [https://news.mit.edu/2025/making-graphs-more-accessible-blind-low-vision-readers-0325](https://news.mit.edu/2025/making-graphs-more-accessible-blind-low-vision-readers-0325)
+
+麻省理工学院CSAIL开发了Tactile Vega-Lite，一种旨在简化为盲人和低视力读者创建触觉图表的新系统。该工具通过简化设计流程，弥合了标准视觉图表和触觉替代方案之间的差距，而使用现有方法时，该流程可能既漫长又复杂。
+
+Tactile Vega-Lite接收数据，例如来自Excel电子表格的数据，并自动生成视觉图表和触觉图表。该系统将可访问性指南作为默认规则，使教育工作者和设计人员能够高效地生成可访问的触觉图形，如条形图或折线图，这些图形可以压印以进行触觉阅读。
+
+该工具兼顾了易用性和设计精确性，允许用户通过带有简化“抽象”的代码编辑器自定义图表元素。示例库帮助用户理解代码的效果。虽然该团队计划使界面更加用户友好，但他们也强调，它不能取代专家审查以确保完全符合指南。
+
+研究人员希望为压印前预览图表添加机器特定的自定义功能。该项目得到了国家科学基金会的支持，并采纳了残疾服务机构和像盲人灯塔协会等组织的反馈。专家们赞扬Tactile Vega-Lite有潜力为触觉阅读者提供更快、更准确的数据访问，最终提高信息可访问性。
+
+---
+
+## 39. 更美观的排版：使用 text-wrap: pretty
+
+**原文标题**: Better typography with text-wrap pretty
+
+**原文链接**: [https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/](https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/)
+
+Jen Simmons 的这篇文章探讨了新的 CSS 属性 `text-wrap: pretty`，重点介绍了它在 Safari Technology Preview 中的实现，并将其与其他 `text-wrap` 值（如 `balance`）进行了对比。核心思想是，`pretty` 旨在通过模仿传统排版的润色效果来增强数字排版，解决诸如短行尾、不良参差、较差的连字符以及文字河流等问题。
+
+与标准的单行换行算法不同，`text-wrap: pretty` 会分析整个段落，以优化换行符，从而提高可读性和美观性。Safari 的实现不仅防止了短行尾，还改善了文本的整体“参差”效果。虽然像 Chrome 这样的其他浏览器已经实现了更有限的 `pretty` 版本，主要侧重于最后几行，但 Safari 的版本考虑了整个段落。
+
+这篇文章强调了 `pretty` 对正文的好处，使其看起来更加精致和专业。它还将 `pretty` 与 `text-wrap: balance` 进行了对比，解释说 `balance` 旨在使所有行在长度上大致相等，这可能适用于标题和字幕，但可能并不总是正文或需要填充容器宽度的情况下的理想选择。
+
+性能是一个关键考虑因素，文章向开发人员保证，Safari 的实现经过优化，可以避免负面影响，尤其是在应用于典型长度的段落时。Simmons 鼓励开发人员尝试 `text-wrap: pretty`，并报告任何性能问题，以帮助在全面发布之前完善该功能。
+
+---
+
+## 40. Dockerfmt：Dockerfile 格式化工具
+
+**原文标题**: Dockerfmt: A Dockerfile Formatter
+
+**原文链接**: [https://github.com/reteps/dockerfmt](https://github.com/reteps/dockerfmt)
+
+Dockerfmt 是一个基于内部 buildkit 解析器构建的 Dockerfile 格式化工具，为 dockfmt 提供了一个现代的替代方案。它根据最佳实践格式化 Dockerfile，并利用 `mvdan/sh` 库来格式化 `RUN` 步骤。
+
+主要功能包括：
+
+*   **安装：** 可以从发布页面下载二进制文件。
+*   **用法：** 该工具可以通过指定文件路径来格式化 Dockerfile，也可以与 `completion`、`help` 和 `version` 等命令一起使用。
+*   **标志：** 命令行标志控制行为，包括检查格式 (`-c`)、缩进 (`-i`)、换行符处理 (`-n`) 和将更改写回文件 (`-w`)。
+*   **Pre-commit 集成：** 使用 `.pre-commit-config.yaml` 条目轻松将 dockerfmt 集成到您的工作流程中。
+*   **局限性：** 目前不支持 `RUN` 命令中的命令分组/分号、长 JSON 命令的换行以及 `# escape=X` 指令。
+*   **特性：** 支持基本的 heredoc 和 `RUN` 步骤中的内联注释，在格式化期间保留注释位置。
+*   **JS 绑定：** JavaScript 绑定在 `js` 目录中可用。
+
+欢迎贡献。
+
+---
+
+## 41. 财政部OCC称黑客曾访问15万封邮件
+
+**原文标题**: Treasury's OCC Says Hackers Had Access to 150k Emails
+
+**原文链接**: [https://www.securityweek.com/treasurys-occ-says-hackers-had-access-to-150000-emails/](https://www.securityweek.com/treasurys-occ-says-hackers-had-access-to-150000-emails/)
+
+文章报道称，作为针对联邦机构的大规模网络攻击的一部分，美国财政部下属机构货币监理署 (OCC) 披露，黑客未经授权访问了约 15 万个电子邮件帐户。虽然OCC的声明没有明确具体的时间范围或可能泄露的信息的性质，但它确认该机构正在努力评估影响并实施必要的安全增强措施。
+
+此次披露可能与影响众多政府机构和私营公司的更广泛的SolarWinds供应链攻击有关。OCC的通知是调查和修复SolarWinds事件造成的损害的更大努力的一部分，在该事件中，恶意行为者入侵了SolarWinds的Orion软件，以获得对受害者网络的访问权限。
+
+OCC强调，它正在认真对待这一事件，并与其他联邦机构合作，以了解漏洞的全部范围并减轻任何潜在风险。他们还专注于加强其网络安全态势，以防止将来发生类似的事件。文章表明，这一最新披露进一步凸显了 SolarWinds 攻击对美国政府实体的严重性和广泛影响。
+
+---
+
+## 42. Show HN: Webtor – 开源种子流媒体引擎
+
+**原文标题**: Show HN: Webtor – open-source torrent streaming engine
+
+**原文链接**: [https://webtor.io](https://webtor.io)
+
+Webtor是一个开源的种子流媒体引擎，简化了种子下载和流媒体播放。它允许用户将种子文件或磁力链接转换为直接下载链接，而无需种子客户端或VPN。用户可以将种子文件上传到Webtor.io，然后下载单个文件、直接在浏览器中流式传输视频和音频，或者将整个种子下载为ZIP压缩包。
+
+主要功能包括：直接下载链接、对常见格式的即时视频/音频流媒体支持、用于无缝集成的Chrome扩展、ZIP压缩包下载以及开发者友好的SDK。
+
+该平台强调用户隐私和安全，声称使用Webtor.io类似于使用YouTube等普通网站，利用HTTPS加密并防止用户的IP地址在BitTorrent网络上广播。
+
+虽然有广告支持，但用户可以通过支持该项目来移除广告并获得更快的速度。该服务可在移动设备上访问，无需额外应用。整个项目是开源的，并在MIT许可下在GitHub上提供。
+
+---
+
+## 43. 用Prolog解“雷顿教授”谜题
+
+**原文标题**: Solving a “Layton Puzzle” with Prolog
+
+**原文链接**: [https://buttondown.com/hillelwayne/archive/a48fce5b-8a05-4302-b620-9b26f057f145/](https://buttondown.com/hillelwayne/archive/a48fce5b-8a05-4302-b620-9b26f057f145/)
+
+本文探讨了使用Prolog解决“雷顿谜题”——一种逻辑谜题，该谜题涉及根据其他学生的答案和分数推断出某个学生的考试分数。作者旨在展示一个比朋友之前的尝试更为优雅的Prolog解决方案。
+
+作者首先介绍了核心组件：`score/3`谓词，它根据学生的答案和答案键计算分数；以及`key/1`谓词，它根据给定的学生分数定义有效答案键的约束条件。他们强调了Prolog的双向性，展示了谓词如何用于检查、计算和推断。
+
+作者随后强调了明确定义约束条件的重要性，例如答案键的长度和允许的值（a或b）。他们介绍了`maplist`，作为一种简洁的方式来对列表元素强制执行这些约束。
+
+解决方案揭示了存在多个有效的答案键，但所有答案键都导致第四个学生获得相同的分数，从而解决了这个谜题。与最初的80行代码相比，作者成功地实现了一个更短、更优雅的解决方案（15行代码），展示了Prolog在解决逻辑谜题方面的强大能力。文章最后作者认为，此类谜题并非教授编程的最佳方式，更倾向于具有实际应用的例子。
+
+---
+
+## 44. Google Cloud全新C4D虚拟机凭借AMD EPYC Turin提供卓越性能
+
+**原文标题**: Google Cloud's New C4D VMs Deliver Remarkable Performance with AMD EPYC Turin
+
+**原文链接**: [https://www.phoronix.com/review/google-c4d-amd-epyc-turin](https://www.phoronix.com/review/google-c4d-amd-epyc-turin)
+
+Phoronix文章详述了谷歌云全新C4D虚拟机(VM)的初始性能基准测试，该虚拟机由AMD的EPYC 9005 "Turin"处理器驱动。谷歌旨在将这些实例用于如Web服务器、数据库、机器学习和视频流等高要求工作负载。
+
+即使测试实例之间存在轻微的vCPU数量差异，C4D实例也比上一代C3D实例提供了显著的性能改进。C4D虚拟机可扩展至384个vCPU和3TB的RAM。驱动这些虚拟机的EPYC Turin处理器的关键特性包括Zen 5内核、具有完整512位数据路径的AVX-512支持以及DDR5-6000/6400内存支持。谷歌为Phoronix提供了对C4D和C3D实例的早期访问权限以进行基准测试。
+
+测试是使用带有Linux 6.8内核和GCC 13.3编译器的Ubuntu 24.04 LTS进行的。文章展示了来自c4d-standard-32和c4d-standard-64实例的基准测试，并与c3d-standard-30和c3d-standard-60进行了比较。后续文章将以顶级c4d-standard-384实例的基准测试为特色。本文重点关注从C3D到C4D实例的性能提升，不涉及跨云比较或Intel Xeon测试。截至撰写本文时，C4D实例的定价信息尚不可用。文章结构分为多个页面，展示了各种工作负载，包括HPC、视频编码、数据库、AI和Web服务器性能。
+
+---
+
+## 45. DIY实验反应器利用伯克兰-艾德法
+
+**原文标题**: DIY experimental reactor harnesses the Birkeland-Eyde process
+
+**原文链接**: [https://blog.arduino.cc/2025/03/17/this-diy-experimental-reactor-harnesses-the-birkeland-eyde-process/](https://blog.arduino.cc/2025/03/17/this-diy-experimental-reactor-harnesses-the-birkeland-eyde-process/)
+
+公民科学家Marb自制实验反应器探索伯克兰-艾德法：一种早期利用电弧从大气氮气生产硝酸的方法。虽然由于其高能量需求，该方法效率低下，并且在大型化肥生产中已基本过时，但Marb的重点在于对该过程本身的科学探索。
+
+该项目使用Arduino UNO Rev3来控制反应器内的电弧。Arduino通过扩展板连接，管理着电极的功率流量，需要大量的电源、变压器和升压转换器。
+
+该反应器还包含一个空气预处理系统，确保干燥空气通过装满干燥剂的管子泵入反应室。包括温度传感器在内的传感器向Arduino提供反馈，从而可以监控反应条件。
+
+Marb在他的视频中演示了反应器的功能，但他仍在努力优化反应以获得更高的产量。他表示，如果人们对更详细的项目解释感兴趣，他愿意制作后续视频。该项目展示了一种动手实践的方式来理解历史工业过程，并利用Arduino技术进行控制和监控。
+
+---
+
+## 46. 首个开源MRI扫描仪 OSI² ONE (2023) 发布
+
+**原文标题**: First open-source MRI scanner presented: the OSI² ONE (2023)
+
+**原文链接**: [https://www.opensourceimaging.org/2023/01/09/first-open-source-mri-scanner-presented-the-osii-one/](https://www.opensourceimaging.org/2023/01/09/first-open-source-mri-scanner-presented-the-osii-one/)
+
+2023年1月，首台开源MRI扫描仪OSI² ONE问世，标志着可及医疗技术领域的一个重要里程碑。该设备于2022年宣布，并在ISMRM活动中展示了原型。目前，在莱顿（荷兰）、姆巴拉拉（乌干达）和柏林（德国）存在三个完全正常运行的副本，并且计划增加更多副本。
+
+OSI² ONE主要采用开源硬件和软件构建，材料成本约为20,000欧元。它可以对头部和四肢进行成像，利用通过标准CNC和3D打印手动构建的永磁体产生的约50 mT静态磁场。
+
+该扫描仪的成像能力已通过使用3D TSE序列（2x2x3mm³分辨率，6分钟采集时间）获取的体模和体内人头图像得到验证。
+
+目前正在进行的优化工作重点是提高图像质量，并创建全面的文档，以促进其作为医疗设备的监管批准。这些文档旨在简化从研究原型到临床应用的过渡，不仅适用于OSI² ONE，也适用于其他开源和专有项目。该项目旨在促进可持续的全球合作，使MRI技术更易于获取和透明。设计文件和文档可在GitLab上找到。
+
+---
+
+## 47. 将30万的阶乘分解为30万个大于10万的因子之积
+
+**原文标题**: Decomposing factorial of 300K as the product of 300K factors larger than 100K
+
+**原文链接**: [http://gus-massa.blogspot.com/2025/04/decomposing-factorial-of-300k-as.html](http://gus-massa.blogspot.com/2025/04/decomposing-factorial-of-300k-as.html)
+
+本文详细介绍了一项将300,000!分解为300,000个大于100,000的因子的尝试，该尝试源于陶哲轩提出的挑战。作者使用Racket编程语言，并采用陶的方法，从一个“B”数（大于100,000的奇数的乘积）开始，然后使用“B-重”和“N!-重”的素数对其进行调整。B-重素数在B中出现的频率高于在300,000!中，而N!-重素数则相反。
+
+该策略涉及将B-重素数替换为更大的N!-重素数，并乘以2的幂，以增加B的因子。作者旨在优化这种映射，尽量减少2的使用。
+
+本文重现了陶哲轩最初将300,000!分解为大于90,000的因子的结果。然后，它探讨了平衡B和300,000!之间的素数的不同方法，特别是关注如何匹配来自两个因式分解的素数并分配必要的2的幂。提出了两种方法：“balance/inorder/first”和“balance/inorder/last”，它们的不同之处在于如何通过用1填充列表来处理素数计数中的差异。“balance/inorder/last”方法在最小化未使用的2方面证明更有效。作者还包括验证步骤，以确保生成的转换表的准确性。虽然在此摘录中并未明确达到100,000的阈值，但这项工作为进一步优化奠定了基础。
+
+---
+
+## 48. 巴西政府运营的支付系统已占据主导地位。
+
+**原文标题**: Brazil's government-run payments system has become dominant
+
+**原文链接**: [https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant](https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant)
+
+巴西政府运营的数字支付系统Pix于2020年11月推出，迅速成为该国主导支付技术，超越了现金和银行卡。 Pix允许用户使用收款人的国民身份证、电话号码或二维码进行即时、免费且便捷的交易。由于其非接触式特性，其受欢迎程度在疫情期间激增。
+
+到2024年，Pix已成为巴西最常用的支付方式，交易数量从2021年的90亿笔跃升至2024年的630亿笔，相当于转移了26万亿雷亚尔（4.5万亿美元）。 巴西对该系统的采用率在全球范围内是无与伦比的。 虽然Pix重振了巴西的银行业，但其主导地位赋予了巴西中央银行（BCB）相当大的权力。
+
+---
+
+## 49. 感谢HN：我6周前在这里发布的一款解谜游戏获得了《大西洋月刊》的授权
+
+**原文标题**: Thank HN: The puzzle game I posted here 6 weeks ago got licensed by The Atlantic
+
+**原文链接**: [https://www.theatlantic.com/games/bracket-city/](https://www.theatlantic.com/games/bracket-city/)
+
+这篇“感谢 HN”帖文庆祝一项重大成就：作者的益智游戏，最初在 Hacker News (HN) 上分享六周后，已获得《大西洋月刊》的授权。 该帖文简短直接，主要用于宣告作者的成功，并提供该游戏的链接（现名为“Bracket City”），该游戏现已出现在《大西洋月刊》的网站上。 核心要点是，作者的游戏可能通过 HN 社区获得了最初的关注和可见性，并凭借其足够的吸引力被《大西洋月刊》这样的大型出版物选中，这代表着游戏开发者一项重大的职业成就。
+
+---
+
+## 50. 日本乡下小镇中年男子交易卡片走红
+
+**原文标题**: Middle-aged man trading cards go viral in rural Japan town
+
+**原文链接**: [https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/](https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/)
+
+在日本河原这个乡村小镇，一款以当地西堂庄社区的中年男性（“大叔”）为主角的独特集换式卡牌游戏（TCG）在儿童中风靡一时。与典型的以奇幻角色或动漫英雄为主题的TCG不同，这款大叔TCG以本田先生（前消防队长，防火墙卡）和竹下先生（荞麦面制作教练，荞麦面大师卡）等当地人物为主角。
+
+这款游戏由西堂庄社区委员会秘书长宫原绘里创作，旨在加强代际之间的联系。每张卡牌都以一位大叔为特色，并附有与其现实世界技能相关的统计数据、特殊能力和元素类型。例如，“防火墙”卡是一张火属性卡，具有“超级防御”技能。
+
+最初的设计纯粹是为了收藏，但这款游戏后来演变成一种战斗形式，玩家可以使用大叔的技能来“战胜”对手。卡牌的稀有度与现实世界的社区参与度相关，更积极的志愿者会收到“闪亮”的升级卡牌。
+
+这些卡牌是手工制作的，仅在西堂庄社区中心出售，每包售价100-500日元。该游戏成功地提高了儿童对当地活动的参与度，并培养了对老一辈的欣赏之情，孩子们甚至会向他们最喜欢的大叔索要签名。据报道，自游戏推出以来，社区活动的参与人数增加了一倍。
+
+---
+
+## 51. 美国机床工业的衰落与复苏前景 (1994)
+
+**原文标题**: The Decline of the U.S. Machine-Tool Industry and Prospects for Recovery (1994)
+
+**原文链接**: [https://www.rand.org/pubs/research_briefs/RB1500.html](https://www.rand.org/pubs/research_briefs/RB1500.html)
+
+这份1994年兰德公司的研究简报探讨了美国机床工业的衰落及其复苏前景。它强调了机床在制造业中的关键作用，以及尽管率先采用了数控技术，该行业在20世纪80年代的衰落所引起的警惕。
+
+该研究指出导致衰落的几个因素：国内需求下降，与日本公司相比对市场变化的反应迟缓，日本在数控技术和工艺创新（模块化生产）方面的优势，以及美元的高价值。
+
+然而，1983-1992年间缺乏显著的反弹表明存在更深层次、更根本的问题。该行业难以适应快速的技术变革和日益激烈的全球竞争，面临着缺乏大型企业和小型企业之间的合作，难以获得用于现代化和出口销售的资金，熟练劳动力和培训不足，将研究转化为适销技术方面的表现不佳，国内需求不成熟以及出口能力薄弱等障碍。
+
+尽管承认存在重大挑战，但由于内部重组，近期需求的激增，竞争对手国家的危机以及美国在新兴技术方面的领先地位，该报告提供了一定程度的乐观态度。该研究建议采取由三部分组成的政府战略：促进当地合作网络，增加对制造基础设施（研发和技能）的投资，以及通过简化出口程序和支持国际销售工作来帮助美国公司参与国际竞争。总体建议强调应更广泛地努力改进美国制造工艺技术。
+
+---
+
+## 52. AI编码强制要求正将开发者逼到崩溃边缘
+
+**原文标题**: AI coding mandates are driving developers to the brink
+
+**原文链接**: [https://leaddev.com/culture/ai-coding-mandates-are-driving-developers-to-the-brink](https://leaddev.com/culture/ai-coding-mandates-are-driving-developers-to-the-brink)
+
+Sage Lazzaro文章《AI编码强制令正将开发者逼至崩溃边缘》探讨了软件开发者因AI编码工具强制推行不力而日益增长的挫败感。尽管高管们认为AI应用进展顺利，但开发者们常常发现这些工具引入错误、增加技术债务，并需要大量的调试。
+
+采用AI的压力源于提高效率、加快交付以及通过减少开发者数量来节省潜在成本的承诺。然而，开发者报告称，AI工具经常建议不正确的代码、删除现有代码并导致部署问题。在Harness的一项调查中，大多数受访者报告在使用AI工具进行部署时出现问题，并增加了调试AI生成的代码所花费的时间。
+
+该文章强调了高管和开发者之间的脱节，领导者制定AI使用指标，却不了解其对工作流程的影响。一些公司甚至公开个人AI生成的代码输出量，造成了对数量而非质量的压力。
+
+ChargeLab的做法，即工程师有权选择最适合他们的AI工具，是一个积极的例子。这培养了一种创新和协作的文化，据报告可提高40%的生产力。文章总结说，成功采用AI需要了解开发者的需求、培养信任，并将质量放在首位，而不是仅仅强制使用AI。
+
+---
+
+## 53. 解析组合学——一个实例分析
+
+**原文标题**: Analytic Combinatorics – A Worked Example
+
+**原文链接**: [https://grossack.site/2025/04/08/analytic-combinatorics-example.html](https://grossack.site/2025/04/08/analytic-combinatorics-example.html)
+
+这篇博文探讨了解析组合学，特别是奇点分析，在解决与三叉树相关的计数问题中的应用。作者首先进行了一个热身：计算有根有序三叉树。他们推导出了生成函数的一个泛函方程，使用奇点分析逼近了这种树的数量，并通过绘图和与已知序列的比较证明了逼近的准确性。这个过程的关键是找到生成函数的主导奇点并获得其周围的 Puiseux 级数展开式。
+
+然后，文章解决了主要问题：计算同构意义下的无序有根三叉树。引入 Pólya-Redfield 计数来推导这种情况下生成函数的泛函方程。作者将奇点分析方法扩展到仅是全纯而不是多项式的函数，以逼近无序树的数量。这涉及数值求解方程组，以找到奇点和 Puiseux 级数的系数。提供了 Sage 代码片段来说明如何执行这些计算并验证由此产生的渐近近似。最后，提出了一个有趣的练习，供读者将分析扩展到循环有根三叉树，并与已知结果进行比较。
+
+---
+
+## 54. Netflix 如何准确归因 eBPF 流日志
+
+**原文标题**: How Netflix Accurately Attributes eBPF Flow Logs
+
+**原文链接**: [https://netflixtechblog.com/how-netflix-accurately-attributes-ebpf-flow-logs-afe6d644a3bc](https://netflixtechblog.com/how-netflix-accurately-attributes-ebpf-flow-logs-afe6d644a3bc)
+
+Netflix技术博客文章《Netflix如何准确归因eBPF流日志》摘要：
+
+该文章介绍了Netflix如何使用eBPF（扩展伯克利包过滤）流日志来深入了解其服务网格内的网络流量，从而能够解决性能问题并优化其基础设施。他们解决的关键挑战是准确地将网络流归因于特定的应用程序和请求，尤其是在容器内运行的动态和短暂的微服务环境中。
+
+问题的根源在于容器ID和进程ID（PID）可能会快速变化，这使得传统的将网络连接映射到应用程序的方法变得不可靠。他们的解决方案涉及多种技术的结合，以将eBPF捕获的网络流与应用程序级别的上下文相关联：
+
+1. **上下文传播:** 他们利用HTTP头（例如`X-Request-ID`）跨服务边界传播请求上下文。这使他们能够跟踪请求在不同微服务之间传递的过程。
+
+2. **eBPF Instrumentation:** 使用eBPF程序捕获网络流数据，包括源和目标IP/端口，以及与连接关联的容器ID和PID。
+
+3. **关联引擎:** 他们构建了一个关联引擎，该引擎使用来自容器编排系统（如Kubernetes）和传播的请求ID的信息，将容器ID和PID映射到应用程序级别的上下文。 该引擎会随着容器的启动、停止和重新调度不断更新其映射。
+
+4. **数据丰富:** 最后，他们使用相关的应用程序上下文（例如服务名称、请求ID和其他相关元数据）来丰富流日志。
+
+即使面对动态基础设施，这种方法也使Netflix能够准确地将网络流归因于特定的请求和应用程序。 生成的流日志提供了对网络性能、依赖关系映射和潜在瓶颈的宝贵见解，从而可以更快、更有效地进行故障排除和优化。
+
+---
+
+## 55. 如何通过啄木声识别啄木鸟
+
+**原文标题**: How to Recognize Woodpeckers by Their Drumming Sounds
+
+**原文链接**: [https://www.allaboutbirds.org/news/how-to-recognize-woodpeckers-by-their-drumming-sounds/](https://www.allaboutbirds.org/news/how-to-recognize-woodpeckers-by-their-drumming-sounds/)
+
+通过啄木鸟独特的鼓声识别不同种类
+
+---
+
+## 56. Tailscale 融资 1.6 亿美元
+
+**原文标题**: Tailscale has raised $160M
+
+**原文链接**: [https://tailscale.com/blog/series-c](https://tailscale.com/blog/series-c)
+
+Tailscale 完成 1.6 亿美元 C 轮融资，Accel 领投，CRV、Insight Partners、Heavybit、Uncork Capital、George Kurtz (Crowdstrike CEO) 和 Anthony Casalena (Squarespace CEO) 等新老投资者参投。
+
+Tailscale 成立于 2019 年，旨在简化网络连接，通过消除复杂配置的需求，使网络对用户而言几乎隐形。目前，数百万人使用 Tailscale 来满足各种需求，从家庭实验室到企业人工智能工作负载。
+
+这笔资金将用于加速 Tailscale “身份优先网络” 的愿景，重点在于消除摩擦、高效扩展网络，并将身份而非 IP 地址作为安全连接的核心。该公司认为这至关重要，因为最初的互联网架构是基于位置的，需要后续的安全层（如 VPN 和防火墙）。
+
+该公司看到了日益增长的需求，尤其是在人工智能行业，各公司都在努力连接跨云 GPU 并保护工作负载。领先的人工智能公司已经在使用 Tailscale。这笔资金将支持 Tailscale 不断壮大的工程和产品团队，其对免费客户的免费支持承诺，以及向后兼容性。他们希望确保网络对从初创公司到大型企业的每个人都“开箱即用”。
+
+---
+
+## 57. 范式 (YC W24) 正在旧金山招聘创始工程师
 
 **原文标题**: Paradigm (YC W24) Hiring Founding Engineers in SF
 
 **原文链接**: [https://www.ycombinator.com/companies/paradigm/jobs/nFNWweP-founding-engineer](https://www.ycombinator.com/companies/paradigm/jobs/nFNWweP-founding-engineer)
 
-Paradigm是一家由Y Combinator (W24)支持的初创公司，正在旧金山构建一个原生AI工作空间，现招聘创始工程师。该职位涉及全栈开发、用户互动、指标跟踪以及参与产品愿景和路线图制定。
+Paradigm (Y Combinator W24投资的旧金山初创公司) 诚聘创始工程师，共同打造其原生AI工作空间。该职位提供15万至25万美元的年薪、丰厚的股权以及其他福利。理想的候选人是一位经验丰富的通才，对人工智能充满热情，追求速度，并能在快节奏的环境中工作。要求每周5-6天线下办公。
 
-理想的候选人是一位经验丰富的通才，能在快节奏的环境中茁壮成长，对人工智能充满热情，并痴迷于速度和规模。资格包括每周愿意到岗工作5-6天、拥有构建生产级AI产品的经验以及过往的成就。具备GoLang、TypeScript、NextJS、Redis、RAG系统和代理架构经验者优先。
+关键资质包括构建生产级AI产品的经验、对速度和规模的执着、在模糊环境中蓬勃发展的能力以及卓越成就的历史。 拥有GoLang、TypeScript、NextJS、Redis、RAG系统和代理架构的经验者优先。 职责包括全栈开发、用户互动、功能实现和塑造产品路线图。
 
-薪酬为15万至25万美元的底薪，另有额外福利，包括慷慨的股权、健康保险、401k匹配、餐食、团队郊游以及潜在的奖金。
-
-Paradigm获得了来自Dropbox、Intercom、Langchain和Redis等公司的知名人士的支持。他们的小团队拥有在Google、MIT、Microsoft和Citadel的工作经验。该公司的目标是以人工智能为核心，重新构想工作空间。
+Paradigm是一个利用人工智能的全新工作空间，由Dropbox、Intercom和Langchain等公司的杰出构建者/运营者提供支持。 该团队规模小，由来自谷歌、麻省理工学院和微软等公司的经验丰富的构建者组成。 他们正在寻找一位才华横溢的人才来为他们的愿景做出贡献。
 
 ---
 
-## 48. 中国将对美国商品加征最高84%的对等关税
+## 58. Show HN: Coroot – 基于 eBPF 的开源可观测性，提供可执行的洞察
 
-**原文标题**: China to raise reciprocal tariffs on U.S. goods to 84%
+**原文标题**: Show HN: Coroot – eBPF-based, open source observability with actionable insights
 
-**原文链接**: [https://www.cnbc.com/2025/04/09/china-to-raise-reciprocal-tariffs-on-us-goods-to-84percent.html](https://www.cnbc.com/2025/04/09/china-to-raise-reciprocal-tariffs-on-us-goods-to-84percent.html)
+**原文链接**: [https://github.com/coroot/coroot](https://github.com/coroot/coroot)
 
-为回应美国总统唐纳德·特朗普不断升级的关税政策，中国宣布对美国商品征收84%的报复性关税，高于此前的34%，自4月10日起生效。此前，美国已将对中国商品的关税提高到100%以上。
+Coroot 是一个开源可观测性平台，利用 eBPF 实现零侵入式数据采集，将原始指标、日志和链路转换为可执行的洞察。它提供全面的服务地图，无需任何代码修改，覆盖系统 100% 的范围。主要功能包括自动应用程序健康状况摘要、SLO 跟踪、使用分布式追踪进行异常请求探索以及一键式异常调查。
 
-文章强调了这种针锋相对的关税升级可能对这两个最大经济体之间的贸易造成的毁灭性影响。2024年，美国向中国出口了价值1435亿美元的商品，同时进口了4389亿美元的商品。
+Coroot 通过 OpenTelemetry 提供厂商中立的检测，从而可以洞察旧有或第三方服务，并提供开箱即用的日志模式聚类以及通过 ClickHouse 实现闪电般快速搜索的无缝日志到链路关联。它允许一键分析应用程序，将资源使用情况精确定位到特定的代码行，并将其与基线行为进行比较。
 
-虽然一些国家似乎愿意谈判，但中国采取了强硬立场，迅速以反制关税回应。特朗普政府警告不要采取报复行动。在中国于4月2日做出初步回应后，特朗普实施了额外的50%的增长，使美国对中国商品的总进口税达到104%。
+Coroot 自动识别超过 80% 的常见问题，并在应用程序未达到其 SLO 时触发单个、全面的警报。部署跟踪也是一个核心功能，可在 Kubernetes 中监控应用程序发布，无需 CI/CD 管道集成，比较版本，并通过集成的 AWS、GCP 和 Azure 成本监控跟踪成本影响。成本监控无需云帐户访问权限。
 
-美国财政部长斯科特·贝森特批评中国不愿谈判，并称他们的经济是现代世界中最不平衡的经济体，声称升级对他们来说是“失败者”。在此之前，美国已经以阻止芬太尼进入美国为幌子，对中国、加拿大和墨西哥征收了关税。
-
-贸易战震动了全球投资者，引发了对经济增长放缓、通货膨胀加剧和企业利润减少的担忧。这导致4月份出现大幅抛售，标准普尔500指数进入熊市。韩国、上海和香港的市场也经历了大幅下跌。
+Coroot 可以作为 Docker 容器运行，也可以部署到任何 Kubernetes 集群中。文档、实时演示和社区支持可通过 Slack、GitHub 和 Twitter 轻松获得。它采用 Apache License 2.0 许可。
 
 ---
 
-## 49. 神经涂鸦：用于大型语言模型的液态记忆层
+## 59. PDP-11/Hack 豪华版
 
-**原文标题**: Neural Graffiti – Liquid Memory Layer for LLMs
+**原文标题**: PDP-11/Hack de luxe
 
-**原文链接**: [https://github.com/babycommando/neuralgraffiti](https://github.com/babycommando/neuralgraffiti)
+**原文链接**: [https://forum.vcfed.org/index.php?threads/pdp-11-hack-de-luxe.1252532/](https://forum.vcfed.org/index.php?threads/pdp-11-hack-de-luxe.1252532/)
 
-神经涂鸦是一种新型实验层，旨在为预训练的大型语言模型（LLM）实时注入一种神经可塑性。这是通过一个“喷涂层”实现的，该层将记忆痕迹直接注入LLM的最终推理阶段，而无需微调或重新训练。受大脑的神经可塑性和涂鸦艺术的启发，这一层会根据过去的互动微妙地改变模型的行为，从而随着时间的推移产生行为漂移。
+Peter (cbscpe) 设计并制造了一款“PDP-11/Hack de luxe”，这是一个基于 DCJ11 处理器的 Eurocard 单板计算机 (SBC)。由于对之前的面包板版本不满意，并希望更深入地了解 DCJ11，他在 PCB 上创建了一个更强大的设计，带有一个扩展槽。
 
-其核心思想是通过将记忆和信息直接注入预训练模型的向量嵌入中来调节其行为，从而影响模型关联词汇和概念的方式。“喷涂层”不保证特定的词语输出，而是随着模型更多地互动，轻轻地引导它朝向某些概念，从而建立内部记忆。可以追踪每个输出中记忆层的影响。
+组装好的原型（照片见帖子）需要进行一个小小的工程变更单 (ECO)。连接到控制台的 USB 转串口/TTL 适配器为 SBC 提供串行通信和电源，SBC 的功耗低于 200mA。
 
-该项目旨在培养AI模型的主动行为、聚合人格和增强的好奇心，通过允许它们“记住”过去的互动，潜在地导致一种自我意识的形成。虽然液态神经网络提供类似的功能，但它们的计算成本很高。神经涂鸦为现有的Transformer模型提供了一个更简单的“插件”解决方案。作者提醒说，使用这种技术可能会创造出具有特定精神宇宙的独特“实体”，可能不适合商业部署，但非常适合创建数字角色。
+使用真正的 DC319 UART 进行串行通信。该设计优先使用通孔 (TH) 组件，仅将表面贴装器件 (SMD) 用于电容器和电阻器。整个系统采用标准 TTL 逻辑。
 
----
-
-## 50. 代码科学家：用于代码实验的自动化科学发现系统
-
-**原文标题**: CodeScientist: Automated scientific discovery system for code-based experiments
-
-**原文链接**: [https://github.com/allenai/codescientist](https://github.com/allenai/codescientist)
-
-CodeScientist是一个端到端的、半自动化的科学发现系统，专为基于代码的实验而设计，主要使用Python。它创新性地采用LLM作为突变器范例，结合科学文章和代码示例（包括LLM提示、绘图和基准测试），并应用基因突变来生成新颖的实验想法。
-
-该系统使用实验构建器自动创建、运行和调试容器内的实验代码。然后，它会生成结果报告，通常会针对每个想法进行多次尝试（例如，五次）并进行荟萃分析。
-
-CodeScientist有两种运行模式：人机协作模式（主要模式，涉及人工协助代码示例创建、实验筛选和反馈）和全自动模式（效率较低）。
-
-该存储库包含：CodeScientist软件、实验报告（包括论文中的20个候选发现）、原始数据（代码、日志、想法、评审者评分）、安装说明和使用指南。
-
-主要功能包括：从论文中创建新想法、手动创建实验、管理构思列表、运行批量自主实验、进行基准测试、监控实验、生成报告和过滤预生成的想法。它还允许用户添加自定义代码块，并利用实验构建器沙箱进行运行和调试。它提供了将CodeScientist的部分内容集成到其他代码库中的选项，并包含全面的文档。
+主要功能包括正确的字节写入解码、上电解码、用于定义上电配置的 74HCT541，以及带有按钮和逻辑的复位功能。该 SBC 成功运行了标准的 PDP-11/Hack 测试程序。
 
 ---
 
-## 51. 维沙普·奥伯龙编译器
+## 60. 高关税在19世纪没有让美国富裕，这次也不会。
 
-**原文标题**: Vishap Oberon Compiler
+**原文标题**: High tariffs didn't make the U.S. rich in the 19th century. They won't this time
 
-**原文链接**: [https://github.com/vishapoberon/compiler](https://github.com/vishapoberon/compiler)
+**原文链接**: [https://www.economicforces.xyz/p/high-tariffs-didnt-make-the-us-rich](https://www.economicforces.xyz/p/high-tariffs-didnt-make-the-us-rich)
 
-Ѵishap Oberon 是一种自由开源的 Oberon-2 编程语言实现，专为包括 Linux、BSD、Android、Mac 和 Windows 在内的各种操作系统设计。Vishap Oberon 编译器 (voc) 利用 C 后端（gcc、clang、tcc 或 msc）进行编译。它集成了来自 Ulm、oo2c 和 Ofront Oberon 编译器的库，并遵循 Oakwood Oberon-2 编译器指南。
+布莱恩·阿尔布雷希特的文章《高关税在19世纪没有让美国富裕，这次也不会》挑战了这样一种观点，即高关税推动了19世纪美国的工业崛起，因此今天也能奏效。该文章考察了从美国内战到第一次世界大战期间，美国实行高关税并经历了快速经济增长的历史时期。
 
-安装过程包括克隆存储库，使用 "make full" 进行构建，可选择使用 "make install" 安装到系统目录，并设置 PATH 变量。 该编译器支持 Oberon-2，包括类型绑定过程，并在 SYSTEM.Mod 中扩展了对 64 位架构的支持。 整数和集合类型的大小可以使用编译器选项进行配置。
+虽然承认19世纪末美国以及德国等其他国家的高关税与经济增长之间存在相关性，但作者认为相关性不等于因果关系。该文章强调了将关税的影响与其他因素（如人口增长、移民、技术创新和丰富的自然资源）的影响区分开来的难度。
 
-该编译器提供了来自各种 Oberon 系统（V4、S3、Ooc、Ulm、Oakwood）的丰富库集，方便代码移植。
+阿尔布雷希特强调了使用反事实的重要性——评估没有关税会发生什么——以确定它们的真正影响。他指出，将受保护部门与未受保护部门的增长进行比较的行业层面研究、涉及关税突然变化的自然实验以及反事实建模是更为严谨的方法。克莱因和梅斯纳的研究，将行业关税与制造业产出和生产率联系起来，被认为是特别有见地的。
 
-Vishap Oberon 构建于 Josef Templ 的 Ofront 编译器之上，并由 Norayr Chilingarian 和 David Brown 进一步开发，增加了诸如广泛的库支持、跨平台兼容性和通用类型支持等功能。 该项目的名称灵感来自亚美尼亚的龙（"Vishaps"），并与将编译器与龙联系起来的传统相关联。
-
----
-
-## 52. Show HN: 将 IBM 3151 终端连接到大型机 [视频]
-
-**原文标题**: Show HN: Connecting an IBM 3151 terminal to a mainframe [video]
-
-**原文链接**: [https://www.youtube.com/watch?v=V14ac9cRi9Q](https://www.youtube.com/watch?v=V14ac9cRi9Q)
-
-"Show HN"帖子内容为一个YouTube视频，关于将IBM 3151终端连接到大型主机。核心内容围绕连接此旧终端到大型主机系统的技术过程，以及可能涉及的经验。提供的内容片段实际上是YouTube的标准样板文本，表明该帖子本身可能除了视频链接之外没有提供更多细节。因此，理解连接的具体细节及其目的需要观看视频。
+中心论点是，声称关税导致美国繁荣的简单化论点缺乏建立因果联系所需的经济分析，因此，历史证据不足以支持今天实施关税。
 
 ---
 
-## 53. 来自90年代密码朋克邮件列表的十万封邮件
+## 61. 建造 System/360 大型机差点毁了 IBM
 
-**原文标题**: 100k emails from the 90s Cypherpunk listserve
+**原文标题**: Building the System/360 Mainframe Nearly Destroyed IBM
 
-**原文链接**: [https://cypherpunk.timespan.vc/](https://cypherpunk.timespan.vc/)
+**原文链接**: [https://spectrum.ieee.org/building-the-system360-mainframe-nearly-destroyed-ibm](https://spectrum.ieee.org/building-the-system360-mainframe-nearly-destroyed-ibm)
 
-这篇题为“来自90年代赛博朋克邮件列表的十万封邮件”的文章，承诺提供对90年代赛博朋克邮件列表中的大量邮件档案的访问权限。“加载消息...”表明内容仍在制作中或仅为占位符。如果标题的承诺能够兑现，那么该档案可能会涵盖与密码学、计算机科学、政治和法律相关的各种主题。它将深入了解赛博朋克运动形成时期，重要人物和普通参与者所提出的关注、辩论和技术解决方案。该档案的价值在于它有潜力作为理解互联网的知识和社会历史、数字行动主义的起源以及数字时代持续的隐私斗争的主要来源。分析这些邮件可以揭示密码技术的演变、数字货币等关键概念的出现以及现代数字权利运动的哲学基础。
+本文详细介绍了IBM于1964年System/360大型机的开发和发布，这款产品彻底改变了计算机行业，但也险些导致公司破产。在20世纪50年代末，IBM面临着危机：其广受欢迎的1401系统正变得过时，而升级到更大的系统需要昂贵的软件重写，这阻碍了增长。IBM自身也在与多个不兼容的产品线作斗争，推高了研发成本并削弱了竞争力。
 
----
+T. Vincent Learson受命解决这个问题，他积极推动建立一个统一的、兼容的系统，克服了恩迪科特和波基普西工程团队之间的内部竞争。“SPREAD”特别工作组，由John W. Haanstra和Bob O. Evans领导，提出了一个由五个兼容计算机组成的系列，具有标准接口。这意味着客户只需重写一次软件即可迁移到新系统。最后一刻的微代码突破使得较小的S/360型号能够运行现有的1401软件，进一步缓解了过渡。
 
-## 54. 夏威夷诞生了一个狂野的“怪异系统”
-
-**原文标题**: A wild 'freakosystem' has been born in Hawaii
-
-**原文链接**: [https://www.bbc.com/future/article/20250403-the-new-hawaiian-freakosystem-emerging-on-oahu-accidentally-created-by-humans](https://www.bbc.com/future/article/20250403-the-new-hawaiian-freakosystem-emerging-on-oahu-accidentally-created-by-humans)
-
-本文探讨了“新型生态系统”或“怪异生态系统”的出现，尤其是在夏威夷的欧胡岛上。这些生态系统由人类引入的非本地物种的混合物组成，它们形成了前所未见的、自我维持的系统。 欧胡岛曾是独特本地物种的避难所，但由于森林砍伐、引入的掠食者和疾病而发生了巨大变化，导致许多本地动植物灭绝。
-
-像科里·塔沃特和杰夫·维森廷-布戈尼这样的科学家发现，非本地物种正在填补之前由已灭绝的本地物种所占据的生态位，甚至达到了传播剩余本地植物种子的程度。 这种令人惊讶的功能凸显了生态系统的适应性，即使它们是由随机组合的物种组成。
-
-文章强调，由于人类活动，包括栖息地改变、气候变化和物种引入，这种新型生态系统在全球范围内变得越来越普遍。 例子包括荷兰创造咸水湖的沿海防御工事、巴西变成洪泛区的热带雨林，以及变成有价值栖息地的旧矿区。 虽然对这些新型生态系统的范围存在争议，但一些研究表明，到2100年，它们可能会覆盖地球的很大一部分。
-
-这些生态系统的出现引发了关于传统保护策略的问题，这些策略旨在将环境恢复到人类出现之前的状态。 鉴于许多地区“实际上无法恢复”，生态学家们正在努力研究如何管理这些已改变的环境，以及是否应该专注于保护功能性，而不是仅仅根除非本地物种。 欧胡岛就像一个“水晶球”，让我们得以一窥人类影响深刻重塑地球生态系统的未来。
+该项目风险巨大，耗资IBM 50亿美元，并需要雇用7万名新员工。硬件和软件开发的规模是前所未有的。1964年4月7日的发布会包括推出150种新产品，包括六台计算机和44种外围设备。System/360的兼容性是其核心特征，允许客户在不更换软件或外围设备的情况下进行升级。尽管面临巨大的挑战和IBM内部的“部落战争”，System/360最终被证明是巨大的成功，在第一个月就售出了超过10万套系统，巩固了IBM在计算机行业的统治地位。
 
 ---
 
-## 55. 展示一下：一款创作涂黑诗的工具
+## 62. 高关税在19世纪没有使美国富裕，这次也不会。
 
-**原文标题**: Show HN: A tool for creating blackout poetry
+**原文标题**: High tariffs didn't make the U.S. rich in the 19th century. They won't this time
 
-**原文链接**: [https://bobbiec.github.io/blackout-poetry.html](https://bobbiec.github.io/blackout-poetry.html)
+**原文链接**: [https://www.economicforces.xyz/p/high-tariffs-didnt-make-the-us-rich](https://www.economicforces.xyz/p/high-tariffs-didnt-make-the-us-rich)
 
-此Show HN帖子介绍了一款用于创作遮蔽诗的工具。用户界面似乎很简单：它允许用户输入Markdown格式的文本，然后通过将单词放在方括号中（例如，`[brackets]`）来指定要遮蔽的单词。标题和内容非常简洁，表明其直接的功能是允许用户选择性地删除单词，从而将文本转换为遮蔽诗艺术。
+布莱恩·阿尔布雷希特的文章《高关税并未使19世纪的美国致富，这次也不会》挑战了一种流行的观点，即高关税推动了19世纪美国的工业崛起。作者认为，尽管美国在19世纪后期在高关税下经历了快速的经济增长，但最近的研究表明，关税很可能对这种增长是偶然的，甚至是有害的。
 
----
+阿尔布雷希特承认，高关税和快速增长在美国和德国同时出现，这与英国在自由贸易下的较慢增长形成对比。然而，他强调，相关性并不等于因果关系。他引用研究表明，观察到的相关性可能是由于反向因果关系（工业增长导致关税）、遗漏变量（如巨大的国内市场和国家建设）或构成效应（对制成品的关税与大宗商品繁荣同时发生）。
 
-## 56. 公司为何不修复漏洞
-
-**原文标题**: Why Companies Don't Fix Bugs
-
-**原文链接**: [https://idiallo.com/blog/companies-dont-fix-bugs](https://idiallo.com/blog/companies-dont-fix-bugs)
-
-文章“为什么公司不修复漏洞”剖析了为何即使是像臭名昭著的GTA Online加载时间问题这样显而易见的软件漏洞，也经常会持续存在，即使它们很容易修复。作者以GTA为例，一名程序员通过简单的代码更改大幅缩短了加载时间，以此来说明公司优先事项往往会掩盖用户体验。
-
-核心问题不是开发人员无能，而是大型组织内部多种因素的汇合。首先，漏洞修复通常被标记为“技术债务”，如果它们与预先定义的路线图要求不直接一致，就会被降低优先级。其次，开发人员的流动和项目的转移会导致机构记忆丧失，从而导致被遗忘或被忽视的错误报告。第三，即使是对于小的修复，更改遗留代码的感知风险也会阻止开发人员解决旧的漏洞。最后，通过错误修复来改善用户体验通常缺乏与季度收益目标产生共鸣的直接、可量化的投资回报率。
-
-作者认为，这不仅仅是Rockstar的问题，而是大型公司中的一个系统性问题，在这些公司中，对利润的追求和对严格流程的遵守掩盖了流畅用户体验的重要性。虽然t0st的修复是一次公关胜利，但它并没有解决开发过程中的根本问题。要点是，当前的系统经常将用户体验视为事后诸葛亮，只有在外部力量迫使他们这样做时才会解决问题。随附的评论强化了这一观点，前开发人员也表达了对漏洞被降低优先级的不满，尽管它们具有负面影响。
+作者强调了反事实分析在确定关税因果影响方面的重要性。他批评了仅依靠关税和增长在时间上的巧合的论点，主张采用严格的方法来分离因果效应，例如使用行业层面的研究、自然实验和反事实建模。他强调了Klein和Meissner的行业层面研究，该研究比较了受保护和未受保护部门的业绩，这是一种更可靠的方法来理解关税的真正影响。
 
 ---
 
-## 57. 图像文件的背叛 (2020)
+## 63. 难民营揭示的经济学
 
-**原文标题**: The Treachery of Image Files (2020)
+**原文标题**: What a refugee camp reveals about economics
 
-**原文链接**: [http://beyondloom.com/blog/images.html](http://beyondloom.com/blog/images.html)
+**原文链接**: [https://www.economist.com/finance-and-economics/2025/04/03/what-a-refugee-camp-reveals-about-economics](https://www.economist.com/finance-and-economics/2025/04/03/what-a-refugee-camp-reveals-about-economics)
 
-图像文件的背叛：一部数字艺术作品集，每件作品均为10x10像素的强烈蓝色正方形，以及艺术家为将它们创建为GIF文件所采用的精细且往往复杂的各种方法。该文档详细描述了每件作品所用的特定软件、操作系统和流程，突出了数字图像创建和操作中固有的挑战和怪癖。
+文章《难民营揭示了怎样的经济学》探讨了马拉维的扎莱卡难民营内的经济动态，该难民营自1994年以来一直收容难民。虽然扎莱卡的生活表面上看起来很正常，有教堂、商店和社交活动，但一个关键的区别在于，大多数居民并没有传统意义上的工作。
 
-这些作品展示了一系列方法，从简单地使用常用图像查看器截取自定义颜色的桌面（受到格式限制的阻碍），到在Sublime Text和Vim等文本编辑器中手动编写PPM图像代码，然后通过ImageMagick和FFmpeg进行转换。
+中心前提围绕着对扎莱卡每个人每月收到9美元的观察。这种持续的资金流入使得难民营内部存在一个能够运作的经济体，正如文章所指出的，在难民营内常见到看起来正常的教堂和酒吧。
 
-更荒谬的是，通过编写汇编代码来制作GIF文件，却不得不裁剪掉一个无用的标头。一件作品涉及使用晦涩的K编程环境来生成图像，而另一件作品则依赖于向同事发送的简单电子邮件请求。
+文章以人们参加难民营内的教堂和体育赛事为例，与经济现实形成对比，指出难民营内的难民不像大多数人那样工作。
 
-最极端的例子涉及运行带有GIMP的Linux虚拟机，使用名为“Charon”的物理传输USB驱动器来表示艺术品在“世界”之间的转移。最后一件作品使用Gnuplot渲染。
-
-艺术家详细的脚注既是对数字图像（特别是GIF格式）的复杂性和潜在缺陷的文档，也是评论，以及看似简单的结果可能需要极其复杂的过程。这件作品是对艺术、技术以及软件经常出人意料的局限性之间交叉点的有趣探索。
+根据标题，作者似乎希望深入研究这种持续的现金流在难民营内促成的经济和社会活动。
 
 ---
 
-## 58. Meta 被抓到在 AI 基准测试中作弊
+## 64. NNN：营销组合建模的下一代神经网络
 
-**原文标题**: Meta got caught gaming AI benchmarks
+**原文标题**: NNN: Next-Generation Neural Networks for Marketing Mix Modeling
 
-**原文链接**: [https://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming](https://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming)
+**原文链接**: [https://arxiv.org/abs/2504.06212](https://arxiv.org/abs/2504.06212)
 
-Meta 被指控利用其新的 Llama 4 模型（特别是 Maverick 模型）操纵 AI 评测基准。该公司向 LMArena 基准站点提交了一个 Maverick 的“实验性聊天版本”，该版本针对会话性进行了优化，从而获得了很高的 ELO 评分，并将其排在 OpenAI 的 4o 之上，仅次于 Gemini 2.5 Pro。然而，这个版本与公开提供的模型不同。
+这篇arXiv论文，题为“NNN：用于营销组合建模的下一代神经网络”，介绍了一种使用基于Transformer的神经网络进行MMM的新方法。由Thomas Mulc领导的作者们通过利用丰富的嵌入来捕捉营销渠道的定量和定性方面，从而解决了传统MMM方法的局限性。
 
-AI 研究人员发现了这种差异，引发了对基准结果有效性的担忧。LMArena 更新了其政策，以防止未来出现此类混淆，强调公平和可重复的评估。Meta 为其行为辩护，称他们尝试自定义变体，并且实验版本在 LMArena 上表现良好。
+与依赖于标量输入和参数衰减函数的传统方法不同，NNN利用注意力机制，使其能够对复杂的交互进行建模，捕捉长期影响，并有可能提高销售归因的准确性。该论文强调，即使在数据受限的环境中，L1正则化的使用也允许表达能力强的模型使用。
 
-批评人士认为，为测试提交专门调整的模型，同时向公众发布不同的版本，会削弱基准测试对于实际性能的意义。独立 AI 研究员 Simon Willison 对此表示失望，称由于公开提供的模型不同，高分毫无价值。
+作者通过对模拟数据和真实数据的评估证明了NNN的有效性，表明其在预测能力方面有显著提高。除了归因之外，NNN还通过模型探测提供有价值的见解，从而可以评估关键词或创意的有效性，进而增强模型的可解释性。
 
-进一步的指控出现，暗示 Meta 训练 Llama 4 模型以在基准测试中表现更好，同时隐藏其局限性。Meta 否认了这些说法，并将质量的波动归因于实施稳定问题。文章强调，基准测试正成为一个战场，而这一事件说明了 Meta 渴望被认为是 AI 领导者的急切心态，即使这涉及操纵系统。 Llama 4 的发布时间（周六）也因其不寻常的时间安排而受到质疑。
-
----
-
-## 59. Cogito预览：IDA作为通往通用超级智能的途径
-
-**原文标题**: Cogito Preview: IDA as a path to general superintelligence
-
-**原文链接**: [https://www.deepcogito.com/research/cogito-v1-preview](https://www.deepcogito.com/research/cogito-v1-preview)
-
-Deep Cogito 发布 Cogito v1：采用迭代提炼与放大（IDA）训练的开源 LLM（30 亿至 700 亿参数），旨在实现通用超人工智能。这些模型在标准基准测试中优于 LLaMA、DeepSeek 和 Qwen 等同规模的开源 LLM，其中 700 亿参数模型甚至超越了 Llama 4 109B MoE。
-
-IDA 专注于迭代式自我改进，通过计算密集型子程序放大能力，然后将增强的智能提炼回模型的参数中。此过程规避了传统 LLM 训练中人为监督的限制，有可能超越人类水平的智能。
-
-Cogito 模型可以运行在标准和推理模式下，并针对编码、函数调用和代理用例进行了优化。该团队计划很快发布更大的模型（高达 6710 亿参数）和改进的检查点。
-
-文章强调了 IDA 相对于 RLHF 和从大型模型提炼的效率和可扩展性。这些模型可在 Huggingface、Ollama 上获得，并通过 Fireworks AI 和 Together AI API 提供。Deep Cogito 将自身定位为一家专注于构建通用超人工智能的公司，并积极招聘人才。他们感谢了各个开源团队和项目的贡献。
+该论文归类于机器学习（cs.LG）和应用（stat.AP）类别。提交日期为2025年4月8日。作者已提供PDF和实验性HTML格式的论文以及TeX源代码。
 
 ---
 
-## 60. 使用令牌序列迭代范围
+## 65. 中国去美元化：中国推出1.2万亿美元数字人民币系统 [视频]
 
-**原文标题**: Using Token Sequences to Iterate Ranges
+**原文标题**: China Is De-Dollarizing: China Launches $1.2T Digital Yuan System [video]
 
-**原文链接**: [https://brevzin.github.io/c++/2025/04/03/token-sequence-for/](https://brevzin.github.io/c++/2025/04/03/token-sequence-for/)
+**原文链接**: [https://www.youtube.com/watch?v=KX_Id7J2Ee0](https://www.youtube.com/watch?v=KX_Id7J2Ee0)
 
-C++ Ranges性能瓶颈探究：`views::filter`与`views::take_while`的优化方案
-
----
-
-## 61. 奥斯本电脑公司于1986年4月9日清算
-
-**原文标题**: Osborne Computer liquidated April 9, 1986
-
-**原文链接**: [https://dfarq.homeip.net/osborne-computer-liquidated-april-9-1986/](https://dfarq.homeip.net/osborne-computer-liquidated-april-9-1986/)
-
-戴夫·法夸尔的这篇文章探讨了奥斯本电脑公司于1986年4月9日的破产清算。虽然通常归咎于“奥斯本效应”——即过早宣布奥斯本行政型电脑，扼杀了对奥斯本1型电脑的需求——但法夸尔认为这是一种过度简化。
-
-奥斯本1型电脑最初是成功的，但该公司未能充分沟通其与即将推出的行政型电脑之间的价格差异。潜在客户犹豫不决，预期价格相近，但新型号的较高成本阻碍了销售。法夸尔认为更好的沟通本可以减轻影响。
-
-除了奥斯本效应之外，还有其他几个因素促成了该公司的倒闭。这些因素包括MS-DOS的崛起以及Compaq和Eagle Computer等公司提供具有竞争力的便携式电脑，以及CP/M市场的普遍衰落。奥斯本的广告缺乏关于IBM兼容性的清晰说明，进一步损害了其形象。
-
-据报道，奥斯本的内部会计实务很差，该公司难以适应快速发展的计算机行业。其1986年的产品与1983年的型号过于相似，未能跟上技术进步的步伐。最终，营销失误、外部竞争和内部管理问题共同导致了奥斯本电脑公司的破产清算。法夸尔强调了从奥斯本的错误中吸取教训的重要性，突出了在快节奏的科技行业中清晰的沟通、适应性和强大的管理能力的重要性。
+提供的内容并非文章，而是YouTube页脚的一部分，包含版权信息、广告、服务条款、隐私政策以及其他标准YouTube免责声明的链接。它*不*包含关于中国去美元化或推出数字人民币系统的信息。因此，根据给定的文本，不可能对所谓的主题进行总结。提供的文本与标题无关。
 
 ---
 
-## 62. 弗兰克·劳埃德·赖特在俄亥俄州完成的“最后的乌托邦式住宅”
+## 66. 展示一下：我做了一个文字游戏。我的物理老师很喜欢。你觉得怎么样？
 
-**原文标题**: "Final Usonian Home" by Frank Lloyd Wright Completed in Ohio
+**原文标题**: Show HN: I built a word game. My Physics teacher likes it. What about you?
 
-**原文链接**: [https://www.dezeen.com/2025/03/20/final-usonian-home-riverrock-frank-lloyd-wright-ohio-completed/?_hsenc=p2ANqtz--nulJz0XJo1E-jQIojcqaZmWjd0eXJ-oC35zKHYZb1UL94JLh6t_QI1k9lehp4fxwHKjPjkNeM-iQJihX705oJ-Maqyw&_hsmi=355439130](https://www.dezeen.com/2025/03/20/final-usonian-home-riverrock-frank-lloyd-wright-ohio-completed/?_hsenc=p2ANqtz--nulJz0XJo1E-jQIojcqaZmWjd0eXJ-oC35zKHYZb1UL94JLh6t_QI1k9lehp4fxwHKjPjkNeM-iQJihX705oJ-Maqyw&_hsmi=355439130)
+**原文链接**: [https://thypher.com/](https://thypher.com/)
 
-文章报道了“河石”的竣工，该住宅被认为是弗兰克·劳埃德·赖特设计的最后一座乌托邦式住宅。 它位于俄亥俄州，于1951年设计，但在赖特生前从未建造。建筑历史学家约翰·G·索普三世发现了原始蓝图，并与弗兰克·劳埃德·赖特基金会合作，以确保住宅的竣工符合赖特的愿景。
-
-“河石”体现了赖特的乌托邦理想，即为美国中产阶级提供经济实惠的现代住宅。它具有低矮的外形，木材和石头等天然材料以及旨在将居住者与自然联系起来的开放式平面图。 房屋的名称源于将河石融入其结构中，这是赖特设计中反复出现的主题。
-
-重点突出的主要特征包括大量使用玻璃，这是赖特的标志性元素，它使自然光能够充满室内，并提供周围景观的全景视野。该房屋的另一个特点是其几何形状及其与场地的融合，反映了赖特的有机建筑理念。“河石”的竣工对于建筑爱好者来说是一件重要事件，也是弗兰克·劳埃德·赖特的设计经久不衰的相关性的证明。
+这个“Show HN”帖子介绍了 Thypher，一个每日单词游戏，玩家必须破译方程式来找到一个五字母的单词。该游戏提供数学方程式，例如 `mc^2 = E`，来代表字母（不区分大小写）。玩家需要解开这些方程式来揭示隐藏的单词。每天都有一个新单词可用。帖子强调了游戏的简单性，以及作者的物理老师喜欢这个游戏的事实，并邀请其他人尝试。示例显示，在 2025 年 4 月 9 日，它是第 48 号游戏。该帖子提供了清晰的玩法说明，强调了解方程以发现字母的核心机制。
 
 ---
 
-## 63. 展示HN：一个帮助管理游戏库的网站/应用
+## 67. 没有大象：图像生成技术的突破
 
-**原文标题**: Show HN: A website/app to help manage your game library
+**原文标题**: No elephants: Breakthroughs in image generation
 
-**原文链接**: [https://gamenode.app](https://gamenode.app)
+**原文链接**: [https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image](https://www.oneusefulthing.org/p/no-elephants-breakthroughs-in-image)
 
-无法访问文章链接。
+Ethan Mollick 的文章《无大象：图像生成领域的突破》讨论了人工智能图像生成领域的重大进展，尤其是在谷歌和 OpenAI 推出多模态模型之后。这些模型不同于以往依赖于由人工智能生成的文本提示触发的独立图像生成工具的系统，而是像大型语言模型生成文本一样，直接逐个 token 地创建图像。这使得图像创建更加智能和精确，解决了早期人工智能图像生成中出现的文本扭曲和随机元素等问题。
 
----
+Mollick 强调了使用清晰的指示和迭代反馈来提示这些模型的能力，就像基于文本的人工智能一样，从而使用户能够指导图像创建过程。他提供了 GPT-4o 如何用于生成信息图、创建变体，甚至根据特定请求（例如改变光照或在照片之间交换对象）来操纵图像的例子。
 
-## 64. 糖精展现出对抗抗生素耐药性的意外能力
+文章探讨了这些进步的潜在应用，包括创建网站模型、广告概念、可视化食谱和视频游戏纹理。 Mollick 还讨论了围绕人工智能生成艺术的复杂性和伦理问题，例如版权问题、艺术家风格的复制以及深度伪造和其他视觉幻觉的可能性。
 
-**原文标题**: Sweetener saccharin shows surprise power against antibiotic resistance
-
-**原文链接**: [https://www.brunel.ac.uk/news-and-events/news/articles/Sweetener-saccharin-shows-surprise-power-against-antibiotic-resistance](https://www.brunel.ac.uk/news-and-events/news/articles/Sweetener-saccharin-shows-surprise-power-against-antibiotic-resistance)
-
-伦敦布鲁内尔大学文章揭示惊人发现：常用人工甜味剂糖精可对抗抗生素耐药性。研究人员发现，糖精与现有抗生素联合使用，能显著增强抗生素对某些耐药细菌的疗效。
-
-该研究聚焦于鲍曼不动杆菌等细菌，这是一种高度耐药的病原体，可引起严重感染。研究表明，糖精能使通常对这些耐药细菌无效的抗生素再次穿透细菌细胞并杀死它们。本质上，糖精充当“辅助分子”，破坏细菌的防御能力。
-
-这一发现意义重大，因为它提供了一种潜在的新策略来应对日益严重的全球抗生素耐药性威胁。与开发全新的抗生素相比，重新利用像糖精这样广泛存在且广为人知的化合物，可能是一种更快、更具成本效益的新疗法开发途径。
-
-研究团队目前正在探索糖精克服细菌耐药性的具体机制，并研究其对其他耐药细菌的疗效。这项研究可能促成新型抗生素组合的开发，从而有效治疗由耐药细菌引起的感染。
+总而言之，文章强调，虽然多模态人工智能在视觉创作方面提供了强大的新功能，但也引发了关于创意所有权、真实性的重要问题，以及需要周全的框架来驾驭不断发展的视觉媒体领域。 人类和人工智能创作之间的界限正在模糊，因此有必要重新思考原创性，在一个任何人都可以通过提示生成复杂视觉效果的世界中。
 
 ---
 
-## 65. 纽约市最窄的自动扶梯
+## 68. Show HN: 约500行代码实现的向量嵌入HNSW索引
 
-**原文标题**: The narrowest escalator in New York City
+**原文标题**: Show HN: HNSW index for vector embeddings in approx 500 LOC
 
-**原文链接**: [https://www.doobybrain.com/blog/the-narrowest-escalator-in-new-york](https://www.doobybrain.com/blog/the-narrowest-escalator-in-new-york)
+**原文链接**: [https://github.com/dicroce/hnsw](https://github.com/dicroce/hnsw)
 
-本文重点介绍了位于纽约市洛克菲勒广场10号的最窄自动扶梯。作者Herman Yung称其非常狭窄，只能容纳单列乘客。该扶梯连接了街道层和位于地下的洛克菲勒中心广场的餐饮和购物区。
+此“Show HN”帖子介绍了一个用 C++ 实现的分层可导航小世界 (HNSW) 算法，用于在向量嵌入中进行高效的最近邻搜索。该实现轻量级，包含在单个头文件中，并且拥有大约 500 行现代 C++ 代码。它利用 Eigen 进行距离计算中的 SIMD 加速，从而保证快速性能。
 
-Yung建议，那些只想体验这条独特扶梯的人可以进入洛克菲勒广场10号，走下大型螺旋楼梯，然后乘坐扶梯返回街道层。他向读者保证，现场的安保人员并不介意人们以此目的使用扶梯，因为大堂内有一幅由Lakela Brown创作的极具视觉吸引力的环绕式壁画。
+该帖子将 HNSW 解释为一种分层图结构，节点连接到每层中的附近节点。较高层人口更稀疏。插入涉及随机选择一个级别，并将节点添加到该级别及其以下所有级别。搜索从顶层开始，找到最近的节点，然后下降到各个级别，在越来越密集的层中细化搜索。搜索会维护遇到的 K 个最近邻居的记录。
 
-除了关于最窄自动扶梯的主题外，文章还包括Herman Yung其他文章的链接，这些文章大多关于纽约市的历史和地点，包括Brazenhead Books以及圣胡安山和林肯中心的历史。
-
----
-
-## 66. Show HN: Uncurl.dev – 将 curl 命令转换为可分享、可执行的 UI
-
-**原文标题**: Show HN: Uncurl.dev – Convert curl commands to a shareable, executable UI
-
-**原文链接**: [https://uncurl.dev/](https://uncurl.dev/)
-
-Uncurl.dev因严重安全漏洞已关闭。该服务本可以将`curl`命令转换为可分享、可执行的用户界面(UI)。开发者承认系统存在重大缺陷，允许用户获得托管该服务的虚拟专用服务器(VPS)的root权限。开发者甚至包含了一行代码`const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'`，表明存在一个弱默认密码（或者缺乏密码，依赖环境变量），这显然不足以保证系统的安全。文章的核心信息是，该服务由于严重的安全风险而被有意关闭。
+该帖子提供了一个简洁的代码示例，演示了如何创建 HNSW 索引、添加向量嵌入以及执行最近邻搜索。还包括使用 CMake 的编译说明。该实现旨在为在高维向量空间中查找最近邻居提供一种实用且高效的解决方案。
 
 ---
 
-## 67. 印度维修文化赋予报废笔记本电脑新生
-
-**原文标题**: India's repair culture gives new life to dead laptops
-
-**原文链接**: [https://www.theverge.com/tech/639126/india-frankenstein-laptops](https://www.theverge.com/tech/639126/india-frankenstein-laptops)
-
-在印度，强大的维修文化正赋予“报废”笔记本电脑新的生命，尤其是在德里的尼赫鲁广场和孟买的拉明顿路等市场。像Sushil Prasad这样的技术人员通过从废弃和过时的设备中回收零件来制造“弗兰肯斯坦”笔记本电脑。这些混合机器为学生、零工和因价格而被新市场拒之门外的小企业提供了经济实惠的计算选择。一台能用的笔记本电脑只需110美元左右就能买到，而一台新笔记本电脑则需要800美元。
-
-然而，这个维修行业面临着挑战。全球科技公司经常限制备件的供应，并使用使维修变得困难的策略，从而促使消费者购买新产品和计划报废。印度政府正在考虑制定“维修权”法律来解决这个问题。
-
-技术人员通常依赖像德里Seelampur这样的非正式电子垃圾市场，那里的工人会筛选废弃电子产品以寻找可用的零件。由于暴露于有毒物质中，这种电子垃圾回收利用存在健康风险。尽管面临挑战，对这些价格实惠的翻新笔记本电脑的需求正在增长。倡导者认为，正规化维修行业可以减少电子垃圾，创造就业机会，并改善技术获取途径。维修技术人员正在复活死亡的设备，弥合数字鸿沟，并证明维修生态系统注定会蓬勃发展。
-
----
-
-## 68. Show HN: Browser MCP – 使用 Cursor、Claude、VS Code 自动化你的浏览器
-
-**原文标题**: Show HN: Browser MCP – Automate your browser using Cursor, Claude, VS Code
-
-**原文链接**: [https://browsermcp.io/](https://browsermcp.io/)
-
-Browser MCP 是一款工具，它允许像 Cursor、Claude、VS Code 和 Windsurf 这样的 AI 应用在您的网页浏览器中自动执行任务。它弥合了 AI 编辑器和网页浏览器之间的差距，从而能够自动执行原本不可能完成的任务。
-
-Browser MCP 的主要优势包括：
-
-*   **自动化测试：** 允许 AI 执行端到端测试，验证 UI 元素，并确保应用程序在不同场景下的功能正常。
-*   **任务自动化：** 自动执行重复的基于 Web 的任务，例如数据收集、表单填写和其他工作流程，从而节省时间并减少错误。
-*   **速度、安全性和便利性：** 自动化在本地发生，提供快速的性能并保护用户隐私。它还利用现有的浏览器配置文件，保持用户登录状态，并利用真实的浏览器指纹来避免基本的机器人检测。
-
-设置过程包括三个简单的步骤：安装 Browser MCP 扩展、在 AI 应用程序中设置 MCP 服务器以及开始自动化任务。
-
-它提供一套浏览器工具，包括导航、后退/前进、等待、按键、快照、点击、拖放、悬停、输入文本、选择选项和获取控制台日志，从而实现全面的浏览器自动化。
-
----
-
-## 69. 一个购物袋和一卡车的错失恐惧症
-
-**原文标题**: A Supermarket Bag and a Truckload of FOMO
-
-**原文链接**: [https://blog.julik.nl/2025/03/a-little-adventure-in-modern-frontend](https://blog.julik.nl/2025/03/a-little-adventure-in-modern-frontend)
-
-本文记录了作者在新的 Rails 应用程序中使用 Tailwind CSS 4 的沮丧经历，其驱动力是对错过现代前端技术的恐惧（FOMO）。最初的障碍是他在老款 Mac Pro 上遇到的“SIGILL”错误，这是由于 Tailwind 4 依赖于他的 CPU 不支持的 AVX2 指令。这源于 Tailwind 4 使用了现代 JavaScript 运行时 Bun，后者优先考虑性能而非向后兼容性。
-
-尽管尝试了各种解决方案，包括 CDN 托管版本和等待补丁发布，作者仍然受困。他浪费了宝贵的时间来调试问题，而不是开发他的应用程序。最终，他不得不购买一台较新的 M2 Mac Studio 来绕过 CPU 限制。
-
-最终，作者意识到他对 Tailwind 的采用是由 FOMO 驱动的，而不是真正的需求。他批评了科技行业不断采用新技术的压力，这种压力是由可能并不完全了解实际后果的影响者所推动的。这种压力可能导致开发人员将时间浪费在不必要的技术采用上，而不是专注于核心开发。作者的结论是，批判性地评估技术选择并避免盲目追随潮流非常重要，最终他决定从应用程序中删除 Tailwind。
-
----
-
-## 70. 超越呱呱叫：将语言模型和RAG深度集成到DuckDB中
-
-**原文标题**: Beyond Quacking: Deep Integration of Language Models and RAG into DuckDB
-
-**原文链接**: [https://arxiv.org/abs/2504.01157](https://arxiv.org/abs/2504.01157)
-
-本文介绍了FlockMTL，一种旨在将大型语言模型(LLM)能力和检索增强生成(RAG)深度集成到DuckDB中的DBMS扩展。其目标是简化知识密集型分析应用的开发，这些应用需要从结构化表格数据和非结构化文本文档中检索上下文。
-
-作者认为，构建高效的LLM驱动的数据管道目前需要大量精力，因为需要编排异构系统、管理数据移动以及处理底层LLM上下文管理。FlockMTL通过提供模型驱动的标量和聚合函数来解决这些挑战，从而促进通过元组级操作进行链式预测。
-
-FlockMTL的主要特点包括：
-
-*   **基于成本的优化：** 应用批处理和缓存等技术来提高性能。
-*   **资源独立性：** 通过新颖的SQL DDL抽象实现，特别是将`PROMPT`和`MODEL`作为与`TABLE`同等的一级模式对象引入。
-
-通过整合这些特性，FlockMTL简化了开发流程，并减轻了与利用LLM和RAG的知识密集型分析应用相关的实施负担。与需要编排各种数据系统的传统方法相比，它提供了一种更集成和优化的方法。
-
----
-
-## 71. 镜像阶段的思考
-
-**原文标题**: Reflections on the Mirror Stage
-
-**原文链接**: [https://lareviewofbooks.org/blog/essays/reflections-mirror-stage/](https://lareviewofbooks.org/blog/essays/reflections-mirror-stage/)
-
-无法访问文章链接。
-
----
-
-## 72. 量子物理误入歧途，'T Hooft如是说
-
-**原文标题**: Quantum Physics Is on the Wrong Track Says Gerard 'T Hooft
-
-**原文链接**: [https://www.scientificamerican.com/article/breakthrough-prize-winner-gerard-t-hooft-says-quantum-mechanics-is-nonsense/](https://www.scientificamerican.com/article/breakthrough-prize-winner-gerard-t-hooft-says-quantum-mechanics-is-nonsense/)
-
-本文采访了科学突破奖得主杰拉德·特·胡夫特，他是一位著名的理论物理学家，以其对粒子物理学标准模型和全息原理的贡献而闻名。特·胡夫特讨论了他最近获得的奖项，并反思了物理学的现状和未来。
-
-虽然承认标准模型的成功，但特·胡夫特对粒子物理学缺乏突破性发现表示失望，认为这是由于缺乏新颖的思考。他敦促年轻科学家探索非常规方法，并批评量子力学中过度依赖统计和神秘主义。
-
-特·胡夫特认为，量子力学不是理解粒子相互作用的终极方式，并提倡一种更“务实”的经典方法。他强调局域性的重要性，认为粒子相互作用应由其直接环境决定，拒绝非局域性的观点。他认为，对支配粒子碰撞的规律缺乏更深入的理解，物理学应侧重于定义这些规律，而不是仅仅依赖统计概率。他认为，找到这些新的、更好的问题，才是理论物理学家真正的挑战。
-
----
-
-## 73. 脚手架关卡编辑器
-
-**原文标题**: Scaffold Level Editor
-
-**原文链接**: [https://blog.littlepolygon.com/posts/scaffold/](https://blog.littlepolygon.com/posts/scaffold/)
-
-Max!，一位独立游戏开发者，正在虚幻引擎中创建一个名为“Scaffold”的自定义关卡编辑器，旨在解决其动作游戏《夜班星系》的生产力、独特性和性能目标。受到90年代游戏（如DOOM和DESCENT）效率的启发，Scaffold的目标是用优化的并行系统来补充虚幻的标准碰撞和导航系统。
-
-其核心思想是从连接的凸体（“立方体”）构建关卡，从而消除了通用引擎所需的运行时凸分解。这种“凸体构建”方法允许预先计算空间划分，从而减少CPU和RAM的需求，并避免了动态系统经常需要的性能调整。
-
-本文解释了凸几何体的基本原理以及它如何用于光线追踪和寻路。在像虚幻这样的通用引擎中，这些算法依赖于像Octrees这样的动态数据结构进行碰撞检测，以及Recast进行导航，这可能会消耗大量资源。
-
-Scaffold受到DESCENT关卡编辑器的启发，能够直接从凸体“立方体”构建关卡，从而创建一个预先划分的空间。这可以加快光线追踪速度（特别是对于像弹幕模式这样的特殊任务），并通过在共享立方体面上放置路点来自动生成地面和空中单位的导航数据。通过在虚幻引擎内部构建该系统，该工具可以利用现有的资源处理和撤消系统，进一步提高开发效率。
-
----
-
-## 74. 解码九十年代：早期软件开发中的密码学 (2023)
-
-**原文标题**: Decoding the 90s: Cryptography in Early Software Development (2023)
-
-**原文链接**: [https://www.botanica.software/post/decoding-the-90s](https://www.botanica.software/post/decoding-the-90s)
-
-本文详细介绍了对 90 年代中期 QText 文档进行逆向工程以解锁的过程，因为当时密码已丢失。QText 是一款 DOS 时代的希伯来语-英语文字处理器，采用了基本的加密系统。作者面临的挑战是分析 MS-DOS 二进制文件以及那个时代使用的混淆技术。
-
-他们发现锁定的文档有一个特定的头部，其中包含一个与密码直接相关的 16 字节密钥。在未能找到符合条件的已知哈希算法后，他们通过解压可执行文件（使用 PKUNLITE 和 DISLITE v1.15 等工具）并在 DOSBOX 中绕过 Turbo Pascal 内存覆盖来逆向工程密钥派生算法。
-
-密钥派生函数涉及一个置换函数，该函数基于密码字节的总和和一个有效性位图检查来迭代修改密码字节。这个过程通过递归分解来逆转。他们能够通过利用诸如原始密码字节仅限于大写字母和数字等约束来优化搜索。最终，通过反转两阶段密钥派生，作者可以破解密码并解锁 QText 文档。本文重点介绍了 90 年代初的密码学和软件开发实践以及用于解开它们的工具。
-
----
-
-## 75. Wayland 救不了 Linux 桌面
-
-**原文标题**: Wayland isn't going to save the Linux desktop
-
-**原文链接**: [https://dudemanguy.github.io/blog/posts/2022-06-10-wayland-xorg/wayland-xorg.html](https://dudemanguy.github.io/blog/posts/2022-06-10-wayland-xorg/wayland-xorg.html)
-
-尽管Wayland具有优势并已开发多年，但本文认为它不太可能取代Xorg成为Linux上占主导地位的显示服务器协议。作者（一位前Wayland倡导者和mpv开发者）概述了导致其采用率缓慢的几个问题。
-
-首先，Wayland缺乏一个强大、全面的参考实现。与Xorg快速围绕XFree86标准化不同，Wayland的开发因从头开始构建多个合成器而变得分散。这导致不同实现之间行为不一致，迫使客户端开发者支持Mutter、Plasma、wlroots和Weston。
-
-其次，Wayland的客户端API过于严格，优先考虑“策略”而不是“机制”。与Xorg的灵活方法不同，Wayland限制了客户端可以执行的操作，经常阻止Xorg中容易获得的功能，包括为非全屏窗口指定精确输出等任务。
-
-第三，Wayland缺乏与Xorg的功能对等性，在没有提供足够替代方案的情况下破坏了现有的工作流程。用户依赖的功能（如屏幕录制）最初并不存在，需要像Pipewire这样的变通方案。作者还提到无法禁用垂直同步，这影响了那些优先考虑低延迟的用户。
-
-总而言之，作者认为Wayland的设计局限性、严格的API以及缺乏功能对等性阻碍了它的采用，导致生态系统碎片化，并迫使开发者依赖变通方案和非Wayland解决方案。虽然承认其潜在的好处，但文章得出结论，对于大多数用户来说，Wayland的缺点掩盖了其优势。
-
----
-
-## 76. 雕塑家：编码时捕捉并修复问题
-
-**原文标题**: Sculptor: Catch and fix issues as you code
-
-**原文链接**: [https://imbue.com/product/sculptor/](https://imbue.com/product/sculptor/)
-
-Sculptor：一款将软件工程最佳实践融入开发者工作流程的全新编码助手环境。它充当编码助手，并行地在沙盒环境中识别并帮助修复代码问题，例如缺失的测试、内存泄漏和风格问题。
-
-主要功能包括：
-
-*   **自动化问题检测：** Sculptor使用自定义提示、shell命令以及与常用框架和代码检查工具的集成来检查代码中的潜在问题。
-*   **并行问题解决：** 可以同时启动多个修复，允许开发人员审查建议的更改并通过代理交互来改进它们。
-*   **沙盒执行：** 代码在隔离的环境中运行，从而实现安全的实验和错误修复，而不会影响本地开发环境。
-*   **代码生成支持：** Sculptor还可以协助编写新代码，自动运行自定义检查以确保质量。
-*   **可自定义检查：** 用户可以根据LLM提示或shell命令定义自己的检查，从而根据特定实践定制工具。
-
-Imbue正在寻找测试人员来帮助塑造Sculptor的开发。测试人员将获得早期访问权限、在有限时间内免费使用以及Imbue周边产品。目标是通过将最佳实践集成到LLM驱动的编码工作流程中，使软件工程大众化，从而使其更广泛的受众可以使用。未来的发展方向包括诸如“回溯”功能、自定义检查共享和自动化生产问题解决等功能。
-
----
-
-## 77. 任何程序都可以成为 GitHub Actions 的 shell。
-
-**原文标题**: Any program can be a GitHub Actions shell
-
-**原文链接**: [https://yossarian.net/til/post/any-program-can-be-a-github-actions-shell/](https://yossarian.net/til/post/any-program-can-be-a-github-actions-shell/)
-
-本文揭示了 GitHub Actions 一个令人惊讶的方面：`shell` 关键字用于指定 `run` 代码块的解释器，它接受**系统中 `$PATH` 环境变量中找到的任何可执行文件**，而不仅仅是像 bash 或 pwsh 这样预定义的 shell 列表。
-
-作者发现 GitHub 并未使用固定的 shell 列表并为每个 shell 注入特定标志，而是执行 `$PATH` 查找。这允许用户指定自定义的可执行文件，甚至像 C 编译器 `tcc` 这样非常规的程序作为 shell。为了使其工作，指定的可执行文件需要接受文件名作为输入，GitHub 通过 `{0}` 占位符提供此文件名，该占位符会被替换为包含展开的 `run` 代码块内容的临时文件。
-
-文章通过使用 `tcc` 运行 C 代码以及操纵 `$PATH` 使用自定义的、伪造的 bash 脚本的例子来演示了这一点。
-
-虽然作者承认文件写入和诸如 `GITHUB_ENV` 之类的环境变量已经在 GitHub Actions 中提供了充分的代码执行机会，但使用任意可执行文件作为 shell 的能力仍然是意想不到的。他们提出担忧，即 GitHub 即使对于“众所周知”的 shell 也进行 `$PATH` 查找可能会引入安全隐患，因为它依赖于用户的 `$PATH` 而不是这些解释器的固定、预定义的位置。它也挑战了 `shell: python` 依赖于工具缓存中预注册工具的假设。
-
----
-
-## 78. 采访一位使用人工智能准备面试的软件工程师
-
-**原文标题**: Interviewing a software engineer who prepared with AI
-
-**原文链接**: [https://www.kapwing.com/blog/what-its-like-to-interview-a-software-engineer-preparing-with-ai/](https://www.kapwing.com/blog/what-its-like-to-interview-a-software-engineer-preparing-with-ai/)
-
-作者讲述了一次离奇的面试经历，面试对象是一位使用人工智能准备的软件工程师候选人。该候选人最初以相关经验和匹配的领英资料给人留下深刻印象，但当面试官深入探究过去项目的技术细节时，出现了前后矛盾之处。该候选人难以解释特定实施选择背后的原因，最终承认在准备过程中大量依赖人工智能，并夸大了自己在项目中的参与程度。
-
-作者反思了人工智能时代招聘的挑战，并为招聘经理提供了以下关键要点：
-
-*   **提出详细的情景问题：** 探索技术决策背后的“为什么”，以及它们与整体业务环境的关联。
-*   **关注人文因素：** 询问技术解决方案对用户及其体验的影响。
-*   **坚持视频通话：** 确保面试者与个人资料相符，且未被外包。
-*   **背景调查至关重要：** 向以前的同事核实候选人的说法。
-*   **保持专业和同理心：** 认识到候选人也在尽力而为，而且你的声誉是双向的。
-
-作者强调，尽管候选人有可能在某种程度上蒙骗了他，但他最终坦白了自己的不诚实，这本身就证明了他的真实意图。作者最后建议求职者保持诚实，因为虚报信息可能会导致日后的问题。这篇文章是一项培训资源，强调需要更深入的提问来揭示人工智能辅助的夸大行为，以及背景调查等传统验证方法的重要性。
-
----
-
-## 79. 《军团要塞2经济中的套利与均衡（2012）》
-
-**原文标题**: Arbitrage and equilibrium in the Team Fortress 2 economy (2012)
-
-**原文链接**: [https://web.archive.org/web/20130530084230/http://blogs.valvesoftware.com/economics/arbitrage-and-equilibrium-in-the-team-fortress-2-economy/](https://web.archive.org/web/20130530084230/http://blogs.valvesoftware.com/economics/arbitrage-and-equilibrium-in-the-team-fortress-2-economy/)
-
-本文发表于2012年，探讨了《军团要塞2》(TF2)经济中的套利和均衡，这是一个由Steam促成的复杂的易货系统。作者Yanis强调了套利的内在挑战，即随着更多人追求套利，套利机会会减少，最终导致均衡。
-
-与由于价格数据有限而难以衡量套利潜力的传统经济不同，Valve拥有来自Steam的实时数据，能够为TF2物品交易创建一个“套利潜力指数”。该指数的峰值与重大发布和销售相关，这些时期价格效率低下，创造了套利机会。
-
-本文深入探讨了TF2经济的复杂性，这是一个易货系统，交易需要“需求的双重巧合”。尽管它很复杂且交易量很高，但没有单一物品成为主导货币。
-
-均衡是经济学的基石，被定义为一种没有改变动机的状态，无论是静态的（没有运动）还是动态的（可预测的运动）。作者解释了如何在简化的包含四种物品的TF2经济中计算均衡价格，展示了当价格偏离均衡时如何产生套利机会。交易者利用这些差异，最终推动经济走向均衡。
-
-然而，作者指出，TF2经济很少处于均衡状态，从而产生了持续的套利机会。为了衡量套利潜力，开发了一种方法，即使在非均衡状态下，也可以为每个物品分配一个单一的“名义钥匙”价格。这涉及根据特定物品交易的频率对价格进行加权，以估计相对价值。
-
----
-
-## 80. Show HN: 用Go实现的极简MCP服务器，展示项目架构
-
-**原文标题**: Show HN: Minimal MCP server in Go showcasing project architecture
-
-**原文链接**: [https://github.com/TuanKiri/weather-mcp-server](https://github.com/TuanKiri/weather-mcp-server)
-
-此“Show HN”帖子介绍了一个极简的基于 Go 的模型上下文协议 (MCP) 服务器，旨在为 Claude 等 AI 助手提供实时天气数据。该服务器名为“weather-mcp-server”，利用 Weather API 并提供一个名为“current_weather”的工具来获取指定城市的天气信息。
-
-该帖子详细介绍了如何通过配置代码段将服务器与 Claude Desktop 集成，需要可执行文件的路径和 Weather API 密钥。文中提供了使用 Go 从源代码构建服务器的说明。
-
-帖子概述了项目结构，重点介绍了关键目录，例如：`cmd`（包含服务器的入口点）、`internal`（包含服务器逻辑），以及 `internal` 中的子目录，例如 `handlers`、`services`、`core` 和 `mock`，展示了一个组织良好的架构。`tools` 目录用于与 MCP 相关的实用程序，而 `view` 包含模板。
-
-帖子最后鼓励通过 issues 和 pull requests 贡献，并强调使用贡献指南。该服务器在 MIT 许可证下授权。
-
----
-
-## 81. 直线竞速赛车手正抛弃机械增压器，转而使用水肺式气瓶和压缩空气。
-
-**原文标题**: Drag racers are ditching superchargers for scuba-style tanks and compressed air
-
-**原文链接**: [https://www.thedrive.com/news/drag-racers-are-ditching-superchargers-for-scuba-style-tanks-and-compressed-air](https://www.thedrive.com/news/drag-racers-are-ditching-superchargers-for-scuba-style-tanks-and-compressed-air)
-
-“The Drive”文章探讨直线竞速赛新趋势：压缩空气增压（CAS）。该系统用储存在碳纤维罐中的压缩空气取代传统机械增压器和涡轮增压器，在功率和效率方面具有潜在优势。
-
-CAS的工作原理是将极冷的、高密度空气强制送入发动机，理论上超越了传统方法，因为它不需要马力或排气来运行。该系统利用调节器和阀门网络来控制气流，从而可以像传统机械增压器一样进行增压调节。
-
-进入发动机的约零下20华氏度的冷空气是一个关键优势，它能带来更稠密的燃烧空气，并可能由于较低的压力而减轻发动机部件的压力。它也可能对燃料辛烷值不太敏感。
-
-蒂娜·皮尔斯、戴夫·皮尔斯和瑞恩·米切尔等赛车手正在试验CAS，并取得了与之前设置相当或更好的性能。马克·格里芬的卡玛洛被展示为CAS应用的典型例子。
-
-虽然CAS仍处于早期应用阶段，但它为直线竞速赛中提高发动机功率提供了一种有前景的替代方案，具有令人印象深刻的性能提升潜力。然而，重新填充专用罐需要特定的设备，增加了一项后勤考虑。文章总结说，CAS有可能对直线竞速赛产生重大影响，并期待这项技术的进一步发展。
-
----
-
-## 82. Globstar: 开源静态分析工具包
-
-**原文标题**: Globstar: Open-source static analysis toolkit
-
-**原文链接**: [https://github.com/DeepSourceCorp/globstar](https://github.com/DeepSourceCorp/globstar)
-
-Globstar：开源静态分析工具包，旨在帮助开发者和安全工程师创建并运行自定义代码分析检查器。它利用tree-sitter进行快速高效的AST分析，允许用户使用简单的YAML接口或更强大的Go接口编写检查器，后者提供完整的AST访问、导入解析和作用域解析。
-
-其关键特性包括速度和效率（使用Go编写并以单个二进制文件分发）、原生tree-sitter集成、CI/CD友好性以及真正的开源MIT许可证。用户在他们的仓库中创建一个`.globstar`目录来存储自定义检查器，这些检查器在YAML文件中使用tree-sitter S-表达式查询定义。一个简单的命令`globstar check`运行所有检查器，包括内置的。
-
-本文提供了使用`curl`命令的安装说明，并解释了如何编写一个基本的检查器（以检测Python中的`eval()`用法为例），以及如何将Globstar集成到GitHub Actions等CI流水线中。
-
-Globstar旨在简化自定义检查器的创建，避免对专用DSL或大量工具的需求。它强调易用性、速度和开源方法，使团队能够实施学习到的模式并维护代码质量。计划未来与DeepSource集成，但这是可选的，突出了Globstar作为强大工具的独立性。完整文档可在官方网站上找到。
-
----
-
-## 83. 依赖类型 Haskell 编程的苦与乐 [pdf] (2013)
-
-**原文标题**: Hasochism: The pleasure and pain of dependently typed Haskell programming [pdf] (2013)
-
-**原文链接**: [https://personal.cis.strath.ac.uk/conor.mcbride/pub/hasochism.pdf](https://personal.cis.strath.ac.uk/conor.mcbride/pub/hasochism.pdf)
-
-由于提供的PDF内容严重损坏（包含大量无法读取的字符和编码错误），无法生成文章《Hasochism:依赖类型 Haskell 编程的快乐与痛苦》的有意义的摘要。该PDF似乎已彻底损坏。
-
----
-
-## 84. 用淘汰赛评估大型语言模型的社交技能
-
-**原文标题**: Benchmarking LLM social skills with an elimination game
-
-**原文链接**: [https://github.com/lechmazur/elimination_game](https://github.com/lechmazur/elimination_game)
-
-本文介绍了“淘汰游戏”，这是一个新颖的基准，旨在评估大型语言模型在多智能体环境中的社会推理、战略思维和欺骗技巧。在这个游戏中，八个大型语言模型参与一场锦标赛，涉及公开和私下对话、联盟形成、投票和说服陪审团。
-
-游戏通过几轮公开声明、私下聊天和匿名投票来淘汰玩家。平局增加了复杂性，最后两名参赛者必须说服已被淘汰的玩家组成的陪审团投票支持他们获胜。
-
-该基准提供了各种指标来分析大型语言模型的行为，包括：TrueSkill排行榜（总体排名）、排名分布（名次频率）、好友背叛率（从背叛者和被背叛者的角度来看）、第一名次数、最早淘汰次数、决赛两人获胜率以及模型冗长度。这些指标揭示了联盟形成、背叛、修辞技巧和沟通风格的倾向。
-
-本文展示了一个参与的大型语言模型的排行榜，按其TrueSkill分数排名，展示了GPT-4o、Claude 3.7 Sonnet等模型的性能。它还包括模型在游戏过程中产生的有趣且富有洞察力的涌现文本示例，突出了它们的战略思维、欺骗策略和复杂的社交手段。“仅公开版本”提供了一种评估变体。
-
----
-
-## 85. 在 1980 年代，我们也曾从电视上下载软件。
-
-**原文标题**: In the 1980s we also downloaded software from TV
-
-**原文链接**: [https://newslttrs.com/in-the-1980s-we-also-downloaded-software-from-tv/](https://newslttrs.com/in-the-1980s-we-also-downloaded-software-from-tv/)
-
-本文探讨了上世纪80年代英国8位计算机普及推动下，从电视广播下载软件的方式。虽然无线电广播使用音频信号，但电视开发了两种独特的技术。
-
-第一种是图文电视，它利用电视帧之间的空白信号传输数据，然后由配备特定硬件的 BBC Micro 解码。用户必须等待所需软件在广播中循环播放。另一种方法是使用连接到电视屏幕的简单光电二极管电路，检测闪烁的黑白方块，将光转换转化为计算机代码，尽管速度非常慢。
-
-John 和 Richard Billingsley 开发的 Visicode 通过使用八个闪烁的条纹并利用电视屏幕上每行扫描的电子束，显著提高了数据传输速率。这允许每半个电视帧传输一个完整字节的数据。
-
-作者联系了现任教授 John Billingsley，他指出，由于现代平板电视的出现，Visicode 就像图文电视软件下载一样，已经过时。然而，这两种方法都展示了巧妙的工程设计，它们重新利用了现有的模拟电视功能，从而在有限的资源下实现了新的功能。图文电视数据有时可以从旧视频录像中恢复，这为 Visicode 的潜在恢复打开了大门。
-
----
-
-## 86. 了解你的工程师薪资来源
-
-**原文标题**: Knowing where your engineer salary comes from
-
-**原文链接**: [https://www.seangoedecke.com/where-the-money-comes-from/](https://www.seangoedecke.com/where-the-money-comes-from/)
-
-本文认为，软件工程师常常对科技公司的运作方式抱有天真的理解，就像特朗普选民对联邦解雇感到惊讶一样。核心观点是：科技公司主要由利润驱动，工程工作的价值取决于其对收入增长的贡献。
-
-作者批评那些专注于非盈利活动（如技术债务、可访问性或开源工作）的工程师，然后在他们未获得认可或被解雇时抱怨。他们实际上是在通过忽视公司的主要目标来“投票解雇自己”。
-
-为了避免这种情况，工程师应该：
-
-1. **理解公司的商业模式**：了解公司如何赚钱（例如，阅读财务报告、内部分析）。
-2. **将自己的工作与利润联系起来**：确定他们的任务（即使是看似无利可图的任务）如何支持收入的产生。例如，可访问性可以扩大客户群或满足法规要求。
-3. **为盈利的公司工作**：大型、成功的科技公司有能力投资于边际功能，这些功能可以略微增加其庞大的客户群。
-
-作者告诫不要天真地认为“好公司”重视与利润无关的“好功能”。 工程师应该意识到他们的工作与底线之间的联系，以确保工作保障和职业满意度。 虽然公司可能有其他目标，但利润是确保稳定的根本驱动力。
-
----
-
-## 87. 工作简化与政府效率和管理的历史
-
-**原文标题**: Work Simplification and the History of Government Efficiency and Management
-
-**原文链接**: [https://www.governance.fyi/p/historical-government-efficiency](https://www.governance.fyi/p/historical-government-efficiency)
-
-本文总结了与凯文·霍维克霍斯特关于历史上的政府效率和管理实践的对话，特别关注20世纪40年代至60年代的“工作简化”计划。二战期间，预算局（现OMB）为管理人员开发了一项培训计划，旨在改进流程、减少繁文缛节并提高效率，以应对战时人力短缺的问题。这种“工作简化”借鉴了工厂培训方法。预算局顾问W. Edwards Deming提倡对所有交易进行统计控制，而不是试图监督每一项交易。这些方法是全面质量管理和精益方法的前身，出乎意料地具有现代性。
-
-然而，霍维克霍斯特认为，20世纪60年代，随着政府采纳了来自企业的繁琐的“长期规划”方法，管理实践有所下降，尤其受到罗伯特·麦克纳马拉国防计划的影响。这种自上而下的方法，受到通用汽车和杜邦等公司“现代”实践的启发，反而使政府的效率低于以往。
-
-霍维克霍斯特研究这个主题的动机源于对国家能力的辩论，旨在了解政府过去如何更有效率，尤其是在诸如职位描述、预算编制和管理培训等领域。他提到的一个有趣的案例研究包括美国国税局早期利用穿孔卡片计算设备的数字化工作。
-
----
-
-## 88. 细胞正在交换线粒体。这对我们的健康意味着什么？
+## 69. 细胞正在交换线粒体。这对我们的健康意味着什么？
 
 **原文标题**: Cells are swapping their mitochondria. What does this mean for our health?
 
 **原文链接**: [https://www.nature.com/articles/d41586-025-01064-5](https://www.nature.com/articles/d41586-025-01064-5)
 
-本文探讨了人们对线粒体作为可移动的细胞器，可以在细胞之间转移的新兴理解，挑战了它们作为静态、完全细胞内能量工厂的传统角色。这种“线粒体转移”已在多种生物和细胞类型中观察到，表明这是一种基本的生物过程。
+这篇《自然》杂志的文章探讨了一项突破性研究，该研究挑战了线粒体是静态细胞器并局限于细胞内的传统观点。 新出现的证据表明，线粒体是可移动的，能够通过一种称为“线粒体转移”的过程在细胞之间转移。
 
-研究人员正在调查这种转移的原因和影响。一些研究表明，线粒体被捐赠给处于困境的邻近细胞，可能有助于组织修复，增强免疫系统，或预防中风后的细胞死亡等。癌细胞也可能利用这种机制来发挥优势。
+研究人员已经在各种生物和细胞类型中观察到这种转移，暗示其具有多种功能。 尽管这种移动性的确切原因仍在调查中，但研究表明，细胞可能会在需要时将线粒体捐赠给邻近细胞，从而可能有助于组织修复、免疫反应或拯救受损细胞。 相反，线粒体转移也可能是癌细胞利用的一种武器。
 
-尽管在体外和动物中观察到转移，但由于技术限制，直接在人体中观察仍然难以实现。然而，研究人员正在探索线粒体转移在癌症和中风等疾病中的治疗应用。
+尽管令人兴奋，但研究人员尚未在人体内直接观察到这一过程，因此线粒体转移在人类健康中的程度和影响仍然是个谜。 然而，科学家们已经开始探索利用这种现象进行治疗的可能性，例如治疗癌症和中风。
 
-本文强调，线粒体除了能量产生外，还参与多种细胞过程，包括细胞通讯和免疫反应。此外，它们比以前认为的更加多样化和动态。
-
-虽然转移机制（隧道纳米管、囊泡或自由漂浮）正变得越来越清晰，但转移线粒体的信号通路和最终命运仍然很大程度上未知。需要进一步研究以了解这些细胞交换在各种疾病和正常生理中的具体作用。
+线粒体具有古老的细菌起源，现在被认为不仅仅是能量动力源。 它们在细胞通讯、免疫反应中发挥着关键作用，甚至在细胞内表现出意想不到的多样性。 线粒体转移可能是日常生物学的重要组成部分。 最近的研究表明，它可能通过帮助维持保护性膜屏蔽来在维持健康组织方面发挥作用。
 
 ---
 
-## 89. macOS Sequoia 中 Rsync 被 openrsync 取代
+## 70. 现代史上最愚蠢的经济政策
 
-**原文标题**: Rsync replaced with openrsync on macOS Sequoia
+**原文标题**: The Dumbest Economic Policy in Modern History
 
-**原文链接**: [https://derflounder.wordpress.com/2025/04/06/rsync-replaced-with-openrsync-on-macos-sequoia/](https://derflounder.wordpress.com/2025/04/06/rsync-replaced-with-openrsync-on-macos-sequoia/)
+**原文链接**: [https://www.theatlantic.com/economy/archive/2025/04/economic-policy-trump-tariffs/682369/](https://www.theatlantic.com/economy/archive/2025/04/economic-policy-trump-tariffs/682369/)
 
-macOS Sequoia 因授权问题，用 openrsync 替换了老旧的 rsync 2.6.9。 苹果之前发布的是 2006 年的 rsync 2.6.9 版本，因为它采用 GPLv2 许可。 由于认为与 GPLv3 许可不兼容，他们避免更新到 rsync 3.x (GPLv3)。
+德里克·汤普森的文章认为，唐纳德·特朗普的经济政策，特别是他对关税的处理方式，对美国经济和制造业（他旨在振兴的行业）是有害的。作者用重建破旧房屋的比喻来说明特朗普的政策具有破坏性，就像放火烧家具和砸碎窗户，而不是建设性的。
 
-Openrsync 采用 ISC 许可（一种宽松的 BSD 风格许可），消除了这些许可问题，允许苹果未来更自由地更新该工具。
+汤普森承认需要解决美国制造业的衰落问题，并提出了替代策略，如公共补贴、与盟友合作以及明确的贸易规则，类似于《芯片与科学法案》。然而，他批评特朗普的行为，例如对墨西哥和加拿大征收关税、威胁吞并加拿大、对欧洲国家征收关税以及在金融市场制造不确定性，都是适得其反的。
 
-这一改变很重要，因为：
-* 苹果现在可以提供 openrsync 的更新版本。
-* Openrsync 虽然与 rsync 兼容，但仅支持 rsync 命令行参数的一个子集。
-
-这可能会影响 Mac 管理员，因为由于 openrsync 中命令行参数支持的减少，现有的 rsync 脚本和功能可能无法在 macOS Sequoia 上运行。 openrsync 工具被符号链接到 `/usr/bin/rsync`，因此它作为传统的 rsync 命令被调用。 运行 `/usr/bin/rsync --version` 将确认此更改。 输出将显示 "openrsync" 和 "rsync version 2.6.9 compatible" 消息。
+这篇文章强调了这些关税对制造企业的负面影响，包括供应链中断、成本增加以及潜在的失业。它还驳斥了关税旨在降低利率的说法，指出美国国债收益率实际上已经上升。最终，汤普森得出结论，特朗普的政策正在损害美国制造商并扰乱金融体系，本质上是在拯救经济的幌子下对经济造成内部破坏。他担心如果特朗普真的想要摧毁经济会造成的后果。
 
 ---
 
-## 90. 最小的心脏起搏器仅有米粒大小
+## 71. Show HN: Badgeify – 将任何应用添加到你的Mac菜单栏
 
-**原文标题**: Smallest Pacemaker Is the Size of a Rice Grain
+**原文标题**: Show HN: Badgeify – Add Any App to Your Mac Menu Bar
 
-**原文链接**: [https://www.sciencealert.com/breakthrough-worlds-smallest-pacemaker-is-the-size-of-a-rice-grain](https://www.sciencealert.com/breakthrough-worlds-smallest-pacemaker-is-the-size-of-a-rice-grain)
+**原文链接**: [https://badgeify.app/](https://badgeify.app/)
 
-一个美国领导的科学家团队研发出世界最小的起搏器，这是一种无线、临时的设备，比一粒米还小，可以注射并用光控制。它被设计成在不再需要时于体内溶解，从而避免了移除传统临时起搏器所带来的并发症，后者需要手术并可能造成损伤。
+本文旨在解决新款MacBook上Mac菜单栏图标被刘海遮挡的问题。它为遇到这个令人沮丧问题的用户提供解决方案，旨在使所有重要图标可见且易于访问。
 
-该设备与胸贴配合使用，检测不规则的心跳，并利用光来指示起搏器进行适当的刺激。它由一个原电池供电，利用体液来产生电脉冲。
+文章涵盖了各种方法，从可能有助于图标放置和排列的内置macOS修复，到专门用于管理和自定义菜单栏的更全面的第三方工具。 这些工具可以提供高级功能来优化菜单栏布局，并确保所有图标保持可见，即使有刘海。
 
-在各种动物和人体心脏组织中的测试已经成功。研究人员估计，人体试验可能在两到三年内开始。这项创新被誉为心脏病学领域一项潜在的“变革性突破”，尤其对于患有先天性心脏缺陷的婴儿和正在从心脏手术中恢复的成年人。专家认为，这项底层技术可以扩展到心脏病学以外的领域，如神经再生、伤口愈合和智能植入物。
-
----
-
-## 91. 使用 Web Audio API 生成可变占空比方波
-
-**原文标题**: Variable duty cycle square waves with the Web Audio API
-
-**原文链接**: [https://www.danblack.co/blog/variable-duty-cycle-square-wave](https://www.danblack.co/blog/variable-duty-cycle-square-wave)
-
-本文探讨了如何使用 Web Audio API 创建可变占空比的方波，这是模拟 Gameboy 等设备发出的芯片音乐的关键特性。 Web Audio API 的标准“方波”振荡器仅提供 50% 的占空比，这限制了声音的可能性。
-
-作者详细介绍了两种克服此限制的方法。第一种方法使用**傅里叶级数**，将所需的波形表示为正弦波和余弦波（谐波）的和。 这涉及计算傅里叶系数并使用 `AudioContext.createPeriodicWave()` 为振荡器生成自定义波形。 虽然数学上准确，但这种方法可能会占用大量 CPU 资源，尤其是在谐波较多的情况下。
-
-第二种方法采用 **WaveShaperNode**。 这涉及使用自定义传递函数来扭曲锯齿波。 创建一个阶跃函数，根据所需的占空比将输入值映射到 1 或 -1，从而有效地将锯齿波整形为方波。 作者更喜欢这种方法，因为它简单，而且其固有的混叠和“嗡嗡声”更接近 Gameboy 的声音。 虽然傅里叶级数在数学上是完美的，但 WaveShaper 节点更容易产生 Gameboy 所需的不完美音迹。
-
-文章强调了每种方法的优缺点：傅里叶级数提供精度，但计算成本可能很高，而 WaveShaper 更简单，但容易产生混叠。 最终，作者选择 WaveShaper 方法，因为它在他们的 Gameboy 音乐跟踪器项目中实现了简单性、真实性和效率的平衡。
+本质上，本文旨在成为寻求重新控制其菜单栏并防止图标被刘海遮挡的用户资源，从而改善他们的整体Mac体验。
 
 ---
 
-## 92. Show HN: Lux – Lua 的豪华包管理器
+## 72. 压倒性的负面和士气低落的力量
 
-**原文标题**: Show HN: Lux – A luxurious package manager for Lua
+**原文标题**: An Overwhelmingly Negative and Demoralizing Force
 
-**原文链接**: [https://mrcjkb.dev/posts/2025-04-07-lux-announcement.html](https://mrcjkb.dev/posts/2025-04-07-lux-announcement.html)
+**原文链接**: [https://aftermath.site/ai-video-game-development-art-vibe-coding-midjourney](https://aftermath.site/ai-video-game-development-art-vibe-coding-midjourney)
 
-Show HN：Lux——Lua的现代化包管理器
+人工智能应用对游戏开发者工作生活产生的负面影响
+开发者访谈表达了对强行使用人工智能的不满，这往往违背了他们的意愿和专业知识。
 
----
+主要担忧包括：
 
-## 93. 从虚幻引擎中移除多人游戏功能可以节省内存。
+*   **艺术完整性与创作过程：** 艺术总监过度依赖人工智能进行艺术指导，扼杀了创造力以及对优秀游戏设计至关重要的迭代过程。人工智能生成的艺术品被用于给投资者留下深刻印象，而不是真正地为游戏愿景提供信息。
+*   **软件开发效率低下：** 开发者被迫使用ChatGPT和Claude等人工智能工具生成代码，这导致积极性降低，代码质量下降，难以集成和理解。人工智能生成的代码缺乏必要的上下文和意图。
+*   **工作保障与专业知识受损：** 开发者感到他们的专业知识被低估，因为人工智能被视为一种快速解决方案，导致他们认为人工智能将会取代他们。
+*   **伦理问题：** 人工智能的使用引发了伦理问题，尤其是在抄袭以及未经语音演员同意，使用其声音生成人工智能对白方面。
 
-**原文标题**: Deleting multiplayer from the Unreal engine can save memory
-
-**原文链接**: [https://larstofus.com/2025/04/05/how-deleting-multiplayer-from-the-engine-can-save-memory/](https://larstofus.com/2025/04/05/how-deleting-multiplayer-from-the-engine-can-save-memory/)
-
-本文探讨了在开发单人游戏时，移除虚幻引擎中的多人游戏功能所能实现的潜在内存节省。作者具有虚幻引擎多人游戏功能的经验，承认其优势，但也研究了它们对单人项目造成的额外开销。
-
-虽然未使用的代码通常不会影响性能，但作者发现与网络相关的（Actor、组件和移动的复制）数据结构，即使在单人游戏中也会消耗大量内存。通过分析 AActor 类的内存布局，作者估计通过移除多人游戏相关的变量，每个 Actor 可以潜在减少 328 字节，每个 SceneComponent 可以潜在减少 32 字节。
-
-作者详细介绍了干净地实现此优化的挑战。由于虚幻引擎头文件工具 (UHT) 的限制，尝试使用预处理器宏来有条件地编译多人游戏代码被证明是有问题的。相反，作者选择注释掉 58 个引擎文件中的相关变量和代码。
-
-作者估计，对于一个包含 25,000 个 Actor 的关卡，这种优化可以节省大约 10MB 的内存。虽然对于大多数项目来说，这可能并不显著，但对于拥有异常大量 Actor (>100,000) 且其他优化方法不足的游戏来说，这可能是有益的。作者总结说，虽然值得考虑，但应该首先寻求许多其他的优化机会。
+文章强调，强行整合人工智能通常是出于节省时间和金钱的考虑，却忽视了对创造力、质量和开发者整体福祉的有害影响。受访者认为，人工智能的推动者试图修复一些没有损坏的东西，并忽略了人类创造力和协作在游戏开发中的根本价值。
 
 ---
 
-## 94. 异步 Rust 的确定性模拟测试
+## 73. 中国或将重创美国房地产市场
 
-**原文标题**: Deterministic simulation testing for async Rust
+**原文标题**: China could crush the U.S. housing market
 
-**原文链接**: [https://s2.dev/blog/dst](https://s2.dev/blog/dst)
+**原文链接**: [https://www.cnbc.com/2025/04/09/how-china-could-crush-the-us-housing-market.html](https://www.cnbc.com/2025/04/09/how-china-could-crush-the-us-housing-market.html)
 
-本文探讨了由于异步Rust代码固有的非确定性特性而导致的测试难题。传统测试方法在处理并发和异步操作时，往往难以提供一致且可靠的结果。
+CNBC文章讨论了中国可能因美国贸易政策而抛售美国抵押贷款支持证券(MBS)，从而对美国房地产市场产生负面影响的可能性。外国持有美国MBS的重要份额（15%），而中国是主要参与者。
 
-提出的核心概念是**确定性模拟测试**作为解决方案。这种方法旨在为测试异步代码创建一个可控且可预测的环境。它不依赖于异步任务的实时执行，而是通过模拟环境来操纵这些任务的计时和调度。
+文章强调，中国已经开始减少其MBS持有量。中国和日本等其他主要持有者的进一步加速抛售可能会推高抵押贷款利率。这是因为出售MBS会扩大抵押贷款利差，增加购房者的借贷成本。
 
-这种方法的关键要素可能包括：
+不断上涨的抵押贷款利率将进一步削弱本已步履维艰的春季房地产市场，该市场正面临着高房价、消费者信心下降和股市波动等挑战。文章强调，潜在购房者已经对他们的财务状况感到担忧，更高的抵押贷款利率可能会进一步阻止他们。
 
-*   **抽象掉实时时钟和任务调度器：** 提供这些组件的虚拟化、可控版本。
-*   **控制任务的交错执行：** 允许测试来决定异步任务的执行顺序，从而暴露潜在的竞争条件和并发错误。
-*   **确定性执行：** 确保给定的测试场景始终产生相同的结果，而与外部因素无关。
-*   **简化调试：** 通过提供可预测的执行环境来促进更轻松的调试。
-
-文章认为，通过使用确定性模拟，开发人员可以为其异步Rust应用程序编写更健壮、更可靠的测试，从而能够捕获那些在非确定性环境中难以或不可能重现的错误。它可能侧重于这种方法在提高代码质量和减少调试时间方面的益处。
+更糟糕的是，美联储也在减少其MBS投资组合，从而加剧了抵押贷款利率的潜在上行压力。外国抛售和美联储行动的综合影响可能会严重扰乱房地产市场。
 
 ---
 
-## 95. 谁不喜欢“公正”的新闻呢？没有权力的人。
+## 74. 神经涂鸦 - 大语言模型的液态记忆层
 
-**原文标题**: Who isn't a big fan of "impartial" news? People who don't have power
+**原文标题**: Neural Graffiti – Liquid Memory Layer for LLMs
 
-**原文链接**: [https://www.niemanlab.org/2025/04/which-types-of-people-arent-big-fans-of-impartial-news-people-who-dont-have-power/](https://www.niemanlab.org/2025/04/which-types-of-people-arent-big-fans-of-impartial-news-people-who-dont-have-power/)
+**原文链接**: [https://github.com/babycommando/neuralgraffiti](https://github.com/babycommando/neuralgraffiti)
+
+神经涂鸦：一种无需微调即可为大语言模型注入实时上下文感知记忆的“喷涂层”。该实验性层受神经可塑性和涂鸦艺术启发，通过微妙影响模型的向量嵌入来改变模型的行为，从而影响其内部关联词语和概念的方式。
+
+喷涂层的工作原理是将记忆痕迹“喷涂”到 Transformer 推理的最后阶段。该痕迹随着交互而演变，导致基于过去上下文的渐进式行为漂移。虽然它不能保证特定的词语输出，但它鼓励模型倾向于某些概念，从而随着时间的推移塑造其语气和方向。用户可以跟踪该层对每个输出的影响。
+
+该项目的目标是使AI模型能够发展出更积极的行为，通过用过去的经验“标记”他们的模型来积累个性和增强好奇心。它从液态神经网络中汲取灵感，但通过将记忆层集成到现有的基于Transformer的模型中，提供了一种更实用的方法。
+
+作者警告说，使用神经涂鸦可能会将模型变成具有独特精神世界的独立“实体”，可能使其不适合某些商业应用。相反，它被设想为一种创建数字角色的工具，这些角色可以通过记住他们的互动并相应地塑造他们的反应来发展某种形式的自我意识。最终，这是一种专注于探索AI行为修改的实验性技术。
+
+---
+
+## 75. 展示HN：音景和Lofi播放器
+
+**原文标题**: Show HN: Soundscapes and Lofi Player
+
+**原文链接**: [https://www.noisefill.com/](https://www.noisefill.com/)
+
+“Show HN：声景与Lo-fi播放器”提交介绍了一个名为Noisefill的Web应用，该应用被描述为声景与Lo-fi播放器。该应用很可能为用户提供环境音效和Lo-fi音乐，用于集中注意力、放松或其他用途。简短的内容表明该应用使用JavaScript构建，并且需要在用户的浏览器中启用JavaScript才能运行。
+
+---
+
+## 76. 展示一下：我也做了一个文字游戏。我妈没啥感觉，但我自己觉得挺酷的。
+
+**原文标题**: Show HN: I also built a word game. My mom is indifferent, but I think its ccool
+
+**原文链接**: [https://playletterlinks.com/](https://playletterlinks.com/)
+
+这个“Show HN”帖子介绍 LetterLinks，一款受拼字游戏 Scrabble 启发的每日单词构建游戏。作者对此感到兴奋，尽管他们的母亲对此漠不关心。该游戏提供每日挑战，玩家使用一组字母方块在游戏板上创建单词。
+
+主要功能包括：
+
+*   **玩法：** 玩家拖动或点击方块，将它们放置在棋盘上，水平或垂直地组成单词。
+*   **计分：** 根据字母值和特殊方格（如双/三字母 (DL/TL) 和双/三词 (DW/TW)）获得积分。特殊方块包括百搭牌（代表任何字母）和奖励牌（使单词得分加倍）。
+*   **约束：** 必须使用中心星形方格，单词必须连接，并且只有有效的字典单词才有效。单词至少需要 2 个字母长。
+*   **每日挑战：** 每天每个人都获得相同的字母，每日奖励挑战涉及特定的单词模式以获得额外的积分。水平和垂直乘数增加了额外的策略层。
+*   **教程：** 游戏包含解释游戏玩法、计分和特殊功能的教程。
+*   **进度：** 技能等级反映了基于分数的进度。
+*   **排行榜：** 玩家可以提交他们的分数，并在每日排行榜上与其他人比较。
+*   **统计和成就：** 您的统计数据和成就将被跟踪和显示。
+*   **分享：** 玩家可以分享他们的分数。
+
+---
+
+## 77. 你的ext4文件系统中文件的顺序无关紧要。
+
+**原文标题**: The order of files in your ext4 filesystem does not matter
+
+**原文链接**: [https://thewisenerd.com/blog/ext4-readdir/](https://thewisenerd.com/blog/ext4-readdir/)
+
+一次由节点镜像补丁更新引发的JVM应用行为异常调试历程：罪魁祸首是Classpath中的JAR文件顺序，JVM通过`readdir`系统调用从通配符展开Classpath，而`readdir`在ext4文件系统上的顺序受到“目录哈希种子”的影响。
+
+---
+
+## 78. 90年代密码朋克邮件列表的十万封邮件
+
+**原文标题**: 100k emails from the 90s Cypherpunk listserve
+
+**原文链接**: [https://cypherpunk.timespan.vc/](https://cypherpunk.timespan.vc/)
+
+本文收录了来自 20 世纪 90 年代赛博朋克邮件列表的 10 万封邮件。赛博朋克是一群关注数字时代隐私和安全的行动者和思想家。他们倡导使用密码学来保护个人自由并挑战中心化权力。
+
+这份档案的意义在于其历史价值。它让我们得以一窥互联网的早期发展以及围绕着当今仍然高度相关的问题的知识激荡，例如：
+
+*   **隐私：** 赛博朋克们预见到了政府和企业日益增长的监控对隐私构成的威胁。
+*   **密码学：** 他们倡导使用强大的加密技术作为保护隐私和实现安全通信的工具。
+*   **去中心化：** 他们相信去中心化的系统和技术是限制中心化机构权力的途径。
+*   **言论自由：** 他们认为保护在线言论自由和抵制审查至关重要。
+
+该邮件列表的讨论涵盖了广泛的主题，包括密码学、数字货币、匿名以及技术的法律和政治影响。 考察这些邮件可以深入了解塑造当今互联网的许多思想和技术的起源，包括加密货币和安全消息应用程序。 该合集是研究人员、历史学家以及任何有兴趣了解数字自由运动根源的人的宝贵资源。
+
+---
+
+## 79. I, II 或 III 级肥胖与健康结果之间的关联
+
+**原文标题**: Associations Between Class I, II, or III Obesity and Health Outcomes
+
+**原文链接**: [https://evidence.nejm.org/doi/10.1056/EVIDoa2400229](https://evidence.nejm.org/doi/10.1056/EVIDoa2400229)
 
 无法访问文章链接。
 
 ---
 
-## 96. 钩针编织的数学
+## 80. 为什么公司不修复漏洞
 
-**原文标题**: The Mathematics of Crochet
+**原文标题**: Why Companies Don't Fix Bugs
 
-**原文链接**: [https://hellohartblog.wordpress.com/2015/05/25/the-mathematics-of-crochet/](https://hellohartblog.wordpress.com/2015/05/25/the-mathematics-of-crochet/)
+**原文链接**: [https://idiallo.com/blog/companies-dont-fix-bugs](https://idiallo.com/blog/companies-dont-fix-bugs)
 
-数学与钩编的惊人交汇
+本文深入探讨了即使像Rockstar Games这样价值数十亿美元的巨头公司，也常常未能修复软件中看似明显的Bug的原因，并以独立程序员解决GTA Online长期存在的加载时间问题为例进行了说明。
 
-本文探讨了数学与钩编之间令人惊讶的交汇。它强调了钩编图案所具有的潜在数学结构，将针法的存在与缺失比作Base2数学的二进制代码。随后，本文深入研究了通过钩编说明数学概念的具体例子。
+作者认为，问题并非开发人员无能，而是源于公司优先事项和官僚主义的系统性问题。Bug修复，特别是那些与特定功能或需求没有直接关联的修复，会被归类为“技术债务”，并且由于开发人员更替、项目重点转移以及修改旧代码可能带来的意外后果等因素，常常在待办事项中被忽略。
 
-双曲钩编被介绍为一种创建双曲空间模型的技术，这种几何结构曾被认为不可能实现。文章提到了黛娜·泰米娜博士在钩编双曲表面方面的开创性工作，以及莉莲·博洛尼的艺术探索，她利用钩编创作出优美的双曲图形雕塑。文章还指出，双曲增长与珊瑚礁等自然形态之间存在联系，并引用了“具象研究所”的“珊瑚礁”项目。
+核心问题在于，Bug修复通常缺乏像销售额或新功能发布那样容易衡量的、清晰直接的投资回报率（ROI）。公司优先考虑影响季度收益的指标，从而导致用户体验和用户好感的忽视。虽然成功的Bug修复可以产生积极的公关效应，但它们很少能解决导致Bug持续存在的根本性系统问题。
 
-此外，本文还介绍了“混沌钩编”，以Hinke Osinga博士和Bernd Krauskopf教授对洛伦兹流形的钩编表示为例。他们将洛伦兹方程的计算机生成指令转化为有形的钩编对象。最后，文章提到了“分形钩编”，将分形的自相似、不规则形状与这种艺术形式联系起来。文章最后强调了钩编固有的智慧和美丽，并认为它是一种创造性的表达方式，与数学原理出人意料地交织在一起。
-
----
-
-## 97. PiDP-1，老机器的重生
-
-**原文标题**: PiDP-1, or the rebirth of an old machine
-
-**原文链接**: [https://hackaday.io/project/202541-replica-of-the-pdp-1-pidp-1/log/239666-finished-the-first-test-batch-of-5-machines](https://hackaday.io/project/202541-replica-of-the-pdp-1-pidp-1/log/239666-finished-the-first-test-batch-of-5-machines)
-
-这个Hackaday.io项目日志详细记录了PDP-1计算机复制品PiDP-1的进展。作者Oscarv宣布完成了首批五台机器的测试，有效地将PDP-1的总产量提高了10%。
-
-该项目专注于复制1959年原版PDP-1标志性的闪烁灯光和矢量点图形。Oscarv提到，他们将用两周时间“润色”这些机器，并努力使其接近完成。项目团队在过去两周全身心投入，不断产生新的想法和功能。
-
-其他用户表达了对该项目的热情。评论突出了该项目的酷炫和令人赞叹之处。一位评论者期待看到项目的最终成果。
+作者最后总结说，用户应该责怪的是系统，而不是开发人员，并强调官僚主义的惯性和以利润为导向的决策往往掩盖了用户体验和软件质量的重要性。本文通过一个设想的Bug单生命周期场景以及来自具有行业经验的读者的评论来佐证观点。
 
 ---
 
-## 98. 出土距今2500年古匕首，饰星月几何图案
+## 81. ClickHouse 中 Rust 的一年
 
-**原文标题**: Ancient Dagger Up to 2.5k Years Old W Stars/Moons/Geometric Patterns Unearthed
+**原文标题**: A year of Rust in ClickHouse
 
-**原文链接**: [https://www.smithsonianmag.com/smart-news/metal-detectorists-unearth-ancient-dagger-decorated-with-tiny-stars-crescent-moons-and-geometric-patterns-180986369/](https://www.smithsonianmag.com/smart-news/metal-detectorists-unearth-ancient-dagger-decorated-with-tiny-stars-crescent-moons-and-geometric-patterns-180986369/)
+**原文链接**: [https://clickhouse.com/blog/rust](https://clickhouse.com/blog/rust)
 
-金属探测者Jacek Ukowski和Katarzyna Herdzik在最近一场风暴过后，于波兰北部海滩发现了一把可能有2500年历史的装饰匕首。这把匕首可能与哈尔施塔特文化（公元前8至5世纪）有关，上面装饰着星星、新月和几何图案。
+Alexey Milovidov 详述了 ClickHouse 将 Rust 集成到 C++ 代码库中为期一年的实验。目标并非完全重写，而是启用使用 Rust 开发新组件，同时确保与现有 C++ 基础设施的无缝集成。
 
-这一发现已报告给卡缅土地历史博物馆，考古学家Grzegorz Kurka对该文物进行了检查。专家认为，这把匕首可能是在南欧制造并进口到波罗的海沿岸，代表了极高的冶金工艺水平。精美的设计，特别是可能象征星座的星星，暗示着它可能具有与太阳崇拜相关的仪式意义，或被富裕的战士使用。
+第一个项目涉及集成 BLAKE3 哈希函数，由一名本科生负责，展示了构建系统集成。后来，`clickhouse-client` 通过 Rust 的 `skim` 库得到了改进，用于交互式历史记录导航，尽管 BLAKE3 最终被 C++ LLVM 实现所取代。
 
-这把近十英寸长的匕首有一个纤细的、装饰有环状物的把手，刀刃上印有天体和几何图案。 Ukowski认为这是他最珍贵的发现。将进行冶金分析以确定匕首的成分和制造技术，研究人员还将研究磨损模式以了解其用途。
+PRQL（一种替代查询语言）的引入进一步验证了 Rust 集成。更重要的是，Delta Kernel（一个基于 Rust 的库，用于与 Delta Lake 交互）被纳入，以解决缺乏适用于数据湖格式的强大 C++ 实现的问题。这种集成突出了几个挑战：供应链管理、复杂包装器的创建、处理 Rust 的“panic”行为、确保清理器在两种语言中都能工作、交叉编译的复杂性、库链接问题以及管理符号大小。过长的符号名称导致二进制文件膨胀，需要紧急关注。
 
-这把匕首被认为是波美拉尼亚历史上的宝贵遗产，研究完成后将在波兰博物馆展出。 Kurka将其描述为“一件真正的艺术品”，与他在波兰领土上发现的任何东西都不一样。
-
----
-
-## 99. 创业公司不一定要成为独角兽。
-
-**原文标题**: A startup doesn't need to be a unicorn
-
-**原文链接**: [https://mattgiustwilliamson.substack.com/p/your-startup-doesnt-need-to-be-a](https://mattgiustwilliamson.substack.com/p/your-startup-doesnt-need-to-be-a)
-
-无法访问文章链接。
+尽管存在问题，ClickHouse 仍欣然接受将 Rust 集成到其开发中。虽然互操作性需要警惕，但模糊测试器等工具已被证明有助于发现 Rust 库中的错误。剩下的一个障碍是确保 ClickHouse 内部的内存管理约定和外部存储连接与 Rust 库使用的约定之间的可组合性。
 
 ---
 
-## 100. Git 二十年
+## 82. “氟化物降低智商”报告需撤回
 
-**原文标题**: 20 years of Git
+**原文标题**: „Fluoride reduces IQ" report needs to be retracted
 
-**原文链接**: [https://blog.gitbutler.com/20-years-of-git/](https://blog.gitbutler.com/20-years-of-git/)
+**原文链接**: [https://twitter.com/cremieuxrecueil/status/1909865076271563065](https://twitter.com/cremieuxrecueil/status/1909865076271563065)
 
-本文庆祝 Git 诞生 20 周年，详细介绍了它的起源和演变过程，从一个“愚蠢的内容追踪器”发展成为主流的版本控制系统。文章强调，由于现有版本控制系统的局限性，Git 源于 Linux 内核开发社区的挫败感，旨在改进“补丁和 tar 包”工作流程。 Linus Torvalds 创建 Git 时，专注于高效的快照和差异跟踪。
+提供的内容并非文章，而是一段来自X公司（前身为Twitter）的代码和法律/政策信息。 它表明用户的浏览器已禁用Javascript，并提供了帮助页面、服务条款、隐私政策、Cookie政策、版本说明和广告信息的链接。 它还声明版权归X公司所有，时间为2025年。 其中没有关于氟化物降低智商的报告的信息，也没有任何论点或证据来撤回该报告。
 
-作者 Scott Chacon 分享了他与 Git 的个人历程，包括在一家初创公司中使用它进行内容分发以及为其早期开发做出贡献。 他解释了 Git 的架构，基于文件树的链表和内容寻址的 blob 存储，自第一次提交以来，其基本结构保持不变。
+---
 
-文章追溯了 Git 命令的演变，最初是低级工具，通过 shell 脚本和社区贡献逐渐转变为用户友好的“瓷器”命令。文章提供了第一个 "git log" 和 "git rebase" 等示例，展示了它们的简陋起源。文章还提到了 GitHub 的 "Octocat" 标志的起源，将其与 Git 开发中的 "octopus" 合并（具有多个父节点的合并）概念联系起来。最终，文章强调了 Git 从一个简单的数据库工具集到现代软件开发基石的意外旅程。
+## 83. 夏威夷诞生了一个疯狂的“怪胎系统”
+
+**原文标题**: A wild 'freakosystem' has been born in Hawaii
+
+**原文链接**: [https://www.bbc.com/future/article/20250403-the-new-hawaiian-freakosystem-emerging-on-oahu-accidentally-created-by-humans](https://www.bbc.com/future/article/20250403-the-new-hawaiian-freakosystem-emerging-on-oahu-accidentally-created-by-humans)
+
+本文以夏威夷的瓦胡岛为例，探讨了“新型生态系统”（又称“怪异生态系统”）的出现。这些生态系统的特点是本地物种和非本地物种的混合，通常是由于人类活动（如森林砍伐、物种引进和气候变化）造成的。瓦胡岛的低地森林曾经以本地动植物为主，现在却成了来自世界各地的引进物种的混合体，非本地鸟类扮演着至关重要的角色，比如种子传播，这些角色以前是由已经灭绝的本地鸟类承担的。
+
+科学家们正在研究瓦胡岛，将其视为一个“水晶球”，以洞察受人类影响严重的生态系统的未来。虽然这些新型生态系统可能存在争议，挑战了传统的、专注于将景观恢复到干扰前状态的保护策略，但它们是自我维持的系统，已经跨越了使之不可能回到原始状态的阈值。根除非本地物种并不总是解决方案，因为有些物种在新生态系统中发挥着至关重要的作用。
+
+文章强调了生态学家之间关于定义和管理新型生态系统的争论，指出虽然有些人认为地球上很大一部分生态系统已经过渡到新型状态，但另一些人发现很难定义一个明确的阈值。最终，瓦胡岛的案例促使人们重新评估保护方法，承认新型生态系统有可能提供有价值的，尽管是不同的，生态功能。
+
+---
+
+## 84. 特斯拉太阳能销售额连续四个季度下降，然后特斯拉停止公布数据。
+
+**原文标题**: Tesla Solar Sales Declined for 4 Qtrs. Then Tesla Stopped Publishing the Numbers
+
+**原文链接**: [https://cleantechnica.com/2025/04/07/tesla-solar-sales-declined-for-4-straight-quarters-then-tesla-stopped-publishing-the-numbers/](https://cleantechnica.com/2025/04/07/tesla-solar-sales-declined-for-4-straight-quarters-then-tesla-stopped-publishing-the-numbers/)
+
+CleanTechnica文章讨论了特斯拉收购SolarCity后太阳能安装量的下降。作者Zachary Shahan对特斯拉推广屋顶太阳能的努力表示失望，并指出季度安装量显著下降。
+
+在2022年第四季度“最后一个好季度”（安装100兆瓦）之后，特斯拉的太阳能安装量至少连续四个季度下降，之后特斯拉停止公布这些数据。虽然该公司仍在财务报告中公布“太阳能系统，净值”，但这些总数也在下降。如果这种趋势持续下去，特斯拉的太阳能业务可能会连续八个季度下滑。
+
+作者强调，特斯拉的太阳能安装量尚未达到SolarCity收购后不久的水平。2016年第四季度安装了201兆瓦，随后的两个季度安装了超过150兆瓦，但此后特斯拉很少突破每季度100兆瓦。作者得出结论，特斯拉的太阳能业务可能只是“昔日辉煌的空壳”，考虑到需要增加太阳能的普及，这对清洁技术倡导者来说令人沮丧。文章暗示，特斯拉可以采取更多措施，利用其品牌和客户群来促进太阳能销售。
+
+---
+
+## 85. 脊椎动物中，智慧至少进化过两次
+
+**原文标题**: Intelligence Evolved at Least Twice in Vertebrate Animals
+
+**原文链接**: [https://www.quantamagazine.org/intelligence-evolved-at-least-twice-in-vertebrate-animals-20250407/](https://www.quantamagazine.org/intelligence-evolved-at-least-twice-in-vertebrate-animals-20250407/)
+
+量子杂志文章《脊椎动物的智能至少进化了两次》探讨了关于复杂神经回路（支持智能）是在脊椎动物（鸟类和哺乳动物）中从共同祖先进化而来，还是在两类动物中独立进化的争论。
+
+近期发表在《科学》杂志上的研究为后者提供了强有力的证据，表明智能多次出现。研究人员使用单细胞RNA测序技术比较了鸡、小鼠和壁虎在胚胎发育过程中的大脑结构。他们发现，虽然成熟的大脑回路在动物之间看起来非常相似，尤其是在大脑皮层区域，但哺乳动物的新皮层和鸟类的背侧脑室隆起（DVR）的结构发育方式不同——在不同的时间、以不同的顺序、在不同的脑区。这表明这些认知区域是独立进化的。
+
+这些发现挑战了长期以来的假设，即由于鸟类缺乏像哺乳动物一样的分层新皮层，所以它们缺乏复杂的智能。虽然构建模块（神经元）相似，但它们的组织和发育途径不同。这些研究还发现，一些影响大脑发育的基因在不同物种间是共享的，表明它们从共同祖先那里继承了一些东西。
+
+文章最后强调，智能没有固定的路径，趋同进化表明相似的解决方案可以独立产生。该研究鼓励我们拓宽对智能的理解，超越以人类为中心的观点，从而可能为人工智能的开发和寻找外星生命提供信息。
+
+---
+
+## 86. Show HN: 连接IBM 3151终端到大型机[视频]
+
+**原文标题**: Show HN: Connecting an IBM 3151 terminal to a mainframe [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=V14ac9cRi9Q](https://www.youtube.com/watch?v=V14ac9cRi9Q)
+
+YouTube上的“Show HN”帖子展示了如何将IBM 3151终端连接到大型计算机。尽管帖子本身除了标题外几乎没有提供任何信息，但上下文表明这是一个将旧终端硬件与大型机系统连接的实际演示。该视频可能展示了所涉及的过程，包括潜在的配置、电缆连接，以及可能用于验证连接和功能的测试会话。包含标准的YouTube样板（“关于 新闻 版权 联系我们…”）表明内容托管在YouTube上，并提供了视频链接。这可能对那些对复古计算、大型机技术或连接遗留系统的技术细节感兴趣的人具有吸引力。
+
+---
+
+## 87. 维沙普·奥伯伦编译器
+
+**原文标题**: Vishap Oberon Compiler
+
+**原文链接**: [https://github.com/vishapoberon/compiler](https://github.com/vishapoberon/compiler)
+
+Vishap Oberon：一个免费、开源的Oberon-2编程语言实现，为Linux、BSD、Mac和Windows等传统操作系统设计。它使用C后端（gcc、clang、tcc或msc）进行编译，并整合了来自Ulm、oo2c和Ofront Oberon编译器的库，遵循Oakwood指南。
+
+安装简单：克隆仓库，使用“make full”构建，可选择使用“make install”安装到系统目录，并更新PATH环境变量。该编译器支持32位和64位架构，包括Intel x86、x86_64和ARM，并且兼容多种C编译器和操作系统（GNU/Linux、MAC OSX、BSD、Windows）。
+
+Vishap Oberon支持Oberon-2，包括类型绑定过程，并提供可通过编译器选项选择的不同整数和集合类型大小。它包含与Oberon V4、S3、Ooc、Ulm和Oakwood系统兼容的库。同时也支持Oberon-07的一些特性。
+
+该项目起源于Josef Templ的Ofront，并由Norayr Chilingarian（库移植和平台支持）和David Brown（扩展平台和类型支持）贡献。名称“Ѵishap Oberon”引用亚美尼亚高地的龙，象征着该项目与编译器传统和“计算机科学小说”的联系。提供了大量参考和链接，以便进一步探索Oberon和相关主题。
+
+---
+
+## 88. Meta 被抓包操纵 AI 基准测试
+
+**原文标题**: Meta got caught gaming AI benchmarks
+
+**原文链接**: [https://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming](https://www.theverge.com/meta/645012/meta-llama-4-maverick-benchmarks-gaming)
+
+Meta被指控用其新的Llama 4模型Maverick操纵AI基准测试。具体来说，Meta在LMArena基准测试网站上部署了一个Maverick的“实验性聊天版本”，该版本在该网站上排名很高，暗示其性能优于GPT-4o等模型。然而，该版本针对“对话性”进行了优化，与公开可用的Llama 4模型不同。LMArena此后更新了其政策，以防止此类行为，强调公平和可重复的评估。
+
+像Simon Willison这样的AI研究人员和专家批评Meta，称这种做法使基准测试分数具有误导性，因为开发者无法访问获得高分的模型。还有指控称Meta使用测试集训练Llama 4，Meta副总裁Ahmad Al-Dahle对此予以否认。
+
+据报道，Llama 4本身的发布被推迟，原因是该模型最初未能达到内部预期。该事件凸显了基准测试在AI开发中日益增长的重要性，以及像Meta这样的公司面临的越来越大的压力，即要被视为AI领导者，这也引发了人们对AI基准测试的完整性和可靠性的质疑。
+
+---
+
+## 89. 展示HN：创作涂黑诗的工具
+
+**原文标题**: Show HN: A tool for creating blackout poetry
+
+**原文链接**: [https://bobbiec.github.io/blackout-poetry.html](https://bobbiec.github.io/blackout-poetry.html)
+
+这个“Show HN”帖子介绍了一个创作遮蔽诗的工具。用户输入文本，用Markdown进行格式化。关键功能是使用“[方括号]”来指示应该“遮蔽”的词，大概是为了视觉上隐藏，从而揭示由剩余词语构成的诗意信息。
+
+---
+
+## 90. Cogito预览：将IDA作为通往通用超级智能的路径
+
+**原文标题**: Cogito Preview: IDA as a path to general superintelligence
+
+**原文链接**: [https://www.deepcogito.com/research/cogito-v1-preview](https://www.deepcogito.com/research/cogito-v1-preview)
+
+Deep Cogito发布基于迭代蒸馏与放大(IDA)新型训练方法的一系列开源LLM (30亿至700亿参数)，他们认为这为通用超级智能铺平了道路。这些Cogito模型在标准基准测试中优于LLaMA、DeepSeek和Qwen的同类开源模型。700亿参数模型甚至超过了Llama 4 109B MoE模型。
+
+IDA涉及迭代地使用子程序放大智能，然后将这种放大的智能提炼回模型的参数中。这使得模型能够迭代地自我改进，超越人类监督者的局限性，这是实现真正超级智能的关键障碍。Cogito团队仅用75天就开发了这些模型，包括令人印象深刻的700亿版本，证明了IDA的效率。
+
+这些模型针对编码、函数调用和代理用例进行了优化，并且可以在标准模式和推理模式下运行。虽然没有针对长时间推理链进行优化，但IDA驱动的推理非常有效。Deep Cogito计划在不久的将来发布更大的模型（高达6710亿参数）和改进的检查点，所有这些都将在开源许可下发布。文章强调，虽然基准测试很重要，但现实世界的表现才是最终的评估，并且他们对模型的性能充满信心。Deep Cogito正在积极寻找顶尖工程师和研究人员加入他们构建通用超级智能的使命。
+
+---
+
+## 91. “互联网之父”及科技专家担忧我们过度依赖人工智能
+
+**原文标题**: 'Father of Internet' and tech experts worry we'll rely on AI too much
+
+**原文链接**: [https://www.cnn.com/2025/04/02/tech/ai-future-of-humanity-2035-report/index.html](https://www.cnn.com/2025/04/02/tech/ai-future-of-humanity-2035-report/index.html)
+
+文章探讨了包括互联网之父文顿·瑟夫在内的科技专家们对日益依赖人工智能可能对人类技能和特质产生的负面影响的担忧。一项基于对301位科技领袖、分析师和学者调查的埃隆大学报告显示，随着人工智能发展的加速，到2035年，它可能会削弱诸如同理心、深度思考、道德判断和社会情感智能等关键的人类能力。
+
+该报告强调，超过60%的受访者认为人工智能将在未来十年内从根本上改变人类能力，预测结果倾向于积极和消极结果的混合，或者主要是消极的。担忧包括将同理心和情感支持外包给人工智能代理，可能导致真实人际关系的衰退。
+
+虽然人工智能预计会对好奇心、学习、决策、问题解决和创造力等领域产生积极影响，但专家们警告说，潜在的风险包括日益增长的技术依赖、系统故障，以及人工智能开发中对透明度和问责制的需求。他们倡导监管、数字素养培训和优先考虑人际关系，以减轻人工智能对人类增强可能产生的有害影响。
+
+---
+
+## 92. CSS 裸奔日
+
+**原文标题**: CSS Naked Day
+
+**原文链接**: [https://css-naked-day.org/](https://css-naked-day.org/)
+
+CSS裸体日，每年4月9日庆祝，通过鼓励网站所有者在当天从其网站上移除所有CSS，来推广语义HTML和正确层级结构等Web标准。这种“裸体”展示了底层结构和内容，而没有任何样式增强。
+
+该活动于2006年发起，持续50小时，以涵盖全球所有时区的4月9日。参与方式包括临时剥离CSS，并可选择链接回CSS裸体日网站以告知访问者。该活动强调良好结构的HTML和可访问性的重要性，而不是纯粹的审美设计。
+
+提供的PHP函数和其他工具/插件（WordPress、LifeType、Perl、Django、Drupal、JavaScript、Go、Rails和Bash）可帮助开发人员在指定的时间段内自动执行CSS移除过程。
+
+该项目最初由Dustin Diaz（2006-2009）创建，后来由Taylor Satula（2010-2014）托管，目前由Fabien Basmaison和Jens Oliver Meiert维护。Håkon Wium Lie强调，CSS裸体日符合CSS的根本目的：将内容与表现分离，从而防止HTML成为一种表现语言。
+
+---
+
+## 93. 在关税风暴中，许多公司视中国为最安全的港湾
+
+**原文标题**: In a Storm of Tariffs, Many Companies See China as the Safest Harbor
+
+**原文链接**: [https://www.nytimes.com/2025/04/09/business/trump-tariffs-china-factories.html](https://www.nytimes.com/2025/04/09/business/trump-tariffs-china-factories.html)
+
+关税风暴中，许多公司视中国为最安全港湾
+
+---
+
+## 94. 受F1启发的碳纤维电动滑板速度可达45英里/小时
+
+**原文标题**: Formula-1-inspired carbon electric skateboard shoots riders up to 45 MPH
+
+**原文链接**: [https://newatlas.com/urban-transport/mach-one-carbon-fiber-electric-skateboard/](https://newatlas.com/urban-transport/mach-one-carbon-fiber-electric-skateboard/)
+
+澳大利亚初创公司Radium Performance推出的电动滑板Mach One，专为高性能骑行设计，灵感源自一级方程式赛车。 它拥有碳纤维板面，最高时速可达45英里/小时（72公里/小时），据称可以在3秒内从0加速到30英里/小时（48公里/小时）。
+
+该滑板采用8000瓦双后轮电机系统，配备“扭矩矢量控制”技术，可动态分配动力以提高转弯时的牵引力。它还采用了前后单摇臂悬架和耐用的钢纤维增强聚氨酯驱动带。
+
+Mach One的空心碳纤维板面内置电池和电子元件，便于升级或维修。48V/1,089-Wh锂电池单次充电2小时即可提供长达30英里（48公里）的续航里程。 骑手可以通过无线遥控器和配套应用程序控制滑板的速度和性能。 该滑板重17公斤（37.5磅），售价为5,298澳元（约合3,173美元）。
+
+---
+
+## 95. 使用令牌序列迭代范围
+
+**原文标题**: Using Token Sequences to Iterate Ranges
+
+**原文链接**: [https://brevzin.github.io/c++/2025/04/03/token-sequence-for/](https://brevzin.github.io/c++/2025/04/03/token-sequence-for/)
+
+C++ Ranges性能问题：冗余比较与优化方案
+
+---
+
+## 96. 图像文件的背叛 (2020)
+
+**原文标题**: The Treachery of Image Files (2020)
+
+**原文链接**: [http://beyondloom.com/blog/images.html](http://beyondloom.com/blog/images.html)
+
+图像文件的背叛：为一位品味“独特”的收藏家所办的艺术展的附注。艺术家创作了一系列看似相同的微型艺术品：10x10像素的蓝色方块，保存为GIF文件。然而，价值在于创造每个看似同质的作品所使用的独特过程。
+
+笔记详细描述了每件作品所使用的特定软件、操作系统，甚至汇编代码，突出了产生一个简单的蓝色GIF所需的常常复杂，有时荒谬的方法。例如，“形成与消亡”使用了旧版Macintosh OS的屏幕截图，因为预览应用程序无法保存GIF。“点彩画 I & II”涉及使用Sublime和Vim等文本编辑器精心编写PPM图像格式，然后分别使用ImageMagick和FFmpeg将其转换为GIF。“灼热的光”使用POV-Ray光线追踪器，但由于POV-Ray不支持GIF，因此生成PNG。
+
+“补鞋匠”涉及编写汇编代码来手动构造GIF格式，需要删除无用的标头。“暗箱”使用Interactive K Environment (iKe)中的深奥编程语言K来生成单个GIF帧。“无”涉及通过电子邮件请求一位同事提供预先制作好的蓝色GIF。“绝望的痛苦”使用运行Ubuntu的虚拟机、GIMP应用程序和一个名为Charon的USB驱动器来传输文件，说明了虚拟世界和现实世界之间艰难的旅程。
+
+最后，“蓝色与蓝色的构图”演示了使用Gnuplot创建相对容易的过程。文章最终讽刺了数字图像格式的复杂性和不一致性，以及艺术家为概念纯洁性和特定技术效果所付出的努力。
+
+---
+
+## 97. 弗兰克·劳埃德·赖特在俄亥俄州完成的“最后的乌托邦式住宅”
+
+**原文标题**: "Final Usonian Home" by Frank Lloyd Wright Completed in Ohio
+
+**原文链接**: [https://www.dezeen.com/2025/03/20/final-usonian-home-riverrock-frank-lloyd-wright-ohio-completed/?_hsenc=p2ANqtz--nulJz0XJo1E-jQIojcqaZmWjd0eXJ-oC35zKHYZb1UL94JLh6t_QI1k9lehp4fxwHKjPjkNeM-iQJihX705oJ-Maqyw&_hsmi=355439130](https://www.dezeen.com/2025/03/20/final-usonian-home-riverrock-frank-lloyd-wright-ohio-completed/?_hsenc=p2ANqtz--nulJz0XJo1E-jQIojcqaZmWjd0eXJ-oC35zKHYZb1UL94JLh6t_QI1k9lehp4fxwHKjPjkNeM-iQJihX705oJ-Maqyw&_hsmi=355439130)
+
+弗兰克·劳埃德·赖特最后一件“尤索尼亚住宅”在俄亥俄州竣工摘要：
+
+本文报道了弗兰克·劳埃德·赖特设计的最后一件尤索尼亚住宅Riverrock在俄亥俄州竣工。该住宅虽于1957年设计，但由于财政限制，在赖特生前或由最初的委托人建造。几十年后，一位新主人根据赖特的原始图纸和规范，最终将这栋房子变为现实。
+
+该住宅体现了赖特的尤索尼亚理想：朴素、经济实惠且与自然融为一体。其设计特点包括低矮的轮廓、平屋顶、地热供暖和开放式平面图。Riverrock名副其实，在室内和室外都采用了天然材料，尤其是当地的河卵石。大窗户和精心布置的开口将生活空间与周围的景观连接起来，模糊了室内外的界限。
+
+Riverrock的竣工意义重大，因为它代表了赖特愿景的实现，以及他的尤索尼亚原则以最终的、现在的物理形式的实现。它也有助于更好地理解他的建筑哲学及其对住宅设计的持久影响。这座房子是赖特不朽遗产的证明，也为美国中产阶级提供了经济实惠且美观的住宅的尤索尼亚愿景的切实例子。
+
+---
+
+## 98. 糖精展现对抗抗生素耐药性的意外力量
+
+**原文标题**: Sweetener saccharin shows surprise power against antibiotic resistance
+
+**原文链接**: [https://www.brunel.ac.uk/news-and-events/news/articles/Sweetener-saccharin-shows-surprise-power-against-antibiotic-resistance](https://www.brunel.ac.uk/news-and-events/news/articles/Sweetener-saccharin-shows-surprise-power-against-antibiotic-resistance)
+
+伦敦布鲁内尔大学文章：糖精或可对抗抗生素耐药性
+
+---
+
+## 99. 英国研发“谋杀预测”工具，以识别最有可能杀人者
+
+**原文标题**: UK creating 'murder prediction' tool to identify people most likely to kill
+
+**原文链接**: [https://www.theguardian.com/uk-news/2025/apr/08/uk-creating-prediction-tool-to-identify-people-most-likely-to-kill](https://www.theguardian.com/uk-news/2025/apr/08/uk-creating-prediction-tool-to-identify-people-most-likely-to-kill)
+
+英国政府正在开发一项“谋杀预测”项目，旨在通过分析已知当局人员的个人数据，来识别最有可能犯下凶杀罪的个体。算法将被用于分析来自数千人的数据，包括犯罪受害者，以找出那些面临最严重暴力犯罪风险的人。
+
+该项目最初名为“凶杀预测项目”，现更名为“共享数据以改进风险评估”，司法部希望该项目能够提高公共安全。使用的数据包括姓名、出生日期、性别、种族、警方记录、首次与警方接触的年龄（包括作为家庭暴力受害者），以及“特殊类别的个人数据”，如精神健康、成瘾、自杀、残疾和自残指标。
+
+像Statewatch这样的批评人士谴责该项目“令人不寒而栗且反乌托邦”，认为使用的数据可能会嵌入对少数族裔和低收入社区的偏见。他们担心该系统会强化结构性歧视，并且过于具有侵入性。Statewatch还声称使用了无辜者的个人数据，但司法部强烈否认了这一说法，坚称只使用了已定罪的罪犯的数据。
+
+司法部坚称该项目仅用于研究，旨在利用HM监狱和缓刑服务局以及警察部队持有的现有数据，改进对严重犯罪的风险评估，从而更好地了解缓刑人员实施严重暴力犯罪的风险。他们表示将会发布一份报告。
+
+---
+
+## 100. Show HN: Uncurl.dev – 将 curl 命令转换为可分享、可执行的 UI
+
+**原文标题**: Show HN: Uncurl.dev – Convert curl commands to a shareable, executable UI
+
+**原文链接**: [https://uncurl.dev/](https://uncurl.dev/)
+
+Uncurl.dev 是一个将 `curl` 命令转换为可分享、可执行用户界面的服务。它允许用户在用户友好的界面中轻松分享和执行 `curl` 命令。然而，由于一个严重的安全漏洞，该服务已被关闭。该漏洞源于对管理权限的不安全处理，可能允许恶意行为者获得对服务 VPS（虚拟专用服务器）的 root 访问权限。开发者强调存在默认的管理密码（如果在环境变量中未正确配置则缺少密码），这加剧了问题。该漏洞的存在使得维护该服务风险过高，导致其立即关闭。
 
 ---
 
