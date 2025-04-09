@@ -320,7 +320,7 @@ def write_head_contents(stories_with_summaries):
         if file.startswith('hacker_news_summary_') and file.endswith('.md'):
             file_path = os.path.join('output', file)
             file_time = os.path.getmtime(file_path)
-            date_str = file[19:-3]  # 从文件名提取日期
+            date_str = file[20:-3]  # 从文件名提取日期
             history_files.append((file, date_str, file_time))
     
     # 按时间倒序排序
@@ -338,7 +338,7 @@ def main():
     print("开始运行 Hacker News 文章摘要提取器...")
     
     # 获取热门文章
-    stories = fetch_top_stories(limit=10)
+    stories = fetch_top_stories(limit=100)
     print(f"成功获取 {len(stories)} 篇文章")
     
     stories_with_summaries = []
@@ -394,27 +394,6 @@ def write_text(file_name, method, text):
     """
     with open(file_name, method, encoding='utf-8') as f:
         f.write(text)
-
-
-# def deploy_to_github_pages():
-#     """部署到 GitHub Pages 的说明"""
-#     instructions = """
-# 要将生成的文件部署到 GitHub Pages，请按照以下步骤操作：
-
-# 1. 创建一个新的 GitHub 仓库
-# 2. 将 output 目录中的文件推送到该仓库
-# 3. 在仓库设置中启用 GitHub Pages，选择 main 分支作为源
-
-# 以下是命令示例：
-
-# ```bash
-# cd output
-# git init
-# git add .
-# git commit -m "Initial commit"
-# git remote add origin https://github.com/你的用户名/你的仓库名.git
-# git push -u origin main
-
 
 if __name__ == "__main__":
     main()
