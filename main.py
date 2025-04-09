@@ -136,12 +136,12 @@ def generate_summary(title, content):
     
     try:
         prompt = f"""
-        文章标题: {title}
+        Title: {title}
         
-        文章内容:
+        Content:
         {content}
         
-        请提供这篇文章的简洁摘要（不超过 300 字），捕捉文章的主要观点和关键信息。
+        Provide a concise summary of this article (no more than 300 words), capturing the main points and key information.
         """
         
         response = model.generate_content(prompt)
@@ -156,12 +156,12 @@ def generate_summary_from_url(title, url, max_retries=3):
     while retries < max_retries:
         try:
             prompt = f"""
-            请访问并阅读以下文章:
-            标题: {title}
-            链接: {url}
+            Please read and summarize the following article:
+            Title: {title}
+            URL: {url}
             
-            请提供这篇文章的简洁摘要（不超过 300 字），捕捉文章的主要观点和关键信息。
-            如果无法访问链接，请说明"无法访问文章链接"。
+            Provide a concise summary (no more than 300 words), capturing the main points and key information.
+            If you cannot access the article, please respond with "Unable to access the article link."
             """
             
             response = model.generate_content(prompt)
@@ -183,13 +183,15 @@ def translate_to_chinese(text):
     """使用 Gemini 将文本翻译成中文"""
     try:
         prompt = f"""
-        请将以下文本翻译成中文，要求：
-        1. 只提供一个最准确的中文翻译
-        2. 直接输出翻译结果，不要解释或提供多个选项
-        3. 保持原文的意思和风格
-        4. 如果是标题，保持简洁明了的标题风格
-
-        原文：
+        Translate the following text into Chinese:
+        
+        Requirements:
+        1. Provide only one accurate Chinese translation
+        2. Output the translation directly without explanations or multiple options
+        3. Maintain the meaning and style of the original text
+        4. If it's a title, keep it concise and clear
+        
+        Original text:
         {text}
         """
         
@@ -206,6 +208,12 @@ def translate_to_chinese(text):
             "以下是翻译：\n",
             "翻译如下：\n\n",
             "翻译如下：\n",
+            "Here is the Chinese translation:\n\n",
+            "Here is the Chinese translation:\n",
+            "Chinese translation:\n\n",
+            "Chinese translation:\n",
+            "Translation:\n\n",
+            "Translation:\n",
         ]
         
         for prefix in prefixes_to_remove:
@@ -214,7 +222,7 @@ def translate_to_chinese(text):
                 break
         
         # 移除可能的选项前缀
-        translated_text = re.sub(r'^选项\s*\d+[\s:：]*', '', translated_text.strip())
+        # translated_text = re.sub(r'^选项\s*\d+[\s:：]*', '', translated_text.strip())
         
         return translated_text.strip()
     except Exception as e:
