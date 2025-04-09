@@ -2,17 +2,17 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. 使用内容安全策略强化 Firefox 前端
+## 1. 使用内容安全策略加固 Firefox 前端
 
 **原文标题**: Hardening the Firefox Front End with Content Security Policies
 
 **原文链接**: [https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html](https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html)
 
-本文详述了 Firefox 为抵御注入攻击（特别是跨站脚本攻击，即 XSS）而做出的努力。Firefox 的用户界面使用 HTML、CSS 和 JavaScript 等 Web 技术构建，容易受到 XSS 攻击，从而使其成为攻击者的目标。主要防御策略包括实施内容安全策略（CSP）以限制脚本执行，类似于网站保护自己的方式。
+本文探讨了通过利用内容安全策略 (CSP) 来加强 Firefox 前端防御注入攻击，特别是跨站脚本攻击 (XSS) 的努力。 由于 Firefox UI 是使用 Web 技术构建的，因此它容易受到 Web 应用程序中发现的类似漏洞的影响。
 
-该项目的核心是移除来自 `browser.xhtml` (主要的 UI 文件)的内联事件处理程序。已经使用 `addEventListener` 将 600 多个此类处理程序替换为更安全的替代方案，从而显著减少了攻击面。这项举措是对 Pwn2Own 2022 中发现的漏洞的直接回应。
+本文重点介绍了 Pwn2Own 2022 中的一个漏洞链如何利用 Firefox UI 中 JavaScript 内联事件处理程序的创建。 为了降低这种风险，Firefox 团队一直在从主 UI 文档 `browser.xhtml` 中删除内联事件处理程序，并用单独 JavaScript 文件中的 `addEventListener` 调用来替换它们。 然后，CSP 用于默认阻止内联脚本的执行，从而显着阻碍了依赖于注入和执行任意代码的 XSS 攻击。
 
-文章重点介绍了替换内联处理程序的过程，并为开发人员提供了指导。除了 `browser.xhtml` 之外，Firefox 正在将 CSP 应用扩展到其他 UI 组件和 about: 页面，旨在实施更严格的策略，以完全阻止动态代码执行。最终目标是创建一个更安全的 Firefox，使其能够抵抗 XSS 攻击。预计这些更改将在 Firefox 138 中发布，这将代表前端安全性的实质性改进，并可能破坏现有的漏洞利用链。
+已经重写了 600 多个内联事件处理程序，这表明在加强 UI 方面取得了重大进展。 本文还提到了将此安全措施扩展到 Firefox UI 的其他部分以及实施更严格的 CSP（例如已经为“about:”页面实施的 CSP）的计划。 最终目标是消除 Firefox 中的所有动态代码执行，包括 `eval`，以创建更安全的浏览体验。 这种积极主动的方法提高了攻击者的门槛，并使 Firefox 更具弹性，不易受到攻击。
 
 ---
 
@@ -22,11 +22,11 @@
 
 **原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
 
-本文档介绍了Apache ECharts，一个用于快速构建Web可视化效果的声明式框架。主要侧重于ECharts作为在Web上可视化呈现数据的工具。文档还强调在各种项目和出版物中使用ECharts时应进行适当的引用，涵盖从研究到产品开发和教育的各个领域。它提供了已发表论文（Visual Informatics, 2018）的链接，用于在引用或使用ECharts时进行参考。本质上，该文档作为在使用ECharts时对来源进行确认的公告和指南。
+Apache ECharts是一个声明式框架，专为快速创建基于Web的可视化图表而设计。文章强调了该框架的实用性，并鼓励用户在研究、开发、产品创建、报告、出版物、教育和专利申请等各种活动中使用ECharts时，引用2018年在Visual Informatics上发表的指定论文。本质上，这段文字是对ECharts的介绍，并要求在使用该框架时进行适当的引用。
 
 ---
 
-## 3. 我认识的最棒的程序员
+## 3. 我所认识的最优秀的程序员
 
 **原文标题**: The best programmers I know
 
@@ -36,7 +36,23 @@
 
 ---
 
-## 4. PostgreSQL 全文搜索：用对才快（揭穿“慢”的迷思）
+## 4. 类太阳恒星
+
+**原文标题**: 'Sun-Like' Stars
+
+**原文链接**: [https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/](https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/)
+
+保罗·吉尔斯特的文章深入探讨了在讨论系外行星研究时，“类太阳”一词的复杂性和模糊性。他首先回忆了童年时期对寻找围绕类太阳恒星的可居住行星的迷恋。然而，他意识到“类太阳”一词缺乏严格的定义。
+
+文章强调了“类太阳”的含义从科学论文到大众媒体的转变。虽然像太阳一样的G型恒星是主要焦点，但由于它们的长寿命和潜在的宜居世界，该定义经常扩展到包括F型和K型恒星。有些人甚至将其延伸到包括所有主序星（OBAFGKM），认为这些恒星处于适合生命发展的稳定的氢燃烧阶段。
+
+吉尔斯特强调了澄清“类太阳”定义的重要性，因为它会影响对宜居行星频率的估计。它可以极大地改变人们对潜在的地球级行星数量的看法，从而影响公众认知，并可能影响系外行星研究的资金。作者还将“类地”这一模糊术语进行了类比，并强调科学家在与公众交流时需要使用精确的语言。
+
+随后的评论进一步阐述了围绕宜居性的不确定性，承认我们对生命需求的有限理解以及可能影响宇宙中生命普遍存在的各种挑战。
+
+---
+
+## 5. PostgreSQL 全文搜索：正确配置，速度飞快（破除缓慢神话）
 
 **原文标题**: PostgreSQL Full-Text Search: Fast When Done Right (Debunking the Slow Myth)
 
@@ -46,61 +62,57 @@
 
 ---
 
-## 5. 类太阳恒星
-
-**原文标题**: 'Sun-Like' Stars
-
-**原文链接**: [https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/](https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/)
-
-这篇文章探讨了在讨论系外行星及其潜在宜居性时，“类太阳”一词的模糊性和不断演变的定义。作者Paul Gilster强调了其含义如何根据语境而变化，从而在科学出版物和大众媒体之间造成混淆。
-
-核心问题围绕着哪些类型的恒星符合“类太阳”的标准。最初，这个术语指的是G型星，类似于我们的太阳，寿命约为100亿年。然而，定义已经扩展到包括K型星，有时甚至包括F型星，这些恒星分别比太阳略微凉、质量较小和/或更热、质量更大。这种扩展极大地影响了关于可能存在地球类行星的恒星数量的估计，因为不同恒星类别在银河系中的占比差异很大。
-
-文章强调了在向公众传达研究成果时明确定义“类太阳”的重要性。模糊的用法可能导致误解，并可能影响公众对系外行星研究的支持，尤其是在讨论“地球类行星”等概念时。作者总结说，为了避免混淆非专业人士，尤其是在系外行星研究领域获得更多公众关注之际，术语的精确性至关重要。他强调了在这个新兴领域中清晰沟通的重要性，特别是在新闻发布等情境中。
-
----
-
-## 6. Cyc 讣告
+## 6. Cyc讣告
 
 **原文标题**: Obituary for Cyc
 
 **原文链接**: [https://yuxi-liu-wired.github.io/essays/posts/cyc/](https://yuxi-liu-wired.github.io/essays/posts/cyc/)
 
-Cyc 项目讣告
+这篇讣告记录了道格拉斯·列纳特雄心勃勃的项目Cyc的四十年历程，该项目旨在通过符号逻辑和庞大的知识库创造通用人工智能（AGI）。文章认为，Cyc最终未能实现其目标。
+
+列纳特早期在自动数学发现（AM和EURISKO）方面的工作使他相信，AGI需要大量的常识知识基础。1985年，他启动了Cyc项目，手动编码了数百万个事实和规则。该项目耗资2亿美元和2000人年，积累了约3000万条断言。然而，尽管多次预测会有突破，Cyc从未实现真正的机器学习或AGI。
+
+文章强调了Cyc的封闭性，指出它在学术界AI研究中的应用极少，并且在公开基准测试中缺乏表现。虽然Cyc背后的商业实体Cycorp通过专家系统、数据集成和信息检索应用程序实现了财务稳定，但没有证据表明Cyc的高级智能比传统方法提供了任何竞争优势。作者批评列纳特坚定地坚持符号逻辑，拒绝其他AI方法。OpenCyc的衍生项目也失败了。作者的结论是，Cyc的长期失败是对AI的符号逻辑方法的控诉。
 
 ---
 
-## 7. Show HN：DrawDB - 开源在线数据库图表编辑器 (复古风)
-
-**原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
-
-**原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
-
-DrawDB: 开源在线数据库图表编辑器发布
-
----
-
-## 8. 巴西政府运营的支付系统已占据主导地位
+## 7. 巴西政府运营的支付系统已占据主导地位。
 
 **原文标题**: Brazil's government-run payments system has become dominant
 
 **原文链接**: [https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant](https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant)
 
-巴西政府运营的数字支付系统 Pix 在 2020 年 11 月推出后，迅速成为该国主要的支付方式。Pix 最初在 COVID-19 疫情期间推出，其易用性、速度和零手续费促使其迅速普及。用户可以使用收款人的身份证、电话号码或二维码转账。
+2020年11月，巴西中央银行（BCB）推出了Pix，这是一种迅速在该国占据主导地位的数字支付系统。在COVID-19疫情期间，非接触式交易需求旺盛，Pix恰好提供了一种即时、免费且易于使用的支付方式。
 
-到 2024 年，Pix 的受欢迎程度已超过现金和银行卡支付。该系统的增长引人注目，交易量从 2021 年的 90 亿笔增加到 2024 年的 630 亿笔。在此期间，Pix 促成了 26 万亿雷亚尔（4.5 万亿美元）的资金流动。Pix 的普及速度在全球范围内都是前所未有的。
+用户可以使用收款人的国民身份证号、电话号码或二维码进行转账。到2024年，Pix已超过现金和银行卡，成为巴西最受欢迎的支付技术。交易数量从2021年的90亿笔激增至2024年的630亿笔，价值达26万亿雷亚尔（4.5万亿美元）。巴西对Pix的采用率在全球范围内首屈一指。
 
-文章强调了 Pix 在巴西银行业现代化方面的成功。然而，它也对中央银行因控制该系统而拥有的巨大权力提出了担忧。这篇文章出现在印刷版的《美洲》版块，标题为“Pix 完美”。
+虽然Pix使巴西的银行部门实现了现代化，但也将大量权力集中在中央银行手中，这是文章中提到的一个潜在令人担忧的方面。
 
 ---
 
-## 9. Linux 内核防御地图 – 安全强化概念
+## 8. Show HN: DrawDB – 开源在线数据库图表编辑器 (复古风)
+
+**原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
+
+**原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
+
+DrawDB：开源在线数据库图表编辑器及SQL生成器。此“Show HN”帖子介绍DrawDB，它允许用户可视化设计数据库模式并自动生成相应的SQL代码。“您需要启用JavaScript才能运行此应用”提示表明它是一个用JavaScript构建的客户端Web应用程序。 本质上，它是一款旨在通过可视化表示和自动代码生成来简化数据库设计和实现的工具。
+
+---
+
+## 9. Linux内核防御图 – 安全加固概念
 
 **原文标题**: Linux Kernel Defence Map – Security Hardening Concepts
 
 **原文链接**: [https://github.com/a13xp0p0v/linux-kernel-defence-map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 
-Linux 内核防御图
+本文介绍了 Linux 内核防御地图，一个旨在导航复杂的 Linux 内核安全领域的图形表示。该地图由 a13xp0p0v 创建，以可视化的方式将漏洞类别（带有 CWE 编号）、利用技术、漏洞检测机制以及各种防御技术（包括内核内和内核外的，以及硬件相关的解决方案）连接起来。 这些连接阐明了关系，不一定表示完全缓解。
+
+该地图使用 DOT 语言编写，便于 Git 维护，可在 GitHub、Codeberg 和 GitFlic 上获取。 它可以使用 GraphViz 生成。作者强调，该地图侧重于内核安全加固，不包括攻击面缩小、用户空间安全功能和 LSM 策略。
+
+此外，作者还提供了一个名为 "kernel-hardening-checker" 的工具，以帮助用户验证和改进其内核配置，通过识别主要发行版默认情况下通常未启用的安全加固选项。
+
+本文还列出了几个关键参考文献，包括关于 Grsecurity、内核自我保护、安全文档、缓解清单以及分析内核漏洞及其缓解措施的研究论文的资源。当前地图版本专为 Linux 内核 v6.10 设计。
 
 ---
 
@@ -110,29 +122,11 @@ Linux 内核防御图
 
 **原文链接**: [https://tailscale.com/blog/series-c](https://tailscale.com/blog/series-c)
 
-需求：
-1.  只提供一个准确的中文翻译
-2.  直接输出翻译结果，无需解释或多重选择
-3.  保持原文的含义和风格
-4.  如果是标题，请保持简洁明了
+Tailscale 获 Accel 领投 1.6 亿美元 C 轮融资，加速实现网络隐形化，打造以身份而非 IP 地址为核心的新互联网。该轮融资将用于消除摩擦、在不增加复杂性的前提下扩展网络，并使身份成为安全连接的核心。
 
-Tailscale, a company focused on simplifying networking, announced it has raised $160 million USD ($230 million CAD) in its Series C funding round. The round was led by Accel with participation from CRV, Insight Partners, Heavybit, and Uncork Capital, along with angel investors like George Kurtz (Crowdstrike CEO) and new investor Anthony Casalena (Squarespace CEO).
+Tailscale 旨在解决日益复杂的网络问题，这在 AI 行业尤为突出，因为跨云连接 GPU 和保护工作负载极具挑战性。Perplexity、Mistral 和 Cohere 等领先的 AI 公司已在使用 Tailscale。其他知名客户包括 Instacart、SAP 和 Duolingo。
 
-The article explains that the funding will be used to accelerate Tailscale's growth and development. The company aims to remove friction in networking, scale its network without added complexity, and prioritize identity over IP addresses for secure connectivity, a concept they call "identity-first networking." This approach allows users to connect to their apps, teammates, and services, regardless of their location, simplifying the networking experience.
-
-Tailscale highlights the growing need for their solution, particularly within the AI industry, where companies like Perplexity, Mistral, Cohere, Groq, and Hugging Face are utilizing Tailscale to manage and secure their infrastructure. Other companies like Instacart, SAP, Telus, Motorola, and Duolingo are also using Tailscale.
-
-The investment will allow Tailscale to expand its engineering and product teams, support its free customer offerings, and further develop its platform, ensuring backward compatibility. The company emphasizes its commitment to making networking simple and accessible for all, from startups to Fortune 500 companies and individuals.
-
-Tailscale宣布完成1.6亿美元（2.3亿加元）C轮融资
-
-专注于简化网络连接的Tailscale公司宣布已完成1.6亿美元（2.3亿加元）的C轮融资。本轮融资由Accel领投，CRV、Insight Partners、Heavybit和Uncork Capital参投，以及包括George Kurtz（Crowdstrike首席执行官）和新投资者Anthony Casalena（Squarespace首席执行官）在内的天使投资人。
-
-文章解释说，这笔资金将用于加速Tailscale的增长和发展。该公司旨在消除网络连接中的摩擦，在不增加复杂性的情况下扩展其网络，并优先考虑身份认证而非IP地址以实现安全连接，他们称之为“身份优先网络”。这种方法允许用户无论身处何处，都能连接到他们的应用程序、团队成员和服务，从而简化网络体验。
-
-Tailscale强调了对其解决方案日益增长的需求，特别是在人工智能行业，Perplexity、Mistral、Cohere、Groq和Hugging Face等公司正在使用Tailscale来管理和保护其基础设施。Instacart、SAP、Telus、Motorola和Duolingo等其他公司也在使用Tailscale。
-
-此次投资将使Tailscale能够扩大其工程和产品团队，支持其免费客户服务，并进一步开发其平台，确保向后兼容性。该公司强调其致力于让网络连接对所有人（从初创公司到财富500强公司，再到个人用户）来说都简单易用。
+该公司计划扩大其工程和产品团队，投资于免费客户的免费支持，并保持向后兼容性。这项投资使 Tailscale 能够继续专注于简化所有人的网络连接，从初创公司到财富 500 强公司。此轮融资包括现有和新投资者的参与，包括 Accel 的 Amit Kumar、Anthony Casalena（Squarespace 首席执行官）、CRV、Heavybit、Insight、Uncork Capital 和 George Kurtz（Crowdstrike 首席执行官）。Tailscale 认为网络是安全和身份层的最佳位置，边界正在从数据中心转移到个人。
 
 ---
 
