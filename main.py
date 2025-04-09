@@ -72,17 +72,48 @@ def extract_article_content(url):
     """提取文章内容"""
     try:
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Cache-Control': 'max-age=0'
         }
-        response = requests.get(url, headers=headers, timeout=10)
+        
+        # 增加超时时间
+        response = requests.get(url, headers=headers, timeout=15)
+        
+        # 检查响应状态
+        if response.status_code != 200:
+            print(f"获取文章失败，状态码: {response.status_code}")
+            return ""
+            
+        # 尝试检测编码
+        if response.encoding == 'ISO-8859-1':
+            response.encoding = response.apparent_encoding
+            
         soup = BeautifulSoup(response.text, 'html.parser')
         
-        # 移除脚本和样式元素
-        for script in soup(["script", "style"]):
-            script.extract()
+        # 移除脚本、样式和其他不需要的元素
+        for element in soup(["script", "style", "nav", "footer", "header", "aside", "form"]):
+            element.extract()
         
-        # 获取文本
-        text = soup.get_text()
+        # 尝试找到主要内容区域
+        main_content = None
+        for tag in ['article', 'main', '.content', '#content', '.post', '.article', '.entry']:
+            if tag.startswith('.') or tag.startswith('#'):
+                main_content = soup.select_one(tag)
+            else:
+                main_content = soup.find(tag)
+                
+            if main_content:
+                break
+                
+        # 如果找到主要内容区域，则使用它，否则使用整个页面
+        if main_content:
+            text = main_content.get_text()
+        else:
+            text = soup.get_text()
         
         # 清理文本
         lines = (line.strip() for line in text.splitlines())
@@ -93,6 +124,9 @@ def extract_article_content(url):
         return text[:15000]
     except Exception as e:
         print(f"提取文章内容时出错: {e}")
+        print(f"错误类型: {type(e).__name__}")
+        import traceback
+        print(f"错误详情: {traceback.format_exc()}")
         return ""
 
 def generate_summary(title, content):
