@@ -227,7 +227,9 @@ def translate_to_chinese(text):
             r'要求：\s*\n*[\d\.\s]*只提供.*?(?=\n\n|\Z)',
             r'要求：\s*\n*[\d\.\s]*直接输出.*?(?=\n\n|\Z)',
             r'要求：.*?(?=\n\n|\Z)',
-            r'原文：\s*\n*'
+            r'原文：\s*\n*',
+            r'原文翻译：\s*\n*',
+            r'翻译：\s*\n*'
         ]
         
         for pattern in requirements_patterns:
@@ -336,7 +338,7 @@ def main():
     print("开始运行 Hacker News 文章摘要提取器...")
     
     # 获取热门文章
-    stories = fetch_top_stories(limit=1)
+    stories = fetch_top_stories(limit=10)
     print(f"成功获取 {len(stories)} 篇文章")
     
     stories_with_summaries = []
