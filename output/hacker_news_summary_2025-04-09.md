@@ -2,38 +2,17 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. 我所认识的最优秀的程序员
+## 1. 我认识的最优秀的程序员
 
 **原文标题**: The best programmers I know
 
 **原文链接**: [https://endler.dev/2025/best-programmers/](https://endler.dev/2025/best-programmers/)
 
-我无法访问文章链接，故无法提供摘要。
+无法访问文章链接。
 
 ---
 
-## 2. Apache ECharts
-
-**原文标题**: Apache ECharts
-
-**原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
-
-Apache ECharts：强大的 JavaScript 图表库
-
-主要特性包括：
-
-*   **图表类型多样:** 支持折线图、柱状图、散点图、饼图、雷达图等多种图表类型，可实现各种数据集的可视化。
-*   **交互性:** 提供缩放、平移和工具提示等动态交互功能，便于数据探索。
-*   **可定制:** 提供丰富的自定义选项，用于样式、数据呈现和用户体验。
-*   **开源:** 基于 Apache License 2.0 协议，可免费用于商业和非商业用途。
-*   **性能:** 专为处理大型数据集而设计，并提供优化渲染。
-*   **跨平台:** 在各种浏览器和设备上无缝运行。
-
-ECharts 广泛应用于数据分析、商业智能和各种 Web 应用程序中，以有效传达数据洞察。它易于集成，并为数据可视化需求提供全面的解决方案。
-
----
-
-## 3. 使用内容安全策略强化 Firefox 前端
+## 2. 利用内容安全策略强化 Firefox 前端
 
 **原文标题**: Hardening the Firefox Front End with Content Security Policies
 
@@ -43,7 +22,29 @@ ECharts 广泛应用于数据分析、商业智能和各种 Web 应用程序中�
 
 ---
 
-## 4. PostgreSQL 全文检索：用对就快（驳斥“慢”的说法）
+## 3. Apache ECharts
+
+**原文标题**: Apache ECharts
+
+**原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
+
+Apache ECharts
+ECharts 是一个由百度开源的、基于 JavaScript 的数据可视化图表库。它提供了丰富的图表类型，例如折线图、柱状图、散点图、饼图、地图、热力图等等，并支持用户高度自定义图表外观和交互行为。
+
+ECharts 的核心特点包括：
+
+*   **丰富的图表类型：** 涵盖了常见和特殊的各种图表，满足多样的数据可视化需求。
+*   **强大的交互性：** 支持缩放、平移、筛选、数据高亮等交互功能，让用户可以更深入地探索数据。
+*   **高度可定制性：** 允许用户自定义图表的样式、布局和动画效果，创造独特的视觉呈现。
+*   **跨平台支持：** 可以在现代浏览器和移动设备上运行。
+*   **性能优化：** 针对大数据量进行了性能优化，保证图表的流畅呈现。
+*   **活跃的社区：** 拥有庞大的用户群体和活跃的社区，提供技术支持和丰富的案例。
+
+总而言之，ECharts 是一个功能强大、易于使用的开源数据可视化工具，适用于各种需要数据展示和分析的场景。
+
+---
+
+## 4. PostgreSQL 全文搜索：正确使用时的快速表现（揭穿缓慢的误解）
 
 **原文标题**: PostgreSQL Full-Text Search: Fast When Done Right (Debunking the Slow Myth)
 
@@ -59,7 +60,7 @@ ECharts 广泛应用于数据分析、商业智能和各种 Web 应用程序中�
 
 **原文链接**: [https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/](https://www.centauri-dreams.org/2025/04/08/on-sun-like-stars/)
 
-无法访问文章链接。
+文章链接无法访问。
 
 ---
 
@@ -69,45 +70,27 @@ ECharts 广泛应用于数据分析、商业智能和各种 Web 应用程序中�
 
 **原文链接**: [https://yuxi-liu-wired.github.io/essays/posts/cyc/](https://yuxi-liu-wired.github.io/essays/posts/cyc/)
 
-## 摘要：
-
-本文回顾了旨在构建通用知识库的雄心勃勃的人工智能项目 Cyc。Cyc 旨在将人类常识知识以逻辑规则的形式编码，从而赋予人工智能理解世界的能力。文章追溯了 Cyc 的发展历程，从其最初的愿景和创始人 Doug Lenat 的目标开始。文章强调了 Cyc 在知识工程、本体构建和逻辑推理方面的贡献。
-
-尽管 Cyc 取得了技术成就，但其进展缓慢、规模庞大、维护复杂，并且难以适应快速变化的世界。文章探讨了 Cyc 面临的挑战，包括知识获取的瓶颈、知识编码的复杂性以及与新兴机器学习技术的竞争。
-
-文章最终反思了 Cyc 的遗产。虽然 Cyc 的通用人工智能目标尚未实现，但它在语义网和知识表示方面作出了重要贡献，并为人工智能领域的研究提供了宝贵的经验教训。它也激发了其他知识库和人工智能技术的开发，影响深远。
-
----
-
-## 7. 巴西的政府运营支付系统已占据主导地位
-
-**原文标题**: Brazil's government-run payments system has become dominant
-
-**原文链接**: [https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant](https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant)
-
 无法访问文章链接。
 
 ---
 
-## 8. 展示 HN: DrawDB – 开源在线数据库图编辑器（复古风）
+## 7. Show HN：DrawDB – 开源在线数据库图表编辑器（复古风）
 
 **原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
 
 **原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
 
-好的，已阅读。
+DrawDB：开源数据库图表编辑器
 
-**摘要：**
+---
 
-DrawDB 是一款开源在线数据库图表编辑器，提供怀旧体验。它允许用户创建和编辑数据库图表，主要功能包括：
+## 8. 巴西的政府运营支付系统已占据主导地位
 
-*   **直观界面：** 易于使用的拖放界面，用于创建和编辑实体关系图 (ERD)。
-*   **协作：** 支持多人同时编辑图表。
-*   **导出：** 支持导出图表为多种格式，包括 PNG、SVG 和 JSON。
-*   **开源：** 代码在 GitHub 上开源，允许社区参与开发和改进。
-*   **复古体验：** 设计灵感来源于旧的图形编辑软件，给人一种怀旧的感觉。
+**原文标题**: Brazil's government-run payments system has become dominant
 
-文章主要介绍了 DrawDB 的核心功能、开源性质以及其独特的复古风格。它旨在为用户提供一种更简单、更协作的数据库图表创建和管理方式。
+**原文链接**: [https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant](https://www.economist.com/the-americas/2025/04/03/brazils-government-run-payments-system-has-become-dominant)
+
+文章链接无法访问。
 
 ---
 
@@ -117,40 +100,21 @@ DrawDB 是一款开源在线数据库图表编辑器，提供怀旧体验。它�
 
 **原文链接**: [https://github.com/a13xp0p0v/linux-kernel-defence-map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
 
-文章摘要：
+好的，根据提供的链接，我将提供该文章的简洁摘要。
 
-本文介绍了针对 Linux 内核的安全强化概念，旨在提高系统安全性并防御潜在攻击。“Linux 内核防御地图”项目侧重于对 Linux 内核中的安全强化措施进行分类、整理和展示。文章可能涵盖以下内容：
+**无法访问文章链接**
 
-*   **内核配置选项：** 讨论如何使用内核配置选项禁用不必要的功能，从而减少攻击面。
-*   **安全模块：** 阐述 SELinux、AppArmor 等安全模块的配置和使用，以实现访问控制。
-*   **缓解技术：** 介绍了地址空间布局随机化 (ASLR)、堆栈保护等缓解技术，以对抗内存损坏漏洞。
-*   **控制组 (cgroups) 和命名空间 (namespaces)：** 阐述如何使用这些技术进行资源隔离。
-*   **代码审计和最佳实践：** 强调代码审计和遵循安全编程实践的重要性。
-
-本文旨在为系统管理员和内核开发人员提供清晰的指南，帮助他们理解并实施各种安全强化措施，以提高 Linux 系统的整体安全性。
+由于我无法访问给定的 GitHub 链接，无法生成摘要。
 
 ---
 
-## 10. Docker文件格式化工具
+## 10. 密西西比州图书馆奉命删除研究内容以响应州法律
 
-**原文标题**: Dockerfmt: A Dockerfile Formatter
+**原文标题**: Mississippi libraries ordered to delete research in response to state laws
 
-**原文链接**: [https://github.com/reteps/dockerfmt](https://github.com/reteps/dockerfmt)
+**原文链接**: [https://mississippitoday.org/2025/04/08/mississippi-libraries-ordered-to-delete-academic-research-in-response-to-state-laws/](https://mississippitoday.org/2025/04/08/mississippi-libraries-ordered-to-delete-academic-research-in-response-to-state-laws/)
 
-Dockerfmt：Dockerfile 格式化工具
-
-Dockerfmt 是一个 Dockerfile 格式化工具，类似于 Go 语言的 `gofmt`。 它的主要目的是帮助开发者保持 Dockerfile 的一致性和可读性，从而简化协作和维护。
-
-**核心要点：**
-
-*   **功能：** Dockerfmt 通过自动格式化 Dockerfile 来解决代码风格问题。 它会根据预定义的规则（例如，缩进、空白等）对 Dockerfile 进行标准化。
-*   **优势：** 格式化后的 Dockerfile 更加清晰，减少了代码审查的负担，并促进了团队协作中的一致性。
-*   **实现：** Dockerfmt 使用 Rust 编写。
-*   **用法：** 通过命令行调用 `dockerfmt <Dockerfile 路径>`，或者在编辑器中集成。
-*   **目标用户：** 任何使用 Docker 的开发者，尤其是在团队环境中进行 Dockerfile 维护的开发者。
-*   **价值：** 提高了 Dockerfile 的可读性，简化了协作，并减少了手动代码格式化的工作量。
-
-总而言之，Dockerfmt 旨在通过自动格式化 Dockerfile 来简化 Dockerfile 的编写和维护，并提高团队协作效率。
+文章链接无法访问。
 
 ---
 
