@@ -19,7 +19,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # 创建 Gemini 模型 gemini-2.0-flash-lite/gemini-2.0-flash/gemini-2.0-pro-exp
-model = genai.GenerativeModel('gemini-2.0-flash-lite')
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 def fetch_top_stories(limit=100):
     """获取 Hacker News 上的热门文章链接"""
@@ -183,7 +183,7 @@ def translate_to_chinese(text):
     """使用 Gemini 将文本翻译成中文"""
     try:
         prompt = f"""
-        Translate the following text into Chinese:
+        Translate the following Original text into Chinese:
         
         Requirements:
         1. Provide only one accurate Chinese translation
