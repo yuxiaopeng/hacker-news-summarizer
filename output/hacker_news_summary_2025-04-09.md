@@ -8,6 +8,7 @@
 
 **原文链接**: [https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html](https://attackanddefense.dev/2025/04/09/hardening-the-firefox-frontend-with-content-security-policies.html)
 
+<<<<<<< Updated upstream
 增强 Firefox 用户界面防御跨站脚本攻击的努力
 
 ---
@@ -146,6 +147,21 @@ Tailscale，一家网络公司，在C轮融资中获得了1.6亿美元美元（2
 Tailscale的目标是简化网络，允许用户安全地连接到他们的应用程序、团队成员和服务，而无需传统网络配置的复杂性。他们正在瞄准人工智能基础设施等市场，这些市场的公司面临着连接GPU和保护跨不同云环境工作负载的挑战。Perplexity、Mistral和Cohere等领先的人工智能公司已经在使用Tailscale。Instacart、SAP和Duolingo等其他公司也在利用该平台。
 
 这笔投资将用于扩大工程和产品团队，进一步改进对免费客户的免费支持，并保持向后兼容性。Tailscale的目标是简化所有人的网络，从初创公司到财富500强公司，甚至个人用户。
+=======
+要求：
+1. 只提供一个准确的中文翻译
+2. 直接输出翻译结果，无需解释或多选项
+3. 保持原文的含义和风格
+4. 如果是标题，保持简洁清晰
+
+原文：
+
+本文详述了 Firefox 为增强其用户界面 (UI) 以抵御注入攻击，特别是跨站点脚本 (XSS) 漏洞所做的努力。Firefox 的用户界面使用 HTML、CSS 和 JavaScript 等 Web 技术构建，因此和普通 Web 应用程序一样容易受到这些攻击。为了缓解这一问题，Firefox 正在实施内容安全策略 (CSP) 以限制脚本执行。
+
+主要关注点是 `browser.xhtml` 文件，它是 Firefox 用户界面的核心。开发团队已经从该文件中移除了 600 多个内联事件处理程序，用在单独的 JavaScript 文件中定义的事件监听器代替它们，从而有效地阻止了依赖内联脚本执行的潜在 XSS 漏洞利用。该过程涉及识别和替换内联事件处理程序（例如，`<button onclick="...">`）为外部 JavaScript 文件中的 `addEventListener` 调用。本文重点介绍了进行此更改时需要考虑的重要细节，特别是 `event.preventDefault()` 的使用以及 `this` 在内联事件处理程序中的行为。
+
+展望未来，Firefox 计划将 CSP 实施扩展到其他 UI 元素，甚至采用更严格的策略来完全阻止动态代码执行。这项策略显著增强了 Firefox 的安全态势，提高了攻击者的门槛，并可能破坏现有的漏洞利用链。对 browser.xhtml 文件所做的更改的缓解措施将随 Firefox 138 一起发布。
+>>>>>>> Stashed changes
 
 ---
 

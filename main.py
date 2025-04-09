@@ -221,8 +221,20 @@ def translate_to_chinese(text):
                 translated_text = translated_text[len(prefix):]
                 break
         
-        # 移除可能的选项前缀
-        # translated_text = re.sub(r'^选项\s*\d+[\s:：]*', '', translated_text.strip())
+        # 移除"要求："和相关内容的模式
+        requirements_patterns = [
+            r'要求：\s*\n*1\.\s*只提供一个准确的中文翻译\s*\n*2\.\s*直接输出翻译.*?(?=\n\n|\Z)',
+            r'要求：\s*\n*[\d\.\s]*只提供.*?(?=\n\n|\Z)',
+            r'要求：\s*\n*[\d\.\s]*直接输出.*?(?=\n\n|\Z)',
+            r'要求：.*?(?=\n\n|\Z)',
+            r'原文：\s*\n*'
+        ]
+        
+        for pattern in requirements_patterns:
+            translated_text = re.sub(pattern, '', translated_text, flags=re.DOTALL)
+        
+        # 清理多余的空行
+        translated_text = re.sub(r'\n{3,}', '\n\n', translated_text)
         
         return translated_text.strip()
     except Exception as e:
@@ -324,7 +336,7 @@ def main():
     print("开始运行 Hacker News 文章摘要提取器...")
     
     # 获取热门文章
-    stories = fetch_top_stories(limit=10)
+    stories = fetch_top_stories(limit=1)
     print(f"成功获取 {len(stories)} 篇文章")
     
     stories_with_summaries = []
