@@ -2,283 +2,639 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. H1元素的默认样式正在更改
+## 1. 但如果我想要一匹更快的马呢？
 
-**原文标题**: Default styles for H1 elements are changing
+**原文标题**: But what if I want a faster horse?
 
-**原文链接**: [https://developer.mozilla.org/en-US/blog/h1-element-styles/](https://developer.mozilla.org/en-US/blog/h1-element-styles/)
+**原文链接**: [https://rakhim.exotext.com/but-what-if-i-really-want-a-faster-horse](https://rakhim.exotext.com/but-what-if-i-really-want-a-faster-horse)
 
-本文讨论了浏览器中 `<h1>` 元素默认样式的即将到来的变化，特别是它们在分节元素（`<section>`、`<article>`、`<nav>` 和 `<aside>`）中嵌套时的渲染方式。 以前，浏览器会根据嵌套级别自动调整 `<h1>` 的字体大小和边距，模仿 `<h2>`、`<h3>` 等。 这种行为源于现在已删除的 HTML 大纲算法。
+作者认为，科技行业痴迷于颠覆式创新，以“更快的马”类比为代表，往往导致可用性和用户控制权的下降，转而倾向于算法参与和内容发现。作者认为，有时用户仅仅希望对现有解决方案进行改进，即“更快的马”，而不是全新的范式。
 
-现在，浏览器正在删除这些 UA 样式，这意味着 `<h1>` 将始终以其默认样式呈现，而与其在分节元素中的位置无关。 此更改正在 Firefox 和 Chrome 中推出，预计 Safari 也会效仿。
+文章以Netflix和Spotify为例。最初，Netflix是一个方便可靠的电影和节目库，具有个性化推荐和库管理等实用功能。现在，它成了一个由算法驱动的、令人不知所措且混乱的“体验”，优先考虑持续的内容轮换和通用类别，而非用户控制和清晰的目录。同样，Spotify也从一个庞大的音乐库转变为一个算法策展的、充斥着播客的内容流，牺牲了用户控制和库管理。
 
-本文强调，依赖这些自动标题级别调整现在被认为是糟糕的做法。 Lighthouse 以及浏览器 DevTools 将标记 `<h1>` 元素缺少明确定义的 `font-size` 和 `margin` 的情况。 具体的 Lighthouse 警告是“H1UserAgentFontSizeInSection”。
-
-为了解决这个问题，开发人员应该：
-
-*   **明确定义** 所有 `<h1>` 元素的 `font-size` 和 `margin`。
-*   **使用** `<h2>`、`<h3>` 等，来创建清晰的标题层次结构。
-*   **更新 CSS reset** 以应对此变化。
-*   **使用 Lighthouse 和 DevTools 审核网站**。
-*   **参考 MDN** 以获取更新的 HTML 分节标题文档。
-
-通过采取这些步骤，开发人员可以确保他们的网站按预期呈现，并避免与 `<h1>` 样式相关的 Lighthouse 警告。
+作者认为，包括YouTube、LinkedIn，甚至Substack在内的许多平台，正朝着TikTok模式靠拢：由算法驱动的无休止的短视频流，最大限度地减少用户控制，并优先考虑参与度而非用户自定义的组织和可发现性。这种趋势类似于“蟹化现象”，优先考虑吸引注意力，却牺牲了核心功能和用户体验。作者总结说，虽然创新很重要，但仅仅专注于颠覆可能会降低有价值的功能，并使那些只想让现有解决方案变得更好、而不是完全不同的用户感到沮丧。
 
 ---
 
-## 2. “100个Go语言常见错误”背后的故事
+## 2. Fedora 变革旨在实现 99% 的软件包可重复构建
 
-**原文标题**: The Story Behind “100 Go Mistakes and How to Avoid Them”
+**原文标题**: Fedora change aims for 99% package reproducibility
 
-**原文链接**: [https://www.thecoder.cafe/p/100-go-mistakes](https://www.thecoder.cafe/p/100-go-mistakes)
+**原文链接**: [https://lwn.net/Articles/1014979/](https://lwn.net/Articles/1014979/)
 
-泰瓦·哈萨尼的文章详细介绍了撰写《100个Go语言常见错误与避免方法》的历程。最初，他为了平衡之前工作中的Scala而开始接触Go语言。换了工作后，每天使用Go语言，他注意到同事们重复着他早期的错误。这促使他写了一篇广受欢迎的博客文章《我在Go项目中见过的十大最常见错误》，并由此萌生了写书的想法。
+LWN.net 文章探讨 Fedora 计划：到 2025 年 10 月 Fedora 43 发布时实现 99% 的软件包可重现性。可重现构建确保相同的源代码、构建环境和指令产生完全相同的二进制文件。
 
-经过16个月从各种来源收集了100个错误后，他向Manning出版社提交了图书提案。该提案需要回答21个问题，并接受Go语言专家的评审。积极的评价促成了合同的签订，版税为10%，并预付了稿费。
+虽然 Fedora 历来优先控制其构建过程，但现在它的目标是加强供应链安全并实现软件包的独立验证。Fedora 对可重现性的定义与 Debian 略有不同，侧重于 RPM 中相同的有效载荷，不包括签名和某些元数据，如构建时间 (BUILDTIME) 和构建主机 (BUILDHOST)。
 
-写作过程包括定义最低合格读者(MQR)，并与一位开发编辑(DE)密切合作，后者极大地改进了他为图书格式而进行的写作风格。他讨论了他创造“最好的Go语言书籍”的心态。这本书经历了多个评审周期，外部审阅者提供了详尽的反馈以提高书籍质量。哈萨尼提到了Manning出版社的一个小插曲，他的技术开发编辑(TDE)缺乏MQR所期望的Go语言基础知识。尽管如此，他还是采纳了比尔·肯尼迪的反馈意见并坚持了下来。
+该项目已经实施了诸如钳制文件修改时间和使用 `add-determinism` 工具来标准化元数据等更改，实现了 90% 的可重现性。为了达到 99%，Fedora 将要求打包者将可重现性问题作为错误处理。`fedora-repro-build` 实用程序将支持本地重新构建测试，而公共 `rebuilderd` 实例将提供独立验证。
+
+该提案建议更新 Fedora 的打包指南，以鼓励可重现的构建。虽然安全优势是主要驱动因素，但这项工作也有望通过发现错误和马虎来提高软件包质量。关于 `rebuilderd` 实例的位置和维护及其与现有 Fedora 基础设施（如 Koji 和 Copr）的集成正在进行讨论。Fedora 工程指导委员会 (FESCo) 将在工作开始前审查该提案，目标是在 Fedora 43 发布时完成。
 
 ---
 
-## 3. 没有加菲猫的加菲猫
+## 3. 使用重心坐标在四边形上进行双线性插值
+
+**原文标题**: Bilinear interpolation on a quadrilateral using Barycentric coordinates
+
+**原文链接**: [https://gpuopen.com/learn/bilinear-interpolation-quadrilateral-barycentric-coordinates/](https://gpuopen.com/learn/bilinear-interpolation-quadrilateral-barycentric-coordinates/)
+
+此文章宣布AgilitySDK预览版1.716.0发布，该版本引入了对全新Microsoft DirectX和视频编码功能的支持。公告简短，主要强调了这些新功能在指定的AgilitySDK预览版中的可用性。
+
+---
+
+## 4. Erlang并非仅关于轻量级进程和消息传递。
+
+**原文标题**: Erlang's not about lightweight processes and message passing
+
+**原文链接**: [https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html](https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html)
+
+本文认为，Erlang构建可靠分布式系统的核心优势并非主要在于其轻量级进程和消息传递，而在于其定义明确的通用组件，即“行为”（behaviours）。文章承认Erlang起源于Prolog以及在爱立信公司为电话交换机所做的开发，但作者强调Joe Armstrong的博士论文是理解行为重要性的关键资源。
+
+行为类似于其他语言中的接口，可以强制执行结构和最佳实践。文章详细介绍了几个核心Erlang行为：`gen_server`（用于并发有状态服务器）、`gen_event`（用于事件管理）、`gen_statem`（状态机）和`supervisor`（用于进程监控和重启）。监督者结合“让它崩溃”的理念，通过重启失败的进程来提供容错能力。作者指出，监督者机制在线程/轻量级进程级别运行，这使其与 Kubernetes 等工具不同。
+
+文章将 `application` 和 `release` 描述为更高级别的组织单元，其中 `application` 封装了一个监督树和相关组件，而 `release` 打包一个或多个 `application`，包括升级/回滚机制。
+
+作者总结说，Erlang 的行为提供了一种强大的结构，可以促进可靠的软件开发。他质疑为什么其他语言和框架专注于轻量级进程和消息传递，而没有采用 Erlang 行为的结构化方法。文章提出了一个简单的 `gen_server` 接口签名，并提出了如何实现它来处理并发请求。
+
+---
+
+## 5. 倭黑猩猩使用一种一度被认为是人类独有的句法
+
+**原文标题**: Bonobos use a kind of syntax once thought to be unique to humans
+
+**原文链接**: [https://www.newscientist.com/article/2474993-bonobos-use-a-kind-of-syntax-once-thought-to-be-unique-to-humans/](https://www.newscientist.com/article/2474993-bonobos-use-a-kind-of-syntax-once-thought-to-be-unique-to-humans/)
+
+倭黑猩猩叫声展现“非平凡组合性”，挑战人类语言独特性研究
+
+---
+
+## 6. 伦敦地铁实时地图
+
+**原文标题**: Live Map of the London Underground
+
+**原文链接**: [https://www.londonunderground.live/](https://www.londonunderground.live/)
+
+本文简要介绍了伦敦地铁的“实时线路图”，提供列车位置的实时信息。 这不仅仅是一张静态地图；用户可以通过右键单击来旋转视角，并放大以查看建筑物细节。 将光标悬停在特定点上可提供更多信息（可能是关于线路、车站或延误）。 该地图清晰地标有“实时”字样，强调其时效性。 本文感谢Ben James的创作。 重要的是，它还承认了底层数据的来源以及“The London Minute”对地图瓦片的赞助。 总之，本文介绍了一个伦敦地铁的交互式实时地图，突出了其功能、创建者、数据来源和赞助。
+
+---
+
+## 7. Mosaic (YC W25) 正在构建一个通用的视频编辑代理。
+
+**原文标题**: Mosaic (YC W25) is building a general purpose agent for video editing
+
+**原文链接**: [https://www.ycombinator.com/companies/mosaic-2/jobs/ru8Nwdq-founding-engineer](https://www.ycombinator.com/companies/mosaic-2/jobs/ru8Nwdq-founding-engineer)
+
+Mosaic，一家Y Combinator W25孵化的初创公司，正在开发一款用于视频编辑的通用人工智能代理。他们正在寻找一位创始工程师，以加速开发他们的“代理视频编辑范式”，该系统允许用户在基于节点的画布中创建和运行自己的多模态视频编辑代理。这些代理可以自动执行编辑，在项目中重复使用并自我改进。
+
+该职位需要从第一性原理出发解决具有挑战性的技术问题，构建可扩展的视频处理和推理流水线，创建评估指标，并为设计和产品决策做出贡献。Mosaic的初始原型在Google Gemini Kaggle竞赛中获得第一名，并被评为Y Combinator批次中最佳演示。
+
+该公司由Adish Jain和Kyle Wade创立，拥有一支由前特斯拉工程师组成的高技术团队。他们的目标是将视频编辑时间从数小时缩短到数秒。创始工程师职位提供10万至15万美元的薪水和0.50%至3.00%的股权，位于旧金山，并向包括应届毕业生在内的所有经验水平的候选人开放。
+
+---
+
+## 8. 优势即劣势
+
+**原文标题**: Strengths Are Your Weaknesses
+
+**原文链接**: [https://terriblesoftware.org/2025/03/31/your-strengths-are-your-weaknesses/](https://terriblesoftware.org/2025/03/31/your-strengths-are-your-weaknesses/)
+
+本文认为，一个人的最大优势往往与他们的弱点内在相关，本质上是同一枚硬币的两面。文章通过作者的个人经历以及对工程师的管理观察，突出了诸如“编码速度”之类的特征如何既能带来快速的功能交付，又会导致边缘案例被忽略。
+
+作者强调这种现象具有普遍性，并为管理者提供了三种应对策略：
+
+1.  **在1对1会议中承认二元性：** 帮助个人理解他们的优势和劣势不是分离的实体，而是同一潜在特性的表现。这有助于培养自我意识，减少自我批评。
+2.  **提供清晰的背景指导：** 明确定义某些倾向有利或不利的情况。这使个人能够就如何适当地利用他们的优势做出明智的决定。
+3.  **战略性地利用张力：** 不要寻求同质化的团队，而是拥抱多样化的工作方式。将具有对比方法的人配对可以带来创新和成长，因为他们可以互相学习。
+
+总的来说，目标不是通过创造统一“平衡”的个人来消除弱点。相反，管理者应专注于培养自我意识，并授权团队成员根据具体情况理解和调整他们的自然倾向。这种方法将感知的缺陷转化为一个人整体技能组合中可管理的部分，并促进个人成长和团队效率。最终，它强调了对个体内部固有复杂性的同情和接受的重要性。
+
+---
+
+## 9. 五角大楼将终止与埃森哲、德勤的51亿美元IT合同
+
+**原文标题**: Pentagon to terminate $5.1B in IT contracts with Accenture, Deloitte
+
+**原文链接**: [https://www.reuters.com/world/us/pentagon-terminate-51-billion-it-contracts-with-accenture-deloitte-others-2025-04-11/](https://www.reuters.com/world/us/pentagon-terminate-51-billion-it-contracts-with-accenture-deloitte-others-2025-04-11/)
+
+**概要：**
+
+五角大楼计划于2025年终止与埃森哲、德勤和其他公司约51亿美元的IT合同。该决定源于五角大楼希望简化其IT运营，并采取更精简高效的IT服务方式。国防部计划发展内部能力，并将更大、更全面的合同授予更少数量的供应商，而不是依赖多个承包商提供类似的服务。预计此举将减少冗余、提高数据安全性，并有可能从长远来看节省纳税人的钱。虽然目前的合同将持续到2025年终止，但五角大楼将不再续签。据报道，受影响的公司正在与五角大楼沟通，以了解该决定的全部影响，并探索国防部不断发展的IT领域中潜在的未来机会。五角大楼希望这一改变能够带来更敏捷、更具响应性的IT基础设施。
+
+---
+
+## 10. WordPress发布全新免费AI网站构建器
+
+**原文标题**: WordPress launches new free AI website builder
+
+**原文链接**: [https://wordpress.com/blog/2025/04/09/ai-website-builder/](https://wordpress.com/blog/2025/04/09/ai-website-builder/)
+
+WordPress 发布免费 AI 网站构建器，旨在以最小的用户工作量创建功能齐全的网站。该工具面向企业家、小企业主、自由职业者、博主和开发者，他们寻求一种快速简便的方式来建立在线形象。
+
+这款 AI 构建器无需手动选择主题、调整颜色、创建文本和寻找图像。用户只需向 AI 描述他们的网站想法，AI 就会生成一个包含文本、布局和图像的完整 WordPress 网站。用户可以通过聊天提示或手动编辑来完善 AI 生成的内容和设计。
+
+虽然最初在创建电子商务网站或复杂集成方面受到限制，但该工具旨在快速创建美观实用的网站。要使用此构建器，用户需要一个 WordPress.com 帐户，并通过在指定页面上描述他们的网站想法来访问它。目前，该 AI 构建器仅适用于新的 WordPress.com 网站。
+
+该服务提供 30 个免费提示用于调整，而拥有 WordPress.com 托管计划的用户可以获得无限提示，该计划还包括第一年的免费域名。用户可以随时通过 WordPress.com 站点仪表板恢复到 AI 构建器。 虽然 AI 处理初始构建，但用户保留完全控制权，并且可以手动编辑和添加页面、更改设计以及使用开发工具。该 AI 网站构建器旨在简化网站创建，使用户能够快速建立在线形象，而无需广泛的技术技能。
+
+---
+
+## 11. 在小溪玩耍
+
+**原文标题**: Playing in the Creek
+
+**原文链接**: [https://www.lesswrong.com/posts/rLucLvwKoLdHSBTAn/playing-in-the-creek](https://www.lesswrong.com/posts/rLucLvwKoLdHSBTAn/playing-in-the-creek)
+
+获得理解和技能常常会关闭玩乐探索和不受限制努力的途径。童年时，筑坝小溪是一种有趣的挑战。发现“铲子”解决方案（塌岸）提供了一种更有效的方法，但也消除了精巧筑坝的乐趣。这种模式在作者的一生中不断重复：发生事故后，建造 K'Nex 弹射器变得不再无忧无虑；学会了调整技巧后，制作弓箭也不再有趣。
+
+作者将这一概念扩展到职业选择。收到一份利润丰厚的金融工作邀请，虽然最初是一个目标，但却让作者意识到，如果不考虑道德影响，他们就不能再自由地追求“尽可能多地赚钱”。
+
+作者将此与被更大力量所淹没的情况进行对比，例如在潮汐池的出水口玩耍。在这些情景中，他们行为的后果微乎其微，可以自由玩耍。然而，即便如此，不断增长的意识，比如注意到沙蚬，也会缓和他们的行为。
+
+最终，本文通过这些个人轶事来告诫人们不要在不考虑潜在后果的情况下追求人工智能的发展。作者重视探索过程，但担心取得不受约束的成功可能带来的后果，即使这意味着“用隐喻的烟花炸弹炸掉他们的手”，这表明了一种对负责任的开发而非不受约束的进步的偏好。 Anthropic 对伦理考量的关注被视为一个积极的信号。
+
+---
+
+## 12. 如何制作长弓
+
+**原文标题**: How to Make a Longbow
+
+**原文链接**: [https://www.howtomakealongbow.co.uk](https://www.howtomakealongbow.co.uk)
+
+这与其说是一篇文章，不如说是一个关于制作长弓的介绍性占位页面。要点如下：
+
+*   **本页面专注于如何制作长弓这一主题。**
+*   **内容是动态且不断扩充的。** 本网站正在积极更新。
+*   **重视用户反馈。** 作者鼓励提出与长弓制作相关的建议和特定信息需求。
+
+---
+
+## 13. 展示HN：构建更好的基础镜像
+
+**原文标题**: Show HN: Building better base images
+
+**原文链接**: [https://github.com/avkcode/container-tools](https://github.com/avkcode/container-tools)
+
+容器工具是一个旨在简化创建最小化、定制化和安全Debian容器镜像的项目。它解决了标准Dockerfile构建中常见的存储膨胀、网络效率低下和迭代速度慢等问题。该工具利用`debootstrap`构建仅包含必要组件的基础镜像，从而能够基于通用基础创建专门的变体（例如，Java、Kafka）。
+
+提供的`Makefile`允许用户构建各种Debian镜像，包括精简的Java和GraalVM版本，以及Kafka集成。构建过程生成可以导入Docker的`.tar`文件，通过`docker import`实现。安全扫描也集成在构建后步骤中，使用Trivy进行。
+
+扩展该工具需要添加新组件的配方（例如，通过定义版本、SHA256哈希和URL来配置Kafka），然后在`Makefile`中创建一个新的目标，该目标使用自定义配方和相关脚本。
+
+项目结构包括Debian配置、GPG密钥、各种软件（Java、Maven、Gradle、Kafka）的安装配方、构建后脚本以及已构建镜像的输出目录。它提供了一种创建高效且安全的基础镜像的方法，显著改善容器化工作流程。
+
+---
+
+## 14. 没有加菲猫的加菲猫
 
 **原文标题**: Garfield Minus Garfield
 
 **原文链接**: [https://garfieldminusgarfield.net](https://garfieldminusgarfield.net)
 
-提供的文本描述了一个名为“没有加菲猫的加菲猫”(G-G)的东西。 它还提到这个“G-G”在Facebook和Twitter上都有，并附有具体的日期（1月27日和11月3日）。
+提供的文本描述了“没有加菲猫的加菲猫”，并包括与之相关的两个日期条目：1月27日和11月3日。每个日期条目都链接到“脸书上的G-G”和“推特上的G-G”，表明“没有加菲猫的加菲猫”在这些社交媒体平台上的存在。
 
-本质上，这是一个名为“没有加菲猫的加菲猫”的项目/实体的广告或引用，该项目/实体在Facebook和Twitter等社交媒体平台上存在并可能正在推广。 这些日期可能表明该项目在这些平台上活跃或推广的时间。
-
-如果没有更多的背景信息，很难确定“没有加菲猫的加菲猫”本身的具体性质。 然而，这段文字强烈暗示它是一个在线分享和讨论的项目或概念。
+本质上，这段文字突出了“没有加菲猫的加菲猫”的存在和在线状态，并提供了两个特定日期的Facebook和Twitter帐户链接。
 
 ---
 
-## 4. R 语言大全
+## 15. 求知者的WebRTC
 
-**原文标题**: Big Book of R
+**原文标题**: WebRTC for the Curious
 
-**原文链接**: [https://www.bigbookofr.com/](https://www.bigbookofr.com/)
+**原文链接**: [https://webrtcforthecurious.com](https://webrtcforthecurious.com)
 
-R语言巨著：汇集400余本R语言免费书籍，无需书签，搜索方便，欢迎贡献。本站感谢Fathom Data转换为Quarto，采用CC BY-NC-ND 3.0协议。数据透明，统计每日独立访客。欢迎捐赠，关注作者Mastodon、LinkedIn，订阅时讯。
+WebRTC好奇者指南是一本开源书籍，旨在为所有级别的开发者提供对WebRTC技术的全面且公正的理解。与教程不同，本书侧重于协议、API和底层技术细节，总结了RFC和未公开的知识，同时保持厂商中立的视角。
 
----
+本书结构适用于多次阅读，每章都分三个层次解决一个问题：问题定义、解决方案解释（包括技术细节）以及进一步学习的资源。无需任何先验知识，读者可以从任何地方开始阅读。
 
-## 5. 我自己的私有二进制：Linux内核模块的个性化介绍
+本书面向WebRTC新手、寻求更深入理解的现有用户、调试专业人员以及需要澄清的实施者。目标是教授整个WebRTC系统，牺牲专家级的细节以换取更广泛的理解。
 
-**原文标题**: My Own Private Binary: An Idiosyncratic Introduction to Linux Kernel Modules
-
-**原文链接**: [https://www.muppetlabs.com/~breadbox/txt/mopb.html](https://www.muppetlabs.com/~breadbox/txt/mopb.html)
-
-本文以一种独特的方式介绍了Linux内核模块，其动机源于作者寻求创建尽可能小的可执行文件。文章首先回顾了作者之前缩小ELF可执行文件的尝试，并遇到了已弃用的aout格式。这引发了对Linux如何动态处理二进制格式的调查。
-
-作者发现Linux使用可加载内核模块来管理二进制格式支持，允许添加和删除格式而无需重新编译内核。然后，文章转而解释如何创建一个基本的“hello kernel”模块，涵盖必要的头文件、模块元数据、init和exit函数以及Makefile。它演示了如何使用`insmod`和`rmmod`加载和卸载模块，并使用`dmesg`验证其操作。
-
-文章承认编写有用的内核模块需要专门的知识，但鼓励实验。它强调了内核模块的强大功能和潜在危险，强调了它们在低级别访问和操作系统的能力。
-
-最后，文章将内核模块与最初的动机联系起来，解释说内核中接受的二进制文件格式列表是动态的。这是通过已注册的回调函数列表进行管理的，当执行二进制文件时，内核会调用这些回调函数。第一个识别文件的回调函数会处理将其加载到内存中，否则会显示“Exec format error”。作者暗示了创建支持.com文件格式的内核模块的意图，从而能够创建更小的可执行文件。
+本书以ePub和PDF格式在GitHub和WebRTCforTheCurious.com上提供，并采用CC0许可，允许免费使用和分发，无需署名。作者强调他们对隐私的承诺，网站不进行任何分析或跟踪。欢迎通过GitHub贡献，鼓励用户提出问题、建议改进意见并为本书的开发做出贡献。
 
 ---
 
-## 6. 金融科技创始人被控欺诈；人工智能应用被发现实为菲律宾人工操作
+## 16. 我们在2秒内克隆一个运行中的虚拟机
 
-**原文标题**: Fintech founder charged with fraud; AI app found to be humans in the Philippines
+**原文标题**: We clone a running VM in 2 seconds
 
-**原文链接**: [https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/](https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/)
+**原文链接**: [https://codesandbox.io/blog/how-we-clone-a-running-vm-in-2-seconds](https://codesandbox.io/blog/how-we-clone-a-running-vm-in-2-seconds)
 
-前AI购物应用Nate创始人兼前CEO阿尔伯特·萨尼格(Albert Saniger)被美国司法部指控欺诈，原因是他误导投资者。Nate筹集了超过5000万美元，声称其“AI”允许用户一键从任何电商网站购物。然而，司法部指控Nate严重依赖菲律宾的人工承包商手动完成购买，尽管萨尼格声称几乎没有人为干预。
-
-司法部声称Nate的实际自动化率实际上为0%。这与基于Nate人工智能能力而筹集的数百万美元风险投资相矛盾。《The Information》在2022年进行的一项调查此前曾强调Nate对人工承包商的依赖。
-
-该公司最终耗尽资金，于2023年1月出售了其资产，导致投资者遭受重大损失。萨尼格现在是风险投资公司Buttercore Partners的执行合伙人。
-
-这篇文章还强调了一种初创企业夸大其人工智能能力的趋势，并列举了一些例子，例如一个“AI”汽车穿梭点餐软件和法律科技独角兽EvenUp，都发现它们严重依赖人工。这种趋势表明，公司面临着比实际情况更具有技术先进性的压力。
+CodeSandbox如何实现近乎瞬时(2秒)克隆运行虚拟机(VM)以用于开发环境：利用内存快照加速克隆
 
 ---
 
-## 7. Show HN: 我做了一个管理和比较信用卡奖励的工具
+## 17. “100个Go语言错误及避免方法”背后的故事
 
-**原文标题**: Show HN: I built a tool to manage and compare credit card rewards
+**原文标题**: The Story Behind “100 Go Mistakes and How to Avoid Them”
 
-**原文链接**: [https://rewards.getonecard.io](https://rewards.getonecard.io)
+**原文链接**: [https://www.thecoder.cafe/p/100-go-mistakes](https://www.thecoder.cafe/p/100-go-mistakes)
 
-此“Show HN”帖子介绍了一款旨在帮助用户管理和最大化信用卡奖励的工具。该工具允许用户将现有信用卡添加到虚拟“钱包”中，然后利用人工智能识别在任何指定商家处使用哪张卡片最佳。此推荐基于优化奖励积分积累。
+Teiva Harsanyi 分享了他撰写《100个Go语言常见错误以及如何避免》一书的幕后故事。 最初，他为了平衡Scala/Akka而开始探索Go语言，并迅速对这门语言产生了热情。一篇列出Go常见错误的博客文章意外走红，这启发他将这个概念扩展成一本书。
 
-着陆页包含一个“奖励优化器”，它会根据商家类型推荐最佳卡片。提供的示例包括：使用美国运通金卡在餐厅（如“Home Slice Pizza”和“Powder Room”）消费可赚取 4 倍积分，以及使用大通蓝宝石卡在酒店（如“Fairmont Austin”）消费可赚取 3 倍积分。
+他联系了Manning出版社，并被其高质量所打动。在提案获得积极评价后，他收到了一份合同，其中包括4000美元的预付款和截止日期。一位开发编辑（DE）虽然不是Go专家，但在改进他的写作风格和结构方面发挥了关键作用。这本书的目标读者是已经熟悉Go语言的读者。
 
-该工具被宣传为能够提供即时推荐，突出了速度和易用性。 其关键功能围绕着为特定商家识别最具奖励性的卡片，并帮助用户避免错过奖励。 核心优势是最大化奖励积分和简化信用卡使用方面的决策。
-
----
-
-## 8. 解密Shebang：内核探险
-
-**原文标题**: Demystifying the (Shebang): Kernel Adventures
-
-**原文链接**: [https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/](https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/)
-
-本文深入探讨了Linux系统中 Shebang (`#!`) 机制的内部运作原理，揭示了内核而非 Shell 负责处理其解释。作者首先阐述了 Shebang 如何指定脚本执行的解释器，并通过 Shell 和 Python 脚本示例说明了这一点，并阐明了它在识别 Linux 实用程序（如 `useradd` 和 `adduser`）底层实现方面的作用。
-
-作者使用 `strace` 跟踪执行流程，并展示了 `execve` 系统调用是入口点，最终导向内核中的 `do_execveat_common` 函数。该函数初始化一个 `linux_binprm` 结构，读取文件内容，并利用 `search_binary_handler` 来识别文件的可执行格式。文章探讨了 `binfmt_elf.c`、`binfmt_script.c` 和 `binfmt_misc.c` 等模块。
-
-`binfmt_script.c` 模块负责处理 Shebang，验证 `#!` 签名，然后定位并调用指定的解释器。内核更新 `bprm->file` 以指向解释器，并有效地替换进程映像。
-
-文章还阐明，虽然 Shebang 是指定解释器的主要方式，但 Shell 通常提供回退机制，如果由于缺少或错误的 Shebang 导致 `execve` 调用失败，则会尝试直接执行脚本。这涉及到 Shell 读取脚本、检测其类型，并显式调用适当的解释器。
-
-最后，作者简要地提到了权限检查，表明内核在调用脚本之前会验证执行权限，如果缺少执行权限，则会触发 `EACCES (Permission denied)` 错误。
+Harsanyi的目标是创作他所能创作的最好的Go语言书籍，并致力于提供最高质量的内容。该手稿经历了严格的评审阶段（1P、2P、3P），外部评审人员提供了宝贵的反馈意见。来自Manning出版社的另一位作者Bill Kennedy的建议，即处理每一个评论，无论多么细小，对提高书籍质量都起到了重要作用。 出现了一个小问题，即技术开发编辑（TDE）缺乏足够的Go语言知识，阻碍了他们提供充分的技术指导。 尽管如此，Harsanyi还是坚持不懈，利用MEAP流程继续开发这本书。
 
 ---
 
-## 9. 用声音悬浮昆虫或将变革科学摄影
-
-**原文标题**: Levitating Bugs with Sound Could Transform Scientific Photography
-
-**原文链接**: [https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/](https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/)
-
-科学家开发出一种新型摄影测量成像系统，利用声悬浮技术在不损伤昆虫标本的情况下捕捉其详细照片。这种创新方法使用精确控制的声波悬浮昆虫，允许多角度图像采集，无需传统的针插固定方法，从而避免损害脆弱的标本。
-
-来自多家德国机构的研究人员创建了一个系统，该系统包括由FPGA控制的声悬浮装置和一个三脚架上的微距相机。这使得他们能够自动操纵标本，以在预定义角度拍摄特定图像，从而实现焦点堆叠以获得扩展的景深并创建高度详细的3D模型。该团队使用了带有 90 毫米微距镜头和增距镜的 Olympus OM-D E-M1 III 相机。
-
-这种方法对于生物多样性研究特别有价值，昆虫在其中发挥着关键作用，但由于识别挑战而难以研究。通过提供经济高效、易于获取且可重复的成像系统，研究人员可以收集训练昆虫识别人工智能模型所需的详细数据。
-
-该系统在每个标本位置捕获 40 张照片，并从 72 个不同的角度重复该过程。研究团队承认存在单轴旋转等局限性，但强调了这种非破坏性方法在小型、轻型物体的多角度成像和 3D 重建方面的巨大潜力。该方法还有助于 DNA 测序，因为标本不会受到损坏或干燥。
-
----
-
-## 10. 为什么要敲击奶酪轮？
-
-**原文标题**: Why Tap a Wheel of Cheese?
-
-**原文链接**: [https://www.cheeseprofessor.com/blog/cheese-wheel-tapping](https://www.cheeseprofessor.com/blog/cheese-wheel-tapping)
-
-帕尔马干酪的质量由一小队“敲击师”（drummers）保证，他们在奶酪经过至少12个月的陈酿期后，用锤子敲击每一块奶酪。这些专家，如亚历山德罗·斯托基和他的导师雷纳托·朱迪奇，仅凭声音就能在几秒钟内检测到内部缺陷。这项技能传统上通过学徒制代代相传，依靠第一手经验。
-
-敲击过程包括聆听奶酪表面均匀的声音。一块完美的奶酪具有紧实的质地，没有空洞或裂缝。声音的变化表明内部存在缺陷，敲击师可以检测到这些缺陷，从而形成奶酪的心理“X光片”。
-
-帕尔马干酪分为三个质量等级：顶级（带有火印）、轻微缺陷（标有平行线）和重大缺陷（作为普通奶酪出售）。虽然缺陷可能被认为是负面的，但它们被认为是奶酪制作工艺的手工性质的标志，该工艺使用未经防腐剂处理的生牛奶，并且会受到自然变化的影响。尽管存在缺陷，但存在缺陷的奶酪数量仍然很少。敲击师强调激情、尊重、谦逊和持续学习在他们职业中的重要性。
-
----
-
-## 11. 一部售价2000美元的“美国制造”手机是如何生产的
+## 18. 一台2000美元“美国制造”的手机是如何生产的
 
 **原文标题**: How a $2k 'Made in the USA' Phone Is Manufactured
 
 **原文链接**: [https://www.404media.co/how-a-2-000-made-in-the-usa-liberty-phone-phone-is-manufactured/](https://www.404media.co/how-a-2-000-made-in-the-usa-liberty-phone-phone-is-manufactured/)
 
-本文探讨了Purism的Liberty Phone，这款售价2000美元的智能手机由于Purism在美国本土制造的努力，符合“美国制造”的标准。创始人Todd Weaver解释了这项工作背后的挑战和动机，包括安全供应链、透明度以及服务于安全市场。
+本文探讨了Purism公司制造“美国制造”的Liberty Phone的努力，这是他们Librem 5手机的一个版本。Purism创始人Todd Weaver解释了该公司的历程，始于2014年，其愿景是在美国进行制造，以确保安全、透明的供应链并满足安全市场的需求。
 
-Purism最初从笔记本电脑起步，然后利用中国的制造经验来设计和生产最初的Librem 5手机。这段经历使他们得以在加利福尼亚州卡尔斯巴德建立了自己的表面贴装技术（SMT）生产线，从而能够将Liberty Phone的电子产品从原材料到成品进行制造。
+虽然标准的Librem 5在中国制造，售价800美元，但Liberty Phone在Purism位于加利福尼亚州卡尔斯巴德的工厂组装，售价2000美元。Purism使用表面贴装技术 (SMT) 将组件连接到裸电路板上，从而有效地在美国本土将手机电子产品从原材料制造为成品。这个过程超越了简单的组装，组装仅仅是将预制零件组合在一起。
 
-文章强调了组装和制造之间的区别，强调Purism进行的是完整的电子产品制造，将元件焊接在裸板上。他们从西方分销商和制造商处采购元件，包括那些在美国生产的制造商。虽然他们努力争取美国制造的材料，但在可用性和与供应商的谈判筹码方面仍然存在挑战。
+该公司努力从西方分销商和制造商处采购组件，包括那些拥有美国工厂的制造商。然而，由于供应链的复杂性和Purism相对较小的规模（这降低了他们与供应商的议价能力），采购在美国开采的原材料仍然具有挑战性。某些组件，例如用于计时的特定类型的晶体，主要来自中国，尽管Purism正在探索替代方案。
 
-Weaver承认Liberty Phone的规格并非最前沿，并且从美国采购所有组件非常困难。例如，某些晶体只能从中国或韩国获得。模块化设计允许从不同国家采购调制解调器等组件，从而影响成本和蜂窝频段支持。虽然先进的芯片组目前在美国境外制造，但Weaver认为，通过大量的投资和稳定性，有可能在美国制造它们。Purism优先考虑透明度，发布原理图和硬件物料清单。
+Weaver承认，与旗舰手机相比，Liberty Phone的规格并非最先进的，但他将此归因于复制中国高科技制造生态系统的难度。将整个过程转移到美国需要大量投资和稳定的未来前景。虽然从中国采购某些组件更便宜并且具有更宽的频段，但Purism为调制解调器等模块提供美国制造的选择。
 
----
-
-## 12. 拥有我的数据，第一部分：集成自托管日历解决方案
-
-**原文标题**: Owning my own data, part 1: Integrating a self-hosted calendar solution
-
-**原文链接**: [https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/](https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/)
-
-Emily Gorcenski 的文章《拥有我自己的数据，第一部分：集成自托管日历解决方案》详细介绍了作者通过自托管日历解决方案来重新获得个人数据控制权的过程。她厌倦了依赖像 Google 这样的大公司来存储和访问她的日历信息，因此决定实施一个能够让她完全拥有和控制的系统。
-
-文章主要关注她为集成 Nextcloud（一个自托管平台）进行日历管理所采取的实际步骤。她强调了拥有专用服务器或虚拟专用服务器 (VPS) 来托管 Nextcloud 的重要性，并概述了安装过程。她选择 Nextcloud 是因为它的功能丰富、社区支持以及与其他服务集成的能力。
-
-作者描述了设置 Nextcloud、配置日历应用程序以及将其与各种设备（桌面和移动设备）同步的过程。她还解决了集成过程中遇到的挑战，例如配置 SSL 证书以实现安全连接以及排除同步问题。
-
-文章的一个关键要点是理解自托管所涉及的技术方面的重要性，包括服务器管理和维护。虽然自托管提供了更多的隐私和控制，但也需要一定的技术专业知识。作者强调了数据所有权的长期利益以及控制个人数字足迹所带来的力量。“第一部分”表明这是该系列的第一篇文章，她打算在其中探索日历管理之外的数据所有权的其他方面。
+尽管面临挑战，Purism仍致力于透明化，发布原理图和硬件物料清单，显示组件的来源。
 
 ---
 
-## 13. Clojure：无需 ClojureScript 的实时协作 Web 应用
+## 19. 代理设计中的自主性、控制性和可靠性
+
+**原文标题**: Agency vs. Control vs. Reliability in Agent Design
+
+**原文链接**: [https://fin.ai/research/agency-control-reliability-the-tradeoffs-in-customer-support-agents/](https://fin.ai/research/agency-control-reliability-the-tradeoffs-in-customer-support-agents/)
+
+人工智能客服 Agent 设计中自主性、控制和可靠性 (ACR) 的权衡：提高 Agent 可靠性的策略
+
+---
+
+## 20. Rust CUDA 项目
+
+**原文标题**: Rust CUDA Project
+
+**原文链接**: [https://github.com/Rust-GPU/Rust-CUDA](https://github.com/Rust-GPU/Rust-CUDA)
+
+Rust CUDA 项目旨在使 Rust 成为使用 CUDA 工具包进行高性能 GPU 计算的一流语言。它提供工具和库，用于将 Rust 代码编译为针对 NVIDIA GPU 优化的 PTX 代码，并方便在 Rust 中使用现有的 CUDA 库。这解决了 Rust 与 CUDA 结合使用的历史挑战，即 LLVM PTX 后端证明不可靠。
+
+该项目范围广泛，涵盖 CUDA 生态系统的各个方面，包含多个 crate：
+
+*   **rustc\_codegen\_nvvm:** 一个针对 NVVM IR 的 rustc 后端，用于生成优化的 PTX 代码。
+*   **cuda\_std:** GPU 端函数和实用程序。
+*   **cudnn:** 用于深度学习的 GPU 加速原语。
+*   **cust:** CPU 端 CUDA 功能，如内核启动和内存分配。
+*   **gpu\_rand:** GPU 友好的随机数生成。
+*   **optix:** CPU 端的硬件光线追踪和降噪。
+
+该项目还包括用于较小 CUDA 库的粘合 crate。
+
+该项目承认 rust-gpu 和其他实验性的 Rust-to-GPU 编译器等相关工作。它提供包含环境变量（例如，OPTIX\_ROOT）和 `cargo build` 的设置说明。 提供了 Dockerfile 用于容器化开发，以 Ubuntu 24.04 为例，并包含用于 VS Code 的示例 `.devcontainer.json`。
+
+该项目在 Apache 2.0 和 MIT 许可下获得许可，鼓励在相同的双重许可条款下进行贡献。
+
+---
+
+## 21. DDoS缓解泄漏
+
+**原文标题**: DDoS Mitigation Leak
+
+**原文链接**: [https://www.kentik.com/blog/beyond-their-intended-scope-ddos-mitigation-leak/](https://www.kentik.com/blog/beyond-their-intended-scope-ddos-mitigation-leak/)
+
+本文分析了由DDoS缓解服务提供商Voxility (AS3223) 于2025年4月1日引发的近期BGP路由泄漏事件。此次泄漏持续约20分钟，将互联网流量错误地导向罗马尼亚布加勒斯特，扰乱了全球服务。
+
+文章将BGP泄漏定义为路由宣告超出其预期范围的传播，区分了错误始发（宣告未经授权的IP地址块）和路径错误（非法插入转发路径）。该事件被归类为路径错误，涉及超过30,000条泄漏路由。
+
+该分析追踪了被篡改的BGP路径，强调了通常通过直接连接对等互连的路由如何被路由通过Voxility的网络，通常是由于较短的AS路径。文章使用Kentik的BGP可视化工具，展示了对特定路由的影响，说明了有限传播的“区域路由”如何因泄漏而广泛传播，从而导致中断。
+
+此外，文章分析了泄漏对流量的影响。通过检查带有AS路径注释的NetFlow数据，文章确定韩国、越南和缅甸是受影响最严重的目的地国家。它还表明，虽然一些流量被错误地引导并最终到达目的地，但由于网络拥塞，很大一部分流量被丢弃。
+
+最后，文章倡导采用RFC 9234，该规范定义了“仅面向客户”（OTC）BGP路径属性。此属性将允许网络发出信号，表明某些路由应仅传播给直接客户，从而可能防止此类泄漏。文章总结说，积极采用这些技术对于减轻不可避免的BGP事故造成的破坏至关重要。
+
+---
+
+## 22. Deno 在 Varnish 中，运行于 TinyKVM 之上
+
+**原文标题**: Deno Under TinyKVM in Varnish
+
+**原文链接**: [https://info.varnish-software.com/blog/tinykvm-in-varnish-and-some-deno](https://info.varnish-software.com/blog/tinykvm-in-varnish-and-some-deno)
+
+本文探讨了TinyKVM，一种具有原生性能的沙盒，作为Varnish Cache中的计算框架，重点关注其速度和按请求隔离能力。Laurence Rowe和Alf-André Walla讨论了将基于Rust的Deno JavaScript运行时嵌入到TinyKVM中并对其性能进行基准测试。
+
+TinyKVM允许运行Linux ELF文件，并提供用于处理HTTP请求的简单API。它支持用于按请求隔离的临时VM，并在每个请求后重置VM状态。一个JSON最小化示例展示了静态缓冲区如何用于非临时程序。一个GBC模拟器示例演示了共享的可变存储，其中请求VM从主VM派生，以进行协作游戏。一个名为“storage”的函数处理共享的可变存储。
+
+Laurence Rowe强调了Deno在TinyKVM中的性能，显示在渲染React页面时，按请求隔离仅增加约0.4毫秒的延迟，使其可能比现有解决方案更快。为了适应Deno，TinyKVM增加了对Rust的crt-static的支持和一个新的`wait_for_requests_paused` API。
+
+文章包括一个gzip基准测试，展示了使用libdeflate和zlib-ng的性能改进。启用巨页导致Deno JS程序在未修改代码的情况下性能提升12%。最后，作者展示了一个小型程序的按请求隔离，在HTTP基准测试中平均耗时14微秒。TinyKVM旨在简化数据处理并提供对Varnish缓存的直接访问。
+
+---
+
+## 23. 废弃核电站成为世界一流声学实验室
+
+**原文标题**: An unused nuclear power plant became home to a world-class acoustics lab
+
+**原文链接**: [https://www.theverge.com/tech/644385/nuclear-power-plant-acoustics-lab](https://www.theverge.com/tech/644385/nuclear-power-plant-acoustics-lab)
+
+艾莉森·约翰逊的文章探讨了华盛顿州萨特索普商业园中一座废弃的核电站如何被改造为世界一流的声学测试机构NWAA实验室。所有者罗恩·索罗利用该电站巨大且隔音的混凝土结构，创建了可控的声学测试环境。
+
+文章详细介绍了命运多舛的华盛顿核项目3号和5号（WNP-3和WNP-5）的历史，突出了它们的财务问题和最终的废弃。前NASA科学家索罗看到了未使用的反应堆建筑在声学测试方面的独特潜力，特别是其厚重的混凝土墙、偏远的位置和稳定的温度。
+
+NWAA实验室利用该设施的混响室来测试隔音材料、产品的噪音水平，甚至包括安全政府通信设施（SCIF）的声音完整性。约翰逊描述了改造现有结构的挑战，例如切割重型钢筋混凝土，以及所需的持续维护，例如处理涡轮机大楼漏水的屋顶。
+
+尽管存在挑战，但这种独特的环境也带来了优势。混凝土提供了卓越的隔音效果，并且配备了自由场扬声器测试装置。索罗强调了他的工作的实践性，需要木工、管道和焊接方面的技能来维护和改造该设施。最终，这篇文章说明了一个不太可能的地方如何成为声学科学的宝贵资产。
+
+---
+
+## 24. 我为什么用Lisp编程
+
+**原文标题**: Why I Program in Lisp
+
+**原文链接**: [http://funcall.blogspot.com/2025/04/why-i-program-in-lisp.html](http://funcall.blogspot.com/2025/04/why-i-program-in-lisp.html)
+
+乔·马歇尔在2025年4月10日的一篇博客文章中解释了他偏爱使用 Lisp 编程的原因，尽管它缺乏主流的普及度。他认为 Lisp 相比其他语言有几个优势：由于其统一的语法（剑桥波兰表示法），它更容易记忆；限制更少；并且可以减少思想和程序之间的“摩擦”。他还强调了 Lisp 的函数式编程支持，特别是它的替换模型、代码重构的便利性和 lambda 表达式。
+
+马歇尔强调了 Lisp 的快速原型设计能力、调试器、安全内存模型和 REPL 环境，这些使其能够立即评估和集成代码片段。动态类型虽然是一把双刃剑，但允许自动的特别多态，从而产生适用于各种数据类型的通用代码。
+
+虽然承认其他语言也可能具有其中一些特性，但马歇尔认为 Lisp 以独特的方式将它们结合在一起。他将 Lisp 视为一种用于思考问题的工具，这使得编程过程本身就令人愉快。
+
+评论部分讨论了 Lisp 中多态的细节，与 C++、Haskell 和 Rust 等静态类型语言进行了比较，并提供了阶乘和欧几里德算法实现的示例。 对话涉及动态类型和静态类型之间的权衡，以及不同语言的表达能力。 还讨论了 Lisp 与 C 的用例，以及 Lisp 的审美之美及其在配置 Emacs 中的应用。
+
+---
+
+## 25. 我私人的二进制：Linux内核模块的个性化介绍
+
+**原文标题**: My Own Private Binary: An Idiosyncratic Introduction to Linux Kernel Modules
+
+**原文链接**: [https://www.muppetlabs.com/~breadbox/txt/mopb.html](https://www.muppetlabs.com/~breadbox/txt/mopb.html)
+
+本文讲述了作者在 Linux 上研究可执行文件格式的历程，其动机是创建尽可能小的可执行文件。最初，作者探索了 ELF 文件并显著减小了它们的大小。这引发了对 aout 二进制文件的兴趣，但他们发现由于安全问题，Linux 内核通常禁用 aout 支持。
+
+作者随后思考了 Linux 中二进制格式支持的动态特性，发现可以通过内核模块添加新的格式。由于 Linux 中不存在“扁平”（无元数据）格式，作者考虑实现对 MS-DOS 的 .com 格式的支持，该格式是真正扁平的。
+
+文章随后转为解释内核模块。这些是链接到运行内核中的目标文件，允许动态添加功能，例如硬件支持或新的二进制格式，而无需重新编译整个内核。作者提供了一个简单的“hello kernel”模块示例，包括代码和构建说明，以演示使用 `insmod`、`lsmod`、`dmesg` 和 `rmmod` 创建和管理内核模块的基础知识。虽然承认内核开发的潜在风险，例如由于编码错误导致系统崩溃，但作者鼓励实验，并强调内核模块提供的强大功能和自由。最后，文章指出可以使用自定义内核模块来添加对任何二进制文件格式的支持，包括所需的 .com 格式。
+
+---
+
+## 26. h1元素的默认样式正在更改
+
+**原文标题**: Default styles for h1 elements are changing
+
+**原文链接**: [https://developer.mozilla.org/en-US/blog/h1-element-styles/](https://developer.mozilla.org/en-US/blog/h1-element-styles/)
+
+本文探讨了即将到来的 `<h1>` 元素默认浏览器样式的更改，特别是它们与 `<section>`, `<article>`, `<nav>` 和 `<aside>` 等分节元素之间的交互。 历史上，浏览器使用大纲算法来隐式调整 `<h1>` 样式，基于它们在这些元素中的嵌套，有效地将它们降级为 `<h2>`, `<h3>` 等。
+
+这种行为现在将被移除。 浏览器正在逐步淘汰这些隐式样式，这意味着无论 `<h1>` 位于分节元素的何处，都将始终以其默认样式呈现。 此更改旨在减少混淆，并使浏览器行为与更新的 HTML 规范保持一致，该规范已于 2022 年删除了有问题的轮廓算法。
+
+建议开发人员为 `<h1>` 元素显式定义字体大小和边距，以避免依赖即将移除的默认浏览器样式。 Lighthouse 和其他页面审核工具会将没有指定字体大小的 `<h1>` 实例标记为警告（"H1UserAgentFontSizeInSection"）。 Firefox 和 Chrome 已经开始实施这些更改，预计 Safari 也会效仿。
+
+本文建议：使用 `<h2>`, `<h3>` 等定义清晰的标题层级结构； 始终指定 `<h1>` 字体大小和边距； 考虑更新 CSS 重置； 并使用 Lighthouse 等工具来审核网站的已弃用用法。 使用 `:where(h1)` 可以帮助避免应用样式时的特殊性冲突。
+
+---
+
+## 27. 具有摄像头和屏幕共享功能的Gemini Live
+
+**原文标题**: Gemini Live with camera and screen sharing capabilities
+
+**原文链接**: [https://blog.google/products/gemini/gemini-live-android-tips/](https://blog.google/products/gemini/gemini-live-android-tips/)
+
+Gemini Live 扩大可用性：新增 Pixel 9 和 Samsung Galaxy S25 设备支持
+
+本文宣布 Gemini Live 的可用性进一步扩大。Gemini Live 允许用户通过手机摄像头或屏幕共享与 Gemini AI 进行自然对话。最初仅面向 Android 上的 Gemini Advanced 订阅者开放，现在所有 Pixel 9 和 Samsung Galaxy S25 设备上的 Gemini 应用用户均可使用。Gemini Live 支持超过 45 种语言。
+
+本文重点介绍了用户可以利用 Gemini Live 的五个关键方式：
+
+1.  **整理收纳：** 用户可以将摄像头对准杂乱的空间，获得关于整理、分类和空间最大化的实时建议。
+2.  **创意头脑风暴：** 屏幕共享可用于向 Gemini 展示鼓舞人心的图像，激发各种创意项目（如设计或写作）的灵感。
+3.  **故障排除：** 摄像头输入允许用户实时向 Gemini 展示技术问题，并获得问题解决的指导。
+4.  **个人购物建议：** 屏幕共享使用户能够在 Gemini 的帮助下浏览在线零售商，Gemini 可以提供产品比较、风格建议以及对潜在购买商品的反馈，还可以使用摄像头功能查看商品与现有衣橱的搭配效果。
+5.  **技能发展与反馈：** 用户可以分享他们的作品，例如博客文章或社交媒体活动，以获得个性化建议并确定需要改进的领域。
+
+---
+
+## 28. 适用于经典 Macintosh OS 7/8/9 的 Mbed-TLS 移植版本
+
+**原文标题**: A port of Mbed-TLS for the Classic Macintosh OS 7/8/9
+
+**原文链接**: [https://github.com/bbenchoff/MacSSL](https://github.com/bbenchoff/MacSSL)
+
+本文档详细介绍了“MacSSL”，它是Mbed-TLS库针对Classic Macintosh OS 7/8/9的移植版本，使用Metrowerks Codewarrior Pro 4开发。该项目的目标是为一个基于老式数码相机的“Instagram克隆”应用启用HTTPS通信。
+
+该仓库包含Codewarrior项目文件和PolarSSL（Mbed-TLS的一个分支）库的必要子集，版本为2.29.9。由于Mac文件资源问题，该项目以压缩的“Archive.sit”文件形式提供。该移植支持TLS 1.1，具有最小配置，包括特定的密码套件（AES-128-CBC-SHA, AES-256-CBC-SHA），secp256r1椭圆曲线，以及使用SHA-256, SHA-384和SHA-1的RSA签名。还实现了ISRG Root X1和Let's Encrypt R11的证书处理。
+
+移植过程中的主要挑战包括C89/C90的限制（缺少方法重载、可变参数宏），需要进行大量的代码重构，以及缺少原生64位整数支持，这通过结构体和自定义函数进行模拟。该项目还面临由于操作系统限制导致的严重的熵收集问题。实施了一个自定义的熵收集系统，从各种系统源提取熵。
+
+包含一个示例应用程序，它使用HTTPS从指定的API端点获取数据，并在文本框中显示结果，并将其写入名为“SSL-Debug.txt”的调试文件中。调试日志显示成功的TLS握手。
+
+---
+
+## 29. Clojure：无需 ClojureScript 的实时协作 Web 应用
 
 **原文标题**: Clojure: Realtime collaborative web apps without ClojureScript
 
 **原文链接**: [https://andersmurphy.com/2025/04/07/clojure-realtime-collaborative-web-apps-without-clojurescript.html](https://andersmurphy.com/2025/04/07/clojure-realtime-collaborative-web-apps-without-clojurescript.html)
 
-本文介绍了一种使用Clojure构建实时协作Web应用的方法，无需依赖ClojureScript。作者展示了一个多人“生命游戏”应用，该应用通过SSE（服务器发送事件）每200毫秒将整个`<main>`元素从服务器流式传输到客户端。 关键在于，这种方法避免了客户端Javascript，而是使用了一个名为Datastar（压缩后11.4kb）的小型超媒体框架。
+本文介绍 Datastar，一个轻量级 (11.4kb Brotli 压缩) 的超媒体框架，作为使用 Clojure 构建实时协作 Web 应用的 ClojureScript 的可行替代方案。作者通过一个简单的多人在线生命游戏实现来演示这一点。
 
-核心思想围绕流压缩（Brotli）的效率，它可以通过SSE实现高压缩率（100-230:1），在网络效率和性能方面可能优于使用差异的细粒度更新。 这种方法简化了视图和会话维护。
+其核心思想是使用服务器发送事件 (SSE) 每 200 毫秒将页面的整个 `<main>` 元素从服务器流式传输到客户端。然后，Datastar 使用快速的形态算法有效地将新的 HTML 片段与旧的片段合并，仅更新更改的部分。作者认为，尽管发送了整个 `<main>` 元素，但由于 SSE 上 Brotli 压缩提供非常高的压缩率，因此这种方法具有高性能和带宽效率。
 
-作者认为，SSE在防火墙、负载均衡、压缩、自动重新连接和工具方面具有优于WebSockets的优势。Datastar 实现了 `view = f(state)` 模型，将 `f(state)` 保留在服务器上。一个使用hyperlith（一个基于Datastar构建的框架）的代码示例，展示了一个简单的渲染函数和动作处理器如何在渲染函数中没有明确的用户区分，但具有用户特定的动作的情况下，创建一个多人游戏体验。
+作者将 Datastar 与 Phoenix LiveView 进行对比，强调 Datastar 的简洁性和无状态性。他们还反对使用 WebSockets，理由是其存在防火墙问题、缺乏压缩以及断开连接处理不佳等运营挑战，转而提倡使用 SSE（或 UDP/WebTransport 替代方案）。
 
-结论强调了Datastar可以轻松地仅使用Clojure实现交互式和协作式Web应用程序。
+为了简化操作，作者使用了构建在 Datastar 之上的 `hyperlith` 微型框架来处理 SSE、压缩和其他细节。示例代码展示了如何使用 Clojure 在服务器上处理用户操作，以及 `render-home` 函数如何生成发送给所有客户端的 HTML。由于渲染函数向所有人显示相同的内容，因此使应用程序支持多人游戏无需任何代码更改。
+
+结论强调，Datastar 与 Clojure 结合使用可以轻松构建交互式和协作式 Web 应用程序，而无需 ClojureScript。
 
 ---
 
-## 14. Show HN: Koreo – Kubernetes平台工程工具包
+## 30. 离职：深入剖析Lumon的中世纪野兽派宇宙
+
+**原文标题**: Severance: A closer look into the mid-century, brutalist universe of Lumon
+
+**原文链接**: [https://www.designboom.com/design/severance-closer-look-mid-century-brutalist-retro-futuristic-universe-lumon-03-21-2025/](https://www.designboom.com/design/severance-closer-look-mid-century-brutalist-retro-futuristic-universe-lumon-03-21-2025/)
+
+《离职》因其通过设计构建世界观的精湛技艺而备受赞誉，它为鲁门工业打造了一个既时尚又令人不安的宇宙。该剧巧妙地融合了世纪中期现代主义、粗野主义企业美学和复古未来主义技术，创造出一个反乌托邦环境，其中每个设计元素都服务于心理目的。
+
+文章强调了建筑选择，例如由埃罗·沙里宁设计的贝尔实验室，是如何扭曲成控制机制的，将熟悉的现代主义理想转化为某种不祥之物。通过包含展示现代主义设计的住宅，如杰拉德·卢斯住宅、塔格卡尼克住宅和比尔住宅，创造出对比，强调了企业与个人世界之间的分裂。
+
+家具和物品，尤其是迪特·拉姆斯设计的极简主义工业作品，为公司营造了临床式和令人不安的美学。马克·纽森设计的Fauteuil Nimrod等其他设计也增加了这种高度控制的环境。
+
+色彩、排版和艺术也是至关重要的叙事工具。柔和的色调和鲜明的排版强化了鲁门公司冷酷的官僚作风。鲁门内部令人不安的艺术，尤其是对员工的邪教式描绘以及围绕基尔·伊根的传说，充当了企业宣传，塑造了员工的认知，并培养了一种人为的团结感。即使是鲁门外部的艺术，也暗示着始终存在的焦虑。
+
+---
+
+## 31. 2025年人工智能指数报告
+
+**原文标题**: 2025 AI Index Report
+
+**原文链接**: [https://hai.stanford.edu/ai-index/2025-ai-index-report](https://hai.stanford.edu/ai-index/2025-ai-index-report)
+
+无法访问文章链接。
+
+---
+
+## 32. 3D陆军陆地导航课程
+
+**原文标题**: 3D Army Land Navigation Courses
+
+**原文链接**: [https://oe.tradoc.army.mil/oegames/landnav/index.html](https://oe.tradoc.army.mil/oegames/landnav/index.html)
+
+OE Games推出3D陆军地形导航课程，提供森林和沙漠两种环境。推荐使用Edge、Chrome或Firefox浏览器以获得最佳体验。请注意，本游戏不支持Internet Explorer。如有技术问题，请发送邮件至[邮箱地址]。
+
+---
+
+## 33. R 语言大全
+
+**原文标题**: Big Book of R
+
+**原文链接**: [https://www.bigbookofr.com/](https://www.bigbookofr.com/)
+
+R语言书大全：汇集了400多本免费或平价R语言编程书籍，力求成为用户唯一需要的R语言书签。网站鼓励用户通过GitHub或Google表单贡献书籍（免费和付费）。
+
+作者Oscar感谢Fathom Data将网站转换为Quarto格式。本网站采用知识共享署名-非商业性使用-禁止演绎 3.0 许可协议。
+
+该网站提供由Plausible驱动的实时、注重隐私的使用统计数据，彰显了对GDPR合规性的承诺。Oscar邀请读者在Mastodon或LinkedIn上联系，并订阅他的新闻通讯，以获取数据相关项目和书籍重大更新的最新信息。
+
+---
+
+## 34. 金融科技创始人被控欺诈；人工智能应用被发现是菲律宾人在操作
+
+**原文标题**: Fintech founder charged with fraud; AI app found to be humans in the Philippines
+
+**原文链接**: [https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/](https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/)
+
+人工智能购物应用Nate创始人兼前CEO Albert Saniger 因涉嫌误导投资者关于该应用真实性能，被美国司法部指控犯有欺诈罪。Nate 曾从投资者那里筹集了超过 5000 万美元，声称其“人工智能”允许用户只需单击一下即可从任何电子商务网站购买商品。然而，美国司法部指控 Nate 在很大程度上依赖菲律宾的人工承包商来手动完成购买，自动化率实际上为 0%。
+
+Saniger 被指控虚假宣称 Nate 的运营“没有人为干预”，除非在极端情况下。尽管聘请了数据科学家并收购了一些人工智能技术，但该应用的功能主要由人力驱动。《The Information》杂志 2022 年的一项调查此前曾强调 Nate 对人工承包商的使用。
+
+据报道，Nate 耗尽了资金，并于 2023 年 1 月被迫出售其资产，导致投资者遭受重大损失。Saniger 目前的身份是 Buttercore Partners 的管理合伙人。
+
+文章还指出，Nate 并非唯一一家被指控夸大其人工智能能力的初创公司，并列举了依赖大量人工的“人工智能”免下车软件和法律科技独角兽 EvenUp 的例子。
+
+---
+
+## 35. 揭秘 (Shebang): 内核探险
+
+**原文标题**: Demystifying the (Shebang): Kernel Adventures
+
+**原文链接**: [https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/](https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/)
+
+本文深入探讨Linux内核如何通过Shebang (`#!`)机制处理脚本的执行。与普遍认知相反，Shebang并非由Shell本身解释，而是在`execve`系统调用期间由内核直接解释。
+
+内核函数`fs/exec.c`中的`do_execveat_common`是入口点，进而调用`bprm_execve`和`search_binary_handler`。后者通过读取文件开头（最多256字节，由`BINPRM_BUF_SIZE`确定）并将它与已注册的格式（如ELF、FLAT和SCRIPT (`fs/binfmt_script.c`)）进行比较来识别可执行文件格式。
+
+`binfmt_script.c`模块专门处理Shebang。如果检测到`#!`，内核会解析解释器路径，打开解释器可执行文件，并在进程映像中用解释器替换脚本文件。这意味着对脚本的单个`execve`触发内核查找并执行指定的解释器，并将脚本路径作为参数传递。
+
+本文还涉及`binfmt_misc.c`，这是一种内核特性，允许通过将非本地二进制文件（如Java JAR）与基于魔术字节序列或文件扩展名的特定解释器关联来执行它们。
+
+最后，本文解释了在*没有* Shebang的情况下运行Shell脚本是Shell实现的备用机制。Shell检测到来自失败的`execve`的`ENOEXEC`错误，然后使用`/bin/sh`显式执行脚本。文章最后演示了内核检查执行权限，如果权限被拒绝，则返回`EACCES`错误。
+
+---
+
+## 36. 为什么要轻拍奶酪轮？
+
+**原文标题**: Why Tap a Wheel of Cheese?
+
+**原文链接**: [https://www.cheeseprofessor.com/blog/cheese-wheel-tapping](https://www.cheeseprofessor.com/blog/cheese-wheel-tapping)
+
+本文探讨了“巴提托里”（击打者）在确保帕尔马干酪质量方面发挥的关键作用。这些专业的品鉴师只有24位，他们在奶酪经过至少12个月的成熟期后，用小锤敲击每一块奶酪，仅凭声音来评估其内部结构。
+
+作者克里斯汀·詹努齐在艾米利亚-罗马涅地区与两位巴提托里一起度过了一段时间：一位是年轻的学徒亚历山德罗·斯托基，另一位是经验丰富的资深人士兼前奶酪制造商雷纳托·朱迪奇。她了解到这项技能是通过学徒制传承的，经验丰富的巴提托里会指导新手解读每次敲击的细微差别。他们倾听均匀的声音，这表明内部结构紧密，没有裂缝或空洞。
+
+巴提托里将奶酪分为三个质量等级。最优质的奶酪会获得官方的帕尔马干酪烙印。有轻微缺陷的奶酪仍会被烙印，但也会刻上平行线，以表明其质量较低，适合年轻时食用。有重大缺陷的奶酪会被剥夺所有识别标志，并作为普通餐桌奶酪出售。
+
+虽然缺陷被视为瑕疵，但它们也突出了帕尔马干酪的手工特性，它是用生牛奶制成，并受到自然变化的影响。即使存在这些变化，绝大多数奶酪都能达到最高的质量标准。巴提托里强调，这个职业需要激情、尊重和不断学习的意愿。
+
+---
+
+## 37. Show HN: Koreo – Kubernetes 平台工程工具包
 
 **原文标题**: Show HN: Koreo – A platform engineering toolkit for Kubernetes
 
 **原文链接**: [https://koreo.dev/](https://koreo.dev/)
 
-Koreo是一个平台工程工具包，旨在简化 Kubernetes 配置管理和资源编排，通过可编程工作流和结构化数据赋能开发者。它允许用户定义复杂的多步骤流程，这些流程能够响应事件并通过工作流和函数管理 Kubernetes 资源，其灵感来源于函数式编程。这些工作流是平台操作的蓝图，而函数是特定任务的可重用构建块。
+Koreo 是一款平台工程工具包，旨在简化和增强 Kubernetes 配置管理和资源编排。它通过可编程的工作流程和结构化数据赋能开发者，从而解决了 Helm 和 Kustomize 等工具的局限性。
 
-Koreo 提供结构化的配置管理，支持验证、转换和组合来自多个来源的配置。动态资源物化允许注入值和覆盖定义以创建完整的资源视图，从而确保一致性并执行组织标准。它支持声明式操作符模型、一流测试和 IDE 集成等特性。
+主要功能包括：
 
-Koreo 构建于 Helm、Kustomize、Argo 和 Crossplane 等现有工具之上，充当元控制器编程语言和运行时，将现成的操作符组合成具有凝聚力的平台。用例包括构建内部开发者平台 (IDP)、自动化基础设施、实施统一控制平面、创建开发者抽象、支持多云基础设施即代码 (IaC)、组合操作符、编排部署和定义策略即代码。
+*   **可编程工作流程：** 能够定义复杂的、事件驱动的流程来管理 Kubernetes 资源的生命周期。
+*   **结构化配置管理：** 将 Kubernetes 配置视为结构化数据，以便更轻松地进行验证、转换和组合。
+*   **动态资源实例化：** 允许注入值并组合来自各种来源的配置，以创建完整的资源视图。
+*   **配置即函数：** 利用函数式编程原则来创建可重用的配置构建块。
+*   **声明式 Operator 模型：** 通过定义期望状态并自动协调实际状态来简化管理。
+*   **一流的测试和工具：** 提供内置的测试框架和 IDE 集成，用于早期错误检测和改进的开发者体验。
 
-Koreo 由 Real Kinetic 开发，拥有多年的平台工程经验，旨在加速产品交付、提高效率并降低复杂性。它还为 Konfigurate 提供支持，Konfigurate 是一个预配置平台，专注于简化初创公司和规模化公司的开发。
+Koreo 旨在构建自定义内部开发者平台 (IDP)、自动化基础设施、实施统一控制平面、创建开发者抽象、启用多云基础设施即代码 (IaC)、促进 Operator 组合、编排部署以及强制执行策略即代码。
 
----
-
-## 15. 特斯拉加拿大公司称其可疑的4300万加元激励金获取是一场误解。
-
-**原文标题**: Tesla Canada says its shady $43M incentive grab was a misunderstanding
-
-**原文链接**: [https://electrek.co/2025/04/09/tesla-canada-says-its-shady-43-million-incentive-grab-was-a-misunderstanding/](https://electrek.co/2025/04/09/tesla-canada-says-its-shady-43-million-incentive-grab-was-a-misunderstanding/)
-
-特斯拉加拿大公司回应涉嫌不当申领4300万加元电动汽车补贴指控
+Koreo 由 Real Kinetic 开发，源于他们为各种组织（包括为 Workiva 构建内部平台）提供平台工程的经验。它还为 Real Kinetic 针对初创企业的预配置平台 Konfigurate 提供支持。
 
 ---
 
-## 16. Parity (YC S24) 正在招聘创始工程师，构建 AI SRE（旧金山现场办公）
+## 38. .localhost 域名
 
-**原文标题**: Parity (YC S24) is hiring founding engineers to build an AI SRE (in-person SF)
+**原文标题**: .localhost Domains
 
-**原文链接**: [https://www.ycombinator.com/companies/parity/jobs](https://www.ycombinator.com/companies/parity/jobs)
+**原文链接**: [https://inclouds.space/localhost-domains](https://inclouds.space/localhost-domains)
 
-Parity (YC S24) 正在招聘创始工程师（旧金山现场办公），以构建用于事件响应的 AI SRE 平台。 他们有两个职位空缺：创始工程师 - 应用 AI 和创始工程师 - 全栈，均提供 12 万美元至 17 万美元的薪资和 0.25% 至 2.00% 的股权，要求 1 年以上经验。
+查尔斯·张伯伦描述了一种为本地Web应用程序创建自定义`.localhost`域的方法，使他能够使用像`appname.localhost`这样的名称访问它们，而不是`localhost:4333`。该设置包括三个步骤：
 
-Parity 旨在通过使用 AI 代理自主地进行分类、根本原因分析和修复基础设施问题来消除值班的痛苦。他们正在经历强劲的早期采用，并相信他们的产品可以定义一个新的类别。
+1. **Launchd守护进程：** 每个应用程序都被配置为监听唯一端口的launchd守护进程。
 
-该公司获得了 Y Combinator、General Catalyst 和 Sugar Free Capital 等知名投资者的支持，以及来自 Midjourney 和 Crusoe 等公司的天使投资人。Parity 成立于 2024 年，是 S24 YC 批次的一部分，拥有一支由 3 人组成的团队，并正在积极开发其 AI SRE 解决方案。创始人是 Coleman Smith、Wilson Spearman（首席执行官）和 Jeffrey Tsaw。
+2. **/etc/hosts配置：** 编辑`/etc/hosts`文件，将来自自定义域（例如，`inclouds.localhost`）的流量重定向到`127.0.0.1`。
 
----
+3. **Caddy反向代理：** Caddy，一个Web服务器，被配置为充当反向代理，将来自`127.0.0.1`针对指定域的流量重定向到应用程序正在监听的正确端口。例如，`inclouds.localhost`可能代理到`localhost:5050`。Caddy还处理TLS和压缩。
 
-## 17. 如果你的网站有营业时间会怎么样？ (2022)
-
-**原文标题**: What if your website had business hours? (2022)
-
-**原文链接**: [https://bobbiechen.com/blog/2022/7/21/what-if-your-website-had-business-hours](https://bobbiechen.com/blog/2022/7/21/what-if-your-website-had-business-hours)
-
-陈柏逸的文章《如果你的网站也有营业时间会怎样？》探讨了限制网站可用性的非常规想法，并将之与实体店进行了类比。作者质疑了24/7全天候运行的行业标准及其相关成本，特别是工程师的随叫随到责任。
-
-文章以B&H Photo为例，指出这家成功的企业因宗教原因周六不接受订单，表明虽然一些客户可能会去别处，但许多人稍后会回来，从而最大限度地减少收入损失。这与常见的按年收入除以一年中的分钟数来计算停机成本的方法形成对比，陈柏逸认为这种计算方法过于高估。
-
-作者还引用了Google SRE书中关于“Chubby”的一个轶事，其中故意触发小的中断，以确保用户有备用计划，这表明偶尔的不可用可以管理用户期望。诸如Low-Tech Magazine（太阳能供电）和Kingdom of Loathing（有夜间维护）之类的例子进一步说明了在特定领域限制可用性的可行性。
-
-最终，陈柏逸承认，对于大多数网站，特别是那些提供紧急服务的网站来说，实施营业时间存在实际困难。作者幽默地计算了潜在的云节省与实际收银员成本相比的微薄成本节省。虽然承认减少随叫随到时间的吸引力，但结论倾向于理解为什么网站保持永久开放状态，并引用了客户期望和竞争格局。
+张伯伦表达了简化该过程的愿望，设想使用单个命令来安装或卸载应用程序，并自动配置必要的设置。他还提到了cristóbal的建议，即使用dnsmasq来获得更好的解决方案。
 
 ---
 
-## 18. Crystal 1.16.0 发布
+## 39. 她在哈佛实验室研究逆转衰老，直到被美国移民海关执法局拘留
 
-**原文标题**: Crystal 1.16.0 Is Released
+**原文标题**: She Worked in a Harvard Lab to Reverse Aging, Until ICE Jailed Her
 
-**原文链接**: [https://crystal-lang.org/2025/04/09/1.16.0-released/](https://crystal-lang.org/2025/04/09/1.16.0-released/)
+**原文链接**: [https://www.nytimes.com/2025/04/11/science/russian-scientist-ice-detained-harvard.html](https://www.nytimes.com/2025/04/11/science/russian-scientist-ice-detained-harvard.html)
 
-Crystal 1.16.0 已发布，自 1.15.1 版本以来，共有 19 位贡献者提交了 162 项更改。此版本包含新功能、缺陷修复和性能改进。
+俄罗斯科学家克谢尼娅·彼得罗娃，现年30岁，曾在哈佛医学院实验室从事细胞再生抗衰老研究，目前被拘留在路易斯安那州的一所监狱里。彼得罗娃因政治原因逃离俄罗斯来到美国。2月16日，她在洛根国际机场被拘留，原因是她应哈佛老板的要求从法国携带青蛙胚胎，但未向海关申报。
 
-**重大变更：** `File.match?` 的实现已通过新的 globbing 行为得到纠正，参数名称后缀 '?' 和 '!' 已弃用，`Enumerable#sum` 和 `#product` 要求为联合类型指定显式初始值类型，`HTTP::Request` 现在可以正确解析资源字符串，并且编译器不再为子命令设置 `$CRYSTAL` 环境变量，而是替换为 `$CRYSTAL_EXEC_PATH`。
-
-**新功能/改进：** 提供执行上下文的预览功能，`Slice.literal` 可以推断元素类型并可以在解释器中使用，`macro sizeof` 和 `alignof` 提供有关稳定类型的信息，Path 处理的错误修复和性能改进，新方法 `Indexable#find` 和 `#find!`，新方法 `EventLoop#wait_readable` 和 `#wait_writable`，编译器 CLI 接受带有目录的 `--output`，并且编译器尊重 `$MACOSX_DEPLOYMENT_TARGET`。
-
-文档生成器可以选择包含私有和受保护的对象，以及带有 `:showdoc:` 指令的 lib 绑定中的对象。 现在支持 LLVM 20，并且 LLVM::ABI 已弃用。此次发布由 84codes 等赞助商提供支持。
+虽然这种违规行为通常只处以小额罚款，但海关官员取消了她的签证并启动了驱逐程序。彼得罗娃告知他们，由于她的政治活动，如果返回俄罗斯，她担心会被逮捕。她现在被关押在里奇伍德惩教中心，与大约90名其他移民女性（主要是无证工人）一起，等待美国政府对她案件的裁决。由于无法工作，她只能在允许的情况下读书和下棋来消磨时间。这篇文章突出了她重要的科学工作与她在特朗普政府强硬的移民政策下的困境之间的对比。
 
 ---
 
-## 19. macOS 9版SDL2“草稿”
+## 40. 我们为对性能要求极高的桌面应用选择了Tauri而非Electron
+
+**原文标题**: We Chose Tauri over Electron for Our Performance-Critical Desktop App
+
+**原文链接**: [https://gethopp.app/blog/tauri-vs-electron](https://gethopp.app/blog/tauri-vs-electron)
+
+Costa Alexoglou 的文章《我们为何选择 Tauri 而非 Electron 开发对性能要求极高的桌面应用》详细阐述了 Hopp 决定使用 Tauri 开发其低延迟远程结对编程应用的原因。该文章比较了 Tauri 和 Electron，重点介绍了它们的架构差异、功能和性能基准。
+
+Electron 捆绑了 Node.js 运行时并使用 Chromium 进行渲染，导致应用程序体积更大、内存使用率更高。事件处理依赖于 Node.js 事件循环。相反，Tauri 使用 Rust 作为后端，编译为原生二进制文件，并利用操作系统的 WebView 组件（Windows 上为 WebView2，macOS 上为 WKWebView，Linux 上为 WebKitGTK）。这导致更小的应用程序包和更低的内存占用，但也可能由于不同的 WebView 实现而引入潜在的跨平台 UI 不一致性。
+
+基准测试表明，与 Electron 相比，Tauri 应用程序的软件包体积明显更小（8.6 MiB 对比 244 MiB），内存使用率更低（172 MB 对比 409 MB）。启动时间可以忽略不计。由于 Rust 编译，Tauri 的初始构建时间较慢。
+
+Hopp 选择 Tauri 的主要原因是其卓越的视频流后端性能、易于管理用于屏幕共享和远程控制输入的独立进程（sidecar），以及 Tauri 的快速开发，特别是 Tauri v2 弥补了功能差距。虽然文章承认最佳选择取决于具体项目，但它为 Tauri 在对性能要求极高的桌面应用程序中的应用提出了令人信服的理由。
+
+---
+
+## 41. 詹姆斯·卡梅隆谈AI版权：人类是模型
+
+**原文标题**: James Cameron on AI copyright: humans are models
+
+**原文链接**: [https://nitter.space/vitrupo/status/1910484076978725140#m](https://nitter.space/vitrupo/status/1910484076978725140#m)
+
+无法访问文章链接。
+
+---
+
+## 42. 了解美国电力中断
+
+**原文标题**: Understanding US Power Outages
+
+**原文链接**: [https://www.construction-physics.com/p/understanding-us-power-outages](https://www.construction-physics.com/p/understanding-us-power-outages)
+
+本文利用Poweroutage.us的数据，分析了美国停电趋势，重点关注停电频率、区域差异和潜在原因。作者强调，停电很大程度上受到飓风、野火和冬季风暴等极端事件的影响，这些事件会导致停电时间显著增加。这些事件具有高度区域性，对某些地区产生巨大影响，而对其他地区则没有影响。
+
+全国范围内，每个客户的停电时间可能呈上升趋势，由于飓风海伦和米尔顿的影响，2024年尤其糟糕。农村地区的停电情况往往比城市地区更严重。
+
+去除极端事件的影响，可以揭示全国各地“基线”可靠性的差异。阿肯色州、密西西比州和德克萨斯州的部分地区，以及其他地区，始终显示出较高的停电率，而中西部和新英格兰南部的情况较好。达拉斯、费城和湾区等一些大都市地区的基线可靠性似乎正在恶化，而其他地区的基线可靠性相对稳定。菲尼克斯、迈阿密和洛杉矶表现出良好的基线可靠性。
+
+该分析还发现了季节性趋势，停电高峰出现在夏季和冬季，这可能与天气和能源消耗模式有关。最后，作者得出结论，极端事件正变得越来越频繁，停电情况因地区而异。
+
+---
+
+## 43. macOS 9 版 SDL2 “草稿”
 
 **原文标题**: SDL2 for macOS 9 “rough draft”
 
@@ -288,1318 +644,912 @@ Crystal 1.16.0 已发布，自 1.15.1 版本以来，共有 19 位贡献者提�
 
 ---
 
-## 20. 本网站使用cookies来存储您已点击“接受Cookies”的事实。
-
-**原文标题**: This site uses cookies to store the fact you clicked “Accept Cookies”
-
-**原文链接**: [https://rodyne.com/?p=2368](https://rodyne.com/?p=2368)
-
-这篇博文是对《通用数据保护条例》(GDPR) 及其对小型网站所有者影响的略带讽刺的评论。 作者身处欧盟以外，幽默地承认其网站可能因使用Cookie而非法，并且可能不符合欧盟法律。
-
-作者对GDPR的有效性表示怀疑，认为大型公司很可能找到规避规则的方法，而小型网站运营者则感到困惑并可能承担责任。 他们承认对WordPress网站和托管设置的内部运作缺乏了解，突显了互联网架构中固有的信任层。 他们相信这些系统没有做任何有害的事情。
-
-作者认为，用户常常被迫盲目接受Cookie政策，而不了解其条款和条件，这可能导致GDPR失效。 他们质疑这些法规的真正影响，认为它们主要使官僚和律师受益。 作者最终主张对互联网使用采取“买者自慎”的态度，认为法规不足以保护在线用户。 他们将互联网定义为“狂野西部”，个人必须谨慎行事。
-
----
-
-## 21. GCC 15 的可用性改进
-
-**原文标题**: Usability Improvements in GCC 15
-
-**原文链接**: [https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15](https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15)
-
-我能够访问外部网站，并且可以总结关于GCC 15中可用性改进的文章。
-
-以下是文章的总结：
-
-这篇文章重点介绍了GCC 15中的六项关键可用性改进，旨在使编译器更加用户友好，并有助于诊断问题。
-
-1.  **改进的诊断信息：** GCC 15提供了更精确和信息更丰富的错误消息，包括富含上下文的代码片段，突出显示错误的确切位置和可能的原因。这有助于开发人员快速理解和修复问题。
-
-2.  **`-fdiagnostics-show-caret=always` 成为默认设置：** 编译器现在默认显示指向代码中错误和警告确切位置的插入符号(^)。 这以前是通过标志启用的，但现在是标准行为。
-
-3.  **更精确的诊断位置：** GCC 15增强了报告的错误位置的精度，指向导致问题的确切字符或符号，而不是一般的行。
-
-4.  **标准化的诊断风格：** 编译器采用更一致和可读的诊断消息风格，使其更容易解析和理解。
-
-5.  **彩色诊断消息：** 在适当的终端支持下，GCC 15现在对错误消息、警告和注释进行彩色显示，进一步增强可读性并吸引对重要信息的注意。
-
-6.  **改进了对拼写建议的支持：** GCC 15为代码中的常见拼写错误提供了更好的拼写建议，特别是对于函数名和变量，有助于快速纠正错误。
-
-本质上，这些改进的重点是通过提供更清晰、更精确和更易于阅读的诊断信息，使GCC 15更具沟通性和开发人员友好性。 目标是减少调试时间并改善整体开发体验。
-
----
-
-## 22. 通过迁移激活控制语言和扩散模型
-
-**原文标题**: Controlling Language and Diffusion Models by Transporting Activations
-
-**原文链接**: [https://machinelearning.apple.com/research/transporting-activations](https://machinelearning.apple.com/research/transporting-activations)
-
-本文介绍了激活传输 (AcT)，这是一种由苹果研究人员开发的新颖的、模态无关的技术，用于对大型生成模型（如语言模型 (LLM) 和文本到图像 (T2I) 扩散模型）进行细粒度控制。 AcT 解决了现有方法（如使用人类反馈的强化学习 (RLHF) 和指令微调，这些方法资源密集，以及提示工程，这种方法提供的控制有限）的局限性。
-
-AcT 利用最优传输理论来引导模型激活，从而学习源激活分布和目标激活分布之间的映射。 这种方法最大限度地减少了对模型自然动态的干扰，并允许通过强度参数进行可解释的控制。 简化版本 Linear-AcT 计算效率高，并且开箱即用地适用于 LLM 和 T2I 模型。
-
-本文重点介绍了 AcT 在控制 LLM 输出方面的有效性，通过减轻毒性和诱导真实性，与其它激活引导方法相比，在这些领域取得了显著改进。 AcT 还允许对 T2I 模型进行细粒度控制，从而可以对图像生成进行增量更改并控制艺术风格。 展示的一个关键应用是从生成的图像中删除不需要的概念，例如“粉红色大象”问题，即使模型被明确指示要避免它们。 AcT 提供了一种实用且高效的方式来控制生成模型，从而确保可靠性、安全性和与用户期望的一致性。 AcT 的代码已公开提供。
-
----
-
-## 23. Rust编译器中令人惊讶的枚举大小优化
+## 44. Rust 编译器中一个令人惊讶的枚举大小优化
 
 **原文标题**: A surprising enum size optimization in the Rust compiler
 
 **原文链接**: [https://jpfennell.com/posts/enum-type-size/](https://jpfennell.com/posts/enum-type-size/)
 
-James Fennell 的博文探讨了 Rust 编译器中一个令人惊讶的枚举大小优化，超越了广为人知的空指针优化。枚举代表着变体的“或”组合，通常占据的内存大小取决于最大的变体载荷加上一个标签。
+James Fennell 的博文深入探讨了 Rust 编译器中一个令人惊讶的枚举大小优化，它超越了广为人知的“空指针优化”。枚举作为其变体的“或”组合，其大小通常由最大的变体有效载荷加上一个指示哪个变体处于活动状态的标签来确定。
 
-该博文首先用 `Foo` 枚举（Int 或 Char）来说明基本的枚举表示，它占据 8 个字节（4 个字节用于载荷，4 个字节用于标签）。然后它解释了空指针优化，以 `Option<char>` 为例，它巧妙地使用无效的 `char` 值作为 `None` 变体，从而将其大小减小到 4 个字节。
+当只有一个变体具有有效载荷时，例如 `Option<char>`，空指针优化就会起作用。 Rust 重用无效的 `char` 值（空位）来表示 `None`，从而消除了对单独标签的需求。
 
-令人惊讶的优化出现在嵌套枚举中。一个 `Inner` 枚举（A 或 B，两者都带有 u32 载荷）按预期使用 8 个字节。但是，当 `Inner` 用作 `Outer` 枚举（C 带有 u32，D 带有 Inner）中的一个变体时，`Outer` 意外地保持在 8 个字节，而不是 12 个字节。
+令人惊讶的优化出现在嵌套枚举中。 考虑具有变体 `A(u32)` 和 `B(u32)` 的 `Inner`，它占用 8 个字节（标签 4 个字节，有效载荷 4 个字节）。 现在，`Outer` 具有变体 `C(u32)` 和 `D(Inner)`。 人们会期望 `Outer` 为 12 字节（`Inner` 为 8 字节，标签为 4 字节）。 然而，Rust 将其优化为 8 个字节。
 
-编译器在 `Outer` 中重用了 `Inner` 枚举的标签空间。它利用了 `Inner` 的标签只使用 0 或 1 这一事实。`Outer` 将一个新的标签值（在本例中为 2）分配给其另一个变体 (C)。然后，它将 `Outer::D` 表示为与底层 `Inner` 值相同。这使得 `Outer` 能够在现有的标签空间内编码其变体信息，并重用剩余的字节作为载荷，从而有效地避免了预期的大小增加。
-
----
-
-## 24. 椭圆Python编程
-
-**原文标题**: Elliptical Python Programming
-
-**原文链接**: [https://susam.net/elliptical-python-programming.html](https://susam.net/elliptical-python-programming.html)
-
-椭圆式Python编程
-
-这是一篇幽默的文章，介绍了一种非常规且晦涩难懂的Python代码编写方式，通过布尔比较和`exec`函数实现。作者Susam Pal开玩笑地建议使用诸如`(...==...)`之类的表达式来表示数字1，然后构建复杂的算术运算来生成字符的ASCII码。
-
-这篇文章讽刺了编写极简且技术上有效的、但完全无法阅读的代码的想法。作者承认Python中存在“一种明显的做事方式”原则，但故意提出了一个迟钝的替代方案。
-
-这篇文章强调了主要为机器执行而不是为人类理解而编写代码的荒谬性。在为那些重新映射Tab键的人提供了一个充满括号的替代方案的同时，作者最终提倡“椭圆式”风格，认为其点的形式在避免括号带来的令人不安的“空虚感”方面微妙地更胜一筹。
-
-作者强烈建议不要在生产环境中使用这种风格，并强调可读、可维护的代码以及在不可避免地出错时进行全面日志记录的重要性。这篇文章轻松地提醒我们，代码应该优先考虑清晰性和协作，而不是隐秘的效率，最后以幽默的警告结束，即如果你真的使用它，请添加日志记录。
+这种优化之所以有效，是因为编译器识别出 `Inner` 枚举的标签仅使用一小部分值（0 或 1）。 通过巧妙地分配 `Outer` 的标签，编译器在 `Outer` 枚举的表示中重用 `Inner` 枚举的标签空间。 如果 `Outer` 标签与 `Inner` 标签匹配，则该变体为 `Outer::D`，并且整个位模式代表 `Inner` 值。 否则，该值是另一个 `Outer` 变体，有效载荷存储在剩余的位中。 这消除了冗余的标签空间并减少了内存使用。
 
 ---
 
-## 25. 《黑镜》的悲观色情不会引领我们走向更美好的未来
-
-**原文标题**: Black Mirror's pessimism porn won't lead us to a better future
-
-**原文链接**: [https://www.theguardian.com/technology/2025/apr/10/black-mirror-tv-show-pessimism](https://www.theguardian.com/technology/2025/apr/10/black-mirror-tv-show-pessimism)
-
-路易斯·安斯洛认为，《黑镜》对科技的悲观描绘虽然引人入胜，但最终是有害的，因为它会助长恐惧并阻碍进步。他认为该剧过度强调反乌托邦叙事，忽视了技术进步的潜在益处和二元性。
-
-安斯洛批评这种“悲观主义色情”助长了“弗兰肯斯坦谬误”，导致基于恐惧的决策，从而产生有害的现实后果。他举例说，对转基因作物（导致饥荒）、核能（导致依赖化石燃料）和电子烟（同时允许传统香烟）的抵制就是例子。
-
-作者认为，这种反乌托邦心态在 1960 年代后的科幻小说中很常见，它阻碍我们想象和积极建设更美好的未来。他指出，在 COVID-19 大流行期间，当技术对于连接和生存至关重要时，反乌托邦叙事失去了吸引力。
-
-安斯洛呼吁一种新的“进步主义”，拥抱建设和实用主义，倡导承认科技风险和机遇的寓言。他强调需要“充满希望的解决方案主义”，承认脑芯片帮助截瘫患者、机器狗清除地雷、人工智能预防超级细菌以及虚拟现实连接人们的潜力。我们不应助长恐惧，而应找到管理风险并利用技术优势，从而创造更美好未来的方法。
-
----
-
-## 26. PEP 750 – 模板字符串
-
-**原文标题**: PEP 750 – Template Strings
-
-**原文链接**: [https://peps.python.org/pep-0750/](https://peps.python.org/pep-0750/)
-
-PEP 750 在 Python 3.14 中引入了“模板字符串”（t-字符串），解决了 f-字符串在需要于最终字符串组合之前进行值转换的场景下的局限性。 以 `t` 为前缀的 t-字符串求值为 `Template` 对象，从而可以访问字符串的各个部分和插值。
-
-主要特点包括：
-
-*   **模板类：** `Template` 类将字符串部分（`strings`）和插值部分（`interpolations`）作为元组保存。
-*   **插值类：** `Interpolation` 类表示模板中的表达式，公开求值后的 `value`、原始 `expression`、可选 `conversion` (a, r, s) 和 `format_spec`。
-*   **灵活性：**  开发者可以使用任意代码来处理模板。 T-字符串支持诸如 HTML 清理、结构化日志记录和特定领域语言等用例。
-*   **连接：** 模板字符串支持使用 `+` 运算符与其他模板或字符串进行显式连接。
-*   **迭代：** `__iter__` 方法提供了一种按顺序访问字符串和插值的方法。
-*   **调试说明符支持：** 调试说明符 (=) 的行为类似于 f-字符串，同时打印表达式及其值。
-*   **相等性：** Template 和 Interpolation 实例与对象标识进行比较。
-*   **不支持排序：** Template 和 Interpolation 类型不支持排序。
-
-此 PEP 旨在通过公开插值的中间值来提供更灵活和安全的字符串处理机制，这有助于防止诸如 SQL 注入和 XSS 攻击之类的漏洞。 该 PEP 还解释了如何使用新的 `Template` 和 `Interpolation` 类、如何处理模板字符串，并提供了示例用例。
-
----
-
-## 27. 每次看都有不同的感受的电影
-
-**原文标题**: The movie that's different every time you watch it
-
-**原文链接**: [https://movieweb.com/eno-documentary-movie-different-every-time/](https://movieweb.com/eno-documentary-movie-different-every-time/)
-
-本文探讨了名为“Eno”的突破性纪录片，该片讲述了极具影响力的音乐家、制作人兼视觉艺术家布莱恩·伊诺的生活和作品。这部纪录片的独特之处在于，每次观看都是不同的。这是通过导演加里·哈斯特维特创作的生成式软件实现的。该软件动态地组装不同的场景、音乐提示和档案片段，确保非线性和不可预测的观看体验。
-
-这部纪录片并非传统的按时间顺序叙事的传记片。相反，它旨在捕捉伊诺的创作过程和他不断演变的艺术愿景的精髓。哈斯特维特利用伊诺大量的访谈、视觉实验和音乐档案，创建了一个实时混音和重新组装这些元素的系统。这反映了伊诺本人对生成音乐的迷恋以及他对拥抱偶然和实验的哲学。
-
-本文强调了这种创新方法带来的挑战和机遇。虽然有些人可能会觉得缺乏传统的叙事方式令人困惑，但它最终旨在提供对伊诺艺术世界更真实和沉浸式的体验。这部纪录片有效地体现了伊诺的哲学，并让观众以一种像伊诺本人一样不可预测且不断变化的方式参与他的作品。从本质上讲，“Eno”被呈现为一种真正独特的电影体验，旨在成为一件生成式艺术品本身，而不是一部简单的传记。
-
----
-
-## 28. 市政消防车与机场消防车的区别
-
-**原文标题**: The Difference Between Municipal Fire Trucks and Airport Fire Trucks
-
-**原文链接**: [https://www.piercemfg.com/pierce/blog/difference-between-municipal-and-airport-fire-trucks](https://www.piercemfg.com/pierce/blog/difference-between-municipal-and-airport-fire-trucks)
-
-本文重点介绍了市政消防车和机场救援消防车(ARFF)之间的主要区别。虽然两者都设计用于灭火，但其专门设计针对不同的紧急情况。
-
-市政消防车适用于城市、郊区和乡村环境，根据可用基础设施的不同，水箱大小各异。美国消防协会标准要求它们在 25 秒内加速到 35 英里/小时，最高时速达到 50 英里/小时。出警范围包括建筑物火灾和机动车辆事故。
-
-机场救援消防车专门设计用于应对机场紧急情况，包括飞机坠毁、燃油泄漏和航站楼事故。它们必须在三分钟内到达现场，经常面临危险的环境。机场救援消防车遵循更严格的加速标准，需要在 25 秒内达到 50 英里/小时，并达到 70 英里/小时的最高时速。由于消防栓接入有限，它们携带大量的水（1500-4500 加仑）。一个显著的特点是高空伸缩炮塔 (HRET)，用于刺穿飞机机身并输送水或灭火剂。
-
-灭火系统也不同。市政消防车使用水和灭火泡沫，而机场救援消防车依靠水、灭火泡沫（用于燃油泄漏）和干粉化学品（作为最后的手段）。
-
-存储解决方案对于这两种类型都至关重要，重点是减少消防员接触致癌物的机会。市政消防车携带软管、工具和医疗用品，而机场救援消防车则存放牵引设备、通信设备、救援工具和医疗包。
-
-最后，驾驶室的设计也截然不同。市政消防车驾驶室最多可容纳 10 名消防员，并且通常优先考虑清洁性。机场救援消防车驾驶室则优先考虑视野和机动性，具有更大的操作区域和一个倾斜的车身，以适应越野能力。操作员通常从中央座椅控制卡车的所有功能。
-
----
-
-## 29. Arroyo (YC W23) 已被 Cloudflare 收购
-
-**原文标题**: Arroyo (YC W23) has been acquired by Cloudflare
-
-**原文链接**: [https://www.arroyo.dev/blog/arroyo-is-joining-cloudflare](https://www.arroyo.dev/blog/arroyo-is-joining-cloudflare)
-
-专注于流处理的Y Combinator 2023冬季孵化项目公司Arroyo已被Cloudflare收购。Arroyo团队在一篇博文中宣布了此次收购，表示他们将加入Cloudflare，共同构建数据流处理的未来。
-
-Arroyo的技术使开发人员能够构建具有低延迟和高可靠性的实时数据管道。它旨在简化复杂的流处理任务，使其对欺诈检测、物联网数据分析和实时分析等各种用例更易于访问和高效。
-
-该博文强调，加入Cloudflare将使Arroyo能够利用Cloudflare的全球基础设施和资源来加速其流处理平台的开发和部署。此次收购很可能会将Arroyo的技术集成到Cloudflare现有的服务套件中，从而可能增强Cloudflare在边缘计算、数据分析和安全等领域的能力。
-
-虽然未披露此次收购的具体财务条款，但该公告强调了Arroyo和Cloudflare在提供强大且易于访问的数据处理解决方案方面的共同愿景。Arroyo团队对有机会为Cloudflare构建更美好互联网的使命做出贡献感到兴奋。此次收购表明Cloudflare将继续投资于扩展其在数据流处理和实时处理领域的能力。
-
----
-
-## 30. 具备摄像头和屏幕共享功能的 Gemini Live
-
-**原文标题**: Gemini Live with camera and screen sharing capabilities
-
-**原文链接**: [https://blog.google/products/gemini/gemini-live-android-tips/](https://blog.google/products/gemini/gemini-live-android-tips/)
-
-本文宣布 Gemini Live 功能将更广泛地推出。该功能允许用户通过手机的摄像头和屏幕共享功能与 Gemini AI 进行互动。最初仅面向 Android 上的 Gemini Advanced 订阅者开放，现在正推广到 Pixel 9 和 Samsung Galaxy S25 设备上的所有 Gemini 应用程序用户。
-
-本文重点介绍了 Gemini Live 的五个主要用例：
-
-1.  **整理收纳：** 使用摄像头向 Gemini 展示杂乱的空间，并获得关于整理、分类物品和最大化空间利用的实时建议。
-
-2.  **创意头脑风暴：** 与 Gemini 分享屏幕上鼓舞人心的图片，从而激发创意写作、设计或工艺品的灵感。
-
-3.  **问题排查：** 使用摄像头实时向 Gemini 展示物品问题，并获得关于如何解决的建议。
-
-4.  **个人购物建议：** 在浏览在线零售商时分享你的屏幕，并获得比较、风格建议以及对你选择的反馈。你也可以使用摄像头向 Gemini 展示你的衣橱，并获得关于搭配单品的建议。
-
-5.  **技能发展和反馈：** 与 Gemini 分享你的屏幕，以获得对各种类型工作的反馈，例如博客文章、社交媒体活动或照片，并获得关于布局、设计和整体改进的建议。
-
-Gemini Live 旨在提供更自然和互动的 AI 体验，为用户在生活的各个方面提供即时反馈和指导。该功能目前支持超过 45 种语言。
-
----
-
-## 31. Pdeathsig 几乎永远不是你想要的。
-
-**原文标题**: Pdeathsig is almost never what you want
-
-**原文链接**: [https://www.recall.ai/post/pdeathsig-is-almost-never-what-you-want](https://www.recall.ai/post/pdeathsig-is-almost-never-what-you-want)
-
-该博文详细介绍了优化Recall.ai的“输出媒体”功能启动延迟所进行的调试过程。该功能在沙盒环境中将网页渲染成音频和视频，供人工智能代理使用。
-
-最初的目标是在机器人启动时预加载用于渲染的浏览器Chromium，以减少12秒的延迟。然而，在实施此更改后，Chromium在集成测试期间意外终止。
-
-根本原因在于Bubblewrap（一种轻量级沙盒工具）使用的`--die-with-parent`标志。该标志利用Linux内核的`PR_SET_PDEATHSIG`特性，该特性旨在在其父进程死亡时终止子进程。然而，关键的细节是`PR_SET_PDEATHSIG`跟踪的是父*线程*，而不是整个父*进程*。
-
-Recall.ai使用Tokio（一个异步运行时），它管理一个工作线程池。当一个使用`PR_SET_PDEATHSIG`启动Bubblewrap的线程被Tokio的调度器暂停或回收时，内核错误地将其解释为父进程的死亡，从而触发一个SIGKILL信号给Bubblewrap进程（并因此传递给Chromium）。
-
-移除`--die-with-parent`标志通过禁用错误的机制解决了该问题。Tokio的线程管理、Bubblewrap的进程隔离和Linux内核内部机制之间这种微妙的交互是未被记录的。成功的优化显著降低了启动延迟，从12秒降至2-3秒。作者强调了在调试时理解底层细节的重要性。
-
----
-
-## 32. 梅西耶马拉松
-
-**原文标题**: Messier Marathon
-
-**原文链接**: [https://en.wikipedia.org/wiki/Messier_marathon](https://en.wikipedia.org/wiki/Messier_marathon)
-
-梅西耶马拉松是一项天文活动，观测者（通常是业余天文学家）尝试在一个晚上尽可能多地找到所有110个梅西耶天体（由查尔斯·梅西耶编目的明亮深空天体）。
-
-马拉松的成功取决于地点、一年中的时间和天气。较低的北纬地区（大约北纬25度）是最佳选择，因为所有天体的可见度更好。最佳时间是三月中旬到四月初的新月前后，尽管在其他时间，特别是秋分前后，也能进行不太完整的马拉松。
-
-这个概念在20世纪70年代由几位美国天文学家独立发明。观测者通常在日落时开始，向东横扫天空，在西方地平线上的天体落下之前找到它们，然后在日出前捕捉东方地平线上的最后几个天体。这既是对耐力的考验，也是对观测技巧的考验，尤其是在航行于拥挤的区域，比如室女座星系团和银河中心时。
-
-梅西耶马拉松通常由当地天文俱乐部组织，作为一种星空派对。这些活动为业余天文爱好者提供了友谊、竞争和学习的机会。一些俱乐部甚至为参与或取得成就者提供奖励。
-
----
-
-## 33. 路易斯安那州监狱委员会使用算法来确定假释资格
-
-**原文标题**: Louisiana prison board uses algorithms to determine eligility for parole
-
-**原文链接**: [https://www.propublica.org/article/tiger-algorithm-louisiana-parole-calvin-alexander](https://www.propublica.org/article/tiger-algorithm-louisiana-parole-calvin-alexander)
-
-在路易斯安那州，一项新法律利用TIGER算法来决定假释资格，禁止风险评分为“中等”或“高”的囚犯出现在假释委员会面前。 这影响了该州近一半的监狱人口，约13,000人。 这项由州长杰夫·兰德里倡导的法律，反映了一种“严厉打击犯罪”的立场，限制了提前释放，并且与路易斯安那州累犯率下降的证据相悖。
-
-最初旨在作为识别囚犯需求的改造工具的TIGER算法，现在成为了假释资格的严格决定因素。 该算法对过去犯罪历史、就业和首次被捕年龄等不可改变因素的依赖，引发了对种族偏见的担忧，因为由于系统性不平等，这些因素不成比例地影响着黑人。 民权律师认为，该法律可能违宪，因为它追溯性地增加了刑期，并忽视了囚犯的改造努力。
-
-刑事司法专家批评路易斯安那州将风险评分专门用于假释资格的做法，因为这些算法不够精确，无法预测个人行为。 前假释委员会成员也表示担忧，该算法取代了人为判断，削弱了假释委员会的权力。 在这项法律之前，像阿隆佐·艾伦这样风险评分为“中等”的囚犯可以证明自己的改造并获得假释。 现在，仅算法的评分就可以阻止假释资格，而不管个人的进步如何。 卡尔文·亚历山大是一名近乎失明的 70 岁囚犯，就是一个这样的例子，在因他的 TIGER 分数而被取消假释听证会后，他感到“背叛”。
-
----
-
-## 34. 面向痛苦编程 (2012)
-
-**原文标题**: Suffering-Oriented Programming (2012)
-
-**原文链接**: [http://nathanmarz.com/blog/suffering-oriented-programming.html](http://nathanmarz.com/blog/suffering-oriented-programming.html)
-
-本文介绍了“痛苦驱动编程”，这是一种基于已体验到的痛点来构建技术，而非过早优化或通用解决方案的开发风格。其核心思想是，只有当你深切感受到需要时才构建技术，从而确保相关性以及对问题领域的深刻理解。
-
-本文概述了三个步骤：
-
-1. **让它可行：** 拼凑出一个可行的解决方案来解决当前问题，专注于直接完成任务。这个阶段是关于获得经验并理解问题空间的复杂性。
-
-2. **让它美观：** 将从第一阶段获得的知识提炼成简单、可组合的抽象概念，以解决现有的用例。避免过度设计，只关注具体的需求。设计应考虑早期学习到的性能和资源特性。
-
-3. **让它快速：** 在一个坚实而美观的设计基础上，专注于微优化和资源效率。这个阶段是关于优化代码，而不是高层次的架构变更。
-
-作者强调，这个过程是迭代的，从而带来持续的改进和对问题领域的更深刻理解。他强调了重构的重要性，以防止意外的复杂性，并强调用例对于推动开发至关重要。痛苦驱动编程拒绝过早的泛化，提倡由实际用例驱动的设计，而不是预期的未来需求。
-
----
-
-## 35. 每周八杯或以上饮品与脑损伤有关
-
-**原文标题**: Eight or more drinks per week linked to brain lesions
-
-**原文链接**: [https://www.aan.com/PressRoom/Home/PressRelease/5251](https://www.aan.com/PressRoom/Home/PressRelease/5251)
-
-神经病学研究：饮酒与大脑健康关联
-
-这项发表在《神经病学》上的研究调查了饮酒与大脑健康之间的联系。研究人员检查了1781名平均死亡年龄为75岁的个体的脑部尸检，分析了脑组织中是否存在诸如透明样动脉硬化（血管性脑损伤）和tau蛋白缠结等损伤迹象。他们根据家庭报告将参与者分为不饮酒者、适度饮酒者（每周7杯或以下）、大量饮酒者（每周8杯或以上）和以前的大量饮酒者。
-
-研究发现，与从不饮酒者相比，大量饮酒者患血管性脑损伤的风险显著更高（几率高133%）。以前的大量饮酒者也表现出风险增加（几率高89%），适度饮酒者也是如此（几率高60%）。大量饮酒者和以前的大量饮酒者患tau蛋白缠结（阿尔茨海默病的一种生物标志物）的几率也更高。以前的大量饮酒与较低的脑质量比和较差的认知能力有关。值得注意的是，大量饮酒者的平均死亡时间比从不饮酒者早13年。
-
-虽然这项研究并未证明因果关系，但它表明大量饮酒与脑损伤之间存在很强的关联。这种损伤可能导致记忆和思维问题，突出了公众健康意识和预防措施以减少大量饮酒的重要性。该研究的局限性在于缺乏死前信息和关于饮酒持续时间的数据。
-
----
-
-## 36. 你的睡眠追踪器对睡眠的误解
-
-**原文标题**: What Your Sleep Tracker Gets Wrong About Sleep
-
-**原文链接**: [https://www.affectablesleep.com/blog/what-your-sleep-tracker-gets-wrong-about-sleep](https://www.affectablesleep.com/blog/what-your-sleep-tracker-gets-wrong-about-sleep)
-
-来自Affectable Sleep的文章批判了睡眠追踪器的局限性。虽然追踪器可以提供睡眠时长、阶段和规律性的数据，但它们往往无法准确反映睡眠的质量和恢复性，从而可能导致误导性的结果。
-
-作者认为，追踪器过于强调规律性（相同的就寝时间，相同的睡眠时长），而忽略了实际的恢复性睡眠，即使睡眠并非真正有益，也会奖励对作息时间的遵守。他们还强调，追踪器专注于深度睡眠或快速眼动睡眠的数量，而没有考虑到这些阶段中发生的*质量*或恢复功能。文章指出，研究表明，即使睡眠时间充足，人为地减少深度睡眠也会对大脑产生负面影响。
-
-此外，文章认为，追踪器可能会对睡眠质量的感知产生负面影响。当追踪器报告睡眠良好，但人们仍然感到疲倦时，他们可能会怀疑自己的主观体验。文章还批评对过去睡眠的关注毫无帮助，因为它没有提供任何实时指导来改善当晚的睡眠。
-
-Affectable Sleep提倡一种不同的方法，专注于实时优化睡眠，以增强其恢复能力。他们不只是简单地跟踪和分析数据，而是旨在改善睡眠期间发生的生理和神经过程，最终实现更有效和恢复性的睡眠，而与时间无关。文章最后邀请读者加入他们的等候名单，探索一种更有效的睡眠增强方法。
-
----
-
-## 37. 艾萨克·阿西莫夫描述人工智能将如何解放人类及其创造力 (1992)
-
-**原文标题**: Isaac Asimov describes how AI will liberate humans and their creativity (1992)
-
-**原文链接**: [https://www.openculture.com/2025/04/isaac-asimov-describes-how-ai-will-liberate-humans-their-creativity.html](https://www.openculture.com/2025/04/isaac-asimov-describes-how-ai-will-liberate-humans-their-creativity.html)
-
-本文总结了 1992 年对艾萨克·阿西莫夫的采访，他在采访中将人工智能（AI）定义为任何执行先前与人类智能相关的任务的设备。他设想人工智能将人类从单调、重复的工作中解放出来，使他们能够专注于计算机无法处理的创造性和复杂任务。阿西莫夫认为，人工智能和人类智能将协同合作，以推动人类进步。
-
-文章强调了阿西莫夫对人工智能整合的前瞻性观点，将其与汽车的出现进行比较，并敦促人们积极规划以减轻潜在问题。虽然承认潜在的困难，但阿西莫夫对人工智能的总体益处持乐观态度。
-
-然而，文章作者增加了一丝警惕，将阿西莫夫的愿景与以汽车为中心的城市规划的现实进行对比，认为保留前人工智能时代的一些元素可能对后代有利。本质上，这篇文章呈现了阿西莫夫对人工智能在解放人类创造力方面的乐观愿景，同时也促使人们反思未经控制的技术进步的潜在弊端。
-
----
-
-## 38. ELD: 一款用于嵌入式系统的新型开源嵌入式链接器工具
-
-**原文标题**: ELD: A new open-source embedded linker tool for embedded systems
-
-**原文链接**: [https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems](https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems)
-
-ELD：一款面向嵌入式系统的新型开源链接器
-
----
-
-## 39. Smartfunc: 将文档字符串转化为LLM函数
-
-**原文标题**: Smartfunc: Turn Docstrings into LLM-Functions
-
-**原文链接**: [https://github.com/koaning/smartfunc](https://github.com/koaning/smartfunc)
-
-Smartfunc 是一个 Python 库，它通过利用文档字符串简化了由大型语言模型 (LLM) 驱动的函数的创建。它的工作原理是解析函数的文档字符串，并将其用作 Jinja2 模板，以生成通过 `llm` 库发送到 LLM 的提示。`llm` 库提供了一个维护良好的基础、一个用于不同 LLM 提供商的后端生态系统、异步支持以及使用 Pydantic 模型的模式支持。
-
-主要特性和优势：
-
-*   **文档字符串即提示：** 直接在函数文档字符串中定义 LLM 提示，增强可读性和可维护性。
-*   **后端装饰器：** 使用装饰器（`backend` 和 `async_backend`）来指定 LLM 提供商（例如，“gpt-4”）以及可选参数，如系统提示和温度。
-*   **模式支持：** 允许使用 Pydantic 模型定义预期的响应格式，从而能够从 LLM 输出中提取结构化数据。
-*   **内部函数提示工程：** 允许使用函数体来进一步操纵和改进从文档字符串返回的提示。
-*   **异步支持：** 支持异步函数以提高性能，尤其是在使用微批处理时。
-*   **调试模式：** 提供调试模式，显示生成的提示、LLM 响应以及其他相关信息以进行故障排除。
-*   **专注于简洁：** 旨在实现简洁性和快速原型设计，提供基本功能，而没有其他 LLM 集成库的复杂性。
-
----
-
-## 40. 黑客新闻无声拥抱
-
-**原文标题**: Hacker News Hug of Deaf
-
-**原文链接**: [https://susam.net/hn-bell.html](https://susam.net/hn-bell.html)
-
-苏珊·帕尔的文章描述了一个名为“Hacker News失聪之拥”的有趣实验。受Hacker News上关于DIY警报系统的讨论启发，帕尔在Debian服务器上设置了一个简单的netcat循环，该循环在收到连接时，会发送“ok”消息，关闭连接，并触发四个终端蜂鸣声。
-
-该实验在Hacker News上宣布，邀请用户连接到susam.net:8000服务器。在接下来的24小时内，帕尔收到了超过4761个连接，导致超过19000次终端蜂鸣。虽然连接数量相对较少，但它表明了HN社区参与古怪想法的意愿。帕尔强调了该项目的乐趣和探索性，认为计算不仅仅是解决问题，还在于探索新颖的概念。
-
-在五天后发布的文章更新中，帕尔分享了他在Hacker News上的文章后，连接再次激增。这一次，服务器收到了超过30万个连接，这主要归因于持久的客户端循环。帕尔对Hacker News社区的活跃和持续参与表示感谢。这篇文章突出了计算的乐趣以及与他人分享和探索不寻常想法所带来的乐趣。
-
----
-
-## 41. 从零开始设计 TigerBeetle 的文档
-
-**原文标题**: We Designed TigerBeetle's Docs from Scratch
-
-**原文链接**: [https://tigerbeetle.com/blog/2025-02-27-why-we-designed-tigerbeetles-docs-from-scratch/](https://tigerbeetle.com/blog/2025-02-27-why-we-designed-tigerbeetles-docs-from-scratch/)
-
-TigerBeetle从零开始重建了他们的文档站点，旨在为用户提供更快、更简洁、更清晰的阅读体验，体现了他们的“TigerStyle”理念。由于Docusaurus的NodeJS依赖、复杂性、Markdown文件中不必要的代码以及次优的搜索体验，他们对其并不满意，因此寻求一种与数据库本身融为一体的解决方案。
-
-他们的主要目标是提供像书一样简洁的阅读体验，最大限度地减少干扰。他们移除了面包屑导航和页脚等元素，将顶部导航集成到侧边导航中，并实现了基于系统设置的自动暗/亮模式。
-
-他们考虑过基于Zig的静态站点生成器（SSG）Zine，但最终选择使用Pandoc进行Markdown解析，创建自己的解决方案，因为Zine的SuperMD与GitHub风格的Markdown（GFM）不兼容。
-
-他们利用Zig的内置包管理器，将Pandoc作为静态构建的可执行文件引入，通过内容哈希验证确保了可重现性，并降低了供应链攻击的风险。整个静态站点生成都在Zig的构建系统中作为构建任务实现，从而实现了增量更新。他们对Pandoc二进制文件使用惰性依赖，仅下载基于主机操作系统所需的版本。文章包含了一个详细的代码示例，展示了他们如何使用Zig的构建系统集成Pandoc，将Markdown文件转换为HTML，并创建任务图以实现高效的、缓存的网站生成。
-
----
-
-## 42. 无夸克超对撞机或可揭示暗物质之谜
-
-**原文标题**: A quarkless supercollider may finally shed light on dark matter
-
-**原文链接**: [https://spectrum.ieee.org/supercolliders](https://spectrum.ieee.org/supercolliders)
-
-本文探讨大型强子对撞机（LHC）之后粒子物理研究的未来，重点介绍了四个拟议的下一代超级对撞机。这些对撞机旨在解决标准模型的缺陷，并可能揭示新的物理现象，例如暗物质的本质。
-
-本文概述了四个主要提案：国际直线对撞机（ILC）、μ子对撞机、未来环形对撞机（FCC-ee/hh）和环形正负电子对撞机（CEPC）。每种对撞机都具有独特的优势和挑战，涉及以高于LHC的能量或更高的精度碰撞不同的粒子（电子、正电子、μ子、质子）。
-
-ILC使用电子和正电子，技术上已经成熟，但面临日本的政治延误。μ子对撞机是一个更具推测性的选择，提供高能量和精度，但需要重大的技术发展。欧洲核子研究中心的FCC-ee/hh和中国的CEPC，最初都设计用于电子-正电子碰撞，之后可能会进行质子升级，被认为是建造最有可能的候选者。
-
-本文深入探讨了所涉及的工程难题，包括建造大型隧道（长达100公里）、克服复杂的地质构造，以及开发高效的超导射频（SRF）腔体和强大的速调管。它还涉及地缘政治方面的考虑，如国际融资和政府批准。这些项目的时间表很长，最早的潜在启动日期在2030年代后期，因此当前的规划和决策至关重要。
-
----
-
-## 43. 可能有助于治疗创伤性脑损伤的被忽视的迷幻剂
-
-**原文标题**: The overlooked psychedelic that may help treat traumatic brain injury
-
-**原文链接**: [https://bigthink.com/health/ibogaine-traumatic-brain-injury/](https://bigthink.com/health/ibogaine-traumatic-brain-injury/)
-
-伊博格碱治疗创伤性脑损伤及创伤后应激障碍的潜力
-
----
-
-## 44. 用于快速存储的巨像
-
-**原文标题**: Colossus for Rapid Storage
-
-**原文链接**: [https://cloud.google.com/blog/products/storage-data-transfer/how-the-colossus-stateful-protocol-benefits-rapid-storage](https://cloud.google.com/blog/products/storage-data-transfer/how-the-colossus-stateful-protocol-benefits-rapid-storage)
-
-Google Cloud 快速存储利用 Google 内部的 Colossus 文件系统，在保持对象存储可扩展性的同时，提供亚毫秒级延迟和可追加写入。这通过使用基于状态的 gRPC 流协议来实现。
-
-Colossus 是许多 Google 产品的底层基础，它使用先进的 SSD 放置技术和一种状态协议。借助快速存储，Google Cloud 客户可以直接使用此 Colossus 协议。当客户端创建一个流时，会获得一个包含文件存储信息的句柄，从而可以通过优化的网络协议直接访问磁盘。这有助于实现超低延迟的持久追加，有利于数据库和流式分析。
-
-快速存储在此基础上，预先加载像流创建时的授权等操作，允许后续的读/写操作直接访问 Colossus。这种架构在一个存储桶内支持高请求速率（2000 万次/秒），适用于涉及范围读取和持久写入的 AI/ML 工作负载。
-
-为了处理客户端或服务器中断，快速存储使用句柄进行流重建，并保证一次只有一个 gRPC 流可以写入对象，锁定先前的流，并通过偏移量跟踪确保数据正确性。通过更新的 SDK、Cloud Storage FUSE 和原生分层命名空间支持，集成得到了简化。
-
-快速存储结合了低延迟、高吞吐量和可扩展性，适用于 AI/ML 数据准备、分布式数据库、批处理/流式分析、视频直播和日志/监控等用例。
-
----
-
-## 45. 任何程度的饮酒都对我们的健康有害 (2023)
-
-**原文标题**: No level of alcohol consumption is safe for our health (2023)
-
-**原文链接**: [https://www.who.int/europe/news/item/04-01-2023-no-level-of-alcohol-consumption-is-safe-for-our-health](https://www.who.int/europe/news/item/04-01-2023-no-level-of-alcohol-consumption-is-safe-for-our-health)
-
-世界卫生组织2023年声明：任何程度的饮酒对健康均不安全。
-
----
-
-## 46. 细胞正在交换线粒体。这对我们的健康意味着什么？
-
-**原文标题**: Cells are swapping their mitochondria. What does this mean for our health?
-
-**原文链接**: [https://www.nature.com/articles/d41586-025-01064-5](https://www.nature.com/articles/d41586-025-01064-5)
-
-本文探讨线粒体转移这一新兴领域——线粒体在细胞间的惊人移动。与传统观点认为线粒体是静态的、完全位于细胞内的细胞器相反，研究表明它们可以在细胞之间移动，可能充当一种“多细胞细胞器”。这种现象已在多种生物中观察到，但由于技术限制，其在人类中的发生仍未得到证实。
-
-研究人员认为线粒体转移可能是一种细胞通讯和支持的形式。在细胞压力时期，健康的线粒体可能会被捐赠给邻近细胞，以启动组织修复、增强免疫系统或防止细胞死亡。相反，一些研究表明癌细胞将线粒体转移用作一种武器。小鼠研究表明，星形胶质细胞在中风后将线粒体捐赠给神经元，从而提高它们的存活率。同样，间质细胞在急性肺损伤期间将线粒体转移到肺细胞，帮助恢复。血小板也可以将线粒体转移到干细胞，从而加速伤口愈合。
-
-此外，线粒体转移可能在维持健康组织和免疫功能方面发挥作用。星形胶质细胞将线粒体捐赠给大脑中的血管细胞，从而维持血脑屏障。白色脂肪细胞将线粒体转移到巨噬细胞，从而影响能量消耗。在免疫系统中，捐赠的线粒体可以对T细胞产生抗炎作用。尽管有这些发现，关于转移的线粒体在心血管疾病和肥胖症等各种疾病中的机制、寿命和具体作用，仍然存在许多问题。研究人员正在积极探索利用这一过程进行治疗干预的潜力。
-
----
-
-## 47. 繁忙酒吧
-
-**原文标题**: Busy Bar
-
-**原文链接**: [https://busy.bar](https://busy.bar)
-
-BUSY Bar是一款提高效率的多功能设备，配有LED像素显示屏，旨在增强专注力并最大限度地减少干扰。它提供可定制的忙碌消息、番茄工作法定时器，并与各种应用程序和智能家居系统集成。
-
-主要功能包括：带有手机和PC干扰拦截器的专注定时器、可定制的BUSY消息、跨平台同步以及开源开发工具。BUSY Bar对开发者友好，提供开放的HTTP API、Python、Go和JavaScript的SDK、MQTT支持，且无厂商锁定。
-
-该设备通过Matter协议与Google Home和Apple Home集成，并提供智能家居支持。它还具有应用程序库，可连接到第三方软件，并与日历事件和通话集成。Busy Bar提供通知阻止、智能家居集成、可定制的自动化以及可定制的LED状态显示等功能。
-
-BUSY Bar的设计结合了物理按钮以进行手动控制，包括开始/暂停按钮、返回按钮、滚轮和模式选择器。它拥有单色背屏，方便查看状态。该设备包括间隔专注定时器、干扰拦截，并与免费的基于云的BUSY应用程序集成，以实现多设备静音功能。
-
-它还提供基于麦克风或摄像头活动的自动状态更新，并支持Windows、macOS和Linux。BUSY Bar具有多种连接选项，包括USB、LAN和云，并附带安装硬件。
-
----
-
-## 48. 没有可信数据，也能实现可信人工智能
-
-**原文标题**: Trustworthy AI Without Trusted Data
-
-**原文链接**: [https://actu.epfl.ch/news/trustworthy-ai-without-trusted-data/](https://actu.epfl.ch/news/trustworthy-ai-without-trusted-data/)
-
-EPFL研究人员开发了ByzFL，一种旨在提高使用联邦学习的人工智能系统可信度的新工具。联邦学习在分散的数据源上训练AI模型，无需集中原始数据。这种方法解决了安全性、隐私和数据所有权问题，但也引入了来自各个来源的“坏”数据（不正确、恶意或故障数据）损害AI可靠性的风险。
-
-Rachid Guerraoui教授及其团队创建了ByzFL，用于对联邦学习模型进行基准测试并增强其对抗对抗性威胁（特别是坏数据）的能力。ByzFL不直接识别坏数据，而是使用强大的聚合方法来最大限度地减少极端输入的影响。该库允许用户模拟坏数据进行测试，并包含用于增强鲁棒性的安全过滤器。
-
-研究人员认为，目前的人工智能虽然对电影推荐等简单任务有用，但对于医疗保健或自动驾驶汽车等关键应用而言还不够安全。他们认为ByzFL可以帮助弥合这一差距，确保下一代人工智能的可靠性。他们提出，瑞士凭借其在质量和可靠性方面的声誉，可以通过ByzFL等工具在认证AI安全方面发挥关键作用。ByzFL软件旨在证明，无需信任单个数据源即可实现AI安全。
-
----
-
-## 49. 猎杀红色十月1990 (2016)
-
-**原文标题**: Hunt for Red October 1990 (2016)
-
-**原文链接**: [http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html](http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html)
-
-本文详细介绍了1990年电影《猎杀红色十月》的视觉特效制作，特别关注了所使用的小型潜艇模型和技术。 最初，格雷格·杰恩领导下的Boss Films开始了微缩模型的工作，但由于创作分歧和时间紧迫，该项目转移到了ILM。
-
-ILM使用运动控制来拍摄潜艇模型，主要是在烟雾弥漫的环境中进行，以最大限度地减少光学合成。 微缩舰队包括各种尺寸的红色十月号、克洛诺洛夫号和达拉斯号潜艇，以及一艘救援潜艇和鱼雷。
-
-一个线缆操纵系统，从之前的项目中改进而来，被用于悬挂和控制模型的运动，允许俯仰和偏航。 该操纵系统安装在一个运动控制的起重机和轨道系统上。 通过调暗背景灯的光线技巧，营造出令人信服的水下氛围。 近距离拍摄时使用了镜子，以避免相机碰撞。
-
-烟雾效果是通过一个雾化矿物油的裂解系统实现的。 大约建造了40个微型岩石尖塔来模拟水下海沟。 该文章指出，虽然水下环境模拟效果令人信服，但一些光学合成，特别是对抗措施和鱼雷尾迹，效果不太理想。
-
-此外，文章还提到了一架微型俄罗斯熊轰炸机，并包含了关于拍摄结束后处理微缩模型的信息，并提到了它们在拍卖会上出售的情况。 它还引用了Cinefex杂志作为来源，并指出了各种模型制作者和特效主管的参与。
-
----
-
-## 50. 土星卫星泰坦可能存在生命，但含量极少
-
-**原文标题**: Saturn's moon Titan could harbor life, but only a tiny amount
-
-**原文链接**: [https://news.arizona.edu/news/saturns-moon-titan-could-harbor-life-only-tiny-amount-study-finds](https://news.arizona.edu/news/saturns-moon-titan-could-harbor-life-only-tiny-amount-study-finds)
-
-本文探讨了一项关于土卫六泰坦上存在生命可能性的新研究。研究人员使用生物能量模型评估了泰坦的地下海洋是否能支持以有机物为食的生命形式。虽然泰坦富含有机化合物，但研究结论表明，它只能支持非常少量的生物量，可能只有几公斤，或相当于一只小型犬的质量。
-
-该研究侧重于发酵作用，将其作为假想泰坦微生物的一种合理代谢过程，并以甘氨酸（一种简单的氨基酸）作为潜在的食物来源。然而，模拟显示，只有一小部分可用的有机物可能适合消耗。通过陨石撞击形成的融化池从地表输送来的甘氨酸供应有限，这将导致微生物种群稀疏，平均每升水中不足一个细胞。
-
-研究结果表明，尽管泰坦有机物丰富，但合适食物来源的可用性以及地表和海洋之间有限的交换限制了其形成大量生物圈的潜力。这对未来的任务（如NASA的“蜻蜓”）提出了挑战，如果泰坦上存在生命，它们将需要搜索广阔的区域才能找到证据。该研究强调，泰坦的有机物库存可能不如先前认为的那样有助于其宜居性。
-
----
-
-## 51. IRIX 6.5.17 源代码
-
-**原文标题**: IRIX 6.5.17 Source Code
-
-**原文链接**: [https://github.com/calmsacibis995/irix-6517-src](https://github.com/calmsacibis995/irix-6517-src)
-
-IRIX 6.5.17 源代码发布简讯
-
----
-
-## 52. 睡眠至关重要——研究人员正试图弄清原因
-
-**原文标题**: Sleep is essential – researchers are trying to work out why
-
-**原文链接**: [https://www.nature.com/articles/d41586-025-00964-w](https://www.nature.com/articles/d41586-025-00964-w)
-
-睡眠的生物学功能：探索生命的奥秘
-
-本文探讨了睡眠至关重要但仍然神秘的生物学功能。研究人员正在使用光遗传学和聚焦超声等工具来了解睡眠除了提供休息之外的作用。一个关键的研究领域是睡眠如何通过稳态维持大脑的可靠性，通过重置大脑的“临界点”来防止“灾难性遗忘”。睡眠还可以调节基因、代谢和激素。
-
-对果蝇和小鼠的研究表明，睡眠不足会导致肠道中产生有毒水平的活性氧（ROS），这表明睡眠的作用不仅限于大脑。对大鼠的研究表明，与能量代谢和激素受体相关的基因会受到睡眠不足的影响。此外，睡眠质量，尤其是深度睡眠，对于记忆巩固至关重要，而使用粉红噪声进行声学刺激可以增强记忆巩固。
-
-另一种理论侧重于睡眠在通过脑淋巴系统清除大脑中的神经毒素方面的作用，这种清除过程是由深度睡眠期间的去甲肾上腺素振荡促进的。然而，这一理论面临挑战，一些研究表明睡眠期间的大脑清除率会降低。尽管存在持续的争论，突触稳态假说认为睡眠可以恢复大脑细胞在日常活动后的状态。即使是像水螅这样没有中枢神经系统的生物也会表现出类似睡眠的行为，而睡眠不足会扰乱激素释放并增加患心血管疾病的风险，这都突显了睡眠的重要性。
-
----
-
-## 53. 木星王牌的奇案
-
-**原文标题**: The Curious Case of Jupiter Ace
-
-**原文链接**: [https://nemanjatrifunovic.substack.com/p/the-curious-case-of-jupiter-ace](https://nemanjatrifunovic.substack.com/p/the-curious-case-of-jupiter-ace)
-
-无法访问文章链接。
-
----
-
-## 54. 展示一下：我做了一个应用，能减少95%以上的播客准备工作量
-
-**原文标题**: Show HN: I built an app that reduces podcast preparation effort by 95% +
-
-**原文链接**: [https://www.podcast-prepper.com/](https://www.podcast-prepper.com/)
-
-PodcastPrepper：一款人工智能工具，于2025年3月30日上线，旨在大幅缩短播客准备时间，声称可为用户节省高达95%的调研精力。该服务提供关于播客嘉宾的详细报告，包括其背景、主要兴趣、职业里程碑、成就、当前项目、在线形象以及建议的采访问题。
-
-该工具旨在缓解耗时的嘉宾调研过程，该过程通常涉及挖掘各种资源、收听过往采访以及安排采访前会议。 PodcastPrepper允许用户专注于创建引人入胜的内容，而不是被准备工作所困扰。
-
-要使用PodcastPrepper，用户只需输入嘉宾的姓名、姓氏和相关背景信息。在24小时内，他们将收到一份详细报告到他们的电子邮件收件箱。虽然由于测试阶段，报告目前在24小时内交付，但人工智能只需3分钟即可生成它们，并计划在未来实现即时交付。
-
-网站提供储蓄计算器，以帮助用户估算使用PodcastPrepper可以额外制作的剧集数量。定价模式为按需付费，目前在测试期间提供 60% 的折扣，每个报告的费用为 4 美元（原价 10 美元）。
-
----
-
-## 55. TVMC：时变网格压缩
-
-**原文标题**: TVMC: Time-Varying Mesh Compression
-
-**原文链接**: [https://github.com/SINRG-Lab/TVMC](https://github.com/SINRG-Lab/TVMC)
-
-本文介绍了TVMC，一种使用体积跟踪参考网格的时变网格压缩技术，该技术已在2025年ACM MMSys会议上发表。本仓库提供了作者的实现代码和运行说明，支持在Docker环境以及Windows 11或Ubuntu 20.04系统上直接运行。
-
-该过程涉及几个关键步骤：首先，使用C# .NET 7.0应用程序执行ARAP体积跟踪，以跟踪网格序列中体积中心的移动。可以选择应用全局优化来细化这些中心。接下来，基于体积中心位置使用多维尺度分析（MDS）创建参考空间。然后，计算变换以将原始体积中心位置映射到此参考空间。之后，创建无自接触的参考网格，然后将其变形为序列中的每个网格。计算位移场，表示变形的参考网格与原始网格之间的差异。最后，使用Draco压缩参考网格和位移场。
-
-本文档概述了系统要求、依赖项（Python 3.8、numpy、open3d、scikit-learn、scipy、trimesh）以及每个步骤的详细说明，包括构建和运行ARAP体积跟踪应用程序，执行用于MDS、变换计算、位移场生成的Python脚本，以及使用C#应用程序在tvm-editing目录中执行网格变形。它还包括克隆和构建Draco的说明。最后，本文档介绍了如何运行评估脚本来测量压缩性能并生成图表，以重现原始研究论文中的结果。
-
----
-
-## 56. .localhost 域名
-
-**原文标题**: .localhost Domains
-
-**原文链接**: [https://inclouds.space/localhost-domains](https://inclouds.space/localhost-domains)
-
-查尔斯·张伯伦描述了一种使用自定义`.localhost`域名访问本地运行的Web应用程序的系统，从而避免记忆和输入`localhost:端口`。
-
-该过程包括以下步骤：
-
-1.  每个应用程序都作为launchd守护程序运行，监听唯一的端口。
-2.  配置`/etc/hosts`文件，将自定义域名（例如，`appname.localhost`）指向`127.0.0.1`。
-3.  配置反向代理Caddy，将来自自定义域名上`127.0.0.1`的流量重定向到应用程序的正确端口。Caddyfile包含反向代理、TLS（内部）以及压缩的配置。
-
-他以一个端口为5050的应用程序为例，`/etc/hosts`条目类似于`127.0.0.1 inclouds.localhost`，并且有一个相应的Caddyfile部分将`inclouds.localhost`反向代理到`localhost:5050`。
-
-他表达了进一步简化此过程的愿望，设想使用单个命令来安装或卸载应用程序，并自动配置必要的文件，而不是手动编辑三个单独的文件。他最后更新提到了来自cristóbal的贡献，该贡献使用dnsmasq来改进设置。
-
----
-
-## 57. Rails 的设计系统方案
-
-**原文标题**: Design System Options for Rails
-
-**原文链接**: [https://businessclasskit.com/blog/design-system-options-for-rails](https://businessclasskit.com/blog/design-system-options-for-rails)
-
-2025年Rails应用程序设计系统方案探索：作者惊讶地发现这个问题尚未得到良好解决。最初作者在其项目中使用纯Tailwind CSS，但现在重新评估现有的设计系统。
-
-文章考察了几个免费增值或免费选项：
-
-*   **shadcn/ui:** 一个基于React的组件库，需要定制的Rails实现。作者重点介绍了“Rails上的shadcn/ui”，这是一个带有辅助函数和Stimulus控制器的部分实现，并指出了它的潜力但不够完整。
-
-*   **daisyUI:** 一个Tailwind CSS组件库，为UI组件和主题提供快捷方式。其主要缺点是缺乏内置的JavaScript功能。
-
-*   **Flowbite:** 一个Tailwind CSS UI库，提供官方Rails支持和框架独立的JavaScript，无需重新实现。但是，它并非完全开源。
-
-*   **Preline:** 另一个基于Tailwind CSS构建的免费增值UI库，带有自己的框架独立的JavaScript。
-
-*   **RubyUI:** 一个直接为Ruby构建的设计系统，使用Phlex（一种替代视图层）和Tailwind CSS。虽然前景广阔，但它对Phlex的依赖以及与ERB的偏离可能对某些人来说是一个障碍。
-
-结论指出，虽然现有的选择有所改进，但没有明显的赢家。作者重申了使用Tailwind CSS的决定，并建议继续在此基础上构建，无论是使用预制的UI还是自定义的Business Class主题。
-
----
-
-## 58. 大量的YAML
+## 45. 大量的YAML
 
 **原文标题**: That's a Lot of YAML
 
 **原文链接**: [https://noyaml.com/](https://noyaml.com/)
 
-这篇文章，题为《YAML 真多啊》，幽默地批判了 YAML 数据序列化格式，强调了它在 DevOps 环境中潜在的缺陷和不一致性。文章认为，虽然 YAML 被广泛采用，尤其是在 Kubernetes 中，但它带来了许多挑战，可能导致意外错误和调试难题。
+这篇题为《YAML太多了》的文章，以幽默且批判的视角审视 YAML 配置语言，突出了其常见的陷阱和怪异之处，这些陷阱和怪异之处常常导致开发人员的沮丧。作者认为，尽管 YAML 得到了广泛应用，尤其是在 DevOps 环境中，但它的模糊性和意想不到的行为可能会导致严重的问题。
 
-作者列举了 YAML 的几个怪癖，例如将 "NO" 解析为布尔值，将以零开头的数字解释为八进制，自动将明显的时间转换为自午夜以来的秒数，以及 8 个字符的 SHA 容易被解释为数字的漏洞。
+文章列举了几个 YAML 问题的例子，包括如何将“NO”误解为布尔值，将看似无害的字符串转换为数字（例如，“08”），并将时间格式视为自午夜以来的秒数。文章还涉及与可执行 YAML 相关的安全漏洞、使用不同 CI/CD 系统的复杂性以及编码八进制数的问题。
 
-文章还涉及了与可执行 YAML 相关的安全风险，并展示了不同 CI/CD 提供商之间配置的不一致性。随后，文章列出了一系列链接，指向进一步探讨 YAML 缺点的文章和 Twitter 帖子，包括其冗长、解析不一致以及由于细微语法错误而引入 bug 的可能性。
-
-最后，作者提出了替代的 DevOps 配置方法，如 Nickel、Dhall、CUE 和 Jsonnet。整体语调是讽刺的，作者似乎对 YAML 普遍存在但存在缺陷感到沮丧，最终创建了一个像他们认为 YAML 一样故意不可用的网站。
+作者提供了外部文章和资源的链接，这些文章和资源也表达了对 YAML 缺点的类似看法。这些资源包括对 YAML 在不同实现中解析不一致、过度冗长以及引入难以调试的错误的可能性的批评。文章还指出了替代配置语言和 DevOps 方法，这些方法可能提供更可靠且不易出错的体验。文章最后以自嘲的幽默结束，根据用户反馈，作者有意创建了一个像 YAML 一样难以使用的网站。
 
 ---
 
-## 59. 魔鬼的形，人心
+## 46. 奥地利香烟收藏
 
-**原文标题**: "The Form of a Demon and the Heart of a Person"
+**原文标题**: The Austrian Cigarette Collection
 
-**原文链接**: [https://publicdomainreview.org/collection/yamauba-and-kintaro/](https://publicdomainreview.org/collection/yamauba-and-kintaro/)
+**原文链接**: [http://www.zigsam.at](http://www.zigsam.at)
 
-在没有“各种”栏目下题为《魔之形，人之心》的文章内容的情况下，无法提供具体的摘要。然而，仅凭标题，我们可以推测并提供一个*可能的*摘要，概述文章*可能*探讨的主题和论点：
-
-这篇题为《魔之形，人之心》的文章很可能探讨了外表与内在本质的二元性。它可能考察了外表怪异或可怕（“魔之形”），而内心却拥有同情心、共情或道德（“人之心”）等积极品质的角色或概念。
-
-这篇文章可能深入探讨偏见和以貌取人的主题，暗示外表具有欺骗性，真正的性格在于内心。它可能会探索对典型怪物形象的颠覆，挑战读者超越肤浅的判断。
-
-此外，这篇文章可能会分析被认为是怪物所带来的心理影响，以及调和这种认知与内在人性的挣扎。它可能会探讨个人为何采用“恶魔”伪装作为防御机制或对社会压力的回应。
-
-最后，这篇文章可能会考虑成为人类的哲学含义，以及外在形式是否真正决定身份。它很可能会主张同情和理解，鼓励读者考虑那些可能看起来不同甚至可怕的人的内心生活和动机。“各种”内容标签表明，这种探索可能涉及文学分析、哲学论证、社会学观察，或这些的结合。
+《奥地利香烟收藏》标题表明该文章可能侧重于奥地利香烟相关物品的收藏。鉴于文章内容仅说明“ZIGSAM - 奥地利香烟收藏”，无法提供更详细的摘要。在没有任何进一步信息的情况下，人们只能推断该文章*可能*会讨论奥地利香烟历史、品牌、包装、广告和/或收藏实践的各个方面。ZIGSAM可能是收藏本身的名称，与收藏相关的公司，或奥地利香烟收藏界使用的术语。简而言之，核心要点是存在一个以奥地利香烟为中心的专门收藏。
 
 ---
 
-## 60. Show HN: Pledge – 一个轻量级的 Swift 响应式框架 (无 Rx 负担)
+## 47. 用声音悬浮昆虫或可变革科学摄影
 
-**原文标题**: Show HN: Pledge – A Lightweight Reactive Framework for Swift (No Rx Overhead)
+**原文标题**: Levitating Bugs with Sound Could Transform Scientific Photography
 
-**原文链接**: [https://github.com/gokulnair2001/Pledge](https://github.com/gokulnair2001/Pledge)
+**原文链接**: [https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/](https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/)
 
-Pledge：一个轻量级、线程安全的 Swift 响应式编程框架，旨在简化状态管理和事件传播。它提供了一个简洁的观察者模式实现，而没有其他响应式框架的复杂性。主要特性包括线程安全的 observables、基于优先级的通知、可自定义的传递队列、批量更新以及速率限制（节流和防抖）。
+科学家开发出新型声悬浮摄影测量成像系统，可在不造成损伤的情况下拍摄昆虫标本的详细照片。该系统利用精确控制的声波悬浮昆虫，从而能够从多个角度自动捕获图像。这种方法克服了传统技术（如插针）的局限性，插针会损坏标本，且不适用于最小的昆虫。
 
-该框架围绕着 `PLObservable` 展开，这是一个用于可观察值的线程安全容器。订阅者按优先级顺序收到更改通知，可以选择进行转换和使用传递队列以确保线程安全。速率限制可以控制通知频率。`PLGlobalStore` 为 observables 提供了一个集中的存储库，充当一个轻量级的状态管理解决方案。
+德国几家机构的研究人员证明，声悬浮可用于科学摄影，提供了一种可控的方式来操纵标本并以预定义的角度拍摄图像。该系统能够实现自动焦点堆叠，生成具有扩展景深的高度详细的照片，并有助于创建 3D 模型，无需手动重新定位或造成损坏。
 
-Pledge 提供了创建 observables、订阅更改（带有取消订阅选项）、控制传递队列和订阅优先级、修改值（带/不带通知）以及执行批量更新的方法。它还支持通过节流和防抖进行速率限制。
+该成像系统使用 Olympus OM-D E-M1 III 相机、90 毫米微距镜头和增距镜，在每个标本位置拍摄 40 张照片，并在 72 个视角重复拍摄。这种全面的数据集无需插针，防止损坏，并允许完整查看标本。它还可以对小到无法插针的昆虫进行成像。
 
-该框架包含函数式操作符，例如 `map`、`flatMap`、`compactMap`、`filter`、`skip`、`distinctUntilChanged`、`merge` 和 `zip`，用于数据转换、过滤和组合。
-
-用法示例展示了使用派生状态进行表单验证、使用枚举进行网络状态管理以表示不同的状态，以及用于防止过度 API 调用的节流搜索。
-
-Pledge 可通过 Swift Package Manager 获取，并使用 MIT 许可证授权。
+尽管承认目前存在单轴旋转等局限性，但研究人员认为，这种非破坏性的自动化成像系统在小型物体的近距离摄影测量方面显示出巨大的潜力，并为 3D 重建奠定了基础。收集的数据对于训练用于昆虫识别和生物多样性研究的人工智能模型非常有价值。
 
 ---
 
-## 61. Emacs 31 将原生支持窗口对换功能
+## 48. 低成本高速HDMI视频数据采集
 
-**原文标题**: Native frame transposition coming to Emacs 31
+**原文标题**: Low cost, high speed data acquisition over HDMI [video]
 
-**原文链接**: [https://p.bauherren.ovh/blog/tech/new_window_cmds](https://p.bauherren.ovh/blog/tech/new_window_cmds)
+**原文链接**: [https://media.ccc.de/v/osmodevcon2024-200-low-cost-high-speed-data-acquisition-over-hdmi](https://media.ccc.de/v/osmodevcon2024-200-low-cost-high-speed-data-acquisition-over-hdmi)
 
-本文详细介绍了将窗口转置功能引入Emacs 31的历程。受向上游贡献原则的启发，作者最初提议将`transpose-frame.el`包集成到Emacs核心中。然而，该包的架构依赖于“复制粘贴”窗口状态，这被证明存在根本缺陷，无法修复，只能完全重写。
+史蒂夫·马克格拉夫在osmodevcon2024上的演讲探讨了一种使用现成硬件进行高速数据采集的低成本方法。核心思想是改造廉价的USB 3.2 HDMI视频采集卡，特别是那些基于Macrosilicon MS2130芯片的采集卡，并结合像Sipeed Tang nano系列这样的小型FPGA开发板。 这两种组件的价格都可以控制在每个10美元左右。
 
-一个正确的实现需要修改Emacs的C代码，特别是要在`split-window`操作期间启用窗口对象的“复活”。作者进行了重写，并与Emacs窗口系统代码的维护者Martin Rudalics进行了广泛合作。
+该演讲详细介绍了一项逆向工程，该工程允许通过HDMI连接的这些组件用于捕获任意数据。 通过将数据编码为视频信号并通过HDMI传输到采集卡，并使用FPGA创建适当的HDMI输出，用户可以构建各种应用程序。
 
-经过四个月的工作，Emacs 31现在包含了先前由`transpose-frame.el`提供的功能，以及在`window-x.el`中实现的附加功能。新命令包括：
-
-*   `transpose-window-layout`（对角线反射）
-*   `rotate-window-layout-clockwise`和`rotate-window-layout-anticlockwise`
-*   `flip-window-layout-horizontally`和`flip-window-layout-vertically`
-*   `rotate-windows`和`rotate-windows-back`（循环窗口旋转）
-
-作者鼓励Emacs 31的用户尝试这些命令，并强调它们适用于任何窗口布局。
+该演讲提出了潜在的应用，例如低成本、高速逻辑分析仪、ADC采集设备，甚至是DIY软件无线电（SDR）。 演讲者提供了可下载的资源，包括演讲的视频和音频录音。
 
 ---
 
-## 62. 揭露SuperNote Nomad E-Ink平板电脑中的零点击RCE漏洞
+## 49. 通过传输激活值控制语言和扩散模型
 
-**原文标题**: Uncovering a 0-Click RCE in the SuperNote Nomad E-Ink Tablet
+**原文标题**: Controlling Language and Diffusion Models by Transporting Activations
 
-**原文链接**: [https://www.prizmlabs.io/post/remote-rootkits-uncovering-a-0-click-rce-in-the-supernote-nomad-e-ink-tablet](https://www.prizmlabs.io/post/remote-rootkits-uncovering-a-0-click-rce-in-the-supernote-nomad-e-ink-tablet)
+**原文链接**: [https://machinelearning.apple.com/research/transporting-activations](https://machinelearning.apple.com/research/transporting-activations)
 
-PRIZM Labs发现SuperNote Nomad E-Ink平板电脑存在零点击远程代码执行漏洞(CVE-2025-32409)。攻击者通过利用开放端口(60002)和SuperNoteLauncher应用程序中的缺陷，可在同一网络上完全控制该设备，无需任何用户交互。
+本文重点介绍了苹果公司用于控制大型生成式语言和文本到图像模型输出的新技术——激活传输(AcT)。AcT以最小的计算开销提供对模型行为的细粒度控制，解决了诸如RLHF和指令微调等资源密集型方法的局限性。
 
-该漏洞源于未经身份验证的文件共享功能。研究人员发现，他们可以通过自定义HTTP请求将文件上传到平板电脑的INBOX目录。路径遍历漏洞允许将文件写入其他目录，包括用于固件更新的EXPORT目录。
+AcT是一个模态无关的框架，它利用最优传输理论来引导模型激活，从而推广了先前的激活引导方法。与可能将激活移出分布的先前方法不同，AcT学习源激活分布和目标激活分布之间的最优传输映射，确保转移后的激活符合目标分布。简化版本Linear-AcT使用线性映射来实现快速推理。
 
-该漏洞利用了SuperNote设备会自动从EXPORT目录安装固件更新（如果存在有效的“update.zip”文件），以及该设备使用公开的调试密钥来签署固件映像这一事实。但是，文件上传过程会将数字附加到重复文件名，从而阻止直接覆盖“update.zip”。
+本文展示了Linear-AcT在控制LLM输出方面的有效性，特别是在减少毒性和诱导真实性方面，同时对其他性能指标的影响最小。它还展示了AcT控制文本到图像扩散模型的能力，从而可以对图像细节和艺术风格进行细粒度的调整。一个关键应用是去除不需要的概念，例如防止模型生成包含用户明确指示要避免的元素（例如，“粉色大象”）的图像。
 
-为了绕过此命名问题，研究人员设计了一种“竞争条件”漏洞。他们首先发送一个小的、虚拟的“update.zip”文件，紧接着发送真实的、后门化的“update.zip”文件。虚拟文件的快速完成会创建并删除初始“update.zip”，从而允许合法的后门映像被复制并正确命名。这会触发在热插拔事件或重新启动时自动安装恶意固件，从而授予攻击者root访问权限。
-
-PRIZM Labs于2024年7月首次向Ratta Software负责任地披露了该漏洞，并在供应商计划发布补丁后，于2024年12月进行了协同披露。
+AcT为控制生成模型提供了一种高效且可靠的解决方案，为寻求改进模型输出与用户期望的对齐并减轻潜在滥用的研究人员和从业者提供了一种有价值的工具。
 
 ---
 
-## 63. 解析器组合子胜过正则表达式
+## 50. Phoenix 1.8.0-RC 发布
 
-**原文标题**: Parser Combinators Beat Regexes
+**原文标题**: Phoenix 1.8.0-RC Released
 
-**原文链接**: [https://entropicthoughts.com/parser-combinators-beat-regexes](https://entropicthoughts.com/parser-combinators-beat-regexes)
+**原文链接**: [https://www.phoenixframework.org/blog/phoenix-1-8-released](https://www.phoenixframework.org/blog/phoenix-1-8-released)
 
-本文论述了在Haskell中使用解析器组合子优于正则表达式(regexes)的理由，即使正则表达式最初看起来更简单。作者使用一个“代码降临节”问题作为示例，展示了基于正则表达式和基于解析器组合子的解决方案，用于从字符串中提取和处理数值数据。
+Chris McCord 宣布 Phoenix 1.8 发布候选版，强调改进开发者体验和安全性。主要特性包括：
 
-基于正则表达式的解决方案虽然简洁，但因其正则表达式和处理函数之间存在隐式约定而受到批评，缺乏关于捕获组和数据类型的编译时保证。使用`attoparsec`库的解析器组合子解决方案，最初看起来更复杂，但提供了更好的错误处理、类型安全性和编译器检查。
+*   **使用 daisyUI 的 Tailwind 主题：** 增强了 Tailwind 支持，采用 daisyUI 实现灵活的组件主题和一致的样式，可通过配置轻松自定义。
+*   **魔法链接认证：** phx.gen.auth 现在默认使用无密码的魔法链接登录/注册，提供用户友好的安全性。 传统的密码认证仍然是可选的。`require_sudo_mode` plug 强制要求对敏感操作进行最近的身份验证。
+*   **用于安全数据访问的 Scopes：** 引入 Scopes 作为安全数据访问和授权的一流模式。 生成器现在使用 scopes 来确保默认情况下锁定数据访问。Scopes 还有助于您的接口随着应用程序需求的增长而增长。
+*   **简化的 Onboarding：** 简化了代码生成器（phx.gen.live，phx.gen.auth），为经验丰富的开发人员提供更好的基础，并为新手提供更轻松的学习体验。核心组件已精简到主要构建块。
+*   **简化的布局：** Phoenix 现在倾向于使用单个布局并辅以函数组件，从而简化了创建和管理布局的过程。 应用布局现在是一个显式的函数组件调用，无论您想要包含动态应用布局的地方。
 
-然后，作者解决了问题的第二部分，引入了状态管理（启用/禁用`mul`贡献）。这对正则表达式来说是一个巨大的挑战，因为它们的无状态性。然而，解析器组合子解决方案通过结合状态转换器，优雅地适应了这一新需求，使其成为一个有状态的解析器。
-
-有状态的解析器在更复杂的场景中展示了优于正则表达式的灵活性和可维护性优势。虽然`attoparsec`的回溯在处理状态时可能会带来挑战，但作者指出，这可以通过仔细的解析器设计来解决，甚至可能在库中使用“cut”原语。文章总结说，解析器组合子尽管具有较高的初始学习曲线，但提供了更好的表达性、灵活性和可维护性，尤其是在问题复杂性增加时。附录演示了如何将初始解析器重构为更简洁和applicative的风格，进一步突出了解析器组合子的可组合性。
-
----
-
-## 64. 对他人小动作的敏感在普通人群中普遍存在。
-
-**原文标题**: Misokinesia, sensitivity to seeing others fidget prevalent in general population
-
-**原文链接**: [https://www.nature.com/articles/s41598-021-96430-4](https://www.nature.com/articles/s41598-021-96430-4)
-
-本文调查了轻动恐惧症（一种对他人烦躁动作敏感的现象）的普遍性和性质。尽管越来越多的人认识到它带来的挑战，但针对该现象的科学研究仍然不足，本研究旨在弥补这一缺憾。
-
-通过对 4100 多名参与者进行的三项研究，研究人员证实了轻动恐惧症敏感性普遍存在于普通人群中，大约影响了三分之一的参与者。第一项研究是一项初步研究，也表明其与恐音症存在共病性。第二项研究（研究 1）改编了恐音症评估问卷 (MpAQ)，创建了轻动恐惧症评估问卷 (MkAQ)，用于衡量与视觉刺激相关的负面情绪程度。它还探讨了轻动恐惧症与视觉注意力表现改变之间的潜在联系。参与者完成了一项干扰物干扰任务和一项反射性注意线索任务。反射性注意线索任务使用了动态或闪光线索，以探索对基于动态的视觉事件的敏感性。最后一项研究评估了非大学人群中的患病率和变异性。
-
-研究结果表明，很大一部分人对他人烦躁的动作很敏感，突显了一种视觉-社交敏感性，值得进一步研究。报告的敏感程度的个体差异表明，负面的社会-情感影响可能会随着年龄的增长而加剧。
+此次更新还包括新的身份验证/授权指南和弃用。 该版本需要 Erlang/OTP 25+。 开发人员可以通过 mix archive install 或 new.phoenixframework.org 尝试它。
 
 ---
 
-## 65. 杰拉德·'特霍夫特称量子物理学走错了方向
+## 51. 使用AI Gemini 2.5 Pro构建的雅达利导弹指挥官游戏
 
-**原文标题**: Quantum Physics Is on the Wrong Track, Says Gerard 'T Hooft
+**原文标题**: Atari Missile Command Game Built Using AI Gemini 2.5 Pro
 
-**原文链接**: [https://www.scientificamerican.com/article/breakthrough-prize-winner-gerard-t-hooft-says-quantum-mechanics-is-nonsense/](https://www.scientificamerican.com/article/breakthrough-prize-winner-gerard-t-hooft-says-quantum-mechanics-is-nonsense/)
+**原文链接**: [https://missile-command-game.centminmod.com/](https://missile-command-game.centminmod.com/)
 
-本文介绍了对诺贝尔奖得主、理论物理学家杰拉德·特·霍夫特的采访，此前他获得了基础物理学特别突破奖。特·霍夫特讨论了他的职业成就，特别是他对重整化非阿贝尔规范理论的研究，这是粒子物理学标准模型的基石。
+本文介绍了一款使用现代HTML5 Canvas技术重制的经典Atari游戏《导弹司令》。该游戏借助Google Gemini 2.5 Pro和Claude 3.7 Sonnet构建，保留了原作的核心玩法，并进行了现代化的增强。
 
-在肯定标准模型的成功的同时，特·霍夫特对当前粒子物理学的现状表示不满，认为由于缺乏真正新颖和大胆的想法，进展已经停滞。他认为研究人员对已建立的理论过于满意，需要探索非常规的方法。
+主要功能包括一个游戏内商店，玩家可以在其中购买诸如声波、巨型炸弹、卫星防御基地等强化道具，以及更快的导弹和更大的爆炸范围等各种升级。玩家通过点击/触摸发射导弹来防御城市免受来袭攻击，并可以通过选择图标然后选择目标区域来使用特殊武器。空格键可以暂停/恢复游戏。
 
-特·霍夫特认为，量子力学虽然有用，但可能不是粒子相互作用的最终描述。他提倡一种更合乎逻辑、更“脚踏实地”的方法，强调局域性，并需要理解决定粒子散射的精确机制，而不是仅仅依靠统计概率。他设想的未来是，粒子相互作用可以像两架三角钢琴的碰撞一样可预测，所有潜在的规律都清晰明确。他对未来的突破保持乐观，前提是科学家们愿意挑战传统思维。
-
----
-
-## 66. 《哥伦比亚演说家》教授十九世纪美国人如何演讲
-
-**原文标题**: The Columbian Orator taught nineteenth-century Americans how to speak
-
-**原文链接**: [https://www.neh.gov/article/columbian-orator-taught-nineteenth-century-americans-how-speak](https://www.neh.gov/article/columbian-orator-taught-nineteenth-century-americans-how-speak)
-
-《哥伦比亚演说家》是19世纪美国一本流行的修辞学教科书，深刻影响了弗雷德里克·道格拉斯和亚伯拉罕·林肯等人物。该书由迦勒·宾厄姆于1797年出版，旨在教导美国人如何有效地讲话，这项技能在一个语言对于个人和政治进步至关重要的社会中备受重视。
-
-道格拉斯，一个花费50美分购买此书的被奴役男孩，认为《哥伦比亚演说家》塑造了他强大的演说能力和废奴主义领袖地位。缺乏正规教育的林肯也学习了这本书，从中汲取了古典和启蒙时代演讲的灵感。
-
-该书的影响力源于其内容的多样性，从古希腊文本到当代政治辩论，让读者接触到各种修辞风格。它还包含促进进步思想的对话，例如“主人与奴隶之间的对话”，该对话倡导废除奴隶制，尽管其所有白人男性贡献者反映了时代的偏见。这段对话引起了道格拉斯的深刻共鸣，表明可以通过论证来挑战奴隶制。
-
-宾厄姆强调了演讲的内容和表达方式，旨在为这个年轻的国家培养出既精致又民主的演讲者。虽然现在有些选段显得过时，但该书的废奴主义立场和对平等的关注导致其在奴隶制危机期间在南方被禁。它的遗产继续被学者和像奥西·戴维斯和亨利·路易斯·盖茨 Jr. 这样的人物所认可，他们强调它在塑造美国身份和话语中的重要性。
+游戏提供难度选择（简单、普通、困难、疯狂），并通过托管在Cloudflare上的排行榜来跟踪高分。游戏还通过Cloudflare AI Gateway与OpenRouter AI相结合，进行游戏分析。该项目由George Liu开发，并托管在Cloudflare Pages上。本文提供了有关游戏控制、制作人员名单和技术细节的信息，包括指向开发者GitHub存储库的链接。
 
 ---
 
-## 67. 十九世纪日本照片
+## 52. Arroyo (YC W23) 已被 Cloudflare 收购。
 
-**原文标题**: Photographs of 19th Century Japan
+**原文标题**: Arroyo (YC W23) has been acquired by Cloudflare
 
-**原文链接**: [https://cosmographia.substack.com/p/photographs-of-old-japan](https://cosmographia.substack.com/p/photographs-of-old-japan)
+**原文链接**: [https://www.arroyo.dev/blog/arroyo-is-joining-cloudflare](https://www.arroyo.dev/blog/arroyo-is-joining-cloudflare)
 
-以下是Cosmographia Substack上《十九世纪日本照片》一文的摘要：
+"Arroyo (YC W23) 被 Cloudflare 收购" 摘要：
 
-该文章展示了一组手绘蛋白照片，让人们得以一窥 19 世纪的日本，这些照片主要拍摄于江户时代末期和明治时代初期（大约 1860 年代至 1890 年代）。文章强调了日本在经历了几个世纪的闭关锁国之后，迅速实现现代化并向西方开放的变革时代。
+实时数据处理初创公司 Arroyo，致力于构建分布式流处理引擎，已被 Cloudflare 收购。Arroyo 在参与 Y Combinator Winter 2023 批次后成立，旨在简化并普及对强大流处理能力的访问。
 
-这些照片描绘了日本生活的各个方面，包括武士、艺伎、商人和普通民众的肖像。它们还展示了富士山、寺庙、花园和繁华的城市景观等标志性地标。
+该博客文章宣布了此次收购，并表达了 Arroyo 团队加入 Cloudflare 的兴奋之情。他们相信 Cloudflare 的全球基础设施、资源以及构建更好互联网的使命将显著加速他们最初的愿景。虽然收购的具体条款未公开，但文章强调 Arroyo 的技术和团队将整合到 Cloudflare 的生态系统中。
 
-文章强调了这些图像作为历史文献的重要性，它们提供了对当时服装、习俗、建筑和社会结构的见解。手绘过程虽然有时理想化，但也为照片增添了独特的审美维度。这些手绘图像通常是为西方消费而制作的，激发了人们的好奇心并塑造了西方对日本的认知。
+Arroyo 旨在解决的核心问题是构建和维护实时数据管道的复杂性和成本。与现有替代方案相比，他们的流处理引擎提供了一种更高效、更易于访问的解决方案。这与 Cloudflare 提供高性能、安全可靠互联网服务的使命相一致。
 
-作者注意到早期摄影的技术挑战以及创作这些照片所涉及的艺术性。文章最后强调了这些照片的价值，它们是了解一个快速变化的社会的窗口，捕捉了日本转型为现代国家过程中转瞬即逝的时刻。
-
----
-
-## 68. 埃隆·马斯克的狗狗币正接受美国政府问责署审计
-
-**原文标题**: Elon Musk's DOGE Is Getting Audited by GAO
-
-**原文链接**: [https://www.wired.com/story/gao-audit-elon-musk-doge-government-agencies/](https://www.wired.com/story/gao-audit-elon-musk-doge-government-agencies/)
-
-政府问责署(GAO)正在对埃隆·马斯克的“政府效率部”(DOGE)进行审计，调查其在包括劳工部、教育部、国土安全部、卫生与公众服务部、财政部和社会保障管理局等多个联邦机构处理数据的情况。 该审计于三月份启动，重点关注DOGE是否遵守隐私和数据保护法律法规。
-
-人们对DOGE工作人员表示担忧，他们中的许多人与马斯克旗下的公司有联系，但政府经验有限，他们获得了敏感数据的访问权限，并可能整合不同的数据系统，据称是为了打击欺诈和浪费。 GAO正在具体审查DOGE被授予的机构系统访问权限，包括访问类型（读取、写入、执行）、已实施的保障措施以及确保数据保密性、完整性和可用性的流程。
-
-此次审计是由于民主党官员表达的担忧以及众议员Bobby Scott和Richard Neal的正式请求而引发的，此前有报道称DOGE入侵联邦系统。 GAO正在调查DOGE对系统和数据的访问是否适当，数据是否被不当导出，以及未经培训的人员是否正在修改代码或抓取数据。 审计结果预计将在春季末公布，并将公开发布。 关键问题是DOGE的运营是否充分保障了个人数据的安全。
+此次收购可能意味着 Cloudflare 将利用 Arroyo 的技术来增强其现有的数据处理能力，可能会提供新的服务或提高现有服务的性能。这可能会转化为 Cloudflare 客户的利益，特别是那些依赖实时数据分析和流媒体应用程序的客户。Arroyo 团队对未来以及他们在 Cloudflare 中能够实现的影响表示乐观。
 
 ---
 
-## 69. 用Haiku学习编程
+## 53. 美国的金融体系一度濒临崩溃。
 
-**原文标题**: Learning to Program with Haiku
+**原文标题**: America's financial system came close to the brink
 
-**原文链接**: [https://www.haiku-os.org/development/learning_to_program_with_haiku](https://www.haiku-os.org/development/learning_to_program_with_haiku)
+**原文链接**: [https://www.economist.com/finance-and-economics/2025/04/10/americas-financial-system-came-close-to-the-brink](https://www.economist.com/finance-and-economics/2025/04/10/americas-financial-system-came-close-to-the-brink)
 
-本网页是DarkWyrm创建的题为“用Haiku学习编程”的课程集合，旨在向初学者教授编程，特别是针对Haiku操作系统。这些课程始于2010年，根据知识共享许可协议免费提供，仅供非商业用途。
-
-该系列涵盖了广泛的主题，从基本编程概念（如数据类型、屏幕打印、循环、条件语句、数组、字符串和指针）开始，然后逐步发展到更高级的主题，包括内存管理、二进制数学、命令行交互、数据结构和使用C++的面向对象编程（OOP）。该系列的后半部分侧重于Haiku API、GUI编程、消息传递、菜单、列表框、资源和存储套件。
-
-这些课程提供可下载的PDF文件，通常包括源代码示例。它们还包含单元复习和复习答案，以加强学习。该系列最终以开发一个名为“HaikuFortune”的实用Haiku应用程序告终，涵盖了GUI设计、可用性、资源集成、许可和用于分发的打包等方面。作者计划创建一个后续系列，用于介绍更高级的Haiku特定编码主题。
+2025年4月9日，美国的金融体系濒临全面崩溃的边缘。股价的长期下跌因美国国债市场剧烈的不稳定性而加剧。十年期国债收益率在几天内从3.9%飙升至4.5%，表明债券价格大幅下跌。这种风险资产（股票）和通常安全的资产（国债）的同时崩溃，威胁到整个金融体系的稳定。文章强调了局势的危险性，指出债券市场的剧烈波动和其他金融压力信号正在发出红色警报。其他相关文章在更广泛的金融环境下提到了唐纳德·特朗普的关税以及中国潜在的经济武器，如稀土出口。虽然投资者最初因特朗普暂停关税而感到宽慰，但随着中国的回应，现实最终降临。
 
 ---
 
-## 70. Apache ECharts
+## 54. 树莓派集群现身6000美元音频处理器中
+
+**原文标题**: Raspberry Pi cluster spotted inside $6k audio processor
+
+**原文链接**: [https://www.jeffgeerling.com/blog/2025/raspberry-pi-cluster-spotted-inside-6k-audio-processor](https://www.jeffgeerling.com/blog/2025/raspberry-pi-cluster-spotted-inside-6k-audio-processor)
+
+本文重点介绍了树莓派集群在高端商业产品中的出人意料的应用，特别是价值6,000美元至15,000美元之间的Orban Optimod 5000系列音频处理器。每个处理器都包含一个3节点的树莓派集群。其中一个树莓派管理远程控制、Web UI、固件更新和本地显示。第二个树莓派独立处理多流音频，即使显示/远程访问树莓派出现问题，也能确保持续的功能。第三个可选的树莓派用于为音频流添加水印，用于Luminate/SoundScan评级等数据。
+
+作者认为，使用树莓派计算模块（CM4/CM5）提供了一种经济高效且可靠的方式，可以为现有的音频/视频/射频处理架构添加现代Linux支持和远程控制功能。虽然存在替代方案，但树莓派为强化的Linux镜像提供最低的功耗和长期的供应商支持。文章指出，这并非孤例，在NAB展会上，许多昂贵的设备都在内部使用了树莓派。
+
+评论区揭示了树莓派在其他昂贵设备中的类似应用，例如一台价值30万美元、运行在12个树莓派4上的3D打印机，以及由单个CM4驱动的Formlabs Form 4 3D打印机。
+
+---
+
+## 55. 使用Lit构建WebComponents的理由
+
+**原文标题**: The Case for WebComponents with Lit
+
+**原文链接**: [https://typescript.guru/the-case-for-web-components-with-lit/](https://typescript.guru/the-case-for-web-components-with-lit/)
+
+本文提倡使用 Web Components，特别是 Lit 库，作为一种与框架无关且高效的方式来构建可复用的 UI 元素。Web Components 利用原生浏览器标准，如 Custom Elements、Shadow DOM 和 HTML Templates，具有原生浏览器支持、强大的封装性、框架兼容性（React、Angular、Vue）、可扩展性和可维护性等优势。
+
+Lit 通过诸如响应式属性、声明式模板、快速更新、TypeScript 支持和生命周期钩子等特性简化了 Web Component 的创建。本文强调了将 TypeScript 与 Lit 结合使用的优势，包括类型安全的属性、接口驱动的开发、增强的 IDE 支持和编译时验证。
+
+一个全面的 TypeScript 示例演示了如何构建一个 `UserCard` 组件，展示了属性装饰器、状态管理、生命周期方法、指令和事件处理。本文还介绍了使用插槽进行组件组合、使用响应式控制器进行状态管理以实现可重用逻辑，以及使用 `@open-wc/testing` 测试 Web Components。
+
+文中讨论了诸如高效的属性更新、模板缓存和指令使用等性能优化方法。最后，本文重点介绍了设计系统等实际应用案例，提供了一个 `DSButton` 组件示例，并说明了与 React 和 Vue 的集成。
+
+---
+
+## 56. 市政消防车和机场消防车的区别
+
+**原文标题**: The Difference Between Municipal Fire Trucks and Airport Fire Trucks
+
+**原文链接**: [https://www.piercemfg.com/pierce/blog/difference-between-municipal-and-airport-fire-trucks](https://www.piercemfg.com/pierce/blog/difference-between-municipal-and-airport-fire-trucks)
+
+皮尔斯制造公司博客：市政消防车与机场消防车（ARFF车辆）的主要区别
+
+皮尔斯制造公司的这篇博客文章概述了市政消防车和机场消防车（ARFF车辆）之间的主要区别。虽然两者都服务于紧急消防需求，但它们的设计和功能是根据其特定环境量身定制的。
+
+市政消防车专为城市、郊区和乡村环境设计，水箱大小（500-1000加仑）和隔间数量根据供水基础设施和处理的呼叫类型（建筑物火灾、交通事故等）而有所不同。速度至关重要，需要在25秒内加速到35英里/小时，最高速度为50英里/小时。
+
+另一方面，ARFF车辆专门用于机场紧急情况，包括飞机坠毁、燃料泄漏和航站楼事故。由于航空燃料的易燃性，它们需要快速响应时间（在3分钟内到达现场）和更高的加速标准（0-50英里/小时在25秒内，最高速度为70英里/小时）。ARFF消防车携带更大的水箱（1500-4500加仑），并使用高空延伸炮塔（HRET）进行精确的灭火。它们使用水、消防泡沫和干粉化学品作为灭火剂。
+
+驾驶室设计也大不相同。市政驾驶室优先考虑消防员的运输和舒适性，而ARFF驾驶室则强调在复杂的机场环境中能见度和机动性，通常采用居中的操作员座椅。这两种类型的卡车都配备了存储解决方案，这些解决方案是根据其特定任务所需的设备量身定制的，并纳入了减少致癌物的措施。
+
+---
+
+## 57. 还记得 FastCGI 吗？(2021)
+
+**原文标题**: Remember FastCGI? (2021)
+
+**原文链接**: [https://brokenco.de/2021/06/27/remember-fastcgi.html](https://brokenco.de/2021/06/27/remember-fastcgi.html)
+
+本文回顾了FastCGI，一种用于运行长生命周期进程来处理多个Web请求的协议，并将其与CGI和“无服务器”函数进行对比。尽管FastCGI在PHP社区中仍然在使用，但作者探讨了其在现代Web开发中的相关性，特别是使用Rust的情况。
+
+作者尝试了Rust中的`fastcgi` crate，创建了一个简单的服务器，响应“Hello, world!”。为了测试，他们配置了Docker中的Nginx，将请求代理到FastCGI服务器。
+
+然而，作者得出结论，设置FastCGI涉及大量的进程管理和Web服务器配置。然后，他们提出了一个使用Rust的Tide Web框架的替代方案，演示了一个功能等效的程序，该程序更容易设置和测试，因为它可以在不需要初始反向代理的情况下直接访问。无论代理FastCGI还是标准HTTP服务器，Nginx的配置都类似。
+
+最终，作者认为，FastCGI对于HTTP请求处理速度慢或不安全的脚本语言可能仍然有用。但对于大多数现代应用程序来说，使用嵌入式HTTP Web服务器，如Rust中的Tide，是一种更简单、更有效的方法。文章强调，HTTP已经在通用Web开发中“胜出”。
+
+---
+
+## 58. 如果你的网站有营业时间会怎样？ (2022)
+
+**原文标题**: What if your website had business hours? (2022)
+
+**原文链接**: [https://bobbiechen.com/blog/2022/7/21/what-if-your-website-had-business-hours](https://bobbiechen.com/blog/2022/7/21/what-if-your-website-had-business-hours)
+
+如果你的网站有营业时间会怎样？
+
+Bobbie Chen 的文章“如果你的网站有营业时间会怎样？”探讨了限制网站可用性的非传统想法，并将之与实体店进行了类比。灵感源于 B&H Photo，其在线商店会在周六因宗教原因关闭。
+
+该文章挑战了通过简单地将收入除以停机时间来计算宕机成本的标准电子商务做法，认为并非所有潜在客户都会立即流失。B&H 的成功表明，一些客户会稍后返回。这也让人想起一个 Google SRE 的轶事，即有意触发“Chubby”服务的轻微中断，有助于用户为潜在的故障做好准备。
+
+其他具有有限可用性的网站示例包括 Low-Tech Magazine（太阳能供电）和 Kingdom of Loathing（定期维护）。该文章强调，这些例子之所以能够蓬勃发展，是因为它们提供了独特的服务，并且客户愿意等待。
+
+Chen 随后以一种轻松的方式考察了在计划停机期间缩减服务器规模可能节省的成本。然而，考虑到与潜在收入损失以及持续需要待命支持相比，节省的成本微乎其微，该文章承认了这种想法对于大多数企业来说是不切实际的。最终，作者承认全天候在线模式是有充分理由的主流标准。
+
+---
+
+## 59. 人工清点集会图像显示人数明显偏少。
+
+**原文标题**: Hand-counted images of rallies yield significantly smaller numbers
+
+**原文链接**: [https://www.cbc.ca/news/canada/liberal-conservative-crowd-size-investigation-1.7507222](https://www.cbc.ca/news/canada/liberal-conservative-crowd-size-investigation-1.7507222)
+
+加拿大广播公司新闻调查发现，保守党和自由党在加拿大政治集会上严重夸大了参与人数。调查使用手工计数图像和专家分析，重点关注了四场集会：保守党在不列颠哥伦比亚省萨里和埃德蒙顿附近的活动，以及自由党在多伦多和不列颠哥伦比亚省里士满的活动。
+
+调查显示，声称的参与人数与实际人数之间存在巨大差异。例如，保守党声称埃德蒙顿地区集会有 15,000 名参与者，但加拿大广播公司新闻在一张全景照片中数出大约 1,558 人。人群动力学专家 G. Keith Still 证实了这些发现，称 15,000 人的说法“不可能”。同样，自由党声称里士满有 2,000 名参与者，而实际人数接近 800 人。
+
+该方法包括将图像分成网格并手动计数头部，将竞选照片与社交媒体上的视频进行交叉引用，以统计被遮挡的个人。虽然承认存在误差的可能性，但 Still 证实手工计数是最可靠的方法。
+
+保守党竞选团队为其数字辩护，称其“计算了回复者以及进入场地的人”，并指出皇家骑警对埃德蒙顿集会的“一般估计”为 9,000-12,000 人。自由党声称其“最大限度地利用了活动场地的容量”。 双方均未提供具体证据来支持其说法。
+
+尽管存在差异，但文章的结论是，集会参与人数可能与选举成功没有直接关系，而夸大的数字通常用于公共关系目的，旨在描绘一个拥挤和热情的场景。
+
+---
+
+## 60. Crystal 1.16.0
+
+**原文标题**: Crystal 1.16.0
+
+**原文链接**: [https://crystal-lang.org/2025/04/09/1.16.0-released/](https://crystal-lang.org/2025/04/09/1.16.0-released/)
+
+Crystal 1.16.0于2025年4月9日发布，包含19位贡献者的162项变更。此版本包含多项重大更改，主要用于修复不正确的行为。这些更改包括`File.match?`的更正实现，引入了非贪婪匹配和正确的转义字符识别，弃用了参数名称的`?`和`!`后缀，更改了`Enumerable#sum`和`#product`，要求为联合类型指定显式的初始值类型，修复了`HTTP::Request`中的HTTP资源字符串解析，以及子命令的环境变更。
+
+一个主要的亮点是RFC 0002中执行上下文的预览功能，提供了改进的多线程支持，并在各种操作系统和架构上进行了测试。其他语言增强功能包括`Slice.literal`推断元素类型并在解释器中工作，以及`macro sizeof`和`alignof`提供有关稳定类型的信息。标准库看到了路径处理的改进，尤其是在Windows上，以及新方法`Indexable#find`和`#find!`以及`EventLoop#wait_readable`、`#wait_writable`。编译器CLI现在接受`--output`来指定输出位置，遵循`$MACOSX_DEPLOYMENT_TARGET`，并且文档生成器可以通过`:showdoc:`包含私有/受保护对象和lib绑定。此版本还更新到LLVM 20并弃用了LLVM::ABI。
+
+---
+
+## 61. 用于快速存储的巨像
+
+**原文标题**: Colossus for Rapid Storage
+
+**原文链接**: [https://cloud.google.com/blog/products/storage-data-transfer/how-the-colossus-stateful-protocol-benefits-rapid-storage](https://cloud.google.com/blog/products/storage-data-transfer/how-the-colossus-stateful-protocol-benefits-rapid-storage)
+
+谷歌云快速存储利用谷歌内部文件系统Colossus，在对象存储的可扩展性的基础上，提供亚毫秒级延迟和面向文件的语义。通过使用基于状态的gRPC流式协议，快速存储克服了通常与对象存储相关联的更高延迟和缺乏类文件行为的问题。
+
+关键在于Colossus的状态协议。客户端获取包含文件存储位置信息的句柄，从而能够与磁盘进行直接、优化的通信以进行读写操作。这种架构实现了超低延迟和持久化追加，这对于数据库（如Spanner和Bigtable）以及流式分析（如BigQuery）至关重要。数据跨磁盘复制，并采用基于仲裁的写入方式，以保证持久性。
+
+快速存储在此基础上，在流创建时预先加载授权和元数据访问，从而允许后续的读/写操作直接与Colossus交互。这实现了每秒数百万次的请求，尤其有利于需要快速、范围读取和持久化追加的AI/ML工作负载。新的流可以接管先前客户端的对象所有权，即使出现中断也能确保数据正确性。
+
+将快速存储集成到 Cloud Storage FUSE 中提供了类文件访问，进一步实现了低延迟的面向文件的工作负载。它原生支持分层命名空间，以增强性能和面向文件夹的 API。用例包括 AI/ML 训练、分布式数据库优化、批量和流式分析、视频直播以及日志/监控。
+
+---
+
+## 62. systemd ParticleOS
+
+**原文标题**: systemd ParticleOS
+
+**原文链接**: [https://github.com/systemd/particleos](https://github.com/systemd/particleos)
+
+ParticleOS：一个使用mkosi构建的可定制、不可变Linux发行版。与其他不可变发行版不同，用户可以自行构建和签名镜像，从而完全控制基础发行版（目前支持Arch或Fedora）和已安装的软件包。该过程包括配置`mkosi.local.conf`以定义所需的配置文件（例如，桌面、KDE），然后运行`mkosi -f`来构建镜像。
+
+更新通过克隆ParticleOS存储库、根据需要修改`mkosi.local.conf`以及运行`mkosi -ff sysupdate --update --reboot`来处理。
+
+文章还详细介绍了如何集成更新的systemd版本，可以通过启用Open Build Service systemd存储库的`obs`配置文件，或者从源代码构建systemd，然后配置mkosi以合并构建的工件。
+
+安全是首要考虑，通过用户签名的安全启动镜像来实现，并提供有关生成和管理密钥的说明，这些密钥可能存储在智能卡上。安装涉及从使用`mkosi burn`创建的USB驱动器启动，使用“Installer”UKI配置文件，并运行`systemd-repart`来安装ParticleOS。
+
+最后，文档提供了有关配置systemd-homed以获得最佳性能的指导，包括禁用自动调整大小、启用LUKS discard以及添加用于压缩和子卷管理的BTRFS挂载选项。对于使用mkosi vm的虚拟机部署，为了方便起见，设置了默认的root密码和用户。
+
+---
+
+## 63. 黑客新闻的无声拥抱
+
+**原文标题**: Hacker News Hug of Deaf
+
+**原文链接**: [https://susam.net/hn-bell.html](https://susam.net/hn-bell.html)
+
+Susam Pal 在他的服务器上设置了一个简单的 netcat 循环，创建了一个“Hacker News 的聋子拥抱”。这个循环会接受连接，发送一条“ok”消息，关闭连接，并触发四个终端蜂鸣声。该实验的灵感来自 Hacker News 上关于古怪警报系统的讨论。
+
+在分享了这个一行命令后，HN 社区开始连接到 susam.net:8000，导致 24 小时内超过 4761 个连接和 19044 声蜂鸣。虽然数量不大，但看到人们参与到这个项目中并让他的终端反复发出蜂鸣声，令人感到兴奋。
+
+Pal 强调说，这个实验毫无意义但很有趣，突出了探索计算机领域中那些古怪想法的价值，而不仅仅是解决问题。乐趣在于探索和共享的体验。
+
+五天后的更新显示，在 Pal 在 Hacker News 上分享这篇文章后，出现了第二次连接激增。这次，他收到了超过 30 万个连接，其中许多来自持久的客户端循环。他觉得这种增加的活动令人愉快。这篇文章的标签为 #unix, #shell, #networking, 和 #technology。
+
+---
+
+## 64. Show HN: 我做了一个管理和比较信用卡返利的工具
+
+**原文标题**: Show HN: I built a tool to manage and compare credit card rewards
+
+**原文链接**: [https://rewards.getonecard.io](https://rewards.getonecard.io)
+
+此“Show HN”帖子介绍了一款旨在帮助用户最大化信用卡奖励的工具。其核心功能围绕允许用户将现有信用卡输入工具内的“数字钱包”展开。该工具随后使用人工智能分析用户的信用卡，并推荐用于特定商户的最佳信用卡，确保用户获得尽可能多的奖励。
+
+该界面似乎强调“奖励优化器”，用户可以在其中搜索商户并立即查看钱包中的哪张卡提供最佳奖励率（例如，餐厅消费可获得4倍积分）。示例屏幕截图展示了针对各种商户（如“Home Slice Pizza”、“Powder Room Bar”和“Fairmont Austin”）的推荐，表明该工具涵盖了广泛的消费类别。“商户搜索”中的“旅行”部分暗示了可能专注于旅行相关奖励。本质上，该工具旨在通过提供基于个人卡包的个性化推荐来简化信用卡奖励管理。
+
+---
+
+## 65. 拥有我的数据，第一部分：集成自托管日历解决方案
+
+**原文标题**: Owning my own data, part 1: Integrating a self-hosted calendar solution
+
+**原文链接**: [https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/](https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/)
+
+文章“拥有自己的数据，第一部分：集成自托管日历解决方案”详细介绍了 Emily Gorcenski 从 Google 日历迁移到自托管解决方案，以更好地控制其个人数据的过程。她概述了此举背后的动机，主要是对数据隐私的担忧以及对大型科技公司日益增长的依赖。
+
+Emily 选择了 Nextcloud 作为她的自托管平台，该平台包含一个日历应用程序。这篇文章侧重于将 Nextcloud 的日历与其现有工作流程集成的技术方面。这包括：
+
+*   **设置 Nextcloud:** 她概述了在自己的服务器上安装和配置 Nextcloud 的过程。
+*   **导入现有事件:** 她描述了将她的日历数据从 Google 日历导出并导入到 Nextcloud 的步骤。这涉及将日历导出为 .ics 格式，并将 .ics 文件导入到她的 Nextcloud 日历中。
+*   **同步:** 她讨论了将 Nextcloud 日历与她的设备（手机、笔记本电脑）同步的挑战。她解释了如何配置 CalDAV 以在多个设备上同步她的日历。
+*   **未来考虑:** 她暗示未来的文章将深入探讨数据所有权的其他方面，例如联系人、笔记和其他个人数据。
+
+总的来说，自托管日历解决方案是可行的，并且可以更好地控制自己的数据，但这需要技术专业知识以及对服务器管理和同步协议的理解。这篇文章对于那些考虑类似举动的人来说是一份实用的指南，并强调了所涉及的益处和挑战。
+
+---
+
+## 66. 细胞正在交换线粒体。这对我们的健康意味着什么？
+
+**原文标题**: Cells are swapping their mitochondria. What does this mean for our health?
+
+**原文链接**: [https://www.nature.com/articles/d41586-025-01064-5](https://www.nature.com/articles/d41586-025-01064-5)
+
+线粒体转移：多细胞细胞器？
+
+本文探讨了新兴的线粒体转移领域，挑战了传统观念中线粒体作为静态的、仅限于细胞内的细胞器的看法。研究表明，线粒体可以在细胞之间移动，可能发挥着“多细胞细胞器”的作用。
+
+科学家们在不同的生物和细胞类型中观察到了这种转移，但确切原因尚不清楚。可能的假设包括：
+
+*   **细胞损伤控制：** 为受损或受压力的细胞提供能量和支持，帮助组织修复、免疫反应和细胞存活。
+*   **癌症优势：** 使癌细胞能够操纵其环境。
+
+虽然尚未在人体内直接观察到线粒体转移，但研究人员正在研究其治疗癌症和中风等疾病的潜力。线粒体除了作为能量生产者外，还参与细胞通讯和免疫反应。它们的细菌起源可能解释了其动态行为，类似于细菌在细胞之间传播。
+
+研究表明，线粒体通过隧道纳米管或囊泡进行转移，并可在血液中自由漂浮。具体例子包括：
+
+*   星形胶质细胞在中风后向神经元捐赠线粒体，提高神经元存活率。
+*   间质细胞在肺损伤期间向肺细胞转移线粒体，促进恢复。
+*   血小板向干细胞转移线粒体，加速伤口愈合。
+*   星形胶质细胞向大脑血管内壁细胞转移线粒体，维持血脑屏障。
+*   白色脂肪细胞向巨噬细胞转移线粒体，影响能量消耗。
+
+文章强调了捐赠线粒体对T细胞的抗炎作用，并呼吁进一步研究，以了解其潜在机制以及线粒体转移对人类健康和疾病的更广泛影响。
+
+---
+
+## 67. 英伟达新型Llama-3.1 Nemotron Ultra以一半的规模超越DeepSeek R1。
+
+**原文标题**: Nvidia's new Llama-3.1 Nemotron Ultra outperforms DeepSeek R1 at half the size
+
+**原文链接**: [https://venturebeat.com/ai/nvidias-new-llama-3-1-nemotron-ultra-outperforms-deepseek-r1-at-half-the-size/](https://venturebeat.com/ai/nvidias-new-llama-3-1-nemotron-ultra-outperforms-deepseek-r1-at-half-the-size/)
+
+英伟达发布Llama-3.1-Nemotron-Ultra-253B-v1，一款基于Meta Llama-3.1模型的完全开源大型语言模型(LLM)，专为高级推理、指令遵循和AI助手工作流程而设计。这款拥有2530亿参数的模型在几个关键基准测试中超越了DeepSeek R1，一款拥有6710亿参数的先进混合专家(MoE)模型，尽管其规模不到后者的一半。
+
+英伟达通过神经架构搜索(NAS)优化了模型架构，降低了内存占用和计算需求，同时保持了强大的性能。它支持开启和关闭推理模式，允许开发者在高复杂性推理任务和更简单的输出之间切换。后期训练包括监督微调、强化学习、知识蒸馏和持续预训练，从而提高了其在数学、编码和通用问答等领域的性能。
+
+基准测试结果表明，启用推理后性能显著提升，尤其是在MATH500、AIME25、LiveCodeBench和GPQA中。与DeepSeek R1相比，英伟达的模型在GPQA、IFEval和LiveCodeBench中表现出具有竞争力或更优异的结果，而DeepSeek R1在AIME25和MATH500等数学评估中表现略好。
+
+该模型与Hugging Face Transformers兼容，支持高达128,000个token的序列，适用于各种LLM用例，包括聊天机器人、AI代理、RAG和代码生成。根据Nvidia开放模型许可证发布，并受Llama 3.1社区许可协议管辖，它已准备好用于商业用途，英伟达强调负责任的AI开发。
+
+---
+
+## 68. 面向苦难编程 (2012)
+
+**原文标题**: Suffering-Oriented Programming (2012)
+
+**原文链接**: [http://nathanmarz.com/blog/suffering-oriented-programming.html](http://nathanmarz.com/blog/suffering-oriented-programming.html)
+
+面向痛苦编程：一种以痛苦为导向的开发方式，强调只有在强烈感受到缺乏某项技术的痛苦时才构建它。它提倡一种务实、迭代的软件开发方法。
+
+核心原则是“先使其可行，再使其美观，最后使其快速。”
+
+*   **使其可行：** 从直接解决当前问题开始，采用简单甚至“hacky”的解决方案。这个阶段优先考虑学习问题领域的复杂性，避免过早的泛化。目标是通过实践经验来识别具体的用例。
+*   **使其美观：** 一旦对问题领域有了扎实的理解，就开发优雅的抽象来解决现有的用例。这涉及到将问题提炼成一组最少的、可组合的元素。避免过度设计，只关注已知需求。第一阶段学到的性能和资源特性应该为设计提供信息。
+*   **使其快速：** 在设计稳固后，专注于微优化和资源效率。避免过早优化，因为如果设计发生变化，它可能会被浪费。
+
+这个过程是持续的。通过“美观”的系统获得的新能力可以进一步探索和在更深的领域“使其可行”。这种迭代循环为技术提供信息，并可能需要调整现有的抽象。重构对于管理复杂性至关重要。
+
+本文认为用例至关重要，应该驱动设计决策。它告诫在没有深入的领域知识的情况下进行过度泛化，提倡以实际需求为软件开发的基础。
+
+---
+
+## 69. 艾萨克·阿西莫夫论人工智能如何解放人类及其创造力 (1992)
+
+**原文标题**: Isaac Asimov describes how AI will liberate humans and their creativity (1992)
+
+**原文链接**: [https://www.openculture.com/2025/04/isaac-asimov-describes-how-ai-will-liberate-humans-their-creativity.html](https://www.openculture.com/2025/04/isaac-asimov-describes-how-ai-will-liberate-humans-their-creativity.html)
+
+本文回顾了艾萨克·阿西莫夫1992年对人工智能（AI）的看法及其对人类的潜在影响。阿西莫夫将人工智能定义为能够执行以前仅限于人类智能的任务的技术，并以字母排序为例。他设想人工智能将人类从平凡而重复的工作中解放出来，使他们能够专注于创造力和复杂的思考，这是计算机无法复制的。
+
+阿西莫夫认为，人类和人工智能可以互补，共同推动快速发展。他承认技术进步可能带来的困难，但强调了积极应对这些困难的重要性。本文将此比作汽车的出现，认为关键在于预测并规划人工智能融入社会，而不是事后做出反应。
+
+然而，作者将阿西莫夫的乐观观点与对保护人工智能时代之前社会各个方面的担忧进行了对比，并将其比作为行人设计的城市与以汽车为中心的城市规划。本文最终提出了一种平衡的必要性，即谨慎地欢迎人工智能的进步，同时保护以人为本的价值观和生活方式。
+
+---
+
+## 70. GCC 15 的可用性改进
+
+**原文标题**: Usability Improvements in GCC 15
+
+**原文链接**: [https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15](https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15)
+
+我能访问外部网站，所以会为您总结这篇文章。
+
+以下是对“GCC 15可用性改进”一文的简要总结：
+
+该文章重点介绍了 GCC 15 中引入的六项可用性改进，旨在使编译器对开发者更友好、更有帮助。
+
+1.  **改进了对缺失包含文件的诊断：** GCC 15 增强了与缺失头文件相关的错误消息，基于正在使用的符号提供关于可能需要的文件的更具体建议。这使得开发者更容易识别和解决缺失的包含依赖项。
+
+2.  **更好地检测未使用的变量：** 编译器现在能更准确地识别未使用的变量，帮助开发者清理代码并减少潜在错误。
+
+3.  **类型不匹配时提供更翔实的错误消息：** 与类型不匹配相关的错误消息现在更具描述性，并包含有关涉及类型的信息，从而更容易调试与类型相关的问题。
+
+4.  **改进了对拼写错误的标识符的建议：** GCC 15 包含了对拼写错误的标识符的更好建议，引导开发者找到变量、函数和其他实体的正确名称，从而防止拼写错误和未声明的标识符错误。
+
+5.  **增强了对可能未初始化的变量的警告：** 编译器具有更好的检测和警告功能，可用于检测可能未初始化的变量，从而有助于防止未定义的行为。
+
+6. **更好地诊断 constexpr 违规：** GCC 15 为 `constexpr` 要求的违规提供了更具体和有用的错误消息。 这有助于开发人员编写有效的编译时代码。
+
+总而言之，GCC 15 侧重于为开发者提供更有帮助和信息更丰富的错误消息和警告，从而显著改善调试和代码维护体验。 这些改进有助于在开发过程的早期阶段识别问题，从而产生更清晰、更健壮的代码。
+
+---
+
+## 71. 猪肾移植最长人体移植在4个月后突然停止工作
+
+**原文标题**: Longest human transplant of pig kidney suddenly stops working after 4 months
+
+**原文链接**: [https://www.science.org/content/article/longest-human-transplant-pig-kidney-fails](https://www.science.org/content/article/longest-human-transplant-pig-kidney-fails)
+
+摘要：
+
+历时最长的一次转基因猪肾移植人体手术在近四个月后突然失败。接受者理查德·斯莱曼患有终末期肾病，于2024年3月在马萨诸塞州总医院接受了实验性肾脏移植。移植初期效果良好，使斯莱曼摆脱了透析，并为异种移植带来了希望。
+
+肾脏衰竭的确切原因仍在调查中，但医生已经排除了排斥反应。该团队强调，没有迹象表明衰竭是由于对猪肾的基因改造或活跃的排斥过程造成的。虽然原因尚不清楚，但可能与异种器官本身无关的因素导致了衰竭。医院发表声明称，斯莱曼在移植后去世，但澄清说没有迹象表明死亡是移植造成的。
+
+尽管遭遇挫折，医生们仍然对异种移植的未来持乐观态度，并表示这四个月的功能期为该过程和潜在挑战提供了宝贵的见解。该团队的目标是了解失败的原因，以便改进未来的异种移植手术，并将猪肾移植纳入医疗主流，从而有可能缓解人类器官的严重短缺。这项研究的数据将为未来的异种移植试验提供信息。
+
+---
+
+## 72. Vim在大型语言模型时代更有用武之地
+
+**原文标题**: Vim is more useful in the age of LLMs
+
+**原文链接**: [https://ja3k.com/blog/vimllm](https://ja3k.com/blog/vimllm)
+
+Ja3k认为，在大型语言模型时代，Vim变得*更加*有用，而非用处变小。作者驳斥了最初认为LLM编写代码会降低Vim相关性的想法，并声称实际编写代码的行为只是开发过程的一小部分。相反，诸如代码库探索、调试和文本操作（例如复制粘贴文本）等任务变得更加重要，而这些正是Vim所擅长的领域。
+
+文章强调，LLM使学习Vim变得更容易。它们可以提供针对个人需求的特定命令和脚本，例如计算跨缓冲区的打开行数。而VSCode的解决方案会复杂得多。
+
+文章展示了两个定制的Vim脚本作为例子：一个将GitHub链接复制到剪贴板，另一个复制markdown代码块，两者都是在LLM的帮助下生成的。这些为作者的工作流程量身定制的脚本，展示了将LLM与Vim的可定制性相结合的力量。
+
+作者认为，更广泛的意义在于定制软件的可访问性正在提高。向易于定制的软件的转变，使得Vim这类具有插件架构和灵活性的工具更有价值。他预计未来会出现许多根据个人需求定制的软件解决方案，这得益于Vim和AI的协同作用。
+
+---
+
+## 73. Smartfunc: 将文档字符串转换为LLM函数
+
+**原文标题**: Smartfunc: Turn Docstrings into LLM-Functions
+
+**原文链接**: [https://github.com/koaning/smartfunc](https://github.com/koaning/smartfunc)
+
+Smartfunc是一个Python库，它简化了将文档字符串转换为由大型语言模型（LLM）驱动的函数的过程。它构建于`llm`库之上，使用户能够轻松地将来自各种提供商的LLM集成到他们的代码中，而无需编写大量样板代码。
+
+其核心思想是将函数的文档字符串用作Jinja2模板，在运行时注入变量，从而为LLM创建提示。`backend`装饰器指定要使用的LLM提供商。该库支持具有异步功能的各种后端，并使用Pydantic模型进行模式定义，以获得结构化响应。
+
+Smartfunc提倡简单性和快速原型设计。它允许可重用的后端定义（包括系统提示），并通过内部函数进行灵活的提示工程，以增强文档字符串的提示效果。
+
+主要功能包括：
+
+*   **模式支持：** 使用Pydantic模型定义响应结构，以实现类型安全。
+*   **异步支持：** 利用异步函数进行微批处理并利用异步后端。
+*   **内部函数提示工程：** 通过将装饰函数的返回值附加到文档字符串，实现更复杂的提示逻辑。
+*   **调试模式：** 检查生成的提示和LLM响应以进行调试。
+*   **供应商无关：** 通过更改后端轻松切换LLM提供商。
+
+Smartfunc旨在提供一种专注且易于使用的方法来集成LLM，强调简单性和灵活性，而无需其他类似库的复杂性。
+
+---
+
+## 74. 《黑镜》的悲观色情不会引领我们走向更美好的未来
+
+**原文标题**: Black Mirror's pessimism porn won't lead us to a better future
+
+**原文链接**: [https://www.theguardian.com/technology/2025/apr/10/black-mirror-tv-show-pessimism](https://www.theguardian.com/technology/2025/apr/10/black-mirror-tv-show-pessimism)
+
+路易斯·安斯洛认为，《黑镜》对技术的反乌托邦式描绘虽然广受欢迎且制作精良，但最终是有害的，因为它助长了对技术的恐慌情绪，阻碍了进步。他认为该剧呈现了一种“悲观色情”，强化了对未来的焦虑，阻碍了对技术潜在益处及其风险的平衡探索。
+
+安斯洛批评这种缺乏想象力且过于简化的反乌托邦主义，认为它阻碍了人们为建设更美好的未来所做的努力。他列举了一些对技术的恐惧导致负面后果的例子，例如对转基因生物、核能和电子烟的恐惧，导致了饥荒、对化石燃料的依赖和持续吸烟。他称之为“弗兰肯斯坦谬论”，即推测性的未来风险被置于业已存在的过往危险之上。
+
+他强调，COVID-19疫情是一个转折点，技术的缺失成为真正的威胁，削弱了反乌托邦叙事的吸引力。他主张一种新的进步主义，拥抱建设和实用主义，寻找新的寓言来突出技术解决问题和改善生活的潜力，即使“氛围有点《黑镜》”。这包括承认脑芯片、机器狗、人工智能和虚拟现实等技术益处的故事。他提倡充满希望的解决问题之道，而不是二元化的灾难故事。
+
+---
+
+## 75. 猎杀红色十月 1990 (2016)
+
+**原文标题**: Hunt for Red October 1990 (2016)
+
+**原文链接**: [http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html](http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html)
+
+1990年电影《猎杀红色十月》的视觉特效：微缩模型打造水下场景
+
+这篇博文详细介绍了1990年电影《猎杀红色十月》背后的视觉特效，特别关注用于创建水下场景的微缩模型。最初，博斯电影公司在格雷格·金的监督下开始了特效制作，建造了微缩潜艇。然而，由于对试拍效果存在分歧，该项目转移到了工业光魔（ILM），时间非常紧迫，只有三个月。
+
+ILM选择在烟雾弥漫的环境中用运动控制技术拍摄微缩模型，以尽量减少光学合成。模型阵容包括各种尺寸的“红色十月”号潜艇（包括21英尺、11英尺和4英尺的模型）、一艘“克洛诺洛夫”号潜艇、“达拉斯”号潜艇、一艘救援潜水器和鱼雷。“红色十月”号的大型模型安装在一个塔架上，而其他模型则使用钢丝索具系统悬挂，以便进行受控移动。
+
+为了模拟深海环境，剧组采用了多种技术，例如用可调光灯照亮背景中的烟雾幕，并在镜头上使用超霜滤镜。一个爆裂系统使用雾化的矿物油来产生烟雾。还建造了微型石笋来代表水下海沟。
+
+文章指出，微缩模型有效地模拟了水下环境，尽管一些合成效果，特别是涉及对抗措施和鱼雷轨迹的合成效果，不太令人信服。文章还提到了一架在真实天空背景下拍摄的微型俄罗斯熊式轰炸机。一些读者分享了有关这些模型在制作后的下落轶事。
+
+---
+
+## 76. NetStruct：可视化和管理网络拓扑的开源工具
+
+**原文标题**: NetStruct – Open-Source Tool to Visualize and Manage Your Network Topology
+
+**原文链接**: [https://itfourall.com/netstruct.php](https://itfourall.com/netstruct.php)
+
+NetStruct是一款开源工具，旨在可视化、规划和管理网络拓扑。它帮助IT专业人员克服诸如未记录连接和缺乏网络可见性等挑战，这些挑战可能导致性能和安全问题。
+
+该工具提供具有拖放功能的交互式设备映射，允许用户为不同的网络环境创建多个页面。主要功能包括：用于组织的多页面网络布局、具有可定制图标和实时状态的交互式网络映射、具有自定义类别和用于自动操作的API触发器的灵活告警管理，以及通过ICMP ping或其他方法实现的实时状态更新。
+
+NetStruct使用基于浏览器的界面，并将设备信息保存在CSV数据库中。它支持设备之间具有可视线的动态连接。它迎合了网络工程师、数据中心运营商、安全分析师以及企业/MSP的需求。
+
+该工具兼容各种Linux发行版，包括Debian、Ubuntu和Raspberry Pi OS。它可以手动安装，也可以使用方便的自动安装脚本安装。还提供Docker容器以便于部署。推荐的操作系统是适用于PC和Mac的Raspberry Pi桌面。安装完成后，可以使用设备的IP地址通过浏览器访问Web界面。
+
+---
+
+## 77. ELD：面向嵌入式系统的新型开源嵌入式链接器工具
+
+**原文标题**: ELD: A new open-source embedded linker tool for embedded systems
+
+**原文链接**: [https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems](https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems)
+
+本文介绍了ELD，一种专为嵌入式系统设计的新型开源嵌入式链接器工具。标题和有限的内容表明这主要是关于该工具可用性的基本公告。关键要点包括：
+
+*   **ELD是一个链接器：** 它的功能是一个链接器，是嵌入式系统构建过程的关键部分。
+*   **专注于嵌入式系统：** ELD专为嵌入式环境的独特需求和约束而定制。
+*   **开源：** 该工具是开源的，意味着可以免费访问、修改和分发。
+*   **新颖性：** 这是一个*新的*工具，暗示着它是现有嵌入式链接器的潜在替代方案。
+
+在提供的片段中没有更多细节，因此无法进行更深入的总结。主要信息是介绍和提供一个新的开源链接器选项，供从事嵌入式系统开发的开发人员使用。
+
+---
+
+## 78. 研究人员发现塑料释放危险碎片的根本原因
+
+**原文标题**: Researchers discover why plastic sheds dangerous fragments
+
+**原文链接**: [https://www.sciencedaily.com/releases/2025/04/250407172923.htm](https://www.sciencedaily.com/releases/2025/04/250407172923.htm)
+
+无法访问文章链接。
+
+---
+
+## 79. 我们从零开始设计了TigerBeetle的文档
+
+**原文标题**: We Designed TigerBeetle's Docs from Scratch
+
+**原文链接**: [https://tigerbeetle.com/blog/2025-02-27-why-we-designed-tigerbeetles-docs-from-scratch/](https://tigerbeetle.com/blog/2025-02-27-why-we-designed-tigerbeetles-docs-from-scratch/)
+
+TigerBeetle 从零开始重建了其文档站点，以符合其“TigerStyle”和第一性原理方法，优先考虑用户体验并尽量减少依赖项。 最初用于原型设计的 Docusaurus 因其 NodeJS 依赖项、复杂性、Markdown 文件中不需要的代码添加以及不理想的搜索而被替换。 TigerBeetle 旨在提供简洁、清晰且快速的阅读体验，无论是外部用户还是内部代码可维护性。
+
+他们设计了一个极简主义的网站，可以自动调整系统设置以适应深色/浅色模式，并允许用户隐藏或调整导航面板以获得最佳专注度。 由于 Markdown 不兼容，他们没有采用现有的基于 Zig 的静态站点生成器 (SSG)（如 Zine），而是选择了利用 Pandoc 进行 Markdown 解析和 HTML 转换的自定义解决方案。
+
+他们方法的核心是与 Zig 的构建系统集成，将整个静态站点生成视为构建任务。 他们利用 Zig 的内置包管理器将 Pandoc 作为静态构建的可执行文件引入，通过验证其哈希值来确保可重现性和安全性。 构建系统并行化 Markdown 到 HTML 的转换，从而实现增量更新。 该文章提供了一个简化的 `build.zig` 原型，演示了如何在 Zig 构建过程中管理像 Pandoc 这样的外部依赖项，并强调使用内容哈希进行依赖项规范，以确保安全性和可重现性。
+
+---
+
+## 80. 在Go中使用Mock进行单元测试
+
+**原文标题**: Unit testing using mocks in Go
+
+**原文链接**: [https://golangbot.com/unit-testing-using-mock-go/](https://golangbot.com/unit-testing-using-mock-go/)
+
+本文提供了一份实用的指南，指导如何对与AWS S3交互的Go代码进行单元测试，重点关注创建本地测试环境不切实际或模拟错误情况困难的场景。文章强调了在这种情况下使用模拟（mocks）的必要性。
+
+本文演示了如何对负责创建S3存储桶的函数（`createS3Bucket`）进行单元测试。它解释了Go不允许直接模拟结构体，因此使用接口代替。该过程包括：
+
+1.  **确定所需方法：** 确定待测函数中使用了`s3.Client`结构体的哪些方法（例如，`CreateBucket`、`HeadBucket`）。
+2.  **创建接口：** 定义一个接口（`s3Client`），封装这些方法。
+3.  **重构函数：** 修改函数，使其接受新创建的接口作为参数，而不是具体的`s3.Client`结构体。
+4.  **创建模拟类型：** 使用一个模拟结构体（`mockS3Client`）实现该接口，模拟不同的场景（例如，成功创建存储桶、创建失败）。模拟类型包括字段，例如 'createBucketError'，用于控制返回值。
+5.  **编写测试用例：** 使用模拟类型创建各种测试用例，将模拟对象注入到待测函数中。
+
+本文展示了如何使用模拟的`s3Client`测试存储桶创建成功和失败的情况。最后一部分将测试用例重构为更易于维护的表格驱动格式，从而提高可读性并方便添加新的测试场景。它还指出，可以使用模拟进一步验证存储桶名称和区域。最后，它提到可以使用`mockery`等库来自动生成模拟。
+
+---
+
+## 81. 容器 CPU 请求和限制详解及 GOMAXPROCS 调优
+
+**原文标题**: Container CPU requests and limits explained with GOMAXPROCS tuning
+
+**原文链接**: [https://victoriametrics.com/blog/kubernetes-cpu-go-gomaxprocs/index.html](https://victoriametrics.com/blog/kubernetes-cpu-go-gomaxprocs/index.html)
+
+容器 CPU 请求和限制与 GOMAXPROCS 调优详解
+
+---
+
+## 82. PEP 750 – 模板字符串
+
+**原文标题**: PEP 750 – Template Strings
+
+**原文链接**: [https://peps.python.org/pep-0750/](https://peps.python.org/pep-0750/)
+
+PEP 750 在 Python 3.14 中引入了“模板字符串”（t-strings），是对 f-strings 的一种泛化，提供了对字符串处理的更多控制。使用 `t` 前缀（例如，`t"Hello {name}"`），这些字符串会求值为一个新的 `Template` 类型，从而可以在组合*之前*访问原始字符串和插值。
+
+`Template` 类（在 `string.templatelib` 中）保存字符串部分 (`strings`) 和插值表达式 (`interpolations`)。每个插值都由一个 `Interpolation` 对象表示，其中包含已求值的 `value`、原始 `expression`、可选的 `conversion`（如 `!r`、`!s`、`!a`）和 `format_spec`。
+
+与 f-strings 不同，t-strings 不会立即组合这些部分。相反，它们为自定义处理提供组件，从而实现诸如 HTML 清理或结构化日志记录之类的任务。`Template.values` 属性提供了对插值的便捷访问。`Template` 类是可迭代的，产生字符串部分和 `Interpolation` 对象。
+
+模板字符串支持使用 `+` 与其他 Template 实例或字符串进行连接。相等性基于对象标识 (`is`)。调试说明符 `=` 受到支持，其行为类似于 f-strings。原始模板字符串也受到支持。该 PEP 还提供了高级用例的示例，例如使用 t-strings 实现 f-strings、结构化日志记录和 HTML 模板。
+
+---
+
+## 83. 梅西耶天体马拉松
+
+**原文标题**: Messier Marathon
+
+**原文链接**: [https://en.wikipedia.org/wiki/Messier_marathon](https://en.wikipedia.org/wiki/Messier_marathon)
+
+梅西耶天体马拉松是业余天文学家尝试在一个晚上观测尽可能多的110个梅西耶天体（由查尔斯·梅西耶编目的星系、星云和星团）的活动。成功与否取决于地点、一年中的时间和观测者的技能。
+
+理想地点是较低的北纬地区（约北纬25°），但任何北纬地区都可以尝试马拉松。南半球观测者由于一些天体的赤纬偏北而面临挑战。最佳时间是三月/四月新月前后几周，此时所有天体都有可能可见。在其他时间，尤其是在秋分前后，也可能进行不完整的马拉松。
+
+马拉松从日落时分从西方低空的天体开始，向东推进，并在日出时分从东方天体结束。这需要毅力、意志力和战略规划来导航像室女座星系团这样拥挤的区域。
+
+梅西耶天体马拉松由Tom Hoffelder、Donald Machholz和Tom Reiland在1970年代独立发明。它们通常由当地天文俱乐部组织为星空派对，有时会提供参与或成就证书。
+
+---
+
+## 84. 繁忙酒吧
+
+**原文标题**: Busy Bar
+
+**原文链接**: [https://busy.bar](https://busy.bar)
+
+BUSY Bar：提升专注力的多功能生产力工具，配备 LED 像素显示屏，旨在增强专注力并减少干扰。它集成了专注计时器和干扰拦截器，兼容手机和电脑。它完全可定制、开源，并可用于智能家居集成。
+
+该设备可以通过 Matter 协议连接到 Google Home 和 Apple Home，提供无缝的智能家居支持。它还拥有开发者友好的功能，包括开放的 HTTP API、开源 SDK 以及适用于 Python、Go 和 JavaScript 的库。
+
+功能包括一个应用程序库，可连接到第三方软件并集成日历事件和通话。用户可以创建自定义的 BUSY 消息、使用专注计时器并在平台之间同步。它具有通知拦截器、与第三方应用程序集成以及可自定义的 BUSY 自动化等功能。
+
+BUSY Bar 的核心功能包括番茄工作法计时器和干扰拦截器，提供深度专注的工作流程。它允许基于麦克风、摄像头或应用程序使用情况自动激活，并提供通过 Wi-Fi 进行的远程控制。物理按钮可实现手动控制，单色背屏即使在主屏幕朝向别处时也能显示状态。
+
+该设备在专注模式下会阻止 Instagram 和 TikTok 等分散注意力的应用程序，并且可以使用 BUSY 应用程序在设备（手机、PC、智能手表）上静音通知。对于智能家居集成，它支持 Matter 协议和 Home Assistant，从而实现自动化触发器和消息显示。
+
+它配备了开放的 API 和库，可集成到各种项目中，并提供多种网络连接选项，如 USB、LAN 和云。技术规格包括 72x16 RGB LED 矩阵显示屏、单色 OLED 背显示屏、3250 mAh 电池以及各种安装选项。
+
+---
+
+## 85. 每次看都不同的电影
+
+**原文标题**: The movie that's different every time you watch it
+
+**原文链接**: [https://movieweb.com/eno-documentary-movie-different-every-time/](https://movieweb.com/eno-documentary-movie-different-every-time/)
+
+加里·哈斯特维特的纪录片《伊诺》（2024）是生成式电影制作领域的一项突破性实验，反映了其主题人物——音乐家布莱恩·伊诺的创新精神。与传统电影不同，《伊诺》使用生成软件“Brain One”随机选择伊诺超过30小时的采访和500小时的档案片段。这使得每次放映都呈现出独特的观看体验，理论上提供了5200万亿种可能的排列组合，使得重复观看实际上变成了不同的电影。
+
+哈斯特维特和数字艺术家布伦丹·道斯创造了“Brain One”（布莱恩·伊诺的字母重排），以实现这种随机性，拒绝了衍生于现有作品的生成式人工智能，转而使用基于原始材料的定制系统。评论家们注意到不同放映版本之间存在显著差异，不同的观看体验会强调伊诺职业生涯和创作过程的不同方面。
+
+哈斯特维特认为生成式电影制作是一种自然进化，为影院寻求吸引观众提供了无限的可能性和独特的吸引力。他和道斯共同创立了Anamorph，以探索生成式技术在各种电影类型中的潜力。该项目得到了伊诺本人的认可，是对他具有影响力的职业生涯的恰当致敬，并推动了电影表达的边界。虽然尚未在流媒体上提供，《伊诺》正在部分影院上映，放映信息可在加里·哈斯特维特的网站上找到。
+
+---
+
+## 86. Rails 的设计系统选项
+
+**原文标题**: Design System Options for Rails
+
+**原文链接**: [https://businessclasskit.com/blog/design-system-options-for-rails](https://businessclasskit.com/blog/design-system-options-for-rails)
+
+本文探讨了 2025 年 Rails 应用程序的设计系统选项，并指出寻找合适的、预构建的解决方案面临的挑战。作者回顾了从零开始构建设计系统的经验，考虑为其“商务舱”项目采用现有的设计系统。
+
+本文回顾了几种组件系统：
+
+*   **shadcn/ui:** 一个基于 React 的系统，需要像“shadcn/ui on Rails”这样的 Rails 实现（它不是一个完整的移植，但提供了一种 Railsy 的方法，包含 partials、Stimulus controllers 和 helpers）。
+*   **daisyUI:** 一个使用简短类名的 Tailwind CSS 组件库，提供预构建的主题，但缺乏 JavaScript 功能。
+*   **Flowbite:** 一个 Tailwind CSS UI 库，官方支持带有通用 JavaScript（非 React 特定的）的 Rails，但它只是部分开源的。
+*   **Preline:** 另一个基于 Tailwind CSS 构建的 Freemium UI 库，具有自己独立于框架的 JavaScript。
+*   **RubyUI:** 一个专门为 Ruby 构建的系统，利用 Tailwind CSS 并为 Phlex（一种替代的 Ruby 视图层）而设计。这提供了纯 Ruby 组件，可能需要从 ERB 转移。
+
+结论强调，虽然选项有所改进，但没有一个完美的选择。无论采用预制的 UI 还是创建自定义的“商务舱”主题，坚持使用 Tailwind CSS 似乎都是一个坚实的基础。
+
+---
+
+## 87. Apache ECharts
 
 **原文标题**: Apache ECharts
 
 **原文链接**: [https://echarts.apache.org/en/index.html](https://echarts.apache.org/en/index.html)
 
-Apache ECharts是一个声明式的框架，旨在快速创建基于Web的可视化图表。 请在研究、开发、产品、报告、新闻、书籍、演示文稿、教学和专利等各种项目中使用ECharts时，引用“Visual Informatics, 2018”论文。 本文主要介绍了ECharts，并要求在使用该库时进行适当的署名。它强调了该框架的目的：简化Web环境中的可视化图表创建。
+ECharts 是一个声明式的框架，旨在快速创建基于 Web 的可视化效果。 其核心功能在于能够快速构建和部署交互式的图表，并直接嵌入 Web 应用程序中。 本文档强调 ECharts 是一款有价值的工具，鼓励用户在各种项目和出版物中引用。 文档特别提到了发表在 Visual Informatics (2018) 上的一篇论文，并提供了 PDF 的直接链接，表明该论文包含有关 ECharts 的更详细信息。 简而言之，本文是对 ECharts 的介绍，并呼吁用户通过引用来承认该工具的贡献。
 
 ---
 
-## 71. 搜索嵌套
+## 88. 你的睡眠追踪器对睡眠的误解
 
-**原文标题**: Searchception
+**原文标题**: What Your Sleep Tracker Gets Wrong About Sleep
 
-**原文链接**: [https://blog.mojeek.com/2025/04/searchception.html](https://blog.mojeek.com/2025/04/searchception.html)
+**原文链接**: [https://www.affectablesleep.com/blog/what-your-sleep-tracker-gets-wrong-about-sleep](https://www.affectablesleep.com/blog/what-your-sleep-tracker-gets-wrong-about-sleep)
 
-文章《搜索欺骗》认为，浏览器和搜索引擎的融合，以谷歌Chrome浏览器的多功能地址栏为代表，巧妙地操控用户依赖搜索引擎进行导航，即使他们知道确切的网站地址。这种被称为“搜索欺骗”的做法，通过增加广告收入和数据收集，同时削弱用户自主性，使大型科技公司受益。
+这篇来自Affectable Sleep的文章批判了过度依赖睡眠追踪器来了解睡眠质量的局限性。文章认为，追踪器更重视一致性和符合平均值（如8小时睡眠），而非睡眠期间获得的实际恢复益处。追踪器可能会奖励刻板的作息时间，并惩罚那些用更少时间获得深度、恢复性睡眠的人。
 
-作者详细描述了几种促成“搜索欺骗”的机制，包括：多功能地址栏将URL和搜索查询同等对待，预测搜索优先显示搜索词，默认搜索引擎锁定，搜索的深度操作系统集成，偏好搜索建议的移动设计，以及视觉模仿模糊了搜索结果和目标内容之间的界限。
+作者强调，追踪器对睡眠模式背后的“原因”视而不见。它们计算不同睡眠阶段所花费的时间，但未能评估这些阶段期间发生的恢复性功能。引用的研究表明，即使不减少总睡眠时间，限制深度睡眠也会对大脑健康产生负面影响。
 
-这种趋势的后果包括用户忘记URL、假设第一个搜索结果总是最好的、越来越依赖过滤和广告驱动的内容，以及通过提供更多数据而成为产品。
+此外，文章指出，追踪器会造成不必要的自我怀疑。用户可能会根据追踪器的评估来质疑自己感知到的疲劳或健康状况，从而忽略自身身体的信号。对前一晚数据的关注，而不是实时优化，也被批评为无益。
 
-文章建议通过以下方式摆脱“搜索欺骗”：使用带有独立URL和搜索栏的浏览器，有意识地使用地址栏进行直接导航，向他人普及这种现象，以及使用“!Bangs”或搜索选择扩展程序。作者总结说，理解“搜索欺骗”可以让用户重新获得控制权，并按照自己的意愿探索开放的网络。
-
----
-
-## 72. Show HN: 我用 Mermaidjs 做了一个生成故事关系的应用
-
-**原文标题**: Show HN: I built an app to generate story relationships using Mermaidjs
-
-**原文链接**: [https://github.com/herol3oy/austen](https://github.com/herol3oy/austen)
-
-Austen 是一个由 AI 驱动的 Web 应用程序，使用 Angular (基于 Analogjs) 构建，可利用 Mermaidjs 从书籍中生成人物关系图。用户可以通过 Open Library API 搜索书籍，Austen 则利用 AI (DeepSeek 和 OpenAI) 分析人物及其关系，自动生成 Mermaid 图表以可视化这些连接。
-
-主要功能包括保存、下载 (SVG 或 PNG 格式) 和管理生成的图表，以及公开分享或私密保存的选项。用户还可以发现其他人公开分享的图表。
-
-该应用程序使用包括 Angular、Analog、TypeScript、Supabase、Cloudflare Pages、Angular Material 和 Mermaid 在内的技术栈构建。Supabase 用于数据存储 (图表、用户数据) 和身份验证。提供的说明详细介绍了如何克隆存储库、安装依赖项、设置包含 API 密钥的环境变量、配置 Supabase，以及运行开发服务器或构建生产版本。
-
-计划的未来改进包括实现图表的点赞/取消点赞功能，以及发现页面的“加载更多”功能。应用程序的 UI 包括用于生成图表的首页、“我的图表”页面，以及用于浏览公共图表的“发现”页面。
+Affectable Sleep提出了一种不同的方法：实时增强睡眠的效率和恢复能力，而不仅仅是跟踪统计数据。他们的目标是改善睡眠的重要功能，无论是否坚持严格的作息时间或平均值，最终实现更好的健康、福祉和长寿。他们鼓励读者加入他们的等候名单，以了解一种新的方法，该方法优先考虑睡眠质量和实际增强，而不是简单地追逐“金星”。
 
 ---
 
-## 73. 你认为在亚洲生产一双耐克鞋的成本是多少？
+## 89. 睡眠至关重要——研究人员正试图弄清原因
 
-**原文标题**: How much do you think it costs to make a pair of Nike shoes in Asia?
+**原文标题**: Sleep is essential – researchers are trying to work out why
 
-**原文链接**: [https://twitter.com/dieworkwear/status/1909741170953273353](https://twitter.com/dieworkwear/status/1909741170953273353)
+**原文链接**: [https://www.nature.com/articles/d41586-025-00964-w](https://www.nature.com/articles/d41586-025-00964-w)
 
-提供的文本并非关于在亚洲生产耐克鞋成本的文章，而是来自 X (原 Twitter) 的一段代码片段，表明 JavaScript 已禁用，平台无法正常运行。它提供了帮助中心、服务条款、隐私政策、Cookie 政策、版本说明和广告信息的链接，并声明 X Corp 拥有内容版权，版权年份为 2025 年。
-
-因此，所提供的文本中没有关于在亚洲生产耐克鞋成本的信息可供总结。这仅仅是一个网站功能无法正常工作的通知。
+睡眠的重要性及其生物学功能研究
 
 ---
 
-## 74. 骰子与队列
+## 90. 揭露 SuperNote Nomad E-Ink 平板电脑中的零点击 RCE 漏洞
 
-**原文标题**: Dice and Queues
+**原文标题**: Uncovering a 0-Click RCE in the SuperNote Nomad E-Ink Tablet
 
-**原文链接**: [https://justincartwright.com/2025/02/25/dice-and-queues.html](https://justincartwright.com/2025/02/25/dice-and-queues.html)
+**原文链接**: [https://www.prizmlabs.io/post/remote-rootkits-uncovering-a-0-click-rce-in-the-supernote-nomad-e-ink-tablet](https://www.prizmlabs.io/post/remote-rootkits-uncovering-a-0-click-rce-in-the-supernote-nomad-e-ink-tablet)
 
-本文通过一个基于掷骰子的仿真来探讨排队论，旨在直观地理解队列如何在不同的到达率和离开率下运作。作者强调了利用率（ρ）的重要性，它表示服务器繁忙的时间百分比。虽然低利用率会导致小队列，但本文强调，当利用率接近 100% 时，队列大小会急剧增加，当到达率等于或超过服务率时，可能会达到无穷大。
+PRIZM Labs 在 SuperNote A6 X2 Nomad 电子墨水平板电脑中发现了一个零点击远程代码执行 (RCE) 漏洞 (CVE-2025-32409)。该漏洞允许同一网络上的攻击者在无需用户交互的情况下完全入侵该设备。
 
-该仿真模拟了一个 M/D/1 队列，其中到达遵循泊松分布（通过每分钟掷骰子 60 次来近似），并且服务率是确定的。作者演示了如何使用 Python 函数生成随机到达，并计算每分钟的队列大小变化。本文将仿真结果与 M/D/1 队列中平均队列大小的理论公式进行比较，观察到定性的一致性：平均队列大小随着利用率接近 100% 而急剧增加。
+该漏洞利用依赖于一个运行自定义 HTTP 服务器的开放端口 (60002)，该服务器处理文件上传。研究人员发现一个未经身份验证的文件共享服务存在路径遍历漏洞，允许文件被写入任意位置。
 
-文章测试了几个具有不同到达率和服务率的场景，说明了在不同利用率因子下队列的行为。当到达率超过服务率时，队列增长迅速。相反，当服务率较高时，队列会缩小并在零附近波动。作者还指出，即使在接近 100% 的利用率下，由于到达的内在变化，队列大小也会出现显着波动。结论强调了到达变化和队列长度的非负性对平均队列大小的影响。
+然而，一个文件名追加问题 ("(1)") 阻止了直接替换自动更新所需的 "update.zip" 固件文件。该团队通过竞争条件绕过了这个问题：先发送一个小的虚拟 "update.zip" 文件，然后再发送真实的、后门植入的 "update.zip" 文件。这确保了在虚拟文件完成操作后，正确命名的恶意更新文件被放置在 EXPORT 目录中。
 
----
+后门固件是使用公开可用的调试密钥创建的，用于签名固件镜像。恶意固件会在设备热插拔事件或重启期间自动安装，从而授予攻击者 root 访问权限。热插拔事件后，会显示一个提示，但它将在 30 秒后安装更新，除非用户单击中止。
 
-## 75. 俄罗斯悖论：教育程度如此之高，人力资本却如此之低
-
-**原文标题**: The Russian Paradox: So Much Education, So Little Human Capital
-
-**原文链接**: [https://theamericanenterprise.com/the-russian-paradox-so-much-education-so-little-human-capital/](https://theamericanenterprise.com/the-russian-paradox-so-much-education-so-little-human-capital/)
-
-尼古拉斯·埃伯斯塔特的文章《俄罗斯悖论：教育程度高，人力资本少》突显了俄罗斯高教育水平与其糟糕的健康状况和有限的知识生产之间存在的巨大脱节。
-
-尽管俄罗斯的平均受教育年限与发达的欧洲国家相当，但其预期寿命却低得惊人，与世界上一些最不发达的国家相当。这归因于心血管疾病和损伤造成的高死亡率，这违背了教育与健康之间的典型联系。
-
-此外，俄罗斯在知识生产方面表现不佳，以专利申请衡量。尽管拥有一支庞大且受过高等教育的劳动力队伍，但其专利产出明显低于其他发达国家，甚至一些发展中国家。同样，其服务部门出口（衡量人力资本贸易的标准）相对于其教育水平而言也很薄弱。
-
-埃伯斯塔特强调，社会科学家需要了解为什么俄罗斯对教育的大量投资在健康和知识生产方面产生的回报如此微薄。他还认为，这种悖论应为国际安全评估提供信息，告诫人们不要因为俄罗斯的高教育水平而高估其经济和战略潜力，因为其存在潜在的局限性。自入侵乌克兰以来，技术精湛的年轻人的“人才流失”进一步加剧了这个问题。理解这一悖论对于避免低估和高估俄罗斯在不断变化的全球格局中的能力至关重要。
+PRIZM Labs 已负责任地向 Ratta Software 披露了该漏洞，后者计划在未来的更新中解决该问题。PRIZM Labs 是一家安全公司，专门从事产品安全审查和定制工具开发，重点关注国防和航空航天领域。
 
 ---
 
-## 76. 中微子最大可能质量进一步缩小
+## 91. 椭圆Python编程
 
-**原文标题**: Neutrinos' maximum possible mass shrinks further
+**原文标题**: Elliptical Python Programming
 
-**原文链接**: [https://www.sciencenews.org/article/neutrino-mass-shrinks-katrin-electron](https://www.sciencenews.org/article/neutrino-mass-shrinks-katrin-electron)
+**原文链接**: [https://susam.net/elliptical-python-programming.html](https://susam.net/elliptical-python-programming.html)
 
-卡尔斯鲁厄氚中微子实验(KATRIN)最新结果进一步缩小了中微子的可能质量范围，表明它们比之前认为的还要微小。该实验确定中微子的质量小于0.45电子伏特，几乎是KATRIN之前上限的一半。
+Susam Pal的《椭圆Python编程》以幽默的方式探讨了Python的灵活性，展示了一种故意晦涩的编码风格。文章巧妙地介绍了一种使用`(...==...)`来表示整数1，并以此构建更大的数字和复杂表达式的Python代码编写方法。
 
-中微子是独特的，因为它们的质量，一种基本粒子属性，是未知的。 它们极其轻，不到电子质量的百万分之一，因此理解它们的质量是粒子物理学中的一个主要难题。
+作者讽刺地建议这种风格是编写代码的“显而易见的方式”，突出了它的不切实际。文章提供了一个冗长且难以理解的示例，该示例利用了这种椭圆方法，随后又提供了一个同样复杂的括号版本。然后，文章巧妙地批评了那些可能觉得这些方法有吸引力的程序员，并嘲笑那些将风格怪癖置于可读性之上的人。
 
-KATRIN位于德国，研究氚放射性衰变过程中产生的电子反中微子。通过观察这些衰变中发射的电子的能量（分析了3600万个电子），研究人员可以推断出中微子的质量，因为它限制了电子可以拥有的最大能量。
-
-KATRIN将继续收集数据到2025年底，并计划分析现有的、未分析的数据，以进一步约束中微子的可能质量。
-
-虽然宇宙学观测也对中微子的质量进行了限制，但这些估计依赖于对宇宙的假设。KATRIN的发现独立于这些假设，使其成为对中微子质量的直接测量。
+Pal明确建议不要在生产中使用这种编码风格，强调代码应该具有可读性和可维护性。核心信息是，虽然Python功能多样，但在专业软件开发中，优先考虑清晰度和约定至关重要。文章最后提醒了在生产环境中进行日志记录的重要性，并以轻松的方式结束。本质上，这篇文章是对编码极端情况的讽刺性探索，是对Python开发人员的幽默警示。
 
 ---
 
-## 77. 大学生如何使用Claude
+## 92. 木星王牌的奇案
 
-**原文标题**: How University Students Use Claude
+**原文标题**: The Curious Case of Jupiter Ace
 
-**原文链接**: [https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude](https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude)
+**原文链接**: [https://nemanjatrifunovic.substack.com/p/the-curious-case-of-jupiter-ace](https://nemanjatrifunovic.substack.com/p/the-curious-case-of-jupiter-ace)
 
-我能够访问互联网，并可以总结来自提供的URL的文章。
+好的，我已经阅读了来自所提供URL的文章“朱庇特Ace的奇异案例”。以下是摘要：
 
-**“大学生如何使用Claude”摘要:**
+这篇文章探讨了朱庇特Ace，这是一款由Jupiter Quantronics公司于1982年发布的家用电脑，该公司由前Sinclair Research员工Richard Altwasser和Steven Vickers创立。朱庇特Ace的显著特点是它使用基于堆栈的编程语言FORTH作为其主要语言，而不是更常见的BASIC。
 
-Anthropic报告详细介绍了大学生如何使用Claude人工智能助手。研究表明，学生主要使用Claude来**辅助学习过程，而不是直接作弊**。常见的用例包括**总结研究论文、为作业集思广益、改进写作以及理解复杂的概念**。学生们欣赏Claude**以不同的风格和详细程度提供解释**的能力，使他们能够更有效地掌握具有挑战性的材料。
+这篇文章强调了Ace背后的设计理念：以低成本提供强大的编程环境。虽然它实现了比竞争对手更低的价格，但也带来了一些妥协。Ace的硬件设计非常简约，缺少专用的声卡，并配备了一个需要记忆FORTH关键字的有限键盘。这使得该机器对游戏玩家的吸引力降低，而游戏玩家是当时家用电脑的关键市场。
 
-该报告强调了学生对人工智能伦理使用的细致理解。尽管他们认识到滥用的可能性，但他们主要将Claude视为一种**增强学习和生产力的工具**，而不是取代他们自己的努力。许多学生积极尝试通过释义Claude的输出并正确引用其辅助来**避免抄袭**。
+尽管朱庇特Ace具有技术优点和FORTH的强大功能，但它在商业上失败了。文章将这一失败归因于几个因素，包括其缺乏吸引力的工业设计，FORTH陡峭的学习曲线，以及缺乏现成的软件和游戏。虽然FORTH允许有经验的程序员取得显著成果，但对于普通用户来说，入门门槛太高。
 
-该研究还探讨了担忧和局限性。学生偶尔会遇到来自Claude的**不准确或有偏见的信息**，这突显了批判性思维和事实核查的必要性。该报告表明，将**人工智能素养纳入教育课程**非常重要，从而教导学生如何负责任和有效地使用这些工具。
-
-总而言之，该报告描绘了一幅大学生谨慎地将Claude视为有价值的学习伙伴的图景，重点是补充他们的学习并加深对课程材料的理解。它呼吁继续研究和教育，以指导人工智能在高等教育中的伦理和有效整合。
+最终，朱庇特Ace被视为计算机设计领域一个引人入胜的实验。它是一次大胆的尝试，旨在以预算价格提供强大的编程环境，但其非常规的方法最终疏远了主流市场，导致其商业失败。这篇文章将其视为一个警示故事，告诫人们在设计计算机时，即使是具有技术优势的计算机，也必须考虑用户体验和市场需求的重要性。
 
 ---
 
-## 78. FDA裁员辞职威胁基本运营，撤回远程办公政策
+## 93. 无 JavaScript 指纹识别
 
-**原文标题**: FDA reverses on telework after layoffs and resignations threaten basic operation
+**原文标题**: No-JavaScript Fingerprinting
 
-**原文链接**: [https://federalnewsnetwork.com/workforce/2025/04/fda-reverses-course-on-telework-after-layoffs-and-resignations-threaten-basic-operations/](https://federalnewsnetwork.com/workforce/2025/04/fda-reverses-course-on-telework-after-layoffs-and-resignations-threaten-basic-operations/)
+**原文链接**: [https://noscriptfingerprint.com/](https://noscriptfingerprint.com/)
 
-FDA因裁员和辞职导致劳动力锐减，威胁机构基本运作而推翻远程办公政策。
+本文解释并演示了“无JavaScript指纹识别”技术，这是一种不依赖于cookie或JavaScript的浏览器识别方法。它利用浏览器属性（如语言和已安装字体）来创建唯一的指纹。核心在于，即使在隐身模式下，此指纹仍然保持一致，从而可以在不使用传统方法的情况下跟踪浏览器。
 
----
-
-## 79. 从零开始构建Y组合子
-
-**原文标题**: Baking the Y Combinator from Scratch
-
-**原文链接**: [https://the-nerve-blog.ghost.io/baking-the-y-combinator-from-scratch-part-1/](https://the-nerve-blog.ghost.io/baking-the-y-combinator-from-scratch-part-1/)
-
-从零开始构建 Y 组合子
-        
-本文“从零开始构建 Y 组合子”旨在全面解释 Y 组合子，详细介绍其目的、机制和历史背景。它探讨了 Y 组合子是什么、为什么它看起来是这样、它的用途是什么，以及为什么它仍然具有相关性等问题。
-
-Y 组合子是一种数学结构，用于在缺乏显式自引用的函数式语言中实现递归。文章认为，理解 Y 组合子的最佳方式是关注它如何产生不动点。函数 `f` 的不动点是指一个值 `x`，使得 `f(x) = x`。 Y 组合子，也称为不动点组合子，将一个函数作为输入并返回其不动点。
-
-文章详细阐述了为什么在 lambda 演算中，由于缺乏命名函数和无法创建无限大项，一个简单的自引用 Y 实现会失败。然后，它引导读者了解 Omega 组合子（一个自我复制的项）的发现过程，并将其用作推导出 Y 组合子的垫脚石。
-
-最终的 Y 组合子表示为：`Y = λf. (λx. f(x x)) (λx. f(x x))`。
-
-文章还提供了历史背景，解释说 Y 组合子的创建者 Haskell Curry 可能是在形式主义和形式系统（20 世纪早期数学领域的重要组成部分）的框架内看待它的。 lambda 演算以其最小性和对符号操作的关注，为函数式编程语言奠定了基础。
+本文强调了*无需*JavaScript进行指纹识别的可能性。为了证明这一点，建议在浏览器中禁用JavaScript和cookie，然后刷新页面。尽管采取了这些措施，浏览器指纹仍然存在，这证明了该方法的有效性。本质上，本文强调了即使用户试图阻止常见的跟踪技术，他们仍然可以根据固有的浏览器配置被识别。
 
 ---
 
-## 80. GPD Pocket 4 扬声器 DSP：配置 PipeWire 以改善笔记本电脑扬声器音质
+## 94. 19世纪日本照片
 
-**原文标题**: GPD Pocket 4 Speaker DSP: Configuring PipeWire so laptop speakers sound better
+**原文标题**: Photographs of 19th Century Japan
 
-**原文链接**: [https://kittenlabs.de/blog/2025/04/06/gpd-pocket-4-speaker-dsp/](https://kittenlabs.de/blog/2025/04/06/gpd-pocket-4-speaker-dsp/)
+**原文链接**: [https://cosmographia.substack.com/p/photographs-of-old-japan](https://cosmographia.substack.com/p/photographs-of-old-japan)
 
-本文详细介绍了如何使用 PipeWire 和数字信号处理 (DSP) 改进 GPD Pocket 4 笔记本电脑扬声器的音质。作者 Manawyrm 的灵感来自于 Asahi Linux 等项目使用的 DSP 技术，这些技术旨在优化 Apple Silicon MacBook 上的音频。
+好的，我已阅读了提供的URL上的文章。以下是摘要：
 
-该方法包括使用 Room EQ Wizard (REW) 测量内置扬声器的频率和脉冲响应。测量结果显示在 4kHz 左右存在一个明显的峰值，这导致声音刺耳和失真。
+Cosmographia上的文章《19世纪日本的摄影作品》探讨了19世纪后半叶，特别是明治时代，摄影在日本的兴起。它详细描述了由西方人引入的摄影术如何迅速成为一种流行的艺术形式，以及记录日本在现代化并向世界开放时迅速变化的社会的一种手段。
 
-为了纠正这个问题，作者在 REW 中创建了一个滤波器曲线，以补偿倾斜的低音响应和 4kHz 的峰值。然后，将此曲线反转并导出为 .wav 脉冲响应文件。此 .wav 文件是 PipeWire 中卷积 DSP 滤波器的关键部分。
+文章重点介绍了费利切·贝亚托、雷蒙德·冯·斯蒂尔弗里德和日下部金兵卫等关键摄影师，强调了他们在捕捉日本传统生活、风景和习俗图像方面的作用。这些摄影师经常采用手工着色技术来增强照片效果，使其对西方观众更具吸引力。拍摄对象包括武士和艺伎，以及普通工人和富士山等著名地标的风景。
 
-之后，作者从 14 英寸 MacBook Pro（从 Asahi Linux 的工作中获得）改编了一个 DSP 配置，用于 GPD Pocket 4 的立体声扬声器，并将 MacBook 的脉冲响应替换为新生成的 .wav 文件。本文链接到一个 GitHub 存储库和一个 AUR 包 ("gpd-pocket-4-pipewire")，其中包含用于复制此设置的最终 PipeWire 配置，以及用于测量的 REW 软件。目标是使用卷积来校正扬声器的频率响应并提高整体音质。
+这些照片有多种用途，包括满足西方对日本的好奇心，作为游客的纪念品，以及在塑造西方对日本文化的看法方面发挥作用。文章指出，虽然有些图像是对真实情况的描绘，但另一些图像则是经过摆拍或理想化的，以迎合西方的期望。这些照片的贸易蓬勃发展，成为日本一项重要的产业。
 
----
-
-## 81. Show HN: Obelisk - 基于 WASM 的确定性工作流引擎
-
-**原文标题**: Show HN: Obelisk – a WASM-based deterministic workflow engine
-
-**原文链接**: [https://obeli.sk/](https://obeli.sk/)
-
-Obelisk：基于 Rust 和 WebAssembly 组件模型的全新开源确定性工作流引擎，其核心价值在于为工作流增加弹性和确定性。
-
-主要特性和优势包括：
-
-*   **架构简单：** 单进程运行时，使用 SQLite 数据库，最大限度地降低基础设施复杂性。
-*   **WASM 驱动：** 利用 WASM 实现互操作性、确定性执行、隔离和安全性。工作流使用真实代码编写（而非 YAML）。
-*   **确定性工作流：** 提供结构化并发，简化错误处理和清理，并对参数、步骤和结果进行完整日志记录，以确保崩溃恢复能力和可重放性。
-*   **安全的 WASI 活动：** 安全的 HTTP 客户端，具有限制和跟踪功能，并在超时或失败时重试活动。
-*   **WASI Webhooks：** 支持通过 Webhooks、CLI、gRPC 或 Web UI 触发工作流和活动。
-*   **开源：** 采用 AGPL 许可，源代码可在 GitHub 上获取。
-
-本质上，Obelisk 旨在提供一个健壮且可靠的平台来执行工作流，通过确保确定性执行、崩溃恢复和与传统工作流引擎相比更简化的架构来实现。开发者邀请用户通过邮件列表关注他们的进展。
+最后，文章强调了这些照片作为逝去时代宝贵记录的历史意义。它们为我们提供了一个了解19世纪日本的视觉窗口，展示了从封建社会向现代国家的转变，并提供了对这一变革时期日本人民生活和文化的洞察。
 
 ---
 
-## 82. Firebase 工作室
+## 95. 展示HN：Domika - Home Assistant 的原生移动应用
 
-**原文标题**: Firebase Studio
+**原文标题**: Show HN: Domika – A Native Mobile App for Home Assistant
 
-**原文链接**: [https://firebase.studio](https://firebase.studio)
+**原文链接**: [https://domika.app/](https://domika.app/)
 
-Firebase Studio：利用生成式AI加速应用开发的新环境
-
-Firebase Studio是一个旨在通过利用生成式AI和基于浏览器的workspace加速应用开发的新环境。它允许开发者从任何地方快速构建和部署应用程序，可以使用来自GitHub等平台的现有存储库，也可以借助App原型代理创建新的存储库。该代理使用自然语言、模型和绘图工具来创建应用程序，并为流行的框架提供模板。
-
-一个关键特性是Gemini在Firebase中的集成，为编码、调试、测试和文档编写等任务提供AI驱动的辅助。新的Gemini代码助手代理将进一步简化开发流程。
-
-Firebase Studio还提供端到端测试能力，可以访问来自Open VSX Registry的扩展程序，用于API和后端测试。内置的Web预览和Android模拟器允许开发者查看他们的应用程序对用户来说是什么样子。通过一键发布到Firebase App Hosting，部署得以简化，监控工具提供了使用情况和行为洞察。应用程序还可以部署到Firebase Hosting、Cloud Run或自定义基础设施。
-
-Firebase Studio目前处于预览阶段，免费提供3个workspace，Google开发者计划成员最多可获得30个workspace。该平台旨在帮助开发者利用生成式AI进行创新，更高效地构建API、后端、Web和移动应用程序以及自定义代理。
+此“Show HN”帖子介绍了Domika，一款Home Assistant的原生移动应用。该帖子内容简洁，除了应用的存在之外没有提供太多细节。主要信息是Domika为寻求原生移动界面来控制和交互Home Assistant智能家居系统的用户提供了一个新的选择。有限的信息表明其主要目的是让社区了解其可用性。
 
 ---
 
-## 83. 展示HN：我搭建了一个AI驱动的系统，帮助你30天学会任何技能
+## 96. Emacs 31 将支持原生框架转置
 
-**原文标题**: Show HN: I Built an AI-Powered System to Help You Learn Any Skill in 30 Days
+**原文标题**: Native frame transposition coming to Emacs 31
 
-**原文链接**: [https://30daysmethod.com/](https://30daysmethod.com/)
+**原文链接**: [https://p.bauherren.ovh/blog/tech/new_window_cmds](https://p.bauherren.ovh/blog/tech/new_window_cmds)
 
-"Show HN"：30天速成法Notion模板，助您一月内掌握任何技能。该系统利用人工智能根据用户选择的技能和经验水平创建个性化学习计划。
+本文详细介绍了为 Emacs 31 引入原生框架转置功能的历程。作者最初希望将现有的 `transpose-frame.el` 包整合到 Emacs 核心中，贡献上游改进而非依赖本地自定义。然而，作者发现该软件包“复制粘贴”窗口状态的方法存在根本缺陷，因此需要完全重写。
 
-此模板借鉴了“原子习惯”中的1%法则、改善哲理（Kaizen）、习惯养成原则（Maltz规则）、刻意练习（Ericsson的研究）以及基于连续性的激励（“不要打破链条”）。它旨在提供结构、跟踪进度，并通过将学习分解为可管理的步骤来消除压力。
+作者与 `windows.c` 和 `windows.el` 的维护者 Martin Rudalics 合作，付出了大量努力，实现了必要的底层 C 代码，以便在使用 `split-window` 时正确操作窗口对象。最终，Emacs 31 中提供了一组新的窗口操作命令，位于 `window-x.el` 中，提供了超出原始 `transpose-frame.el` 的扩展功能。
 
-该系统不提供完整的课程，而是提供路线图和指导，指导用户专注于何处以及练习什么。它强调纪律和日常练习是成功的关键组成部分。提供的技能示例包括语言学习、设计、摄影、绘画、音乐和瑜伽。
-
-帖子中包含许多据称是用户的评价，赞扬了该模板的直观性、可定制性以及在提高注意力、效率和纪律方面的有效性。创建者强调该模板能够构建“大脑肌肉”，培养决心，并最终通过持续学习带来个人改变和成功。
+这些新命令包括 `transpose-window-layout`（对角线反射）、`rotate-window-layout-clockwise` 和 `rotate-window-layout-anticlockwise`、`flip-window-layout-horizontally` 和 `flip-window-layout-vertically`，以及作者最喜欢的 `rotate-windows` 和 `rotate-windows-back`，它们循环遍历现有窗口。作者鼓励用户在 Emacs 31 中尝试这些命令，以改进他们的窗口布局管理。
 
 ---
 
-## 84. 减少流感和单纯疱疹病毒传播的抗病毒口香糖
+## 97. TVMC：时变网格压缩
 
-**原文标题**: Antiviral chewing gum to reduce influenza and herpes simplex virus transmission
+**原文标题**: TVMC: Time-Varying Mesh Compression
 
-**原文链接**: [https://penntoday.upenn.edu/news/penn-dental-antiviral-chewing-gum-reduce-influenza-and-herpes-simplex-virus-transmission](https://penntoday.upenn.edu/news/penn-dental-antiviral-chewing-gum-reduce-influenza-and-herpes-simplex-virus-transmission)
+**原文链接**: [https://github.com/SINRG-Lab/TVMC](https://github.com/SINRG-Lab/TVMC)
 
-本文重点介绍了塞内加尔的达喀尔绿化带项目，这是一项雄心勃勃的计划，旨在应对达喀尔及其周边地区的荒漠化，并促进可持续的城市发展。该项目力求创建一个生态基础设施网络，以解决环境问题并改善城市生活。
+本文档详细介绍了使用体积跟踪参考网格实现的TVMC（时变网格压缩），如相关论文所述。 TVMC利用ARAP体积跟踪来建立时变网格序列帧之间的对应关系，从而创建一个表示整体形状和体积的无自接触参考网格。 然后，后续帧表示为相对于此参考网格的位移。
 
-宾夕法尼亚大学魏茨曼设计学院的学生在David Gouverneur和Ellen Neises以及博士候选人Rob Levinthal的带领下参与了该项目，并通过课程作业进行。这些课程包括前往达喀尔的实地考察，学生们在那里亲身参与了该项目。
+本文档概述了系统要求（Windows 11或Ubuntu 20.04，具有特定库的Python 3.8），并提供了通过Docker和直接在机器上运行TVMC流程的说明。 Docker设置包括构建和运行Docker镜像，然后执行流程脚本。
 
-他们工作的最终成果是学生们展示了他们对绿化带特定区域的愿景和方案，为这项大规模生态和基础设施建设的整体设计和实施做出了贡献。本文强调了该项目将该地区从类似沙漠的环境转变为可持续绿洲的重要意义，展示了宾夕法尼亚大学在萨赫勒地区全球绿化工作中的参与。
-
----
-
-## 85. 你的手机会在2025年把你拒之美国境外吗？
-
-**原文标题**: Can Your Phone Ban You from the U.S. in 2025?
-
-**原文链接**: [https://ctcnews.ca/2025/04/09/can-your-phone-ban-you-from-the-u-s/](https://ctcnews.ca/2025/04/09/can-your-phone-ban-you-from-the-u-s/)
-
-2025年4月，加拿大政府发布旅行警告，提醒公民在美国边境面临更严格的审查。美国海关与边境保护局（CBP）官员有权在无需理由的情况下搜查智能手机和笔记本电脑等电子设备，这源于凌驾于第四修正案保护之上的“边境搜查例外”条款。拒绝配合可能导致设备被没收、延误或被拒绝入境。
-
-该警告强调了个人数据泄露的风险，并引用了Rasha Alawieh博士的案例，她因边境官员在她手机上发现已删除的照片而被驱逐出境。为降低风险，建议加拿大人在过境前将设备调至飞行模式，以防止意外数据下载。
-
-该政策引发了国家安全和隐私倡导者之间的辩论。美国当局辩称，此举对于打击数字威胁是必要的，而公民自由团体则批评其为严重越权行为。最高法院已站在政府一边，赋予CBP广泛的搜查权。
-
-该警告为经常前往美国旅游、学习和商务的加拿大人敲响了警钟。它也影响着任何进入该国的非美国公民。专家建议备份数据、携带“干净”的设备，并承认非公民在边境享有的权利有限。该警告引发了人们对美国公民出国旅行可能面临的对等审查的质疑，并预示着国际旅行中安全与隐私之间日益紧张的全球局势。
+直接执行指南详细介绍了一个多步骤流程。它包括安装.NET 7.0，执行ARAP体积跟踪，使用多维标度（MDS）生成参考中心，计算变换双四元数，创建体积跟踪参考网格，将参考网格变形到每个帧，计算位移场，最后压缩和评估结果。 在示例中，Draco用于压缩，但也可以使用其他压缩方法。 每个步骤都包括针对Linux和Windows环境的特定命令和目录导航说明。 本文档最后提供了基于压缩数据生成图形的说明，以将性能与原始论文结果进行比较。
 
 ---
 
-## 86. 男人的怪异收藏启发了现代博物馆：珍奇柜
+## 98. 土星卫星泰坦可能存在生命，但含量极少
 
-**原文标题**: Men's Weird Collections Inspired the Modern Museum: Cabinets of Curiosities
+**原文标题**: Saturn's moon Titan could harbor life, but only a tiny amount
 
-**原文链接**: [https://worldhistory.substack.com/p/how-strange-mens-weird-collections](https://worldhistory.substack.com/p/how-strange-mens-weird-collections)
+**原文链接**: [https://news.arizona.edu/news/saturns-moon-titan-could-harbor-life-only-tiny-amount-study-finds](https://news.arizona.edu/news/saturns-moon-titan-could-harbor-life-only-tiny-amount-study-finds)
 
-无法访问文章链接。
+本文探讨了一项关于土卫六泰坦存在生命可能性的新研究。亚利桑那大学和哈佛大学的研究人员利用生物能量模型评估了泰坦地下海洋支持生命的可能性，重点关注有机物质的可用性。
 
----
+研究结论认为，虽然泰坦存在生命是可能的，但生命数量可能极其有限，整个海洋中可能只有几磅的生物量。该研究以发酵为中心，这是一种简单的代谢过程，可以利用泰坦上存在的有机分子，特别是甘氨酸。
 
-## 87. 欺骗宝可梦交易
+计算机模拟显示，只有一小部分泰坦丰富的有机物质可供微生物利用。通过陨石撞击产生的融池输送到地下海洋的甘氨酸供应，可能不足以支持庞大的人口。
 
-**原文标题**: Spoofing a Pokemon Trade
-
-**原文链接**: [https://blog.nitwhiz.xyz/posts/002-pokemon-red-trade/](https://blog.nitwhiz.xyz/posts/002-pokemon-red-trade/)
-
-使用模拟器在《精灵宝可梦 红》中欺骗宝可梦交换的方法
-
-这篇文章解释了如何使用模拟器在《精灵宝可梦 红》中欺骗宝可梦交换。作者详细介绍了他们的设置，包括使用 SameBoy 模拟器和一个 Unix 套接字来通过 Go 程序与其通信。
-
-该项目的核心在于拦截和操纵模拟器在交换过程中交换的串行数据。文章概述了 Game Boy 如何处理串行数据，以及如何配置 SameBoy 来接入串行传输过程。作者在 SameBoy 中实现了自定义回调，以通过套接字发送和接收作为字节的串行数据。
-
-文章随后深入探讨了宝可梦交换协议，重点介绍了关键步骤，如建立领导者/跟随者状态、交换随机种子，以及最重要的是交换包含宝可梦队伍数据的“交换块”。文章使用 Go 结构详细描述了交换块的结构，包括宝可梦数据、训练师名称和昵称。
-
-一个重要的挑战是 Game Boy 对 0xFE 字节的敏感性，这是使用“补丁列表”处理的。作者解释了补丁列表如何识别交换块中预期出现 0xFE 并用 0xFF 替换的位置。文章提供了使用这些列表解析、编组和修补交换块的代码片段。
-
-最后，文章概述了选择宝可梦和接受交换的过程，并附带了一个协议转储，说明了数据流。最终结果是一个系统，作者可以操纵交换块数据，将任何想要的宝可梦注入到交换中。
+研究人员强调，海洋的浩瀚以及与有机分子丰富的地表的有限互动，限制了生命的可能性。这表明，如果在泰坦上发现生命，那将是极其具有挑战性的，就像大海捞针一样。该研究强调，需要对泰坦的宜居性进行细致的理解，考虑到有机物质可用性的限制，尽管其含量丰富。
 
 ---
 
-## 88. 日本乡下小镇中年男子交易卡片走红
+## 99. 解析器组合子胜过正则表达式
 
-**原文标题**: Middle-aged man trading cards go viral in rural Japan town
+**原文标题**: Parser Combinators Beat Regexes
 
-**原文链接**: [https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/](https://www.tokyoweekender.com/entertainment/middle-aged-man-trading-cards-go-viral-in-japan/)
+**原文链接**: [https://entropicthoughts.com/parser-combinators-beat-regexes](https://entropicthoughts.com/parser-combinators-beat-regexes)
 
-在日本乡村小镇河原，一种以当地中年男子（“叔叔”）为主角的独特集换式卡牌游戏（TCG）在儿童中风靡一时，超越了宝可梦卡牌的受欢迎程度。“叔叔卡牌游戏”包含47张卡牌（截至2025年3月18日），其中28张描绘了来自才藤庄社区的当地男子，并根据他们在现实生活中的贡献赋予了独特的属性和能力。例如，本田先生，一位前消防队队长，拥有一张“防火墙”卡牌；以及竹下先生，一位荞麦面制作指导员。
+本文论证了在Haskell中，即使对于看似适合正则表达式的任务，解析器组合子也是比正则表达式(regex)更优的选择。作者首先展示了一个基于正则表达式的简单Advent of Code问题的解决方案，并强调了它的缺点：依赖隐式契约、潜在的运行时错误，以及相比Perl令人惊讶的缓慢性能。
 
-该游戏由才藤庄社区委员会秘书长宫原绘里创建，旨在加强儿童与老一辈人之间的联系。自推出以来，这款卡牌游戏成功地鼓励孩子们参加当地活动和做志愿者，据说参与人数增加了一倍。
+接着，作者提出了一个使用`attoparsec`库的解析器组合子解决方案。虽然最初更加冗长，但解析器方法提供了更好的类型安全、显式的错误处理（可能），以及相当的性能（在这种情况下甚至比正则表达式更快）。
 
-最初设计用于收藏，孩子们很快将叔叔卡牌游戏变成了一种竞技游戏。引入了新的规则，可以根据角色的技能和能力进行战斗。卡牌的稀有度与现实世界的贡献相关联，积极参与的叔叔更有可能获得令人垂涎的“闪卡”版本。这些手工制作的卡牌仅在才藤庄社区中心出售，3张100日元，6张500日元，其中包括一张闪卡。这款游戏的流行反映了年轻人对当地社区人物的重新认识和欣赏。
+当扩展问题以包含状态管理（例如，基于`do()`和`don't()`指令启用/禁用计算）时，解析器组合子的关键优势变得显而易见。这对于本质上是无状态的正则表达式来说是具有挑战性的，但是使用解析器解决方案中的状态转换器可以轻松处理。状态解析器灵活且可维护，尽管执行时间略有增加。
 
----
-
-## 89. 长篇创意写作大语言模型基准
-
-**原文标题**: LLM Benchmark for 'Longform Creative Writing'
-
-**原文链接**: [https://eqbench.com/creative_writing_longform.html](https://eqbench.com/creative_writing_longform.html)
-
-EQ-Bench长篇创意写作排行榜：评估大型语言模型（LLM）在短篇小说和中篇小说创作方面的能力，是更广泛的EQ-Bench基准测试套件中的创意写作基准的第三版（v3），该套件旨在测试LLM的情感智能和其他能力。
-
-该基准评估模型从最简提示中进行头脑风暴和规划叙事、反思和修改计划，以及在8轮约1000字的长篇叙事中写作的能力。 模型使用Openrouter进行评估，并采用特定的温度和概率设置。
-
-评估由评判LLM（Claude Sonnet 3.7）使用评分标准进行，重点关注以下指标：
-
-*   **长度：** 平均章节长度（字符）。
-*   **冗余得分：** 过度使用的LLM特定词语/短语的频率（越低越好）。
-*   **重复度指标：** 衡量多个任务中单词/短语的重复情况（越低越好）。
-*   **衰退度：** 可视化8个章节的质量趋势，表明模型的写作质量是否随着时间推移而下降。 表示为迷你图，衰退度得分是趋势线梯度的绝对值。
-*   **得分：** 由评判LLM分配的总体最终评分，范围为0-100（越高越好）。
-
-该排行榜根据这些指标对不同的LLM进行排名，从而可以比较和改进长篇创意写作能力。“冗余概况”也可用于可视化和理解过度使用的特定类型的单词和短语。
+文章最后重构了原始解析器，通过使用诸如`pair`和`scan_all`之类的辅助函数，使其更简洁易读。作者强调Haskell的特性使重构安全有效。总而言之，本文倡导解析器组合子在Haskell开发中的表达能力、类型安全、灵活性和性能，使其成为比正则表达式更强大的选择，即使对于简单的解析任务也是如此。
 
 ---
 
-## 90. 基于 Rockchip RK3399 ARM SoC 的三星 Chromebook Plus (Kevin) 上的 Linux (2024)
+## 100. Pdeathsig 几乎永远不是你想要的。
 
-**原文标题**: Linux on Samsung Chromebook Plus (Kevin) with Rockchip RK3399 ARM SoC (2024)
+**原文标题**: Pdeathsig is almost never what you want
 
-**原文链接**: [https://www.devkitsune.net/blog/wordpress/2024/01/04/linux-on-arm-chromebooks/](https://www.devkitsune.net/blog/wordpress/2024/01/04/linux-on-arm-chromebooks/)
+**原文链接**: [https://www.recall.ai/post/pdeathsig-is-almost-never-what-you-want](https://www.recall.ai/post/pdeathsig-is-almost-never-what-you-want)
 
-本文详细介绍了作者在一款搭载瑞芯微RK3399 ARM SoC的三星Chromebook Plus (Kevin) 上安装Linux的经验。作者尝试了三种专门为ARM Chromebook设计的Linux发行版：Arch Linux ARM、PrawnOS和Cadmium。
+James Matsuzaki 详述了他的调试过程，旨在优化 Recall.ai 的 Output Media 功能的启动延迟。该功能允许客户从机器人输出低延迟的音频和视频。最初计划是预加载 Chromium 以减少 12 秒的启动时间。然而，预加载后，Chromium 在 staging 环境中意外终止。
 
-Arch Linux ARM最初看起来很有希望，因为它有专门针对该Chromebook型号的文档，但作者遇到了需要手动干预的WiFi问题。解决WiFi问题、安装XFCE并升级系统后，安装失败，无法启动。
+问题源于沙盒工具 Bubblewrap 中的 `--die-with-parent` 标志。该标志使用 Linux 内核的 `PR_SET_PDEATHSIG` 功能，当父*线程*死亡时，会向子进程发送 `SIGKILL` 信号，而不是整个父进程。
 
-PrawnOS是一个基于Debian的发行版，专注于自由和开源软件(FOSS)，但事实证明它过于严格。它对FOSS的强调意味着像WiFi这样的基本功能被有意省略，这使得它对作者的需求来说不切实际。尝试添加WiFi支持导致了与Arch类似的启动失败。
+由于 Recall.ai 的机器人代码使用异步运行时 Tokio，线程会被停放并回收以提高效率。当 Tokio 线程使用 `PR_SET_PDEATHSIG` 衍生 Bubblewrap 时，内核会将该线程关联为“父线程”。如果该线程被 Tokio 停放并最终终止，内核会错误地将其解释为父进程死亡，从而触发 `PR_SET_PDEATHSIG` 并杀死 Chromium。
 
-最终，另一个基于Debian的发行版Cadmium被证明是最成功的。尽管Cadmium不再积极维护，但它可以“开箱即用”，包括WiFi和手写笔支持。作者最初使用了Cadmium的默认桌面环境Sway，但最终切换到了XFCE。他们在使用Firefox时遇到了一些小的视觉故障，但发现Cadmium足够稳定，可以进行轻量级的3D游戏和使用手写笔进行笔记。作者的结论是，Cadmium是重振旧ARM Chromebook的最佳选择。
-
----
-
-## 91. Show HN: DrawDB – 开源在线数据库图表编辑器（复古风）
-
-**原文标题**: Show HN: DrawDB – open-source online database diagram editor (a retro)
-
-**原文链接**: [https://www.drawdb.app/](https://www.drawdb.app/)
-
-这个"Show HN"帖子介绍 DrawDB，一个开源的在线数据库图表编辑器。 该工具允许用户以可视化方式创建数据库图表，并根据这些图表生成 SQL 代码。 帖子强调 DrawDB 是一个 Web 应用程序，需要 JavaScript 才能运行。 本质上，它是一个通过提供可视化界面和自动化 SQL 生成过程来简化数据库设计的工具。
-
----
-
-## 92. 时空数据库
-
-**原文标题**: SpacetimeDB
-
-**原文链接**: [https://spacetimedb.com/](https://spacetimedb.com/)
-
-SpacetimeDB 是一种数据库，因其能够存储应用程序的完整事务历史而得名。它的核心特性是将数据库回溯到过去的任何时间点，并从该时刻重放事务的能力。这种固有的“时间旅行”功能可以轻松地进行重放，并简化调试或恢复过程。该数据库本质上提供了所有更改的完整审计跟踪，使开发人员能够准确地了解数据库是如何达到当前状态的。
-
----
-
-## 93. 减少屏幕时间指南
-
-**原文标题**: A guide to reduce screen time
-
-**原文链接**: [https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/](https://speedbumpapp.com/en/blog/how-to-reduce-screen-time/)
-
-如何减少屏幕时间：终极指南
-
-本文“如何减少屏幕时间：终极指南”提供了一种全面的方法来减少手机使用，将重点从限制转向积极参与其他活动。它强调理解过度使用屏幕时间的根本原因，例如无聊或焦虑，并承认偶尔需要在线应对机制。
-
-该指南提供了实用的工具和策略，包括iOS（屏幕使用时间）和Android（数字健康）的内置功能，用于使用情况跟踪和应用限制。它还回顾了第三方应用程序，如One Sec、Opal、SpeedBump、Clearspace、ScreenZen、Focus Plant和Forest，突出了它们在解决冲动、数据驱动跟踪、沉迷浏览负面新闻和专注等特定问题方面的独特优势。
-
-除了应用程序之外，本文还推荐了各种技巧，例如管理通知、组织应用程序布局、使用灰度模式、创建无屏幕区域、订阅新闻摘要以及选择报纸和笔记本等模拟替代品。它建议利用TikTok和Instagram等特定应用程序中的内置屏幕使用时间选项，使用浏览器而不是专用应用程序，并拥抱无聊来激发创造力。作为最后的手段，它提到了卸载应用程序或使用功能手机。
-
-作者最后敦促读者慢慢开始，尝试不同的策略，并保持坚持，承认社交媒体平台的成瘾性。最初的几周将充满挑战，但持续实施这些策略将带来更健康的习惯和更高的幸福感。最后，本文回答了有关桌面计时器使用、通知和健康屏幕时间限制的常见问题解答。
-
----
-
-## 94. 我认识的最优秀的程序员
-
-**原文标题**: The best programmers I know
-
-**原文链接**: [https://endler.dev/2025/best-programmers/](https://endler.dev/2025/best-programmers/)
-
-本文概述了作者根据其职业生涯的观察，认为卓越程序员所具备的特质。作者强调**深入理解工具**的重要性，即通过阅读文档，了解工具的历史、局限性和生态系统，而不是依赖在线论坛或大型语言模型的快速修复。
-
-主要特质包括：
-
-*   **问题解决能力**: 掌握将复杂问题分解为可管理步骤的艺术。
-*   **阅读错误信息**: 透彻分析错误信息，从中推断信息并独立解决问题。
-*   **务实方法**: 乐于亲身实践代码，学习新技能，并在需要的地方做出贡献。
-*   **帮助他人**: 分享知识并为同事提供支持。
-*   **写作**: 通过写作进行有效沟通，反映清晰的思维和结构化的编码风格。
-*   **持续学习**: 持续更新新技术，批判性地评估它们，并避免停滞不前。
-*   **无我**: 平等地对待所有同事，无论地位如何，并向所有人学习。
-*   **建立声誉**: 通过分享您的工作来产生影响，例如，为开源软件做贡献，撰写书籍或交付关键服务。
-*   **耐心**: 对计算机、人和自己保持耐心，同时保持专注和投入。
-*   **永不责怪电脑**: 理解每个问题都有逻辑上的解释，即使在调试“不稳定”的代码时也是如此。
-*   **承认无知**: 坦然地说“我不知道”，并将其作为学习的机会。
-*   **避免猜测**: 拒绝做出假设，并始终寻求透彻的理解。
-*   **简洁**: 优先考虑简单、可维护的代码，而不是过于聪明的解决方案。
-
-作者总结说，这些品质不是竞争，而是一种持续改进的指南，并强调成为卓越程序员的道路上没有捷径。
-
----
-
-## 95. 蓝盾数据泄露 (Google Ads)
-
-**原文标题**: Blue Shield Data Breach (Google Ads)
-
-**原文链接**: [https://news.blueshieldca.com/notice-of-data-breach](https://news.blueshieldca.com/notice-of-data-breach)
-
-加州蓝盾宣布潜在数据泄露，影响2021年4月至2024年1月期间在蓝盾网站上访问信息的会员。此次泄露是由于 Google Analytics 配置不当，导致会员数据（可能包括受保护的健康信息）与 Google Ads 共享。
-
-共享的信息可能包括保险计划详情、城市、邮政编码、性别、家庭规模、蓝盾标识符、医疗理赔详情（服务日期、提供者、患者姓名和财务责任）以及“查找医生”搜索条件。重要的是，社会安全号码、驾驶执照号码和财务信息未被泄露。
-
-蓝盾于 2025 年 2 月 11 日发现了该问题，并于 2024 年 1 月切断了 Google Analytics 与 Google Ads 之间的连接。他们认为 Google 可能已将该数据用于定向广告活动，但尚未共享该信息。蓝盾正在审查其安全协议，以防止未来发生类似事件。
-
-建议会员查看账户对账单是否存在可疑活动，并将任何疑虑报告给执法部门。蓝盾建议从三大信用报告机构获取免费信用报告，并考虑在其信用报告上设置欺诈警报。如有疑问，会员可拨打蓝盾免费帮助热线 1-833-918-5064。
-
----
-
-## 96. 我女儿准备好拥有她的第一部智能手机了，但我还没准备好给她。
-
-**原文标题**: My Daughter Is Ready for Her First Smartphone. I'm Not Ready to Give It to Her
-
-**原文链接**: [https://www.wsj.com/tech/personal-tech/my-daughter-is-ready-for-her-first-smartphone-im-not-ready-to-give-it-to-her-fb038e6f](https://www.wsj.com/tech/personal-tech/my-daughter-is-ready-for-her-first-smartphone-im-not-ready-to-give-it-to-her-fb038e6f)
-
-无法访问文章链接。
-
----
-
-## 97. chroot 技术 – Linux 系统的瑞士军刀
-
-**原文标题**: The chroot Technique – a Swiss army multitool for Linux systems
-
-**原文链接**: [https://livesys.se/posts/the-chroot-technique/](https://livesys.se/posts/the-chroot-technique/)
-
-本文介绍了一种强大的修复无法启动的Linux系统的工具——"chroot"技术。作者讲述了在标准重装方法失败后，成功使用该技术修复Nanopore GridION设备的案例。
-
-其核心思想是访问损坏系统的硬盘（通过Live USB或其他计算机），并将它的根分区挂载到工作系统上的一个目录中。关键在于，来自工作环境的必要系统目录，如`/sys`、`/proc`和`/dev`，也会被挂载到这个新的根目录中。然后，`chroot`命令有效地将当前会话的活动根文件系统切换到这个新组装的结构。
-
-这允许用户运行直接与损坏系统的文件结构交互的命令，从而进行诊断和修复。例如，对基于Debian的系统使用`apt upgrade`或`dpkg-reconfigure`。
-
-本文提供了该过程的逐步指南，包括：从替代操作系统启动，识别根分区和`/boot`分区，创建必要的目录，挂载分区和特殊系统文件夹，以及最终执行`chroot`命令。作者强调了拥有此过程作为紧急情况下的“速查表”的重要性。
-
-作者还提到了一个真实场景，其中通过在chroot环境中运行`apt update`和`dpkg-reconfigure`，解决了损坏的符号链接和不完整的内核更新文件。
-
----
-
-## 98. 视觉推理即将到来
-
-**原文标题**: Visual Reasoning Is Coming Soon
-
-**原文链接**: [http://arcturus-labs.com/blog/2025/03/31/visual-reasoning-is-coming-soon/](http://arcturus-labs.com/blog/2025/03/31/visual-reasoning-is-coming-soon/)
-
-大型语言模型中视觉推理的激动人潜力：以OpenAI的图像处理进展为基础
-
-本文探讨了大型语言模型(LLM)中视觉推理的激动人潜力，基于OpenAI最近在图像处理方面的进展。作者认为，传统的LLM在图像处理方面存在困难，因为它们依赖文本描述与外部图像生成工具进行通信，导致不一致。然而，OpenAI的新型GPT-4o模型直接集成了图像生成，从而实现了更具上下文相关性的图像处理。
-
-作者认为这只是视觉推理的垫脚石，模型可以可视化场景并对其进行视觉推理，从而提高它们对世界的理解。他用一个弹珠在杯子里的问题来证明这一点，表明当模型生成图像来表示每个步骤时，其推理能力会得到提高。
-
-文章建议，使用来自真实世界和合成场景的图像和文本序列，通过监督式微调来专门训练模型进行视觉推理至关重要。视频被强调为丰富的训练数据来源。作者还借鉴了LLM中思维链推理的演变，并预测视觉推理将提高模型在机器人技术和理解社交线索等领域的性能。虽然图像生成速度是当前的限制，但他相信这种情况会得到改善。最终，作者乐观地认为，视觉推理将彻底改变模型理解世界和与之互动的方式。
-
----
-
-## 99. Agent2Agent 协议 (A2A)
-
-**原文标题**: The Agent2Agent Protocol (A2A)
-
-**原文链接**: [https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
-
-谷歌开发者博客宣布推出Agent2Agent协议 (A2A)，这是一种新的开放协议，旨在使人工智能代理能够跨不同的企业平台和应用程序进行通信、交换信息和协调行动，而无论构建它们的供应商或框架如何。谷歌将在超过 50 家技术合作伙伴和服务提供商的支持下推出 A2A。
-
-A2A 背后的核心思想是促进一个动态的多代理生态系统，使人工智能代理能够协作以自动化复杂的工作流程、提高生产力并降低成本。A2A 补充了 Anthropic 的模型上下文协议 (MCP)。
-
-A2A 遵循五个关键设计原则：拥抱代理能力（非结构化模式），构建在现有标准之上（HTTP、SSE、JSON-RPC），默认安全（OpenAPI 身份验证），支持长时间运行的任务，以及模式无关性（文本、音频、视频）。
-
-该协议定义了“客户端”代理和“远程”代理之间的交互，包括能力发现（代理卡片）、任务管理、通过消息协作以及用户体验协商（内容类型、UI 功能）。
-
-文章以候选人寻访为例，展示了多个代理如何协同工作以简化招聘流程。谷歌将以开源方式发布 A2A，并计划在今年晚些时候推出生产就绪版本。多家合作伙伴提供了引言，强调了代理互操作性对于在企业中扩展人工智能的重要性。
-
----
-
-## 100. Linux内核防御图 – 安全加固概念
-
-**原文标题**: Linux Kernel Defence Map – Security Hardening Concepts
-
-**原文链接**: [https://github.com/a13xp0p0v/linux-kernel-defence-map](https://github.com/a13xp0p0v/linux-kernel-defence-map)
-
-本文介绍了 Linux 内核防御地图，它以图形化的方式展示了 Linux 内核安全概念及其关系。该地图由 a13xp0p0v 创建，连接了漏洞类别（带有 CWE 编号）、利用技术、漏洞检测机制以及防御技术（包括内核内和内核外）。节点连接表示一种关系，不一定是完全缓解。
-
-该地图旨在帮助浏览与内核安全加固相关的内核文档和源代码。它专门关注内核安全加固，不包括攻击面缩减、用户空间安全特性和 Linux 安全模块策略。
-
-该地图以 DOT 语言编写，方便维护和通过 Git 进行版本控制，并使用 GraphViz 生成。该项目在 GitHub、Codeberg 和 GitFlic 上以 GPL-3.0 许可证发布。
-
-作者还提供了一个名为 "kernel-hardening-checker" 的工具，用于自动验证 Linux 内核配置中的安全加固选项，解决了许多关键选项在主要发行版中默认情况下经常被禁用的问题。
-
-最后，本文档提供了 Linux 内核安全相关的参考资料和文章、工具链接列表。此地图适用于 Linux 内核 v6.10。
+移除 `--die-with-parent` 标志解决了这个问题，因为它禁用了将线程终止错误解释为进程死亡的行为。Tokio、Bubblewrap 和 Linux 内核之间的这种交互记录很少，使得调试变得困难。最终，优化将启动延迟降低到 2-3 秒，大大改善了用户体验。本文强调了在多线程环境中理解内核级 API（如 `PR_SET_PDEATHSIG`）的细微行为的重要性。
 
 ---
 
