@@ -1,145 +1,161 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-10.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-11.md)
 
-*最后自动更新时间: 2025-04-10 17:48:07*
-## 1. 为什么敲击奶酪轮？
+*最后自动更新时间: 2025-04-11 03:35:09*
+## 1. H1元素的默认样式正在更改
+
+**原文标题**: Default styles for H1 elements are changing
+
+**原文链接**: [https://developer.mozilla.org/en-US/blog/h1-element-styles/](https://developer.mozilla.org/en-US/blog/h1-element-styles/)
+
+本文讨论了浏览器中 `<h1>` 元素默认样式的即将到来的变化，特别是它们在分节元素（`<section>`、`<article>`、`<nav>` 和 `<aside>`）中嵌套时的渲染方式。 以前，浏览器会根据嵌套级别自动调整 `<h1>` 的字体大小和边距，模仿 `<h2>`、`<h3>` 等。 这种行为源于现在已删除的 HTML 大纲算法。
+
+现在，浏览器正在删除这些 UA 样式，这意味着 `<h1>` 将始终以其默认样式呈现，而与其在分节元素中的位置无关。 此更改正在 Firefox 和 Chrome 中推出，预计 Safari 也会效仿。
+
+本文强调，依赖这些自动标题级别调整现在被认为是糟糕的做法。 Lighthouse 以及浏览器 DevTools 将标记 `<h1>` 元素缺少明确定义的 `font-size` 和 `margin` 的情况。 具体的 Lighthouse 警告是“H1UserAgentFontSizeInSection”。
+
+为了解决这个问题，开发人员应该：
+
+*   **明确定义** 所有 `<h1>` 元素的 `font-size` 和 `margin`。
+*   **使用** `<h2>`、`<h3>` 等，来创建清晰的标题层次结构。
+*   **更新 CSS reset** 以应对此变化。
+*   **使用 Lighthouse 和 DevTools 审核网站**。
+*   **参考 MDN** 以获取更新的 HTML 分节标题文档。
+
+通过采取这些步骤，开发人员可以确保他们的网站按预期呈现，并避免与 `<h1>` 样式相关的 Lighthouse 警告。
+
+---
+
+## 2. “100个Go语言常见错误”背后的故事
+
+**原文标题**: The Story Behind “100 Go Mistakes and How to Avoid Them”
+
+**原文链接**: [https://www.thecoder.cafe/p/100-go-mistakes](https://www.thecoder.cafe/p/100-go-mistakes)
+
+泰瓦·哈萨尼的文章详细介绍了撰写《100个Go语言常见错误与避免方法》的历程。最初，他为了平衡之前工作中的Scala而开始接触Go语言。换了工作后，每天使用Go语言，他注意到同事们重复着他早期的错误。这促使他写了一篇广受欢迎的博客文章《我在Go项目中见过的十大最常见错误》，并由此萌生了写书的想法。
+
+经过16个月从各种来源收集了100个错误后，他向Manning出版社提交了图书提案。该提案需要回答21个问题，并接受Go语言专家的评审。积极的评价促成了合同的签订，版税为10%，并预付了稿费。
+
+写作过程包括定义最低合格读者(MQR)，并与一位开发编辑(DE)密切合作，后者极大地改进了他为图书格式而进行的写作风格。他讨论了他创造“最好的Go语言书籍”的心态。这本书经历了多个评审周期，外部审阅者提供了详尽的反馈以提高书籍质量。哈萨尼提到了Manning出版社的一个小插曲，他的技术开发编辑(TDE)缺乏MQR所期望的Go语言基础知识。尽管如此，他还是采纳了比尔·肯尼迪的反馈意见并坚持了下来。
+
+---
+
+## 3. 没有加菲猫的加菲猫
+
+**原文标题**: Garfield Minus Garfield
+
+**原文链接**: [https://garfieldminusgarfield.net](https://garfieldminusgarfield.net)
+
+提供的文本描述了一个名为“没有加菲猫的加菲猫”(G-G)的东西。 它还提到这个“G-G”在Facebook和Twitter上都有，并附有具体的日期（1月27日和11月3日）。
+
+本质上，这是一个名为“没有加菲猫的加菲猫”的项目/实体的广告或引用，该项目/实体在Facebook和Twitter等社交媒体平台上存在并可能正在推广。 这些日期可能表明该项目在这些平台上活跃或推广的时间。
+
+如果没有更多的背景信息，很难确定“没有加菲猫的加菲猫”本身的具体性质。 然而，这段文字强烈暗示它是一个在线分享和讨论的项目或概念。
+
+---
+
+## 4. R 语言大全
+
+**原文标题**: Big Book of R
+
+**原文链接**: [https://www.bigbookofr.com/](https://www.bigbookofr.com/)
+
+R语言巨著：汇集400余本R语言免费书籍，无需书签，搜索方便，欢迎贡献。本站感谢Fathom Data转换为Quarto，采用CC BY-NC-ND 3.0协议。数据透明，统计每日独立访客。欢迎捐赠，关注作者Mastodon、LinkedIn，订阅时讯。
+
+---
+
+## 5. 我自己的私有二进制：Linux内核模块的个性化介绍
+
+**原文标题**: My Own Private Binary: An Idiosyncratic Introduction to Linux Kernel Modules
+
+**原文链接**: [https://www.muppetlabs.com/~breadbox/txt/mopb.html](https://www.muppetlabs.com/~breadbox/txt/mopb.html)
+
+本文以一种独特的方式介绍了Linux内核模块，其动机源于作者寻求创建尽可能小的可执行文件。文章首先回顾了作者之前缩小ELF可执行文件的尝试，并遇到了已弃用的aout格式。这引发了对Linux如何动态处理二进制格式的调查。
+
+作者发现Linux使用可加载内核模块来管理二进制格式支持，允许添加和删除格式而无需重新编译内核。然后，文章转而解释如何创建一个基本的“hello kernel”模块，涵盖必要的头文件、模块元数据、init和exit函数以及Makefile。它演示了如何使用`insmod`和`rmmod`加载和卸载模块，并使用`dmesg`验证其操作。
+
+文章承认编写有用的内核模块需要专门的知识，但鼓励实验。它强调了内核模块的强大功能和潜在危险，强调了它们在低级别访问和操作系统的能力。
+
+最后，文章将内核模块与最初的动机联系起来，解释说内核中接受的二进制文件格式列表是动态的。这是通过已注册的回调函数列表进行管理的，当执行二进制文件时，内核会调用这些回调函数。第一个识别文件的回调函数会处理将其加载到内存中，否则会显示“Exec format error”。作者暗示了创建支持.com文件格式的内核模块的意图，从而能够创建更小的可执行文件。
+
+---
+
+## 6. 金融科技创始人被控欺诈；人工智能应用被发现实为菲律宾人工操作
+
+**原文标题**: Fintech founder charged with fraud; AI app found to be humans in the Philippines
+
+**原文链接**: [https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/](https://techcrunch.com/2025/04/10/fintech-founder-charged-with-fraud-after-ai-shopping-app-found-to-be-powered-by-humans-in-the-philippines/)
+
+前AI购物应用Nate创始人兼前CEO阿尔伯特·萨尼格(Albert Saniger)被美国司法部指控欺诈，原因是他误导投资者。Nate筹集了超过5000万美元，声称其“AI”允许用户一键从任何电商网站购物。然而，司法部指控Nate严重依赖菲律宾的人工承包商手动完成购买，尽管萨尼格声称几乎没有人为干预。
+
+司法部声称Nate的实际自动化率实际上为0%。这与基于Nate人工智能能力而筹集的数百万美元风险投资相矛盾。《The Information》在2022年进行的一项调查此前曾强调Nate对人工承包商的依赖。
+
+该公司最终耗尽资金，于2023年1月出售了其资产，导致投资者遭受重大损失。萨尼格现在是风险投资公司Buttercore Partners的执行合伙人。
+
+这篇文章还强调了一种初创企业夸大其人工智能能力的趋势，并列举了一些例子，例如一个“AI”汽车穿梭点餐软件和法律科技独角兽EvenUp，都发现它们严重依赖人工。这种趋势表明，公司面临着比实际情况更具有技术先进性的压力。
+
+---
+
+## 7. Show HN: 我做了一个管理和比较信用卡奖励的工具
+
+**原文标题**: Show HN: I built a tool to manage and compare credit card rewards
+
+**原文链接**: [https://rewards.getonecard.io](https://rewards.getonecard.io)
+
+此“Show HN”帖子介绍了一款旨在帮助用户管理和最大化信用卡奖励的工具。该工具允许用户将现有信用卡添加到虚拟“钱包”中，然后利用人工智能识别在任何指定商家处使用哪张卡片最佳。此推荐基于优化奖励积分积累。
+
+着陆页包含一个“奖励优化器”，它会根据商家类型推荐最佳卡片。提供的示例包括：使用美国运通金卡在餐厅（如“Home Slice Pizza”和“Powder Room”）消费可赚取 4 倍积分，以及使用大通蓝宝石卡在酒店（如“Fairmont Austin”）消费可赚取 3 倍积分。
+
+该工具被宣传为能够提供即时推荐，突出了速度和易用性。 其关键功能围绕着为特定商家识别最具奖励性的卡片，并帮助用户避免错过奖励。 核心优势是最大化奖励积分和简化信用卡使用方面的决策。
+
+---
+
+## 8. 解密Shebang：内核探险
+
+**原文标题**: Demystifying the (Shebang): Kernel Adventures
+
+**原文链接**: [https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/](https://crocidb.com/post/kernel-adventures/demystifying-the-shebang/)
+
+本文深入探讨了Linux系统中 Shebang (`#!`) 机制的内部运作原理，揭示了内核而非 Shell 负责处理其解释。作者首先阐述了 Shebang 如何指定脚本执行的解释器，并通过 Shell 和 Python 脚本示例说明了这一点，并阐明了它在识别 Linux 实用程序（如 `useradd` 和 `adduser`）底层实现方面的作用。
+
+作者使用 `strace` 跟踪执行流程，并展示了 `execve` 系统调用是入口点，最终导向内核中的 `do_execveat_common` 函数。该函数初始化一个 `linux_binprm` 结构，读取文件内容，并利用 `search_binary_handler` 来识别文件的可执行格式。文章探讨了 `binfmt_elf.c`、`binfmt_script.c` 和 `binfmt_misc.c` 等模块。
+
+`binfmt_script.c` 模块负责处理 Shebang，验证 `#!` 签名，然后定位并调用指定的解释器。内核更新 `bprm->file` 以指向解释器，并有效地替换进程映像。
+
+文章还阐明，虽然 Shebang 是指定解释器的主要方式，但 Shell 通常提供回退机制，如果由于缺少或错误的 Shebang 导致 `execve` 调用失败，则会尝试直接执行脚本。这涉及到 Shell 读取脚本、检测其类型，并显式调用适当的解释器。
+
+最后，作者简要地提到了权限检查，表明内核在调用脚本之前会验证执行权限，如果缺少执行权限，则会触发 `EACCES (Permission denied)` 错误。
+
+---
+
+## 9. 用声音悬浮昆虫或将变革科学摄影
+
+**原文标题**: Levitating Bugs with Sound Could Transform Scientific Photography
+
+**原文链接**: [https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/](https://petapixel.com/2025/03/25/levitating-bugs-with-sound-could-transform-scientific-photography/)
+
+科学家开发出一种新型摄影测量成像系统，利用声悬浮技术在不损伤昆虫标本的情况下捕捉其详细照片。这种创新方法使用精确控制的声波悬浮昆虫，允许多角度图像采集，无需传统的针插固定方法，从而避免损害脆弱的标本。
+
+来自多家德国机构的研究人员创建了一个系统，该系统包括由FPGA控制的声悬浮装置和一个三脚架上的微距相机。这使得他们能够自动操纵标本，以在预定义角度拍摄特定图像，从而实现焦点堆叠以获得扩展的景深并创建高度详细的3D模型。该团队使用了带有 90 毫米微距镜头和增距镜的 Olympus OM-D E-M1 III 相机。
+
+这种方法对于生物多样性研究特别有价值，昆虫在其中发挥着关键作用，但由于识别挑战而难以研究。通过提供经济高效、易于获取且可重复的成像系统，研究人员可以收集训练昆虫识别人工智能模型所需的详细数据。
+
+该系统在每个标本位置捕获 40 张照片，并从 72 个不同的角度重复该过程。研究团队承认存在单轴旋转等局限性，但强调了这种非破坏性方法在小型、轻型物体的多角度成像和 3D 重建方面的巨大潜力。该方法还有助于 DNA 测序，因为标本不会受到损坏或干燥。
+
+---
+
+## 10. 为什么要敲击奶酪轮？
 
 **原文标题**: Why Tap a Wheel of Cheese?
 
 **原文链接**: [https://www.cheeseprofessor.com/blog/cheese-wheel-tapping](https://www.cheeseprofessor.com/blog/cheese-wheel-tapping)
 
-为何敲击奶酪轮？
-        
-        "为何敲击奶酪轮？" 探讨了 "battitori"，即奶酪敲击师，在确保帕尔马干酪质量方面的关键作用。这24位专家在奶酪经过至少12个月的熟化期后，使用小金属锤敲击每一块奶酪轮，并根据声音在几秒钟内识别出内部缺陷。本文跟随作者克里斯汀·詹努齐的脚步，记录了她在意大利艾米利亚-罗马涅地区，跟随年轻的敲击师亚历山德罗·斯托基和他的导师，前奶酪制作师雷纳托·朱迪奇学习的过程。
+帕尔马干酪的质量由一小队“敲击师”（drummers）保证，他们在奶酪经过至少12个月的陈酿期后，用锤子敲击每一块奶酪。这些专家，如亚历山德罗·斯托基和他的导师雷纳托·朱迪奇，仅凭声音就能在几秒钟内检测到内部缺陷。这项技能传统上通过学徒制代代相传，依靠第一手经验。
 
-        敲击师的专业知识通过学徒制传承，依靠第一手经验和敏锐的听觉技能来检测裂缝或空洞等缺陷。均匀的声音表示完美的奶酪轮，而变化则表明存在缺陷。帕尔马干酪分为三个等级：最高品质，经过火烙标记以便更长时间的熟化；较低品质，标记有平行线以便年轻消费；以及有缺陷的，剥夺所有识别标记并作为普通餐桌奶酪出售。
+敲击过程包括聆听奶酪表面均匀的声音。一块完美的奶酪具有紧实的质地，没有空洞或裂缝。声音的变化表明内部存在缺陷，敲击师可以检测到这些缺陷，从而形成奶酪的心理“X光片”。
 
-        虽然缺陷似乎不受欢迎，但斯托基强调，它们反映了帕尔马干酪的工匠特性，使用生牛奶制作且不含防腐剂，承认了使用天然产品时固有的变化。只有一小部分奶酪轮被归类为明显有缺陷。文章最后强调了这一专业领域所需的激情、尊重和谦逊，以及持续学习的重要性。
-
----
-
-## 2. GCC 15 的可用性改进
-
-**原文标题**: Usability Improvements in GCC 15
-
-**原文链接**: [https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15](https://developers.redhat.com/articles/2025/04/10/6-usability-improvements-gcc-15)
-
-无法访问文章链接。
-
----
-
-## 3. 2025年人工智能指数报告
-
-**原文标题**: The 2025 AI Index Report
-
-**原文链接**: [https://hai.stanford.edu/ai-index/2025-ai-index-report](https://hai.stanford.edu/ai-index/2025-ai-index-report)
-
-无法访问文章链接。
-
----
-
-## 4. 拥有我的数据，第一部分：集成自托管日历解决方案
-
-**原文标题**: Owning my own data, part 1: Integrating a self-hosted calendar solution
-
-**原文链接**: [https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/](https://emilygorcenski.com/post/owning-my-own-data-part-1-integrating-a-self-hosted-calendar-solution/)
-
-无法访问文章链接。
-
----
-
-## 5. 黑客新闻的沉默拥抱
-
-**原文标题**: Hacker News Hug of Deaf
-
-**原文链接**: [https://susam.net/hn-bell.html](https://susam.net/hn-bell.html)
-
-苏珊·帕尔描述了一个他在 Hacker News (HN) 上关于古怪警报系统的帖子之后进行的有趣实验。他在服务器上设置了一个简单的 netcat 循环来接收来自 HN 社区的连接。当建立连接时，服务器发送“ok”消息，关闭连接，并发出四个终端蜂鸣声。这个使用 `nc` 和后台 `for` 循环的单行脚本旨在快速处理多个连接。
-
-在 HN 上分享该脚本后，社区反应热烈，从各种客户端连接到 `susam.net:8000`。在接下来的 24 小时内，帕尔收到了超过 4761 个连接，导致超过 19,000 次终端蜂鸣声。提供了一个说明每小时连接速率的图表，原始数据存储在 `beeper.log` 中。
-
-帕尔承认，虽然连接数量并不庞大，但这个实验仍然是有意义的，因为人们注意到并参与了他的冷门想法。他强调，计算不仅仅是为了解决问题，还可以是探索古怪的想法，在过程中找到乐趣，并与他人分享这种乐趣。该实验突出了计算的乐趣和探索性方面。
-
----
-
-## 6. Rust 编译器中一个令人惊讶的枚举大小优化
-
-**原文标题**: A surprising enum size optimization in the Rust compiler
-
-**原文链接**: [https://jpfennell.com/posts/enum-type-size/](https://jpfennell.com/posts/enum-type-size/)
-
-詹姆斯·芬内尔的文章探讨了Rust编译器中一个令人惊讶的枚举大小优化，它超越了广为人知的“空指针优化”。
-
-文章首先解释了枚举在Rust中通常的工作方式：枚举的大小通常是其最大变体的有效载荷大小加上一个指示活动变体的标签。然后介绍了“空指针优化”，即编译器利用类型中的无效位模式（例如`Option<char>`中的`char`）来表示一个变体（例如`None`），而无需单独的标签，从而减小枚举的大小。
-
-文章的核心揭示了一种更微妙的优化，涉及嵌套枚举。考虑一个具有两个变体的`Inner`枚举，每个变体都包含一个`u32`。这个枚举通常占用8个字节（4个用于标签，4个用于`u32`）。现在，一个`Outer`枚举在一个变体中包含`u32`，在另一个变体中包含`Inner`枚举作为有效载荷。令人惊讶的是，`Outer`也只占用8个字节，而不是预期的12个字节。
-
-这种优化的工作原理是重用`Inner`枚举的标签空间。编译器识别出`Inner`枚举的标签仅使用有限的范围（0或1），留下了许多其他可能的标签值。`Outer`枚举为其变体分配标签值，如果该标签与`Inner`枚举的标签匹配，则将其解释为包含`Inner`枚举的变体，其整个位模式是从`Outer`的标签和其余部分重建的。否则，编译器会识别出其余的变体，其有效载荷适合`Inner`枚举的有效载荷空间。这种智能的标签重用有效地避免了为`Outer`枚举的标签添加额外的字节，从而减少了内存占用。
-
----
-
-## 7. Legion Health (YC S21) 正在招聘工程师，利用人工智能重建精神病学。
-
-**原文标题**: Legion Health (YC S21) is hiring engineers to rebuild psychiatry with AI
-
-**原文链接**: [https://www.ycombinator.com/companies/legion-health/jobs/mqDWIWN-founding-engineer-build-ai-native-ops-for-mental-health-yc-s21-1m-arr](https://www.ycombinator.com/companies/legion-health/jobs/mqDWIWN-founding-engineer-build-ai-native-ops-for-mental-health-yc-s21-1m-arr)
-
-Legion Health（YC S21）是一家年营收超过100万美元的心理健康初创公司，正在寻找一位创始工程师，以构建其用于精神病护理的AI原生运营层。与专注于AI诊断的公司不同，Legion Health正在使用LLM代理和结构化系统来解决运营瓶颈，如日程安排、文档、账单和风险检测。
-
-该公司运营自己的精神科诊所，为其技术提供直接的反馈循环。工程师将端到端地负责整个领域，架构和扩展后端，构建LLM代理基础设施，设计人机协作界面，定义患者旅程的状态，并确保数据合规性。理想的候选人是具有系统思维的人，具备构建复杂系统的经验，精通LLM，并热衷于解决以前未解决的问题。
-
-Legion Health使用的技术栈包括Node.js、TypeScript、Supabase、AWS、Next.js、Tailwind、OpenAI和Anthropic。这个机会提供了塑造心理健康医疗基础设施未来的机会，并可以在一个快节奏、具有影响力的环境中直接与首席技术官合作。他们不寻找需要大量指导或预定义职业阶梯的人。创始人是Arthur MacWaters、Yash Patel和Daniel Wilson。
-
----
-
-## 8. ELD：用于嵌入式系统的新型开源嵌入式链接器工具
-
-**原文标题**: ELD: A new open-source embedded linker tool for embedded systems
-
-**原文链接**: [https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems](https://www.qualcomm.com/developer/blog/2025/04/eld-new-open-source-embedded-linker-tool-for-embedded-systems)
-
-本文介绍了ELD，一款专为嵌入式系统设计的新型开源嵌入式链接器工具。核心信息是该工具的发布和可用性。尽管提供的文本有限，但我们可以推断出以下内容：
-
-* **ELD是一个链接器：** 这意味着它的主要功能是将编译后的目标文件和库组合成一个单一的可执行文件或库，适用于在嵌入式系统上执行。
-* **开源：** 这意味着源代码可以免费使用、修改和分发，从而可能促进社区开发和定制。
-* **面向嵌入式系统：** 这表明ELD可能针对嵌入式环境的特定约束和要求进行了优化，例如有限的资源、实时操作和多样化的处理器架构。
-
-本质上，这篇文章简要宣布了一个名为ELD的新型开源链接器可用于嵌入式系统开发。要获得更全面的总结，还需要提供有关其特性、性能和具体优势的更多详细信息。
-
----
-
-## 9. 猎杀红色十月1990 (2016)
-
-**原文标题**: Hunt for Red October 1990 (2016)
-
-**原文链接**: [http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html](http://www.modelshipsinthecinema.com/2016/12/hunt-for-red-october-1990.html)
-
-这篇博文详细介绍了1990年电影《猎杀红色十月》的视觉特效工作，重点介绍了用于模拟水下场景的微缩模型。最初，在格雷格·杰恩的监督下，Boss Films公司开始建造，但该项目在紧迫的期限内转移到了工业光魔（ILM）。
-
-ILM选择在充满烟雾的环境中使用动态控制拍摄模型，以最大限度地减少光学合成。他们使用了各种尺寸的模型，包括两艘红色十月潜艇（21英尺和4英尺）、一艘克隆诺夫潜艇、两艘达拉斯潜艇、一艘救援潜水器和鱼雷。ILM还制作了额外的模型，包括一艘中间尺寸的红色十月潜艇。
-
-较大的红色十月模型安装在电动塔架上，而其他模型则使用钢丝索具悬挂，以便进行受控移动。在背景中点亮一道烟雾幕，以模拟水下环境，这需要对模型、相机和照明进行仔细的编排。近距离拍摄则使用了镜子和磨砂滤镜。
-
-烟雾是用一种碎裂系统雾化矿物油产生的。大约40个微型岩石尖顶代表了一个水下海沟。虽然微缩模型的效果令人信服，但用于对抗措施和鱼雷尾迹的光学合成效果并不理想。该文章还提到了一个俄罗斯熊式轰炸机微缩模型。
-
-文章还包括读者评论，其中包含有关影片制作完成后部分微缩模型下落的信息。
-
----
-
-## 10. 椭圆 Python 编程
-
-**原文标题**: Elliptical Python Programming
-
-**原文链接**: [https://susam.net/elliptical-python-programming.html](https://susam.net/elliptical-python-programming.html)
-
-"椭圆Python编程" 是一篇幽默文章，讽刺了Python中晦涩难懂、难以阅读的代码。作者Susam Pal故意用曲折的方式，使用表达式 `(...==...)`（其值为1）来表示数字和构建程序，从而编写简单的Python代码。
-
-这篇文章首先确立了Python之禅中的“做一件事只有一种显而易见的方法”原则。然后，它通过演示如何使用 `(...==...)` 来编写整数，并创建越来越复杂的表达式，从而巧妙地颠覆了这一原则。作者开玩笑地说，使用这种风格可以计算任何东西，但随后展示了一个完全用这种混淆风格编写的“典型的第一个Python程序”，这才是讽刺的核心。
-
-文章随后为“开明的”程序员提供了一个变体，他们将Tab键重新映射为括号，用空括号代替省略号，突出了其荒谬性。文章的中心思想是嘲讽那些优先考虑聪明而非可读性和可维护性的代码。
-
-作者建议不要在生产代码中使用这种风格，并强调了可读性对于人类理解的重要性。最后，他半开玩笑地建议，如果部署了这样的代码，应该包含充足的日志，以帮助调试不可避免的问题。这篇文章用幽默的方式强调了代码应该为人而写，而不仅仅是为机器执行。
+帕尔马干酪分为三个质量等级：顶级（带有火印）、轻微缺陷（标有平行线）和重大缺陷（作为普通奶酪出售）。虽然缺陷可能被认为是负面的，但它们被认为是奶酪制作工艺的手工性质的标志，该工艺使用未经防腐剂处理的生牛奶，并且会受到自然变化的影响。尽管存在缺陷，但存在缺陷的奶酪数量仍然很少。敲击师强调激情、尊重、谦逊和持续学习在他们职业中的重要性。
 
 ---
 
@@ -147,26 +163,26 @@ ILM选择在充满烟雾的环境中使用动态控制拍摄模型，以最大�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-10](output/hacker_news_summary_2025-04-10.md) |
-| 2 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 3 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 4 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 5 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 6 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 7 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 8 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 9 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 10 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 11 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 1 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 2 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 3 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 4 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 5 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 6 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 7 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 8 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 9 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 10 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 11 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
 | 12 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
 | 13 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
 | 14 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
 | 15 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
 | 16 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 17 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 18 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 19 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 20 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 21 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 22 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 23 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 17 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 18 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 19 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 20 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 21 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 22 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 23 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
