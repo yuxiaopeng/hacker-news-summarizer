@@ -1,141 +1,152 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-11.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-12.md)
 
-*最后自动更新时间: 2025-04-11 17:47:10*
-## 1. 但如果我想要一匹更快的马呢？
+*最后自动更新时间: 2025-04-12 17:46:37*
+## 1. 开源且可自托管/私有的文件转换器
 
-**原文标题**: But what if I want a faster horse?
+**原文标题**: Open source and self hostable/private file converter
 
-**原文链接**: [https://rakhim.exotext.com/but-what-if-i-really-want-a-faster-horse](https://rakhim.exotext.com/but-what-if-i-really-want-a-faster-horse)
+**原文链接**: [https://vert.sh](https://vert.sh)
 
-作者认为，科技行业痴迷于颠覆式创新，以“更快的马”类比为代表，往往导致可用性和用户控制权的下降，转而倾向于算法参与和内容发现。作者认为，有时用户仅仅希望对现有解决方案进行改进，即“更快的马”，而不是全新的范式。
+VERT.sh：开源且可自托管的文件转换器。其主要特点包括：
 
-文章以Netflix和Spotify为例。最初，Netflix是一个方便可靠的电影和节目库，具有个性化推荐和库管理等实用功能。现在，它成了一个由算法驱动的、令人不知所措且混乱的“体验”，优先考虑持续的内容轮换和通用类别，而非用户控制和清晰的目录。同样，Spotify也从一个庞大的音乐库转变为一个算法策展的、充斥着播客的内容流，牺牲了用户控制和库管理。
-
-作者认为，包括YouTube、LinkedIn，甚至Substack在内的许多平台，正朝着TikTok模式靠拢：由算法驱动的无休止的短视频流，最大限度地减少用户控制，并优先考虑参与度而非用户自定义的组织和可发现性。这种趋势类似于“蟹化现象”，优先考虑吸引注意力，却牺牲了核心功能和用户体验。作者总结说，虽然创新很重要，但仅仅专注于颠覆可能会降低有价值的功能，并使那些只想让现有解决方案变得更好、而不是完全不同的用户感到沮丧。
-
----
-
-## 2. Fedora 变革旨在实现 99% 的软件包可重复构建
-
-**原文标题**: Fedora change aims for 99% package reproducibility
-
-**原文链接**: [https://lwn.net/Articles/1014979/](https://lwn.net/Articles/1014979/)
-
-LWN.net 文章探讨 Fedora 计划：到 2025 年 10 月 Fedora 43 发布时实现 99% 的软件包可重现性。可重现构建确保相同的源代码、构建环境和指令产生完全相同的二进制文件。
-
-虽然 Fedora 历来优先控制其构建过程，但现在它的目标是加强供应链安全并实现软件包的独立验证。Fedora 对可重现性的定义与 Debian 略有不同，侧重于 RPM 中相同的有效载荷，不包括签名和某些元数据，如构建时间 (BUILDTIME) 和构建主机 (BUILDHOST)。
-
-该项目已经实施了诸如钳制文件修改时间和使用 `add-determinism` 工具来标准化元数据等更改，实现了 90% 的可重现性。为了达到 99%，Fedora 将要求打包者将可重现性问题作为错误处理。`fedora-repro-build` 实用程序将支持本地重新构建测试，而公共 `rebuilderd` 实例将提供独立验证。
-
-该提案建议更新 Fedora 的打包指南，以鼓励可重现的构建。虽然安全优势是主要驱动因素，但这项工作也有望通过发现错误和马虎来提高软件包质量。关于 `rebuilderd` 实例的位置和维护及其与现有 Fedora 基础设施（如 Koji 和 Copr）的集成正在进行讨论。Fedora 工程指导委员会 (FESCo) 将在工作开始前审查该提案，目标是在 Fedora 43 发布时完成。
+*   **注重隐私：** 所有文件处理都在用户本地设备上进行，确保隐私安全，并消除文件大小限制和广告。
+*   **开源：** 该软件是开源的，允许用户检查和修改代码。
+*   **广泛的格式支持（开发中）：** 该工具旨在支持各种图片、音频和视频文件格式。
+*   **当前状态：** 虽然前景可观，但列出的格式及其支持状态表明，图片和音频的各项功能仍“未就绪”，且某些视频默认需要服务器端处理（附有关于如何设置本地处理的说明）。
+*   **用户界面：** 提供简单的拖放或点击上传界面。
+*   **板块：** 网页包含上传、转换、设置和关于等板块。
 
 ---
 
-## 3. 使用重心坐标在四边形上进行双线性插值
+## 2. Tunarr: 从服务器上的媒体创建和配置直播电视频道
 
-**原文标题**: Bilinear interpolation on a quadrilateral using Barycentric coordinates
+**原文标题**: Tunarr: Create and configure live TV channels from media on your servers
 
-**原文链接**: [https://gpuopen.com/learn/bilinear-interpolation-quadrilateral-barycentric-coordinates/](https://gpuopen.com/learn/bilinear-interpolation-quadrilateral-barycentric-coordinates/)
+**原文链接**: [https://tunarr.com/](https://tunarr.com/)
 
-此文章宣布AgilitySDK预览版1.716.0发布，该版本引入了对全新Microsoft DirectX和视频编码功能的支持。公告简短，主要强调了这些新功能在指定的AgilitySDK预览版中的可用性。
+Tunarr 是一款软件，可以从存储在 Plex、Jellyfin 或 Emby 服务器上的媒体创建直播电视频道。它允许您通过 Web UI 配置频道、节目、广告和设置。 然后，您可以通过将 Tunarr 模拟的 HDHomerun 调谐器添加到您的媒体服务器或使用生成的 M3U 文件与任何 IPTV 播放器来观看这些频道。
 
----
-
-## 4. Erlang并非仅关于轻量级进程和消息传递。
-
-**原文标题**: Erlang's not about lightweight processes and message passing
-
-**原文链接**: [https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html](https://stevana.github.io/erlangs_not_about_lightweight_processes_and_message_passing.html)
-
-本文认为，Erlang构建可靠分布式系统的核心优势并非主要在于其轻量级进程和消息传递，而在于其定义明确的通用组件，即“行为”（behaviours）。文章承认Erlang起源于Prolog以及在爱立信公司为电话交换机所做的开发，但作者强调Joe Armstrong的博士论文是理解行为重要性的关键资源。
-
-行为类似于其他语言中的接口，可以强制执行结构和最佳实践。文章详细介绍了几个核心Erlang行为：`gen_server`（用于并发有状态服务器）、`gen_event`（用于事件管理）、`gen_statem`（状态机）和`supervisor`（用于进程监控和重启）。监督者结合“让它崩溃”的理念，通过重启失败的进程来提供容错能力。作者指出，监督者机制在线程/轻量级进程级别运行，这使其与 Kubernetes 等工具不同。
-
-文章将 `application` 和 `release` 描述为更高级别的组织单元，其中 `application` 封装了一个监督树和相关组件，而 `release` 打包一个或多个 `application`，包括升级/回滚机制。
-
-作者总结说，Erlang 的行为提供了一种强大的结构，可以促进可靠的软件开发。他质疑为什么其他语言和框架专注于轻量级进程和消息传递，而没有采用 Erlang 行为的结构化方法。文章提出了一个简单的 `gen_server` 接口签名，并提出了如何实现它来处理并发请求。
+Tunarr 是 dizqueTV 的重新构想，旨在实现技术栈现代化、为现有用户提供迁移、稳定程序、提高性能 (使用 Node 20.11.1)、更新 Web UI 并添加新功能。 本质上，Tunarr 允许您从现有的媒体库中创建个性化的直播电视体验。
 
 ---
 
-## 5. 倭黑猩猩使用一种一度被认为是人类独有的句法
+## 3. 巴黎告别汽车。空气污染地图显示显著变化。
 
-**原文标题**: Bonobos use a kind of syntax once thought to be unique to humans
+**原文标题**: Paris said au revoir to cars. Air pollution maps reveal a dramatic change
 
-**原文链接**: [https://www.newscientist.com/article/2474993-bonobos-use-a-kind-of-syntax-once-thought-to-be-unique-to-humans/](https://www.newscientist.com/article/2474993-bonobos-use-a-kind-of-syntax-once-thought-to-be-unique-to-humans/)
+**原文链接**: [https://www.washingtonpost.com/climate-solutions/2025/04/12/air-pollution-paris-health-cars/](https://www.washingtonpost.com/climate-solutions/2025/04/12/air-pollution-paris-health-cars/)
 
-倭黑猩猩叫声展现“非平凡组合性”，挑战人类语言独特性研究
-
----
-
-## 6. 伦敦地铁实时地图
-
-**原文标题**: Live Map of the London Underground
-
-**原文链接**: [https://www.londonunderground.live/](https://www.londonunderground.live/)
-
-本文简要介绍了伦敦地铁的“实时线路图”，提供列车位置的实时信息。 这不仅仅是一张静态地图；用户可以通过右键单击来旋转视角，并放大以查看建筑物细节。 将光标悬停在特定点上可提供更多信息（可能是关于线路、车站或延误）。 该地图清晰地标有“实时”字样，强调其时效性。 本文感谢Ben James的创作。 重要的是，它还承认了底层数据的来源以及“The London Minute”对地图瓦片的赞助。 总之，本文介绍了一个伦敦地铁的交互式实时地图，突出了其功能、创建者、数据来源和赞助。
+无法访问文章链接。
 
 ---
 
-## 7. Mosaic (YC W25) 正在构建一个通用的视频编辑代理。
+## 4. 谷歌将允许企业在自有数据中心运行 Gemini 模型
 
-**原文标题**: Mosaic (YC W25) is building a general purpose agent for video editing
+**原文标题**: Google will let companies run Gemini models in their own data centers
 
-**原文链接**: [https://www.ycombinator.com/companies/mosaic-2/jobs/ru8Nwdq-founding-engineer](https://www.ycombinator.com/companies/mosaic-2/jobs/ru8Nwdq-founding-engineer)
+**原文链接**: [https://www.cnbc.com/2025/04/09/google-will-let-companies-run-gemini-models-in-their-own-data-centers.html](https://www.cnbc.com/2025/04/09/google-will-let-companies-run-gemini-models-in-their-own-data-centers.html)
 
-Mosaic，一家Y Combinator W25孵化的初创公司，正在开发一款用于视频编辑的通用人工智能代理。他们正在寻找一位创始工程师，以加速开发他们的“代理视频编辑范式”，该系统允许用户在基于节点的画布中创建和运行自己的多模态视频编辑代理。这些代理可以自动执行编辑，在项目中重复使用并自我改进。
+谷歌云将允许企业在其自有数据中心运行 Gemini AI 模型，此项名为 Google Distributed Cloud 的服务将于第三季度开始提供。 这一举措使谷歌有别于 OpenAI 和 Anthropic 等竞争对手，后者更倾向于通过不提供数据中心部署来保持对其模型的严格控制。 Cohere 提供类似选项，但设置时间较长。
 
-该职位需要从第一性原理出发解决具有挑战性的技术问题，构建可扩展的视频处理和推理流水线，创建评估指标，并为设计和产品决策做出贡献。Mosaic的初始原型在Google Gemini Kaggle竞赛中获得第一名，并被评为Y Combinator批次中最佳演示。
+此项服务满足了包括具有高度安全需求的政府实体在内的组织的需求，这些组织希望在利用谷歌 AI 技术的同时，保持对其数据的控制。 一个与互联网断开连接的“气隙”版 Google Distributed Cloud 将满足具有绝密分类级别的客户的需求。
 
-该公司由Adish Jain和Kyle Wade创立，拥有一支由前特斯拉工程师组成的高技术团队。他们的目标是将视频编辑时间从数小时缩短到数秒。创始工程师职位提供10万至15万美元的薪水和0.50%至3.00%的股权，位于旧金山，并向包括应届毕业生在内的所有经验水平的候选人开放。
-
----
-
-## 8. 优势即劣势
-
-**原文标题**: Strengths Are Your Weaknesses
-
-**原文链接**: [https://terriblesoftware.org/2025/03/31/your-strengths-are-your-weaknesses/](https://terriblesoftware.org/2025/03/31/your-strengths-are-your-weaknesses/)
-
-本文认为，一个人的最大优势往往与他们的弱点内在相关，本质上是同一枚硬币的两面。文章通过作者的个人经历以及对工程师的管理观察，突出了诸如“编码速度”之类的特征如何既能带来快速的功能交付，又会导致边缘案例被忽略。
-
-作者强调这种现象具有普遍性，并为管理者提供了三种应对策略：
-
-1.  **在1对1会议中承认二元性：** 帮助个人理解他们的优势和劣势不是分离的实体，而是同一潜在特性的表现。这有助于培养自我意识，减少自我批评。
-2.  **提供清晰的背景指导：** 明确定义某些倾向有利或不利的情况。这使个人能够就如何适当地利用他们的优势做出明智的决定。
-3.  **战略性地利用张力：** 不要寻求同质化的团队，而是拥抱多样化的工作方式。将具有对比方法的人配对可以带来创新和成长，因为他们可以互相学习。
-
-总的来说，目标不是通过创造统一“平衡”的个人来消除弱点。相反，管理者应专注于培养自我意识，并授权团队成员根据具体情况理解和调整他们的自然倾向。这种方法将感知的缺陷转化为一个人整体技能组合中可管理的部分，并促进个人成长和团队效率。最终，它强调了对个体内部固有复杂性的同情和接受的重要性。
+英伟达也将在其 Blackwell GPU 上提供 Gemini 模型，可通过谷歌或其他供应商购买。 这项举措是谷歌扩大其云市场份额的更广泛战略的一部分，谷歌云在 2023 年的市场份额为 8%，而亚马逊为 39%，微软为 23%。 谷歌云首席执行官 Thomas Kurian 强调，公司致力于多云环境和对人工智能的投资，这将推动客户增长。 Gemini 模型支持多种输入（文本、音频、视频）和 100 多种语言。 此公告是在谷歌以 320 亿美元收购云安全初创公司 Wiz 之后发布的。
 
 ---
 
-## 9. 五角大楼将终止与埃森哲、德勤的51亿美元IT合同
+## 5. 一个漏洞不够：通过SAP的Setuid环境两次升级权限
 
-**原文标题**: Pentagon to terminate $5.1B in IT contracts with Accenture, Deloitte
+**原文标题**: One Bug Wasn't Enough: Escalating Twice Through SAP's Setuid Landscape
 
-**原文链接**: [https://www.reuters.com/world/us/pentagon-terminate-51-billion-it-contracts-with-accenture-deloitte-others-2025-04-11/](https://www.reuters.com/world/us/pentagon-terminate-51-billion-it-contracts-with-accenture-deloitte-others-2025-04-11/)
+**原文链接**: [https://www.anvilsecure.com/blog/one-bug-wasnt-enough-escalating-twice-through-saps-setuid-landscape.html](https://www.anvilsecure.com/blog/one-bug-wasnt-enough-escalating-twice-through-saps-setuid-landscape.html)
 
-**概要：**
+Tao Sauvage 披露了他们发现 SAP 软件中两个本地权限提升漏洞 (CVE-2024-47595) 的过程，这些漏洞允许 `sapsys` 用户获得 root 权限。这是通过利用 setuid 二进制文件 `icmbnd` 和 `hostexecstart` 实现的。
 
-五角大楼计划于2025年终止与埃森哲、德勤和其他公司约51亿美元的IT合同。该决定源于五角大楼希望简化其IT运营，并采取更精简高效的IT服务方式。国防部计划发展内部能力，并将更大、更全面的合同授予更少数量的供应商，而不是依赖多个承包商提供类似的服务。预计此举将减少冗余、提高数据安全性，并有可能从长远来看节省纳税人的钱。虽然目前的合同将持续到2025年终止，但五角大楼将不再续签。据报道，受影响的公司正在与五角大楼沟通，以了解该决定的全部影响，并探索国防部不断发展的IT领域中潜在的未来机会。五角大楼希望这一改变能够带来更敏捷、更具响应性的IT基础设施。
+初步的侦察涉及识别潜在的 setuid 二进制文件。由于存在现有漏洞，`hdbmdcdispatcher` 和 `sapuxuserchk` 被排除。重点转移到 `icmbnd` 和 `hostexecstart`。
+
+`icmbnd` 漏洞是通过使用 `-f` 选项覆盖 `/etc/passwd` 来利用的。通过注入包含修改后的 `/etc/passwd` 条目的精心设计的 `-l` 参数，`hxeadm` 用户的组 ID 被更改为 0 (root)。这导致 `hxeadm` 用户在新的登录时获得 root 权限。
+
+利用 `hostexecstart` 更具挑战性。接受 SAR 归档文件路径的 `-upgrade` 选项似乎很有希望。但是，SAR 归档文件是经过签名的，并且在提取之前会验证签名。作者探索了诸如使用 `-L` 选项注入参数以加载自定义库之类的选项，但由于对文件路径的限制而未成功。
+
+由于 SAP 的专有签名过程涉及时间戳机构 (TSA) 并且仅信任 SAP 信任的 CA，因此签署 SAR 归档文件的尝试也未成功。
+
+因此，作者开发了 SAPCARve，这是一个基于 Kaitai Struct 格式的 Python 工具，用于解析和操作 SAR 归档文件，以探索利用 `hostexecstart` 的其他方法。第二个漏洞的细节未在本摘要的上下文中提供。
 
 ---
 
-## 10. WordPress发布全新免费AI网站构建器
+## 6. Roo还是Cline？我们在构建一个超集。
 
-**原文标题**: WordPress launches new free AI website builder
+**原文标题**: Roo or Cline? We're building a superset
 
-**原文链接**: [https://wordpress.com/blog/2025/04/09/ai-website-builder/](https://wordpress.com/blog/2025/04/09/ai-website-builder/)
+**原文链接**: [https://blog.kilocode.ai/p/roo-or-cline-were-building-a-superset](https://blog.kilocode.ai/p/roo-or-cline-were-building-a-superset)
 
-WordPress 发布免费 AI 网站构建器，旨在以最小的用户工作量创建功能齐全的网站。该工具面向企业家、小企业主、自由职业者、博主和开发者，他们寻求一种快速简便的方式来建立在线形象。
+Kilo Code正在构建一个开源AI编码工具，目标是成为像Cline和Roo Code等现有工具的“超集”，融合它们的最佳特性，而不是专注于新颖的创新。这种“快速跟随”策略，受到苹果和Linux等例子的启发，利用开源社区并鼓励特性的相互采用。
 
-这款 AI 构建器无需手动选择主题、调整颜色、创建文本和寻找图像。用户只需向 AI 描述他们的网站想法，AI 就会生成一个包含文本、布局和图像的完整 WordPress 网站。用户可以通过聊天提示或手动编辑来完善 AI 生成的内容和设计。
+Kilo Code首先通过fork Roo Code（本身就是Cline的一个fork），然后融入Cline的独特特性，使Kilo Code成为两者的超集。他们将继续合并Roo Code的代码，以保持其超集地位。目前Roo Code的独特特性包括温度控制、国际化和增强的提示功能。Cline的独特特性包括MCP市场集成和零配置启动。Kilo Code自身的增加功能包括免费的Claude 3.7 Sonnet访问、快捷键和“氛围编码”（自动接受）。
 
-虽然最初在创建电子商务网站或复杂集成方面受到限制，但该工具旨在快速创建美观实用的网站。要使用此构建器，用户需要一个 WordPress.com 帐户，并通过在指定页面上描述他们的网站想法来访问它。目前，该 AI 构建器仅适用于新的 WordPress.com 网站。
+该公司计划将来自其他流行工具（包括像Cursor和Windsurf这样的专有工具）的更多特性集成到Kilo Code中。他们积极鼓励用户建议需要包含的特性，旨在成为功能最广泛的首选工具。通过开源他们的工作，他们希望加速AI编码工具的整体进步，即使这意味着其他人“偷回”他们的改进。最终，Kilo Code专注于提高开发人员的生产力并减少麻烦，强调为开源社区构建真正有用的东西。
 
-该服务提供 30 个免费提示用于调整，而拥有 WordPress.com 托管计划的用户可以获得无限提示，该计划还包括第一年的免费域名。用户可以随时通过 WordPress.com 站点仪表板恢复到 AI 构建器。 虽然 AI 处理初始构建，但用户保留完全控制权，并且可以手动编辑和添加页面、更改设计以及使用开发工具。该 AI 网站构建器旨在简化网站创建，使用户能够快速建立在线形象，而无需广泛的技术技能。
+---
+
+## 7. Artie (YC S23) 招聘第三位工程师
+
+**原文标题**: Artie (YC S23) Is Hiring Engineer #3
+
+**原文链接**: [https://www.ycombinator.com/companies/artie/jobs/7kGvDVC-founding-product-engineer](https://www.ycombinator.com/companies/artie/jobs/7kGvDVC-founding-product-engineer)
+
+Artie (Y Combinator S23) 招募创始产品工程师
+
+Artie (一家 Y Combinator S23 的创业公司，致力于构建数据库和数据仓库的实时数据流解决方案) 正在旧金山招聘第三名工程师，担任创始产品工程师。他们利用变更数据捕获 (CDC) 和 Kafka 实现亚分钟级延迟的数据传输，为传统的批量 ETL 解决方案提供了一种替代方案。在推出云产品一年内，他们已实现 100 万美元的年度经常性收入 (ARR)，并获得了知名投资者的支持。
+
+理想的候选人将拥有 4 年以上在初创公司从事 Web 开发的经验，扎实的计算机科学基础，以及以务实的方法构建用户友好且可扩展的产品。虽然精通 Go 语言者优先，但并非强制性要求。该职位涉及与技术客户直接互动以改进产品的用户体验，构建诸如列排除和模式更改警报等新功能，以及改进内部工具和构建自动化。
+
+Artie 的技术栈包括用于前端的 TypeScript (React, Material UI) 和用于后端的 Go、PostgreSQL、Redis、Kafka 和 Elasticsearch，基础设施使用 Terraform、Kubernetes 和 Helm 在 GCP 和 AWS 上进行管理。面试流程包括与首席技术官的电话沟通、技术电话筛选以及现场面试。
+
+Artie 团队规模为 8 人，是一家于 2023 年成立的活跃公司。
+
+---
+
+## 8. 妄想主题可能比我们想象的更加多样化
+
+**原文标题**: Delusional themes may be more varied than we thought
+
+**原文链接**: [https://www.bps.org.uk/research-digest/delusional-themes-may-be-more-varied-we-thought](https://www.bps.org.uk/research-digest/delusional-themes-may-be-more-varied-we-thought)
+
+精神分裂症公报近期发表的一项研究挑战了对妄想主题的传统理解，发现其变异程度远超之前的假设。由伦敦大学学院的Elisavet Pappa领导的这项研究分析了涵盖全球173,920名精神病患者的155项研究。该研究确定了37种不同的妄想主题，超过了DSM-5等诊断手册中概述的有限类别。
+
+该研究揭示了妄想体验方式中显著的文化差异，表明现有的诊断框架可能过于狭隘，且不具有普遍适用性。研究人员发现妄想中存在“社会梯度”，即个体更可能体验到与亲近家庭成员相关的妄想。这突出了人际关系在塑造妄想内容中的重要性。
+
+该研究还发现特定妄想主题与精神疾病诊断之间存在联系，挑战了一些现有的假设。例如，通常与妄想症相关的嫉妒妄想在精神分裂症和双相情感障碍中也很常见。文化背景也起着重要作用，南亚的嫉妒妄想患病率较高，东欧的负罪感/罪孽妄想患病率较高，与“盎格鲁”国家相比，中东的性妄想和嫉妒妄想患病率较高。
+
+该研究强调，需要采取更加细致、个体化和具有文化意识的方法来理解和治疗精神病。通过拓宽对妄想主题的理解，临床医生可以开发更有效的诊断工具，改进治疗干预措施，并改善患者的治疗效果。
+
+---
+
+## 9. Sphere即将上映的《绿野仙踪》体验背后的AI魔法
+
+**原文标题**: The AI magic behind Sphere's upcoming 'The Wizard of Oz' experience
+
+**原文链接**: [https://blog.google/products/google-cloud/sphere-wizard-of-oz/](https://blog.google/products/google-cloud/sphere-wizard-of-oz/)
+
+本文探讨了即将于2025年8月28日在拉斯维加斯Sphere首映的“Sphere绿野仙踪”体验。该项目利用先进的生成式人工智能，包括谷歌DeepMind的Imagen和Veo，以及谷歌云的Gemini，为Sphere巨大的沉浸式环境重新构想1939年的经典电影。
+
+目标是在尊重原片完整性的前提下，创造一种包围17600个座位的场馆的感官体验。团队没有添加任何新的对话或音乐，而是使用人工智能来增强和扩展原始素材。
+
+关键挑战包括将原始35毫米胶片扩展到Sphere的16K LED屏幕，并填补因镜头切换造成的空白。人工智能工具被用于“超分辨率”以提高图像质量，“外绘”以扩展场景范围，以及“性能生成”以将表演融入扩展的环境中。
+
+为了提高人工智能输出的质量，团队正在使用微调，利用大量的补充材料（包括拍摄剧本、制作插图和场景设计图）来训练人工智能模型。这使人工智能能够生成超逼真的细节，并将多萝西和托托等角色无缝集成到增强的环境中。该项目涉及谷歌DeepMind、谷歌云、Sphere Studios、Magnopus和华纳兄弟探索公司的合作。
+
+---
+
+## 10. 江诗丹顿打破世界纪录，推出最复杂腕表
+
+**原文标题**: Vacheron Constantin breaks the world record for most complicated wristwatch
+
+**原文链接**: [https://www.hodinkee.com/articles/introducing-vacheron-constantin-les-cabinotiers-solaria](https://www.hodinkee.com/articles/introducing-vacheron-constantin-les-cabinotiers-solaria)
+
+江诗丹顿打破世界纪录，打造最复杂腕表：文章聚焦江诗丹顿在创造一款具有空前复杂功能的全新腕表上所取得的成就。文章很可能强调这款腕表是钟表史上的一项重大成就。由于文章出现在“编辑精选：2025年钟表与奇迹表展上我们最喜爱的腕表”中，因此表明这款腕表在2025年钟表与奇迹表展上首次亮相（或将首次亮相），并在其他发布的产品中脱颖而出，成为首选。核心信息是江诗丹顿突破了制表复杂性的界限，为其他制造商树立了新的标杆。
 
 ---
 
@@ -143,26 +154,27 @@ WordPress 发布免费 AI 网站构建器，旨在以最小的用户工作量创
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 2 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 3 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 4 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 5 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 6 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 7 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 8 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 9 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 10 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 11 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 12 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 13 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 14 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 15 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 16 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 17 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 18 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 19 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 20 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 21 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 22 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 23 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 1 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 2 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 3 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 4 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 5 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 6 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 7 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 8 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 9 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 10 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 11 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 12 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 13 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 14 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 15 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 16 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 17 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 18 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 19 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 20 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 21 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 22 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 23 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 24 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
