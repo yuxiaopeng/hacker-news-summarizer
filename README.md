@@ -1,152 +1,155 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-12.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-13.md)
 
-*最后自动更新时间: 2025-04-12 17:46:37*
-## 1. 开源且可自托管/私有的文件转换器
+*最后自动更新时间: 2025-04-13 17:45:32*
+## 1. 姆明一族的阴暗面
 
-**原文标题**: Open source and self hostable/private file converter
+**原文标题**: The Dark Side of the Moomins
 
-**原文链接**: [https://vert.sh](https://vert.sh)
+**原文链接**: [https://www.newstatesman.com/culture/books/2025/04/dark-side-of-the-moomins-tove-jansson](https://www.newstatesman.com/culture/books/2025/04/dark-side-of-the-moomins-tove-jansson)
 
-VERT.sh：开源且可自托管的文件转换器。其主要特点包括：
+本文深入探讨了托芙·杨松备受欢迎的姆明角色背后复杂而往往阴暗的现实，揭示了异想天开、商业上成功的姆明形象与杨松最初更深刻的意图之间鲜明的对比。《姆明与大洪水》是第一部姆明书籍，创作于冬季战争期间，反映了流离失所和生存的主题。
 
-*   **注重隐私：** 所有文件处理都在用户本地设备上进行，确保隐私安全，并消除文件大小限制和广告。
-*   **开源：** 该软件是开源的，允许用户检查和修改代码。
-*   **广泛的格式支持（开发中）：** 该工具旨在支持各种图片、音频和视频文件格式。
-*   **当前状态：** 虽然前景可观，但列出的格式及其支持状态表明，图片和音频的各项功能仍“未就绪”，且某些视频默认需要服务器端处理（附有关于如何设置本地处理的说明）。
-*   **用户界面：** 提供简单的拖放或点击上传界面。
-*   **板块：** 网页包含上传、转换、设置和关于等板块。
+本文强调了杨松作为一名半瑞典、半芬兰艺术家和拥有多元关系的“边界居民”身份，这影响了她的角色的焦虑和对家的追寻。虽然早期的姆明故事提供了安慰和快乐的结局，但后来的书籍，如《姆明谷的仲冬》和《姆明爸爸出海记》，则探讨了抑郁、家庭破裂和存在主义焦虑的主题。
+
+本文揭露了杨松在姆明现象商业化方面所面临的挑战，她对此感到不堪重负。杨松与她的角色，特别是姆明，进行着抗争，甚至讽刺了她苛刻的粉丝。最终，她试图通过结束漫画连载并在一个偏远的岛屿上与她的伴侣避难来与姆明保持距离。本质上，本文揭示了编织到姆明宇宙中的隐藏深度和个人斗争，展示了杨松如何将她的角色作为她自己复杂个性的画布。
 
 ---
 
-## 2. Tunarr: 从服务器上的媒体创建和配置直播电视频道
+## 2. Skywork-OR1：全新SOTA 320亿参数开源思维模型
 
-**原文标题**: Tunarr: Create and configure live TV channels from media on your servers
+**原文标题**: Skywork-OR1: new SOTA 32B thinking model with open weight
 
-**原文链接**: [https://tunarr.com/](https://tunarr.com/)
+**原文链接**: [https://github.com/SkyworkAI/Skywork-OR1](https://github.com/SkyworkAI/Skywork-OR1)
 
-Tunarr 是一款软件，可以从存储在 Plex、Jellyfin 或 Emby 服务器上的媒体创建直播电视频道。它允许您通过 Web UI 配置频道、节目、广告和设置。 然后，您可以通过将 Tunarr 模拟的 HDHomerun 调谐器添加到您的媒体服务器或使用生成的 M3U 文件与任何 IPTV 播放器来观看这些频道。
+Skywork AI 发布了 Skywork-OR1（Open Reasoner 1）系列，这是一系列专注于数学和代码推理的最新开源权重模型。该系列包括 Skywork-OR1-Math-7B、Skywork-OR1-32B-Preview 和 Skywork-OR1-7B-Preview，均提供开源权重。这些模型使用强化学习和精心设计的数据集进行训练。
 
-Tunarr 是 dizqueTV 的重新构想，旨在实现技术栈现代化、为现有用户提供迁移、稳定程序、提高性能 (使用 Node 20.11.1)、更新 Web UI 并添加新功能。 本质上，Tunarr 允许您从现有的媒体库中创建个性化的直播电视体验。
+Skywork-OR1-Math-7B 专为数学推理而设计，在 AIME24 和 AIME25 上取得了令人印象深刻的分数。Skywork-OR1-32B-Preview 在数学和编码任务上的表现与更大的 Deepseek-R1 相媲美，而 Skywork-OR1-7B-Preview 的表现优于其他同等规模的模型。
+
+文章引入了 Avg@K 作为一种新的评估指标，用于衡量 K 次独立尝试的平均性能，以提供更可靠的评估。文章包含了在 AIME24、AIME25 和 LiveCodeBench 上的评估结果，展示了这些模型相对于竞争对手的强大性能。
+
+文章提供了使用 Docker 和 Conda 环境安装和评估模型的说明。训练脚本即将发布。技术报告也在计划中。这些模型基于 DeepSeek-R1-Distill-Qwen-7B 和 DeepSeek-R1-Distill-Qwen-32B，并使用 verl 项目的自定义分支。文章提供了 Skywork-OR1 系列的引用。
 
 ---
 
-## 3. 巴黎告别汽车。空气污染地图显示显著变化。
+## 3. 使用Aider浪费推理
 
-**原文标题**: Paris said au revoir to cars. Air pollution maps reveal a dramatic change
+**原文标题**: Wasting Inferences with Aider
 
-**原文链接**: [https://www.washingtonpost.com/climate-solutions/2025/04/12/air-pollution-paris-health-cars/](https://www.washingtonpost.com/climate-solutions/2025/04/12/air-pollution-paris-health-cars/)
+**原文链接**: [https://worksonmymachine.substack.com/p/wasting-inferences-with-aider](https://worksonmymachine.substack.com/p/wasting-inferences-with-aider)
 
 无法访问文章链接。
 
 ---
 
-## 4. 谷歌将允许企业在自有数据中心运行 Gemini 模型
+## 4. Whenever - Python 的类型化和时区安全日期时间
 
-**原文标题**: Google will let companies run Gemini models in their own data centers
+**原文标题**: Whenever – typed and DST-safe datetimes for Python
 
-**原文链接**: [https://www.cnbc.com/2025/04/09/google-will-let-companies-run-gemini-models-in-their-own-data-centers.html](https://www.cnbc.com/2025/04/09/google-will-let-companies-run-gemini-models-in-their-own-data-centers.html)
+**原文链接**: [https://github.com/ariebovenberg/whenever](https://github.com/ariebovenberg/whenever)
 
-谷歌云将允许企业在其自有数据中心运行 Gemini AI 模型，此项名为 Google Distributed Cloud 的服务将于第三季度开始提供。 这一举措使谷歌有别于 OpenAI 和 Anthropic 等竞争对手，后者更倾向于通过不提供数据中心部署来保持对其模型的严格控制。 Cohere 提供类似选项，但设置时间较长。
+Whenever：一款旨在解决Python `datetime` 模块及Arrow和Pendulum等现有第三方库不足的全新 Python 库。它致力于为处理日期时间提供更健壮、类型安全和高性能的解决方案，尤其是在夏令时 (DST) 以及 naive 和 aware 日期时间区分方面。
 
-此项服务满足了包括具有高度安全需求的政府实体在内的组织的需求，这些组织希望在利用谷歌 AI 技术的同时，保持对其数据的控制。 一个与互联网断开连接的“气隙”版 Google Distributed Cloud 将满足具有绝密分类级别的客户的需求。
+Whenever 的主要优势包括：
 
-英伟达也将在其 Blackwell GPU 上提供 Gemini 模型，可通过谷歌或其他供应商购买。 这项举措是谷歌扩大其云市场份额的更广泛战略的一部分，谷歌云在 2023 年的市场份额为 8%，而亚马逊为 39%，微软为 23%。 谷歌云首席执行官 Thomas Kurian 强调，公司致力于多云环境和对人工智能的投资，这将推动客户增长。 Gemini 模型支持多种输入（文本、音频、视频）和 100 多种语言。 此公告是在谷歌以 320 亿美元收购云安全初创公司 Wiz 之后发布的。
+*   **DST 安全的算术运算：** 在日期时间计算过程中正确处理 DST 转换，避免常见错误。
+*   **类型安全的 API：** 强制正确使用 naive 和 aware 日期时间，防止类型相关的错误。
+*   **性能：** 与 Arrow 和 Pendulum 相比，提供卓越的性能。
+*   **熟悉的概念：** 基于 Temporal、Noda Time 和 Joda Time 等其他日期时间库中已建立的成熟概念。
 
----
+Whenever 引入了 `Instant`、`ZonedDateTime` 和 `LocalDateTime` 等特定类型，用于不同的日期时间用例，从而提高显式性并防止 naive 和 aware 日期时间的意外混合。
 
-## 5. 一个漏洞不够：通过SAP的Setuid环境两次升级权限
-
-**原文标题**: One Bug Wasn't Enough: Escalating Twice Through SAP's Setuid Landscape
-
-**原文链接**: [https://www.anvilsecure.com/blog/one-bug-wasnt-enough-escalating-twice-through-saps-setuid-landscape.html](https://www.anvilsecure.com/blog/one-bug-wasnt-enough-escalating-twice-through-saps-setuid-landscape.html)
-
-Tao Sauvage 披露了他们发现 SAP 软件中两个本地权限提升漏洞 (CVE-2024-47595) 的过程，这些漏洞允许 `sapsys` 用户获得 root 权限。这是通过利用 setuid 二进制文件 `icmbnd` 和 `hostexecstart` 实现的。
-
-初步的侦察涉及识别潜在的 setuid 二进制文件。由于存在现有漏洞，`hdbmdcdispatcher` 和 `sapuxuserchk` 被排除。重点转移到 `icmbnd` 和 `hostexecstart`。
-
-`icmbnd` 漏洞是通过使用 `-f` 选项覆盖 `/etc/passwd` 来利用的。通过注入包含修改后的 `/etc/passwd` 条目的精心设计的 `-l` 参数，`hxeadm` 用户的组 ID 被更改为 0 (root)。这导致 `hxeadm` 用户在新的登录时获得 root 权限。
-
-利用 `hostexecstart` 更具挑战性。接受 SAR 归档文件路径的 `-upgrade` 选项似乎很有希望。但是，SAR 归档文件是经过签名的，并且在提取之前会验证签名。作者探索了诸如使用 `-L` 选项注入参数以加载自定义库之类的选项，但由于对文件路径的限制而未成功。
-
-由于 SAP 的专有签名过程涉及时间戳机构 (TSA) 并且仅信任 SAP 信任的 CA，因此签署 SAR 归档文件的尝试也未成功。
-
-因此，作者开发了 SAPCARve，这是一个基于 Kaitai Struct 格式的 Python 工具，用于解析和操作 SAR 归档文件，以探索利用 `hostexecstart` 的其他方法。第二个漏洞的细节未在本摘要的上下文中提供。
+该库仍处于 1.0 之前的版本，API 可能会发生变化，但开发人员正在积极寻求反馈。除了更快的 Rust 实现之外，还提供纯 Python 版本。项目路线图包括可自定义的解析、间隔、范围、重复时间和闰秒解析等功能。它支持纳秒精度并遵循语义版本控制。
 
 ---
 
-## 6. Roo还是Cline？我们在构建一个超集。
+## 5. 茴香的魅力？
 
-**原文标题**: Roo or Cline? We're building a superset
+**原文标题**: Why Fennel?
 
-**原文链接**: [https://blog.kilocode.ai/p/roo-or-cline-were-building-a-superset](https://blog.kilocode.ai/p/roo-or-cline-were-building-a-superset)
+**原文链接**: [https://fennel-lang.org/rationale](https://fennel-lang.org/rationale)
 
-Kilo Code正在构建一个开源AI编码工具，目标是成为像Cline和Roo Code等现有工具的“超集”，融合它们的最佳特性，而不是专注于新颖的创新。这种“快速跟随”策略，受到苹果和Linux等例子的启发，利用开源社区并鼓励特性的相互采用。
+茴香（Fennel）是一种运行在 Lua 运行时上的编程语言，提供了一种替代语法并解决了人们认为 Lua 存在的不足。Lua 以其简洁性、速度和可嵌入性而著称，使得程序可以重新编程。茴香在利用 Lua 优势的同时，改进了语法和错误预防等方面的特性。
 
-Kilo Code首先通过fork Roo Code（本身就是Cline的一个fork），然后融入Cline的独特特性，使Kilo Code成为两者的超集。他们将继续合并Roo Code的代码，以保持其超集地位。目前Roo Code的独特特性包括温度控制、国际化和增强的提示功能。Cline的独特特性包括MCP市场集成和零配置启动。Kilo Code自身的增加功能包括免费的Claude 3.7 Sonnet访问、快捷键和“氛围编码”（自动接受）。
+茴香的主要区别在于其 Lisp 风格的、以括号优先的语法，消除了歧义、语句、运算符优先级和提前返回，从而简化了语法。它通过使意外的全局变量使用变得困难来解决 Lua 的全局变量问题。与 Lua 的可选 `const` 变量不同，茴香强制使用 `var` 来声明重新赋值的变量，从而促进更简洁的代码。
 
-该公司计划将来自其他流行工具（包括像Cursor和Windsurf这样的专有工具）的更多特性集成到Kilo Code中。他们积极鼓励用户建议需要包含的特性，旨在成为功能最广泛的首选工具。通过开源他们的工作，他们希望加速AI编码工具的整体进步，即使这意味着其他人“偷回”他们的改进。最终，Kilo Code专注于提高开发人员的生产力并减少麻烦，强调为开源社区构建真正有用的东西。
+茴香改进了 Lua 的表表示法，使用方括号表示顺序表，使用大括号表示键/值表。它将数值 for 循环与基于迭代器的循环分开，并引入 `each` 用于后者。
 
----
-
-## 7. Artie (YC S23) 招聘第三位工程师
-
-**原文标题**: Artie (YC S23) Is Hiring Engineer #3
-
-**原文链接**: [https://www.ycombinator.com/companies/artie/jobs/7kGvDVC-founding-product-engineer](https://www.ycombinator.com/companies/artie/jobs/7kGvDVC-founding-product-engineer)
-
-Artie (Y Combinator S23) 招募创始产品工程师
-
-Artie (一家 Y Combinator S23 的创业公司，致力于构建数据库和数据仓库的实时数据流解决方案) 正在旧金山招聘第三名工程师，担任创始产品工程师。他们利用变更数据捕获 (CDC) 和 Kafka 实现亚分钟级延迟的数据传输，为传统的批量 ETL 解决方案提供了一种替代方案。在推出云产品一年内，他们已实现 100 万美元的年度经常性收入 (ARR)，并获得了知名投资者的支持。
-
-理想的候选人将拥有 4 年以上在初创公司从事 Web 开发的经验，扎实的计算机科学基础，以及以务实的方法构建用户友好且可扩展的产品。虽然精通 Go 语言者优先，但并非强制性要求。该职位涉及与技术客户直接互动以改进产品的用户体验，构建诸如列排除和模式更改警报等新功能，以及改进内部工具和构建自动化。
-
-Artie 的技术栈包括用于前端的 TypeScript (React, Material UI) 和用于后端的 Go、PostgreSQL、Redis、Kafka 和 Elasticsearch，基础设施使用 Terraform、Kubernetes 和 Helm 在 GCP 和 AWS 上进行管理。面试流程包括与首席技术官的电话沟通、技术电话筛选以及现场面试。
-
-Artie 团队规模为 8 人，是一家于 2023 年成立的活跃公司。
+在函数方面，茴香允许未经检查的 (`fn`) 和经过参数个数检查的 (`lambda`) 函数定义。此外，茴香还融入了解构和模式匹配，这些都是 Lua 所缺乏的特性。最后，它还具有用于扩展语言的宏系统，尽管其使用被有意地淡化。本质上，茴香旨在增强 Lua 的可用性并防止常见错误，同时保留其核心优势。
 
 ---
 
-## 8. 妄想主题可能比我们想象的更加多样化
+## 6. Cargo-mutants:僵尸: 注入缺陷，看你的测试能否发现它们
 
-**原文标题**: Delusional themes may be more varied than we thought
+**原文标题**: Cargo-mutants:zombie: Inject bugs and see if your tests catch them
 
-**原文链接**: [https://www.bps.org.uk/research-digest/delusional-themes-may-be-more-varied-we-thought](https://www.bps.org.uk/research-digest/delusional-themes-may-be-more-varied-we-thought)
+**原文链接**: [https://github.com/sourcefrog/cargo-mutants](https://github.com/sourcefrog/cargo-mutants)
 
-精神分裂症公报近期发表的一项研究挑战了对妄想主题的传统理解，发现其变异程度远超之前的假设。由伦敦大学学院的Elisavet Pappa领导的这项研究分析了涵盖全球173,920名精神病患者的155项研究。该研究确定了37种不同的妄想主题，超过了DSM-5等诊断手册中概述的有限类别。
+`cargo-mutants` 是一款 Rust 工具，旨在通过识别在不导致测试失败的情况下可以插入 bug 的区域来提高程序质量，从而指出测试套件的潜在弱点。它通过验证测试是否彻底检查了代码行为来补充覆盖率测量。该工具旨在轻松用于任何使用 `cargo test` 或 `cargo nextest run` 的 Rust 项目，目的是突出显示容易出现 bug 或缺乏足够测试的区域。
 
-该研究揭示了妄想体验方式中显著的文化差异，表明现有的诊断框架可能过于狭隘，且不具有普遍适用性。研究人员发现妄想中存在“社会梯度”，即个体更可能体验到与亲近家庭成员相关的妄想。这突出了人际关系在塑造妄想内容中的重要性。
+可以通过 `cargo install --locked cargo-mutants` 轻松安装。 用户可以使用 `cargo mutants` 在整个项目上启动突变测试，或使用 `cargo mutants -f src/something.rs` 专注于特定文件。 文档 (https://mutants.rs/) 提供了详细指导，包括用于 pull requests 的增量测试的 CI 集成。
 
-该研究还发现特定妄想主题与精神疾病诊断之间存在联系，挑战了一些现有的假设。例如，通常与妄想症相关的嫉妒妄想在精神分裂症和双相情感障碍中也很常见。文化背景也起着重要作用，南亚的嫉妒妄想患病率较高，东欧的负罪感/罪孽妄想患病率较高，与“盎格鲁”国家相比，中东的性妄想和嫉妒妄想患病率较高。
-
-该研究强调，需要采取更加细致、个体化和具有文化意识的方法来理解和治疗精神病。通过拓宽对妄想主题的理解，临床医生可以开发更有效的诊断工具，改进治疗干预措施，并改善患者的治疗效果。
+该项目欢迎用户反馈、赞助和贡献，以增强其功能。 截至 2025 年 1 月，它正在积极维护中，并计划定期发布版本。 该文档包括与其他技术的比较、设计说明、贡献指南和发行说明。
 
 ---
 
-## 9. Sphere即将上映的《绿野仙踪》体验背后的AI魔法
+## 7. 菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会
 
-**原文标题**: The AI magic behind Sphere's upcoming 'The Wizard of Oz' experience
+**原文标题**: Philip K. Dick: Stanisław Lem Is a Communist Committee
 
-**原文链接**: [https://blog.google/products/google-cloud/sphere-wizard-of-oz/](https://blog.google/products/google-cloud/sphere-wizard-of-oz/)
+**原文链接**: [https://culture.pl/en/article/philip-k-dick-stanislaw-lem-is-a-communist-committee](https://culture.pl/en/article/philip-k-dick-stanislaw-lem-is-a-communist-committee)
 
-本文探讨了即将于2025年8月28日在拉斯维加斯Sphere首映的“Sphere绿野仙踪”体验。该项目利用先进的生成式人工智能，包括谷歌DeepMind的Imagen和Veo，以及谷歌云的Gemini，为Sphere巨大的沉浸式环境重新构想1939年的经典电影。
+菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会
+文章“菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会”详细描述了菲利普·K·迪克对备受赞誉的波兰科幻作家斯坦尼斯拉夫·莱姆的离奇而偏执的痴迷。 在 20 世纪 70 年代，迪克确信莱姆不是一个单独的个体，而是一个由共产主义作家和宣传员组成的集体，他们伪装成一个单一的作者，目的是渗透和控制科幻小说领域。
 
-目标是在尊重原片完整性的前提下，创造一种包围17600个座位的场馆的感官体验。团队没有添加任何新的对话或音乐，而是使用人工智能来增强和扩展原始素材。
+在偏执和安非他命的驱动下，迪克为联邦调查局编写了一份 180 页的报告，指责莱姆和所谓的共产主义委员会在科幻小说领域进行意识形态操纵和颠覆。 他认为他们利用自己的影响力来传播宣传，并通过巧妙编码的叙事来推行亲共议程。
 
-关键挑战包括将原始35毫米胶片扩展到Sphere的16K LED屏幕，并填补因镜头切换造成的空白。人工智能工具被用于“超分辨率”以提高图像质量，“外绘”以扩展场景范围，以及“性能生成”以将表演融入扩展的环境中。
+这篇文章突出了迪克指控的非理性。 莱姆的作品虽然具有哲学性和对社会结构的批判性，但并不包含明确的甚至是可辨别的共产主义宣传。 文章指出，迪克的偏执源于他个人的挣扎，包括吸毒、精神不稳定以及对权威的根深蒂固的不信任，这导致他通过扭曲的视角来解读现实。
 
-为了提高人工智能输出的质量，团队正在使用微调，利用大量的补充材料（包括拍摄剧本、制作插图和场景设计图）来训练人工智能模型。这使人工智能能够生成超逼真的细节，并将多萝西和托托等角色无缝集成到增强的环境中。该项目涉及谷歌DeepMind、谷歌云、Sphere Studios、Magnopus和华纳兄弟探索公司的合作。
+讽刺的是：迪克是一位以探索现实扭曲和意识本质为主题的作家，却成为了自己扭曲的现实感知的受害者，将自己的恐惧和焦虑投射到科幻小说界一位受人尊敬的人物身上。 这篇文章最终描绘了迪克陷入偏执的过程，以及他不受控制的焦虑所造成的悲剧性后果，这导致他不公正地指责莱姆是共产主义阴谋的一部分。
 
 ---
 
-## 10. 江诗丹顿打破世界纪录，推出最复杂腕表
+## 8. Show HN: Gatehouse-TS – Rust 授权策略框架的 TypeScript 移植版
 
-**原文标题**: Vacheron Constantin breaks the world record for most complicated wristwatch
+**原文标题**: Show HN: Gatehouse-TS – TypeScript port of Rust's authorization policy framework
 
-**原文链接**: [https://www.hodinkee.com/articles/introducing-vacheron-constantin-les-cabinotiers-solaria](https://www.hodinkee.com/articles/introducing-vacheron-constantin-les-cabinotiers-solaria)
+**原文链接**: [https://github.com/9Morello/gatehouse-ts](https://github.com/9Morello/gatehouse-ts)
 
-江诗丹顿打破世界纪录，打造最复杂腕表：文章聚焦江诗丹顿在创造一款具有空前复杂功能的全新腕表上所取得的成就。文章很可能强调这款腕表是钟表史上的一项重大成就。由于文章出现在“编辑精选：2025年钟表与奇迹表展上我们最喜爱的腕表”中，因此表明这款腕表在2025年钟表与奇迹表展上首次亮相（或将首次亮相），并在其他发布的产品中脱颖而出，成为首选。核心信息是江诗丹顿突破了制表复杂性的界限，为其他制造商树立了新的标杆。
+Gatehouse-TS 是一个 TypeScript 授权库，移植了 Rust 的 Gatehouse 的功能。它提供了灵活的访问控制策略，结合了基于角色的访问控制 (RBAC)、基于属性的访问控制 (ABAC) 和基于关系的访问控制 (ReBAC)。它拥有零运行时依赖，使其易于直接嵌入到项目中。
+
+主要功能包括支持多范式授权、使用逻辑运算符（AND、OR、NOT）的策略组合、用于调试和审计的详细评估跟踪、用于构建自定义策略的流畅构建器 API，以及资源、操作和上下文的类型安全。
+
+该库的源代码位于单个 TypeScript 文件 (src/index.ts) 中，鼓励直接集成和修改。文档提供了深入的使用说明，并且提供的快速入门示例演示了如何创建和使用基于角色的策略来评估用户访问权限。该示例展示了如何为资源上的操作定义角色，并检查具有特定角色的用户是否被允许执行给定的操作。可以将多个策略添加到 `PermissionChecker` 实例以实现复杂的授权逻辑。
+
+---
+
+## 9. 一个棘手的Commodore PET维修：追踪6个半坏的芯片
+
+**原文标题**: A tricky Commodore PET repair: tracking down 6 1/2 bad chips
+
+**原文链接**: [http://www.righto.com/2025/04/commodore-pet-repair.html](http://www.righto.com/2025/04/commodore-pet-repair.html)
+
+本文详细介绍了修复一台1977年Commodore PET电脑的挑战性过程。作者出于怀旧情怀购入了这台PET电脑，但由于其组件的年代和设计而面临诸多困难。最初的症状是屏幕上充斥着乱码，表明系统存在故障。
+
+修复过程包括使用Retro Chip Tester，结果显示有两个ROM芯片失效。使用适配器板替换了标准EPROM，但问题仍然存在。随后，利用逻辑分析仪跟踪6502处理器的内存访问，并结合Ghidra对ROM内容进行反向工程。
+
+逻辑分析仪显示内存测试失败以及启动过程中的问题。识别并更换了三个损坏的RAM芯片（暂时减少了内存）。对启动信息错误的进一步分析，查明了一个有故障的ROM，导致了错误的内存地址和乱码的屏幕输出。这被追溯到一个功率不足的EPROM编程器，导致ROM数据不稳定。重新编程EPROM并更换另一个RAM芯片后，问题最终得到解决。
+
+总共有六个芯片损坏：两个ROM和四个RAM。作者反思了逻辑分析仪在理解系统行为方面的价值，即使直接芯片测试可能更快。文章最后，PET电脑终于可以正常工作并显示图形模式，突出了老式电脑维修的挑战和回报。
+
+---
+
+## 10. 《Compute》杂志时隔35年回归，将专注于复古计算
+
+**原文标题**: Compute's Gazette Magazine Returns After 35 Yrs, Will Focus on Retro Computing
+
+**原文链接**: [https://www.computesgazette.com/](https://www.computesgazette.com/)
+
+《Compute!'s Gazette》杂志将于35年后回归，扩大关注范围，涵盖整个复古计算社群。该杂志将提供印刷版和数字版，并提供月度订阅计划。回归刊计划于2025年7月发布，并承诺为复古计算爱好者带来“重大新闻”。
+
+该杂志将刊登深入的文章、技巧和故事，庆祝计算的黄金时代。最近的新闻稿重点介绍了诸如“任天堂的游戏密钥改变了开发者和玩家的游戏规则”等功能，讨论了不断发展的DRM，以及一篇鼓励支持当地复古街机厅的文章。即将发行的一期还将探讨生成式人工智能对游戏开发的影响，解决其挑战和潜力。
 
 ---
 
@@ -154,27 +157,28 @@ Artie 团队规模为 8 人，是一家于 2023 年成立的活跃公司。
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 2 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 3 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 4 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 5 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 6 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 7 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 8 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 9 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 10 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 11 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 12 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 13 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 14 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 15 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 16 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 17 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 18 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 19 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 20 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 21 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 22 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 23 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 24 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 1 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 2 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 3 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 4 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 5 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 6 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 7 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 8 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 9 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 10 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 11 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 12 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 13 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 14 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 15 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 16 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 17 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 18 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 19 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 20 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 21 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 22 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 23 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 24 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 25 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
