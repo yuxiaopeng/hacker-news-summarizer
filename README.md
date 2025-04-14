@@ -1,155 +1,169 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-13.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-14.md)
 
-*最后自动更新时间: 2025-04-13 17:45:32*
-## 1. 姆明一族的阴暗面
+*最后自动更新时间: 2025-04-14 17:48:10*
+## 1. API中的GPT-4.1
 
-**原文标题**: The Dark Side of the Moomins
+**原文标题**: GPT-4.1 in the API
 
-**原文链接**: [https://www.newstatesman.com/culture/books/2025/04/dark-side-of-the-moomins-tove-jansson](https://www.newstatesman.com/culture/books/2025/04/dark-side-of-the-moomins-tove-jansson)
+**原文链接**: [https://openai.com/index/gpt-4-1/](https://openai.com/index/gpt-4-1/)
 
-本文深入探讨了托芙·杨松备受欢迎的姆明角色背后复杂而往往阴暗的现实，揭示了异想天开、商业上成功的姆明形象与杨松最初更深刻的意图之间鲜明的对比。《姆明与大洪水》是第一部姆明书籍，创作于冬季战争期间，反映了流离失所和生存的主题。
+API中的GPT-4.1标志着OpenAI通过其API提供更新后的GPT-4模型。虽然这次迭代不是一个根本不同的模型（比如GPT-5），但它代表了各个领域的显著改进。
 
-本文强调了杨松作为一名半瑞典、半芬兰艺术家和拥有多元关系的“边界居民”身份，这影响了她的角色的焦虑和对家的追寻。虽然早期的姆明故事提供了安慰和快乐的结局，但后来的书籍，如《姆明谷的仲冬》和《姆明爸爸出海记》，则探讨了抑郁、家庭破裂和存在主义焦虑的主题。
+主要改进包括：
 
-本文揭露了杨松在姆明现象商业化方面所面临的挑战，她对此感到不堪重负。杨松与她的角色，特别是姆明，进行着抗争，甚至讽刺了她苛刻的粉丝。最终，她试图通过结束漫画连载并在一个偏远的岛屿上与她的伴侣避难来与姆明保持距离。本质上，本文揭示了编织到姆明宇宙中的隐藏深度和个人斗争，展示了杨松如何将她的角色作为她自己复杂个性的画布。
+*   **更高的可靠性：** 模型表现出更一致和可预测的性能，减少了生成无意义或矛盾回应的情况。
+*   **更高的准确性：** GPT-4.1在更广泛的任务中表现出更高的准确性，特别是那些需要复杂推理或细致理解的任务。
+*   **更高的安全性：** OpenAI已努力进一步减轻潜在的偏见和有害输出，使模型更安全和更负责任。
+*   **扩展的上下文窗口：** 一项重大升级是扩展的上下文窗口（可能达到128k tokens），允许模型处理和保留来自更长输入的更多信息。 这使得分析整本书或处理大量文档等应用程序成为可能。
+*   **更低的价格：** 尽管有所改进，OpenAI也降低了输入tokens的价格。
 
----
-
-## 2. Skywork-OR1：全新SOTA 320亿参数开源思维模型
-
-**原文标题**: Skywork-OR1: new SOTA 32B thinking model with open weight
-
-**原文链接**: [https://github.com/SkyworkAI/Skywork-OR1](https://github.com/SkyworkAI/Skywork-OR1)
-
-Skywork AI 发布了 Skywork-OR1（Open Reasoner 1）系列，这是一系列专注于数学和代码推理的最新开源权重模型。该系列包括 Skywork-OR1-Math-7B、Skywork-OR1-32B-Preview 和 Skywork-OR1-7B-Preview，均提供开源权重。这些模型使用强化学习和精心设计的数据集进行训练。
-
-Skywork-OR1-Math-7B 专为数学推理而设计，在 AIME24 和 AIME25 上取得了令人印象深刻的分数。Skywork-OR1-32B-Preview 在数学和编码任务上的表现与更大的 Deepseek-R1 相媲美，而 Skywork-OR1-7B-Preview 的表现优于其他同等规模的模型。
-
-文章引入了 Avg@K 作为一种新的评估指标，用于衡量 K 次独立尝试的平均性能，以提供更可靠的评估。文章包含了在 AIME24、AIME25 和 LiveCodeBench 上的评估结果，展示了这些模型相对于竞争对手的强大性能。
-
-文章提供了使用 Docker 和 Conda 环境安装和评估模型的说明。训练脚本即将发布。技术报告也在计划中。这些模型基于 DeepSeek-R1-Distill-Qwen-7B 和 DeepSeek-R1-Distill-Qwen-32B，并使用 verl 项目的自定义分支。文章提供了 Skywork-OR1 系列的引用。
+该公告强调，GPT-4 API的现有用户可以轻松访问更新后的模型，通常只需进行极少或无需任何代码更改。 OpenAI鼓励开发者利用增强的功能进行各种应用，从内容创建到复杂问题解决。 此次发布代表了OpenAI持续致力于改进和完善其基础模型，使其对开发者和用户而言更强大、更可靠和更易于访问。
 
 ---
 
-## 3. 使用Aider浪费推理
+## 2. DeepSeek推理引擎开源之路
 
-**原文标题**: Wasting Inferences with Aider
+**原文标题**: The Path to Open-Sourcing the DeepSeek Inference Engine
 
-**原文链接**: [https://worksonmymachine.substack.com/p/wasting-inferences-with-aider](https://worksonmymachine.substack.com/p/wasting-inferences-with-aider)
+**原文链接**: [https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine](https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine)
 
-无法访问文章链接。
+DeepSeek 将其内部推理引擎专业知识回馈开源社区，这源于之前开源贡献的积极反馈以及回馈社会的承诺。 意识到 PyTorch 和 vLLM 等开源项目在其 AI 开发中的关键作用，DeepSeek 旨在促进 DeepSeek-V3 和 DeepSeek-R1 等模型的部署。
 
----
+DeepSeek 不会直接开源整个引擎，因为这会带来代码分歧、基础设施依赖以及有限的维护带宽等挑战，而是将与现有开源项目合作。 他们的策略包括提取独立的、可重用的功能作为独立的库，并分享设计改进和实施细节。
 
-## 4. Whenever - Python 的类型化和时区安全日期时间
-
-**原文标题**: Whenever – typed and DST-safe datetimes for Python
-
-**原文链接**: [https://github.com/ariebovenberg/whenever](https://github.com/ariebovenberg/whenever)
-
-Whenever：一款旨在解决Python `datetime` 模块及Arrow和Pendulum等现有第三方库不足的全新 Python 库。它致力于为处理日期时间提供更健壮、类型安全和高性能的解决方案，尤其是在夏令时 (DST) 以及 naive 和 aware 日期时间区分方面。
-
-Whenever 的主要优势包括：
-
-*   **DST 安全的算术运算：** 在日期时间计算过程中正确处理 DST 转换，避免常见错误。
-*   **类型安全的 API：** 强制正确使用 naive 和 aware 日期时间，防止类型相关的错误。
-*   **性能：** 与 Arrow 和 Pendulum 相比，提供卓越的性能。
-*   **熟悉的概念：** 基于 Temporal、Noda Time 和 Joda Time 等其他日期时间库中已建立的成熟概念。
-
-Whenever 引入了 `Instant`、`ZonedDateTime` 和 `LocalDateTime` 等特定类型，用于不同的日期时间用例，从而提高显式性并防止 naive 和 aware 日期时间的意外混合。
-
-该库仍处于 1.0 之前的版本，API 可能会发生变化，但开发人员正在积极寻求反馈。除了更快的 Rust 实现之外，还提供纯 Python 版本。项目路线图包括可自定义的解析、间隔、范围、重复时间和闰秒解析等功能。它支持纳秒精度并遵循语义版本控制。
+DeepSeek 强调其对开源运动的感激之情，并致力于为其持续发展做出贡献。 该文章还明确指出，本次公告仅关注推理引擎代码库。 关于未来的模型发布，DeepSeek 承诺从新模型发布的第一天起，积极地将与推理相关的工程工作与开源社区和硬件合作伙伴同步，以确保在各种硬件平台上实现无缝实施。 他们的目标是促进一个同步的生态系统，从而从一开始就为 DeepSeek 模型提供最先进的支持。
 
 ---
 
-## 5. 茴香的魅力？
+## 3. 使用单个SQLite表和少量cron任务的可定制AI助手
 
-**原文标题**: Why Fennel?
+**原文标题**: A hackable AI assistant using a single SQLite table and a handful of cron jobs
 
-**原文链接**: [https://fennel-lang.org/rationale](https://fennel-lang.org/rationale)
+**原文链接**: [https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs](https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs)
 
-茴香（Fennel）是一种运行在 Lua 运行时上的编程语言，提供了一种替代语法并解决了人们认为 Lua 存在的不足。Lua 以其简洁性、速度和可嵌入性而著称，使得程序可以重新编程。茴香在利用 Lua 优势的同时，改进了语法和错误预防等方面的特性。
+史蒂文斯是一位由作者构建的个人AI助手，其架构异常简单：一个充当“管家笔记本”的SQLite表格，以及Val.town上的一些定时Cron任务。史蒂文斯通过Telegram向作者及其妻子提供每日简报，包含他们的日历、天气预报、预计邮件和提醒事项。他们也可以随时与史蒂文斯互动。
 
-茴香的主要区别在于其 Lisp 风格的、以括号优先的语法，消除了歧义、语句、运算符优先级和提前返回，从而简化了语法。它通过使意外的全局变量使用变得困难来解决 Lua 的全局变量问题。与 Lua 的可选 `const` 变量不同，茴香强制使用 `var` 来声明重新赋值的变量，从而促进更简洁的代码。
+这个“笔记本”由各种数据导入器填充：每小时从Google Calendar和天气API拉取数据，对美国邮政Informed Delivery电子邮件进行OCR识别，以及接收Telegram/电子邮件消息。这些导入器在SQLite表中添加或编辑“记忆”，这些记忆可以是任何任意文本。
 
-茴香改进了 Lua 的表表示法，使用方括号表示顺序表，使用大括号表示键/值表。它将数值 for 循环与基于迭代器的循环分开，并引入 `each` 用于后者。
+每日简报由一个Cron任务生成，该任务查询SQLite表格以获取相关的日志条目（未来一周的日期条目和未注明日期的背景条目），然后使用Claude API以正式的管家式语气编写更新。
 
-在函数方面，茴香允许未经检查的 (`fn`) 和经过参数个数检查的 (`lambda`) 函数定义。此外，茴香还融入了解构和模式匹配，这些都是 Lua 所缺乏的特性。最后，它还具有用于扩展语言的宏系统，尽管其使用被有意地淡化。本质上，茴香旨在增强 Lua 的可用性并防止常见错误，同时保留其核心优势。
-
----
-
-## 6. Cargo-mutants:僵尸: 注入缺陷，看你的测试能否发现它们
-
-**原文标题**: Cargo-mutants:zombie: Inject bugs and see if your tests catch them
-
-**原文链接**: [https://github.com/sourcefrog/cargo-mutants](https://github.com/sourcefrog/cargo-mutants)
-
-`cargo-mutants` 是一款 Rust 工具，旨在通过识别在不导致测试失败的情况下可以插入 bug 的区域来提高程序质量，从而指出测试套件的潜在弱点。它通过验证测试是否彻底检查了代码行为来补充覆盖率测量。该工具旨在轻松用于任何使用 `cargo test` 或 `cargo nextest run` 的 Rust 项目，目的是突出显示容易出现 bug 或缺乏足够测试的区域。
-
-可以通过 `cargo install --locked cargo-mutants` 轻松安装。 用户可以使用 `cargo mutants` 在整个项目上启动突变测试，或使用 `cargo mutants -f src/something.rs` 专注于特定文件。 文档 (https://mutants.rs/) 提供了详细指导，包括用于 pull requests 的增量测试的 CI 集成。
-
-该项目欢迎用户反馈、赞助和贡献，以增强其功能。 截至 2025 年 1 月，它正在积极维护中，并计划定期发布版本。 该文档包括与其他技术的比较、设计说明、贡献指南和发行说明。
+作者强调了超出典型聊天机器人记忆的更广泛背景的重要性，这可以通过整合各种信息来源来实现。他还强调了初始记忆实现的简单性，依赖于直接查询，而不是更复杂的RAG方法。最后，作者谈到使用“氛围编码”为项目添加个性和乐趣，例如赋予史蒂文斯管家角色，并将管理仪表板设计成视频游戏。该代码可供其他人Fork和改编。
 
 ---
 
-## 7. 菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会
+## 4. Show HN: 从 Protobufs 实现零代码生成、无需编译的 TypeScript 类型推断
 
-**原文标题**: Philip K. Dick: Stanisław Lem Is a Communist Committee
+**原文标题**: Show HN: Zero-codegen, no-compile TypeScript type inference from Protobufs
 
-**原文链接**: [https://culture.pl/en/article/philip-k-dick-stanislaw-lem-is-a-communist-committee](https://culture.pl/en/article/philip-k-dick-stanislaw-lem-is-a-communist-committee)
+**原文链接**: [https://github.com/nathanhleung/protobuf-ts-types](https://github.com/nathanhleung/protobuf-ts-types)
 
-菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会
-文章“菲利普·K·迪克：斯坦尼斯拉夫·莱姆是个共产主义委员会”详细描述了菲利普·K·迪克对备受赞誉的波兰科幻作家斯坦尼斯拉夫·莱姆的离奇而偏执的痴迷。 在 20 世纪 70 年代，迪克确信莱姆不是一个单独的个体，而是一个由共产主义作家和宣传员组成的集体，他们伪装成一个单一的作者，目的是渗透和控制科幻小说领域。
+这个“Show HN”帖子介绍了 `protobuf-ts-types`，一个 TypeScript 库，可以直接从 Protobuf 定义中推断类型，无需代码生成或编译。它允许开发者在 `.proto` 文件中定义消息类型，并自动推断相应的 TypeScript 类型，从而简化开发流程。
 
-在偏执和安非他命的驱动下，迪克为联邦调查局编写了一份 180 页的报告，指责莱姆和所谓的共产主义委员会在科幻小说领域进行意识形态操纵和颠覆。 他认为他们利用自己的影响力来传播宣传，并通过巧妙编码的叙事来推行亲共议程。
+其核心功能依赖于高级 TypeScript 特性，特别是模板字面量类型，来解析 Protobuf 字符串并提取消息定义。该库提供了 `pbt.infer` 函数，它接受 Protobuf 字符串，可选地还可以接受消息名称作为输入。它返回消息名称到其推断类型的映射，或者返回特定消息的推断类型。
 
-这篇文章突出了迪克指控的非理性。 莱姆的作品虽然具有哲学性和对社会结构的批判性，但并不包含明确的甚至是可辨别的共产主义宣传。 文章指出，迪克的偏执源于他个人的挣扎，包括吸毒、精神不稳定以及对权威的根深蒂固的不信任，这导致他通过扭曲的视角来解读现实。
+该帖子包含使用示例，演示了如何安装该包，定义 Protobuf 字符串，以及如何使用 `pbt.infer` 来获取 TypeScript 类型。它还强调了其优势，例如 TypeScript 强制执行的类型安全，可防止 Protobuf 定义和 TypeScript 代码之间的不匹配。
 
-讽刺的是：迪克是一位以探索现实扭曲和意识本质为主题的作家，却成为了自己扭曲的现实感知的受害者，将自己的恐惧和焦虑投射到科幻小说界一位受人尊敬的人物身上。 这篇文章最终描绘了迪克陷入偏执的过程，以及他不受控制的焦虑所造成的悲剧性后果，这导致他不公正地指责莱姆是共产主义阴谋的一部分。
-
----
-
-## 8. Show HN: Gatehouse-TS – Rust 授权策略框架的 TypeScript 移植版
-
-**原文标题**: Show HN: Gatehouse-TS – TypeScript port of Rust's authorization policy framework
-
-**原文链接**: [https://github.com/9Morello/gatehouse-ts](https://github.com/9Morello/gatehouse-ts)
-
-Gatehouse-TS 是一个 TypeScript 授权库，移植了 Rust 的 Gatehouse 的功能。它提供了灵活的访问控制策略，结合了基于角色的访问控制 (RBAC)、基于属性的访问控制 (ABAC) 和基于关系的访问控制 (ReBAC)。它拥有零运行时依赖，使其易于直接嵌入到项目中。
-
-主要功能包括支持多范式授权、使用逻辑运算符（AND、OR、NOT）的策略组合、用于调试和审计的详细评估跟踪、用于构建自定义策略的流畅构建器 API，以及资源、操作和上下文的类型安全。
-
-该库的源代码位于单个 TypeScript 文件 (src/index.ts) 中，鼓励直接集成和修改。文档提供了深入的使用说明，并且提供的快速入门示例演示了如何创建和使用基于角色的策略来评估用户访问权限。该示例展示了如何为资源上的操作定义角色，并检查具有特定角色的用户是否被允许执行给定的操作。可以将多个策略添加到 `PermissionChecker` 实例以实现复杂的授权逻辑。
+该帖子还承认了一些局限性，包括需要 TS 编译器补丁才能导入 `.proto` 文件（等待 TypeScript 更新）、不支持服务、RPC、`oneof` 和 `map` 字段，以及缺少导入功能（目前需要连接）。由于这些限制，该项目被视为一个概念验证，而不是生产就绪。
 
 ---
 
-## 9. 一个棘手的Commodore PET维修：追踪6个半坏的芯片
+## 5. DolphinGemma：谷歌AI如何助力解码海豚交流
 
-**原文标题**: A tricky Commodore PET repair: tracking down 6 1/2 bad chips
+**原文标题**: DolphinGemma: How Google AI is helping decode dolphin communication
 
-**原文链接**: [http://www.righto.com/2025/04/commodore-pet-repair.html](http://www.righto.com/2025/04/commodore-pet-repair.html)
+**原文链接**: [https://blog.google/technology/ai/dolphingemma/](https://blog.google/technology/ai/dolphingemma/)
 
-本文详细介绍了修复一台1977年Commodore PET电脑的挑战性过程。作者出于怀旧情怀购入了这台PET电脑，但由于其组件的年代和设计而面临诸多困难。最初的症状是屏幕上充斥着乱码，表明系统存在故障。
+本文详细介绍了谷歌与野生海豚项目(WDP)和佐治亚理工学院合作开发DolphinGemma的过程，DolphinGemma是一种旨在解码海豚交流的人工智能模型。几十年来，科学家们一直难以理解海豚使用的复杂咔哒声、口哨声和突发脉冲。WDP长达数十年的长期水下研究，提供了丰富的海豚发声数据集，并配有行为观察，这对于训练人工智能至关重要。
 
-修复过程包括使用Retro Chip Tester，结果显示有两个ROM芯片失效。使用适配器板替换了标准EPROM，但问题仍然存在。随后，利用逻辑分析仪跟踪6502处理器的内存访问，并结合Ghidra对ROM内容进行反向工程。
+DolphinGemma建立在谷歌的Gemma模型之上，使用专门的音频技术处理海豚声音。它分析声音中的模式，以预测后续发声，类似于大型语言模型预测人类语言中的单词。该模型旨在在Pixel手机上运行，从而能够在现场进行实时分析。
 
-逻辑分析仪显示内存测试失败以及启动过程中的问题。识别并更换了三个损坏的RAM芯片（暂时减少了内存）。对启动信息错误的进一步分析，查明了一个有故障的ROM，导致了错误的内存地址和乱码的屏幕输出。这被追溯到一个功率不足的EPROM编程器，导致ROM数据不稳定。重新编程EPROM并更换另一个RAM芯片后，问题最终得到解决。
+除了分析自然交流，该项目还通过CHAT（鲸类听觉增强遥测）系统探索双向互动。CHAT使用与围巾或海草等物体相关的合成口哨声，旨在与海豚建立共享词汇。研究人员希望海豚能够模仿口哨声来“请求”这些物品。Pixel手机用于CHAT系统中的实时声音分析，从而能够快速响应海豚的发声。
 
-总共有六个芯片损坏：两个ROM和四个RAM。作者反思了逻辑分析仪在理解系统行为方面的价值，即使直接芯片测试可能更快。文章最后，PET电脑终于可以正常工作并显示图形模式，突出了老式电脑维修的挑战和回报。
+谷歌计划将DolphinGemma作为开放模型共享，以赋能研究各种鲸类物种的研究人员。通过提供先进的人工智能工具，该项目旨在加速发现海豚交流中的模式，并促进对这些智能海洋哺乳动物的更深入理解。最终目标是弥合人类和海豚之间的沟通鸿沟。
 
 ---
 
-## 10. 《Compute》杂志时隔35年回归，将专注于复古计算
+## 6. 哈萨比斯称谷歌DeepMind将支持Anthropic的MCP用于Gemini及SDK。
 
-**原文标题**: Compute's Gazette Magazine Returns After 35 Yrs, Will Focus on Retro Computing
+**原文标题**: Hassabis Says Google DeepMind to Support Anthropic's MCP for Gemini and SDK
 
-**原文链接**: [https://www.computesgazette.com/](https://www.computesgazette.com/)
+**原文链接**: [https://techcrunch.com/2025/04/09/google-says-itll-embrace-anthropics-standard-for-connecting-ai-models-to-data/](https://techcrunch.com/2025/04/09/google-says-itll-embrace-anthropics-standard-for-connecting-ai-models-to-data/)
 
-《Compute!'s Gazette》杂志将于35年后回归，扩大关注范围，涵盖整个复古计算社群。该杂志将提供印刷版和数字版，并提供月度订阅计划。回归刊计划于2025年7月发布，并承诺为复古计算爱好者带来“重大新闻”。
+谷歌DeepMind将支持Anthropic的Model Context Protocol (MCP)，用于其Gemini模型和SDK，据CEO Demis Hassabis称。 此公告是在OpenAI最近采用相同标准之后发布的，标志着行业互操作性日益增长的趋势。
 
-该杂志将刊登深入的文章、技巧和故事，庆祝计算的黄金时代。最近的新闻稿重点介绍了诸如“任天堂的游戏密钥改变了开发者和玩家的游戏规则”等功能，讨论了不断发展的DRM，以及一篇鼓励支持当地复古街机厅的文章。即将发行的一期还将探讨生成式人工智能对游戏开发的影响，解决其挑战和潜力。
+MCP促进了AI模型与外部数据源之间的连接，使模型能够从业务工具、软件、内容存储库和开发环境中提取信息来完成任务。 它使开发人员能够在这些数据源与聊天机器人等AI驱动的应用程序之间创建双向连接。
+
+该协议利用“MCP服务器”来暴露数据，并利用“MCP客户端”来构建连接到这些服务器的应用程序和工作流程。 自Anthropic开源MCP以来，Block、Apollo、Replit、Codeium和Sourcegraph等公司已将其集成到其平台中。 Hassabis认为MCP正迅速成为AI智能体时代的开放标准，并表示有兴趣进一步合作开发它。 谷歌DeepMind和OpenAI对MCP的采用表明了其成为连接AI模型与其所需数据的广泛使用标准的潜力。
+
+---
+
+## 7. SQLite 文件格式查看器
+
+**原文标题**: SQLite File Format Viewer
+
+**原文链接**: [https://sqlite-internal.pages.dev](https://sqlite-internal.pages.dev)
+
+这篇文章本质上只是一个标题，因此几乎没有什么可总结的。
+
+要点在于，这是关于一个名为“SQLite 文件格式查看器”的工具或应用程序。我们可以推断，该工具旨在让用户检查和理解 SQLite 数据库文件的内部结构和组织。
+
+关键信息（几乎就是全部内容）包括：
+
+*   **主题：**SQLite 数据库文件。
+*   **功能：**查看这些文件的内部格式/结构。
+*   **目标受众：**可能是需要更深入了解 SQLite 数据库如何组织的开发人员、数据库管理员或取证分析师。
+
+在没有更多内容的情况下，我们只能推测具体功能，例如它是否提供十六进制查看、表格浏览或模式可视化。
+
+---
+
+## 8. 科学家：蛋白质IL-17抵抗感染，作用于大脑，诱发焦虑
+
+**原文标题**: Scientists: Protein IL-17 fights infection, acts on the brain, inducing anxiety
+
+**原文链接**: [https://medicalxpress.com/news/2025-04-scientists-protein-il-infection-brain.html](https://medicalxpress.com/news/2025-04-scientists-protein-il-infection-brain.html)
+
+来自麻省理工学院和哈佛医学院的2025年文章重点介绍了关于细胞因子IL-17及其对大脑双重影响的新研究。科学家们发现IL-17是一种对抵抗感染至关重要的免疫分子，它也能影响大脑功能，从而影响焦虑和社交能力。
+
+该研究表明，IL-17作用于两个不同的大脑区域：杏仁核和体感皮层。在杏仁核，特别是基底外侧杏仁核（BLA），IL-17通过增加某些神经元的兴奋性来促进焦虑。相反，在体感皮层，特别是S1DZ区域，IL-17通过降低神经元的兴奋性来促进社交行为。
+
+研究人员确定了存在于这些大脑区域的特定IL-17受体（IL-17RA、IL-17RB和IL-17RE）以及与它们结合并介导不同行为结果的IL-17变体（IL-17A、IL-17C和IL-17E）。他们还发现，抗炎细胞因子IL-10可以抵消IL-17在杏仁核中引起的焦虑效应。
+
+这些发现表明，免疫系统和神经系统之间的联系比以前认为的更为紧密，IL-17可能作为一种神经调节剂发挥作用。研究人员假设，IL-17的神经调节作用可能在其免疫功能之前就已经进化。该研究表明，操纵免疫系统可能为自闭症或抑郁症等神经系统疾病提供新的治疗方法。
+
+---
+
+## 9. Meilisearch – 具备人工智能混合搜索功能的搜索引擎API
+
+**原文标题**: Meilisearch – search engine API bringing AI-powered hybrid search
+
+**原文链接**: [https://github.com/meilisearch/meilisearch](https://github.com/meilisearch/meilisearch)
+
+Meilisearch是一个快速、开源的搜索引擎，旨在轻松集成到应用程序、网站和工作流程中。它提供混合搜索（语义和全文搜索）、搜索即时显示、容错、过滤/分面搜索、排序、同义词支持和地理搜索等功能。它支持多种语言，并通过API密钥和多租户提供安全管理，以实现个性化的搜索结果。
+
+Meilisearch具有高度可定制性，并提供RESTful API以及适用于各种语言和框架的SDK。它也已为AI做好准备，可与Langchain等工具无缝协作。
+
+该平台提供了丰富的文档和指南，用于入门、高级用法和理解核心概念。Meilisearch Cloud提供具有分析和监控功能的托管部署。
+
+该平台收集匿名用户数据以改进产品，可以选择退出并请求删除数据。Meilisearch团队鼓励社区参与，包括提出功能请求、提交错误报告以及参与其Discord社区。欢迎按照其贡献指南为开源项目做出贡献。
+
+---
+
+## 10. 削ろう会 #39
+
+**原文标题**: Kezurou-Kai #39
+
+**原文链接**: [https://www.bigsandwoodworking.com/kezurou-kai-39/](https://www.bigsandwoodworking.com/kezurou-kai-39/)
+
+乔恩参加了在日本新泻县糸鱼川市举办的第39届削ろう会，这是一项使用日本刨刀比赛，旨在削出尽可能薄的木刨花。活动持续两天，参与者有多次机会提交刨花进行测量。主要比赛是使用70毫米鉋在扁柏木上进行。预备刨削允许参赛者使用自己的材料，而最终比赛则使用主办方提供的木材。
+
+乔恩和他的朋友们从Somakosha一起参加了比赛，最初削出了10-12微米范围内的刨花。挑战在于突破10微米大关，这需要细致的磨刀和刨台调整。官方测量使用气动控制的数字卡尺进行。
+
+第二天，竞争更加激烈，突显了木材质量和水分含量在获得超薄刨花方面的重要性。许多参赛者非常注意保持木材的水分。乔恩的团队尝试了不同的技术，最终发现刨削前稍微润湿木材可以显著改善结果。他最好的刨花测量结果为10、6和9微米。
+
+排名前五的决赛选手随后使用杉木进行比赛，杉木比扁柏木更难刨削。本轮比赛的获胜者获得了大约50微米的刨花。该活动还包括墨壺雕刻、刨台切割、斧劈以及销售工具和磨刀石的商贩的演示。乔恩推荐任何对木工和手工工具有热情的人参加削ろう会。
 
 ---
 
@@ -157,28 +171,29 @@ Gatehouse-TS 是一个 TypeScript 授权库，移植了 Rust 的 Gatehouse 的�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 2 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 3 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 4 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 5 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 6 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 7 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 8 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 9 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 10 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 11 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 12 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 13 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 14 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 15 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 16 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 17 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 18 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 19 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 20 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 21 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 22 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 23 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 24 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 25 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 1 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 2 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 3 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 4 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 5 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 6 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 7 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 8 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 9 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 10 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 11 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 12 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 13 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 14 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 15 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 16 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 17 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 18 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 19 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 20 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 21 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 22 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 23 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 24 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 25 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 26 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
