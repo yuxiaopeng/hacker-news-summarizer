@@ -1,169 +1,175 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-14.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-15.md)
 
-*最后自动更新时间: 2025-04-14 17:48:10*
-## 1. API中的GPT-4.1
+*最后自动更新时间: 2025-04-15 17:48:04*
+## 1. 如何赢得与幼儿的争论
 
-**原文标题**: GPT-4.1 in the API
+**原文标题**: How to Win an Argument with a Toddler
 
-**原文链接**: [https://openai.com/index/gpt-4-1/](https://openai.com/index/gpt-4-1/)
+**原文链接**: [https://seths.blog/2025/04/how-to-win-an-argument-with-a-toddler/](https://seths.blog/2025/04/how-to-win-an-argument-with-a-toddler/)
 
-API中的GPT-4.1标志着OpenAI通过其API提供更新后的GPT-4模型。虽然这次迭代不是一个根本不同的模型（比如GPT-5），但它代表了各个领域的显著改进。
+与幼儿或行为如幼儿者争论，不可能“获胜”，因为他们的动机与真正的智识交流不同。幼儿（以及行为类似者）对发掘洞察力或达成结论不感兴趣；相反，他们寻求联系、娱乐、地位或施展权力的机会。
 
-主要改进包括：
+本文将此与真正的争论进行对比，真正的争论涉及思想的交流，从而可能导致理解的转变。改变主意的意愿被认为是富有成效的争论的关键指标，表明智力增长源于对新观点的开放。
 
-*   **更高的可靠性：** 模型表现出更一致和可预测的性能，减少了生成无意义或矛盾回应的情况。
-*   **更高的准确性：** GPT-4.1在更广泛的任务中表现出更高的准确性，特别是那些需要复杂推理或细致理解的任务。
-*   **更高的安全性：** OpenAI已努力进一步减轻潜在的偏见和有害输出，使模型更安全和更负责任。
-*   **扩展的上下文窗口：** 一项重大升级是扩展的上下文窗口（可能达到128k tokens），允许模型处理和保留来自更长输入的更多信息。 这使得分析整本书或处理大量文档等应用程序成为可能。
-*   **更低的价格：** 尽管有所改进，OpenAI也降低了输入tokens的价格。
+“幼儿”策略包括保留一场发脾气，要么在他们“获胜”时避免，要么在他们“失败”时通过指责对方不愿倾听来辩解。
 
-该公告强调，GPT-4 API的现有用户可以轻松访问更新后的模型，通常只需进行极少或无需任何代码更改。 OpenAI鼓励开发者利用增强的功能进行各种应用，从内容创建到复杂问题解决。 此次发布代表了OpenAI持续致力于改进和完善其基础模型，使其对开发者和用户而言更强大、更可靠和更易于访问。
+作者建议通过询问过去因讨论而改变坚定信念的例子，以及询问哪些信息可能导致视角转变来发起真正的讨论。最终，本文建议避免争论那些对个人身份至关重要的信念。核心信息是区分真正的智识交流和反对的表演，尤其是在与那些不愿意考虑替代观点的人打交道时。
 
 ---
 
-## 2. DeepSeek推理引擎开源之路
+## 2. 本·乔丹的人工智能毒丸与对抗噪声的怪异世界
 
-**原文标题**: The Path to Open-Sourcing the DeepSeek Inference Engine
+**原文标题**: Benn Jordan's AI poison pill and the weird world of adversarial noise
 
-**原文链接**: [https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine](https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine)
+**原文链接**: [https://cdm.link/benn-jordan-ai-poison-pill/](https://cdm.link/benn-jordan-ai-poison-pill/)
 
-DeepSeek 将其内部推理引擎专业知识回馈开源社区，这源于之前开源贡献的积极反馈以及回馈社会的承诺。 意识到 PyTorch 和 vLLM 等开源项目在其 AI 开发中的关键作用，DeepSeek 旨在促进 DeepSeek-V3 和 DeepSeek-R1 等模型的部署。
+这篇CDM Create Digital Music文章讨论了Benn Jordan提出的“AI毒丸”——一种将对抗性噪声注入音乐以防止其被用于训练生成式AI模型的方法。该技术旨在通过导致模型误解或错误处理被污染的音频来扰乱AI训练。
 
-DeepSeek 不会直接开源整个引擎，因为这会带来代码分歧、基础设施依赖以及有限的维护带宽等挑战，而是将与现有开源项目合作。 他们的策略包括提取独立的、可重用的功能作为独立的库，并分享设计改进和实施细节。
+文章强调了这种方法的潜在好处，包括它能够通过“模拟漏洞”运作以及通过不同方法进行调整，使AI服务难以反制。然而，目前的实现需要大量的计算能力，使得大规模使用不切实际。
 
-DeepSeek 强调其对开源运动的感激之情，并致力于为其持续发展做出贡献。 该文章还明确指出，本次公告仅关注推理引擎代码库。 关于未来的模型发布，DeepSeek 承诺从新模型发布的第一天起，积极地将与推理相关的工程工作与开源社区和硬件合作伙伴同步，以确保在各种硬件平台上实现无缝实施。 他们的目标是促进一个同步的生态系统，从而从一开始就为 DeepSeek 模型提供最先进的支持。
+文章还探讨了对抗性噪声的更广阔世界，讨论了其在保护音乐之外的潜在用途，例如入侵AI和监控系统。它提到了对“和谐隐身”和AI检测算法的研究。
 
----
+文章强调了AI防御方法的快速发展，并引用了洛斯阿拉莫斯国家实验室和IBM Watson的例子。它还指出了定向压力波攻击的双刃剑性质，该攻击可以用来对付机器，但也与声波武器和“哈瓦那综合症”有关。
 
-## 3. 使用单个SQLite表和少量cron任务的可定制AI助手
-
-**原文标题**: A hackable AI assistant using a single SQLite table and a handful of cron jobs
-
-**原文链接**: [https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs](https://www.geoffreylitt.com/2025/04/12/how-i-made-a-useful-ai-assistant-with-one-sqlite-table-and-a-handful-of-cron-jobs)
-
-史蒂文斯是一位由作者构建的个人AI助手，其架构异常简单：一个充当“管家笔记本”的SQLite表格，以及Val.town上的一些定时Cron任务。史蒂文斯通过Telegram向作者及其妻子提供每日简报，包含他们的日历、天气预报、预计邮件和提醒事项。他们也可以随时与史蒂文斯互动。
-
-这个“笔记本”由各种数据导入器填充：每小时从Google Calendar和天气API拉取数据，对美国邮政Informed Delivery电子邮件进行OCR识别，以及接收Telegram/电子邮件消息。这些导入器在SQLite表中添加或编辑“记忆”，这些记忆可以是任何任意文本。
-
-每日简报由一个Cron任务生成，该任务查询SQLite表格以获取相关的日志条目（未来一周的日期条目和未注明日期的背景条目），然后使用Claude API以正式的管家式语气编写更新。
-
-作者强调了超出典型聊天机器人记忆的更广泛背景的重要性，这可以通过整合各种信息来源来实现。他还强调了初始记忆实现的简单性，依赖于直接查询，而不是更复杂的RAG方法。最后，作者谈到使用“氛围编码”为项目添加个性和乐趣，例如赋予史蒂文斯管家角色，并将管理仪表板设计成视频游戏。该代码可供其他人Fork和改编。
+最终，作者主张开发和使用这种技术来保护艺术家的作品，设想未来发行商可以授权这些工具，为制作人提供安心。作者对Suno.ai创始人的观点表示沮丧，突出了开发AI音乐工具的人与艺术过程的内在乐趣之间可能存在的脱节。
 
 ---
 
-## 4. Show HN: 从 Protobufs 实现零代码生成、无需编译的 TypeScript 类型推断
+## 3. 克洛格
 
-**原文标题**: Show HN: Zero-codegen, no-compile TypeScript type inference from Protobufs
+**原文标题**: Clolog
 
-**原文链接**: [https://github.com/nathanhleung/protobuf-ts-types](https://github.com/nathanhleung/protobuf-ts-types)
+**原文链接**: [https://github.com/bobschrag/clolog](https://github.com/bobschrag/clolog)
 
-这个“Show HN”帖子介绍了 `protobuf-ts-types`，一个 TypeScript 库，可以直接从 Protobuf 定义中推断类型，无需代码生成或编译。它允许开发者在 `.proto` 文件中定义消息类型，并自动推断相应的 TypeScript 类型，从而简化开发流程。
+Clolog是一个嵌入在Clojure中的逻辑编程系统（类似于Prolog），它提供了一种Lispy的、自同构的语法。它强调表达能力和执行透明性，而非原始速度，使其适用于快速原型设计和外循环推理。
 
-其核心功能依赖于高级 TypeScript 特性，特别是模板字面量类型，来解析 Protobuf 字符串并提取消息定义。该库提供了 `pbt.infer` 函数，它接受 Protobuf 字符串，可选地还可以接受消息名称作为输入。它返回消息名称到其推断类型的映射，或者返回特定消息的推断类型。
+主要特性包括：
 
-该帖子包含使用示例，演示了如何安装该包，定义 Protobuf 字符串，以及如何使用 `pbt.infer` 来获取 TypeScript 类型。它还强调了其优势，例如 TypeScript 强制执行的类型安全，可防止 Protobuf 定义和 TypeScript 代码之间的不匹配。
+*   **Clojure集成：** 与Clojure无缝集成，允许与Clojure代码相互调用。
+*   **复杂项：** 支持Clojure序列和向量中的逻辑变量。
+*   **Clojure调用谓词：** 包括像`truthy?`、`evals-from?`和`do`这样的谓词，用于与Clojure交互。
+*   **失败即否定：** 使用`not`实现否定。
+*   **项匹配：** 提供内置谓词`same`和`different`用于项比较，以及`var`和`ground`用于项检查。
+*   **逻辑运算符：** 支持可嵌套的运算符，如`and`、`or`、`not`和`if`。
+*   **Cut运算符：** 包括`first`运算符，用于控制回溯。
+*   **谓词转换：** 允许用户自定义转换，用于自定义逻辑。
+*   **灵活的项类型：** 将符号、字符串、数字和复杂项视为逻辑项。
+*   **变参谓词和项：** 支持具有可变元数的谓词和项。
+*   **匿名变量：** 允许使用以`?`和`?_`为前缀的符号作为匿名变量。
+*   **重复抑制：** 提供可选的重复和被包含答案抑制。
 
-该帖子还承认了一些局限性，包括需要 TS 编译器补丁才能导入 `.proto` 文件（等待 TypeScript 更新）、不支持服务、RPC、`oneof` 和 `map` 字段，以及缺少导入功能（目前需要连接）。由于这些限制，该项目被视为一个概念验证，而不是生产就绪。
-
----
-
-## 5. DolphinGemma：谷歌AI如何助力解码海豚交流
-
-**原文标题**: DolphinGemma: How Google AI is helping decode dolphin communication
-
-**原文链接**: [https://blog.google/technology/ai/dolphingemma/](https://blog.google/technology/ai/dolphingemma/)
-
-本文详细介绍了谷歌与野生海豚项目(WDP)和佐治亚理工学院合作开发DolphinGemma的过程，DolphinGemma是一种旨在解码海豚交流的人工智能模型。几十年来，科学家们一直难以理解海豚使用的复杂咔哒声、口哨声和突发脉冲。WDP长达数十年的长期水下研究，提供了丰富的海豚发声数据集，并配有行为观察，这对于训练人工智能至关重要。
-
-DolphinGemma建立在谷歌的Gemma模型之上，使用专门的音频技术处理海豚声音。它分析声音中的模式，以预测后续发声，类似于大型语言模型预测人类语言中的单词。该模型旨在在Pixel手机上运行，从而能够在现场进行实时分析。
-
-除了分析自然交流，该项目还通过CHAT（鲸类听觉增强遥测）系统探索双向互动。CHAT使用与围巾或海草等物体相关的合成口哨声，旨在与海豚建立共享词汇。研究人员希望海豚能够模仿口哨声来“请求”这些物品。Pixel手机用于CHAT系统中的实时声音分析，从而能够快速响应海豚的发声。
-
-谷歌计划将DolphinGemma作为开放模型共享，以赋能研究各种鲸类物种的研究人员。通过提供先进的人工智能工具，该项目旨在加速发现海豚交流中的模式，并促进对这些智能海洋哺乳动物的更深入理解。最终目标是弥合人类和海豚之间的沟通鸿沟。
+Clolog的语法定义了断言语句、谓词（内置的、转换的和基于断言的）以及项（透明的和不透明的）。搜索通常采用深度优先、从左到右的方式进行，并使用合一进行项匹配。API包括初始化、上下文设置、断言创建（通过宏和函数）以及断言检索。
 
 ---
 
-## 6. 哈萨比斯称谷歌DeepMind将支持Anthropic的MCP用于Gemini及SDK。
+## 4. 破解Postgres网络协议
 
-**原文标题**: Hassabis Says Google DeepMind to Support Anthropic's MCP for Gemini and SDK
+**原文标题**: Hacking the Postgres Wire Protocol
 
-**原文链接**: [https://techcrunch.com/2025/04/09/google-says-itll-embrace-anthropics-standard-for-connecting-ai-models-to-data/](https://techcrunch.com/2025/04/09/google-says-itll-embrace-anthropics-standard-for-connecting-ai-models-to-data/)
+**原文链接**: [https://pgdog.dev/blog/hacking-postgres-wire-protocol](https://pgdog.dev/blog/hacking-postgres-wire-protocol)
 
-谷歌DeepMind将支持Anthropic的Model Context Protocol (MCP)，用于其Gemini模型和SDK，据CEO Demis Hassabis称。 此公告是在OpenAI最近采用相同标准之后发布的，标志着行业互操作性日益增长的趋势。
+PgDog：通过操纵Postgres协议实现分片的网络代理
 
-MCP促进了AI模型与外部数据源之间的连接，使模型能够从业务工具、软件、内容存储库和开发环境中提取信息来完成任务。 它使开发人员能够在这些数据源与聊天机器人等AI驱动的应用程序之间创建双向连接。
+本文介绍了PgDog，一种网络代理，它通过操纵Postgres wire协议来实现Postgres的分片。PgDog拦截并分析SQL查询，根据分片键将它们路由到适当的数据库分片。
 
-该协议利用“MCP服务器”来暴露数据，并利用“MCP客户端”来构建连接到这些服务器的应用程序和工作流程。 自Anthropic开源MCP以来，Block、Apollo、Replit、Codeium和Sourcegraph等公司已将其集成到其平台中。 Hassabis认为MCP正迅速成为AI智能体时代的开放标准，并表示有兴趣进一步合作开发它。 谷歌DeepMind和OpenAI对MCP的采用表明了其成为连接AI模型与其所需数据的广泛使用标准的潜力。
+本文详细介绍了PgDog如何处理简单和扩展的Postgres协议。对于简单协议，它解析SQL查询以识别分片键并确定查询是读取还是写入数据。对于扩展协议（使用预处理语句），PgDog在“Parse”消息之后缓存解析后的AST，然后使用“Bind”消息来提取分片键值。
 
----
+PgDog利用基于Rust的SQL解析器 (pg_query)，该解析器使用Postgres的C源代码，确保对SQL的全面理解。它还使用Postgres的哈希函数进行一致的分片，避免自定义实现。
 
-## 7. SQLite 文件格式查看器
+本文还讨论了PgDog如何管理跨分片查询，处理诸如RowDescription、DataRow、CommandComplete和ReadyForQuery之类的响应消息，从而确保数据一致性和准确的行数。它还解释了如何操作客户端消息以进行分布式COPY操作，从而实现跨分片的并行数据摄取。
 
-**原文标题**: SQLite File Format Viewer
-
-**原文链接**: [https://sqlite-internal.pages.dev](https://sqlite-internal.pages.dev)
-
-这篇文章本质上只是一个标题，因此几乎没有什么可总结的。
-
-要点在于，这是关于一个名为“SQLite 文件格式查看器”的工具或应用程序。我们可以推断，该工具旨在让用户检查和理解 SQLite 数据库文件的内部结构和组织。
-
-关键信息（几乎就是全部内容）包括：
-
-*   **主题：**SQLite 数据库文件。
-*   **功能：**查看这些文件的内部格式/结构。
-*   **目标受众：**可能是需要更深入了解 SQLite 数据库如何组织的开发人员、数据库管理员或取证分析师。
-
-在没有更多内容的情况下，我们只能推测具体功能，例如它是否提供十六进制查看、表格浏览或模式可视化。
+最后，本文强调了通过分布式COPY实现线性可扩展的摄取速度的潜力，并提到了未来扩展PgDog功能到逻辑复制流的计划。它还强调了PgDog的网络层方法使其可以与各种Postgres克隆和托管云服务一起使用。
 
 ---
 
-## 8. 科学家：蛋白质IL-17抵抗感染，作用于大脑，诱发焦虑
+## 5. 使用Veo 2在Gemini和Whisk中生成视频
 
-**原文标题**: Scientists: Protein IL-17 fights infection, acts on the brain, inducing anxiety
+**原文标题**: Generate videos in Gemini and Whisk with Veo 2
 
-**原文链接**: [https://medicalxpress.com/news/2025-04-scientists-protein-il-infection-brain.html](https://medicalxpress.com/news/2025-04-scientists-protein-il-infection-brain.html)
+**原文链接**: [https://blog.google/products/gemini/video-generation/](https://blog.google/products/gemini/video-generation/)
 
-来自麻省理工学院和哈佛医学院的2025年文章重点介绍了关于细胞因子IL-17及其对大脑双重影响的新研究。科学家们发现IL-17是一种对抵抗感染至关重要的免疫分子，它也能影响大脑功能，从而影响焦虑和社交能力。
+谷歌将 Veo 2 视频生成模型整合到 Gemini Advanced 和 Whisk AI 实验项目中。Gemini Advanced 订阅者现在可以直接在 Gemini 界面内通过文本提示生成 8 秒、高分辨率 (720p) 的视频。文章强调了 Veo 2 创建逼真、细节丰富、人物动作流畅、场景栩栩如生的视频的能力。用户可以通过提供详细的文本描述来创建各种视频，从而进行不同风格和创意的探索。这些视频可以轻松地在 TikTok 和 YouTube Shorts 等平台上分享。
 
-该研究表明，IL-17作用于两个不同的大脑区域：杏仁核和体感皮层。在杏仁核，特别是基底外侧杏仁核（BLA），IL-17通过增加某些神经元的兴奋性来促进焦虑。相反，在体感皮层，特别是S1DZ区域，IL-17通过降低神经元的兴奋性来促进社交行为。
+此外，Google One AI Premium 订阅者现在可以使用 Whisk Animate（现有 Whisk 图像生成工具的扩展），通过 Veo 2 将图像转换为 8 秒的动画视频。这允许用户对现有图像进行动画处理，或者创建新图像后再进行动画处理。
 
-研究人员确定了存在于这些大脑区域的特定IL-17受体（IL-17RA、IL-17RB和IL-17RE）以及与它们结合并介导不同行为结果的IL-17变体（IL-17A、IL-17C和IL-17E）。他们还发现，抗炎细胞因子IL-10可以抵消IL-17在杏仁核中引起的焦虑效应。
-
-这些发现表明，免疫系统和神经系统之间的联系比以前认为的更为紧密，IL-17可能作为一种神经调节剂发挥作用。研究人员假设，IL-17的神经调节作用可能在其免疫功能之前就已经进化。该研究表明，操纵免疫系统可能为自闭症或抑郁症等神经系统疾病提供新的治疗方法。
+文章还强调了谷歌实施的安全措施，包括红队演练、内容评估以及使用 SynthID（嵌入到人工智能生成视频每一帧中的数字水印）来表明其人工智能来源。视频生成功能正在全球范围内面向 Gemini Advanced 和 Whisk 用户的 Web 和移动端推出，并支持 Gemini 支持的所有语言。
 
 ---
 
-## 9. Meilisearch – 具备人工智能混合搜索功能的搜索引擎API
+## 6. Teuken-7B-Base和Teuken-7B-Instruct：迈向欧洲大型语言模型
 
-**原文标题**: Meilisearch – search engine API bringing AI-powered hybrid search
+**原文标题**: Teuken-7B-Base and Teuken-7B-Instruct: Towards European LLMs
 
-**原文链接**: [https://github.com/meilisearch/meilisearch](https://github.com/meilisearch/meilisearch)
+**原文链接**: [https://arxiv.org/abs/2410.03730](https://arxiv.org/abs/2410.03730)
 
-Meilisearch是一个快速、开源的搜索引擎，旨在轻松集成到应用程序、网站和工作流程中。它提供混合搜索（语义和全文搜索）、搜索即时显示、容错、过滤/分面搜索、排序、同义词支持和地理搜索等功能。它支持多种语言，并通过API密钥和多租户提供安全管理，以实现个性化的搜索结果。
+本文（arXiv:2410.03730v2）介绍了Teuken-7B-Base和Teuken-7B-Instruct，这两个新的多语言大型语言模型（LLM），旨在更好地支持欧洲的语言多样性。这些模型在一个约60%为非英语数据的语料库上进行训练，从而解决了现有LLM中普遍存在的对英语和其他高资源语言的偏见。使用了定制的多语言分词器。
 
-Meilisearch具有高度可定制性，并提供RESTful API以及适用于各种语言和框架的SDK。它也已为AI做好准备，可与Langchain等工具无缝协作。
+以Mehdi Ali为首的作者详细介绍了模型背后的开发原则，包括数据组成、分词器优化和训练方法。目标是创建在欧盟所有24种官方语言中表现良好的LLM。
 
-该平台提供了丰富的文档和指南，用于入门、高级用法和理解核心概念。Meilisearch Cloud提供具有分析和监控功能的托管部署。
-
-该平台收集匿名用户数据以改进产品，可以选择退出并请求删除数据。Meilisearch团队鼓励社区参与，包括提出功能请求、提交错误报告以及参与其Discord社区。欢迎按照其贡献指南为开源项目做出贡献。
+这些模型在多语言基准测试中表现出竞争优势。欧洲语言版本的现有基准测试（如ARC、HellaSwag、MMLU和TruthfulQA）的结果证明了这一点。本文提供了PDF和HTML格式的论文链接，以及探索相关代码、数据、媒体和分析的选项。
 
 ---
 
-## 10. 削ろう会 #39
+## 7. Cohere 发布 Embed 4
 
-**原文标题**: Kezurou-Kai #39
+**原文标题**: Cohere Launches Embed 4
 
-**原文链接**: [https://www.bigsandwoodworking.com/kezurou-kai-39/](https://www.bigsandwoodworking.com/kezurou-kai-39/)
+**原文链接**: [https://cohere.com/blog/embed-4](https://cohere.com/blog/embed-4)
 
-乔恩参加了在日本新泻县糸鱼川市举办的第39届削ろう会，这是一项使用日本刨刀比赛，旨在削出尽可能薄的木刨花。活动持续两天，参与者有多次机会提交刨花进行测量。主要比赛是使用70毫米鉋在扁柏木上进行。预备刨削允许参赛者使用自己的材料，而最终比赛则使用主办方提供的木材。
+Cohere 发布 Embed 4，用于企业级多模态搜索。
 
-乔恩和他的朋友们从Somakosha一起参加了比赛，最初削出了10-12微米范围内的刨花。挑战在于突破10微米大关，这需要细致的磨刀和刨台调整。官方测量使用气动控制的数字卡尺进行。
+---
 
-第二天，竞争更加激烈，突显了木材质量和水分含量在获得超薄刨花方面的重要性。许多参赛者非常注意保持木材的水分。乔恩的团队尝试了不同的技术，最终发现刨削前稍微润湿木材可以显著改善结果。他最好的刨花测量结果为10、6和9微米。
+## 8. 决定署名顺序的有趣方法
 
-排名前五的决赛选手随后使用杉木进行比赛，杉木比扁柏木更难刨削。本轮比赛的获胜者获得了大约50微米的刨花。该活动还包括墨壺雕刻、刨台切割、斧劈以及销售工具和磨刀石的商贩的演示。乔恩推荐任何对木工和手工工具有热情的人参加削ろう会。
+**原文标题**: Fun ways of deciding authorship order
+
+**原文链接**: [https://dynamicecology.wordpress.com/2016/09/21/fun-ways-of-deciding-authorship-order/](https://dynamicecology.wordpress.com/2016/09/21/fun-ways-of-deciding-authorship-order/)
+
+这篇博文幽默地探讨了生态学和进化生物学论文中决定作者署名顺序的非常规方法，超越了按字母顺序等标准做法。 起源于一条关于用篮球比赛决定署名的推文，并扩展成从Twitter和其他来源收集的创意解决方案集锦。
+
+文章重点介绍了如下例子：
+
+*   **体育比赛：**槌球比赛和掰手腕。
+*   **随机方法：**抛硬币和使用代码进行随机抽样。
+*   **实际考虑：**决定顺序的后勤因素。
+*   **博弈论：**运用博弈论原理。
+*   **石头剪刀布：**一种经典的概率游戏。
+*   **布朗尼烘焙大赛：**一项烹饪比赛。
+*   **狗狗辅助随机排序：**使用狗狗通过吃零食来随机排序。
+*   **身高：**按身高排列作者顺序。
+
+作者推崇布朗尼烘焙大赛为最有趣的方法，并戏谑地自荐担任此类比赛的评委。 该博文还涉及通过脚注解决作者贡献问题，并提及有趣的（合）著者，包括使用化名甚至动物。 作者鼓励读者分享他们所知道的其他非常规方法，并建议未来撰写关于论文最佳开篇语和有趣的致谢部分的博文。 该博文会持续更新在网上发现的新例子。 作者还讲述了一个因作者署名顺序争议而导致论文撤稿的警示故事。
+
+---
+
+## 9. Show HN: Resonate – 实时高时间分辨率频谱分析
+
+**原文标题**: Show HN: Resonate – real-time high temporal resolution spectral analysis
+
+**原文链接**: [https://alexandrefrancois.org/Resonate/](https://alexandrefrancois.org/Resonate/)
+
+Resonate：一种用于音频信号实时频谱分析的新型低延迟算法。与基于FFT的方法不同，Resonate使用一系列调谐到特定频率的谐振器，以高效估计频谱内容。该算法的核心是对每个谐振器频率周围的信号应用指数加权移动平均（EWMA），赋予最近输入值更高的权重。这种迭代方法允许逐样本更新，从而最大限度地减少内存占用和计算成本。
+
+Resonate的主要优势包括其低延迟、线性内存和计算复杂度（相对于谐振器数量），以及并行计算的能力。该算法特别适用于响应速度至关重要的实时应用。Resonate可以直接计算具有高时间分辨率和感知相关的频率尺度的频谱图。
+
+本文展示了Resonate生成的频谱图与恒Q变换（CQT）频谱图的比较示例，证明了其在音乐和语音样本上的有效性。该算法将在即将举行的ICMS会议出版物中详细介绍。开源资源，包括`noFFT` Python模块、`Oscillators` Swift软件包、`Oscillators`应用程序和一个Resonate YouTube播放列表，提供了实现和演示。
+
+---
+
+## 10. 育碧内部用于模拟色盲的工具Chroma开源了
+
+**原文标题**: Chroma, Ubisoft's internal tool used to simulate color-blindness, open sourced
+
+**原文链接**: [https://github.com/ubisoft/Chroma](https://github.com/ubisoft/Chroma)
+
+育碧开源Chroma，一款用于模拟色盲的内部工具，旨在提升游戏的可访问性。Chroma模拟三种主要色盲类型：红色盲、绿色盲和蓝色盲，使开发者能够了解游戏在患有这些情况的玩家眼中的呈现效果。
+
+Chroma的关键特性包括：在游戏之上运行并可最大化的实时颜色模拟、与所有游戏引擎的兼容性、高达60FPS的高性能、准确的模拟结果、实时游戏画面捕捉、便于错误记录的屏幕截图、以及可配置的用户界面。Chroma被认为是唯一一款能够捕捉实时游戏画面并模拟色盲的解决方案。
+
+该工具旨在帮助育碧的无障碍团队进行复杂的测试，提供一个不依赖特定游戏引擎的单显示器解决方案。CMake过程中与过时的CPPWinRT库相关的已知问题可以通过安装Microsoft.Windows.CppWinRT NuGet包或使用Visual Studio 2022来解决。用户指南提供了更多细节。
 
 ---
 
@@ -171,29 +177,30 @@ Meilisearch具有高度可定制性，并提供RESTful API以及适用于各种�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 2 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 3 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 4 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 5 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 6 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 7 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 8 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 9 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 10 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 11 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 12 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 13 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 14 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 15 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 16 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 17 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 18 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 19 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 20 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 21 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 22 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 23 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 24 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 25 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 26 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 1 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 2 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 3 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 4 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 5 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 6 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 7 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 8 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 9 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 10 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 11 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 12 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 13 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 14 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 15 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 16 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 17 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 18 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 19 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 20 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 21 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 22 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 23 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 24 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 25 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 26 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 27 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
