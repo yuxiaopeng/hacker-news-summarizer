@@ -1,173 +1,157 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-16.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-17.md)
 
-*最后自动更新时间: 2025-04-16 17:47:42*
-## 1. K-Mart 顾客请注意
+*最后自动更新时间: 2025-04-17 17:48:38*
+## 1. OpenAI顶级灾难风险官员突然辞职
 
-**原文标题**: Attention K-Mart Shoppers
+**原文标题**: Top OpenAI Catastrophic Risk Official Steps Down Abruptly
 
-**原文链接**: [https://archive.org/details/attentionkmartshoppers](https://archive.org/details/attentionkmartshoppers)
-
-注意啦，K-Mart的顾客们：
-
-这段文字与其说是文章，不如说是一条自动消息。主旨是用户将被重定向到互联网档案（archive.org）的精简版。
-
-标题“注意啦，K-Mart的顾客们”很可能是讽刺性的，或者幽默地回顾了曾经在K-Mart商店里常见的公共广播通知。在此语境下，它可能是在提醒用户正在被定向到该网站的不同版本，可能资源消耗更少。
-
-关键信息是用户正在被重定向到互联网档案的“精简版”。这表明该网站检测到了较慢的互联网连接、性能较差的设备，或者用户可能明确请求了精简版。
-
-本质上，这篇“文章”是一个通知，告知网站正在通过加载其内容的简化版本来优化其性能，从而使用户受益。
-
----
-
-## 2. 达尔文的孩子们乱涂《物种起源》手稿 (2014)
-
-**原文标题**: Darwin's Children Drew All over the "On the Origin of Species" Manuscript (2014)
-
-**原文链接**: [https://theappendix.net/posts/2014/02/darwins-children-drew-vegetable-battles-on-the-origin-of-species](https://theappendix.net/posts/2014/02/darwins-children-drew-vegetable-battles-on-the-origin-of-species)
-
-本杰明·布林的文章《达尔文的孩子们在<物种起源>手稿上乱涂乱画》通过展示这位著名博物学家鲜为人知、更具个人色彩的一面来庆祝达尔文日。文章展示了来自达尔文在线和达尔文手稿项目的数字化资料，特别是着重介绍了在达尔文手稿和艾玛·达尔文的日记中发现的达尔文孩子们所画的画。
-
-文章收录了弗朗西斯·达尔文在《物种起源》手稿背面绘制的《水果和蔬菜士兵之战》以及其他归于达尔文孩子们的自然主题素描等例子。这些图像揭示了他们敏锐的观察能力和家庭对自然的投入。作者还重点介绍了一幅儿童绘制的达尔文家庭住宅图，可能描绘了达尔文的“思考之路”，以及艾玛·达尔文在她日记中的素描，其中一些也被她的孩子们顽皮地涂抹过。
-
-这篇文章强调，即使是像达尔文这样的标志性人物也有着丰富多彩的家庭生活，这些生活与他们的工作相互交织，而看到这些个人物品提供了宝贵的背景信息。文章最后更新了关于安妮·达尔文（查尔斯早逝的女儿）的信息，并重点介绍了一个装有她物品的盒子，揭示了这个家庭的艺术倾向和紧密的动态。文章暗示安妮的去世对达尔文产生了深刻的影响，并可能影响了他不断演变的宗教和进化观，提醒我们思考历史人物背后的人性因素。
-
----
-
-## 3. 6502程序员使用的肮脏技巧 (2019)
-
-**原文标题**: Dirty tricks 6502 programmers use (2019)
-
-**原文链接**: [https://nurpax.github.io/posts/2019-08-18-dirty-tricks-6502-programmers-use.html](https://nurpax.github.io/posts/2019-08-18-dirty-tricks-6502-programmers-use.html)
-
-本文回顾了Commodore 64编程大赛中使用的一些编程技巧，该比赛挑战参与者用最少的字节绘制两条线。文章重点介绍了用于实现微型PRG文件的常用6502汇编优化方法。
-
-文章首先介绍了C64的基本图形，解释了屏幕RAM和颜色RAM。展示了一个最初的、未经优化的汇编实现，揭示了地址计算和屏幕清除是主要的字节消耗者。
-
-随后探讨了几个“dirty tricks”：
-
-1.  **滚动：** 使用`JSR $E8EA`向上滚动屏幕，而不是直接在不同的Y坐标上绘制，从而减少地址计算。这是最常见的技巧。
-2.  **自修改代码：** 在像素写入循环中使用自修改代码，以实现更紧凑的地址操作。
-3.  **利用上电状态：** 利用程序启动时已知的初始寄存器值和零页内容，跳过初始化步骤。具体来说，使用诸如内存中已存在的行长度之类的数值。
-4.  **更小的启动：** 通过覆盖堆栈或操作BASIC热启动向量来消除BASIC启动序列，允许在用`LOAD "*",8,1`加载后直接执行代码。
-5.  **非常规控制流：** 重构循环和分支以消除不必要的`JMP`指令，并更有效地利用条件分支。
-6.  **位打包线条绘制：** 将线条模式编码为位掩码以消除斜率计数器，但这种方法最终比使用斜率计数器略大。
-
-Philip Heron的获奖作品只有34个字节，结合了许多这些技巧，展示了这些优化如何有效地减少6502上的代码大小。 该代码覆盖了sta上内核加载器的返回地址。
-
----
-
-## 4. 该死的脆弱MCP服务器
-
-**原文标题**: Damn Vulnerable MCP Server
-
-**原文链接**: [https://github.com/harishsg993010/damn-vulnerable-MCP-server](https://github.com/harishsg993010/damn-vulnerable-MCP-server)
-
-Damn Vulnerable MCP Server (DVMCP) 是一个教育项目，旨在演示模型上下文协议 (MCP) 实现中的安全漏洞。MCP 允许应用程序向大型语言模型 (LLM) 提供结构化上下文，但也引入了潜在的安全风险。
-
-DVMCP 包含 10 个难度递增的挑战，分为简单、中等和困难三个级别，旨在向安全研究人员、开发人员和人工智能安全专业人员传授这些漏洞以及缓解策略。
-
-这些挑战涵盖各种攻击媒介，包括：提示注入、工具投毒、权限过大、拉高抛售攻击、工具阴影、间接提示注入、令牌盗窃、恶意代码执行、远程访问控制和多向量攻击。
-
-该项目提供了一个结构化的环境，包含挑战实现、文档（包括设置说明、挑战描述和 MCP 概述）和解决方案指南。该存储库包含位于简单、中等和困难目录中的挑战实现。
-
-该项目强调仅用于教育目的，其漏洞绝不应在生产系统中实现。它还强调了在构建 MCP 服务器时遵循安全最佳实践的重要性。该项目采用 MIT 许可证，由 Harish Santhanalakshmi Ganesan 创建。
-
----
-
-## 5. Show HN：K(r)ep - 一款高性能字符串搜索工具
-
-**原文标题**: Show HN: K(r)ep - A high-performance string search utility
-
-**原文链接**: [https://github.com/davidesantangelo/krep](https://github.com/davidesantangelo/krep)
-
-Krep 是一款高性能字符串搜索工具，专为在大文件和目录中快速高效地搜索而设计。它并非旨在作为功能丰富的 `grep` 或 `ripgrep` 替代品，而是一个专注于快速搜索常见用例的最小化和务实工具。"krep" 这个名字的灵感来自冰岛语中“快速抓住”一词。
-
-主要功能包括多种搜索算法（Boyer-Moore-Horspool、KMP、Aho-Corasick）、SIMD 加速、内存映射 I/O、多线程搜索、正则表达式支持、多模式搜索、跳过二进制文件的递归目录搜索、彩色输出、短模式专用算法以及匹配限制。
-
-安装包括克隆存储库，使用 `make` 构建，然后使用 `sudo make install` 安装。用法类似于 `grep`，具有不区分大小写搜索、计数匹配项、仅打印匹配部分、从文件或命令行指定模式、限制匹配计数、使用扩展正则表达式、递归搜索、控制线程数、直接搜索字符串、全字匹配、控制颜色输出以及禁用 SIMD 等选项。
-
-性能基准测试表明，Krep 明显优于 `grep`，并且在某些测试中略快于 `ripgrep`。其性能的实现得益于智能算法选择、多线程架构、内存映射 I/O、优化的数据结构以及在递归搜索期间跳过不相关内容。欢迎贡献。该工具采用 BSD-2 许可证。
-
----
-
-## 6. OpenAI o3 和 o4-mini – OpenAI
-
-**原文标题**: OpenAI o3 and o4-mini – OpenAI
-
-**原文链接**: [https://openai.com/index/introducing-o3-and-o4-mini/](https://openai.com/index/introducing-o3-and-o4-mini/)
+**原文链接**: [https://garrisonlovely.substack.com/p/breaking-top-openai-catastrophic](https://garrisonlovely.substack.com/p/breaking-top-openai-catastrophic)
 
 无法访问文章链接。
 
 ---
 
-## 7. Www.hive.co (YC S14) 招聘工程主管
+## 2. DeepSeek分布式文件系统入门
 
-**原文标题**: Www.hive.co (YC S14) Is Hiring a Head of Engineering
+**原文标题**: An Intro to DeepSeek's Distributed File System
 
-**原文链接**: [https://jobs.ashbyhq.com/hive.co/684574a0-9150-4fba-b954-2f34d9c74468](https://jobs.ashbyhq.com/hive.co/684574a0-9150-4fba-b954-2f34d9c74468)
+**原文链接**: [https://maknee.github.io/blog/2025/3FS-Performance-Journal-1/](https://maknee.github.io/blog/2025/3FS-Performance-Journal-1/)
 
-Hive.co招聘工程负责人，该公司为Y Combinator S14期成员。该招聘信息发布于需要JavaScript才能运行的网站上。
+本文介绍DeepSeek的开源分布式文件系统3FS（Fire-Flyer File System）。它阐述了分布式文件系统的概念，强调了其将数据碎片化分布在多台机器上的复杂性抽象化，从而使用户感觉就像在使用单个本地文件系统。分布式文件系统的优势包括海量数据服务能力、高吞吐量、容错性和冗余性。
 
----
+3FS由四种主要节点类型组成：Meta（管理元数据）、Mgmtd（管理集群配置和节点发现）、Storage（存储实际文件数据）和Client（与其他节点通信）。本文详细介绍了每个节点的功能，包括Mgmtd在节点注册和配置中的作用，Meta使用FoundationDB处理文件操作和元数据存储，以及Storage使用ChunkEngine（用Rust编写）通过将文件分成块并将元数据存储在LevelDB中来管理物理存储。
 
-## 8. 科学：无尽的前沿 (1945) [pdf]
+3FS的一个重要方面是它使用CRAQ（具有分配查询的链式复制）来实现强一致性和容错。CRAQ确保数据复制到一系列节点上，写入操作按顺序传播，读取操作可以从干净或脏数据中获取，并且尾节点始终具有最新的数据。
 
-**原文标题**: Science, the Endless Frontier (1945) [pdf]
-
-**原文链接**: [https://nsf-gov-resources.nsf.gov/2023-04/EndlessFrontier75th_w.pdf](https://nsf-gov-resources.nsf.gov/2023-04/EndlessFrontier75th_w.pdf)
-
-提供的文本看起来并非范内瓦·布什于1945年发表的《科学：无尽的前沿》的实际内容，而是PDF文件的乱码。 PDF文件是二进制文件，需要经过适当处理才能提取文本。提供的文本无法理解，无法生成文章摘要。
-
-要总结《科学：无尽的前沿》，需要访问实际文本。一般来说，该报告主张增加政府对科学研究的资助。其主要论点包括：
-
-*   **科学对于国家安全和经济繁荣至关重要：** 该报告强调了科学在赢得第二次世界大战中的作用，以及其在国防和经济增长方面的未来潜力。
-*   **基础研究的重要性：** 布什强调了支持基础研究的重要性，因为它是应用研究和技术创新的基础。
-*   **联邦政府的资助作用：** 该报告主张大幅增加联邦政府对科学研究的资助，尤其是在大学，以确保科学人才和发现的稳定供应。
-*   **建立国家研究基金会：** 一项关键建议是建立一个国家研究基金会（最终成为国家科学基金会），以管理联邦研究资助并促进科学教育。
-*   **保持竞争优势：** 该报告强调了美国需要保持其在世界上的科学技术领先地位。
-
-该报告对二战后美国的科学政策产生了重大影响，导致联邦政府对科学研究的支持大幅增加，并促使美国崛起为全球科技领导者。
+文章最后将3FS与其他分布式文件系统进行比较，强调了实际应用性、调优灵活性和实际实现细节的重要性。作者概述了未来博客文章的计划，以对3FS性能进行基准测试，找出瓶颈，并将其与现有系统进行比较。最后，该文章提供了指向设计说明、技术文档和学术论文的链接，其中包含更深入的信息。
 
 ---
 
-## 9. TLS证书有效期将正式缩短至47天
+## 3. Erlang/OTP SSH 中未经身份验证的远程代码执行
 
-**原文标题**: TLS certificate lifetimes will officially reduce to 47 days
+**原文标题**: Unauthenticated Remote Code Execution in Erlang/OTP SSH
 
-**原文链接**: [https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days](https://www.digicert.com/blog/tls-certificate-lifetimes-will-officially-reduce-to-47-days)
+**原文链接**: [https://nvd.nist.gov/vuln/detail/CVE-2025-32433](https://nvd.nist.gov/vuln/detail/CVE-2025-32433)
 
-DigiCert博客：缩短TLS证书有效期以提高安全性
+CVE-2025-32433 描述了 Erlang/OTP 的 SSH 服务器中的一个未经身份验证的远程代码执行 (RCE) 漏洞。受影响的版本包括 OTP-27.3.3 之前的版本、OTP-26.2.5.11 之前的版本以及 OTP-25.3.2.20 之前的版本。攻击者可以利用 SSH 协议消息处理中的缺陷，在无需有效凭据的情况下获得未授权访问权限并执行任意命令。
 
-CA/浏览器论坛采纳苹果提议，决定缩短TLS证书有效期。新规旨在通过更频繁地重新验证证书信息，以及降低因现有吊销系统不可靠而使用已吊销证书的风险，来提高安全性。
+GitHub, Inc. 将此漏洞评级为 CRITICAL（严重），CVSS 3.1 评分为 10.0，向量为 CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H。这表明该漏洞可通过网络利用，无需用户交互或权限，攻击复杂度低，并可能导致受影响系统的机密性、完整性和可用性完全受损。
 
-时间表如下：
-
-*   **2026年3月15日前：** 最大有效期为398天，域名验证信息重用期为398天，主体身份信息(SII)重用期为825天。
-*   **2026年3月15日：** 最大有效期为200天，域名验证信息重用期为200天，主体身份信息(SII)重用期为398天。
-*   **2027年3月15日：** 最大有效期为100天，域名验证信息重用期为100天。
-*   **2029年3月15日：** 最大有效期为47天，域名验证信息重用期为10天。
-
-文章解释说，47天的有效期来自于最长的月份、半个月以及一天的缓冲期。
-
-文章强调，自动化对于在这些更短的有效期内管理证书至关重要。DigiCert提供Trust Lifecycle Manager和CertCentral等解决方案，并提供ACME支持，以促进这种自动化。该公司还向客户保证，不会因证书更换频率的增加而收取额外费用，因为费用基于年度订阅。作者认为，新规定将迫使用户采用自动化系统来维持有效的证书生命周期管理。
+补丁已在 OTP-27.3.3、OTP-26.2.5.11 和 OTP-25.3.2.20 版本中提供。临时的解决方案是禁用 SSH 服务器或使用防火墙规则阻止访问。此漏洞是由于关键功能缺少身份验证 (CWE-306) 导致的。更多详细信息和与修复相关的代码提交可以在链接的 GitHub 资源中找到。
 
 ---
 
-## 10. 如何优化 Rust 以实现慢速：受新型图灵机结果的启发
+## 4. 谷歌是线上广告技术领域的垄断者，法官表示
 
-**原文标题**: How to Optimize Rust for Slowness: Inspired by New Turing Machine Results
+**原文标题**: Google Is a Monopolist in Online Advertising Tech, Judge Says
 
-**原文链接**: [https://medium.com/@carlmkadie/how-to-optimize-your-rust-program-for-slowness-eb2c1a64d184](https://medium.com/@carlmkadie/how-to-optimize-your-rust-program-for-slowness-eb2c1a64d184)
+**原文链接**: [https://www.nytimes.com/2025/04/17/technology/google-ad-tech-antitrust-ruling.html](https://www.nytimes.com/2025/04/17/technology/google-ad-tech-antitrust-ruling.html)
 
-文章《如何优化Rust以实现最慢速度：受新图灵机结果的启发》探讨了与性能优化相反的方向：最大化 Rust 程序的运行时间。它挑战读者编写运行时间极其漫长的简短 Rust 程序。
+联邦法官裁定谷歌非法垄断部分在线广告技术市场
 
-文章提出了一系列规则集，每个规则集都为程序添加了约束。第一个规则集“Anything Goes（随心所欲）”允许无限循环，通过一个简单的空循环即可轻松实现无限运行时间。第二个规则集“Must Halt, Finite Memory（必须停止，有限内存）”要求程序最终停止，并使用嵌套循环计数到大数（使用 `u128::MAX`）来实现极长的运行时间，甚至超过了宇宙的预测寿命。
+---
 
-文章随后深入探讨了具有“Infinite, Zero-Initialized Memory（无限、零初始化内存）”的图灵机。它介绍了 5 状态和 6 状态图灵机的概念，并引用了已知运行时间最长的最终会停止的机器。值得注意的是，提到了一个运行时间超过 10↑↑15 步（四次迭代幂）的 6 状态机器。文章包含可视化和交互式 Web 应用程序，用于探索这些图灵机。
+## 5. 软件制作
 
-最后，文章演示了如何在 Rust 中直接计算 10↑↑15，避免图灵机模拟。它从第一原理构建了四次迭代幂，仅使用零初始化内存和使用 `BigUint` crate 的原地更新来实现增量、加法、乘法和指数函数。这保证了程序至少需要 10↑↑15 步，强调了四次迭代幂的计算强度。作者展示了，经过精心设计的简单 Rust 代码可以产生天文数字般漫长的运行时间。
+**原文标题**: Making Software
+
+**原文链接**: [https://www.makingsoftware.com/](https://www.makingsoftware.com/)
+
+《软件制作》一书面向那些对日常技术如何运作充满好奇心，但又不是技术专家的读者。它不是教程或指南，而是一本解释触摸屏、图像模糊、矢量图形等底层机制的手册。
+
+本书旨在弥合我们对技术的使用与理解之间日益扩大的差距。它旨在提供对事物如何运作的更深入（但不一定是可操作的）的知识，这有助于解决问题或满足纯粹的求知欲。本书使用插图和图表来方便理解。
+
+目录揭示了本书涵盖的广泛主题，包括像素和颜色、字体和矢量、3D和着色器、人工智能和机器学习、压缩和数据、网络和Web、以及编译器和解释器。它还将探讨更具体的例子，如正则表达式、二维码和量子计算。
+
+本书最初将以数字形式发布，之后可能会进行印刷。预购选项允许读者在章节撰写时访问它们，并允许读者提出主题建议。虽然价格尚未确定，但某些内容将是免费的，特别是对于那些在邮件列表中的人。
+
+---
+
+## 6. 不锈钢强化：扭转产生亚微米级“防撞墙”
+
+**原文标题**: Stainless steel strengthened: Twisting creates submicron 'anti-crash wall'
+
+**原文链接**: [https://techxplore.com/news/2025-04-stainless-steel-technique-submicron-anti.html](https://techxplore.com/news/2025-04-stainless-steel-technique-submicron-anti.html)
+
+发表于2025年4月12日Tech Xplore上的一篇文章报道了中国科学院、山东大学和佐治亚理工学院的研究人员开发的一种新型不锈钢强化方法。该研究发表在《科学》杂志上，详细介绍了一种扭转技术，该技术显著提高了金属的抗金属疲劳和循环蠕变能力。
+
+这种创新方法包括重复扭转304奥氏体不锈钢，创造一种空间梯度蜂窝结构，形成亚微米级的三维“防撞墙”。显微分析显示，超细的、小于10纳米的相干层状结构有效地通过阻止堆垛层错来减缓位错运动。这种“防撞墙”像弹簧一样，吸收冲击力，使金属的抗循环蠕变能力更加均匀。
+
+测试表明，与未处理的钢相比，处理后的不锈钢强度提高了2.6倍，棘轮效应引起的应变减少了2到4个数量级。研究人员声称，这种改进可能会使由处理后的钢制成的产品抗疲劳能力提高多达10,000倍，为航空航天等行业的专业应用开辟了可能性。
+
+---
+
+## 7. EasyPost (YC S13) 正在招聘
+
+**原文标题**: EasyPost (YC S13) Is Hiring
+
+**原文链接**: [https://www.easypost.com/careers](https://www.easypost.com/careers)
+
+EasyPost (YC S13) 积极招聘，寻找平易近人、充满活力、富有创造力、才智过人且值得信赖的候选人，共同定义航运的未来。他们正在寻找能够协作、提出挑战性问题、探索新解决方案并承担责任的问题解决者。
+
+该公司强调他们专注于现代、灵活的技术，以改善航运的客户体验，展望实现当日送达和减少环境浪费的未来。他们强调一种适应性强、简单和包容的文化。
+
+EasyPost 以其工程至上的公司理念和务实的软件开发方法而自豪。他们提供一个有趣、充满激情和创业精神的环境，团队拥有多样化的经验。关键技术特性包括受 CI/CD 启发的Workflow、小型服务而非单体应用、强大的工程工具和开发者支持，以及一种不咎责任的文化。
+
+他们提供医疗、牙科和视力保险计划、弹性休假、股票期权机会、跨职能学习和每月虚拟活动等福利和津贴。文章还警告存在冒充 EasyPost 的招聘诈骗，并敦促申请人保持警惕，并通过官方渠道验证任何可疑的职位邀请。
+
+---
+
+## 8. 展示 HN: AgentAPI – Claude Code、Goose、Aider 和 Codex 的 HTTP API
+
+**原文标题**: Show HN: AgentAPI – HTTP API for Claude Code, Goose, Aider, and Codex
+
+**原文链接**: [https://github.com/coder/agentapi](https://github.com/coder/agentapi)
+
+AgentAPI 是一个 HTTP API，它允许对 Claude Code、Goose、Aider 和 Codex 等编码代理进行编程控制。它解决了通过基于终端的界面与这些代理交互的难题，提供了一种统一的方式来构建聊天界面、创建多代理系统和自动化代码审查流程。
+
+该工具可以通过预构建的二进制文件安装，也可以使用 Go 从源代码构建。它提供了 CLI 命令来运行代理服务器 (`agentapi server`) 和连接到正在运行的代理的终端会话 (`agentapi attach`)。该服务器公开了一个 OpenAPI 模式和文档 UI。
+
+主要功能包括：
+
+*   **API 端点：** `/messages` (获取历史记录), `/message` (发送消息), `/status` (获取状态), `/events` (SSE 流).
+*   **终端模拟：** 将 API 调用转换为终端击键。
+*   **消息解析：** 将终端输出拆分为用户和代理消息，删除不需要的 TUI 元素。
+*   **代理兼容性：** 适用于 Claude Code、Goose、Aider 和 Codex，并具有适应未来 TUI 更新的灵活性。
+
+AgentAPI 的长期愿景是，要么因标准化官方 SDK 的出现而变得过时，要么在代理继续使用专有 API 的情况下，充当通用适配器。正在考虑的未来功能包括支持 MCP 和 Agent2Agent 协议。
+
+---
+
+## 9. HDR加持的表情符号
+
+**原文标题**: HDR‑Infused Emoji
+
+**原文链接**: [https://sharpletters.net/2025/04/16/hdr-emoji/](https://sharpletters.net/2025/04/16/hdr-emoji/)
+
+本文解释了如何在Slack中创建HDR（高动态范围）表情符号。作者指出，这些HDR表情符号以增强的亮度渲染，使其在视觉上引人注目，尤其是在支持HDR显示的硬件上。
+
+HDR表情符号的创建过程涉及使用`imagemagick`来处理图像。具体来说，该脚本执行以下操作：
+
+1. 将图像的色彩空间调整为RGB。
+2. 应用自动伽马校正。
+3. 乘以并幂运算图像值以增加亮度。乘法因子需要根据源图像进行调整。
+4. 将色彩空间转换回sRGB。
+5. 将颜色深度调整为16位。
+6. 应用2020\_profile.icc颜色配置文件。
+
+文章强调HDR表情符号的支持并不普遍。它在Chrome和Slack中运行良好，但在很大程度上与Safari和Android设备不兼容。建议用户在Slack中测试表情符号，以验证它们在不同平台上的渲染效果。一个关键要求是在执行`imagemagick`脚本的工作目录中拥有`2020_profile.icc`文件。
+
+---
+
+## 10. Zoom宕机因意外“关闭”zoom.us域名导致。
+
+**原文标题**: Zoom outage caused by accidental 'shutting down' of the zoom.us domain
+
+**原文链接**: [https://status.zoom.us/incidents/pw9r9vnq5rvk](https://status.zoom.us/incidents/pw9r9vnq5rvk)
+
+2025年4月16日，Zoom遭遇中断，影响了包括Zoom Meetings、Zoom Phone、Zoom Contact Center和Zoom网站在内的多项服务。根本原因是Zoom的域名注册商Markmonitor与GoDaddy Registry之间发生通信错误。此错误导致GoDaddy Registry错误地屏蔽了zoom.us域名，使其在东部时间下午2:25至下午4:12之间无法访问。
+
+Zoom、Markmonitor和GoDaddy迅速采取行动，确定并解决了问题，恢复了zoom.us域名的服务。Zoom澄清说，中断并非由于任何产品故障、安全漏洞、网络问题或分布式拒绝服务(DDoS)攻击所致。
+
+恢复后，Zoom建议遇到连接问题的用户刷新其DNS缓存，并为Windows和Mac用户提供了执行此操作的说明。GoDaddy和Markmonitor正在合作以防止未来发生类似事件。
 
 ---
 
@@ -175,31 +159,32 @@ CA/浏览器论坛采纳苹果提议，决定缩短TLS证书有效期。新规�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 2 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 3 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 4 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 5 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 6 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 7 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 1 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 2 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 3 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 4 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 5 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 6 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 7 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
 | 8 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 9 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 10 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 11 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 12 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 13 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 14 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 15 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 16 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 17 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 18 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 9 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 10 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 11 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 12 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 13 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 14 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 15 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 16 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 17 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 18 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
 | 19 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
 | 20 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
 | 21 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 22 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 22 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
 | 23 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 24 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 25 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 26 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 27 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 28 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 24 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 25 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 26 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 27 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 28 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 29 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
