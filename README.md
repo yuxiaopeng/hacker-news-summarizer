@@ -1,157 +1,164 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-17.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-18.md)
 
-*最后自动更新时间: 2025-04-17 17:48:38*
-## 1. OpenAI顶级灾难风险官员突然辞职
+*最后自动更新时间: 2025-04-18 17:47:43*
+## 1. 展示HN: 我做了一个能塞进二维码里的类Doom游戏
 
-**原文标题**: Top OpenAI Catastrophic Risk Official Steps Down Abruptly
+**原文标题**: Show HN: I made a Doom-like game fit inside a QR code
 
-**原文链接**: [https://garrisonlovely.substack.com/p/breaking-top-openai-catastrophic](https://garrisonlovely.substack.com/p/breaking-top-openai-catastrophic)
+**原文链接**: [https://github.com/Kuberwastaken/backdooms](https://github.com/Kuberwastaken/backdooms)
 
-无法访问文章链接。
+这个“Show HN”帖子展示了“The Backdooms”，这是一款受《DOOM》和《The Backrooms》启发、完全可玩且经过压缩的游戏，完全包含在一个二维码中。该项目演示了一种创新的方法，可以在二维码中直接离线托管轻量级 Web 应用程序。用户可以使用现代 Web 浏览器扫描二维码，即可立即玩游戏，无需下载或安装任何内容。
 
----
+该项目的核心在于其极端的压缩技术，利用 Zlib 压缩与 Gzip 解压缩流以及 base64 编码来最大限度地缩小游戏的大小。HTML 代码是自解压的，利用浏览器的 DecompressionStream API 来动态解压缩和执行游戏。
 
-## 2. DeepSeek分布式文件系统入门
-
-**原文标题**: An Intro to DeepSeek's Distributed File System
-
-**原文链接**: [https://maknee.github.io/blog/2025/3FS-Performance-Journal-1/](https://maknee.github.io/blog/2025/3FS-Performance-Journal-1/)
-
-本文介绍DeepSeek的开源分布式文件系统3FS（Fire-Flyer File System）。它阐述了分布式文件系统的概念，强调了其将数据碎片化分布在多台机器上的复杂性抽象化，从而使用户感觉就像在使用单个本地文件系统。分布式文件系统的优势包括海量数据服务能力、高吞吐量、容错性和冗余性。
-
-3FS由四种主要节点类型组成：Meta（管理元数据）、Mgmtd（管理集群配置和节点发现）、Storage（存储实际文件数据）和Client（与其他节点通信）。本文详细介绍了每个节点的功能，包括Mgmtd在节点注册和配置中的作用，Meta使用FoundationDB处理文件操作和元数据存储，以及Storage使用ChunkEngine（用Rust编写）通过将文件分成块并将元数据存储在LevelDB中来管理物理存储。
-
-3FS的一个重要方面是它使用CRAQ（具有分配查询的链式复制）来实现强一致性和容错。CRAQ确保数据复制到一系列节点上，写入操作按顺序传播，读取操作可以从干净或脏数据中获取，并且尾节点始终具有最新的数据。
-
-文章最后将3FS与其他分布式文件系统进行比较，强调了实际应用性、调优灵活性和实际实现细节的重要性。作者概述了未来博客文章的计划，以对3FS性能进行基准测试，找出瓶颈，并将其与现有系统进行比较。最后，该文章提供了指向设计说明、技术文档和学术论文的链接，其中包含更深入的信息。
+该帖子概述了使用 Python 和 `qrcode` 库将游戏转换为二维码的过程，重点介绍了该系统生成尽可能小的二维码，同时最大化数据容量的逻辑。作者还提供了压缩工作流程和二维码生成过程的技术分解，讨论了遇到的挑战和限制。该项目以 MIT 许可证发布，鼓励其他人尝试基于二维码的游戏。鸣谢 id Software（《DOOM》），matttkc（灵感来源）和 Toby Fox（《Undertale》音乐）。
 
 ---
 
-## 3. Erlang/OTP SSH 中未经身份验证的远程代码执行
+## 2. 用于Python的全新ASN.1 API
 
-**原文标题**: Unauthenticated Remote Code Execution in Erlang/OTP SSH
+**原文标题**: A New ASN.1 API for Python
 
-**原文链接**: [https://nvd.nist.gov/vuln/detail/CVE-2025-32433](https://nvd.nist.gov/vuln/detail/CVE-2025-32433)
+**原文链接**: [https://blog.trailofbits.com/2025/04/18/sneak-peek-a-new-asn.1-api-for-python/](https://blog.trailofbits.com/2025/04/18/sneak-peek-a-new-asn.1-api-for-python/)
 
-CVE-2025-32433 描述了 Erlang/OTP 的 SSH 服务器中的一个未经身份验证的远程代码执行 (RCE) 漏洞。受影响的版本包括 OTP-27.3.3 之前的版本、OTP-26.2.5.11 之前的版本以及 OTP-25.3.2.20 之前的版本。攻击者可以利用 SSH 协议消息处理中的缺陷，在无需有效凭据的情况下获得未授权访问权限并执行任意命令。
+本文宣布PyCA Cryptography正在开发一个新的Python ASN.1 API，旨在解决现有Python ASN.1库在性能、差异化简和现代化方面面临的挑战。ASN.1对于密码学、网络和电信（例如，TLS握手、LDAP、X.509证书）至关重要，但由于实现不一致以及在纯Python中实现时的性能问题，历史上一直是漏洞的来源。
 
-GitHub, Inc. 将此漏洞评级为 CRITICAL（严重），CVSS 3.1 评分为 10.0，向量为 CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H。这表明该漏洞可通过网络利用，无需用户交互或权限，攻击复杂度低，并可能导致受影响系统的机密性、完整性和可用性完全受损。
+新的API旨在利用PyCA Cryptography已采用的基于Rust的ASN.1解析器，提供接近原生解析的性能，从而减少解析器差异。它将具有现代的、声明性的dataclasses风格接口，带有类型提示，从而提高可用性以及与类型检查器的集成。
 
-补丁已在 OTP-27.3.3、OTP-26.2.5.11 和 OTP-25.3.2.20 版本中提供。临时的解决方案是禁用 SSH 服务器或使用防火墙规则阻止访问。此漏洞是由于关键功能缺少身份验证 (CWE-306) 导致的。更多详细信息和与修复相关的代码提交可以在链接的 GitHub 资源中找到。
-
----
-
-## 4. 谷歌是线上广告技术领域的垄断者，法官表示
-
-**原文标题**: Google Is a Monopolist in Online Advertising Tech, Judge Says
-
-**原文链接**: [https://www.nytimes.com/2025/04/17/technology/google-ad-tech-antitrust-ruling.html](https://www.nytimes.com/2025/04/17/technology/google-ad-tech-antitrust-ruling.html)
-
-联邦法官裁定谷歌非法垄断部分在线广告技术市场
+提供的示例说明了如何将复杂的ASN.1定义映射到清晰的、带有类型提示的Python dataclass。作者强调了该库在Sigstore生态系统等环境中的相关性，在这些环境中，开发人员需要处理超出标准X.509形状的ASN.1编码/解码。该项目由Alpha-Omega资助，代表了PyCA Cryptography致力于改善Python安全生态系统的承诺。未来的计划包括支持核心ASN.1装饰器、基本类型和修饰符，将新的API集成到PyCA Cryptography中，并在主要版本中发布。
 
 ---
 
-## 5. 软件制作
+## 3. Show HN: Attune - 在几秒内构建并发布APT仓库
 
-**原文标题**: Making Software
+**原文标题**: Show HN: Attune - Build and publish APT repositories in seconds
 
-**原文链接**: [https://www.makingsoftware.com/](https://www.makingsoftware.com/)
+**原文链接**: [https://github.com/attunehq/attune](https://github.com/attunehq/attune)
 
-《软件制作》一书面向那些对日常技术如何运作充满好奇心，但又不是技术专家的读者。它不是教程或指南，而是一本解释触摸屏、图像模糊、矢量图形等底层机制的手册。
+Attune：安全构建、发布和托管Linux软件包的工具 (初始专注于APT仓库 - Debian/Ubuntu)。它提供自托管和托管云部署选项。其关键特性是安全性；仓库索引签名发生在本地，允许用户保持对其签名密钥的控制。Attune也专为速度而设计，利用增量仓库索引重建来实现快速的软件包管理。
 
-本书旨在弥合我们对技术的使用与理解之间日益扩大的差距。它旨在提供对事物如何运作的更深入（但不一定是可操作的）的知识，这有助于解决问题或满足纯粹的求知欲。本书使用插图和图表来方便理解。
+"Show HN"提供了一个快速入门指南，大约在5分钟内使用Attune设置一个APT仓库。该过程包括：
 
-目录揭示了本书涵盖的广泛主题，包括像素和颜色、字体和矢量、3D和着色器、人工智能和机器学习、压缩和数据、网络和Web、以及编译器和解释器。它还将探讨更具体的例子，如正则表达式、二维码和量子计算。
+1. 使用Docker Compose设置Attune后端，从GitHub克隆仓库，配置环境变量，并启动服务。
+2. 安装Attune CLI并创建一个仓库。
+3. 将一个`.deb`软件包添加到仓库。
+4. 生成一个GPG密钥（如果需要），导出密钥，并使用它来签名和部署仓库。
 
-本书最初将以数字形式发布，之后可能会进行印刷。预购选项允许读者在章节撰写时访问它们，并允许读者提出主题建议。虽然价格尚未确定，但某些内容将是免费的，特别是对于那些在邮件列表中的人。
+文章重点介绍了每个步骤的命令，包括克隆仓库、创建仓库、添加软件包、生成GPG密钥以及签名/部署仓库。它强调了修改环境变量以适应用户部署的重要性。
 
----
-
-## 6. 不锈钢强化：扭转产生亚微米级“防撞墙”
-
-**原文标题**: Stainless steel strengthened: Twisting creates submicron 'anti-crash wall'
-
-**原文链接**: [https://techxplore.com/news/2025-04-stainless-steel-technique-submicron-anti.html](https://techxplore.com/news/2025-04-stainless-steel-technique-submicron-anti.html)
-
-发表于2025年4月12日Tech Xplore上的一篇文章报道了中国科学院、山东大学和佐治亚理工学院的研究人员开发的一种新型不锈钢强化方法。该研究发表在《科学》杂志上，详细介绍了一种扭转技术，该技术显著提高了金属的抗金属疲劳和循环蠕变能力。
-
-这种创新方法包括重复扭转304奥氏体不锈钢，创造一种空间梯度蜂窝结构，形成亚微米级的三维“防撞墙”。显微分析显示，超细的、小于10纳米的相干层状结构有效地通过阻止堆垛层错来减缓位错运动。这种“防撞墙”像弹簧一样，吸收冲击力，使金属的抗循环蠕变能力更加均匀。
-
-测试表明，与未处理的钢相比，处理后的不锈钢强度提高了2.6倍，棘轮效应引起的应变减少了2到4个数量级。研究人员声称，这种改进可能会使由处理后的钢制成的产品抗疲劳能力提高多达10,000倍，为航空航天等行业的专业应用开辟了可能性。
+文章最后引导用户查阅用户指南，以获取更详细的说明和配置选项，并声明Attune采用Apache 2许可。
 
 ---
 
-## 7. EasyPost (YC S13) 正在招聘
+## 4. 没那么慢的C++
 
-**原文标题**: EasyPost (YC S13) Is Hiring
+**原文标题**: Less Slow C++
 
-**原文链接**: [https://www.easypost.com/careers](https://www.easypost.com/careers)
+**原文链接**: [https://github.com/ashvardanian/less_slow.cpp](https://github.com/ashvardanian/less_slow.cpp)
 
-EasyPost (YC S13) 积极招聘，寻找平易近人、充满活力、富有创造力、才智过人且值得信赖的候选人，共同定义航运的未来。他们正在寻找能够协作、提出挑战性问题、探索新解决方案并承担责任的问题解决者。
+该仓库“Less Slow C++”提供了编写高效C和C++代码的实用示例，并利用了C++20的特性。它解决了现代代码中常见的、常被大学和训练营课程忽视的性能陷阱。内容涵盖了微内核、并行算法、协程和多态。
 
-该公司强调他们专注于现代、灵活的技术，以改善航运的客户体验，展望实现当日送达和减少环境浪费的未来。他们强调一种适应性强、简单和包容的文化。
+主要亮点包括优化的随机输入生成、更快的三角函数计算、改进的惰性逻辑、高级编译器优化以及对矩阵乘法性能的深入见解。它探讨了AI的扩展、分支预测、递归深度、异常处理、使用OpenMP/oneTBB的多核扩展、无需内存分配的JSON处理、STL关联容器、consteval RegEx引擎、指针标记、UDP丢包、使用io_uring的Web请求服务、分散/聚集操作和GPU加速。
 
-EasyPost 以其工程至上的公司理念和务实的软件开发方法而自豪。他们提供一个有趣、充满激情和创业精神的环境，团队拥有多样化的经验。关键技术特性包括受 CI/CD 启发的Workflow、小型服务而非单体应用、强大的工程工具和开发者支持，以及一种不咎责任的文化。
-
-他们提供医疗、牙科和视力保险计划、弹性休假、股票期权机会、跨职能学习和每月虚拟活动等福利和津贴。文章还警告存在冒充 EasyPost 的招聘诈骗，并敦促申请人保持警惕，并通过官方渠道验证任何可疑的职位邀请。
+该项目主要在Linux上使用GCC和Clang进行测试，但也与其他编译器兼容。该仓库包含手写汇编和CUDA/PTX代码，用于硬件特定的优化。该项目使用多个第三方依赖项，包括Google Benchmark、Intel的oneTBB、Meta的libunifex等。可以使用标志自定义基准测试，以设置输出格式、过滤和启用随机交错。该仓库还提供了使用Google Benchmark功能的技巧和窍门。
 
 ---
 
-## 8. 展示 HN: AgentAPI – Claude Code、Goose、Aider 和 Codex 的 HTTP API
+## 5. 游艇的工作原理：帆船物理学与设计
 
-**原文标题**: Show HN: AgentAPI – HTTP API for Claude Code, Goose, Aider, and Codex
+**原文标题**: How a yacht works: sailboat physics and design
 
-**原文链接**: [https://github.com/coder/agentapi](https://github.com/coder/agentapi)
+**原文链接**: [https://www.onemetre.net/Design/Design.htm](https://www.onemetre.net/Design/Design.htm)
 
-AgentAPI 是一个 HTTP API，它允许对 Claude Code、Goose、Aider 和 Codex 等编码代理进行编程控制。它解决了通过基于终端的界面与这些代理交互的难题，提供了一种统一的方式来构建聊天界面、创建多代理系统和自动化代码审查流程。
+莱斯特·吉尔伯特的《游艇工作原理：帆船物理学与设计》一文深入探讨了帆船航行背后的复杂科学。它涵盖了广泛的主题，从基本空气动力学原理到游艇的具体设计元素。
 
-该工具可以通过预构建的二进制文件安装，也可以使用 Go 从源代码构建。它提供了 CLI 命令来运行代理服务器 (`agentapi server`) 和连接到正在运行的代理的终端会话 (`agentapi attach`)。该服务器公开了一个 OpenAPI 模式和文档 UI。
+文章首先探讨了翼型及其如何产生升力，讨论了各种理论模型并结合了二维流体模拟。然后，文章转向鳍和船帆设计的细节，分析了展弦比、涡流、边界层、雷诺数、缭绳、扭曲和狭缝的影响。文章还展示了缭绳角度和边界层的风洞测试结果。
 
-主要功能包括：
+文章的核心内容是研究游艇在各种航行条件下的工作原理，涵盖航行方位、顺风性能、逆风航行、升力和阻力的影响，以及视风的关键概念。文章进一步分析了风梯度及其对船帆扭曲的影响，并介绍了大型船只上使用的仪器。
 
-*   **API 端点：** `/messages` (获取历史记录), `/message` (发送消息), `/status` (获取状态), `/events` (SSE 流).
-*   **终端模拟：** 将 API 调用转换为终端击键。
-*   **消息解析：** 将终端输出拆分为用户和代理消息，删除不需要的 TUI 元素。
-*   **代理兼容性：** 适用于 Claude Code、Goose、Aider 和 Codex，并具有适应未来 TUI 更新的灵活性。
+文章还全面讨论了附体设计，包括鳍和舵的大小、平面形状、剖面和球鼻艏形状，并专门用一个章节介绍了马克的球鼻艏计算器。文章涉及船体设计，考虑了弗劳德数、表面摩擦力、波浪阻力、船体线型和稳心矩等因素。分析了船体周围的流动，并介绍了扰流器等概念。
 
-AgentAPI 的长期愿景是，要么因标准化官方 SDK 的出现而变得过时，要么在代理继续使用专有 API 的情况下，充当通用适配器。正在考虑的未来功能包括支持 MCP 和 Agent2Agent 协议。
+文章对船帆和索具设计给予了相当大的关注，涵盖了舷索、跳索、支索、撑杆、桅杆与船帆的相互作用、前支索下垂、风阻、鹅颈几何形状、吊帆索、船帆弧度和船帆形状。文章还考虑了前帆下缘与甲板之间以及船帆与桅杆之间的间隙的影响。
 
----
-
-## 9. HDR加持的表情符号
-
-**原文标题**: HDR‑Infused Emoji
-
-**原文链接**: [https://sharpletters.net/2025/04/16/hdr-emoji/](https://sharpletters.net/2025/04/16/hdr-emoji/)
-
-本文解释了如何在Slack中创建HDR（高动态范围）表情符号。作者指出，这些HDR表情符号以增强的亮度渲染，使其在视觉上引人注目，尤其是在支持HDR显示的硬件上。
-
-HDR表情符号的创建过程涉及使用`imagemagick`来处理图像。具体来说，该脚本执行以下操作：
-
-1. 将图像的色彩空间调整为RGB。
-2. 应用自动伽马校正。
-3. 乘以并幂运算图像值以增加亮度。乘法因子需要根据源图像进行调整。
-4. 将色彩空间转换回sRGB。
-5. 将颜色深度调整为16位。
-6. 应用2020\_profile.icc颜色配置文件。
-
-文章强调HDR表情符号的支持并不普遍。它在Chrome和Slack中运行良好，但在很大程度上与Safari和Android设备不兼容。建议用户在Slack中测试表情符号，以验证它们在不同平台上的渲染效果。一个关键要求是在执行`imagemagick`脚本的工作目录中拥有`2020_profile.icc`文件。
+最后，文章通过讨论作为一个整体的游艇，整合了所有这些元素，重点关注平衡、稳定性、环境因素、设计权衡以及船级规则的影响。文章深入研究了由于船体形状、索具调整、压浪舵造成的平衡，并利用了简单的速度预测程序 (VPP)。
 
 ---
 
-## 10. Zoom宕机因意外“关闭”zoom.us域名导致。
+## 6. Defold: 跨平台游戏引擎
 
-**原文标题**: Zoom outage caused by accidental 'shutting down' of the zoom.us domain
+**原文标题**: Defold: cross-platform game engine
 
-**原文链接**: [https://status.zoom.us/incidents/pw9r9vnq5rvk](https://status.zoom.us/incidents/pw9r9vnq5rvk)
+**原文链接**: [https://defold.com](https://defold.com)
 
-2025年4月16日，Zoom遭遇中断，影响了包括Zoom Meetings、Zoom Phone、Zoom Contact Center和Zoom网站在内的多项服务。根本原因是Zoom的域名注册商Markmonitor与GoDaddy Registry之间发生通信错误。此错误导致GoDaddy Registry错误地屏蔽了zoom.us域名，使其在东部时间下午2:25至下午4:12之间无法访问。
+Defold是一款免费且可用于商业用途的跨平台游戏引擎，专为创建高性能的2D和3D游戏而设计。它是一个完整的解决方案，包含可视化编辑器、代码编辑器、Lua脚本支持、调试器以及场景/粒子/瓦片地图编辑器，所有功能集成于一个工具中。Defold支持发布到众多平台，包括PlayStation、Nintendo Switch、Android、iOS、macOS、Linux、Windows、Steam、HTML5和Facebook。Xbox支持计划于2024年第三季度推出。
 
-Zoom、Markmonitor和GoDaddy迅速采取行动，确定并解决了问题，恢复了zoom.us域名的服务。Zoom澄清说，中断并非由于任何产品故障、安全漏洞、网络问题或分布式拒绝服务(DDoS)攻击所致。
+该引擎旨在开箱即用，无需初始设置，并为原生代码提供零配置的云构建。开发者可以通过自定义配置、资源门户或编写自己的原生代码来扩展引擎的功能。它与Atom、VS Code、Rive、Spine、TexturePacker和Tiled等常用工具集成。
 
-恢复后，Zoom建议遇到连接问题的用户刷新其DNS缓存，并为Windows和Mac用户提供了执行此操作的说明。GoDaddy和Markmonitor正在合作以防止未来发生类似事件。
+感谢Defold基金会，Defold采用永久免费模式，没有预付、许可或运行时费用。该引擎拥有成功的游戏发布记录，集成了分析和应用经济服务，并每月更新。同时提供技术支持合同。网站提供教程、手册、API参考、示例和一个社区论坛，以帮助开发者学习和解决问题。网站还展示了使用Defold制作的游戏，如《Family Island》，并提供关于引擎开发的博客更新和新闻。
+
+---
+
+## 7. Dot (YC S21) 正在招聘一名销售工程师，以实现分析自动化（完全远程）。
+
+**原文标题**: Dot (YC S21) is hiring a sales engineer to automate analytics (fully remote)
+
+**原文链接**: [https://www.ycombinator.com/companies/dot/jobs/XSmklFa-customer-success-sales-engineer-remote](https://www.ycombinator.com/companies/dot/jobs/XSmklFa-customer-success-sales-engineer-remote)
+
+Dot（YC S21）是一家AI数据分析初创公司，致力于帮助企业实现数据访问民主化，现招聘一名全职远程客户成功/销售工程师。 该混合型职位负责整个客户旅程，从入职和支持到售前技术评估。理想的候选人将弥合产品与用户之间的差距，与创始人及工程团队紧密合作，以最大化客户价值。
+
+职责包括帮助客户完成数据仓库集成，通过最佳实践和故障排除来推动产品采用，提供售前技术支持，担任主题专家，并将客户反馈传达给产品和工程团队。该职位还涉及构建可扩展的资源，如文档和教程，并为成功的产品使用提供收入分成。
+
+Dot正在寻找具有分析或数据平台背景、强大的技术问题解决能力、以客户为中心的沟通能力、主人翁意识和主动性，以及具有销售头脑并热衷于数据民主化的人才。 拥有数据仓库、BI工具、SQL、Python、Snowflake、BigQuery或dbt经验者优先。
+
+公司重视包容性和多样性。面试流程包括初步沟通、深入面试、与团队见面以及实践性付费练习。 请候选人发送一封简短的电子邮件，说明其动机、个人资料链接以及所在位置信息。
+
+---
+
+## 8. 双子座 2.5 闪电版
+
+**原文标题**: Gemini 2.5 Flash
+
+**原文链接**: [https://developers.googleblog.com/en/start-building-with-gemini-25-flash/](https://developers.googleblog.com/en/start-building-with-gemini-25-flash/)
+
+谷歌开发者博客宣布通过Google AI Studio和Vertex AI中的Gemini API发布Gemini 2.5 Flash的预览版。基于Gemini 2.0 Flash的基础之上，这个新版本在保持速度和成本效益的同时，显著提升了推理能力。
+
+Gemini 2.5 Flash的一个关键特性是其完全混合的推理模型，允许开发者开启或关闭“思考”功能，并设置“思考预算”以平衡质量、成本和延迟。这种控制为各种用例提供了灵活性。较高的思考预算使模型能够进行更彻底的推理，从而提高复杂任务的准确性。即使将思考预算设置为零，该模型也能提供优于2.0 Flash的性能。
+
+Gemini 2.5 Flash定位为一种具有卓越性价比的经济高效的思考模型。开发者可以调整API中的`thinking_budget`参数（范围从0到24576个token）来控制推理的程度。该模型会根据提示的复杂性智能地确定必要的思考量。
+
+此次发布包括API参考、思考指南和Gemini Cookbook中的代码示例。谷歌计划在Gemini 2.5 Flash全面上市之前进行进一步的改进。
+
+---
+
+## 9. AMP以及为何电子邮件不是（且永远不应该）交互式的
+
+**原文标题**: AMP and why emails are not (and should never be) interactive
+
+**原文链接**: [https://buttondown.com/blog/whatever-happened-to-amp-email](https://buttondown.com/blog/whatever-happened-to-amp-email)
+
+本文探讨了谷歌试图通过AMP（加速移动页面）为电子邮件引入互动性，以及它最终失败的原因。作者认为，电子邮件的优势在于其简单性、可靠性和去中心化，因此多年来抵制了重大改变。
+
+谷歌的AMP for email旨在允许用户直接从收件箱执行预订航班、回复评论和更新偏好等操作。然而，该计划面临阻力，原因包括开发电子邮件的复杂性增加（需要AMP、HTML和纯文本版本），电子邮件客户端的支持有限，以及对谷歌控制网络的怀疑。
+
+本文强调了它与最初针对移动网站的AMP项目相似之处，当时谷歌通过优惠的搜索排名来激励采用，导致了反垄断担忧。作者强调，电子邮件固有的永久性和提供可靠记录的能力是至关重要的方面，而AMP通过使电子邮件动态化并可能被更改，威胁到了这些方面。
+
+最终，谷歌放弃了AMP徽章和对Google News的要求，虽然他们仍然在内部使用AMP来实现评论Google Docs等功能，但该项目本身已被很大程度上忽视。文章总结道，电子邮件应保持为静态、可靠的媒介，强调保持其简单性和永久性的重要性。
+
+---
+
+## 10. 大学城：瑞安·艾伦谈昔日都市主义
+
+**原文标题**: College Towns: Urbanism from a Past Era with Ryan Allen
+
+**原文链接**: [https://www.governance.fyi/p/college-towns-urbanism-from-a-past](https://www.governance.fyi/p/college-towns-urbanism-from-a-past)
+
+本文采访了瑞安·艾伦，他是“大学城”通讯的教授和作者，探讨了高等教育与都市主义的交叉点。艾伦强调了高等教育面临的挑战，特别是博士过剩导致毕业生就业不稳定，并以一位无家可归的加州大学洛杉矶分校教授的故事为例。他建议，鉴于学术就业市场日渐萎缩，在没有明确职业道路的情况下不要攻读博士学位。
+
+随后，对话转向大学在保护宜步行的城市环境中所扮演的角色，并将其与美国其他地方普遍存在的郊区蔓延现象形成对比。艾伦指出，迪士尼乐园向游客收取体验宜步行的“大街”的费用，而这些大街曾经在美国城镇中司空见惯，这是一种讽刺。
+
+访谈还涉及美国与中国高等教育格局的演变。艾伦指出，中国大学的竞争力日益增强，他们正在培养自己的专家，并减少对美国机构的依赖。他强调，尽管美国的 STEM 领域仍然具有价值，但美国目前的政策决策正在伤害自己，尤其是在吸引和留住国际学生方面。他承认，与人文科学或社会科学相比，STEM 领域通常对寻求就业的毕业生更有用。
 
 ---
 
@@ -159,32 +166,33 @@ Zoom、Markmonitor和GoDaddy迅速采取行动，确定并解决了问题，恢�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 2 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 3 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 4 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 5 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 6 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 7 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 8 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 9 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 10 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 11 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 12 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 13 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 14 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 15 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 16 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 17 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 18 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 19 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 20 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 21 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 22 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 23 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 24 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 25 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 26 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 27 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 28 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 29 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 1 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 2 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 3 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 4 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 5 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 6 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 7 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 8 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 9 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 10 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 11 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 12 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 13 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 14 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 15 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 16 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 17 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 18 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 19 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 20 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 21 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 22 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 23 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 24 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 25 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 26 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 27 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 28 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 29 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 30 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
