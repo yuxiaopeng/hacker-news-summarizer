@@ -1,129 +1,153 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-20.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-21.md)
 
-*最后自动更新时间: 2025-04-20 17:47:04*
-## 1. Zig编译时不会做的事
+*最后自动更新时间: 2025-04-21 17:48:21*
+## 1. 被微软分叉
 
-**原文标题**: Things Zig Comptime Won't Do
+**原文标题**: Getting Forked by Microsoft
 
-**原文链接**: [https://matklad.github.io/2025/04/19/things-zig-comptime-wont-do.html](https://matklad.github.io/2025/04/19/things-zig-comptime-wont-do.html)
+**原文链接**: [https://philiplaine.com/posts/getting-forked-by-microsoft/](https://philiplaine.com/posts/getting-forked-by-microsoft/)
 
-本文《Zig编译时不会做的事》强调了Zig编译时特性有意设置的限制，认为这些限制尽管具有表现力，但有助于其优雅性和易用性。
+本文详细描述了一位独立开源维护者（“我”）的经历，他的 Kubernetes 镜像镜像项目 Spegel 被微软实际性地 Fork 了，从而创建了 Peerd。作者开发 Spegel 是为了解决客户环境中因镜像仓库中断导致的停机问题，它提供了一种无状态且操作轻便的替代传统镜像方案。
 
-作者强调，Zig中的编译时代码通过模拟目标架构来避免“宿主泄漏”，这与其他一些语言的编译时代码在宿主机上运行、可能导致不一致的情况不同。Zig也缺乏类似于D和Rust等语言中的“#eval”或动态源码生成机制。相反，Zig依赖于通过`comptime`关键字进行的部分求值和特化，这需要某些参数的编译时知识。
+微软最初对 Spegel 表示了兴趣，双方进行了讨论，作者还协助微软工程师进行实施。然而，沟通中断，后来，作者发现微软开发了 Peerd，一个类似的项目，甚至在其文档中引用了 Spegel。作者随后发现 Peerd 中直接复制了 Spegel 的代码，包括函数签名和注释，以及引用 Spegel 和作者雇主的测试用例。
 
-文章进一步指出，Zig的元编程系统不允许在语言语法中直接使用自定义语法或DSL。虽然可以通过字符串实现自定义语法，但Zig也避免使用运行时类型信息（RTTI），要求在编译时完全特化类型元编程。
-
-关键的是，Zig不允许向生成的类型添加方法，这意味着自定义类型的API必须手动编写。最后，编译时操作是完全隔离的，禁止任何输入/输出（IO）操作，从而确保隐蔽、可重现和安全的编译。作者总结说，这些限制虽然具有约束性，但使Zig的元编程特性更易于管理和预测。任何需要IO的构建时操作，如数据库交互，都可以由Zig的构建系统处理。
+虽然 Spegel 采用的是允许 Fork 和修改的宽松 MIT 许可，但作者认为微软在某些地方没有正确地署名原始来源。这种情况在用户中造成了混乱，由于微软的品牌知名度，这使得与微软的 Peerd 一起推广 Spegel 变得具有挑战性。作者感到沮丧，质疑继续开发 Spegel 的价值。尽管如此，Spegel 仍然存在，并获得了重要的社区采用。作者现在正在努力思考独立开源维护者如何在不被利用的情况下与大型公司合作。作者还在考虑将 Spegel 的许可证更改为更严格的许可证，并启用了 GitHub 赞助商来支持该项目的开发。
 
 ---
 
-## 2. Gemma 3 QAT 模型：将人工智能带入消费级 GPU
+## 2. 为什么LLM驱动的编程更像是机甲战衣而非人造人
 
-**原文标题**: Gemma 3 QAT Models: Bringing AI to Consumer GPUs
+**原文标题**: Why LLM-Powered Programming Is More Mech Suit Than Artificial Human
 
-**原文链接**: [https://developers.googleblog.com/en/gemma-3-quantized-aware-trained-state-of-the-art-ai-to-consumer-gpus/](https://developers.googleblog.com/en/gemma-3-quantized-aware-trained-state-of-the-art-ai-to-consumer-gpus/)
+**原文链接**: [https://matthewsinclair.com/blog/0178-why-llm-powered-programming-is-more-mech-suit-than-artificial-human](https://matthewsinclair.com/blog/0178-why-llm-powered-programming-is-more-mech-suit-than-artificial-human)
 
-谷歌开发者博客宣布Gemma 3量化感知训练优化版模型发布，显著降低内存需求，使先进AI技术可在NVIDIA RTX 3090等消费级GPU上运行。
+在他的文章《为什么LLM驱动的编程更像是机甲战衣而非人工智能人》中，Matthew Sinclair 认为像Claude Code这样的LLM并没有取代程序员，而是增强了他们的能力，就像《异形》中里普利的动力装甲一样。他讲述了使用 Claude Code 构建两个应用程序，生成 3 万行代码的经历，并强调了持续警惕和人工监督的必要性。
 
----
+虽然LLM大幅缩短了编码时间，尤其是在实现阶段（“我该怎么做？”），但至关重要的“为什么”和“是什么”阶段仍然至关重要，甚至变得更加重要。程序员必须愿意无情地放弃与项目架构目标不符的AI生成的代码。
 
-## 3. 图灵绘图
+Sinclair 强调经验仍然至关重要。 熟练的开发人员可以识别 AI 生成的胡说八道，并防止它导致问题。他将这种情况比作“人机混合国际象棋”，在其中，人类与 AI 的团队表现优于人类或 AI 单独的表现。人类提供战略方向和判断，而 AI 提供计算能力。
 
-**原文标题**: Turing-Drawings
-
-**原文链接**: [https://github.com/maximecb/Turing-Drawings](https://github.com/maximecb/Turing-Drawings)
-
-图灵绘图：一个基于JavaScript+HTML5的演示，展示了随机生成的图灵机在2D画布上创作图像和动画。该项目（网址：http://maximecb.github.io/Turing-Drawings/）以修改后的BSD许可证发布。核心思想是，这些随机生成的图灵机，尽管规则简单，却能产生令人惊讶的复杂和视觉上有趣的图案。列表中的名称（分形、扫描、矩阵等）例证了该系统所实现的各种美学效果，暗示了从简单计算过程中可能出现的各种可能性和意想不到的美。作者还提到撰写了一篇博客文章来进一步解释该项目，表明有更深入的见解和解释可供参考。本质上，该项目探索了基本计算模型中固有的涌现创造力。
+与 LLM 的有效协作需要在委托和控制之间取得平衡。未来青睐那些能够掌握这些工具的开发者，既认识到它们的潜力，也认识到它们的局限性，并利用它们来增强而非取代软件开发中的人类技能。 关键在于，在这种新的范式中，架构思维、模式识别和技术判断变得更有价值。
 
 ---
 
-## 4. 健康的土壤是隐藏的秘诀。
+## 3. Show HN: Dia，一个用于生成逼真对话的开放权重TTS模型
 
-**原文标题**: Healthy soil is the hidden ingredient
+**原文标题**: Show HN: Dia, an open-weights TTS model for generating realistic dialogue
 
-**原文链接**: [https://www.nature.com/articles/d41586-025-01026-x](https://www.nature.com/articles/d41586-025-01026-x)
+**原文链接**: [https://github.com/nari-labs/dia](https://github.com/nari-labs/dia)
 
-这篇《自然》杂志的文章《健康的土壤是隐藏的要素》强调了土壤健康的关键重要性，尤其是在面临严重土壤退化的欧盟和西班牙的背景下。 欧盟估计，其60-70%的土壤是不健康的，每年造成500亿欧元的损失。 西班牙的土壤侵蚀率在欧洲最高（14.2吨/公顷/年），可以作为一个案例研究。
+南瑞实验室推出Dia：16亿参数开源文本转语音模型，可生成逼真对话，并通过音频调节控制情感和语气。Dia还能生成笑声和咳嗽等非语言提示。模型权重和推理代码已在Hugging Face上提供，以加速研究。演示对比了Dia与ElevenLabs Studio和Sesame CSM-1B。
 
-这篇文章介绍了格拉纳达大学的地理学家Jesús Rodrigo Comino，他的研究重点是开发可持续的土壤管理实践，尤其是在葡萄园中。 他利用地理制图系统和人工智能为农民创建工具，帮助他们就灌溉、覆盖作物和耕作做出明智的决策。
+用户可以通过克隆GitHub仓库并运行`app.py`脚本来打开Gradio UI，从而快速上手Dia。该模型也可以作为Python库使用，PyPI软件包和CLI工具即将推出。
 
-Rodrigo Comino还参与了SOILCRATES项目，该项目是欧盟“欧洲土壤协议”的一部分，旨在建立田间试验点，以合作研究可持续土壤，并提高公众对土壤健康重要性的认识。
+Dia需要GPU（PyTorch 2.0+，CUDA 12.6）才能获得最佳性能，并且需要大约10GB的VRAM。虽然在企业级GPU上可以实现实时音频生成，但较旧的GPU会体验到较慢的推理速度。计划在未来提供量化和CPU支持。
 
-这篇文章还探讨了气候变化的影响，指出气温升高、降水减少以及更频繁的极端降雨事件，这些都影响着土壤健康。 虽然关于葡萄园的结论性数据仍在收集，但趋势表明开花期提前，并且由于集中降雨导致土壤侵蚀加剧。
+Dia在Apache 2.0许可下授权，但附带严格的使用限制。它仅用于研究和教育目的，不得用于身份滥用、欺骗性内容创作或非法活动。
 
----
-
-## 5. 锯齿状AGI：o3、Gemini 2.5及后续一切
-
-**原文标题**: Jagged AGI: o3, Gemini 2.5, and everything after
-
-**原文链接**: [https://www.oneusefulthing.org/p/on-jagged-agi-o3-gemini-25-and-everything](https://www.oneusefulthing.org/p/on-jagged-agi-o3-gemini-25-and-everything)
-
-伊森·莫里克讨论了o3和Gemini 2.5 Pro等人工智能模型的最新进展，以及它们是否代表通用人工智能（AGI）的争论。他强调了泰勒·科文基于o3令人印象深刻的能力，断言其为AGI的观点，并展示了o3仅凭一个提示就能创建营销计划、徽标和网站，以及其地理定位能力等例子。
-
-莫里克介绍了“锯齿状AGI”的概念，描述了人工智能的不均衡能力，它擅长复杂任务，却在简单任务上失败，例如o3在一个修改过的脑筋急转弯上的失败。尽管存在这些不一致性，但这些模型在各种任务中的通用能力和表现仍然值得注意。
-
-鉴于定义的模糊性，他质疑这些模型是否真正构成AGI，但认为它们代表了一种“锯齿状AGI”，其重要性足以影响工作和生活，同时也承认其不可靠性需要人工监督。
-
-莫里克承认，即使实现了AGI，其影响也可能不会立即显现，因为社会和组织适应缓慢。然而，像o3这样的模型的代理能力，使其能够独立分解复杂目标并执行多步骤计划，可能会加速采用。最终，他得出结论，人工智能整合的轨迹仍然不确定，可能逐渐改变，也可能快速转型，并强调在“锯齿状地带”中航行，为未来做好准备的重要性。
+未来的工作包括Docker支持、推理速度优化以及通过量化提高内存效率。南瑞实验室欢迎贡献，并感谢Google TPU Research Cloud计划、SoundStorm、Parakeet和Descript Audio Codec提供的灵感。
 
 ---
 
-## 6. 哪一年：猜猜每张照片拍摄于哪一年
+## 4. 为Tcl过程添加关键字参数
 
-**原文标题**: Which year: guess which year each photo was taken
+**原文标题**: Adding keyword parameters to Tcl procs
 
-**原文链接**: [https://whichyr.com/](https://whichyr.com/)
+**原文链接**: [https://world-playground-deceit.net/blog/2025/04/adding-keyword-parameters-to-tcl-procs.html](https://world-playground-deceit.net/blog/2025/04/adding-keyword-parameters-to-tcl-procs.html)
 
-猜年份：一款令人着迷且寓教于乐的图片猜谜游戏，挑战玩家猜测历史照片的拍摄年份。玩家使用时间轴滑块在1850年至2025年间选择年份。猜测越接近实际年份，获得的分数越高。
+该博文详细介绍了作者为Tcl过程实现的关键字参数，作者认为尽管标准Tcl命令中存在这种特性，但该语言仍然缺乏它。作者实现了一个`proc*`命令，扩展了标准的`proc`命令，允许使用可选的、命名的且顺序无关的参数，类似于Unix命令行选项。
 
-游戏提供“数字揭示”提示功能，让玩家在遇到困难时解锁正确年份的一个数字，但每个数字在每局游戏中只能揭示一次。“每日挑战”每天提供一组新的照片，让玩家测试他们的知识，与他人比较分数，并跟踪他们随时间的进步。该游戏旨在测试和提高视觉记忆和历史知识。
+`proc*`命令预处理参数列表，识别标志和选项，并生成代码来解析输入参数并设置相应的变量。该实现还包括根据参数数量来区分位置参数和选项的逻辑。
 
----
-
-## 7. Weave (YC W25) 招聘创始工程师
-
-**原文标题**: Weave (YC W25) is hiring a founding engineer
-
-**原文链接**: [https://www.ycombinator.com/companies/weave-3/jobs](https://www.ycombinator.com/companies/weave-3/jobs)
-
-Weave (YC W25)，一家专注于提高工程团队效率的软件公司，正在招聘两位创始工程师：一位人工智能工程师和一位产品工程师。两个职位均位于加州奥克兰或旧金山，薪资范围为 14 万美元至 20 万美元，股权为 0.50% 至 2.00%。人工智能工程师职位至少需要 1 年的经验，而产品工程师职位对所有经验水平开放，包括应届毕业生。Weave 强调其为工程团队构建最佳软件的使命。该公司资金充足，由顶级投资者支持，盈利且增长迅速。Weave 成立于 2024 年，目前活跃于旧金山。创始人是 Andrew Churchill 和 Adam Cohen。
+作者使用自定义的准引用机制`quasiquote`，通过字符串操作和正则表达式构建，来生成proc的最终Tcl代码。`quasiquote`命令允许在字符串中进行选择性替换和拼接，从而实现动态代码生成。作者承认通过正则表达式进行元编程的复杂性和潜在缺点，但最终认为该解决方案是有效的。
 
 ---
 
-## 8. 向旧金山蹒跚
+## 5. 拨云见日
 
-**原文标题**: Slouching Towards San Francisco
+**原文标题**: Out of the Fog
 
-**原文链接**: [https://rachdele.substack.com/p/slouching-towards-san-francisco](https://rachdele.substack.com/p/slouching-towards-san-francisco)
+**原文链接**: [https://www.theverge.com/cs/features/651701/vietnam-operation-babylift-adoption-transnational](https://www.theverge.com/cs/features/651701/vietnam-operation-babylift-adoption-transnational)
 
-无法访问文章链接。
+卡米尔·布罗姆利的《走出迷雾》探讨了“婴儿空运行动”的复杂遗产。该行动是指1975年西贡陷落期间，将越南儿童大规模撤离并被西方国家（主要是美国）收养的事件。文章揭示了许多被收养者所经历的各种问题，与最初将其定义为从战争恐怖中拯救脆弱儿童的人道主义“慈悲行动”的说法相悖。
 
----
+文章强调，许多儿童实际上并非孤儿，而是在混乱中与家人分离。收养机构有时优先考虑将儿童安置在西方家庭，而不是确保儿童的福祉和与亲生家庭的潜在团聚，Anh Thi Hoang Doan的故事就是一个例证。
 
-## 9. 加拿大各地的家庭画廊隐于市井
+叙事从最初的“拯救”故事转变为被收养者在国外长大所面临的挑战。这些挑战包括与身份认同、种族主义、虐待和心理健康问题作斗争。许多被收养者感到孤立和不完整，与他们的传统脱节，并努力寻找归属感。
 
-**原文标题**: Home galleries are hiding in plain sight across Canada
-
-**原文链接**: [https://www.cbc.ca/arts/home-galleries-are-hiding-in-plain-sight-across-canada-1.7503886](https://www.cbc.ca/arts/home-galleries-are-hiding-in-plain-sight-across-canada-1.7503886)
-
-加拿大各地家庭画廊兴起：艺术自主与生活成本驱动
+文章强调了被收养者群体的重要性，例如“跨国被收养者之声”和“国际越南被收养者”，这些群体提供重要的支持、资源和共同身份感。这些团体帮助被收养者理清他们的过去，寻找亲生家庭，并解决政府对跨国被收养者缺乏支持的问题。文章认为，最初将“婴儿空运行动”描述为简单的慈善行为，忽略了对参与其中的儿童生活的长期而深刻的影响。
 
 ---
 
-## 10. 可启动容器时代的Linux主题之乐
+## 6. Spark AI (YC W24) 正在旧金山招聘全栈工程师
 
-**原文标题**: The Joy of Linux Theming in the Age of Bootable Containers
+**原文标题**: Spark AI (YC W24) is hiring a full-stack engineer in San Francisco
 
-**原文链接**: [https://blues.win/posts/joy-of-linux-theming/](https://blues.win/posts/joy-of-linux-theming/)
+**原文链接**: [https://www.ycombinator.com/companies/spark/jobs/kDeJlPK-software-engineer-full-stack](https://www.ycombinator.com/companies/spark/jobs/kDeJlPK-software-engineer-full-stack)
 
-本文探讨了在可引导容器时代使用 Linux 主题的乐趣，特别是使用 `bootc` 项目。作者回顾了过去自定义桌面环境的经验以及配置损坏带来的挫败感。`Bootc` 提供了一种解决方案，允许将操作系统定义为 Containerfile，从而实现轻松的实验和回滚功能。这种方法减轻了经常困扰传统 Linux 自定义方法的配置漂移和系统损坏问题。
+Spark AI（YC W24初创公司）正在旧金山招聘全栈工程师，以帮助清洁能源领域构建人工智能驱动的工作流程。Spark AI开发了一种人工智能研究工具，通过引导当地法规，协助能源开发商建设太阳能发电场和电池厂。Colliers Engineering & Design等行业领导者正在使用该工具，并获得了AI Grant以及Brex、Plaid和Helioscope创始人的资助。
 
-作者将 `bootc` 与 shell 脚本、`systemd-sysext` 和 Nix 等其他方法进行了对比，认为 `bootc` 提供了更出色的灵活性、安全性和工具。一个关键优势是，如果更改破坏了系统，可以轻松恢复到之前的容器状态。
+理想的候选人拥有3年以上经验，精通Typescript、NextJS、NodeJS和Postgres，并喜欢面对面工作。该职位包括设计和构建核心API、AI基础设施和数据管道，端到端地负责功能，并与创始人紧密合作以制定产品路线图。该职位提供了了解能源行业并塑造公司工程文化的机会。薪资范围为15万美元至20万美元。
 
-本文还深入探讨了在可引导容器时代，什么构成“Linux 发行版”的问题。作者反思了他们的项目 Blue95（一个带有特定主题的 Fedora Xfce Atomic 镜像），并质疑它是否符合发行版的定义。作者指出，Containerfile 和完整的发行版之间的界限正变得越来越模糊。一些人认为流行的基于 `bootc` 的项目是发行版，即使它们构建在现有的发行版之上。尽管定义不明确，但作者得出结论，创建和使用他们自己主题的可引导容器是一种个人满足感的来源，因为它表达了他们的创造力。
+Spark AI强调速度和影响力胜于完美，并且重视了解技术决策对业务影响的工程师。该公司由Tae和Julia创立，他们曾是特斯拉、Brex和Apple的产品和工程负责人。他们拥有一支由3人组成的小团队，并且正在迅速发展。
+
+---
+
+## 7. Python 的新型 t 字符串
+
+**原文标题**: Python's new t-strings
+
+**原文链接**: [https://davepeck.org/2025/04/11/pythons-new-t-strings/](https://davepeck.org/2025/04/11/pythons-new-t-strings/)
+
+本文介绍了 t-strings，这是 Python 3.14（预计于 2025 年末发布）中的一项新特性，旨在增强字符串处理的安全性和灵活性。T-strings 类似于 JavaScript 的标记模板，在处理用户输入时比 f-strings 更安全，因为它们不会立即求值为字符串。相反，它们创建 `Template` 对象，允许开发者或库在字符串转换之前安全地处理和转义动态内容，从而防止 SQL 注入和跨站脚本等漏洞。
+
+本文解释了如何使用 t-strings，重点介绍了 `.strings` 和 `.values` 属性，分别用于访问字符串片段和插值。 它还详细介绍了如何迭代 `Template` 并访问详细的插值信息，如转换和格式化规范。
+
+一个简单的例子演示了如何使用自定义函数将替换的单词转换为猪拉丁语，该函数迭代 `Template` 的组件。 作者认为 t-strings 的用途不仅限于安全性，还能实现灵活的字符串处理，其中函数可以返回不同的类型或接受有用的替换。
+
+文章最后表达了希望 Python 生态系统能够拥抱 t-strings，尤其是在处理用户输入的库和框架中，并且 Black 和 Ruff 等工具将支持格式化 t-string 内容。
+
+---
+
+## 8. 表格编程：一种表达性计算的新范式
+
+**原文标题**: Tabular Programming: A New Paradigm for Expressive Computing
+
+**原文链接**: [https://sam.elborai.me/articles/tabular-programming/](https://sam.elborai.me/articles/tabular-programming/)
+
+本文介绍表格化编程，这是一种新的编程范式，其设计灵感来自m8 Dirtywave音序器，旨在实现极简、便携的硬件接口。核心思想是将代码组织成具有固定列（名称、输入、表达式1-表达式5和输出）的结构化表格，这些列代表函数及其执行逻辑。有限的表达式单元格鼓励函数分解，从而提高代码的可维护性。
+
+拟议的硬件将配备Teensy 4.1微控制器、小型显示器和8个用于导航和编辑的按钮。“选择而非键入”的方法旨在减少错误并改善数据流可视化。
+
+作者通过等离子和隧道效应等演示场景示例来展示该概念，突出显示了如何在表格结构和表达式限制内创建复杂的视觉效果。他们解释了基于堆栈的虚拟机将如何执行代码，隐式地连接行内的操作，而函数调用则管理它们之间的数据流。
+
+除了演示之外，作者还设想了像素艺术编辑器或音乐工具等应用程序，这些应用程序是围绕硬件的约束而设计的，以获得更直观的体验。受m8的“视图”和上下文相关菜单启发的层级组织模型将解决可扩展性和易用性问题。关键是创建一个集成的硬件/软件系统，使约束增强而不是限制创造性表达。现有一个可用的Web原型来验证核心概念。
+
+---
+
+## 9. 汤汀咖啡馆 (2018)
+
+**原文标题**: The Tontine Coffee-House (2018)
+
+**原文链接**: [https://tontinecoffeehouse.com/2018/10/15/the-tontine-coffee-house/](https://tontinecoffeehouse.com/2018/10/15/the-tontine-coffee-house/)
+
+本文探讨了纽约通廷咖啡馆的历史及其在纽约证券交易所发展中的作用。该咖啡馆成立于1793-94年，由一种名为“通廷”的古老年金式投资计划资助，该计划将退休规划与彩票相结合。投资者购买股份并在去世前获得股息，已故投资者的股份重新分配给幸存者，使寿命较长的人受益。
+
+通廷咖啡馆是经纪人、交易员、承销商和商人的中心聚会场所。它促进了交易和新闻传播，最终演变成纽约证券交易所的前身。文章强调，资助咖啡馆的通廷出售了203股，提供了4万美元的启动资金，相当于今天的100多万美元。
+
+咖啡馆位于华尔街和水街的拐角处。虽然该建筑最终被拆除并重建，但交易转移到了其他地点，最终形成了纽约证券交易所现在的所在地。通廷于1870年结束，剩余的七名受益人，主要来自富裕家庭，从他们的长期投资中获得了可观的收益。文章最后反思了纽约证券业务的简陋开端，并提出了对18世纪退休规划的一种可能的欣赏。
+
+---
+
+## 10. 修改30行Linux代码可减少高达30%的功耗
+
+**原文标题**: Reworking 30 lines of Linux code could cut power use by up to 30 percent
+
+**原文链接**: [https://spectrum.ieee.org/data-center-energy-consumption](https://spectrum.ieee.org/data-center-energy-consumption)
+
+滑铁卢大学计算机科学教授马丁·卡斯滕和他的合作者发现，只需修改Linux代码中的30行，数据中心的功耗便有望降低高达30%。现有代码中的低效率已被发现并得到纠正，从而实现了显著的节能效果。这个简单的修复可能会对数据中心的能源足迹产生重大影响，提供了一种经济高效且易于实施的解决方案，以减少其环境影响。文章强调了通过相对较小的代码调整实现显著节能的潜力。
 
 ---
 
@@ -131,35 +155,36 @@ Weave (YC W25)，一家专注于提高工程团队效率的软件公司，正在
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 2 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 3 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 4 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 5 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 6 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 7 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 8 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 9 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 10 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 11 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 12 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 13 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 14 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 15 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 16 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 17 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 18 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 19 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 20 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 21 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 22 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 23 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 24 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 25 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 26 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 27 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 28 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 29 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 30 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 31 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 32 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 1 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 2 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 3 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 4 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 5 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 6 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 7 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 8 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 9 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 10 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 11 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 12 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 13 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 14 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 15 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 16 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 17 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 18 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 19 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 20 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 21 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 22 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 23 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 24 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 25 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 26 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 27 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 28 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 29 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 30 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 31 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 32 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 33 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
