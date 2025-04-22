@@ -1,153 +1,148 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-21.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-22.md)
 
-*最后自动更新时间: 2025-04-21 17:48:21*
-## 1. 被微软分叉
+*最后自动更新时间: 2025-04-22 17:48:15*
+## 1. 机器针织的代数语义
 
-**原文标题**: Getting Forked by Microsoft
+**原文标题**: Algebraic Semantics for Machine Knitting
 
-**原文链接**: [https://philiplaine.com/posts/getting-forked-by-microsoft/](https://philiplaine.com/posts/getting-forked-by-microsoft/)
+**原文链接**: [https://uwplse.org/2025/03/31/Algebraic-Knitting.html](https://uwplse.org/2025/03/31/Algebraic-Knitting.html)
 
-本文详细描述了一位独立开源维护者（“我”）的经历，他的 Kubernetes 镜像镜像项目 Spegel 被微软实际性地 Fork 了，从而创建了 Peerd。作者开发 Spegel 是为了解决客户环境中因镜像仓库中断导致的停机问题，它提供了一种无状态且操作轻便的替代传统镜像方案。
+本文探讨了为机器编织开发严谨的代数语义的挑战，类似于传统编程语言中使用的语义。作者认为，尽管机器编织代码看起来比传统代码更简单（没有分支、循环或函数），但编织的 3D 特性引入了复杂的性，例如线股的上下交叉，这会影响程序行为并阻止操作的简单交换。
 
-微软最初对 Spegel 表示了兴趣，双方进行了讨论，作者还协助微软工程师进行实施。然而，沟通中断，后来，作者发现微软开发了 Peerd，一个类似的项目，甚至在其文档中引用了 Spegel。作者随后发现 Peerd 中直接复制了 Spegel 的代码，包括函数签名和注释，以及引用 Spegel 和作者雇主的测试用例。
+作者通过确定两个机器编织操作是否可以交换的问题，阐述了对形式语义的需求，并将其与 C 和 Haskell 等编程语言中的类似问题进行比较。与这些语言中可交换性取决于数据依赖性和副作用不同，在机器编织中，即使没有数据依赖性，线股交叉也会引入拓扑约束，从而阻止操作交换。
 
-虽然 Spegel 采用的是允许 Fork 和修改的宽松 MIT 许可，但作者认为微软在某些地方没有正确地署名原始来源。这种情况在用户中造成了混乱，由于微软的品牌知名度，这使得与微软的 Peerd 一起推广 Spegel 变得具有挑战性。作者感到沮丧，质疑继续开发 Spegel 的价值。尽管如此，Spegel 仍然存在，并获得了重要的社区采用。作者现在正在努力思考独立开源维护者如何在不被利用的情况下与大型公司合作。作者还在考虑将 Spegel 的许可证更改为更严格的许可证，并启用了 GitHub 赞助商来支持该项目的开发。
+该文章强调了现有的基于结理论的语义，但批评它们难以被计算机使用，因为它们依赖于连续变形。相反，作者提倡使用代数拓扑，特别是辫群，作为一种更易于计算机使用的方法来表示和分析机器编织的拓扑方面。
 
----
-
-## 2. 为什么LLM驱动的编程更像是机甲战衣而非人造人
-
-**原文标题**: Why LLM-Powered Programming Is More Mech Suit Than Artificial Human
-
-**原文链接**: [https://matthewsinclair.com/blog/0178-why-llm-powered-programming-is-more-mech-suit-than-artificial-human](https://matthewsinclair.com/blog/0178-why-llm-powered-programming-is-more-mech-suit-than-artificial-human)
-
-在他的文章《为什么LLM驱动的编程更像是机甲战衣而非人工智能人》中，Matthew Sinclair 认为像Claude Code这样的LLM并没有取代程序员，而是增强了他们的能力，就像《异形》中里普利的动力装甲一样。他讲述了使用 Claude Code 构建两个应用程序，生成 3 万行代码的经历，并强调了持续警惕和人工监督的必要性。
-
-虽然LLM大幅缩短了编码时间，尤其是在实现阶段（“我该怎么做？”），但至关重要的“为什么”和“是什么”阶段仍然至关重要，甚至变得更加重要。程序员必须愿意无情地放弃与项目架构目标不符的AI生成的代码。
-
-Sinclair 强调经验仍然至关重要。 熟练的开发人员可以识别 AI 生成的胡说八道，并防止它导致问题。他将这种情况比作“人机混合国际象棋”，在其中，人类与 AI 的团队表现优于人类或 AI 单独的表现。人类提供战略方向和判断，而 AI 提供计算能力。
-
-与 LLM 的有效协作需要在委托和控制之间取得平衡。未来青睐那些能够掌握这些工具的开发者，既认识到它们的潜力，也认识到它们的局限性，并利用它们来增强而非取代软件开发中的人类技能。 关键在于，在这种新的范式中，架构思维、模式识别和技术判断变得更有价值。
+最后，这篇文章令人惊讶地将机器编织与拓扑量子计算联系起来，在拓扑量子计算中，粒子的上下交叉也很重要，这突出了拓扑考虑因素在看似不相关的领域中的潜在影响。
 
 ---
 
-## 3. Show HN: Dia，一个用于生成逼真对话的开放权重TTS模型
+## 2. ClickHouse 变得更懒 (也更快了): 引入惰性物化
 
-**原文标题**: Show HN: Dia, an open-weights TTS model for generating realistic dialogue
+**原文标题**: ClickHouse gets lazier (and faster): Introducing lazy materialization
 
-**原文链接**: [https://github.com/nari-labs/dia](https://github.com/nari-labs/dia)
+**原文链接**: [https://clickhouse.com/blog/clickhouse-gets-lazier-and-faster-introducing-lazy-materialization](https://clickhouse.com/blog/clickhouse-gets-lazier-and-faster-introducing-lazy-materialization)
 
-南瑞实验室推出Dia：16亿参数开源文本转语音模型，可生成逼真对话，并通过音频调节控制情感和语气。Dia还能生成笑声和咳嗽等非语言提示。模型权重和推理代码已在Hugging Face上提供，以加速研究。演示对比了Dia与ElevenLabs Studio和Sesame CSM-1B。
+本文介绍了“延迟物化”——ClickHouse 中的一项新优化技术，它能显著提高查询性能，尤其是在 Top N 查询中。“延迟物化”会在查询执行期间延迟读取列数据，直到绝对必要时才进行，并构建在 ClickHouse 现有的 I/O 优化堆栈之上。
 
-用户可以通过克隆GitHub仓库并运行`app.py`脚本来打开Gradio UI，从而快速上手Dia。该模型也可以作为Python库使用，PyPI软件包和CLI工具即将推出。
+ClickHouse 的 I/O 效率建立在以下基础上：
+*   **列式存储：** 跳过不必要的列，并实现高压缩。
+*   **稀疏主索引和二级数据跳过索引：** 在行块级别修剪不相关的数据。
+*   **PREWHERE：** 甚至在非索引列上也能提前过滤数据。
 
-Dia需要GPU（PyTorch 2.0+，CUDA 12.6）才能获得最佳性能，并且需要大约10GB的VRAM。虽然在企业级GPU上可以实现实时音频生成，但较旧的GPU会体验到较慢的推理速度。计划在未来提供量化和CPU支持。
+“延迟物化”作为补充，通过将列读取推迟到查询计划需要时才执行。 只有下一个操作（例如，排序）所需的列才会被立即加载；其他列会被推迟，并且由于 `LIMIT` 子句，通常只读取部分内容。 这对于 Top N 查询尤其有效，因为只需要来自大型列的几行数据。
 
-Dia在Apache 2.0许可下授权，但附带严格的使用限制。它仅用于研究和教育目的，不得用于身份滥用、欺骗性内容创作或非法活动。
-
-未来的工作包括Docker支持、推理速度优化以及通过量化提高内存效率。南瑞实验室欢迎贡献，并感谢Google TPU Research Cloud计划、SoundStorm、Parakeet和Descript Audio Codec提供的灵感。
-
----
-
-## 4. 为Tcl过程添加关键字参数
-
-**原文标题**: Adding keyword parameters to Tcl procs
-
-**原文链接**: [https://world-playground-deceit.net/blog/2025/04/adding-keyword-parameters-to-tcl-procs.html](https://world-playground-deceit.net/blog/2025/04/adding-keyword-parameters-to-tcl-procs.html)
-
-该博文详细介绍了作者为Tcl过程实现的关键字参数，作者认为尽管标准Tcl命令中存在这种特性，但该语言仍然缺乏它。作者实现了一个`proc*`命令，扩展了标准的`proc`命令，允许使用可选的、命名的且顺序无关的参数，类似于Unix命令行选项。
-
-`proc*`命令预处理参数列表，识别标志和选项，并生成代码来解析输入参数并设置相应的变量。该实现还包括根据参数数量来区分位置参数和选项的逻辑。
-
-作者使用自定义的准引用机制`quasiquote`，通过字符串操作和正则表达式构建，来生成proc的最终Tcl代码。`quasiquote`命令允许在字符串中进行选择性替换和拼接，从而实现动态代码生成。作者承认通过正则表达式进行元编程的复杂性和潜在缺点，但最终认为该解决方案是有效的。
+本文使用 Amazon 客户评论数据集演示了其影响。 一个选择前 3 个最有帮助的评论的查询，在启用延迟物化后，从 219 秒降至 139 毫秒（提速 1576 倍），而无需任何 SQL 更改。 然后，本文系统地分解了其他优化如何逐步发挥作用，直到“延迟物化”实现最终飞跃。 该示例还强调了较慢的磁盘 I/O 如何成为瓶颈，以及 ClickHouse 的优化如何最大限度地减少该瓶颈。
 
 ---
 
-## 5. 拨云见日
+## 3. 多项式特征是万恶之源吗？(2024)
 
-**原文标题**: Out of the Fog
+**原文标题**: Are polynomial features the root of all evil? (2024)
 
-**原文链接**: [https://www.theverge.com/cs/features/651701/vietnam-operation-babylift-adoption-transnational](https://www.theverge.com/cs/features/651701/vietnam-operation-babylift-adoption-transnational)
+**原文链接**: [https://alexshtf.github.io/2024/01/21/Bernstein.html](https://alexshtf.github.io/2024/01/21/Bernstein.html)
 
-卡米尔·布罗姆利的《走出迷雾》探讨了“婴儿空运行动”的复杂遗产。该行动是指1975年西贡陷落期间，将越南儿童大规模撤离并被西方国家（主要是美国）收养的事件。文章揭示了许多被收养者所经历的各种问题，与最初将其定义为从战争恐怖中拯救脆弱儿童的人道主义“慈悲行动”的说法相悖。
+本文挑战了人们普遍认为高阶多项式天生不适合机器学习的观点，认为其表现不佳通常是一种源于两个误解的迷思：多项式基的选择以及对魏尔斯特拉斯逼近定理的误解。
 
-文章强调，许多儿童实际上并非孤儿，而是在混乱中与家人分离。收养机构有时优先考虑将儿童安置在西方家庭，而不是确保儿童的福祉和与亲生家庭的潜在团聚，Anh Thi Hoang Doan的故事就是一个例证。
+文章强调，标准多项式基不适合从数据中估计多项式，导致过拟合和对噪声的敏感。文章建议使用替代的多项式基，例如切比雪夫或勒让德多项式，可能会更好。然而，这些基经过优化用于插值，而不是拟合噪声数据。
 
-叙事从最初的“拯救”故事转变为被收养者在国外长大所面临的挑战。这些挑战包括与身份认同、种族主义、虐待和心理健康问题作斗争。许多被收养者感到孤立和不完整，与他们的传统脱节，并努力寻找归属感。
+文章提倡使用伯恩斯坦基，它具有易于正则化和控制的特性。该基使用二项式系数定义，可以解释为系数的加权平均值，确保它们与模型的标签处于相同的尺度。这使得L2正则化更有效。
 
-文章强调了被收养者群体的重要性，例如“跨国被收养者之声”和“国际越南被收养者”，这些群体提供重要的支持、资源和共同身份感。这些团体帮助被收养者理清他们的过去，寻找亲生家庭，并解决政府对跨国被收养者缺乏支持的问题。文章认为，最初将“婴儿空运行动”描述为简单的慈善行为，忽略了对参与其中的儿童生活的长期而深刻的影响。
-
----
-
-## 6. Spark AI (YC W24) 正在旧金山招聘全栈工程师
-
-**原文标题**: Spark AI (YC W24) is hiring a full-stack engineer in San Francisco
-
-**原文链接**: [https://www.ycombinator.com/companies/spark/jobs/kDeJlPK-software-engineer-full-stack](https://www.ycombinator.com/companies/spark/jobs/kDeJlPK-software-engineer-full-stack)
-
-Spark AI（YC W24初创公司）正在旧金山招聘全栈工程师，以帮助清洁能源领域构建人工智能驱动的工作流程。Spark AI开发了一种人工智能研究工具，通过引导当地法规，协助能源开发商建设太阳能发电场和电池厂。Colliers Engineering & Design等行业领导者正在使用该工具，并获得了AI Grant以及Brex、Plaid和Helioscope创始人的资助。
-
-理想的候选人拥有3年以上经验，精通Typescript、NextJS、NodeJS和Postgres，并喜欢面对面工作。该职位包括设计和构建核心API、AI基础设施和数据管道，端到端地负责功能，并与创始人紧密合作以制定产品路线图。该职位提供了了解能源行业并塑造公司工程文化的机会。薪资范围为15万美元至20万美元。
-
-Spark AI强调速度和影响力胜于完美，并且重视了解技术决策对业务影响的工程师。该公司由Tae和Julia创立，他们曾是特斯拉、Brex和Apple的产品和工程负责人。他们拥有一支由3人组成的小团队，并且正在迅速发展。
+作者通过实验证明了伯恩斯坦基的有效性，表明在高阶多项式中使用适当的正则化可以成功地拟合噪声数据。文章还强调了在使用多项式特征之前将数据归一化到区间的重要性，正如魏尔斯特拉斯逼近定理所暗示的那样。本质上，文章认为，使用正确的基和适当的正则化，高阶多项式可以成为机器学习中非常有价值的工具。
 
 ---
 
-## 7. Python 的新型 t 字符串
+## 4. 使用 DuckDB-WASM 通过 SQL 绘制 3D 图形 (某种程度上)
 
-**原文标题**: Python's new t-strings
+**原文标题**: Abusing DuckDB-WASM by making SQL draw 3D graphics (Sort Of)
 
-**原文链接**: [https://davepeck.org/2025/04/11/pythons-new-t-strings/](https://davepeck.org/2025/04/11/pythons-new-t-strings/)
+**原文链接**: [https://www.hey.earth/posts/duckdb-doom](https://www.hey.earth/posts/duckdb-doom)
 
-本文介绍了 t-strings，这是 Python 3.14（预计于 2025 年末发布）中的一项新特性，旨在增强字符串处理的安全性和灵活性。T-strings 类似于 JavaScript 的标记模板，在处理用户输入时比 f-strings 更安全，因为它们不会立即求值为字符串。相反，它们创建 `Template` 对象，允许开发者或库在字符串转换之前安全地处理和转义动态内容，从而防止 SQL 注入和跨站脚本等漏洞。
+本文详细介绍了一项实验，作者使用 DuckDB-WASM 构建了一个简陋的 3D 游戏引擎，具体来说是一个基于文本的 Doom 克隆，用于处理大部分核心逻辑。其核心思想是利用 SQL 查询来完成通常由 JavaScript 游戏循环和渲染管线处理的任务。
 
-本文解释了如何使用 t-strings，重点介绍了 `.strings` 和 `.values` 属性，分别用于访问字符串片段和插值。 它还详细介绍了如何迭代 `Template` 并访问详细的插值信息，如转换和格式化规范。
+游戏状态，包括地图、玩家/敌人位置和游戏设置，都驻留在 DuckDB 表格中。玩家移动、子弹物理和碰撞检测都是使用 SQL UPDATE 和 DELETE 语句实现的。3D 渲染是通过一个复杂的 SQL VIEW 实现的，该 VIEW 使用递归 CTE 执行光线投射，计算墙壁距离并使用字符串聚合生成基于文本的 3D 场景。
 
-一个简单的例子演示了如何使用自定义函数将替换的单词转换为猪拉丁语，该函数迭代 `Template` 的组件。 作者认为 t-strings 的用途不仅限于安全性，还能实现灵活的字符串处理，其中函数可以返回不同的类型或接受有用的替换。
-
-文章最后表达了希望 Python 生态系统能够拥抱 t-strings，尤其是在处理用户输入的库和框架中，并且 Black 和 Ruff 等工具将支持格式化 t-string 内容。
+JavaScript 的作用被简化为处理键盘输入、协调游戏循环，并使用 Z 缓冲区检查在 SQL 生成的背景之上渲染精灵（敌人/子弹）。作者遇到了一些挑战：DuckDB-WASM 初始化不正确、SQL 方言差异（AUTOINCREMENT 与 SEQUENCE）、查询规划器限制（表函数和子查询）、async/setInterval 竞争条件以及将精灵与 SQL 渲染的背景集成。解决方案包括遵循推荐的初始化模式、遵守 DuckDB 的 SQL 方言、重构查询以满足查询规划器、实施锁定以防止竞争条件，以及将 SQL 用于距离计算与 JavaScript 用于精灵渲染和 Z 缓冲区检查相结合。尽管采用了非常规的方法，该游戏仍然实现了可玩的 6-7 FPS，证明了 DuckDB-WASM 超出其预期用例的惊人能力。
 
 ---
 
-## 8. 表格编程：一种表达性计算的新范式
+## 5. 我本该也喜欢生物学的。
 
-**原文标题**: Tabular Programming: A New Paradigm for Expressive Computing
+**原文标题**: I should have loved biology too
 
-**原文链接**: [https://sam.elborai.me/articles/tabular-programming/](https://sam.elborai.me/articles/tabular-programming/)
+**原文链接**: [https://nehalslearnings.substack.com/p/i-should-have-loved-biology-too](https://nehalslearnings.substack.com/p/i-should-have-loved-biology-too)
 
-本文介绍表格化编程，这是一种新的编程范式，其设计灵感来自m8 Dirtywave音序器，旨在实现极简、便携的硬件接口。核心思想是将代码组织成具有固定列（名称、输入、表达式1-表达式5和输出）的结构化表格，这些列代表函数及其执行逻辑。有限的表达式单元格鼓励函数分解，从而提高代码的可维护性。
-
-拟议的硬件将配备Teensy 4.1微控制器、小型显示器和8个用于导航和编辑的按钮。“选择而非键入”的方法旨在减少错误并改善数据流可视化。
-
-作者通过等离子和隧道效应等演示场景示例来展示该概念，突出显示了如何在表格结构和表达式限制内创建复杂的视觉效果。他们解释了基于堆栈的虚拟机将如何执行代码，隐式地连接行内的操作，而函数调用则管理它们之间的数据流。
-
-除了演示之外，作者还设想了像素艺术编辑器或音乐工具等应用程序，这些应用程序是围绕硬件的约束而设计的，以获得更直观的体验。受m8的“视图”和上下文相关菜单启发的层级组织模型将解决可扩展性和易用性问题。关键是创建一个集成的硬件/软件系统，使约束增强而不是限制创造性表达。现有一个可用的Web原型来验证核心概念。
+无法访问文章链接。
 
 ---
 
-## 9. 汤汀咖啡馆 (2018)
+## 6. 逻辑的惊喜 (2016)
 
-**原文标题**: The Tontine Coffee-House (2018)
+**原文标题**: Surprises in Logic (2016)
 
-**原文链接**: [https://tontinecoffeehouse.com/2018/10/15/the-tontine-coffee-house/](https://tontinecoffeehouse.com/2018/10/15/the-tontine-coffee-house/)
+**原文链接**: [https://math.ucr.edu/home/baez/surprises.html](https://math.ucr.edu/home/baez/surprises.html)
 
-本文探讨了纽约通廷咖啡馆的历史及其在纽约证券交易所发展中的作用。该咖啡馆成立于1793-94年，由一种名为“通廷”的古老年金式投资计划资助，该计划将退休规划与彩票相结合。投资者购买股份并在去世前获得股息，已故投资者的股份重新分配给幸存者，使寿命较长的人受益。
+John Baez的“逻辑中的惊奇”探讨了数学系统内可证性的局限性，重点关注了蔡廷不完备性定理及其含义，以及通过突击测验悖论与哥德尔第二不完备性定理的联系。
 
-通廷咖啡馆是经纪人、交易员、承销商和商人的中心聚会场所。它促进了交易和新闻传播，最终演变成纽约证券交易所的前身。文章强调，资助咖啡馆的通廷出售了203股，提供了4万美元的启动资金，相当于今天的100多万美元。
+蔡廷定理指出，存在一个复杂度界限*L*，使得我们无法证明任何特定比特串的柯尔莫哥洛夫复杂度（输出字符串的最短程序）大于*L*。 虽然我们可以证明存在无穷多个比任何给定数字都复杂的字符串，但我们无法确定一个并证明其复杂度超过*L*。 该文章阐述了看似复杂的创作，例如动画视频，可以被压缩成非常小的程序，然而可证明的复杂度却有一个令人惊讶的低上限。
 
-咖啡馆位于华尔街和水街的拐角处。虽然该建筑最终被拆除并重建，但交易转移到了其他地点，最终形成了纽约证券交易所现在的所在地。通廷于1870年结束，剩余的七名受益人，主要来自富裕家庭，从他们的长期投资中获得了可观的收益。文章最后反思了纽约证券业务的简陋开端，并提出了对18世纪退休规划的一种可能的欣赏。
+该证明依赖于一个程序，该程序搜索声称字符串具有超过某个值的复杂度的证明。 如果找到了这样的证明，它将与该定理相矛盾，因为程序本身将比所声称的复杂度更短。
+
+文章随后提到了Kritchman和Raz利用蔡廷定理对哥德尔第二不完备性定理提供了一种新的视角。 作者以突击测验悖论为例，论证了无法证明字符串的复杂度超过*L*会削弱我们证明数学自身一致性的能力。 本质上，如果数学可以证明其自身的一致性，那么在识别不可证明的复杂数字的能力方面就会出现矛盾。
 
 ---
 
-## 10. 修改30行Linux代码可减少高达30%的功耗
+## 7. Recover (YC W21) 正在招聘
 
-**原文标题**: Reworking 30 lines of Linux code could cut power use by up to 30 percent
+**原文标题**: Recover (YC W21) Is Hiring
 
-**原文链接**: [https://spectrum.ieee.org/data-center-energy-consumption](https://spectrum.ieee.org/data-center-energy-consumption)
+**原文链接**: [https://www.ycombinator.com/companies/recover/jobs/76dMle9-head-of-finance](https://www.ycombinator.com/companies/recover/jobs/76dMle9-head-of-finance)
 
-滑铁卢大学计算机科学教授马丁·卡斯滕和他的合作者发现，只需修改Linux代码中的30行，数据中心的功耗便有望降低高达30%。现有代码中的低效率已被发现并得到纠正，从而实现了显著的节能效果。这个简单的修复可能会对数据中心的能源足迹产生重大影响，提供了一种经济高效且易于实施的解决方案，以减少其环境影响。文章强调了通过相对较小的代码调整实现显著节能的潜力。
+Recover招聘财务主管
+
+---
+
+## 8. 展示 HN：Morphik – 开源 RAG，理解 PDF 图像，本地运行
+
+**原文标题**: Show HN: Morphik – Open-source RAG that understands PDF images, runs locally
+
+**原文链接**: [https://github.com/morphik-org/morphik-core](https://github.com/morphik-org/morphik-core)
+
+Morphik：用于处理高技术和视觉文档的开源检索增强生成 (RAG) 替代方案。它允许开发者摄取、搜索、转换和管理非结构化和多模态数据，如图像、PDF 和视频。主要特性包括使用 ColPali 等技术的多模态搜索、知识图谱创建、快速元数据提取、与 Google Suite 和 Slack 等工具的集成，以及用于更快处理的缓存增强生成。
+
+用户可以通过注册免费层级（采用基于使用量的定价）或自托管开源版本（提供有限支持）来开始使用。Morphik 提供 Python SDK 和 REST API 用于程序化访问，允许通过简单命令进行文件摄取和查询。基于 Web 的 Morphik 控制台提供了一个用户界面来与数据交互。此外，Morphik 还可以通过模型上下文协议 (MCP) 访问。
+
+欢迎对开源项目做出贡献，包括错误报告、功能请求和拉取请求。重点是提高速度、扩展集成和识别有价值的研究论文。请注意，某些功能，如 Morphik 控制台，是付费版本专有的。
+
+---
+
+## 9. Supabase 完成 2 亿美元 D 轮融资，估值 20 亿美元
+
+**原文标题**: Supabase raises $200M Series D at $2B valuation
+
+**原文链接**: [https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html](https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html)
+
+Supabase获Accel领投2亿美元D轮融资，估值达20亿美元。本轮融资还吸引了Coatue、Y Combinator、Craft Ventures、Felicis以及天使投资人Kevin Weil (OpenAI)、Guillermo Rauch (Vercel)和Taylor Otwell (Laravel)的参与。
+
+Accel的投资凸显了数据库层在重大平台变革中日益增长的重要性，并将Supabase的潜力与Oracle和MongoDB相提并论。 Supabase目前被两百万开发者使用，管理着超过350万个数据库，并支持Postgres，是Google Firebase的替代方案。他们的目标是成为开发者全面的后端解决方案，包括“vibe coders”。
+
+首席执行官Paul Copplestone是一位第三次创业的创始人，他强调远程优先的企业文化，在全球范围内聘用有才华的人，包括以前的创始人，基于能力和性格而非地理位置。该公司通过在100个城市举办发布周聚会等活动来促进联系。该公司的名字是故意致敬Nicki Minaj的歌曲“Super Bass”。
+
+---
+
+## 10. 戴维·佟理论物理讲义
+
+**原文标题**: David Tong Lectures on Theoretical Physics
+
+**原文链接**: [https://www.damtp.cam.ac.uk/user/tong/books.html](https://www.damtp.cam.ac.uk/user/tong/books.html)
+
+大卫·唐的理论物理讲义已扩展成剑桥大学出版社出版的系列教材。虽然原始讲义免费，但书籍内容更加丰富，解释更清晰，拼写也更准确（例如，“Schwarzschild”）。 它们也比许多同类教科书更实惠。
+
+目前已有四本教材出版。该系列受到了著名物理学家的高度赞扬，包括诺贝尔奖得主弗兰克·维尔泽克、丽莎·兰道尔、胡安·马尔达西那、内森·塞伯格、桑迪普·特里维迪、肖恩·卡罗尔和拉杰什·戈帕库玛。
+
+这些专家强调了这些书的清晰度、引人入胜的写作风格、全面性以及传达对理论物理深刻理解的能力。 许多评论家将唐的系列与朗道和栗弗席兹的经典“理论物理教程”相提并论，表明它们可能成为学生和研究人员同样重要的现代资源。 这些书被描述为有价值的学习和教学工具，因其主题的统一性、幽默感以及重新点燃读者对物理的热情的方式而备受赞赏。
 
 ---
 
@@ -155,36 +150,37 @@ Spark AI强调速度和影响力胜于完美，并且重视了解技术决策对
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 2 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 3 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 1 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 2 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 3 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
 | 4 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 5 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 6 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 7 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 8 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 9 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 5 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 6 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 7 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 8 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 9 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 10 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 11 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 12 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 13 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 14 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 15 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 16 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 17 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 18 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 19 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 20 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 11 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 12 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 13 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 14 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 15 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 16 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 17 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 18 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 19 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 20 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
 | 21 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 22 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 23 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 24 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 25 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 26 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 27 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 22 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 23 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 24 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 25 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 26 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 27 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
 | 28 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 29 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 29 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
 | 30 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 31 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 32 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 33 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 31 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 32 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 33 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 34 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
