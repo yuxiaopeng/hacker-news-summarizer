@@ -1,148 +1,174 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-22.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-23.md)
 
-*最后自动更新时间: 2025-04-22 17:48:15*
-## 1. 机器针织的代数语义
+*最后自动更新时间: 2025-04-23 17:49:07*
+## 1. GTA圣安地列斯20年老Bug如何在Windows 11 24H2中浮出水面
 
-**原文标题**: Algebraic Semantics for Machine Knitting
+**原文标题**: How a 20 year old bug in GTA San Andreas surfaced in Windows 11 24H2
 
-**原文链接**: [https://uwplse.org/2025/03/31/Algebraic-Knitting.html](https://uwplse.org/2025/03/31/Algebraic-Knitting.html)
+**原文链接**: [https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/](https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/)
 
-本文探讨了为机器编织开发严谨的代数语义的挑战，类似于传统编程语言中使用的语义。作者认为，尽管机器编织代码看起来比传统代码更简单（没有分支、循环或函数），但编织的 3D 特性引入了复杂的性，例如线股的上下交叉，这会影响程序行为并阻止操作的简单交换。
+本文详细调查了侠盗猎车手：圣安地列斯在Windows 11 24H2中出现的一个漏洞，该漏洞导致水上飞机Skimmer从游戏中消失或将玩家抛向空中。SilentPatch（一款修复游戏漏洞的模组）的作者最初对这些报告不以为然，但在Windows 11 24H2虚拟机上确认了该问题。
 
-作者通过确定两个机器编织操作是否可以交换的问题，阐述了对形式语义的需求，并将其与 C 和 Haskell 等编程语言中的类似问题进行比较。与这些语言中可交换性取决于数据依赖性和副作用不同，在机器编织中，即使没有数据依赖性，线股交叉也会引入拓扑约束，从而阻止操作交换。
+调查显示，该漏洞源于游戏中Skimmer的车辆数据文件（vehicles.ide）中未初始化的车轮比例值。由于疏忽，Skimmer的定义缺少车轮比例参数，导致游戏从堆栈中读取垃圾值，直到Windows 11 24H2，这些值巧合地导致了可用但不正确的游戏体验。
 
-该文章强调了现有的基于结理论的语义，但批评它们难以被计算机使用，因为它们依赖于连续变形。相反，作者提倡使用代数拓扑，特别是辫群，作为一种更易于计算机使用的方法来表示和分析机器编织的拓扑方面。
+根本原因追溯到游戏加载车辆数据的方式。CFileLoader::LoadVehicleObject函数使用sscanf解析vehicles.ide文件，并假定所有参数始终存在。由于Skimmer的条目省略了车轮比例值，因此相关变量保持未初始化状态，并将在其位置读取垃圾数据。在Windows 11 24H2之前，未初始化数据产生的默认值导致了（不正确的）稳定游戏体验，而现在更新后产生数字导致了超出范围的物理计算和崩溃。
 
-最后，这篇文章令人惊讶地将机器编织与拓扑量子计算联系起来，在拓扑量子计算中，粒子的上下交叉也很重要，这突出了拓扑考虑因素在看似不相关的领域中的潜在影响。
-
----
-
-## 2. ClickHouse 变得更懒 (也更快了): 引入惰性物化
-
-**原文标题**: ClickHouse gets lazier (and faster): Introducing lazy materialization
-
-**原文链接**: [https://clickhouse.com/blog/clickhouse-gets-lazier-and-faster-introducing-lazy-materialization](https://clickhouse.com/blog/clickhouse-gets-lazier-and-faster-introducing-lazy-materialization)
-
-本文介绍了“延迟物化”——ClickHouse 中的一项新优化技术，它能显著提高查询性能，尤其是在 Top N 查询中。“延迟物化”会在查询执行期间延迟读取列数据，直到绝对必要时才进行，并构建在 ClickHouse 现有的 I/O 优化堆栈之上。
-
-ClickHouse 的 I/O 效率建立在以下基础上：
-*   **列式存储：** 跳过不必要的列，并实现高压缩。
-*   **稀疏主索引和二级数据跳过索引：** 在行块级别修剪不相关的数据。
-*   **PREWHERE：** 甚至在非索引列上也能提前过滤数据。
-
-“延迟物化”作为补充，通过将列读取推迟到查询计划需要时才执行。 只有下一个操作（例如，排序）所需的列才会被立即加载；其他列会被推迟，并且由于 `LIMIT` 子句，通常只读取部分内容。 这对于 Top N 查询尤其有效，因为只需要来自大型列的几行数据。
-
-本文使用 Amazon 客户评论数据集演示了其影响。 一个选择前 3 个最有帮助的评论的查询，在启用延迟物化后，从 219 秒降至 139 毫秒（提速 1576 倍），而无需任何 SQL 更改。 然后，本文系统地分解了其他优化如何逐步发挥作用，直到“延迟物化”实现最终飞跃。 该示例还强调了较慢的磁盘 I/O 如何成为瓶颈，以及 ClickHouse 的优化如何最大限度地减少该瓶颈。
+作者为SilentPatch提供了一个修复方案，该方案包括在文件加载过程中为缺少的车轮比例参数提供默认值，并解释了游戏如何错误地使用了上面车辆定义的先前车轮比例值，但这种行为在Windows 11 24H2之前仍然巧合地稳定。文章最后强调了该漏洞的异常性质，质疑为什么它在被特定的Windows更新触发之前隐藏了这么长时间。
 
 ---
 
-## 3. 多项式特征是万恶之源吗？(2024)
+## 2. 启动HN：Cua (YC X25) – 用于计算机使用代理的开源Docker容器
 
-**原文标题**: Are polynomial features the root of all evil? (2024)
+**原文标题**: Launch HN: Cua (YC X25) – Open-Source Docker Container for Computer-Use Agents
 
-**原文链接**: [https://alexshtf.github.io/2024/01/21/Bernstein.html](https://alexshtf.github.io/2024/01/21/Bernstein.html)
+**原文链接**: [https://github.com/trycua/cua](https://github.com/trycua/cua)
 
-本文挑战了人们普遍认为高阶多项式天生不适合机器学习的观点，认为其表现不佳通常是一种源于两个误解的迷思：多项式基的选择以及对魏尔斯特拉斯逼近定理的误解。
+Cua (计算机使用代理): 一个开源框架，允许 AI 代理在高性能虚拟容器中控制完整的操作系统。它利用 Apple 的 Virtualization.Framework，在 Apple Silicon 上实现高达 97% 的原生速度，并支持任何视觉语言模型。
 
-文章强调，标准多项式基不适合从数据中估计多项式，导致过拟合和对噪声的敏感。文章建议使用替代的多项式基，例如切比雪夫或勒让德多项式，可能会更好。然而，这些基经过优化用于插值，而不是拟合噪声数据。
+主要特性包括：
 
-文章提倡使用伯恩斯坦基，它具有易于正则化和控制的特性。该基使用二项式系数定义，可以解释为系数的加权平均值，确保它们与模型的标签处于相同的尺度。这使得L2正则化更有效。
+*   **高性能虚拟化：** 创建并运行具有接近原生速度的 macOS/Linux 虚拟机。
+*   **计算机使用接口与代理：** 使 AI 系统能够观察和控制这些虚拟环境，与应用程序交互、浏览、编码并执行复杂的工作流程。
 
-作者通过实验证明了伯恩斯坦基的有效性，表明在高阶多项式中使用适当的正则化可以成功地拟合噪声数据。文章还强调了在使用多项式特征之前将数据归一化到区间的重要性，正如魏尔斯特拉斯逼近定理所暗示的那样。本质上，文章认为，使用正确的基和适当的正则化，高阶多项式可以成为机器学习中非常有价值的工具。
+使用 Cua 的优势：
 
----
+*   **安全与隔离：** 在隔离环境中运行代理。
+*   **性能：** 在 Apple Silicon 上接近原生速度。
+*   **灵活性：** 支持 macOS 和 Linux。
+*   **可复现性：** 创建一致的环境。
+*   **LLM 集成：** 支持各种 LLM 提供商。
 
-## 4. 使用 DuckDB-WASM 通过 SQL 绘制 3D 图形 (某种程度上)
+该框架提供不同的安装选项，包括仅用于虚拟机管理的 Lume CLI、用于代理功能的完整安装，以及用于夜间构建特性的从源代码构建选项。Monorepo 中提供了几个库：Lume、Computer 和 Agent。
 
-**原文标题**: Abusing DuckDB-WASM by making SQL draw 3D graphics (Sort Of)
-
-**原文链接**: [https://www.hey.earth/posts/duckdb-doom](https://www.hey.earth/posts/duckdb-doom)
-
-本文详细介绍了一项实验，作者使用 DuckDB-WASM 构建了一个简陋的 3D 游戏引擎，具体来说是一个基于文本的 Doom 克隆，用于处理大部分核心逻辑。其核心思想是利用 SQL 查询来完成通常由 JavaScript 游戏循环和渲染管线处理的任务。
-
-游戏状态，包括地图、玩家/敌人位置和游戏设置，都驻留在 DuckDB 表格中。玩家移动、子弹物理和碰撞检测都是使用 SQL UPDATE 和 DELETE 语句实现的。3D 渲染是通过一个复杂的 SQL VIEW 实现的，该 VIEW 使用递归 CTE 执行光线投射，计算墙壁距离并使用字符串聚合生成基于文本的 3D 场景。
-
-JavaScript 的作用被简化为处理键盘输入、协调游戏循环，并使用 Z 缓冲区检查在 SQL 生成的背景之上渲染精灵（敌人/子弹）。作者遇到了一些挑战：DuckDB-WASM 初始化不正确、SQL 方言差异（AUTOINCREMENT 与 SEQUENCE）、查询规划器限制（表函数和子查询）、async/setInterval 竞争条件以及将精灵与 SQL 渲染的背景集成。解决方案包括遵循推荐的初始化模式、遵守 DuckDB 的 SQL 方言、重构查询以满足查询规划器、实施锁定以防止竞争条件，以及将 SQL 用于距离计算与 JavaScript 用于精灵渲染和 Z 缓冲区检查相结合。尽管采用了非常规的方法，该游戏仍然实现了可玩的 6-7 FPS，证明了 DuckDB-WASM 超出其预期用例的惊人能力。
+Cua 鼓励贡献，并提供全面的文档和演示来方便使用。它采用 MIT 许可证。
 
 ---
 
-## 5. 我本该也喜欢生物学的。
+## 3. 人工智能无人驾驶汽车
 
-**原文标题**: I should have loved biology too
+**原文标题**: AI Horseless Carriages
 
-**原文链接**: [https://nehalslearnings.substack.com/p/i-should-have-loved-biology-too](https://nehalslearnings.substack.com/p/i-should-have-loved-biology-too)
+**原文链接**: [https://koomen.dev/essays/horseless-carriages/](https://koomen.dev/essays/horseless-carriages/)
 
-无法访问文章链接。
-
----
-
-## 6. 逻辑的惊喜 (2016)
-
-**原文标题**: Surprises in Logic (2016)
-
-**原文链接**: [https://math.ucr.edu/home/baez/surprises.html](https://math.ucr.edu/home/baez/surprises.html)
-
-John Baez的“逻辑中的惊奇”探讨了数学系统内可证性的局限性，重点关注了蔡廷不完备性定理及其含义，以及通过突击测验悖论与哥德尔第二不完备性定理的联系。
-
-蔡廷定理指出，存在一个复杂度界限*L*，使得我们无法证明任何特定比特串的柯尔莫哥洛夫复杂度（输出字符串的最短程序）大于*L*。 虽然我们可以证明存在无穷多个比任何给定数字都复杂的字符串，但我们无法确定一个并证明其复杂度超过*L*。 该文章阐述了看似复杂的创作，例如动画视频，可以被压缩成非常小的程序，然而可证明的复杂度却有一个令人惊讶的低上限。
-
-该证明依赖于一个程序，该程序搜索声称字符串具有超过某个值的复杂度的证明。 如果找到了这样的证明，它将与该定理相矛盾，因为程序本身将比所声称的复杂度更短。
-
-文章随后提到了Kritchman和Raz利用蔡廷定理对哥德尔第二不完备性定理提供了一种新的视角。 作者以突击测验悖论为例，论证了无法证明字符串的复杂度超过*L*会削弱我们证明数学自身一致性的能力。 本质上，如果数学可以证明其自身的一致性，那么在识别不可证明的复杂数字的能力方面就会出现矛盾。
+人工智能无马马车：对自动驾驶汽车发展与影响的探讨
 
 ---
 
-## 7. Recover (YC W21) 正在招聘
+## 4. MinC并非Cygwin
 
-**原文标题**: Recover (YC W21) Is Hiring
+**原文标题**: MinC Is Not Cygwin
 
-**原文链接**: [https://www.ycombinator.com/companies/recover/jobs/76dMle9-head-of-finance](https://www.ycombinator.com/companies/recover/jobs/76dMle9-head-of-finance)
+**原文链接**: [https://minc.commandlinerevolution.nl/english/home.html](https://minc.commandlinerevolution.nl/english/home.html)
 
-Recover招聘财务主管
-
----
-
-## 8. 展示 HN：Morphik – 开源 RAG，理解 PDF 图像，本地运行
-
-**原文标题**: Show HN: Morphik – Open-source RAG that understands PDF images, runs locally
-
-**原文链接**: [https://github.com/morphik-org/morphik-core](https://github.com/morphik-org/morphik-core)
-
-Morphik：用于处理高技术和视觉文档的开源检索增强生成 (RAG) 替代方案。它允许开发者摄取、搜索、转换和管理非结构化和多模态数据，如图像、PDF 和视频。主要特性包括使用 ColPali 等技术的多模态搜索、知识图谱创建、快速元数据提取、与 Google Suite 和 Slack 等工具的集成，以及用于更快处理的缓存增强生成。
-
-用户可以通过注册免费层级（采用基于使用量的定价）或自托管开源版本（提供有限支持）来开始使用。Morphik 提供 Python SDK 和 REST API 用于程序化访问，允许通过简单命令进行文件摄取和查询。基于 Web 的 Morphik 控制台提供了一个用户界面来与数据交互。此外，Morphik 还可以通过模型上下文协议 (MCP) 访问。
-
-欢迎对开源项目做出贡献，包括错误报告、功能请求和拉取请求。重点是提高速度、扩展集成和识别有价值的研究论文。请注意，某些功能，如 Morphik 控制台，是付费版本专有的。
+MinC：一款Windows下的Unix模拟器，专为职业教育学生设计，让他们无需复杂的虚拟化就能学习Linux。它利用OpenBSD 6.1代码，直接在Windows上运行小型内核（不包括Win95和Win98）。这使得OpenBSD软件在Windows机器上可以接近原生速度运行。本质上，MinC提供了一种在Windows上运行OpenBSD的方式，而无需虚拟机。
 
 ---
 
-## 9. Supabase 完成 2 亿美元 D 轮融资，估值 20 亿美元
+## 5. 焦油坑想法——什么是焦油坑想法以及如何避免它们（2023）[视频]
 
-**原文标题**: Supabase raises $200M Series D at $2B valuation
+**原文标题**: Tarpit ideas – what are tarpit ideas and how to avoid them (2023) [video]
 
-**原文链接**: [https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html](https://finance.yahoo.com/news/exclusive-supabase-raises-200-million-112154867.html)
+**原文链接**: [https://www.ycombinator.com/library/Ij-tarpit-ideas-what-are-tarpit-ideas-how-to-avoid-them](https://www.ycombinator.com/library/Ij-tarpit-ideas-what-are-tarpit-ideas-how-to-avoid-them)
 
-Supabase获Accel领投2亿美元D轮融资，估值达20亿美元。本轮融资还吸引了Coatue、Y Combinator、Craft Ventures、Felicis以及天使投资人Kevin Weil (OpenAI)、Guillermo Rauch (Vercel)和Taylor Otwell (Laravel)的参与。
+这期Y Combinator关于“泥潭创业点子”的视频将其定义为表面上听起来不错，但本质上有缺陷，并且可能使创业者陷入漫长而徒劳的努力中的创业概念。 该视频强调，这些想法通常会吸引创业经验有限的人。
 
-Accel的投资凸显了数据库层在重大平台变革中日益增长的重要性，并将Supabase的潜力与Oracle和MongoDB相提并论。 Supabase目前被两百万开发者使用，管理着超过350万个数据库，并支持Postgres，是Google Firebase的替代方案。他们的目标是成为开发者全面的后端解决方案，包括“vibe coders”。
+该视频可能概述了泥潭创业点子的常见特征。 这些可能包括：
 
-首席执行官Paul Copplestone是一位第三次创业的创始人，他强调远程优先的企业文化，在全球范围内聘用有才华的人，包括以前的创始人，基于能力和性格而非地理位置。该公司通过在100个城市举办发布周聚会等活动来促进联系。该公司的名字是故意致敬Nicki Minaj的歌曲“Super Bass”。
+*   **解决一个并不真正存在的问题，或者用户并不愿意为解决方案付费的痛点。** 它们可能解决已经被充分满足的需求，或者用户愿意容忍的问题。
+
+*   **依赖未经证实或难以扩展的技术。** 需要技术突破或依赖快速变化领域的想法可能风险很高。
+
+*   **面临激烈的竞争或监管障碍。** 进入饱和的市场或应对复杂的法规可能会严重阻碍增长。
+
+*   **在验证想法之前需要大量的资本投资。** 在证明产品与市场契合度之前构建复杂的产品或获取庞大的用户群可能导致资源浪费。
+
+为了避免泥潭创业点子，该视频可能建议：
+
+*   **彻底的客户验证：** 在构建任何东西之前，与潜在客户交谈，了解他们的需求并验证问题。
+
+*   **从小处着手并快速迭代：** 构建最小可行产品（MVP）来测试假设并收集反馈。
+
+*   **专注于利基市场：** 针对具有针对性解决方案的特定用户群。
+
+*   **乐于改变方向：** 愿意根据客户反馈和市场现实改变想法。
+
+本质上，该视频建议创业者对其自身的想法持高度批判态度，尽早验证假设，并优先考虑为付费客户解决实际问题。
 
 ---
 
-## 10. 戴维·佟理论物理讲义
+## 6. 基于进化算法的自动化天线设计 [pdf] (2006)
 
-**原文标题**: David Tong Lectures on Theoretical Physics
+**原文标题**: Automated Antenna Design with Evolutionary Algorithms [pdf] (2006)
 
-**原文链接**: [https://www.damtp.cam.ac.uk/user/tong/books.html](https://www.damtp.cam.ac.uk/user/tong/books.html)
+**原文链接**: [https://ntrs.nasa.gov/api/citations/20060024675/downloads/20060024675.pdf](https://ntrs.nasa.gov/api/citations/20060024675/downloads/20060024675.pdf)
 
-大卫·唐的理论物理讲义已扩展成剑桥大学出版社出版的系列教材。虽然原始讲义免费，但书籍内容更加丰富，解释更清晰，拼写也更准确（例如，“Schwarzschild”）。 它们也比许多同类教科书更实惠。
+这份PDF似乎是2006年一篇题为《利用进化算法的自动化天线设计》的文档的开头。遗憾的是，提供的内容主要是元数据和压缩图像数据(CCITTFaxDecode)，没有详细描述文章内容的任何可读文本。因此，无法根据实际研究内容提供恰当的摘要。只能从标题推断该文档讨论了使用进化算法（一种优化技术）来自动化天线设计。它可能涵盖天线设计中的挑战、进化算法在克服这些挑战中的应用，并可能展示这种自动化设计过程的具体示例或结果。
 
-目前已有四本教材出版。该系列受到了著名物理学家的高度赞扬，包括诺贝尔奖得主弗兰克·维尔泽克、丽莎·兰道尔、胡安·马尔达西那、内森·塞伯格、桑迪普·特里维迪、肖恩·卡罗尔和拉杰什·戈帕库玛。
+---
 
-这些专家强调了这些书的清晰度、引人入胜的写作风格、全面性以及传达对理论物理深刻理解的能力。 许多评论家将唐的系列与朗道和栗弗席兹的经典“理论物理教程”相提并论，表明它们可能成为学生和研究人员同样重要的现代资源。 这些书被描述为有价值的学习和教学工具，因其主题的统一性、幽默感以及重新点燃读者对物理的热情的方式而备受赞赏。
+## 7. 悬秤
+
+**原文标题**: The Danglepoise
+
+**原文链接**: [https://www.sallery.co.uk/danglepoise](https://www.sallery.co.uk/danglepoise)
+
+在2025年出版的《吊灯奇谭》中，作者详细描述了他们创造定制的、电动升降吊灯的旅程。由于对现代灯具的脆弱感到不满，并且无法找到合适的古董灯或配套灯，他们出于对电动机的热爱，开始了DIY项目。
+
+作者最初的研究 направлено на изследване на плъзгащите пръстени за захранване на лампата, позволявайки ѝ да се движи, но високата цена на качествените плъзгащи пръстени, оценени за работа с електрическа мрежа, предизвика преосмисляне на дизайна. Те се спряха на система, използваща стоманен кабел, навит около задвижван от мотор барабан, с персонализирани 3D отпечатани скоби за управление на гъвкавия кабел на лампата в зигзагообразен модел.
+
+机械设计采用了带有制动器的步进电机，用于精确定位和保持，尽管其能耗较高。 选择基于ESP32的TinyPICO微控制器进行电子控制，从而实现wifi控制和状态指示。
+
+电子设计包括用于主电压组件（电源、继电器、保险丝）和低电压控制（电机驱动器、微控制器）的独立PCB。 该系统需要一个24V电源来为制动器供电，一个5V稳压器来为微控制器供电，以及一个电机驱动器芯片来实现平稳安静的步进电机控制。 作者优先考虑安全性，使用高质量的封装式主电源。
+
+---
+
+## 8. 我不再凭感觉编程了：一个菜鸟的视角
+
+**原文标题**: I won't be vibe coding anymore: a noob's perspective
+
+**原文链接**: [https://varunraghu.com/why-i-wont-be-vibe-coding-anymore/](https://varunraghu.com/why-i-wont-be-vibe-coding-anymore/)
+
+本文写于2025年4月，表达了一位程序员对“氛围编码”——即过度依赖人工智能构建应用程序——的幻灭感。作者自称“菜鸟”，最初拥抱人工智能工具是为了克服编写糟糕代码和难以理解基本概念的挫败感。他们发现人工智能帮助他们快速构建功能性应用程序。
+
+然而，作者在一个不眠之夜体验到顿悟。他们意识到，尽管构建了“有用的应用程序”，但几周来他们什么都没学到。这让他们得出结论：编码的核心价值不在于最终产品，而在于解决问题、批判性思维以及个人投入的过程。
+
+作者将编码与写作进行类比，强调了创造过程和个人应对挑战方式的重要性。他们担心过度依赖人工智能会剥夺他们这些基本的学习体验。
+
+最终，作者决定与“氛围编码”分手，回到自己编写代码的状态，即使代码“很烂”，速度很慢，需要深思熟虑。他们优先考虑学习过程和自身技能的发展，而不是人工智能生成的代码所带来的便利和速度。这篇文章赞扬了传统编码体验中固有的个人投入和学习。
+
+---
+
+## 9. ZGC 如何为 Java 堆分配内存
+
+**原文标题**: How ZGC allocates memory for the Java heap
+
+**原文链接**: [https://joelsiks.com/posts/zgc-heap-memory-allocation/](https://joelsiks.com/posts/zgc-heap-memory-allocation/)
+
+本文深入探讨了OpenJDK中垃圾收集器ZGC如何为Java堆分配内存。堆被划分为称为页面的逻辑区域，分为小型（2MB）、中型（32MB）和大型（动态大小，超过4MB）三类。页面分配器管理这些页面，维护代表堆子集的多个分区。NUMA系统可以有多个分区，每个分区对应一个NUMA节点，以提高内存访问速度。
+
+ZGC独特地分离了物理内存和虚拟内存，以对抗碎片化。虚拟内存被过度预留（最高可达最大堆大小的16倍或32倍），以增加找到连续内存范围的可能性。当页面被释放时，ZGC通过将物理内存重新映射到新的虚拟地址来主动整理堆。
+
+映射缓存存储了未被任何页面使用的已映射内存范围，使用自平衡二叉搜索树进行高效管理。它使用侵入式存储来避免动态内存分配，并加快分配期间搜索连续内存的速度。
+
+内存分配涉及声明容量、获取物理内存，并可能使用来自映射缓存的虚拟内存。分配过程优先从缓存中获取连续内存，然后增加容量（提交新内存），最后在必要时从缓存中收集较小的范围。如果无法增加容量，分配将优先收集可用的现有映射内存。
+
+---
+
+## 10. 考拉兹蚁
+
+**原文标题**: Collatz's Ant
+
+**原文链接**: [https://gbragafibra.github.io/2025/01/08/collatz_ant2.html](https://gbragafibra.github.io/2025/01/08/collatz_ant2.html)
+
+本文探讨了使用改进的兰顿蚂蚁（称为“考拉兹蚂蚁”）可视化考拉兹序列的方法。蚂蚁的移动由考拉兹函数决定：如果数字为偶数，蚂蚁顺时针旋转90º；如果为奇数，蚂蚁逆时针旋转90º。蚂蚁每走一步前进一个单位。
+
+作者最初使用了每步翻转单元格状态的版本，但后来提出了一个非翻转版本，该版本只是在每个访问的坐标处递增一个计数器，以便更清晰地可视化并避免歧义。
+
+该研究揭示了考拉兹蚂蚁生成的视觉“地形”与相应序列的停止时间之间的相关性。相似的地形往往具有相似（或相同）的停止时间，尽管反之不一定成立。文章表明，具有共享子序列的序列（如提供的Python代码中的`intersect1d`函数所示）会产生相似的地形。
+
+此外，本文还说明了在一定数量的考拉兹步骤后收敛的序列也会表现出地形相似性，通常伴随90º、180º或更大的旋转。随着收敛子轨迹之间步骤差异的增加，相似程度会降低，经过大量步骤（例如，300步）后，仅留下更大规模的共同特征。
 
 ---
 
@@ -150,37 +176,38 @@ Accel的投资凸显了数据库层在重大平台变革中日益增长的重要
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 1 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
 | 2 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 3 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 4 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 3 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 4 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
 | 5 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 6 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 6 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
 | 7 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 8 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 9 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 10 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 8 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 9 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 10 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 11 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
 | 12 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 13 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 14 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 15 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 16 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 17 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 18 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 19 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 20 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 21 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 22 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 23 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 24 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 25 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 26 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 27 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 28 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 29 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 30 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 31 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 32 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 33 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 34 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 13 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 14 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 15 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 16 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 17 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 18 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 19 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 20 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 21 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 22 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 23 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 24 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 25 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 26 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 27 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 28 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 29 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 30 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 31 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 32 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 33 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 34 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 35 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
