@@ -1,174 +1,181 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-23.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-24.md)
 
-*最后自动更新时间: 2025-04-23 17:49:07*
-## 1. GTA圣安地列斯20年老Bug如何在Windows 11 24H2中浮出水面
+*最后自动更新时间: 2025-04-24 17:48:59*
+## 1. 为何21厘米是我们宇宙的“神奇长度”
 
-**原文标题**: How a 20 year old bug in GTA San Andreas surfaced in Windows 11 24H2
+**原文标题**: Why 21 cm is our Universe's "magic length"
 
-**原文链接**: [https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/](https://cookieplmonster.github.io/2025/04/23/gta-san-andreas-win11-24h2-bug/)
+**原文链接**: [https://bigthink.com/starts-with-a-bang/21cm-magic-length/](https://bigthink.com/starts-with-a-bang/21cm-magic-length/)
 
-本文详细调查了侠盗猎车手：圣安地列斯在Windows 11 24H2中出现的一个漏洞，该漏洞导致水上飞机Skimmer从游戏中消失或将玩家抛向空中。SilentPatch（一款修复游戏漏洞的模组）的作者最初对这些报告不以为然，但在Windows 11 24H2虚拟机上确认了该问题。
-
-调查显示，该漏洞源于游戏中Skimmer的车辆数据文件（vehicles.ide）中未初始化的车轮比例值。由于疏忽，Skimmer的定义缺少车轮比例参数，导致游戏从堆栈中读取垃圾值，直到Windows 11 24H2，这些值巧合地导致了可用但不正确的游戏体验。
-
-根本原因追溯到游戏加载车辆数据的方式。CFileLoader::LoadVehicleObject函数使用sscanf解析vehicles.ide文件，并假定所有参数始终存在。由于Skimmer的条目省略了车轮比例值，因此相关变量保持未初始化状态，并将在其位置读取垃圾数据。在Windows 11 24H2之前，未初始化数据产生的默认值导致了（不正确的）稳定游戏体验，而现在更新后产生数字导致了超出范围的物理计算和崩溃。
-
-作者为SilentPatch提供了一个修复方案，该方案包括在文件加载过程中为缺少的车轮比例参数提供默认值，并解释了游戏如何错误地使用了上面车辆定义的先前车轮比例值，但这种行为在Windows 11 24H2之前仍然巧合地稳定。文章最后强调了该漏洞的异常性质，质疑为什么它在被特定的Windows更新触发之前隐藏了这么长时间。
+为何氢的21厘米波长是宇宙中的“魔力长度”
 
 ---
 
-## 2. 启动HN：Cua (YC X25) – 用于计算机使用代理的开源Docker容器
+## 2. 我写信给GPLv2许可声明中的地址（2022）。
 
-**原文标题**: Launch HN: Cua (YC X25) – Open-Source Docker Container for Computer-Use Agents
+**原文标题**: I wrote to the address in the GPLv2 license notice (2022)
 
-**原文链接**: [https://github.com/trycua/cua](https://github.com/trycua/cua)
+**原文链接**: [https://code.mendhak.com/gpl-v2-address-letter/](https://code.mendhak.com/gpl-v2-address-letter/)
 
-Cua (计算机使用代理): 一个开源框架，允许 AI 代理在高性能虚拟容器中控制完整的操作系统。它利用 Apple 的 Virtualization.Framework，在 Apple Silicon 上实现高达 97% 的原生速度，并支持任何视觉语言模型。
+2022年，作者对GPLv2许可证声明中的物理地址感到好奇，决定写信给位于波士顿富兰克林街51号的自由软件基金会（FSF），想看看会发生什么。考虑到在线访问GPLv2的便利性，他们很好奇为什么使用物理地址而不是URL。
 
-主要特性包括：
+从Stack Exchange了解到该地址很可能存在是因为1991年GPLv2发布时互联网访问受限后，作者开始了一场寄信之旅。这包括从eBay上购买美国邮票，使他们短暂地陷入了集邮及其相关术语的兔子洞。
 
-*   **高性能虚拟化：** 创建并运行具有接近原生速度的 macOS/Linux 虚拟机。
-*   **计算机使用接口与代理：** 使 AI 系统能够观察和控制这些虚拟环境，与应用程序交互、浏览、编码并执行复杂的工作流程。
+作者准备了一封信，附带一个写好地址的回邮信封和一张美国邮票。几周后，他们收到了来自FSF的回信，信中包含了完整的许可证文本。然而，回复的却是印在美式信纸上的GPLv3，而不是所请求的GPLv2。
 
-使用 Cua 的优势：
-
-*   **安全与隔离：** 在隔离环境中运行代理。
-*   **性能：** 在 Apple Silicon 上接近原生速度。
-*   **灵活性：** 支持 macOS 和 Linux。
-*   **可复现性：** 创建一致的环境。
-*   **LLM 集成：** 支持各种 LLM 提供商。
-
-该框架提供不同的安装选项，包括仅用于虚拟机管理的 Lume CLI、用于代理功能的完整安装，以及用于夜间构建特性的从源代码构建选项。Monorepo 中提供了几个库：Lume、Computer 和 Agent。
-
-Cua 鼓励贡献，并提供全面的文档和演示来方便使用。它采用 MIT 许可证。
+虽然作者意识到自己没有明确要求GPLv2，但他们想知道许可证声明中地址的存在是否应该足以作为线索。最终，他们决定不再跟进以获取正确的版本，并对这个意想不到的结果和经历感到满意。他们以一句玩笑话结束，声称在这次邮寄探险之后需要休息一下。
 
 ---
 
-## 3. 人工智能无人驾驶汽车
+## 3. SIMD ISA 的三大根本缺陷 (2023)
 
-**原文标题**: AI Horseless Carriages
+**原文标题**: Three Fundamental Flaws of SIMD ISAs (2023)
 
-**原文链接**: [https://koomen.dev/essays/horseless-carriages/](https://koomen.dev/essays/horseless-carriages/)
+**原文链接**: [https://www.bitsnbites.eu/three-fundamental-flaws-of-simd/](https://www.bitsnbites.eu/three-fundamental-flaws-of-simd/)
 
-人工智能无马马车：对自动驾驶汽车发展与影响的探讨
+本文批判了现代CPU中常见的紧凑型SIMD ISA（单指令多数据流），并指出了三个根本缺陷。
 
----
+**缺陷1：固定寄存器宽度：** SIMD的固定寄存器大小需要新的指令和寄存器才能扩展到更高的硬件并行性（例如，MMX、SSE、AVX）。 这需要ABI更新、操作系统内核、编译器和调试器的支持，导致操作码耗尽、指令长度增加以及每代软件重写。 先前的SIMD代数在很大程度上变得冗余，浪费了指令。
 
-## 4. MinC并非Cygwin
+**缺陷2：流水线：** SIMD操作通常采用流水线方式，需要多个时钟周期。 这意味着一条SIMD指令的结果不能立即获得，需要循环展开以避免停顿。 循环展开增加了代码大小（损害了指令缓存性能）和寄存器压力。
 
-**原文标题**: MinC Is Not Cygwin
+**缺陷3：尾部处理：** 当数组元素的数量不是SIMD寄存器大小的倍数时，需要额外的代码来处理数组的“尾部”。 这涉及到增加控制逻辑和可能的标量指令，从而增加代码复杂性和开销，对指令缓存效率产生负面影响。
 
-**原文链接**: [https://minc.commandlinerevolution.nl/english/home.html](https://minc.commandlinerevolution.nl/english/home.html)
-
-MinC：一款Windows下的Unix模拟器，专为职业教育学生设计，让他们无需复杂的虚拟化就能学习Linux。它利用OpenBSD 6.1代码，直接在Windows上运行小型内核（不包括Win95和Win98）。这使得OpenBSD软件在Windows机器上可以接近原生速度运行。本质上，MinC提供了一种在Windows上运行OpenBSD的方式，而无需虚拟机。
+本文将紧凑型SIMD与向量处理器进行了对比，向量处理器通过在硬件中处理展开和尾部操作来解决这些缺陷。文中提供了MRISC32、RISC-V RVV、ARM SVE 和 My 66000 的实现示例，以展示这些替代架构如何更有效地执行 "saxpy" 例程。 总之，本文提倡将向量处理器作为紧凑型 SIMD ISA 的更好替代方案。
 
 ---
 
-## 5. 焦油坑想法——什么是焦油坑想法以及如何避免它们（2023）[视频]
+## 4. DuckDB UI 中输入时即时 SQL 结果
 
-**原文标题**: Tarpit ideas – what are tarpit ideas and how to avoid them (2023) [video]
+**原文标题**: Instant SQL for results as you type in DuckDB UI
 
-**原文链接**: [https://www.ycombinator.com/library/Ij-tarpit-ideas-what-are-tarpit-ideas-how-to-avoid-them](https://www.ycombinator.com/library/Ij-tarpit-ideas-what-are-tarpit-ideas-how-to-avoid-them)
+**原文链接**: [https://motherduck.com/blog/introducing-instant-sql/](https://motherduck.com/blog/introducing-instant-sql/)
 
-这期Y Combinator关于“泥潭创业点子”的视频将其定义为表面上听起来不错，但本质上有缺陷，并且可能使创业者陷入漫长而徒劳的努力中的创业概念。 该视频强调，这些想法通常会吸引创业经验有限的人。
+本文宣布推出 Instant SQL，这是 MotherDuck 和 DuckDB Local UI 中的一项新功能，旨在通过在您键入时提供实时结果预览，来加速 SQL 查询的构建和调试。
 
-该视频可能概述了泥潭创业点子的常见特征。 这些可能包括：
+Instant SQL 旨在解决编写 SQL 时缓慢而繁琐的过程，传统上用户需要迭代地编写、运行、等待和修复查询。它提供以下功能：
 
-*   **解决一个并不真正存在的问题，或者用户并不愿意为解决方案付费的痛点。** 它们可能解决已经被充分满足的需求，或者用户愿意容忍的问题。
+*   **实时结果集预览：** 随着您的键入更新结果，从而实现即时反馈和更流畅的分析流程。
+*   **CTEs 检查：** 允许您通过点击并立即查看结果来快速可视化和调试 CTE（公共表表达式），从而节省数小时的调试时间。
+*   **复杂列表达式分解：** 允许您剖析列表达式，通过即时反映每次编辑的数据流来识别逻辑或数据中的问题。
+*   **多功能查询：** 适用于 DuckDB 表、MotherDuck 数据、外部文件（Parquet、S3）以及 DuckDB 支持的其他数据库系统。
+*   **更快的实验：** 可以自由测试和改进查询逻辑，而无需等待，只有在对最终结果满意时才运行。
+*   **AI 集成：** 通过显示实时结果集应用来补充 AI 驱动的编辑建议，从而消除猜测。
 
-*   **依赖未经证实或难以扩展的技术。** 需要技术突破或依赖快速变化领域的想法可能风险很高。
-
-*   **面临激烈的竞争或监管障碍。** 进入饱和的市场或应对复杂的法规可能会严重阻碍增长。
-
-*   **在验证想法之前需要大量的资本投资。** 在证明产品与市场契合度之前构建复杂的产品或获取庞大的用户群可能导致资源浪费。
-
-为了避免泥潭创业点子，该视频可能建议：
-
-*   **彻底的客户验证：** 在构建任何东西之前，与潜在客户交谈，了解他们的需求并验证问题。
-
-*   **从小处着手并快速迭代：** 构建最小可行产品（MVP）来测试假设并收集反馈。
-
-*   **专注于利基市场：** 针对具有针对性解决方案的特定用户群。
-
-*   **乐于改变方向：** 愿意根据客户反馈和市场现实改变想法。
-
-本质上，该视频建议创业者对其自身的想法持高度批判态度，尽早验证假设，并优先考虑为付费客户解决实际问题。
+本文重点介绍了实现 Instant SQL 所需的技术
 
 ---
 
-## 6. 基于进化算法的自动化天线设计 [pdf] (2006)
+## 5. 查询数据的原则性方法——类型安全的搜索DSL
 
-**原文标题**: Automated Antenna Design with Evolutionary Algorithms [pdf] (2006)
+**原文标题**: A Principled Approach to Querying Data – A Type-Safe Search DSL
 
-**原文链接**: [https://ntrs.nasa.gov/api/citations/20060024675/downloads/20060024675.pdf](https://ntrs.nasa.gov/api/citations/20060024675/downloads/20060024675.pdf)
+**原文链接**: [https://www.claudiu-ivan.com/writing/search-dsl](https://www.claudiu-ivan.com/writing/search-dsl)
 
-这份PDF似乎是2006年一篇题为《利用进化算法的自动化天线设计》的文档的开头。遗憾的是，提供的内容主要是元数据和压缩图像数据(CCITTFaxDecode)，没有详细描述文章内容的任何可读文本。因此，无法根据实际研究内容提供恰当的摘要。只能从标题推断该文档讨论了使用进化算法（一种优化技术）来自动化天线设计。它可能涵盖天线设计中的挑战、进化算法在克服这些挑战中的应用，并可能展示这种自动化设计过程的具体示例或结果。
+本文介绍了一种构建类型安全搜索系统的原则性方法，该方法使用领域特定语言（DSL），尤其适用于本地优先的Web应用程序，但也适用于服务器端系统。该DSL允许用户使用熟悉的领域术语表达搜索意图，从而提供可控的复杂性、领域对齐和增强的可用性。
 
----
+该系统围绕搜索“问题”展开，问题由TypeScript接口定义。使用`Either`类型表示解析操作的成功或失败，实现了强大的错误处理。解析器组合子，一种函数式编程技术，被用于以模块化和可组合的方式构建解析器。这些组合子解析输入字符串并生成抽象语法树（AST），一种查询的结构化表示，它将语法与评估分离。
 
-## 7. 悬秤
+然后，AST被转换为谓词函数，该函数根据查询过滤数据集。本文包括解析器、AST节点定义、谓词函数和执行函数的代码示例。
 
-**原文标题**: The Danglepoise
+对包含100万个问题的模拟数据集的性能评估表明，性能可以接受，但本文承认线性扫描的局限性，并强调了索引对于更大数据集的必要性。为了提高可扩展性，建议采用查询优化、查询计划和在各个级别（解析的查询、谓词和查询结果）缓存等优化策略。
 
-**原文链接**: [https://www.sallery.co.uk/danglepoise](https://www.sallery.co.uk/danglepoise)
-
-在2025年出版的《吊灯奇谭》中，作者详细描述了他们创造定制的、电动升降吊灯的旅程。由于对现代灯具的脆弱感到不满，并且无法找到合适的古董灯或配套灯，他们出于对电动机的热爱，开始了DIY项目。
-
-作者最初的研究 направлено на изследване на плъзгащите пръстени за захранване на лампата, позволявайки ѝ да се движи, но високата цена на качествените плъзгащи пръстени, оценени за работа с електрическа мрежа, предизвика преосмисляне на дизайна. Те се спряха на система, използваща стоманен кабел, навит около задвижван от мотор барабан, с персонализирани 3D отпечатани скоби за управление на гъвкавия кабел на лампата в зигзагообразен модел.
-
-机械设计采用了带有制动器的步进电机，用于精确定位和保持，尽管其能耗较高。 选择基于ESP32的TinyPICO微控制器进行电子控制，从而实现wifi控制和状态指示。
-
-电子设计包括用于主电压组件（电源、继电器、保险丝）和低电压控制（电机驱动器、微控制器）的独立PCB。 该系统需要一个24V电源来为制动器供电，一个5V稳压器来为微控制器供电，以及一个电机驱动器芯片来实现平稳安静的步进电机控制。 作者优先考虑安全性，使用高质量的封装式主电源。
+文章最后强调了类型安全、函数式编程和关注点分离在创建健壮、可维护和可扩展的搜索系统中的优势。
 
 ---
 
-## 8. 我不再凭感觉编程了：一个菜鸟的视角
+## 6. 对雇主的忠诚
 
-**原文标题**: I won't be vibe coding anymore: a noob's perspective
+**原文标题**: On loyalty to Your Employer
 
-**原文链接**: [https://varunraghu.com/why-i-wont-be-vibe-coding-anymore/](https://varunraghu.com/why-i-wont-be-vibe-coding-anymore/)
+**原文链接**: [https://www.talentstuff.com/blog/on-loyalty-to-your-employer](https://www.talentstuff.com/blog/on-loyalty-to-your-employer)
 
-本文写于2025年4月，表达了一位程序员对“氛围编码”——即过度依赖人工智能构建应用程序——的幻灭感。作者自称“菜鸟”，最初拥抱人工智能工具是为了克服编写糟糕代码和难以理解基本概念的挫败感。他们发现人工智能帮助他们快速构建功能性应用程序。
+史蒂薇·巴克利的《关于忠于你的雇主》一文挑战了盲目忠诚的观念，这种观念在科技行业尤为盛行，而科技行业跳槽现象十分普遍。巴克利是一位招聘人员，她受到父亲在同一家公司工作30年的经历启发，质疑了LinkedIn上常见的雇主赞扬的真诚性。
 
-然而，作者在一个不眠之夜体验到顿悟。他们意识到，尽管构建了“有用的应用程序”，但几周来他们什么都没学到。这让他们得出结论：编码的核心价值不在于最终产品，而在于解决问题、批判性思维以及个人投入的过程。
+她概述了评估潜在雇主的四个关键标准：合理的薪资、善待员工（通过Glassdoor和社交媒体验证）、财务安全（通过公共记录和直接询问“跑道”来评估）以及对新想法的开放性（这在她担任招聘职位时尤为重要）。满足这些标准使她能够诚实透明地向潜在的求职者推荐一家公司。
 
-作者将编码与写作进行类比，强调了创造过程和个人应对挑战方式的重要性。他们担心过度依赖人工智能会剥夺他们这些基本的学习体验。
+巴克利告诫大家不要被福利和积极的公司文化蒙蔽双眼，她强调，雇佣关系最终是一场交易。公司会优先考虑自己的利益，而不是员工的福祉，尤其是在财务困难或违反政策的情况下。她强烈建议不要为了取悦雇主而牺牲个人关系、心理健康、伦理或个人价值观。
 
-最终，作者决定与“氛围编码”分手，回到自己编写代码的状态，即使代码“很烂”，速度很慢，需要深思熟虑。他们优先考虑学习过程和自身技能的发展，而不是人工智能生成的代码所带来的便利和速度。这篇文章赞扬了传统编码体验中固有的个人投入和学习。
-
----
-
-## 9. ZGC 如何为 Java 堆分配内存
-
-**原文标题**: How ZGC allocates memory for the Java heap
-
-**原文链接**: [https://joelsiks.com/posts/zgc-heap-memory-allocation/](https://joelsiks.com/posts/zgc-heap-memory-allocation/)
-
-本文深入探讨了OpenJDK中垃圾收集器ZGC如何为Java堆分配内存。堆被划分为称为页面的逻辑区域，分为小型（2MB）、中型（32MB）和大型（动态大小，超过4MB）三类。页面分配器管理这些页面，维护代表堆子集的多个分区。NUMA系统可以有多个分区，每个分区对应一个NUMA节点，以提高内存访问速度。
-
-ZGC独特地分离了物理内存和虚拟内存，以对抗碎片化。虚拟内存被过度预留（最高可达最大堆大小的16倍或32倍），以增加找到连续内存范围的可能性。当页面被释放时，ZGC通过将物理内存重新映射到新的虚拟地址来主动整理堆。
-
-映射缓存存储了未被任何页面使用的已映射内存范围，使用自平衡二叉搜索树进行高效管理。它使用侵入式存储来避免动态内存分配，并加快分配期间搜索连续内存的速度。
-
-内存分配涉及声明容量、获取物理内存，并可能使用来自映射缓存的虚拟内存。分配过程优先从缓存中获取连续内存，然后增加容量（提交新内存），最后在必要时从缓存中收集较小的范围。如果无法增加容量，分配将优先收集可用的现有映射内存。
+她的核心信息是，要出色地履行你的工作职责，但始终要把家庭、朋友和个人福祉放在首位。如果雇主通过提供公平的薪酬、支持员工健康和投资于员工成长来回报你，那么积极的反馈才是合理的。文章以她父亲的感言结尾，即人生的遗憾通常不是因为工作不够努力，而是因为没有花足够的时间陪伴所爱的人。
 
 ---
 
-## 10. 考拉兹蚁
+## 7. Bild AI (YC W25) 正在旧金山招聘创始工程师
 
-**原文标题**: Collatz's Ant
+**原文标题**: Bild AI (YC W25) is hiring a founding engineer in SF
 
-**原文链接**: [https://gbragafibra.github.io/2025/01/08/collatz_ant2.html](https://gbragafibra.github.io/2025/01/08/collatz_ant2.html)
+**原文链接**: [https://www.ycombinator.com/companies/bild-ai/jobs/m2ilR5L-founding-engineer](https://www.ycombinator.com/companies/bild-ai/jobs/m2ilR5L-founding-engineer)
 
-本文探讨了使用改进的兰顿蚂蚁（称为“考拉兹蚂蚁”）可视化考拉兹序列的方法。蚂蚁的移动由考拉兹函数决定：如果数字为偶数，蚂蚁顺时针旋转90º；如果为奇数，蚂蚁逆时针旋转90º。蚂蚁每走一步前进一个单位。
+位于旧金山的 Y Combinator W25 期创业公司 Bild AI 正在招聘一名创始工程师加入其团队。Bild AI 正在通过开发能够理解建筑蓝图的人工智能来革新建筑行业，从而自动化成本估算和许可申请等任务。
 
-作者最初使用了每步翻转单元格状态的版本，但后来提出了一个非翻转版本，该版本只是在每个访问的坐标处递增一个计数器，以便更清晰地可视化并避免歧义。
+理想的候选人将与联合创始人 Roop Pal 和 Puneet Sukhija 密切合作，专注于其产品的智能层。 这包括设计用于理解蓝图的算法和系统，应用计算机视觉和 LLM 模型，以及根据用户反馈交付原型。 该职位提供 10 万美元至 18 万美元的薪水以及 0.50% 至 2.00% 的股权。
 
-该研究揭示了考拉兹蚂蚁生成的视觉“地形”与相应序列的停止时间之间的相关性。相似的地形往往具有相似（或相同）的停止时间，尽管反之不一定成立。文章表明，具有共享子序列的序列（如提供的Python代码中的`intersect1d`函数所示）会产生相似的地形。
+Bild AI 正在寻找具有构建全栈产品经验（尤其是在 infra/frontend 方面）、专注于 AI 学习的成长型思维模式，以及愿意搬到旧金山进行面对面协作的人才。 强大的沟通能力和“不嫌任务太小”的态度至关重要。 额外加分项包括创业经验、计算机视觉/机器学习经验、建筑/建筑/房地产知识以及对积极影响的热情。
 
-此外，本文还说明了在一定数量的考拉兹步骤后收敛的序列也会表现出地形相似性，通常伴随90º、180º或更大的旋转。随着收敛子轨迹之间步骤差异的增加，相似程度会降低，经过大量步骤（例如，300步）后，仅留下更大规模的共同特征。
+鼓励有兴趣的候选人发送包含简历/LinkedIn 个人资料、GitHub/作品集以及他们对 Bild AI 感兴趣的原因的电子邮件至 jobs[at]bild.ai。该公司强调其快节奏的环境，并鼓励立即申请。 他们获得了 Khosla Ventures 的资助，并正在以模型花园的方式构建蓝图理解。
+
+---
+
+## 8. 关于Vision Transformer，每个人都应该知道的三件事
+
+**原文标题**: Three things everyone should know about Vision Transformers
+
+**原文链接**: [https://arxiv.org/abs/2203.09795](https://arxiv.org/abs/2203.09795)
+
+Touvron等人arXiv论文“关于Vision Transformers，每个人都应该了解的三件事”探讨了Vision Transformers (ViTs) 在计算机视觉任务中高效且有效的适配方法。 它提供了三个关键见解：
+
+1.  **残差层的并行处理：** 该论文表明，ViTs中残差层的顺序处理可以在不显著影响准确性的情况下进行部分并行化。 这带来了训练和推理中潜在的加速。
+
+2.  **注意力层的高效微调：** 作者发现，*仅*微调注意力层就足以使ViTs适应更高分辨率的图像和不同的分类任务。 这种方法大大降低了微调过程中的计算成本和内存消耗，并实现了跨多个任务的权重共享。
+
+3.  **通过MLP预处理改进自监督训练：** 添加基于MLP的patch预处理层可提高ViTs的类BERT自监督训练的性能，其中图像patches被掩盖，并且模型经过训练以预测被掩盖的区域。
+
+该论文使用ImageNet-1k数据集验证了这些发现，并在ImageNet-v2上证实了它们。 还在六个较小的数据集上评估了迁移性能。 该研究表明，这些设计选择可以使ViTs对于更广泛的计算机视觉应用更易于访问和高效。
+
+---
+
+## 9. 展示HN: Zev – 记住 (或发现) 终端命令
+
+**原文标题**: Show HN: Zev – Remember (or discover) terminal commands
+
+**原文链接**: [https://github.com/dtnewman/zev](https://github.com/dtnewman/zev)
+
+Zev：通过自然语言查找和记忆终端命令的命令行工具
+
+**主要特性：**
+
+*   **自然语言查询：** 用户可以使用简单的英语搜索命令。
+*   **交互模式：** 用户可以启动类似shell的界面与Zev进行交互。
+*   **OpenAI集成：** Zev利用OpenAI API来理解自然语言并将其转换为终端命令（需要OpenAI账户和API密钥）。
+*   **Ollama支持：** 作为OpenAI的替代方案，Zev可以配置为使用Ollama，从而实现本地命令生成，无需依赖外部API。
+*   **配置：** 用户可以通过运行`zev --setup`来更新他们的OpenAI API密钥、OpenAI基础URL或OpenAI模型。
+
+**用法：**
+
+Zev可以通过`pip install zev`安装，可以通过简单地运行`zev`进入交互模式，也可以直接使用`zev '<你想要做什么>'`进行查询。 该工具支持各种命令类别，包括文件操作、系统信息、网络命令和Git操作。
+该项目是开源的（MIT许可证），欢迎贡献。
+
+---
+
+## 10. IBM Z17内部探秘
+
+**原文标题**: A Tour Inside the IBM Z17
+
+**原文链接**: [https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/elizabeth-k-joseph1/2025/04/23/a-tour-inside-the-ibm-z17?communityKey=e7b7d299-8509-4572-8cf1-c1112684644f](https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/elizabeth-k-joseph1/2025/04/23/a-tour-inside-the-ibm-z17?communityKey=e7b7d299-8509-4572-8cf1-c1112684644f)
+
+在没有访问实际“IBM z17内部之旅”文章的情况下，我可以根据一般知识和此类文章的预期内容提供一个摘要。该摘要将侧重于现代IBM Z大型机（z17）之旅可能涵盖的组件和架构。
+
+**可能的摘要：**
+
+“IBM z17内部之旅”可能探索了使z17成为强大且可靠的企业计算平台的先进工程和组件。该文章可能会深入探讨z17的架构，强调其高性能处理器，可能展示每个处理器芯片的内核数量和时钟速度。它可能会突出该系统的大容量内存及其处理海量工作负载的能力。
+
+一个关键特性几乎肯定会涵盖I/O子系统，强调其高带宽以及连接各种存储和网络设备的能力。该文章可能会讨论系统的内置安全功能，包括基于硬件的加密和安全启动过程，这对于敏感数据处理至关重要。
+
+该之旅也可能涉及系统的虚拟化功能，展示其同时运行多个操作系统和工作负载的能力。冗余和容错，这对于大型机的正常运行时间至关重要，将是另一个重点，其中将解释系统如何处理组件故障。
+
+最后，该文章可能会简要介绍冷却系统和电源管理策略，这些策略用于保持z17在要求苛刻的数据中心环境中高效可靠地运行。总体信息可能是z17的复杂设计，它结合了尖端的硬件和软件，为关键任务应用程序提供无与伦比的性能、安全性和可用性。
 
 ---
 
@@ -176,38 +183,39 @@ ZGC独特地分离了物理内存和虚拟内存，以对抗碎片化。虚拟�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 2 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 3 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 4 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 5 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 6 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 7 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 8 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 9 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 10 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 11 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 12 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 13 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 14 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 15 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 16 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 17 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 18 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 19 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 20 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 21 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 22 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 23 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 24 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 25 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 26 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 27 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 28 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 29 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 30 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 31 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 32 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 33 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 34 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 35 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 1 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 2 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 3 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 4 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 5 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 6 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 7 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 8 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 9 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 10 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 11 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 12 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 13 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 14 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 15 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 16 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 17 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 18 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 19 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 20 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 21 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 22 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 23 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 24 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 25 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 26 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 27 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 28 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 29 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 30 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 31 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 32 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 33 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 34 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 35 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 36 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
