@@ -1,181 +1,147 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-24.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-25.md)
 
-*最后自动更新时间: 2025-04-24 17:48:59*
-## 1. 为何21厘米是我们宇宙的“神奇长度”
+*最后自动更新时间: 2025-04-25 17:48:23*
+## 1. 写入“/etc/hosts”文件会破坏 Substack 编辑器。
 
-**原文标题**: Why 21 cm is our Universe's "magic length"
+**原文标题**: Writing "/etc/hosts" breaks the Substack editor
 
-**原文链接**: [https://bigthink.com/starts-with-a-bang/21cm-magic-length/](https://bigthink.com/starts-with-a-bang/21cm-magic-length/)
+**原文链接**: [https://scalewithlee.substack.com/p/when-etchsts-breaks-your-substack](https://scalewithlee.substack.com/p/when-etchsts-breaks-your-substack)
 
-为何氢的21厘米波长是宇宙中的“魔力长度”
+文章《修改'/etc/hosts'导致Substack编辑器崩溃》详细描述了直接修改`/etc/hosts`文件可能如何意外地破坏Substack编辑器的功能。作者回忆了一段个人经历，为了测试目的，他们修改了`/etc/hosts`文件以重定向一个特定域名，却无意中导致了Substack编辑器崩溃。
 
----
+关键在于，Substack依赖于某些域名和服务，通过`/etc/hosts`文件干扰它们的解析可能会导致编辑器中出现意外问题，例如无法保存草稿、图片上传问题以及编辑器总体无响应。文章强调，这是因为Substack的编辑器会对其自身的基础设施进行API调用。当域名解析被篡改时，这些调用会失败。
 
-## 2. 我写信给GPLv2许可声明中的地址（2022）。
-
-**原文标题**: I wrote to the address in the GPLv2 license notice (2022)
-
-**原文链接**: [https://code.mendhak.com/gpl-v2-address-letter/](https://code.mendhak.com/gpl-v2-address-letter/)
-
-2022年，作者对GPLv2许可证声明中的物理地址感到好奇，决定写信给位于波士顿富兰克林街51号的自由软件基金会（FSF），想看看会发生什么。考虑到在线访问GPLv2的便利性，他们很好奇为什么使用物理地址而不是URL。
-
-从Stack Exchange了解到该地址很可能存在是因为1991年GPLv2发布时互联网访问受限后，作者开始了一场寄信之旅。这包括从eBay上购买美国邮票，使他们短暂地陷入了集邮及其相关术语的兔子洞。
-
-作者准备了一封信，附带一个写好地址的回邮信封和一张美国邮票。几周后，他们收到了来自FSF的回信，信中包含了完整的许可证文本。然而，回复的却是印在美式信纸上的GPLv3，而不是所请求的GPLv2。
-
-虽然作者意识到自己没有明确要求GPLv2，但他们想知道许可证声明中地址的存在是否应该足以作为线索。最终，他们决定不再跟进以获取正确的版本，并对这个意想不到的结果和经历感到满意。他们以一句玩笑话结束，声称在这次邮寄探险之后需要休息一下。
+作者的解决方案是恢复对`/etc/hosts`文件所做的更改，从而有效地恢复Substack服务的正确域名解析。这篇文章是对经常修改`/etc/hosts`文件的开发者和高级用户的一个警示，强调了考虑对依赖特定域名解析的Web应用程序的潜在影响的重要性。它强调了现代Web应用程序的隐藏依赖性，以及看似无害的系统级修改可能造成的重大后果。
 
 ---
 
-## 3. SIMD ISA 的三大根本缺陷 (2023)
+## 2. Eurorack旋钮创意
 
-**原文标题**: Three Fundamental Flaws of SIMD ISAs (2023)
+**原文标题**: Eurorack Knob Idea
 
-**原文链接**: [https://www.bitsnbites.eu/three-fundamental-flaws-of-simd/](https://www.bitsnbites.eu/three-fundamental-flaws-of-simd/)
+**原文链接**: [https://mitxela.com/projects/euroknob](https://mitxela.com/projects/euroknob)
 
-本文批判了现代CPU中常见的紧凑型SIMD ISA（单指令多数据流），并指出了三个根本缺陷。
+Mitxela详述了他的“Eurorack旋钮创意”，这是一种旨在减少面板杂乱的新型Eurorack模块设计方法。该概念用混合旋钮和跳线系统取代了传统的电位器。该系统使用3.5mm TRS插孔代替电位器，并配有位于插孔下方的磁编码器芯片(AS5600)。一个小的钕磁铁嵌入在TRS插头中，充当旋钮。插入时，磁铁与AS5600相互作用，将旋钮的旋转转化为角度读数，可用于控制模块参数。
 
-**缺陷1：固定寄存器宽度：** SIMD的固定寄存器大小需要新的指令和寄存器才能扩展到更高的硬件并行性（例如，MMX、SSE、AVX）。 这需要ABI更新、操作系统内核、编译器和调试器的支持，导致操作码耗尽、指令长度增加以及每代软件重写。 先前的SIMD代数在很大程度上变得冗余，浪费了指令。
+作者描述了磁性旋钮的构造、结合了AS5600和用于读取和显示编码器数据的微控制器（CH32V003）的电路板设计以及组装过程。该原型成功地通过场强读数检测到磁性旋钮的存在，将其与标准跳线区分开来。
 
-**缺陷2：流水线：** SIMD操作通常采用流水线方式，需要多个时钟周期。 这意味着一条SIMD指令的结果不能立即获得，需要循环展开以避免停顿。 循环展开增加了代码大小（损害了指令缓存性能）和寄存器压力。
-
-**缺陷3：尾部处理：** 当数组元素的数量不是SIMD寄存器大小的倍数时，需要额外的代码来处理数组的“尾部”。 这涉及到增加控制逻辑和可能的标量指令，从而增加代码复杂性和开销，对指令缓存效率产生负面影响。
-
-本文将紧凑型SIMD与向量处理器进行了对比，向量处理器通过在硬件中处理展开和尾部操作来解决这些缺陷。文中提供了MRISC32、RISC-V RVV、ARM SVE 和 My 66000 的实现示例，以展示这些替代架构如何更有效地执行 "saxpy" 例程。 总之，本文提倡将向量处理器作为紧凑型 SIMD ISA 的更好替代方案。
+尽管原型成功，但作者承认在整个Eurorack系统中实施该想法可能不切实际且成本高昂。他设想了一个专门致力于此概念的小众社区，“Euroknobists”。虽然没有申请专利，但他提出了一个更具商业可行性的替代方案：带有同轴TRS插孔的电位器。他最后邀请企业家资助和开发这个想法，并承认他在该领域的局限性。
 
 ---
 
-## 4. DuckDB UI 中输入时即时 SQL 结果
+## 3. Show HN: Magnitude – 面向 Web 应用的开源、AI 原生测试框架
 
-**原文标题**: Instant SQL for results as you type in DuckDB UI
+**原文标题**: Show HN: Magnitude – open-source, AI-native test framework for web apps
 
-**原文链接**: [https://motherduck.com/blog/introducing-instant-sql/](https://motherduck.com/blog/introducing-instant-sql/)
+**原文链接**: [https://github.com/magnitudedev/magnitude](https://github.com/magnitudedev/magnitude)
 
-本文宣布推出 Instant SQL，这是 MotherDuck 和 DuckDB Local UI 中的一项新功能，旨在通过在您键入时提供实时结果预览，来加速 SQL 查询的构建和调试。
+Magnitude：一个AI原生、开源的Web应用测试框架。它允许用户使用自然语言构建和运行端到端测试，利用视觉AI代理理解并适应UI变化。
 
-Instant SQL 旨在解决编写 SQL 时缓慢而繁琐的过程，传统上用户需要迭代地编写、运行、等待和修复查询。它提供以下功能：
+其工作原理是：用户用简单的步骤、数据输入和自然语言检查编写测试用例。Magnitude使用强大的通用多模态LLM（如Gemini）作为“规划者”来规划测试策略，并使用快速视觉LLM（Moondream）作为“执行者”以像素级精度与UI交互。如果在执行过程中出现问题，推理代理会介入。
 
-*   **实时结果集预览：** 随着您的键入更新结果，从而实现即时反馈和更流畅的分析流程。
-*   **CTEs 检查：** 允许您通过点击并立即查看结果来快速可视化和调试 CTE（公共表表达式），从而节省数小时的调试时间。
-*   **复杂列表达式分解：** 允许您剖析列表达式，通过即时反映每次编辑的数据流来识别逻辑或数据中的问题。
-*   **多功能查询：** 适用于 DuckDB 表、MotherDuck 数据、外部文件（Parquet、S3）以及 DuckDB 支持的其他数据库系统。
-*   **更快的实验：** 可以自由测试和改进查询逻辑，而无需等待，只有在对最终结果满意时才运行。
-*   **AI 集成：** 通过显示实时结果集应用来补充 AI 驱动的编辑建议，从而消除猜测。
+要开始使用，用户需要安装`magnitude-test`包，在其项目中初始化Magnitude，并配置规划者和执行者LLM的API密钥。然后通过`npx magnitude`命令运行测试。Magnitude支持并行测试执行。
 
-本文重点介绍了实现 Instant SQL 所需的技术
+该框架专注于简化测试用例的创建，使用户能够像向同事描述一样描述测试。测试可以集成到CI/CD管道中。
+
+Magnitude通过使用专门的模型进行规划和执行，区别于 OpenAI Operator/Claude Computer Use 等解决方案。 这种方法旨在提高专门针对测试场景的速度、可靠性和成本效益。
 
 ---
 
-## 5. 查询数据的原则性方法——类型安全的搜索DSL
+## 4. 肿瘤来源的促红细胞生成素作为癌症免疫中的免疫抑制开关
 
-**原文标题**: A Principled Approach to Querying Data – A Type-Safe Search DSL
+**原文标题**: Tumor-derived erythropoietin acts as immunosuppressive switch in cancer immunity
 
-**原文链接**: [https://www.claudiu-ivan.com/writing/search-dsl](https://www.claudiu-ivan.com/writing/search-dsl)
+**原文链接**: [https://www.science.org/doi/10.1126/science.adr3026](https://www.science.org/doi/10.1126/science.adr3026)
 
-本文介绍了一种构建类型安全搜索系统的原则性方法，该方法使用领域特定语言（DSL），尤其适用于本地优先的Web应用程序，但也适用于服务器端系统。该DSL允许用户使用熟悉的领域术语表达搜索意图，从而提供可控的复杂性、领域对齐和增强的可用性。
-
-该系统围绕搜索“问题”展开，问题由TypeScript接口定义。使用`Either`类型表示解析操作的成功或失败，实现了强大的错误处理。解析器组合子，一种函数式编程技术，被用于以模块化和可组合的方式构建解析器。这些组合子解析输入字符串并生成抽象语法树（AST），一种查询的结构化表示，它将语法与评估分离。
-
-然后，AST被转换为谓词函数，该函数根据查询过滤数据集。本文包括解析器、AST节点定义、谓词函数和执行函数的代码示例。
-
-对包含100万个问题的模拟数据集的性能评估表明，性能可以接受，但本文承认线性扫描的局限性，并强调了索引对于更大数据集的必要性。为了提高可扩展性，建议采用查询优化、查询计划和在各个级别（解析的查询、谓词和查询结果）缓存等优化策略。
-
-文章最后强调了类型安全、函数式编程和关注点分离在创建健壮、可维护和可扩展的搜索系统中的优势。
+无法访问文章链接。
 
 ---
 
-## 6. 对雇主的忠诚
+## 5. 大型可重复性项目未能验证生物医学研究。
 
-**原文标题**: On loyalty to Your Employer
+**原文标题**: Huge reproducibility project fails to validate biomedical studies
 
-**原文链接**: [https://www.talentstuff.com/blog/on-loyalty-to-your-employer](https://www.talentstuff.com/blog/on-loyalty-to-your-employer)
+**原文链接**: [https://www.nature.com/articles/d41586-025-01266-x](https://www.nature.com/articles/d41586-025-01266-x)
 
-史蒂薇·巴克利的《关于忠于你的雇主》一文挑战了盲目忠诚的观念，这种观念在科技行业尤为盛行，而科技行业跳槽现象十分普遍。巴克利是一位招聘人员，她受到父亲在同一家公司工作30年的经历启发，质疑了LinkedIn上常见的雇主赞扬的真诚性。
+巴西可重复性倡议是一项大型可重复性项目，旨在评估巴西生物医学研究的可重复性，重点关注采用三种常用方法的研究：细胞代谢测定、遗传物质扩增技术和啮齿动物迷宫测试。来自 56 个实验室的 200 多名科学家试图重复 1998 年至 2017 年间发表的 47 篇论文中的实验。
 
-她概述了评估潜在雇主的四个关键标准：合理的薪资、善待员工（通过Glassdoor和社交媒体验证）、财务安全（通过公共记录和直接询问“跑道”来评估）以及对新想法的开放性（这在她担任招聘职位时尤为重要）。满足这些标准使她能够诚实透明地向潜在的求职者推荐一家公司。
+结果令人沮丧，只有不到一半的测试实验可重复。使用五个标准，只有 21% 的实验在至少一半的标准上是可重复的。原始论文中的效应量平均也比重复尝试中的大 60%，表明原始研究倾向于高估干预措施的效果。
 
-巴克利告诫大家不要被福利和积极的公司文化蒙蔽双眼，她强调，雇佣关系最终是一场交易。公司会优先考虑自己的利益，而不是员工的福祉，尤其是在财务困难或违反政策的情况下。她强烈建议不要为了取悦雇主而牺牲个人关系、心理健康、伦理或个人价值观。
-
-她的核心信息是，要出色地履行你的工作职责，但始终要把家庭、朋友和个人福祉放在首位。如果雇主通过提供公平的薪酬、支持员工健康和投资于员工成长来回报你，那么积极的反馈才是合理的。文章以她父亲的感言结尾，即人生的遗憾通常不是因为工作不够努力，而是因为没有花足够的时间陪伴所爱的人。
+该研究强调了加强巴西科学实践的必要性，并为在公共政策和大学内部实施变革提供了基础。这项雄心勃勃的项目在 COVID-19 大流行期间面临物流挑战，并且参与团队在遵守协议方面存在差异。
 
 ---
 
-## 7. Bild AI (YC W25) 正在旧金山招聘创始工程师
+## 6. 致相信人的爱之书
 
-**原文标题**: Bild AI (YC W25) is hiring a founding engineer in SF
+**原文标题**: A Love Letter to People Who Believe in People
 
-**原文链接**: [https://www.ycombinator.com/companies/bild-ai/jobs/m2ilR5L-founding-engineer](https://www.ycombinator.com/companies/bild-ai/jobs/m2ilR5L-founding-engineer)
+**原文链接**: [https://www.swiss-miss.com/2025/04/a-love-letter-to-people-who-believe-in-people.html](https://www.swiss-miss.com/2025/04/a-love-letter-to-people-who-believe-in-people.html)
 
-位于旧金山的 Y Combinator W25 期创业公司 Bild AI 正在招聘一名创始工程师加入其团队。Bild AI 正在通过开发能够理解建筑蓝图的人工智能来革新建筑行业，从而自动化成本估算和许可申请等任务。
+蒂娜的《致相信他人之人的情书》颂扬了热情带来的变革力量以及成为他人“粉丝”的重要性。她强调，相信某人并为他们的生活带来热情具有感染力且能改变人生。蒂娜用个人轶事来说明这一点，着重介绍了对她的旅程产生重大影响的个人。
 
-理想的候选人将与联合创始人 Roop Pal 和 Puneet Sukhija 密切合作，专注于其产品的智能层。 这包括设计用于理解蓝图的算法和系统，应用计算机视觉和 LLM 模型，以及根据用户反馈交付原型。 该职位提供 10 万美元至 18 万美元的薪水以及 0.50% 至 2.00% 的股权。
+她将自己大胆生活的灵感归功于古怪的Hugi阿姨，将职场中展现的善良归功于她的第一任老板Matthew Waldman，将激励她创办自己的设计工作室归功于她的女儿Ella，并将向她展示如何将她的想法变为现实归功于Jim Coudal。她还强调了Ben Chestnut (Mailchimp) 和Ruth Ann Harnisch (Harnisch Foundation) 对 CreativeMornings 的影响，强调了支持性伙伴关系和彻底慷慨的力量。
 
-Bild AI 正在寻找具有构建全栈产品经验（尤其是在 infra/frontend 方面）、专注于 AI 学习的成长型思维模式，以及愿意搬到旧金山进行面对面协作的人才。 强大的沟通能力和“不嫌任务太小”的态度至关重要。 额外加分项包括创业经验、计算机视觉/机器学习经验、建筑/建筑/房地产知识以及对积极影响的热情。
-
-鼓励有兴趣的候选人发送包含简历/LinkedIn 个人资料、GitHub/作品集以及他们对 Bild AI 感兴趣的原因的电子邮件至 jobs[at]bild.ai。该公司强调其快节奏的环境，并鼓励立即申请。 他们获得了 Khosla Ventures 的资助，并正在以模型花园的方式构建蓝图理解。
+蒂娜强调了创建以心为本、培养慷慨、善良和好奇心的社区的重要性。她认为，相互支持和彼此信任可以赋予个人力量，让他们发挥潜力并为更美好的未来而努力。最终，她鼓励读者拥抱“粉丝心态”，通过大胆、勇敢和热情来激励他人。这篇文章也是一封献给CreativeMornings社区的情书，分享了他们在创建有意义的人际关系空间方面的经验。
 
 ---
 
-## 8. 关于Vision Transformer，每个人都应该知道的三件事
+## 7. 作为思维工具的符号 (1979)
 
-**原文标题**: Three things everyone should know about Vision Transformers
+**原文标题**: Notation as a Tool of Thought (1979)
 
-**原文链接**: [https://arxiv.org/abs/2203.09795](https://arxiv.org/abs/2203.09795)
+**原文链接**: [https://www.jsoftware.com/papers/tot.htm](https://www.jsoftware.com/papers/tot.htm)
 
-Touvron等人arXiv论文“关于Vision Transformers，每个人都应该了解的三件事”探讨了Vision Transformers (ViTs) 在计算机视觉任务中高效且有效的适配方法。 它提供了三个关键见解：
+作为思维工具的记号 (1979) 认为，记号不仅仅是被动的记录系统，而是一种积极且强大的工具，能够塑造和影响我们的思维。该文章强调了记号的选择如何显著影响我们理解、操作和发现新想法的能力。
 
-1.  **残差层的并行处理：** 该论文表明，ViTs中残差层的顺序处理可以在不显著影响准确性的情况下进行部分并行化。 这带来了训练和推理中潜在的加速。
+它强调，好的记号可以通过揭示潜在的结构和关系使复杂问题看起来更简单，而差的记号甚至会模糊最基本的概念。作者很可能讨论了数学、逻辑或计算机科学的例子来阐明这一点，展示了特定记号如何促进特定类型的推理和问题解决。
 
-2.  **注意力层的高效微调：** 作者发现，*仅*微调注意力层就足以使ViTs适应更高分辨率的图像和不同的分类任务。 这种方法大大降低了微调过程中的计算成本和内存消耗，并实现了跨多个任务的权重共享。
-
-3.  **通过MLP预处理改进自监督训练：** 添加基于MLP的patch预处理层可提高ViTs的类BERT自监督训练的性能，其中图像patches被掩盖，并且模型经过训练以预测被掩盖的区域。
-
-该论文使用ImageNet-1k数据集验证了这些发现，并在ImageNet-v2上证实了它们。 还在六个较小的数据集上评估了迁移性能。 该研究表明，这些设计选择可以使ViTs对于更广泛的计算机视觉应用更易于访问和高效。
+此外，该文章可能探讨了记号的演变以及它们的发展对于科学和数学进步的重要性。它表明，新记号的发明通常先于理解上的突破，使我们能够以新的方式“看到”问题并开发更有效的解决方案。 本质上，这篇文章提倡认真考虑记号的影响，敦促我们选择甚至发明最能支持我们认知过程并促进智力探索的记号。 中心思想是，记号不仅仅是一种记录思想的方式，更是一种塑造和推进思想的强大工具。
 
 ---
 
-## 9. 展示HN: Zev – 记住 (或发现) 终端命令
+## 8. 利用C/C++程序中的未定义行为：性能影响 [pdf]
 
-**原文标题**: Show HN: Zev – Remember (or discover) terminal commands
+**原文标题**: Exploiting Undefined Behavior in C/C++ Programs: The Performance Impact [pdf]
 
-**原文链接**: [https://github.com/dtnewman/zev](https://github.com/dtnewman/zev)
+**原文链接**: [https://web.ist.utl.pt/nuno.lopes/pubs/ub-pldi25.pdf](https://web.ist.utl.pt/nuno.lopes/pubs/ub-pldi25.pdf)
 
-Zev：通过自然语言查找和记忆终端命令的命令行工具
-
-**主要特性：**
-
-*   **自然语言查询：** 用户可以使用简单的英语搜索命令。
-*   **交互模式：** 用户可以启动类似shell的界面与Zev进行交互。
-*   **OpenAI集成：** Zev利用OpenAI API来理解自然语言并将其转换为终端命令（需要OpenAI账户和API密钥）。
-*   **Ollama支持：** 作为OpenAI的替代方案，Zev可以配置为使用Ollama，从而实现本地命令生成，无需依赖外部API。
-*   **配置：** 用户可以通过运行`zev --setup`来更新他们的OpenAI API密钥、OpenAI基础URL或OpenAI模型。
-
-**用法：**
-
-Zev可以通过`pip install zev`安装，可以通过简单地运行`zev`进入交互模式，也可以直接使用`zev '<你想要做什么>'`进行查询。 该工具支持各种命令类别，包括文件操作、系统信息、网络命令和Git操作。
-该项目是开源的（MIT许可证），欢迎贡献。
+利用 C/C++ 程序中未定义行为：性能影响
 
 ---
 
-## 10. IBM Z17内部探秘
+## 9. 策略傀儡提示：绕过主流大型语言模型的新方法
 
-**原文标题**: A Tour Inside the IBM Z17
+**原文标题**: The Policy Puppetry Prompt: Novel bypass for major LLMs
 
-**原文链接**: [https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/elizabeth-k-joseph1/2025/04/23/a-tour-inside-the-ibm-z17?communityKey=e7b7d299-8509-4572-8cf1-c1112684644f](https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/elizabeth-k-joseph1/2025/04/23/a-tour-inside-the-ibm-z17?communityKey=e7b7d299-8509-4572-8cf1-c1112684644f)
+**原文链接**: [https://hiddenlayer.com/innovation-hub/novel-universal-bypass-for-all-major-llms/](https://hiddenlayer.com/innovation-hub/novel-universal-bypass-for-all-major-llms/)
 
-在没有访问实际“IBM z17内部之旅”文章的情况下，我可以根据一般知识和此类文章的预期内容提供一个摘要。该摘要将侧重于现代IBM Z大型机（z17）之旅可能涵盖的组件和架构。
+HiddenLayer是一家Gartner认可的AI安全提供商，提供独特的平台来保护企业机器学习模型免受各种威胁。他们专注于保护AI模型，无需增加复杂性或访问敏感数据和算法。他们的平台提供开箱即用的安全性，解决推理、绕过、提取攻击和模型窃取问题。
 
-**可能的摘要：**
+该公司以其安全至上的方法和避免数据访问要求而著称。HiddenLayer获得了包括微软、Moore Strategic Ventures、Booz Allen Ventures、IBM Ventures和Capital One Ventures在内的重要投资者的支持。
 
-“IBM z17内部之旅”可能探索了使z17成为强大且可靠的企业计算平台的先进工程和组件。该文章可能会深入探讨z17的架构，强调其高性能处理器，可能展示每个处理器芯片的内核数量和时钟速度。它可能会突出该系统的大容量内存及其处理海量工作负载的能力。
+本文提供了HiddenLayer网站各个部分的链接，包括预约演示、平台详情、解决方案、服务、学习资源、合作信息、公司信息、职业、以及联系方式。文章还提到了他们的安全隐私政策、漏洞披露政策、网站地图以及Twitter和LinkedIn的个人资料链接。
 
-一个关键特性几乎肯定会涵盖I/O子系统，强调其高带宽以及连接各种存储和网络设备的能力。该文章可能会讨论系统的内置安全功能，包括基于硬件的加密和安全启动过程，这对于敏感数据处理至关重要。
+本质上，HiddenLayer旨在为AI模型提供强大的安全解决方案，专注于易于实施，并避免不必要的数据或算法访问，这使其成为利用机器学习的企业的宝贵资产。
 
-该之旅也可能涉及系统的虚拟化功能，展示其同时运行多个操作系统和工作负载的能力。冗余和容错，这对于大型机的正常运行时间至关重要，将是另一个重点，其中将解释系统如何处理组件故障。
+---
 
-最后，该文章可能会简要介绍冷却系统和电源管理策略，这些策略用于保持z17在要求苛刻的数据中心环境中高效可靠地运行。总体信息可能是z17的复杂设计，它结合了尖端的硬件和软件，为关键任务应用程序提供无与伦比的性能、安全性和可用性。
+## 10. UIT – 云端大规模、高性能、模块化、低内存文件处理
+
+**原文标题**: UIT – performant, modular, low-memory file processing at scale, in the Cloud
+
+**原文链接**: [https://github.com/janwilmake/uit](https://github.com/janwilmake/uit)
+
+UIT (通用信息终端) 是一个为云端大规模文件处理而设计的库，它具有高性能、模块化和低内存占用等特点。它提供了一个四步流程：摄取、过滤/转换、合并和输出，使用户能够从各种来源收集文件层级结构，应用转换，并以所需的格式输出它们。
+
+UIT通过流式处理和并行化来强调性能，使其能够在Cloudflare Workers等低内存环境中高效运行。它的模块化设计确保了可组合性和对构建块的清晰概览，每个模块都可以潜在地在不同的位置运行。
+
+该库利用FormData处理多个文件和二进制数据，并使用Streams API处理中间结果。它提供了几个模块：`uithub.ingestzip`（ZIP摄取）、`uithub.merge`（FormData合并）、`uithub.outputmd`（Markdown输出）、`uithub.outputzip`（ZIP打包）、`uithub.search`（搜索功能）、`uithub.ziptree`（ZIP层级结构提取）、`uithub.otp`（密钥管理）和`uithub`（UI模块）。
+
+UIT协议定义了UIT模块的约定，将其分为摄取、合并、过滤/转换和输出模块。它指定了用于处理文件的必需的和自定义的FormData标头，包括`Content-Disposition`、`Content-Type`、`x-url`和`x-file-hash`。
+
+UIT鼓励贡献，并旨在创建一个插件系统，以简化文件过滤和转换。该项目是开源的，欢迎开发人员添加模块。它目前处于预发布阶段，并正在寻找赞助商。
 
 ---
 
@@ -183,39 +149,40 @@ Zev可以通过`pip install zev`安装，可以通过简单地运行`zev`进入�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 2 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 1 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 2 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
 | 3 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 4 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 5 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 6 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 7 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 8 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 9 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 10 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 11 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 12 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 4 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 5 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 6 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 7 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 8 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 9 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 10 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 11 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 12 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 13 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 14 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 15 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 16 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 17 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 18 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 19 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 20 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 21 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 22 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 23 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 24 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 25 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 26 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 27 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 28 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 29 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 30 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 31 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 32 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 33 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 34 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 35 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 36 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 14 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 15 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 16 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 17 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 18 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 19 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 20 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 21 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 22 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 23 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 24 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 25 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 26 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 27 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 28 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 29 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 30 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 31 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 32 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 33 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 34 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 35 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 36 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 37 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
