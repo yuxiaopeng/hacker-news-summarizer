@@ -1,160 +1,159 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-28.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-04-29.md)
 
-*最后自动更新时间: 2025-04-28 18:00:48*
-## 1. 展示一下：我做了一个运行Python的硬件处理器
+*最后自动更新时间: 2025-04-29 18:07:51*
+## 1. O3击败一位大师级GeoGuessr玩家——即使使用了伪造的EXIF数据
 
-**原文标题**: Show HN: I built a hardware processor that runs Python
+**原文标题**: O3 Beats a Master-Level GeoGuessr Player–Even with Fake EXIF Data
 
-**原文链接**: [https://www.runpyxl.com/gpio](https://www.runpyxl.com/gpio)
+**原文链接**: [https://sampatt.com/blog/2025-04-28-can-o3-beat-a-geoguessr-master](https://sampatt.com/blog/2025-04-28-can-o3-beat-a-geoguessr-master)
 
-PyXL：一种直接在硅中执行Python代码的定制硬件处理器，与MicroPython等传统Python实现相比，在性能和确定性方面都有显著提升。它无需虚拟机、JIT或操作系统，从而实现更快的执行速度和可预测的时序。
+本文探讨了南加州大学研究人员开发的O3物体检测模型，如何在与大师级GeoGuessr玩家的直接对抗中胜出，即使使用的图像带有伪造的EXIF数据。
 
-文章重点介绍了一个GPIO往返测试，PyXL实现了480纳秒的延迟，而MicroPython的延迟为14,741纳秒（在PyBoard上）。这代表了30倍的加速，如果考虑到时钟速度的差异，则标准化后可达50倍。PyXL在100MHz的Zynq-7000 FPGA上运行，ARM CPU负责设置，而Python代码则在硬件中执行。
+GeoGuessr是一款流行的在线游戏，玩家需要根据提供的街景图像在世界地图上猜测自己的位置。人类玩家通常依赖环境线索、建筑风格、标牌和其他视觉指标。
 
-该工具链将Python代码编译成CPython字节码，将其转换为自定义汇编，并为处理器生成二进制文件。主要优势包括确定性时序、实时行为和亚微秒级精度，使其适用于需要响应性和可靠性的应用。
+O3模型旨在识别图像中的物体和特征，它能够利用其物体识别能力，以惊人的准确性精确定位，超过了人类GeoGuessr专家的表现。文章中强调的关键发现是，尽管有意引入了误导性或伪造的EXIF数据（嵌入在图像中的元数据，通常提供位置信息），O3仍然能够成功。这表明该模型依赖于图像本身固有的视觉线索，而不是仅仅依赖于现成的元数据。
 
-PyXL的潜在用例包括实时控制系统、ML推理循环、机器人和嵌入式工业系统。文章最后邀请感兴趣的各方联系开发人员，讨论潜在的应用和合作。
-
----
-
-## 2. 西班牙和葡萄牙出现大范围停电的报告
-
-**原文标题**: Reports of widespread power cuts in Spain and Portugal
-
-**原文链接**: [https://www.bbc.com/news/live/c9wpq8xrvd9t](https://www.bbc.com/news/live/c9wpq8xrvd9t)
-
-西班牙和葡萄牙据报出现大范围停电。虽然停电原因和范围尚未详述，但报告重点关注对空中交通管制的影响。航空调查员大卫·格利夫保证，尽管停电，空中交通管制仍然运作。他解释说，备用电池会在断电后几乎立即启动，随后柴油发电机维持跑道灯光、导航辅助设备和雷达等关键系统的运行。西班牙空中航行组织Enaire在X（前身为Twitter）上证实，由于备用发电机，空中交通管理运作平稳，确保了航空运营的安全，尽管发生了电力中断。里斯本的温贝托·德尔加多机场已因停电关闭了到达大厅。
+文章表明，O3的成功强调了人工智能模型解决复杂地理问题的潜力，并引发了关于未来位置识别以及误导此类系统所面临的挑战的有趣问题。O3克服故意错误的EXIF数据的能力突出了其在视觉理解和位置识别方面的稳健性和先进能力。
 
 ---
 
-## 3. Show HN: 一个纯 WebGL 图像编辑器，具备滤镜、裁剪和透视校正功能
+## 2. ArkFlow：高性能Rust流处理引擎
 
-**原文标题**: Show HN: A pure WebGL image editor with filters, crop and perspective correction
+**原文标题**: ArkFlow: High-performance Rust stream processing engine
 
-**原文链接**: [https://github.com/xdadda/mini-photo-editor](https://github.com/xdadda/mini-photo-editor)
+**原文链接**: [https://github.com/arkflow-rs/arkflow](https://github.com/arkflow-rs/arkflow)
 
-此“Show HN”帖子宣布了一个纯WebGL图像编辑器，名为“mini-img-editor”，可在线访问：mini2-photo-editor.netlify.app。该编辑器提供滤镜、裁剪和透视校正等功能。它使用作者创建的两个库构建：mini-js（链接到其GitHub存储库）和mini-gl，表明采用了一种精简且可能经过优化的实现，利用WebGL2直接在浏览器中进行图像处理。
+ArkFlow：一款高性能的Rust流处理引擎，专为强大的数据流操控而设计。它利用Rust的性能和Tokio的异步运行时来实现低延迟和高吞吐量。
 
----
+主要特性包括支持多种输入源，如Kafka、MQTT、HTTP、文件（CSV、JSON、Parquet、Avro、Arrow）、生成器以及数据库（MySQL、PostgreSQL、SQLite、DuckDB）。它提供强大的处理能力，如SQL查询、JSON处理、Protobuf编码/解码和批处理。ArkFlow采用模块化架构设计，易于扩展新组件。
 
-## 4. Show HN: Web-eval-agent – 让编码代理自行调试
+配置通过YAML文件管理，定义日志、流（包括输入、管道、输出和错误输出）以及缓冲区设置。处理器可以在管道中链接，并且ArkFlow支持多种输出目标，包括Kafka、MQTT、HTTP、标准输出以及“丢弃”选项。错误处理是可配置的，允许将错误定向到单独的输出。包含缓冲（特别是使用内存缓冲）来处理反压。
 
-**原文标题**: Show HN: Web-eval-agent – Let the coding agent debug itself
-
-**原文链接**: [https://github.com/Operative-Sh/web-eval-agent](https://github.com/Operative-Sh/web-eval-agent)
-
-Operative.sh推出Web-eval-agent，一个MCP服务器，使编码代理能够直接在代码编辑器中自主调试Web应用程序。该工具旨在通过利用浏览器使用技术来导航Web应用、捕获网络流量和控制台错误，以及启用自主调试，从而简化调试过程。
-
-主要功能包括：使用Operative后端更快地进行Web应用导航、智能过滤网络请求、全面收集控制台错误，以及编码代理的自主测试。
-
-该工具提供了使用Homebrew和npm在macOS/Linux上快速启动安装的说明，以及通过Cline为Windows用户提供的手动安装步骤，包括安装uv和playwright。提供了一个MCP服务器输出报告示例，展示了代理在测试API密钥删除流程中的步骤，以及控制台日志、网络请求和按时间顺序排列的时间线。
-
-文章重点介绍了一个已通过最近的推送解决的Playwright问题。 鼓励用户报告任何进一步的问题。 最终，Web-eval-agent旨在提高调试效率和开发者体验。
+文档提供了从Kafka到Kafka处理数据以及生成和处理测试数据的示例。ArkFlow采用Apache 2.0许可。可通过Discord获得社区支持，并鼓励用户在GitHub上为该项目点亮星星。
 
 ---
 
-## 5. Vision Transformer 需要寄存器
+## 3. 为什么性能优化是件苦差事
 
-**原文标题**: Vision Transformers Need Registers
+**原文标题**: Why performance optimization is hard work
 
-**原文链接**: [https://arxiv.org/abs/2309.16588](https://arxiv.org/abs/2309.16588)
+**原文链接**: [https://purplesyringa.moe/blog/why-performance-optimization-is-hard-work/](https://purplesyringa.moe/blog/why-performance-optimization-is-hard-work/)
 
-题为“Vision Transformers 需要寄存器”的论文探讨了有监督和自监督 Vision Transformer (ViT) 网络特征图中的伪影。这些伪影表现为主要出现在图像低信息量背景区域的高范数 tokens，实际上是将这些区域重新用于内部计算。
+性能优化：苦差事而非能力问题
 
-作者提出了一个简单的解决方案：向 ViT 的输入序列添加“寄存器”tokens。这些额外的 tokens 专门用于处理背景区域原本用于的内部计算。
+本文认为，性能优化是件苦差事，并非因为缺乏技能或知识，而是因为它本质上需要通过蛮力实验，并且面临诸多障碍。
 
-该论文证明了这种基于寄存器的方法能够有效解决伪影问题。添加寄存器 tokens 带来了以下结果：
+作者强调了几个关键挑战：
 
-* 消除背景区域中的高范数 tokens。
-* 提高性能，在密集预测任务中为自监督视觉模型实现了新的最先进水平。
-* 支持使用更大的模型进行对象发现。
-* 更平滑的特征图和注意力图，有利于下游视觉处理。
+*   **可组合性：** 优化方法之间的相互作用复杂，有些能协同增效，而另一些则会导致性能下降。确定最佳组合需要大量的测试。
+*   **连续性：** 许多算法都有临界点，在不同的实现之间切换会极大地影响性能。为这些切换找到最佳参数值需要不断地重新进行基准测试。
+*   **不兼容性：** 优化可能会因为缓存大小限制或 ISA 约束（寄存器压力）等外部约束而失败。作者感叹当前硬件架构的局限性。
+*   **编译器：** 编译器常常无法执行对人类来说显而易见的高级优化。它们擅长零成本抽象，但经常错过巧妙的代码转换机会。
+*   **文档：** 作者批评了苹果芯片等平台缺乏详细文档，使得优化工作变成了一种逆向工程。
 
-本质上，该论文识别了 ViT 特征图中与将背景区域重新用于计算相关的问题，并提供了一个简单有效的解决方案，可以提高性能和可解释性。更新后的版本 (v2) 建议对初始提交以来的方法进行进一步改进。
-
----
-
-## 6. 揭秘冰雪挑战赛的机制
-
-**原文标题**: Uncovering the mechanics of The Games: Winter Challenge
-
-**原文链接**: [https://mrwint.github.io/winter/writeup/writeup.html](https://mrwint.github.io/winter/writeup/writeup.html)
-
-本文详细介绍了作者逆向工程DOS游戏《The Games: Winter Challenge》以了解其机制，特别是跳台滑雪项目的过程。在怀旧和好奇心的驱使下，作者计划使用Ghidra反汇编该游戏并优化跳台滑雪的表现。然而，这个过程比预期的要复杂。
-
-作者遇到了游戏的多个版本，包括原始软盘发行版、捆绑发行版和GOG版本。原始游戏使用密码盘进行复制保护，GOG版本规避了这一点，导致人们担心潜在的破解会影响游戏玩法。作者还发现了不同发布组创建的各种游戏破解版本。
-
-反汇编原始软盘版本后发现，该二进制文件使用LZEXE（一种压缩工具）进行了压缩。解包后，作者发现对int 3fh的中断调用，表明使用了覆盖管理器。该游戏是用C语言编写的，并使用Microsoft C编译器编译，该编译器本身支持覆盖。然而，游戏的覆盖实现似乎是定制的，为每个覆盖动态分配内存。
-
-为了进一步调查，作者使用DOSBox-X的调试功能来跟踪文件IO和中断，发现游戏正在二进制文件中搜索特定位置并读取数据块。这为游戏如何管理其资源和覆盖层提供了线索，为提取它们并理解游戏的完整代码奠定了基础。
+结论强调需要手动探索大量案例，使用不完善的工具进行迭代，并克服不兼容的优化。尽管困难重重，作者认为即使是微小的改进也能产生累积效应，最终节省人们的时间，因此具有价值。
 
 ---
 
-## 7. Activeloop (YC S18) 诚聘工程副总裁，Mountain View (现场办公)
+## 4. LibreLingo – Duolingo 的 FOSS 替代品
 
-**原文标题**: Activeloop (YC S18) Is Hiring VP of Engineering in Mountain View (On-Site)
+**原文标题**: LibreLingo – FOSS Alternative to Duolingo
 
-**原文链接**: [https://careers.activeloop.ai/](https://careers.activeloop.ai/)
+**原文链接**: [https://librelingo.app](https://librelingo.app)
 
-Activeloop (Y Combinator S18毕业生) 正在招聘工程副总裁，该职位位于山景城，需要现场办公。这表明Activeloop可能强调该职位的面对面协作和领导力。该公司正在突出Activeloop的职业发展机会，表明他们正处于增长阶段。
+LibreLingo：一个社群驱动的开源语言学习平台，旨在成为Duolingo的免费替代品。它目前正在开发中，并提供多种语言的课程，包括西班牙语、德语、法语、孟加拉语、中古波斯语、巴斯克语和拉迪诺语（面向英语、希伯来语和西班牙语使用者）。它还提供侯马语课程（面向英语使用者）。
 
----
-
-## 8. 展示 HN: Autarkie – 使用 Rust 宏的即时语法模糊测试
-
-**原文标题**: Show HN: Autarkie – Instant grammar fuzzing using Rust macros
-
-**原文链接**: [https://github.com/R9295/autarkie](https://github.com/R9295/autarkie)
-
-Autarkie：一款基于Rust的全新原生语法模糊测试器，旨在简化创建和维护基于语法的模糊测试器的过程。它利用Rust的过程宏从代码中自动生成语法模糊测试器，从而消除了通常涉及的大量手动工作。
-
-主要功能包括：
-
-*   **自动语法生成：** 语法在Rust代码中定义，并随项目更改自动更新，确保一致性。编译器确保完整性。
-*   **支持AFL++和cargo-fuzz：** 允许通过AFL++的forkserver模糊测试C/C++代码，以及使用cargo-fuzz模糊测试原生Rust项目。
-*   **可重用语料库：** 可以停止和恢复模糊测试会话，并重复使用现有语料库以提高效率。
-*   **集成能力：** 旨在轻松与其他模糊测试工具集成。
-*   **新颖功能：** 语料库可重用性、从其他模糊测试器学习（进行中）和 CmpLog 支持（进行中）。
-
-该文档包含两个演练：使用来自`datafusion-sqlparser-rs`的SQL语法，模糊测试使用AFL++检测的C/C++项目 (sqlite3)，以及使用cargo-fuzz模糊测试原生Rust项目 (Solana的sbpf解释器)。
-
-该工具目前处于beta版，由于使用了编译器内联函数，因此需要nightly Rust，并且在数据所有权的 'static 生命周期方面存在限制。 欢迎贡献和反馈。
+该项目由Dániel Kántor领导，并由其他人贡献，强调社群参与平台的建设和维护。开发文档目前仅提供英文版本。源代码以AGPL-3.0协议授权，以促进项目的开放和协作性质。
 
 ---
 
-## 9. Show HN: Sim Studio – 开源代理工作流 GUI
+## 5. 编程语言应该提供树遍历原生支持。
 
-**原文标题**: Show HN: Sim Studio – Open-Source Agent Workflow GUI
+**原文标题**: Programming languages should have a tree traversal primitive
 
-**原文链接**: [https://github.com/simstudioai/sim](https://github.com/simstudioai/sim)
+**原文链接**: [https://blog.tylerglaiel.com/p/programming-languages-should-have](https://blog.tylerglaiel.com/p/programming-languages-should-have)
 
-Sim Studio 是一个开源平台，用于构建、测试和优化代理工作流，提供用户友好的图形界面。它提供多种自托管选项：Docker 环境（推荐）、开发容器和手动设置。
+泰勒·格莱尔认为，编程语言缺少一个关键的控制流结构：一种树遍历原语，类似于线性结构的`for`或`foreach`循环。他提出了一个`for_tree`结构来简化和减少常见树遍历操作中的错误。
 
-**Docker 环境：** 提供克隆仓库、创建和配置 `.env` 文件（包括设置 `BETTER_AUTH_SECRET`）以及使用 `docker compose up -d --build` 或 `./start_simstudio_docker.sh` 启动 Sim Studio 的说明。通过 `http://localhost:3000/w/` 访问应用程序。还提供查看日志、访问数据库、停止环境以及重建/重启的 Docker 命令。也详细介绍了如何使用 Ollama 运行本地模型。
+所提出的`for_tree`结构模仿了常规的`for`循环，包含`init`、`condition`和`branch`组件。`branch`组件是关键的区别，它定义了如何生成子节点以进行遍历。他认为这比为每个树操作编写递归函数更容易且不易出错，同时可能编译成类似的代码。
 
-**开发容器：** 用户可以在 VS Code (或分支) 中打开项目，安装 Remote - Containers 扩展，然后在容器中重新打开。环境将自动设置。运行 `npm run dev` 或使用 `sim-start` 别名。
+他还建议在简单的递归之外添加一些特性，例如`break`、`continue`和`prune`关键字在`for_tree`主体中使用。`prune`将停止遍历节点的子节点。他将`for_tree`与基于范围的`for`循环进行对比，强调了它在没有迭代器的情况下操作命令式树的能力，以及它在遍历现有数据结构之外的问题（如生成字符串）中的适用性。
 
-**手动设置：** 克隆仓库，使用 `npm install` 安装依赖，将 `.env.example` 复制到 `.env`，并配置环境变量。使用 `npx drizzle-kit push` 推送数据库模式，并使用 `npm run dev` 启动开发服务器。通过 `http://localhost:3000` 访问应用程序。
+他承认了广度优先搜索（BFS）的复杂性挑战，并将提案重点放在深度优先搜索（DFS）上以简化问题。
 
-文章还强调了设置 `RESEND_API_KEY` 以进行正确的电子邮件验证的重要性，否则，代码将被记录到控制台。
-
-Sim Studio 使用 Next.js、带有 Drizzle ORM 的 PostgreSQL、Better Auth、Shadcn、Tailwind CSS、Zustand、ReactFlow 和 Fumadocs。欢迎贡献，该项目采用 Apache License 2.0 许可。
+最后，他提供了一个使用模板和宏的C++概念验证实现，展示了其可行性，尽管与原生语言级实现相比，语法更丑陋且存在局限性。他希望能够启发语言设计者考虑添加这样的功能。
 
 ---
 
-## 10. Tiny-LLM – 面向系统工程师的 Apple Silicon LLM 部署课程
+## 6. Show HN: 一款自动拒绝非必要 Cookie 的 Chrome 扩展
 
-**原文标题**: Tiny-LLM – a course of serving LLM on Apple Silicon for systems engineers
+**原文标题**: Show HN: A Chrome extension that will auto-reject non-essential cookies
 
-**原文链接**: [https://github.com/skyzh/tiny-llm](https://github.com/skyzh/tiny-llm)
+**原文链接**: [https://blog.bymitch.com/posts/reject-cookies/](https://blog.bymitch.com/posts/reject-cookies/)
 
-Tiny-LLM：面向系统工程师，学习如何使用MLX在Apple Silicon上高效部署大型语言模型(LLM)的实战课程与教程。本课程旨在从零开始构建基础设施，教授LLM部署的基本原理，主要依赖MLX的数组/矩阵API，而非高级神经网络库。课程以Qwen2作为参考模型，并借鉴vllm项目。
+这个“Show HN”帖子介绍了一款名为“Reject Cookies”的Chrome扩展程序，该程序旨在自动拒绝非必要的cookie同意横幅。作者强调了人们对这些横幅的普遍不满，并将该扩展程序定位为一种主动拒绝cookie的解决方案，而不是被动接受或清理它们。
 
-目标是理解高效LLM部署所需的优化技术。课程按周划分，涵盖注意力机制、RoPE、分组查询注意力、RMSNorm、MLP、Transformer模块、模型加载和响应生成等主题。后续几周将深入探讨KV缓存、量化矩阵乘法、Flash Attention、连续批处理、推测解码、分页注意力，以及构建完整部署系统的组件，包括调度器、并行策略、AI Agent集成和流式API服务器。
+该扩展程序的工作原理是首先尝试查找并点击常见cookie同意提供商（如OneTrust）的拒绝按钮。如果失败，则会回退到关闭同意弹出窗口或横幅。作者强调，根据GDPR和ePrivacy指令，省略接受应被解释为拒绝。
 
-本书可在https://skyzh.github.io/tiny-llm/获取，用于指导学习者完成整个过程。另有Discord社区提供支持和协作学习。该课程仍在开发中，包含已完成和计划中的代码实现、测试和文档编写部分。
+该扩展程序的开发涉及使用Cursor AI进行样板设置，尽管AI在针对特定cookie供应商实现的更细致的实现方面证明帮助不大。该扩展程序的逻辑涉及检查特定元素以识别提供商，然后采取相应的行动，要么单击拒绝按钮，要么删除同意横幅。
+
+“Reject Cookies”是开源的，目前仍在开发中。作者鼓励用户通过报告扩展程序失败的网站、报告错误或通过扩展程序内的侧边栏或通过电子邮件提供一般反馈来做出贡献。目标是扩大扩展程序的覆盖范围，以包括更多的cookie同意供应商及其实现的变体。
+
+---
+
+## 7. Hestus公司（YC S24）正在招聘机器学习工程师，以彻底变革CAD
+
+**原文标题**: Hestus, Inc. (YC S24) Is Hiring an ML Engineer to Revolutionize CAD
+
+**原文链接**: [https://www.ycombinator.com/companies/hestus-inc/jobs/WQVdwX8-machine-learning-engineer](https://www.ycombinator.com/companies/hestus-inc/jobs/WQVdwX8-machine-learning-engineer)
+
+Hestus公司（Y Combinator S24期孵化企业，致力于开发AI驱动的CAD软件）正在加州圣马特奥招聘机器学习工程师。此全职岗位提供11万至17.5万美元的年薪，并有机会与创始人Sohrab Haghighat和Kevin Chu直接合作。
+
+Hestus旨在利用人工智能革新硬件开发。理想的候选人应具备6年以上经验（或4年以上经验加硕士/博士论文），精通Python，拥有创建和调整定制机器学习模型和嵌入的经验，并熟悉PyTorch等深度学习框架。他们应适应快节奏的创业环境，具备出色的问题解决和沟通能力，并持有计算机科学、工程或相关领域的学士学位。
+
+职责包括设计、开发和维护可扩展的软件应用程序，实施机器学习模型，与跨职能团队协作，参与代码审查，开发后端组件，解决问题，并及时了解行业趋势。
+
+加分项包括机器学习平台（如AWS SageMaker）、云平台（AWS、Google Cloud）、后端框架（Django、Flask、SQL）以及开发超越LLM或图像处理的新型嵌入的经验。
+
+Hestus提供有竞争力的薪资、股权期权、全面的健康保险、免费午餐、无限休假、协作的工作环境以及职业发展机会。
+
+---
+
+## 8. Firefox标签页分组功能上线了
+
+**原文标题**: Firefox tab groups are here
+
+**原文链接**: [https://blog.mozilla.org/en/firefox/tab-groups-community/](https://blog.mozilla.org/en/firefox/tab-groups-community/)
+
+火狐正式推出标签页分组功能，这一备受期待的功能是由Mozilla Connect上的社区反馈推动开发的。该功能允许用户将标签页组织成命名或彩色分组，以便更好地集中注意力和整理杂乱，无论管理少量还是数千个标签页。
+
+开发过程深受用户见解的影响。产品经理积极采纳社区的建议，识别潜在需求，并优先开发能使大多数用户受益的功能。 Beta测试人员也发挥了至关重要的作用，他们发现了早期版本并提供了宝贵的反馈，从而塑造了最终产品。
+
+团队目前正在探索“智能标签页分组”，这是一项人工智能驱动的功能，可根据标签页的内容建议名称和分组，从而提供更强大的组织能力。重要的是，此功能在本地处理数据，从而确保用户隐私。
+
+文章强调，标签页分组不仅是为了整理杂乱，更是为了提高注意力和工作效率。文章强调了与社区的持续对话，并鼓励在Mozilla Connect上继续提供反馈，以进一步改进浏览器。标签页分组的推出被视为Mozilla致力于基于真实用户需求构建功能的证明，并展示了社区协作的力量。
+
+---
+
+## 9. Show HN: Flowcode – 图灵完备的可视化编程平台
+
+**原文标题**: Show HN: Flowcode – Turing-complete visual programming platform
+
+**原文链接**: [https://app.getflowcode.io/playground/example1](https://app.getflowcode.io/playground/example1)
+
+无法访问文章链接。
+
+---
+
+## 10. 通义千问3：思深行敏
+
+**原文标题**: Qwen3: Think deeper, act faster
+
+**原文链接**: [https://qwenlm.github.io/blog/qwen3/](https://qwenlm.github.io/blog/qwen3/)
+
+Qwen3发布：代码、数学及通用能力表现卓越，具备混合思维模式，支持119种语言和方言。
 
 ---
 
@@ -162,43 +161,44 @@ Tiny-LLM：面向系统工程师，学习如何使用MLX在Apple Silicon上高�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 2 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 3 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 4 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 5 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 6 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 1 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 2 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 3 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 4 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 5 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 6 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
 | 7 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
 | 8 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 9 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 10 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 9 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 10 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
 | 11 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 12 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 12 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
 | 13 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 14 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 15 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 16 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 14 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 15 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 16 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 17 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
 | 18 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 19 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 20 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 21 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 22 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 23 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 24 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 19 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 20 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 21 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 22 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 23 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 24 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
 | 25 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
 | 26 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
 | 27 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
 | 28 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
 | 29 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
 | 30 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 31 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 32 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 33 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 34 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 31 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 32 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 33 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 34 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
 | 35 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
 | 36 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
 | 37 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
 | 38 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
 | 39 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
 | 40 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 41 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
