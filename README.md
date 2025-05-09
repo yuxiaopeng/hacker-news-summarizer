@@ -1,143 +1,160 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-08.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-09.md)
 
-*最后自动更新时间: 2025-05-08 17:48:41*
-## 1. Void：开源光标替代方案
+*最后自动更新时间: 2025-05-09 17:48:44*
+## 1. ALICE探测到大型强子对撞机中铅转化为金
 
-**原文标题**: Void: Open-source Cursor alternative
+**原文标题**: ALICE detects the conversion of lead into gold at the LHC
 
-**原文链接**: [https://github.com/voideditor/void](https://github.com/voideditor/void)
+**原文链接**: [https://www.home.cern/news/news/physics/alice-detects-conversion-lead-gold-lhc](https://www.home.cern/news/news/physics/alice-detects-conversion-lead-gold-lhc)
 
-Void：Cursor代码编辑器的开源替代品。该仓库包含Void的完整源代码，欢迎新的贡献者。该项目鼓励通过Discord服务器、贡献指南（HOW_TO_CONTRIBUTE）和未来开发路线图来促进社区参与。它提供了更新日志和代码库指南（VOID_CODEBASE_GUIDE）以方便导航。Void鼓励贡献、协作和建议，邀请感兴趣的人士参与每周在Discord上举行的会议。作为VS Code仓库的一个分支，VOID_CODEBASE_GUIDE帮助开发者理解底层结构。可以通过Discord或电子邮件(hello@voideditor.com)获取支持和进行沟通。
+CERN大型强子对撞机ALICE实验组报告称，通过一种新颖的机制实现了铅到金的人工嬗变：高能铅核的近失碰撞。与传统的中子或质子轰击方法不同，这一过程依赖于围绕铅核的强烈电磁场。这些电磁场产生光子，与原子核相互作用，导致它们喷射出质子和中子。具体来说，去除三个质子可以将铅（82个质子）转化为金（79个质子）。
 
----
+这个过程被称为电磁解离，利用了大型强子对撞机的超外围碰撞，在这种碰撞中，铅核在近距离通过而不直接碰撞。虽然夸克-胶子等离子体的产生需要正面碰撞，但这些近失相互作用提供了独特的探索机会。ALICE的探测器，特别是零度量热器（ZDC），灵敏到足以量化这一过程中各种元素的产生。
 
-## 2. 针对劳森判据衡量的聚变能量增益进展
+实验发现，在铅-铅碰撞期间，在ALICE碰撞点，金的产生速率约为每秒89,000个原子核。然而，产生的金原子核是短寿命的，很快会分裂成其他粒子。在大型强子对撞机的Run 2（2015-2018）期间，大约产生了860亿个金原子核，相当于仅仅29皮克。虽然Run 3由于光度的增加使这一数量几乎翻了一番，但仍然远远不能产生可用量的黄金。
 
-**原文标题**: Progress toward fusion energy gain as measured against the Lawson criteria
-
-**原文链接**: [https://www.fusionenergybase.com/articles/continuing-progress-toward-fusion-energy-breakeven-and-gain-as-measured-against-the-lawson-criteria](https://www.fusionenergybase.com/articles/continuing-progress-toward-fusion-energy-breakeven-and-gain-as-measured-against-the-lawson-criteria)
-
-本文以劳逊判据为基准，重点关注在实现聚变能量增益方面取得的进展。劳逊判据本质上定义了聚变反应产生比加热和约束等离子体所用能量更多的能量所需的必要条件——等离子体密度、温度和约束时间的组合。
-
-文章可能讨论了托卡马克和仿星器等实验性聚变装置如何努力达到并超过劳逊判据。它可能突出了这些装置的最新进展，特别关注等离子体密度、温度和约束时间的改进。这些进展可能包括使用先进的磁约束技术、改进的加热方法以及优化的等离子体燃料供应和控制。
-
-此外，文章可能还会探讨为实现可持续和商业上可行的聚变能源仍需克服的挑战。这些挑战可能包括维持等离子体稳定性、管理等离子体的热排放，以及开发能够承受聚变反应堆内极端条件的先进材料。文章也可能提及磁约束以外的不同聚变方法，例如惯性约束聚变，以及它们各自在满足类似但经过修改的类劳逊判据方面取得的进展。
-
-总而言之，本文概述了聚变能源研究的现状，根据劳逊判据定义的能量增益基本要求来衡量进展，并确定了在实现聚变能源道路上仍然存在的关键障碍。
+尽管未能实现炼金术士的财富梦想，但这项研究为电磁解离提供了宝贵的见解，并改进了用于预测大型强子对撞机和未来对撞机中束流损失的理论模型。由于ALICE ZDC的功能，大型强子对撞机首次对金的产生进行了系统检测和分析的实验。
 
 ---
 
-## 3. 展示HN：无需代理，使用eBPF穿透加密
+## 2. Sorbet类型语法的过去、现在和未来
 
-**原文标题**: Show HN: Using eBPF to see through encryption without a proxy
+**原文标题**: Past, Present, and Future of Sorbet Type Syntax
 
-**原文链接**: [https://github.com/qpoint-io/qtap](https://github.com/qpoint-io/qtap)
+**原文链接**: [https://blog.jez.io/history-of-sorbet-syntax/](https://blog.jez.io/history-of-sorbet-syntax/)
 
-Qtap: 基于 eBPF 的 TLS/SSL 加密前后流量拦截代理，无需修改应用程序即可实现数据可见性
+本文深入探讨了Sorbet类型语法的历史、原理和潜在未来。作者Jake在Sorbet工作了七年，他解释说，Sorbet的出现源于Stripe内部对静态类型检查的明确需求，以解决其大型Ruby代码库中的代码组织和模块化挑战。
 
-Qtap 是一款基于 eBPF 的代理，可在 Linux 内核中 TLS/SSL 加密前后拦截网络流量，无需修改应用程序、使用代理或进行证书管理，即可完全了解未加密的数据。它通过附加到 TLS/SSL 函数来捕获数据，并将其传递给灵活的插件，同时提供进程、容器和协议等上下文信息。这使用户能够在不增加延迟或中断性能的情况下了解出口流量。
+最初，Stripe工程师使用Ruby DSL进行运行时类型检查和显式接口。从头开始构建Sorbet的决定是由于现有Ruby类型检查器的局限性以及用类型化语言重写整个代码库的不切实际。
 
-Qtap 可用于安全审计、调试网络问题、API 开发、解决第三方集成问题、学习协议、调查遗留系统和验证测试。它提供了一个“演示模式”用于快速测试，并且安装过程简单。
+本文探讨了考虑过的潜在语法设计方法，强调了Ruby生态系统的约束，这使得打破与现有工具和实践的兼容性不受鼓励。 考虑了三个主要选项：TypeScript方法（由于缺乏工具支持而被拒绝），头文件方法（被认为不完整，因为它不支持方法内类型），以及JSDoc方法（由于最初关注运行时类型检查以及避免Hyrum定律等相关好处而被排除）。
 
-该项目需要在启用了 BTF 和 eBPF 的 Linux Kernel 5.10+ 上运行。 由于该项目正在积极开发中，因此某些 API 可能会更改，文档可能不完整，并且某些功能可能仍不完善。欢迎通过 GitHub Issues 提交贡献。 它在 AGPLv3.0（开源）和商业许可下双重许可。 本文还详细介绍了开发先决条件、快速启动命令以及希望做出贡献的开发人员常用的 Makefile 目标。
-
----
-
-## 4. 我们有教皇了 - 教廷会议第二天选出新教皇
-
-**原文标题**: Habemus Papam - new pope elected on second day of the conclave
-
-**原文链接**: [https://www.cnn.com/world/live-news/new-pope-conclave-day-two-05-08-25](https://www.cnn.com/world/live-news/new-pope-conclave-day-two-05-08-25)
-
-枢机主教团在第二天选举出新教皇。来自美国的罗伯特·普雷沃斯特当选，成为历史上首位美国籍教皇。他将被称为利奥十四世教皇。西斯廷教堂冒出白烟，标志着选举结果产生。枢机主教团包括133位有投票权的枢机主教，他们被隔离在梵蒂冈内，需要三分之二的多数票才能当选。
+作者最后暗示了Sorbet语法未来可能的变化，并呼吁对语法感兴趣的开发者为项目的演进做出贡献。
 
 ---
 
-## 5. 发布 Cursor 和 Claude Code 的注意事项
+## 3. Sofie：用于自动化直播电视新闻制作的开源网络系统
 
-**原文标题**: Notes on rolling out Cursor and Claude Code
+**原文标题**: Sofie: open-source web based system for automating live TV news production
 
-**原文链接**: [https://ghiculescu.substack.com/p/nobody-codes-here-anymore](https://ghiculescu.substack.com/p/nobody-codes-here-anymore)
+**原文链接**: [https://nrkno.github.io/sofie-core/](https://nrkno.github.io/sofie-core/)
+
+Sofie：开源的、基于网络的直播电视新闻自动化制作系统。文档按用户类型划分。用户指南提供关于Sofie系统功能、安装和操作的通用信息。开发者文档专注于代码库的开发和贡献。另有关于Sofie系统当前、过往和未来发布的信息。文档鼓励用户加入Sofie社区Slack频道，与开发者和其他用户交流。总而言之，Sofie提供了一个全面的、有文档支持的直播电视新闻自动化平台，并由一个活跃的社区提供支持。
+
+---
+
+## 4. AMD 9950X 上使用 SIMD 的 21 GB/s CSV 解析
+
+**原文标题**: 21 GB/s CSV Parsing Using SIMD on AMD 9950X
+
+**原文链接**: [https://nietras.com/2025/05/09/sep-0-10-0/](https://nietras.com/2025/05/09/sep-0-10-0/)
+
+本文详细介绍了 Sep CSV 解析库所取得的性能提升，最终在使用 SIMD 优化的 AMD 9950X (Zen 5) CPU 上实现了惊人的 21 GB/s 解析速度。作者重点介绍了 Sep 的性能从 0.1.0 版本到 0.10.0 版本的演变，展示了代码更改、新版 .NET 以及从 AMD Ryzen 9 5950X (Zen 3) 到 9950X 的硬件升级所带来的改进。
+
+重点关注解决 .NET 中次优的 AVX-512 代码生成问题，特别是关于掩码寄存器的使用。最初，在 9950X 上，AVX-512 解析器比 AVX2 解析器更慢。通过将 MoveMask 调用提前到代码中，作者减少了在掩码寄存器和普通寄存器之间传输数据的开销，从而显著提高了性能。
+
+作者随后引入了一种新的“AVX-512-to-256”解析器，该解析器利用 AVX-512 指令进行数据加载，但使用 `ConvertToVector256ByteWithSaturation` 将数据转换为 256 位寄存器，从而有效地绕过了效率低下的 AVX-512 掩码寄存器。这种方法被证明是最快的，实现了 21 GB/s 的解析速度。本文包括代码片段和汇编比较，以说明 .NET 中与 AVX-512 代码生成相关的改进和挑战。
+
+---
+
+## 5. Show HN: BlenderQ – 用于管理多个Blender渲染的TUI
+
+**原文标题**: Show HN: BlenderQ – A TUI for managing multiple Blender renders
+
+**原文链接**: [https://github.com/KyleTryon/BlenderQ](https://github.com/KyleTryon/BlenderQ)
+
+BlenderQ：一个命令行工具，让用户可以直接从终端管理和监控Blender渲染队列。它使用Node.js编写并基于Ink构建，提供了一个TUI（终端用户界面），用于将多个.blend文件添加到渲染队列、跟踪进度并管理渲染过程。
+
+BlenderQ目前处于beta阶段，提供交互式导航、状态跟踪和主题支持等功能。要使用它，用户需要Node.js (v20+)、Blender (v3.5+)，以及可选的Nerd Fonts图标。可以通过npm或pnpm进行全局安装。
+
+用户可以使用 `--blend` 标志后跟文件路径，将特定的.blend文件添加到队列中，或者使用 `--dir` 标志在指定目录中浏览.blend文件。
+
+作者选择Node.js是因为其快速开发能力和现成的TUI组件（如Ink），尽管曾考虑过Python和Go。未来的开发可能会探索使用Python进行更深入的Blender集成。
+
+---
+
+## 6. Rollstack (YC W23) 正在招聘 TypeScript 工程师（美国/加拿大远程）
+
+**原文标题**: Rollstack (YC W23) Is Hiring TypeScript Engineers (Remote US/CA)
+
+**原文链接**: [https://www.ycombinator.com/companies/rollstack-2/jobs/QPqpb1n-software-engineer-typescript-us-canada](https://www.ycombinator.com/companies/rollstack-2/jobs/QPqpb1n-software-engineer-typescript-us-canada)
+
+Rollstack，一家由 Y Combinator (W23) 支持的公司，通过报告自动化革新数据呈现方式，现正招聘软件工程师（TypeScript）。他们将 BI 工具连接到幻灯片和文档，为 SoFi、1Password 和 Zillow 等公司自动化创建和更新过程。
+
+该职位包括构建面向用户的新功能、优化数据同步、集成 BI 和内容平台（Tableau、Looker、Google Slides 等）以及定义整个技术栈的最佳实践。技术栈包括 TypeScript、React、Node.js、Prisma ORM、Temporal 工作流、OpenAI API 和基于 AWS 的 K8s。
+
+Rollstack 提供远程友好的工作场所，拥有全球化和包容性的文化，提供半年一次的团队聚会、丰厚的薪酬和股权参与。理想的候选人拥有 2-6 年的经验，包括 2 年 TypeScript、Node.js/ORM 和 React 的经验，以及对软件工程基础、CI/CD 和云基础设施的扎实理解。
+
+面试流程包括两次技术面试（编码练习和技术问题）和两次与联合创始人的匹配度面试。Rollstack 寻求迭代、快速交付、解决客户问题并展现强烈主人翁意识的工程师。
+
+---
+
+## 7. Show HN: 用于构建响应式桌面应用的后端无关Ruby框架
+
+**原文标题**: Show HN: A backend agnostic Ruby framework for building reactive desktop apps
+
+**原文链接**: [https://codeberg.org/skinnyjames/hokusai](https://codeberg.org/skinnyjames/hokusai)
 
 无法访问文章链接。
 
 ---
 
-## 6. 利用NASA的SMAP卫星探测L波段干扰
+## 8. Show HN: Aberdeen – 一种优雅的响应式UI方案
 
-**原文标题**: Using NASA’s SMAP satellite to detect L-band interference
+**原文标题**: Show HN: Aberdeen – An elegant approach to reactive UIs
 
-**原文链接**: [https://radioandnukes.substack.com/p/how-dare-you-transmit-at-14-ghz](https://radioandnukes.substack.com/p/how-dare-you-transmit-at-14-ghz)
+**原文链接**: [https://aberdeenjs.org/](https://aberdeenjs.org/)
 
-以下是radioandnukes.substack.com上文章“利用NASA的SMAP卫星探测L波段干扰”的摘要：
+Aberdeen v1.0.1 是一个新的 JavaScript/TypeScript 库，用于构建反应式 UI，无需虚拟 DOM。 它使用小型匿名函数来生成 DOM 元素，并在其底层代理数据发生更改时自动重新运行它们。
 
-该文章探讨了NASA的土壤湿度主动被动（SMAP）卫星，其主要设计目的是使用1.4 GHz L波段辐射计测量土壤湿度，同时也用于探测和监测该关键频谱部分的射频干扰（RFI）。1.4 GHz频段受到保护，用于被动传感，这意味着禁止有意传输。然而，非法或意外的传输可能会干扰SMAP精确测量土壤湿度的能力，而土壤湿度是天气预报、农业和气候建模的重要参数。
+**主要特性和优势：**
 
-作者强调了RFI带来的挑战，强调这些干扰信号可以模仿或扭曲地球表面的自然微波辐射，导致错误的土壤湿度读数。文章解释说，SMAP配备了复杂的信号处理技术，可以识别并标记受RFI影响的区域。分析干扰的模式和特征有助于研究人员追踪干扰源。
+*   **简单优雅：** 使用原生 JS/TS，避免了复杂的抽象、构建步骤、JSX 或状态管理库。
+*   **快速：** 通过利用代理数据更改，仅更新 UI 的必要部分。
+*   **列表优化：** 提供反应式数据列表的高性能渲染和操作。
+*   **体积小巧：** 仅 5KB（压缩和 gzip 后），无运行时依赖。
+*   **功能齐全：** 提供客户端路由、乐观 UI 更新、组件局部 CSS 和数据转换辅助函数。
 
-作者指出，识别L波段RFI的来源至关重要，因为这允许监管机构（如FCC）对非法发射器采取行动，或解决诸如设备故障导致意外发射的问题。文章最后强调了保持清洁的L波段频谱对于准确的地球观测数据的重要性，并强调了通过国际合作和技术进步来缓解RFI的持续努力。本质上，SMAP充当了一个基于太空的“RFI警察”，监测和报告其指定频段内的非法传输。
+**局限性：**
 
----
+*   **社区较小：** 社区支持有限，可用资源较少。
+*   **生态不足：** 需要更多手动编码，而不是利用已建立的 React 生态系统库。
 
-## 7. Ciro (YC S22) 正在招聘一名软件工程师，负责构建用于销售的人工智能代理。
-
-**原文标题**: Ciro (YC S22) is hiring a software engineer to build AI agents for sales
-
-**原文链接**: [https://www.ycombinator.com/companies/ciro/jobs](https://www.ycombinator.com/companies/ciro/jobs)
-
-Ciro (YC S22) 正在旧金山招聘软件工程师，以构建用于销售线索挖掘的 AI 代理。该职位提供 15 万美元至 20 万美元的年薪，以及 0.75% 至 1.50% 的股权，要求 3 年以上的工作经验。
-
-Ciro 旨在自动化并提高销售线索挖掘的效率，使在 LinkedIn 等平台上扫描、筛选和丰富线索的工作变得更加轻松。该公司致力于解决销售代表花费大量时间手动搜索和筛选线索的问题。
-
-该公司拥有一支强大的团队，成员来自 Meta、斯坦福大学、谷歌和贝恩咨询，包括曾在高增长 SaaS 初创公司担任销售副总裁的创始人。Ciro 现金流为正，并获得 Y Combinator、SV Angel、CRV 以及 Flexport、BuildZoom 和 Tegus 创始人的支持。
-
-Ciro 的价值观强调卓越、紧迫性和团队合作，营造一个建立在信任和透明基础上的友好环境。该公司成立于 2022 年，目前团队规模为 5 人。创始人为 Ross Geiger、Richard Lee 和 David Winer。
+该库提供了井字游戏应用、输入字段、列表和路由等示例。 学习资源包括教程和参考文档。 1.0.1 版本标志着该库的 API 已稳定，并包含交互式文档。
 
 ---
 
-## 8. 使用Coalton实现量子编译器 (2022)
+## 9. Itter.sh – 终端上的微型博客
 
-**原文标题**: Using Coalton to implement a quantum compiler (2022)
+**原文标题**: Itter.sh – Micro-Blogging via Terminal
 
-**原文链接**: [https://coalton-lang.github.io/20220906-quantum-compiler/](https://coalton-lang.github.io/20220906-quantum-compiler/)
+**原文链接**: [https://www.itter.sh/](https://www.itter.sh/)
 
-本文探讨了在quilc量子编译器中使用Common Lisp中的静态类型语言Coalton实现名为“离散编译”的新特性。Quilc使用Common Lisp编写，用于优化量子程序，但由于动态类型，存在运行时类型错误和缺乏某些抽象的问题。Coalton旨在解决这些问题。
+Itter.sh：一款仅通过 SSH 终端访问的微型博客平台。它提供了一种极简的社交媒体替代方案，摒弃了网页浏览器、JavaScript 和算法推荐，以基于文本的体验和 180 字符的限制（“eets”）为特色。
 
-离散编译旨在解决使用*离散*原生操作集合近似任意量子操作的问题，而不是容易受到模拟噪声影响的连续操作。本文重点介绍Ross和Selinger使用Clifford+T门集合近似任意单量子比特酉矩阵的算法。
+新用户通过 SSH 使用 `register:` 前缀加上期望的用户名进行注册。注册和登录都需要 SSH 密钥。注册后，用户使用 `ssh YOUR_USERNAME@app.itter.sh` 登录。
 
-实现此算法的一个主要挑战是处理各种可互操作的数字类型，特别是不同的数环。Common Lisp的灵活性带来了实现上的繁琐，因为它缺乏运算符重载并且难以管理转换。
+该平台提供命令行界面用于发布 eets (`ittereet`)、查看时间线 (`ittertimeline`, `itterwatch` - 用于实时更新)、关注/取消关注用户 (`itterfollow`, `itterunfollow`)、查看和编辑个人资料 (`itterprofile`)、清除屏幕 (`itterclear`) 和退出应用程序 (`itterexit`)。Eets 支持标签和提及。
 
-Coalton的类型类系统，特别是`Num`类型类，提供了一个更优雅且类型安全的解决方案。它允许扩展现有运算符（如`+`和`*`）以使用自定义数字类型，从而简化了这些环中算术的实现。本文通过实现代数数环$\mathbb{Z}[\sqrt{2}]$并定义其运算来证明这一点，突出了Coalton在处理数学抽象方面优于Common Lisp的优势。本文暗示，Coalton的特性使得在代码中实现复杂的数学结构更易于管理且更不易出错，使其成为量子编译器开发等任务的宝贵工具。
-
----
-
-## 9. 越来越多的人在去除纹身。
-
-**原文标题**: More people are getting their tattoos removed
-
-**原文链接**: [https://www.gq.com/story/why-is-everyone-getting-their-tattoos-removed](https://www.gq.com/story/why-is-everyone-getting-their-tattoos-removed)
-
-激光技术进步、生活重心转移和名人效应推动纹身去除日益普及。文章探讨了这一趋势，指出虽然去除过程痛苦且需要多次疗程，但现代皮秒激光比旧方法更有效、磨损更小。这些激光能击碎纹身墨水颗粒，使人体免疫系统将其清除。
-
-导致纹身去除人数增加的因素包括千禧一代后悔年轻时的决定、渴望重新开始，以及专业连锁店和可接受的价格使该手术逐渐普及。像皮特·戴维森、爱莉安娜·格兰德和佐伊·克拉维茨等名人公开进行纹身去除手术，进一步推动了这一趋势。
-
-纹身行业本身也在适应，一些纹身师使用激光去除来为新设计创造干净的画布。虽然一些“老派”纹身爱好者可能认为这种趋势是对纹身传统永久性的否定，但企业家们设想未来纹身会更像时尚潮流，可以轻松添加和去除。文章强调了循环纹身文化的潜力，在这种文化中，人们可以用不一定是永久性的墨水来表达自己。 最终，纹身的普及和不断变化的观念正在重塑纹身行业，并模糊了永久性和短暂性之间的界限。
+Itter.sh 基于 Python、AsyncSSH、Supabase 构建，并专注于“终端怀旧”。
 
 ---
 
-## 10. 谷歌将支持三个新的核能项目
+## 10. 前最高法院大法官戴维·苏特去世
 
-**原文标题**: Google to back three new nuclear projects
+**原文标题**: Former Supreme Court justice David Souter has died
 
-**原文链接**: [https://www.esgtoday.com/google-to-back-three-new-advanced-nuclear-projects/](https://www.esgtoday.com/google-to-back-three-new-advanced-nuclear-projects/)
+**原文链接**: [https://www.npr.org/2025/05/09/g-s1-65326/justice-david-souter-dies](https://www.npr.org/2025/05/09/g-s1-65326/justice-david-souter-dies)
 
-2025年5月，谷歌宣布与Elementl Power合作，投资三个先进核能项目，每个项目发电能力至少为600兆瓦。此举旨在解决谷歌日益增长的排放问题，尽管谷歌制定了无碳能源目标（到2030年实现净零排放和24/7全天候无碳能源），但由于数据中心电力消耗的增长，其排放量已显著增加。自2019年以来，谷歌的排放量增加了48%。
+前最高法院大法官戴维·苏特在新罕布什尔州的家中去世，享年85岁。苏特于1990年由乔治·H·W·布什总统任命，尽管人们期望他成为一位保守派大法官，但他与最高法院中较为自由派的阵营保持一致，令许多共和党人感到惊讶。
 
-在此协议之前，谷歌曾实施过核能计划，包括与Kairos Power合作部署小型先进核电项目。谷歌的阿曼达·彼得森·科里奥强调了该公司致力于加强电网并利用先进核技术来实现可靠、全天候能源供应的承诺，尤其是在人工智能需求不断增长的情况下。
+首席大法官约翰·罗伯茨赞扬了苏特的“非凡智慧和善良”。苏特在69岁时退休，表达了离开华盛顿并返回他的故乡新罕布什尔州的愿望，他一直不喜欢这座城市。
 
-谷歌和Meta此前曾承诺支持到2050年将全球核能容量增加三倍，并承认需要提高能源弹性、安全性和清洁能源供应。Elementl Power成立于2023年，旨在到2035年在美国上线超过10吉瓦的电力，采用下一代核技术。Elementl Power表示，与谷歌等公司的合作对于调动建设新核项目和实现净零目标所需的资金至关重要。
+苏特毕业于哈佛学院、哈佛法学院和牛津大学莫德林学院，他在被任命后打破了人们的意识形态期望。他加入了最高法院的温和派，后来成为自由派核心小组的一员。他的转变让包括白宫办公厅主任约翰·苏努努在内的人感到惊讶，苏努努曾认为他是一位保守派的新罕布什尔州最高法院大法官。
+
+苏特以其独立性而闻名，他经常返回新罕布什尔州，更喜欢开车而不是坐飞机。他还避开了手机和电子邮件等现代科技，用钢笔手写他的意见。作为一名终身单身汉，苏特在华盛顿过着简朴的生活，远离城市的社交场所，始终渴望着他在新罕布什尔州乡村的家。
 
 ---
 
@@ -145,53 +162,54 @@ Coalton的类型类系统，特别是`Num`类型类，提供了一个更优雅�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 2 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 1 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 2 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
 | 3 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 4 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 5 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 4 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 5 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
 | 6 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 7 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 7 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
 | 8 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 9 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 10 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 11 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 9 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 10 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 11 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
 | 12 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 13 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 14 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 15 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 16 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 13 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 14 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 15 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 16 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
 | 17 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 18 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 19 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 18 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 19 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 20 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 21 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 21 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
 | 22 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 23 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 24 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 23 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 24 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
 | 25 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 26 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 26 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 27 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 28 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 29 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 28 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 29 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
 | 30 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 31 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 32 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 33 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 34 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 35 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 36 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 37 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 38 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 39 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 40 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 41 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 42 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 43 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 44 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 45 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 46 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 47 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 48 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 49 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 50 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 31 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 32 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 33 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 34 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 35 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 36 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 37 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 38 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 39 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 40 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 41 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 42 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 43 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 44 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 45 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 46 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 47 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 48 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 49 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 50 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 51 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
