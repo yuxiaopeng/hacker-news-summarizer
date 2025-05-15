@@ -1,179 +1,149 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-14.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-15.md)
 
-*最后自动更新时间: 2025-05-14 17:49:57*
-## 1. AlphaEvolve：基于 Gemini 的高级算法设计编码智能体
+*最后自动更新时间: 2025-05-15 17:49:34*
+## 1. 一个微型玻尔兹曼机
 
-**原文标题**: AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms
+**原文标题**: A Tiny Boltzmann Machine
 
-**原文链接**: [https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)
+**原文链接**: [https://eoinmurray.info/boltzmann-machine](https://eoinmurray.info/boltzmann-machine)
 
-AlphaEvolve：利用Gemini模型的新型AI智能体，正在革新算法设计与优化。它将大型语言模型的创造性问题解决能力与自动化评估器和进化框架相结合，从而在各个领域生成和改进算法。
+本文介绍了玻尔兹曼机（BM），一种用于无监督学习和生成式AI的神经网络，它模拟了物理学中的能量原理。玻尔兹曼机由可见神经元和隐藏神经元组成，它们之间具有加权连接。通用玻尔兹曼机的神经元之间都有连接，使其功能强大，但训练的计算成本很高。
 
-AlphaEvolve已经取得了显著成果，包括增强谷歌的计算生态系统。它改进了数据中心调度，使计算资源持续提升0.7%。它还通过优化TPU的算术电路来辅助硬件设计，并通过将Gemini架构中的矩阵乘法速度提高23%和FlashAttention内核速度提高高达32.5%来加速AI训练。
+本文重点介绍受限玻尔兹曼机（RBM），这是一种可见神经元和隐藏神经元之间没有直接连接的特殊情况。这种限制简化了训练。RBM是基于能量的模型，其中网络配置的能量由神经元状态、权重和偏差定义。
 
-除了内部应用，AlphaEvolve还在推动数学发现的边界。它找到了一种更快的4x4复值矩阵乘法算法，并为几何和数论等领域的开放性问题提供了高级解决方案，包括改进了11维空间中的亲吻数问题。
+训练的目标是调整权重和偏差，以最小化训练数据的能量，从而有效地学习可见单元的概率分布。训练完成后，RBM可以使用吉布斯采样生成与训练数据相似的新数据。
 
-该智能体的灵活性使得能够在各个领域进行快速实验，据报道，AlphaEvolve在75%的案例中重新发现了最先进的解决方案，并在20%的案例中改进了先前已知的解决方案。谷歌正计划为学术用户推出早期访问计划，并正在探索更广泛的可用性。该团队认为，AlphaEvolve在计算和数学以外的各个领域，包括材料科学、药物发现和可持续性方面，都具有变革潜力。
-
----
-
-## 2. HDR到底是什么？
-
-**原文标题**: What Is HDR, Anyway?
-
-**原文链接**: [https://www.lux.camera/what-is-hdr/](https://www.lux.camera/what-is-hdr/)
-
-本文题为“究竟什么是HDR？”，可能旨在向普通大众解释高动态范围(HDR)成像的概念。简要总结可能涵盖以下几点：
-
-*   **定义：**HDR代表高动态范围。它指的是摄影和显示技术中的一种技术，旨在再现比标准数字成像或标准动态范围(SDR)更大的亮度动态范围。这种动态范围是图像中最亮白色和最暗黑色之间的差异。
-
-*   **SDR的问题：**标准动态范围(SDR)在捕获和显示现实场景中存在的完整光线范围方面受到限制。这通常会导致高光溢出（完全显示为白色且没有细节的区域）或阴影被压暗（完全显示为黑色且没有细节的区域）。
-
-*   **HDR的工作原理（通常）：**HDR通常涉及以不同的曝光级别拍摄同一场景的多个图像。然后使用特殊的软件将这些图像组合起来，以创建具有更宽动态范围的单个图像。这使得最亮和最暗区域都能呈现更多细节。或者，可以通过先进的传感器技术和处理来实现HDR。
-
-*   **优势：**HDR通过保留高光和阴影中的细节，提供更逼真和更具视觉吸引力的图像。这带来更丰富的色彩、更高的对比度以及整体上更具沉浸感的观看体验。
-
-*   **显示设备：**该文章可能还会简要提及与HDR兼容的显示器（电视、显示器、智能手机），这些显示器旨在正确显示HDR内容，并强调您需要HDR内容和支持HDR的显示器才能充分体验其优势。
+训练过程，即对比散度，包括：将可见单元钳制到训练数据，对隐藏单元进行采样，重建可见单元，重新采样隐藏单元，并根据数据和模型期望之间的差异更新权重。提供的模拟器允许用户可视化训练过程，并观察RBM如何学习重建输入数据。附录提供了对比散度算法的数学推导，详细说明了权重和偏差的更新规则。
 
 ---
 
-## 3. 我们的叙事牢笼
+## 2. Show HN: 利用Min.js风格压缩技术文档以供LLM上下文使用
 
-**原文标题**: Our Narrative Prison
+**原文标题**: Show HN: Min.js style compression of tech docs for LLM context
 
-**原文链接**: [https://aeon.co/essays/why-does-every-film-and-tv-series-seem-to-have-the-same-plot](https://aeon.co/essays/why-does-every-film-and-tv-series-seem-to-have-the-same-plot)
+**原文链接**: [https://github.com/marv1nnnnn/llm-min.txt](https://github.com/marv1nnnnn/llm-min.txt)
 
-伊莲·格拉泽的《我们的叙事牢笼》探讨了“英雄之旅”情节结构在现代电影、电视剧乃至文学作品中的普遍应用，认为这种公式化的方法表面上提供了多样性，但最终限制了我们的想象力和批判性思维。
+本文介绍了llm-min.txt，一种用于压缩技术文档以供大型语言模型(LLM)使用的新方法。它解决了人工智能编码助手因其“知识截止”而缺乏最新库信息的问题。与现有解决方案（如可能过大的llms.txt）和Context7（一种“黑盒”方法）不同，llm-min.txt采用人工智能将文档提炼成一个超浓缩的结构化摘要。
 
-文章追溯了这一结构的根源，从亚里士多德的《诗学》到弗雷塔格和坎贝尔等思想家的后续发展。格拉泽强调了有利可图的“故事结构产业”，该产业推广这种可复制的公式以获得票房成功。
+llm-min.txt使用结构化知识格式（SKF），将信息组织成DEFINITIONS、INTERACTIONS和USAGE_PATTERNS部分，针对机器解析而非人类可读性进行了优化。配套的llm-min-guideline.md文件为人工智能解释提供了解码说明。文章声称，与原始文档相比，token减少了90-95%，从而显著提高了人工智能处理和理解信息的能力。
 
-虽然承认单一神话的普遍吸引力及其帮助我们面对恐惧和渴望改变的潜力，但格拉泽批评了它潜在的保守性及其对避免分析和批判的文化的贡献。她认为，这些叙事结尾处的“重置”可以通过提供激进变革的假象同时保持一致性来强化现状。
-
-格拉泽将这种叙事结构的主导地位与在由独裁者、数字资本主义和消费主义塑造的世界中的更广泛的无力感联系起来。她引用利普曼和萨尔蒙的观点，表明讲故事被用来制造共识并巧妙地操纵公众舆论，可能使观众变得幼稚并降低智力期望。
-
-最终，这篇文章质疑英雄之旅是否真正促成了改变，还是仅仅提供了改变的幻想。它也对许多大众市场故事中嵌入的保守政治提出了担忧。格拉泽鼓励读者意识到这种叙事牢笼的局限性，并考虑其他形式的讲故事方式。
+文章提供了一个快速入门指南，包括安装说明和示例命令。它还强调了使用推荐的Gemini AI模型（gemini-2.5-flash-preview-04-17）的重要性，因为它在压缩任务中具有先进的推理能力、大的上下文窗口和成本效益。最后，它简要概述了llm-min工具的内部工作原理。
 
 ---
 
-## 4. Show HN: Lumier – 在 Docker 中运行 macOS 虚拟机
+## 3. 预订可用会议室的恶意服从
 
-**原文标题**: Show HN: Lumier – Run macOS VMs in a Docker
+**原文标题**: Malicious compliance by booking an available meeting room
 
-**原文链接**: [https://github.com/trycua/cua/tree/main/libs/lumier](https://github.com/trycua/cua/tree/main/libs/lumier)
+**原文链接**: [https://www.clientserver.dev/p/malicious-compliance-by-booking-an](https://www.clientserver.dev/p/malicious-compliance-by-booking-an)
 
-Show HN: Lumier - 在 Docker 容器中运行 macOS 虚拟机
+2011年，拉里·佩奇作为谷歌新任CEO，试图提高会议效率。他推行了一项政策，规定会议必须有决策者，人数上限为10人，要求积极参与，并且时长设定为50分钟而非1小时，在会议之间留出10分钟的缓冲时间。谷歌日历也更新为50分钟的默认时长。
 
-主要亮点：
-
-*   **Docker 中的 macOS 虚拟机:** Lumier 允许在 Docker 容器中创建和运行 macOS 虚拟机，提供了一种不同于传统 macOS 虚拟化方法的方式。
-*   **可移植性和可复现性:** 通过容器化 macOS 环境，Lumier 提高了可移植性，并确保开发和测试环境可以在不同的机器上轻松复制。
-*   **GitHub 受欢迎程度:** 该项目，GitHub 地址为 "trycua/cua"，已引起广泛关注，拥有 254 个 fork 和 6.3k 个 star，表明获得了显著的社区响应。
-
-总而言之，Lumier 为寻求通过 Docker 容器化来以轻量级和一致的方式使用 macOS 环境的开发人员和测试人员提供了一个潜在的有用解决方案。
+然而，人们实际上并没有在50分钟后结束会议。纽约办事处的一个团队巧妙地利用了这一点。他们的站立会议只有10分钟，并且他们注意到50分钟默认时长所造成的日历空隙。他们开始预订会议室中那些空闲的10分钟时段，迫使较长的会议在站立团队到达时准时在50分钟结束，这符合佩奇政策的字面规定，但也可能令很多人感到沮丧。作者亲眼目睹了这种情况两次，并赞赏该团队的奉献精神（或恶作剧），但从未了解他们的身份或真正动机。这种行为是恶意合规的完美例证，利用系统设计来打破现状。
 
 ---
 
-## 5. DeepMind发布“惊艳”的通用科学AI
+## 4. 新鲜事更新
 
-**原文标题**: DeepMind unveils 'spectacular' general-purpose science AI
+**原文标题**: An Update on Fresh
 
-**原文链接**: [https://www.nature.com/articles/d41586-025-01523-z](https://www.nature.com/articles/d41586-025-01523-z)
+**原文链接**: [https://deno.com/blog/an-update-on-fresh](https://deno.com/blog/an-update-on-fresh)
 
-DeepMind发布AlphaEvolve：通用人工智能系统，结合大型语言模型的创造力与算法优化能力，解决科学难题。专家称其为重大进展，因为它能利用通用大型语言模型进行新发现。
+Fresh 2 最新进展：基于 Deno 的下一代 Web 框架
 
-AlphaEvolve已展示出实际应用，包括改进DeepMind的AI芯片（张量处理单元）设计，并优化谷歌的计算资源分配，节省了0.7%。该系统的工作方式是，用户输入问题、评估标准和建议解决方案，然后大型语言模型提出修改方案。一个“评估器”算法评估这些修改方案，大型语言模型基于最佳方案提出更多建议。这个过程使系统能够进化出更强大的算法。
+本文介绍了基于 Deno 构建的下一代 Web 框架 Fresh 2 的最新进展。虽然开发时间比预期要长，但它现在已进入 alpha 阶段，并为 Deno 的主网站和 Deno Deploy 提供支持。
 
-AlphaEvolve建立在DeepMind之前FunSearch的基础上，但它可以处理更大的代码片段，并解决跨科学领域更复杂的算法问题。值得注意的是，AlphaEvolve发现了一种更有效的矩阵乘法方法，甚至超过了AlphaTensor等专用AI工具和一位德国数学家在1969年开发的方法。该系统被描述为一个“代理”，但专注于生成解决方案，与其他主要审查文献和提出假设的AI科学系统形成对比。
+延迟的原因在于需要增强底层 Deno 平台和 JavaScript 注册表 (JSR)，重点关注 Node 和 npm 兼容性，以实现第三方包的无缝集成，并解决 import map 和依赖管理的问题。此外，下一代 Deno Deploy（包括构建步骤）的开发也作为 Fresh 2 的测试用例。
 
----
+Fresh 2 旨在更具可扩展性、更快且更易于使用。主要特性包括类似 Express/Hono 的 API、真正的异步组件以及用于创建中间件的新插件系统。它还包括对预编译 JSX 的开箱即用支持，从而显著加快渲染速度。
 
-## 6. 不应存在的服务器
-
-**原文标题**: A server that wasn't meant to exist
-
-**原文链接**: [https://it-notes.dragas.net/2025/05/13/the_server_that_wasnt_meant_to_exist/](https://it-notes.dragas.net/2025/05/13/the_server_that_wasnt_meant_to_exist/)
-
-作者讲述了在业主突然去世后，帮助一家家族企业的一段令人沮丧的经历。他受命实施一套现代化的IT系统，以实现更好的数据管理和控制，为此安装了一台NetBSD服务器，并配备了用于NAS、归档和互联网过滤的虚拟机。这遭到了已故业主“得力助手”的抵制，此人似乎正从缺乏监管中获益。
-
-该人随后试图强迫作者擦除服务器并安装Windows，暗示其意图是为了移除新的控制措施。一场紧张的对峙随之而来，揭示了作者与一位权势人物的家庭关系，导致对方退缩。
-
-尽管取得了初步胜利，服务器还是遭到了破坏，硬盘消失了。幸运的是，作者预先使用一个基于NetBSD的小型设备设置了异地备份解决方案，从而恢复了数据。业主们获得了数据，但行动迟缓，尽管有充分的舞弊证据。
-
-作者被提供了一个高薪职位，负责管理公司的IT并彻底改革他们的流程。他拒绝了，优先考虑了自己的职业道路，并意识到腐败的深度可能是无法克服的。最终，作者意识到，有些情况已经根深蒂固在欺骗中，无法挽救，特别是当掌权者不愿或不能面对根本问题时。
+Alpha 版本 (2.0.0-alpha.30) 现已可供测试，欢迎用户提供反馈。建议使用 Deno 2.3 以获得最佳体验，它提供了改进的 `deno compile` 和本地 npm 包。用户可以使用脚手架脚本创建新项目，或使用更新脚本升级现有项目。稳定版本预计将于 2025 年第三季度末（可能在 9 月）发布。
 
 ---
 
-## 7. Artie (YC S23) 招聘高级产品营销经理（旧金山）
+## 5. 昂菲姆的世界：历史上的儿童艺术家
 
-**原文标题**: Artie (YC S23) Is Hiring a Senior Product Marketing Manager (SF)
+**原文标题**: Onfim's world: Child artists in history
 
-**原文链接**: [https://www.ycombinator.com/companies/artie/jobs/sOFeWnv-senior-product-marketing-manager](https://www.ycombinator.com/companies/artie/jobs/sOFeWnv-senior-product-marketing-manager)
+**原文链接**: [https://resobscura.substack.com/p/onfims-world-medieval-child-artists](https://resobscura.substack.com/p/onfims-world-medieval-child-artists)
 
-Artie (YC S23) 正在旧金山招聘高级产品营销经理。Artie 是一款面向数据库和数据仓库的实时数据流解决方案。这是他们的第一个市场营销职位，提供了从零开始构建产品营销职能并负责公司信息传递和定位的机会。
-
-该职位专注于了解 Artie 的客户以及产品所解决的挑战，定义理想的客户画像，创作引人注目的内容，并为销售团队提供有效的材料。职责包括开发信息传递框架，创建客户案例研究以及开发竞争对手分析卡。
-
-Artie 正在寻找一位具有强烈写作和讲故事能力，对客户研究充满好奇心，具有协作精神并愿意努力奋斗的人。理想的候选人应具有在早期创业公司从事技术产品产品营销 4 年以上的经验，包括与其他营销职能部门合作的经验。
-
-Artie 正在与 Substack、Alloy 和 Indigov 等客户合作，每月处理超过 1000 亿行数据。在 Y Combinator 和 General Catalyst 等投资者的支持下，Artie 通过使用变更数据捕获 (CDC) 和流处理来实现亚分钟级的数据传输延迟，从而使自己脱颖而出。该职位提供具有竞争力的薪酬（14.5 万美元至 18.5 万美元的薪水和 0.20% 至 0.40% 的股权）、快节奏的环境以及塑造营销职能的机会。该职位需要在旧金山市中心进行 5 天的现场办公。
+无法访问文章链接。
 
 ---
 
-## 8. 通行密钥背后的密码学
+## 6. Fetii (YC S22) 正在招聘
 
-**原文标题**: The Cryptography Behind Passkeys
+**原文标题**: Fetii (YC S22) Is Hiring
 
-**原文链接**: [https://blog.trailofbits.com/2025/05/14/the-cryptography-behind-passkeys/](https://blog.trailofbits.com/2025/05/14/the-cryptography-behind-passkeys/)
+**原文链接**: [https://www.ycombinator.com/companies/fetii/jobs/QDjleWs-senior-operations-manager-fetii](https://www.ycombinator.com/companies/fetii/jobs/QDjleWs-senior-operations-manager-fetii)
 
-通行密钥背后的密码学原理：安全性更胜密码一筹
+Fetii，一家由Y Combinator (S22) 和马克·库班投资的团体拼车初创公司，正在招聘一位高级运营经理，以帮助扩大其运营规模。该职位提供有竞争力的薪资、有意义的股票期权以及与创始人的直接沟通机会，是一个全职职位，工作地点位于德克萨斯州奥斯汀（混合办公优先，可考虑远程），需要能适应不规律的工作时间，包括晚上和周末。
 
-本文深入探讨通行密钥背后的密码学原理，阐释其如何提升安全性，超越传统密码。通行密钥的核心是用于数字签名的密码密钥对。网站存储公钥和标识符，认证过程中，网站发送一个挑战，由认证器使用私钥进行签名。这可以防止敏感信息泄露。
+高级运营经理将是Fetii运营的中心人物，负责司机和车辆服务提供商(VSP)的管理、合规和监管监督、质量控制、安全执行（使用Samsara）以及销售运营/活动执行。主要职责包括寻找和管理司机、确保车队合规、维护安全标准以及协调活动物流。
 
-WebAuthn作为主要规范，通过源绑定增强安全性，通过确保通行密钥仅适用于正确的网站域名，来防止网络钓鱼攻击。认证器，即生成密钥对的硬件或软件，分为两类：平台认证器（集成到设备中，例如iCloud Keychain）和漫游认证器（独立的硬件，例如YubiKeys）。
+Fetii正在寻找一位高度有组织能力、具有创业精神和经验丰富的个人，该个人应具有强大的职业道德、解决问题的能力，并愿意全身心投入到公司的使命中。理想的候选人应具有运营、物流或初创企业环境的经验。他们必须是系统思考者，能够在压力下茁壮成长，并且对细节有极高的关注度。
 
-文章强调，虽然通行密钥是一项重大改进，但并非完美解决方案。它们可以防止网络钓鱼和密码重用，但仍然容易受到基于浏览器的攻击、认证器被攻破以及攻击者控制网站域名的攻击。
-
-凭证ID冲突虽然罕见，但可能导致认证混乱，注册过程中拒绝重复ID即可解决此问题。
-
-最后，文章讨论了WebAuthn扩展，例如`prf`和`largeBlob`，它们允许更复杂的功能，例如派生密码密钥或存储敏感数据。然而，文章告诫不要依赖基于浏览器的密码学来实现真正的端到端安全性，因为恶意服务器端JavaScript可能会危及系统安全。总而言之，本文强调了理解通行密钥的底层密码学和局限性，以有效实施安全认证的重要性。
+Fetii的目标是通过利用由15人座货车组成的网络提供按需团体乘车服务，从而颠覆团体交通运输行业，旨在缓解城市拥堵并减少道路上不必要的车辆。他们已经运送了超过61.7万名乘客，并减少了超过13万辆车辆。
 
 ---
 
-## 9. Git Bug：嵌入Git的分布式离线优先Bug追踪器，带桥接功能
+## 7. 小波树简介 (2011)
 
-**原文标题**: Git Bug: Distributed, Offline-First Bug Tracker Embedded in Git, with Bridges
+**原文标题**: Wavelet Trees: An Introduction (2011)
 
-**原文链接**: [https://github.com/git-bug/git-bug](https://github.com/git-bug/git-bug)
+**原文链接**: [https://www.alexbowe.com/wavelet-trees/](https://www.alexbowe.com/wavelet-trees/)
 
-Git-bug 是一个去中心化的、离线优先的问题管理工具，它直接集成到 Git 仓库中。它不是将问题存储在单独的文件中，而是将它们嵌入为 Git 对象，从而实现版本控制、离线访问以及跨多个远程仓库的轻松同步。
+本文介绍了小波树（Wavelet Tree），一种用于高效回答大字母表序列上rank查询的数据结构。小波树将字符串组织成一个位向量的层次结构，从而能够以O(log₂A)的时间复杂度执行rank查询，其中A是字母表的大小。
 
-主要功能包括原生 Git 存储，使问题具有版本控制且整洁；分布式和版本化的特性，利用 Git 的架构进行离线工作和无缝同步；闪电般快速的问题列表和搜索；用于与 GitHub 和 GitLab 等平台同步的第三方桥梁；以及用于交互的灵活界面（CLI、TUI、Web 浏览器）。
+其构造过程涉及递归地将字母表对半分，并将每一半编码为0或1，从而创建一个二叉树。树中的每个节点存储一个位向量，表示它所覆盖的字符串部分的编码。这些位向量可以使用诸如RRR或Sadakane和Okonohara的rank索引之类的结构进行进一步的压缩和索引。
 
-入门非常简单，提供了安装说明和概述有效用法的文档。该项目鼓励贡献，提供指导原则并通过 Matrix 聊天和论坛进行社区互动。
+在小波树上执行rank查询涉及遍历树，使用每一层的编码来引导搜索到适当的子树。查询在路径上的每个节点执行二元rank查询，直到到达叶节点，从而提供最终的rank答案。
 
-该项目由贡献者、支持者和赞助商支持，对他们在推进 Git-bug 发展中所起的作用表示感谢。它在 GPLv3 或更高版本下获得许可，徽标在 CC BY 4.0 下获得许可。Git-bug 最初由 Michael Muré 创建。
+本文还提到小波树可以与后缀数组结合使用进行模式搜索，实现O(P log₂A)的时间复杂度，其中P是模式长度。作者鼓励读者探索select查询和霍夫曼形状的小波树，并指出了Francisco Claude的libcds中的一个实现。
 
 ---
 
-## 10. 多租户经济学原理
+## 8. 模式生物并非一成不变
 
-**原文标题**: How the economics of multitenancy work
+**原文标题**: Model Organisms Are Not Static
 
-**原文链接**: [https://www.blacksmith.sh/blog/the-economics-of-operating-a-ci-cloud](https://www.blacksmith.sh/blog/the-economics-of-operating-a-ci-cloud)
+**原文链接**: [https://www.asimov.press/p/model-organisms-are-not-static](https://www.asimov.press/p/model-organisms-are-not-static)
 
-此网页展示一篇由Aditya Jayaprakash撰写、发表于2025年5月13日、题为“多租户经济学原理”的博文。然而，文章的实际内容缺失。该网页主要作为Blacksmith Software Inc.的宣传平台。
+这篇阿西莫夫出版社的文章《模式生物并非静止不变》探讨了科学研究中的可重复性危机，尤其是动物研究方面。文章认为，模式生物体内积累的基因突变会对实验结果产生重大影响。
 
-页面上的主要内容包括：
+文章重点介绍了一项2023年的研究，该研究表明脊椎动物物种间的突变率差异很大，实验室小鼠平均每代获得15个新的突变。虽然这些突变大多不会直接影响蛋白质编码基因，但它们可以改变基因调控，从而可能影响实验结果。作者指出，实验室中控制育种的做法，虽然最大限度地减少了遗传多样性，但可能会无意中保留自然选择会在野外淘汰的有害突变。
 
-*   **公司新闻：** GV和Y Combinator领投的350万美元种子轮融资公告，新的GitHub Actions Analytics功能，以及关于即将到来的DockerHub限制的信息。
+文章提到了杰克逊实验室通过冷冻保存和定期“重置”小鼠基因组来缓解这个问题的努力，但即使是这些方法也无法完全阻止突变的积累。
 
-*   **工程指南：** 指向关于在GitHub Actions中管理密钥、减少GitHub Actions支出以及使用GitHub Actions矩阵构建的文章链接。
+文章暗示，科学家们可能在不知不觉中将某些特征归因于这些积累的生殖系错误。文章呼吁研究人员更频繁地对他们的模式生物品系进行测序，并评估基因调控模式，以将基因改变的动物排除在育种计划之外。文章还提到，研究人员开始冷冻保存其他模式生物的胚胎，以限制突变的负担。
 
-*   **公司信息：** 指向Blacksmith的文档、博客、指南、定价、招聘、联系方式和状态页面的链接。还包括其LinkedIn个人资料链接以及预约演示的选项。
+文章总结道，研究人员必须积极应对这些突变引起的变异，以避免加剧可重复性危机。认识到基因组变化对可重复性构成的威胁，研究人员开始冷冻保存其他动物模型胚胎，以限制突变的负担。果蝇研究人员已经开发出一种冷冻果蝇胚胎的方法。
 
-简而言之，所提供的内容与其说是关于多租户经济学，不如说是为了推广Blacksmith及其相关服务和博文。它是一个面向潜在客户和其CI/CD平台用户的着陆页，提供围绕GitHub Actions和CI/CD最佳实践的信息和指南。
+---
+
+## 9. Show HN: 实时高斯溅射
+
+**原文标题**: Show HN: Real-Time Gaussian Splatting
+
+**原文链接**: [https://github.com/axbycc/LiveSplat](https://github.com/axbycc/LiveSplat)
+
+LiveSplat 是一款闭源算法，用于利用 RGBD 相机流进行实时高斯溅射，它是 VR 远程机器人系统的一部分。由于社区的兴趣，作者 Mark Liu 将以 alpha 质量公开发布该算法。它需要 Python 3.12+、Windows 或 Ubuntu、x86_64 CPU 和 Nvidia 显卡。安装涉及使用 `pip` 安装 wheel 文件（Ubuntu 和 Windows 的 URL 不同）。要使用 LiveSplat，用户必须创建一个集成脚本来提供 RGBD 流，并且该存储库提供了一个用于 Intel Realsense 设备的示例脚本。尽管是 alpha 软件，但作者希望用户会喜欢尝试 LiveSplat。由于其闭源性质，作者正在探索潜在的商机，并鼓励有兴趣的企业通过 mark@axby.cc 联系他，以咨询许可/集成事宜。支持和讨论可在他们的 Discord 服务器上进行。
+
+---
+
+## 10. Elixir 的 Lua
+
+**原文标题**: Lua for Elixir
+
+**原文链接**: [https://davelucia.com/blog/lua-elixir](https://davelucia.com/blog/lua-elixir)
+
+本文宣布发布Lua v0.1.0，这是一个Elixir库，得益于底层的Luerl库（一个用Erlang编写的Lua解析器、编译器和运行时），它允许直接在BEAM VM上执行沙盒化的Lua代码。该Elixir库通过更好的错误消息和文档增强了Luerl的功能。主要功能包括使用`deflua`宏和`Lua.load_api/2`，用Elixir API扩展Lua的能力，以及使用`~LUA` sigil进行编译时语法验证。
+
+该库起源于TV Labs，在那里它被用于通过将拖放式自动化构建器编译为Lua，在物理设备上执行集成测试。作者重点介绍了Erlang和Luerl的创建者Robert Virding，并解释了Luerl的起源：探索在BEAM上实现一种命令式语言。
+
+未来的计划包括将Elixir Lua库合并到Luerl中，以创建2.0.0版本，其中包含改进的错误消息、堆栈跟踪、文档和沙盒功能，以及与Lua生态系统的更深入集成。作者鼓励通过Slack、Discord或GitHub进行贡献。
 
 ---
 
@@ -181,59 +151,60 @@ Git-bug 是一个去中心化的、离线优先的问题管理工具，它直接
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 2 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 3 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 1 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 2 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 3 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
 | 4 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 5 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 6 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 7 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 8 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 9 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 5 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 6 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 7 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 8 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 9 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
 | 10 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 11 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 12 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 11 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 12 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
 | 13 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 14 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 15 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 16 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 17 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 14 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 15 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 16 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 17 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
 | 18 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 19 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 20 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 21 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 22 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 19 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 20 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 21 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 22 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
 | 23 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 24 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 25 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 26 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 24 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 25 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 26 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
 | 27 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 28 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 29 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 30 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 31 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 32 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 28 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 29 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 30 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 31 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 32 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 33 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 34 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 34 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
 | 35 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 36 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 37 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 38 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 39 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 40 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 41 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 42 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 43 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 44 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 45 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 46 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 47 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 48 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 49 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 50 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 51 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 52 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 53 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 54 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 55 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 56 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 36 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 37 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 38 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 39 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 40 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 41 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 42 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 43 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 44 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 45 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 46 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 47 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 48 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 49 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 50 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 51 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 52 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 53 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 54 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 55 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 56 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 57 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
