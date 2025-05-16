@@ -1,149 +1,169 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-15.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-16.md)
 
-*最后自动更新时间: 2025-05-15 17:49:34*
-## 1. 一个微型玻尔兹曼机
+*最后自动更新时间: 2025-05-16 17:48:01*
+## 1. Show HN：受 Node-RED 启发的 Erlang 可视化流程编程
 
-**原文标题**: A Tiny Boltzmann Machine
+**原文标题**: Show HN: Visual flow-based programming for Erlang, inspired by Node-RED
 
-**原文链接**: [https://eoinmurray.info/boltzmann-machine](https://eoinmurray.info/boltzmann-machine)
+**原文链接**: [https://github.com/gorenje/erlang-red](https://github.com/gorenje/erlang-red)
 
-本文介绍了玻尔兹曼机（BM），一种用于无监督学习和生成式AI的神经网络，它模拟了物理学中的能量原理。玻尔兹曼机由可见神经元和隐藏神经元组成，它们之间具有加权连接。通用玻尔兹曼机的神经元之间都有连接，使其功能强大，但训练的计算成本很高。
+Erlang-RED 是一个实验性项目，旨在用 Erlang 等效后端替代 Node-RED 的 NodeJS 后端，将基于可视流程的编程引入 Erlang 的消息传递和并发能力。其目标是将 Node-RED 的易用性与 Erlang 的性能和并发性相结合，但同时承认由于 Javascript 函数节点限制，完全 100% 兼容现有 Node-RED 流程的可能性不大。
 
-本文重点介绍受限玻尔兹曼机（RBM），这是一种可见神经元和隐藏神经元之间没有直接连接的特殊情况。这种限制简化了训练。RBM是基于能量的模型，其中网络配置的能量由神经元状态、权重和偏差定义。
+该项目专注于流程驱动开发，并使用大量的测试流程来确保节点功能与现有 Node-RED 行为相匹配。由于用于测试和功能的节点相互关联，因此架构非常复杂。
 
-训练的目标是调整权重和偏差，以最小化训练数据的能量，从而有效地学习可见单元的概率分布。训练完成后，RBM可以使用吉布斯采样生成与训练数据相似的新数据。
+一系列 Node-RED 节点得到了部分或完全的支持，其功能级别各不相同，包括 HTTP、MQTT、文件处理、逻辑和模板节点。目前不支持上下文。Elixir 代码可以集成到节点开发中，但核心逻辑首选 Erlang 语法。
 
-训练过程，即对比散度，包括：将可见单元钳制到训练数据，对隐藏单元进行采样，重建可见单元，重新采样隐藏单元，并根据数据和模型期望之间的差异更新权重。提供的模拟器允许用户可视化训练过程，并观察RBM如何学习重建输入数据。附录提供了对比散度算法的数学推导，详细说明了权重和偏差的更新规则。
+该项目强调在 Node-RED 编辑器中进行可视化单元测试，使用“Assert Failed”和断言节点来验证流程行为。这些测试旨在确保 Erlang 后端正确实现节点功能。
 
----
-
-## 2. Show HN: 利用Min.js风格压缩技术文档以供LLM上下文使用
-
-**原文标题**: Show HN: Min.js style compression of tech docs for LLM context
-
-**原文链接**: [https://github.com/marv1nnnnn/llm-min.txt](https://github.com/marv1nnnnn/llm-min.txt)
-
-本文介绍了llm-min.txt，一种用于压缩技术文档以供大型语言模型(LLM)使用的新方法。它解决了人工智能编码助手因其“知识截止”而缺乏最新库信息的问题。与现有解决方案（如可能过大的llms.txt）和Context7（一种“黑盒”方法）不同，llm-min.txt采用人工智能将文档提炼成一个超浓缩的结构化摘要。
-
-llm-min.txt使用结构化知识格式（SKF），将信息组织成DEFINITIONS、INTERACTIONS和USAGE_PATTERNS部分，针对机器解析而非人类可读性进行了优化。配套的llm-min-guideline.md文件为人工智能解释提供了解码说明。文章声称，与原始文档相比，token减少了90-95%，从而显著提高了人工智能处理和理解信息的能力。
-
-文章提供了一个快速入门指南，包括安装说明和示例命令。它还强调了使用推荐的Gemini AI模型（gemini-2.5-flash-preview-04-17）的重要性，因为它在压缩任务中具有先进的推理能力、大的上下文窗口和成本效益。最后，它简要概述了llm-min工具的内部工作原理。
+该项目欢迎以 Erlang 代码、Node-RED 测试流程或 Elixir 代码（在指定存储库中）的形式提供的贡献。开发遵循持续集成方法，频繁推送到主分支。 提供 Docker、Fly.io 和 Heroku 部署选项。
 
 ---
 
-## 3. 预订可用会议室的恶意服从
+## 2. X X^t 可以更快
 
-**原文标题**: Malicious compliance by booking an available meeting room
+**原文标题**: X X^t can be faster
 
-**原文链接**: [https://www.clientserver.dev/p/malicious-compliance-by-booking-an](https://www.clientserver.dev/p/malicious-compliance-by-booking-an)
+**原文链接**: [https://arxiv.org/abs/2505.09814](https://arxiv.org/abs/2505.09814)
 
-2011年，拉里·佩奇作为谷歌新任CEO，试图提高会议效率。他推行了一项政策，规定会议必须有决策者，人数上限为10人，要求积极参与，并且时长设定为50分钟而非1小时，在会议之间留出10分钟的缓冲时间。谷歌日历也更新为50分钟的默认时长。
+这篇题为“XX^t 可以更快”的arXiv预印本介绍了一种新的算法RXTX，用于计算矩阵与其转置的乘积 (XX^t)。该论文由Dmitry Rybin、Yushun Zhang和Zhi-Quan Luo撰写，声称与最先进的方法相比，RXTX在所需的乘法和加法次数上减少了5%。 这使得即使对于相对较小的矩阵尺寸也能实现加速。
 
-然而，人们实际上并没有在50分钟后结束会议。纽约办事处的一个团队巧妙地利用了这一点。他们的站立会议只有10分钟，并且他们注意到50分钟默认时长所造成的日历空隙。他们开始预订会议室中那些空闲的10分钟时段，迫使较长的会议在站立团队到达时准时在50分钟结束，这符合佩奇政策的字面规定，但也可能令很多人感到沮丧。作者亲眼目睹了这种情况两次，并赞赏该团队的奉献精神（或恶作剧），但从未了解他们的身份或真正动机。这种行为是恶意合规的完美例证，利用系统设计来打破现状。
-
----
-
-## 4. 新鲜事更新
-
-**原文标题**: An Update on Fresh
-
-**原文链接**: [https://deno.com/blog/an-update-on-fresh](https://deno.com/blog/an-update-on-fresh)
-
-Fresh 2 最新进展：基于 Deno 的下一代 Web 框架
-
-本文介绍了基于 Deno 构建的下一代 Web 框架 Fresh 2 的最新进展。虽然开发时间比预期要长，但它现在已进入 alpha 阶段，并为 Deno 的主网站和 Deno Deploy 提供支持。
-
-延迟的原因在于需要增强底层 Deno 平台和 JavaScript 注册表 (JSR)，重点关注 Node 和 npm 兼容性，以实现第三方包的无缝集成，并解决 import map 和依赖管理的问题。此外，下一代 Deno Deploy（包括构建步骤）的开发也作为 Fresh 2 的测试用例。
-
-Fresh 2 旨在更具可扩展性、更快且更易于使用。主要特性包括类似 Express/Hono 的 API、真正的异步组件以及用于创建中间件的新插件系统。它还包括对预编译 JSX 的开箱即用支持，从而显著加快渲染速度。
-
-Alpha 版本 (2.0.0-alpha.30) 现已可供测试，欢迎用户提供反馈。建议使用 Deno 2.3 以获得最佳体验，它提供了改进的 `deno compile` 和本地 npm 包。用户可以使用脚手架脚本创建新项目，或使用更新脚本升级现有项目。稳定版本预计将于 2025 年第三季度末（可能在 9 月）发布。
+作者强调，RXTX算法是通过基于机器学习的搜索方法和组合优化技术的结合发现的。该论文被归类于数据结构与算法 (cs.DS) 类别下，并额外分类于人工智能 (cs.AI)、机器学习 (cs.LG) 和符号计算 (cs.SC) 类别。它提供了访问论文的PDF和TeX源代码的链接。提交历史记录表明该论文于2025年5月14日提交。该论文还包括相关研究和书目工具的链接。
 
 ---
 
-## 5. 昂菲姆的世界：历史上的儿童艺术家
+## 3. Codex研究预览
 
-**原文标题**: Onfim's world: Child artists in history
+**原文标题**: A Research Preview of Codex
 
-**原文链接**: [https://resobscura.substack.com/p/onfims-world-medieval-child-artists](https://resobscura.substack.com/p/onfims-world-medieval-child-artists)
+**原文链接**: [https://openai.com/index/introducing-codex/](https://openai.com/index/introducing-codex/)
 
-无法访问文章链接。
+以下是基于所提供URL的OpenAI Codex文章的摘要：
 
----
+OpenAI发布的《Introducing Codex》文章宣布了Codex的首次发布，Codex是一种将自然语言翻译成编程代码的新型AI模型。Codex被描述为GPT-3的后代，但经过专门训练，使用了公开的源代码数据集，包括来自5400万个GitHub存储库的代码。这种专门的训练使Codex能够擅长理解和生成代码，尤其是在Python中，但也在其他语言中，如JavaScript、Go、PHP、Ruby、Swift、TypeScript、SQL，甚至Shell。
 
-## 6. Fetii (YC S22) 正在招聘
+文章强调了Codex的能力不仅仅是简单的代码补全。它可以解释用简单英语编写的高级指令，并将它们翻译成可执行代码。这使得开发人员能够通过用自然语言表达他们的意图，而不是手动编写每一行代码，从而更快更高效地编写代码。它还展示了非程序员创建软件或自动化任务的潜力。
 
-**原文标题**: Fetii (YC S22) Is Hiring
+文章强调，Codex最初以私有测试版API的形式发布给选定的开发人员，以收集反馈并改进模型。这种受控的发布将使OpenAI能够了解Codex在实际用例中的优势和劣势，并解决潜在的安全问题。
 
-**原文链接**: [https://www.ycombinator.com/companies/fetii/jobs/QDjleWs-senior-operations-manager-fetii](https://www.ycombinator.com/companies/fetii/jobs/QDjleWs-senior-operations-manager-fetii)
-
-Fetii，一家由Y Combinator (S22) 和马克·库班投资的团体拼车初创公司，正在招聘一位高级运营经理，以帮助扩大其运营规模。该职位提供有竞争力的薪资、有意义的股票期权以及与创始人的直接沟通机会，是一个全职职位，工作地点位于德克萨斯州奥斯汀（混合办公优先，可考虑远程），需要能适应不规律的工作时间，包括晚上和周末。
-
-高级运营经理将是Fetii运营的中心人物，负责司机和车辆服务提供商(VSP)的管理、合规和监管监督、质量控制、安全执行（使用Samsara）以及销售运营/活动执行。主要职责包括寻找和管理司机、确保车队合规、维护安全标准以及协调活动物流。
-
-Fetii正在寻找一位高度有组织能力、具有创业精神和经验丰富的个人，该个人应具有强大的职业道德、解决问题的能力，并愿意全身心投入到公司的使命中。理想的候选人应具有运营、物流或初创企业环境的经验。他们必须是系统思考者，能够在压力下茁壮成长，并且对细节有极高的关注度。
-
-Fetii的目标是通过利用由15人座货车组成的网络提供按需团体乘车服务，从而颠覆团体交通运输行业，旨在缓解城市拥堵并减少道路上不必要的车辆。他们已经运送了超过61.7万名乘客，并减少了超过13万辆车辆。
+文章最后表达了OpenAI对Codex的愿景，即降低编程的入门门槛，并赋能任何人创建软件。最终目标是使软件开发对专业开发人员和编程经验有限的个人都更易于访问和高效。
 
 ---
 
-## 7. 小波树简介 (2011)
+## 4. 展示HN：Rv，R语言的包管理器
 
-**原文标题**: Wavelet Trees: An Introduction (2011)
+**原文标题**: Show HN: Rv, a Package Manager for R
 
-**原文链接**: [https://www.alexbowe.com/wavelet-trees/](https://www.alexbowe.com/wavelet-trees/)
+**原文链接**: [https://github.com/A2-ai/rv](https://github.com/A2-ai/rv)
 
-本文介绍了小波树（Wavelet Tree），一种用于高效回答大字母表序列上rank查询的数据结构。小波树将字符串组织成一个位向量的层次结构，从而能够以O(log₂A)的时间复杂度执行rank查询，其中A是字母表的大小。
+Rv：可复现、快速且声明式的R包管理器。Rv是一个新的R包管理器，旨在实现可复现、快速且声明式的包管理。它仍在开发中，提供了一种配置驱动的方法，使用配置文件（可能是`rproject.toml`）来定义所需的项目状态，包括R版本、仓库和依赖项。主要命令有`rv plan`（预览更改）和`rv sync`（同步库、锁定文件和配置文件）。
 
-其构造过程涉及递归地将字母表对半分，并将每一半编码为0或1，从而创建一个二叉树。树中的每个节点存储一个位向量，表示它所覆盖的字符串部分的编码。这些位向量可以使用诸如RRR或Sadakane和Okonohara的rank索引之类的结构进行进一步的压缩和索引。
+配置文件允许指定仓库（带有别名和URL）和依赖项（带有安装建议包等选项）。`rv sync`会根据配置安装指定的包及其依赖项。有示例项目展示了更多配置。
 
-在小波树上执行rank查询涉及遍历树，使用每一层的编码来引导搜索到适当的子树。查询在路径上的每个节点执行二元rank查询，直到到达叶节点，从而提供最终的rank答案。
+安装和使用说明在单独的文档中提供。
 
-本文还提到小波树可以与后缀数组结合使用进行模式搜索，实现O(P log₂A)的时间复杂度，其中P是模式长度。作者鼓励读者探索select查询和霍夫曼形状的小波树，并指出了Francisco Claude的libcds中的一个实现。
-
----
-
-## 8. 模式生物并非一成不变
-
-**原文标题**: Model Organisms Are Not Static
-
-**原文链接**: [https://www.asimov.press/p/model-organisms-are-not-static](https://www.asimov.press/p/model-organisms-are-not-static)
-
-这篇阿西莫夫出版社的文章《模式生物并非静止不变》探讨了科学研究中的可重复性危机，尤其是动物研究方面。文章认为，模式生物体内积累的基因突变会对实验结果产生重大影响。
-
-文章重点介绍了一项2023年的研究，该研究表明脊椎动物物种间的突变率差异很大，实验室小鼠平均每代获得15个新的突变。虽然这些突变大多不会直接影响蛋白质编码基因，但它们可以改变基因调控，从而可能影响实验结果。作者指出，实验室中控制育种的做法，虽然最大限度地减少了遗传多样性，但可能会无意中保留自然选择会在野外淘汰的有害突变。
-
-文章提到了杰克逊实验室通过冷冻保存和定期“重置”小鼠基因组来缓解这个问题的努力，但即使是这些方法也无法完全阻止突变的积累。
-
-文章暗示，科学家们可能在不知不觉中将某些特征归因于这些积累的生殖系错误。文章呼吁研究人员更频繁地对他们的模式生物品系进行测序，并评估基因调控模式，以将基因改变的动物排除在育种计划之外。文章还提到，研究人员开始冷冻保存其他模式生物的胚胎，以限制突变的负担。
-
-文章总结道，研究人员必须积极应对这些突变引起的变异，以避免加剧可重复性危机。认识到基因组变化对可重复性构成的威胁，研究人员开始冷冻保存其他动物模型胚胎，以限制突变的负担。果蝇研究人员已经开发出一种冷冻果蝇胚胎的方法。
+要为Rv的开发做出贡献，需要Rust，Just是可选的。可以使用`just run <args>`或`cargo run`构建项目。可以使用`just install`或`cargo install`将其安装为二进制文件。可以使用`just test`或`cargo test`运行单元测试。快照测试需要R版本4.4.x。
 
 ---
 
-## 9. Show HN: 实时高斯溅射
+## 5. 自由线程Python元年
 
-**原文标题**: Show HN: Real-Time Gaussian Splatting
+**原文标题**: The first year of free-threaded Python
 
-**原文链接**: [https://github.com/axbycc/LiveSplat](https://github.com/axbycc/LiveSplat)
+**原文链接**: [https://labs.quansight.org/blog/free-threaded-one-year-recap](https://labs.quansight.org/blog/free-threaded-one-year-recap)
 
-LiveSplat 是一款闭源算法，用于利用 RGBD 相机流进行实时高斯溅射，它是 VR 远程机器人系统的一部分。由于社区的兴趣，作者 Mark Liu 将以 alpha 质量公开发布该算法。它需要 Python 3.12+、Windows 或 Ubuntu、x86_64 CPU 和 Nvidia 显卡。安装涉及使用 `pip` 安装 wheel 文件（Ubuntu 和 Windows 的 URL 不同）。要使用 LiveSplat，用户必须创建一个集成脚本来提供 RGBD 流，并且该存储库提供了一个用于 Intel Realsense 设备的示例脚本。尽管是 alpha 软件，但作者希望用户会喜欢尝试 LiveSplat。由于其闭源性质，作者正在探索潜在的商机，并鼓励有兴趣的企业通过 mark@axby.cc 联系他，以咨询许可/集成事宜。支持和讨论可在他们的 Discord 服务器上进行。
+本文总结了支持自由线程Python的第一年工作，重点介绍了Quansight和Meta为实现其实验性使用所做的工作。自由线程Python旨在通过移除全局解释器锁（GIL）来释放现代多核CPU和GPU的全部潜力，该锁阻碍了标准构建中的并行扩展。
+
+这种转变需要大量工作，因为许多带有编译代码的Python包需要进行审计和修改，以确保线程安全，尤其是在使用全局状态方面。主要成就包括对打包工具、绑定生成器以及NumPy、SciPy和pandas等基础PyData包的贡献。CPython核心也取得了重大改进，包括warnings模块、asyncio和ctypes中的线程安全，以及垃圾收集器和自适应专门化解释器的性能增强。
+
+虽然最初生态系统因自由线程构建而中断，但在修复构建问题方面已取得重大进展。作者强调需要更多的实际测试，以识别性能瓶颈和线程安全问题。在支持维护资源有限的大型遗留软件包方面仍然存在挑战。作者鼓励社区通过贡献指南、专门的Discord频道以及PyCon 2025上的演示来参与。作者认为自由线程Python是未来，并对其改善大量开发者性能的潜力持乐观态度。
 
 ---
 
-## 10. Elixir 的 Lua
+## 6. 铸造厂（YC F24）招聘 – 创始工程师（机器学习 × 软件工程师）
 
-**原文标题**: Lua for Elixir
+**原文标题**: Foundry (YC F24) Is Hiring – Founding Engineer (ML × SWE)
 
-**原文链接**: [https://davelucia.com/blog/lua-elixir](https://davelucia.com/blog/lua-elixir)
+**原文链接**: [https://www.ycombinator.com/companies/foundry/jobs/uwi8b6I-founding-engineer-ml-x-swe](https://www.ycombinator.com/companies/foundry/jobs/uwi8b6I-founding-engineer-ml-x-swe)
 
-本文宣布发布Lua v0.1.0，这是一个Elixir库，得益于底层的Luerl库（一个用Erlang编写的Lua解析器、编译器和运行时），它允许直接在BEAM VM上执行沙盒化的Lua代码。该Elixir库通过更好的错误消息和文档增强了Luerl的功能。主要功能包括使用`deflua`宏和`Lua.load_api/2`，用Elixir API扩展Lua的能力，以及使用`~LUA` sigil进行编译时语法验证。
+Foundry (YC F24) 招聘创始工程师 (机器学习 × 软件工程)，构建浏览器代理的基础设施，超越简单的 GPT 封装。他们的目标是创建一个“世界模型”，以可靠地自动化基于浏览器的 Workflow，这些 Workflow 对于现有的 AI 系统来说过于脆弱。该公司正在构建核心 AI 技术栈，包括超真实的 Web 模拟、全面的标注框架、可靠的基准以及强大的 RL 训练环境。
 
-该库起源于TV Labs，在那里它被用于通过将拖放式自动化构建器编译为Lua，在物理设备上执行集成测试。作者重点介绍了Erlang和Luerl的创建者Robert Virding，并解释了Luerl的起源：探索在BEAM上实现一种命令式语言。
+Foundry 寻求一位具有扎实软件工程技能（Python、TypeScript）和机器学习经验（训练模型、构建基础设施、运行实验）的工程师。该职位涉及构建浏览器代理 Gym，并在生产环境中解决困难的机器学习问题。 拥有 RL 代理、浏览器自动化 (Puppeteer、Playwright) 或评估工具经验者优先。
 
-未来的计划包括将Elixir Lua库合并到Luerl中，以创建2.0.0版本，其中包含改进的错误消息、堆栈跟踪、文档和沙盒功能，以及与Lua生态系统的更深入集成。作者鼓励通过Slack、Discord或GitHub进行贡献。
+公司提供早期股权、有竞争力的薪酬以及巨大的发展前景。该职位的优势在于有机会构建其他人以后将依赖的核心机器学习基础设施。
+
+Foundry 正在构建一个用于 Web 代理评估和训练的端到端平台，专注于确定性 Web 模拟、实时 Web 评估、自动标注和标记以及 RL 驱动的代理优化。 这使团队能够为真实环境构建更可靠的 Web 代理。 创始人来自 Scale AI 和 Meta。
+
+---
+
+## 7. 确保研究记录的准确性
+
+**原文标题**: Assuring an Accurate Research Record
+
+**原文链接**: [https://economics.mit.edu/news/assuring-accurate-research-record](https://economics.mit.edu/news/assuring-accurate-research-record)
+
+麻省理工学院公开回应关于一篇预印本论文诚信问题的关切，该论文题为“人工智能、科学发现和产品创新”，最初于2024年11月发表在arXiv上。在收到指控并进行内部审查后，麻省理工学院已要求arXiv和《经济学季刊》撤回该论文。
+
+纪律委员会（COD）告知arXiv，麻省理工学院“对论文中数据的来源、可靠性或有效性没有信心，并且对研究的真实性没有信心”，并指出该论文的存在可能违反该平台的行为准则。尽管麻省理工学院已指示作者（一位前博士生）要求撤回论文，但作者并未采取行动，因此麻省理工学院直接提出了撤回请求。
+
+论文中致谢的Daron Acemoglu教授和David Autor教授也发表声明，表达了类似的担忧。他们明确表示，“对数据的来源、可靠性或有效性以及研究的真实性没有信心”。他们公开表达担忧是因为该论文虽然是预印本，但正在影响关于人工智能对科学影响的讨论，他们认为不应依赖其研究结果。
+
+麻省理工学院强调其对研究诚信的承诺，并强调已制定政策和流程来解决此类问题。该作者已不再隶属于麻省理工学院。采取这一行动是为了确保准确的研究记录并减轻潜在不当行为的影响。
+
+---
+
+## 8. 解释风帆时代英国海军的霸主地位
+
+**原文标题**: Explaining British Naval Dominance During the Age of Sail
+
+**原文链接**: [https://www.lesswrong.com/posts/YE4XsvSFJiZkWFtFE/explaining-british-naval-dominance-during-the-age-of-sail](https://www.lesswrong.com/posts/YE4XsvSFJiZkWFtFE/explaining-british-naval-dominance-during-the-age-of-sail)
+
+本文从经济学的角度，以监测和激励舰长的挑战为重点，解释了英国在风帆时代（1670-1827年）的海军霸权。尽管没有拥有优越的技术（法国船只可能更好），但英国海军的表现始终优于其竞争对手，其证据是伤亡率显著降低，并且在捕获或摧毁敌舰方面取得了更大的成功。
+
+作者认为，由于海洋的广阔、通讯的缓慢以及机遇（天气）的作用，监测海军舰长存在固有的困难，导致激励机制错位。舰长们优先考虑捕获商船以获取个人利润，有时会逃避战斗。
+
+为了解决这个问题，英国海军实施了几项机制来鼓励战斗：慷慨的补偿，包括奖金和带有半薪的“效率工资”制度；基于资历的晋升保障，以阻止逃避；诸如“战列线”队形和占据上风等战术，从而加强了对舰长行为的监控。中尉和航海长保留了详细的航海日志，作为对舰长的制约，并且《战争条约》规定必须与规模相似的敌舰交战，对未能尽力而为者处以严厉的惩罚，包括死刑。
+
+对这些规则的严厉执行，以海军上将约翰·宾的处决为例，表明英国海军认真对待逃避问题。19世纪蒸汽船的引入使得这些机制变得过时，因为监控变得更容易，并且引入了《海军纪律法》，从而结束了英国风帆海军霸权的时代。
+
+---
+
+## 9. Show HN：SQL-tString：Python 中的 t-string SQL 构建器
+
+**原文标题**: Show HN: SQL-tString a t-string SQL builder in Python
+
+**原文链接**: [https://github.com/pgjones/sql-tstring](https://github.com/pgjones/sql-tstring)
+
+SQL-tString 是一个 Python 库，它允许使用 t-strings（Python 3.14 引入）安全且方便地构建 SQL 查询。它通过将 t-string 中的变量转换为 SQL 占位符来防止 SQL 注入。
+
+主要特性包括：
+
+*   **安全参数化：** `{}` 中的变量会自动转换为占位符，防止注入漏洞。
+*   **上下文验证：** `sql_context` 允许定义允许的列名和表名，如果 t-string 包含无效标识符，则会引发错误。
+*   **条件查询修改：** `Absent` 值会从查询中删除参数，适用于可选更新。`IsNull` 和 `IsNotNull` 能够正确处理 `NULL` 比较。
+*   **方言支持：** 支持 `qmark` (默认) 和 `$`/`asyncpg` 参数样式。
+*   **兼容 Pre-Python 3.14：** 可以通过将 `locals()` 字典作为第二个参数传递给 `sql()` 在 Python 3.12 和 3.13 中使用。
+
+本质上，SQL-tString 简化了 SQL 查询的创建，增强了安全性，并通过条件逻辑和方言支持提供了灵活性。
+
+---
+
+## 10. 塔防：缓存控制
+
+**原文标题**: Tower Defense: Cache Control
+
+**原文链接**: [https://www.jasonthorsness.com/26](https://www.jasonthorsness.com/26)
+
+Jason Thorsness 的文章《塔防：缓存控制》探讨了通过缓存策略来防御网站免受高流量冲击，同时最小化成本。文章提出了三个难度级别，分别代表不同类型的网站及其缓存需求。
+
+**简单（主要为静态网站）：** 利用内容哈希资源和 CDN。 内容哈希确保浏览器和 CDN 缓存静态文件，而无需担心过时问题。 CDN 将资源缓存在更靠近用户的全球各地，使用 "Etag" 标头通过 "304 Not Modified" 响应进行高效更新，从而最大限度地减少延迟和源服务器负载。 动态部分在客户端处理，以保留静态缓存的优势。
+
+**中等（数据驱动的动态网站）：** 采用短期缓存控制标头，如 `stale-while-revalidate` 用于 CDN 缓存，在后台异步刷新内容的同时，提供陈旧内容，保持低延迟。 后端缓存至关重要，使用内存缓存来存储频繁访问的数据，使用单例模式来合并相同的请求，并使用磁盘缓存 (SQLite) 进行持久、大容量存储，并根据内容年龄设置过期函数。
+
+**困难（经过身份验证的每个用户网站）：** 由于个性化内容，缓存变得更具挑战性。 该策略包括隔离和缓存非每用户内容（如静态站点），并使用浏览器缓存和服务器端（源）每用户缓存，以及之前提到的内存和磁盘缓存，以及单例模式。 客户端计算也有助于减少对服务器的依赖。
+
+结论强调了缓存对于性能和成本管理的重要性，尤其是在使用计量 API 和无服务器托管的情况下。 有效的缓存架构可以通过仔细的缓存策略来扩展有限的资源，参考历史数据，并以更少的资源实现更好的负载处理。
 
 ---
 
@@ -151,60 +171,61 @@ LiveSplat 是一款闭源算法，用于利用 RGBD 相机流进行实时高斯�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 2 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 1 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 2 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
 | 3 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 4 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 5 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 6 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 7 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 8 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 9 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 10 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 4 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 5 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 6 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 7 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 8 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 9 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 10 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
 | 11 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 12 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 12 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
 | 13 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 14 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 15 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 16 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 17 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 18 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 19 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 20 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 21 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 22 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 14 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 15 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 16 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 17 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 18 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 19 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 20 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 21 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 22 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
 | 23 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 24 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 25 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 26 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 27 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 24 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 25 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 26 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 27 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
 | 28 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 29 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 30 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 31 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 32 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 33 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 34 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 35 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 29 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 30 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 31 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 32 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 33 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 34 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 35 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
 | 36 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 37 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 38 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 39 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 40 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 41 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 42 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 43 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 44 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 45 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 46 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 47 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 48 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 49 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 50 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 51 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 52 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 53 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 54 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 55 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 56 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 57 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 37 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 38 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 39 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 40 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 41 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 42 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 43 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 44 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 45 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 46 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 47 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 48 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 49 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 50 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 51 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 52 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 53 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 54 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 55 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 56 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 57 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 58 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
