@@ -1,171 +1,162 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-22.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-23.md)
 
-*最后自动更新时间: 2025-05-22 17:49:24*
-## 1. 克劳德 4
+*最后自动更新时间: 2025-05-23 17:50:11*
+## 1. VS Code 中的 PostgreSQL IDE
 
-**原文标题**: Claude 4
+**原文标题**: PostgreSQL IDE in VS Code
 
-**原文链接**: [https://www.anthropic.com/news/claude-4](https://www.anthropic.com/news/claude-4)
+**原文链接**: [https://techcommunity.microsoft.com/blog/adforpostgresql/announcing-a-new-ide-for-postgresql-in-vs-code-from-microsoft/4414648](https://techcommunity.microsoft.com/blog/adforpostgresql/announcing-a-new-ide-for-postgresql-in-vs-code-from-microsoft/4414648)
 
-Anthropic 发布 Claude 4，推出两款新模型：Claude Opus 4 和 Claude Sonnet 4。Opus 4 是最强大的模型，擅长编码和复杂问题解决，性能超越所有 Sonnet 模型，并被认为是世界最佳编码模型。Sonnet 4 是 Sonnet 3.7 的升级版，提供卓越的编码和推理能力，并将成为全新 GitHub Copilot 编码代理的基础。
+此文宣布 Visual Studio Code (VS Code) 适用的全新 PostgreSQL 扩展的公开预览版，该扩展旨在简化 PostgreSQL 数据库管理和开发工作流程。它通过在 VS Code 中集成数据库工具和 @pgsql GitHub Copilot 代理，解决了开发人员面临的挑战，例如任务切换和调试时间。
 
-主要改进包括使用工具进行扩展思考（测试版），如网络搜索、并行工具执行、改进的指令遵循以及增强的本地文件访问记忆能力。Claude Code 现已全面推出，并集成 VS Code 和 JetBrains。同时发布了新的 API 功能。
+主要功能包括：
 
-这两款模型都提供混合模式：近乎即时的响应和扩展的思考。它们可在 Anthropic API、Amazon Bedrock 和 Google Cloud 的 Vertex AI 等多个平台上使用。Opus 4 的价格为每百万 tokens 15 美元/75 美元（输入/输出），Sonnet 4 的价格为 3 美元/15 美元。
+*   **模式可视化：** 通过右键单击上下文菜单轻松可视化。
+*   **数据库感知型 GitHub Copilot：** 利用 AI 辅助进行查询、模式优化和 SQL 操作，提供实时指导并提高代码质量。提供一个包含“重写查询”和“解释查询”等选项的上下文菜单。
+*   **GitHub Copilot 聊天代理模式：** 一种智能助手，可以执行多阶段任务、编写和调试代码、简化应用程序原型设计以及优化模式。
+*   **简化连接管理：** 轻松连接到本地和云托管的 PostgreSQL 实例，包括 Azure Database for PostgreSQL，并集成 Entra ID。
+*   **使用 Entra ID 的无密码身份验证：** 通过自动令牌刷新实现简化的安全身份验证。
+*   **数据库资源管理器：** 数据库对象的结构化视图，用于创建、修改和删除。
+*   **查询历史记录：** 快速访问以前运行的查询。
+*   **上下文感知型 IntelliSense：** 自动完成和语法突出显示，以提高查询可读性。
 
-Opus 4 在 SWE-bench (72.5%) 和 Terminal-bench (43.2%) 上领先。Sonnet 4 在 SWE-bench 上达到 72.7%。Claude 4 模型还表现出减少的捷径行为和改进的记忆能力，特别是 Opus 4，它利用“记忆文件”来实现长期任务感知。
-
-Claude Code 包括针对 IDE 的全新测试版扩展程序和一个可扩展的 Claude Code SDK。这些模型经过了广泛的安全测试，并实施了更高的 AI 安全级别 (ASL-3)。
-
----
-
-## 2. 在我墙上挂了12年的那个分形图
-
-**原文标题**: That fractal that's been up on my wall for 12 years
-
-**原文链接**: [https://chriskw.xyz/2025/05/21/Fractal/](https://chriskw.xyz/2025/05/21/Fractal/)
-
-作者在本文中详细阐述了他们对贴在墙上12年之久的碎形（昵称“壁花”）的探索。这个碎形最初是作者在初中时通过重复平铺和旋转正方形而创建的。经过多年的数学教育后，作者重新审视了这个碎形，意识到它可以用L系统生成。然而，最初的L系统生成的是另一种有充分文献记载的碎形（二次科赫岛）。关键的区别在于如何放置前一次迭代的副本：“壁花”将副本直接放置在上方、下方和侧面，而标准的L系统将它们对角放置。
-
-然后，作者深入研究了如何用基于矩阵的数字系统来表示该碎形的结构。通过以特定顺序为正方形分配数字，他们发现了模式，并将正方形的位置表示为向量。这使得他们找到一个矩阵M，当该矩阵自乘并应用于“数字向量”时，可以准确地预测碎形中正方形的位置。
-
-至关重要的是，他们发现矩阵的行列式至关重要。负行列式会在每次迭代时翻转碎形的朝向，从而生成“壁花”变体。正行列式会生成更常见的二次科赫岛。他们还表明，行列式的大小决定了碎形的缩放因子，偏离+/-5的行列式会导致碎形迭代中出现间隙或重叠。因此，看似任意的初始旋转角度与行列式和所使用的矩阵的结构有关。
+该扩展旨在提高生产力、简化入门流程、通过 Entra ID 提高安全性、提供全面的工具集以及提供与 Azure Database for PostgreSQL 的无缝云集成。文中包含安装扩展程序和启用 PostgreSQL GitHub Copilot 聊天的说明。作者鼓励用户提供反馈以改进扩展程序。
 
 ---
 
-## 3. 提高 rav1d 视频解码器的性能
+## 2. 找到你的同伴
 
-**原文标题**: Improving performance of rav1d video decoder
+**原文标题**: Find Your People
 
-**原文链接**: [https://ohadravid.github.io/posts/2025-05-rav1d-faster/](https://ohadravid.github.io/posts/2025-05-rav1d-faster/)
+**原文链接**: [https://foundersatwork.posthaven.com/find-your-people](https://foundersatwork.posthaven.com/find-your-people)
 
-本文详细介绍了作者为提升rav1d（dav1d AV1视频解码器的Rust移植版本）性能所做的努力，目标是提高1%的速度。作者利用采样分析器(samply)，将rav1d的性能与dav1d进行比较，重点关注共享的汇编函数作为锚点。
+在巴克内尔大学的毕业典礼上，演讲者面向毕业生，特别是那些对未来感到迷茫的人们发表讲话。他认为毕业后，生活将从预设的“轨道”转变为更加开放的景象，既充满兴奋，又充满恐惧。他鼓励毕业生们积极地掌控自己的生活，而不是被动地漂流。
 
-初步分析显示，`cdef_filter`函数存在差异，与dav1d不同，rav1d在将其传递给汇编代码之前不必要地将一个临时缓冲区(`tmp_buf`)归零。 解决方案包括使用`MaybeUninit`来避免初始化，从而提高性能。 另一个优化涉及将`lr_bak`的初始化提升到`rav1d_cdef_brow`循环之外，避免冗余初始化。
+他建议那些不确定的人“重塑”自我，摆脱过去基于学业成绩对自身能力的认知。他强调，他们有能力采纳新的品质，比如好奇心和责任感，而不会因为过去的表现而受到评判。
 
-使用“反向堆栈”视图的进一步分析突出了`add_temporal_candidate`函数中的性能差异。 作者发现，对`Mv`结构体（包含两个i16字段）进行逐字段相等性检查比dav1d将`Mv`结构体视为u32进行比较的方法要慢。 作者建议使用`transmute`将`Mv`重新解释为u32，以实现更快的相等性检查。
+为了应对大量职业选择带来的迷茫，演讲者建议使用一个“技巧”：与有趣的人建立联系。他强调与各个领域的人交谈，发现什么能激发他们的兴趣的重要性。他还建议离开那些与自己不合拍的工作场所。
 
-这些优化使得rav1d在特定基准测试中的运行时提高了1.5%（1.2秒），涵盖了rav1d和dav1d之间大约20%的性能差距。 作者强调了剖析和理解代码底层性能特征以识别优化机会的重要性。
-
----
-
-## 4. Ruby 3.5 中的快速内存分配
-
-**原文标题**: Fast Allocations in Ruby 3.5
-
-**原文链接**: [https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/](https://railsatscale.com/2025-05-21-fast-allocations-in-ruby-3-5/)
-
-本文详细介绍了 Ruby 3.5 中一项显著的优化，该优化加速了对象分配，特别是 `Class#new` 内部的分配。该优化实现了高达 6.5 倍的加速，在使用关键字参数和 YJIT 时尤其明显。
-
-作者最初的目标是用 Ruby 重写 `Class#new`，利用参数转发。然而，内联缓存未命中的问题导致与笹田耕一和 John Hawthorn 合作，通过使用新的 YARV 指令 (`opt_new`) 将 `Class#new` 逻辑直接“内联”到字节码中来实现优化。
-
-内联消除了单独调用 `Class#new` 方法的开销，包括在 Ruby 堆栈和 C 寄存器之间复制参数的需要（对于关键字参数来说，尤其昂贵，因为在之前的版本中需要分配哈希）。这种方法减少了推送和弹出堆栈帧的需要，并通过将 `initialize` 调用站点分布在所有 `new` 调用中来提高内联缓存命中率。
-
-本文展示了在有和没有 YJIT 的情况下，位置参数和关键字参数的加速比基准测试。虽然有效，但内联也存在一些小的缺点：指令大小增加（仅增加 0.5%）以及影响堆栈跟踪输出的向后不兼容，因为不再存在 `Class#new` 帧。总的来说，该优化显著提高了 Ruby 3.5 中的分配性能。
+最后，他强调需要培养对拒绝的免疫力。雄心勃勃的想法往往会受到怀疑，坚持至关重要。他分享了他与Y Combinator的经历，最初被认为是笑话，以说明看似“平庸”的想法也可能具有突破性。他最后重申了积极选择道路和向有趣的人学习的重要性，最终鼓励毕业生们拥抱雄心，忽略反对者。
 
 ---
 
-## 5. Mozilla将于2025年7月8日关闭Pocket。
+## 3. 超越语义：无理性中间令牌的不可思议的有效性
 
-**原文标题**: Mozilla to shutdown Pocket on July 8, 2025
+**原文标题**: Beyond Semantics: Unreasonable Effectiveness of Reasonless Intermediate Tokens
 
-**原文链接**: [https://support.mozilla.org/en-US/kb/future-of-pocket](https://support.mozilla.org/en-US/kb/future-of-pocket)
+**原文链接**: [https://arxiv.org/abs/2505.13775](https://arxiv.org/abs/2505.13775)
 
-Mozilla将于2025年7月8日关闭Pocket服务。此日期之后，Pocket将进入仅导出模式，直至2025年10月8日，届时所有用户数据将被永久删除。用户可以在此之前导出他们保存的文章（包括列表、存档、收藏夹、笔记和高亮）。
+这篇arXiv论文《超越语义：无理性中间令牌的出乎意料的有效性》挑战了一个被广泛接受的观点，即大型语言模型（LLMs）中思维链（CoT）提示的成功源于中间“思考”令牌的有意义的语义。作者认为，这些通常被解释为推理证据的令牌，可能不像之前认为的那么关键。
 
-此决定源于不断演变的网页使用情况，Mozilla将资源集中于其他项目。尽管Pocket即将关闭，Mozilla强调了其连接数百万用户与高质量内容的遗产，并将继续通过诸如新标签页体验和更名为“Ten Tabs”的电子邮件新闻通讯（原Pocket Hits）等举措，投资于内容策划。
+为了调查这一点，他们训练了转换器模型，使用了来自A*搜索的形式上可验证的推理轨迹和解决方案，确保中间步骤和最终输出与形式求解器对齐。然后，他们系统地评估了不仅解决方案的准确性，还评估了这些中间轨迹的正确性。
 
-Pocket Premium的月度订阅将立即停止续订，用户可以免费访问直至订阅周期结束。年度订阅者将在2025年7月8日自动收到按比例退款。
+关键发现是，用准确的轨迹训练的模型仍然可以产生不正确的推理步骤，同时得出正确的解决方案。更令人惊讶的是，作者发现，用与特定问题无关的嘈杂、损坏的轨迹训练的模型，表现与用正确的轨迹训练的模型相当，有时甚至更好。这表明轨迹准确性和解决方案准确性之间的联系并不紧密，甚至使用“无理性”的中间令牌可能会提高泛化能力。
 
-Pocket网页扩展将于2025年5月22日从应用商店中移除，并将用户重定向到导出页面。该扩展将保留在浏览器中，需要手动移除。该应用程序将从2025年5月22日起无法进行新安装，但现有用户可以在2025年10月8日之前重新安装。
-
-第三方应用程序对Pocket API的访问权限将于2025年10月8日起禁用。
-
-关键日期：
-
-*   **2025年5月22日：** Pocket从应用商店移除，月度续订禁用，停止新用户注册
-*   **2025年7月8日：** Pocket关闭，年度退款处理，开始仅导出模式
-*   **2025年10月8日：** 最终数据导出日期，所有数据删除。
+论文的结论是，告诫人们不要将中间令牌拟人化，或者过度解读它们为人类般的或算法推理的证据，尽管它们通常看起来格式正确。结果表明，CoT的有效性可能更多地在于中间令牌提供的结构或支架，而不是它们特定的语义内容。
 
 ---
 
-## 6. Showh HN: SQLite JavaScript - 使用 JavaScript 扩展你的数据库
+## 4. 凯撒之息
 
-**原文标题**: Showh HN: SQLite JavaScript - extend your database with JavaScript
+**原文标题**: Caesar's Last Breath
 
-**原文链接**: [https://github.com/sqliteai/sqlite-js](https://github.com/sqliteai/sqlite-js)
+**原文链接**: [https://charliesabino.com/caesars-last-breath/](https://charliesabino.com/caesars-last-breath/)
 
-SQLite-JS 是一个强大的扩展，允许开发者使用 JavaScript 代码扩展 SQLite 数据库。它支持直接在 SQLite 中创建自定义标量函数、聚合函数、窗口函数和排序规则。
+本文探讨了费米估算的概念，并以“凯撒的最后一口气”这个思想实验为例，展示了如何通过简单的计算来估算看似不可能的数量。核心问题是：我们每次呼吸会吸入多少凯撒最后一口气中的分子？
 
-安装过程包括下载适用于各种平台（Linux、macOS、Windows、Android、iOS）的预构建二进制文件，并使用 SQLite CLI 或 SQL 加载扩展。 该扩展提供了诸如 `js_create_scalar`、`js_create_aggregate`、`js_create_window` 和 `js_create_collation` 等函数，用于使用 JavaScript 定义自定义逻辑。 标量函数处理单个行，聚合函数处理多行以生成单个结果，窗口函数在不折叠行的情况下对一组行进行操作，排序规则定义自定义排序顺序。
+文章认为，由于分子的扩散和保存，我们每次呼吸都包含着曾经生活过的所有人的呼吸的一部分。为了估算这一点，文章将问题分解为计算地球大气层的体积和单次呼吸的体积。
 
-该扩展还允许使用 `js_eval` 在 SQLite 查询中直接进行 JavaScript 评估。 与 sqlite-sync 一起使用时，用户定义的函数会自动在设备之间复制。
+文章使用锚定值（地球半径、大气层厚度、大气密度和空气分子量）估计大气层的体积约为 5 x 10^18 立方米，单次呼吸的体积为 5 x 10^-4 立方米。这得出一个结论：凯撒的最后一口气占据了大气层的 1/10^22。
 
-示例说明了如何使用 SQLite-JS 执行诸如从电子邮件中提取域名、计算标准差以及实现用于百分位数排名的自定义窗口函数等任务。 请注意，由于 SQLite 的限制，更新函数需要单独的数据库连接。 该项目可以使用提供的 Makefile 从源代码构建，并根据 MIT 许可证获得许可。
+接下来，文章估计单次呼吸中的分子数量约为 10^22。将此数字乘以先前计算的比例，得出的结论是，我们每次呼吸大约会吸入凯撒最后一口气中的一个分子。
 
----
-
-## 7. 韩国酱油大师谈完美酱油之道
-
-**原文标题**: A South Korean grand master on the art of the perfect soy sauce
-
-**原文链接**: [https://www.theguardian.com/world/2025/may/21/without-time-there-is-no-flavour-a-south-korean-grand-master-on-the-art-of-the-perfect-soy-sauce](https://www.theguardian.com/world/2025/may/21/without-time-there-is-no-flavour-a-south-korean-grand-master-on-the-art-of-the-perfect-soy-sauce)
-
-奇顺道是韩国唯一的传统酱油（진장，jinjang）大师，这个称号认可了她致力于保护家族传承370年的发酵技术。她监管着1200个陶罐，在其中，大豆、水、盐、呵护和时间转化为酱油（간장，ganjang）、大酱（된장，doenjang）和辣椒酱（고추장，gochujang），这些都是韩国料理的基石。她的工艺浸润在传统中，包括净化仪式、特定的天气条件，以及使用竹盐等原料。她还使用潭阳草莓制作草莓辣椒酱，以获得天然甜味。
-
-她对这项事业的奉献为她赢得了国际赞誉，她的陈年“母酱”曾被用来调味招待唐纳德·特朗普的烤牛排。奇顺道相信发酵食品的健康益处，并创办了一所发酵学校来分享她的知识。
-
-这篇文章强调了她面临的挑战，包括家庭酱料制作的衰落以及气候变化对发酵过程的影响，迫使她调整自己的方法。尽管面临这些挑战，奇顺道仍然致力于保护这项文化遗产，特别是自酱料制作被联合国教科文组织认可为人类非物质文化遗产以来，这强调了它超越单纯食品生产的重要性。她将自己的工作视为维护这一传统以传承给后代的使命。
+文章最后强调了费米估算的强大之处及其在现实世界中的适用性。它建议了一些资源，用于进一步练习和探索该技术，尤其是在软件工程的背景下。
 
 ---
 
-## 8. 基于模型上下文协议的符号代数探险
+## 5. 米制起源于法国大革命
 
-**原文标题**: Adventures in Symbolic Algebra with Model Context Protocol
+**原文标题**: The metre originated in the French Revolution
 
-**原文链接**: [https://www.stephendiehl.com/posts/computer_algebra_mcp/](https://www.stephendiehl.com/posts/computer_algebra_mcp/)
+**原文链接**: [https://www.abc.net.au/news/science/2025-05-20/metre-treaty-anniversary-metric-system-measurement-metrology/105302024](https://www.abc.net.au/news/science/2025-05-20/metre-treaty-anniversary-metric-system-measurement-metrology/105302024)
 
-本文详细介绍了作者实验Anthropic的Model Context Protocol (MCP)的经验。MCP是一种允许语言模型(LLMs)与外部工具交互的系统。作者专注于使用MCP使像Claude这样的LLMs能够执行复杂的符号代数运算，这是一项由于计算限制，它们通常难以完成的任务。
+本文探讨了米的单位历史和演变，从其在法国的革命性起源到目前基于光速的定义。米最初在法国大革命期间被构想为一种与自然相关的通用测量单位，定义为从北极经巴黎到赤道距离的千万分之一。
 
-作者构建了一个sympy-mcp服务器，利用像SymPy这样的计算机代数系统来处理数学运算，而LLM则处理自然语言理解和编排。该服务器通过MCP暴露数学工具，使Claude能够准确地解决诸如整数分解或求解微分方程等问题。
+1875年的《米制公约》（米制条约）在国际上标准化了米和千克，并建立了国际计量局。早期的米物理表示，如铂金棒，后来被基于氪-86发出的光波长的定义所取代。
 
-本文强调了将LLMs与专用工具相结合的好处：LLMs处理界面，而工具提供精确的结果。阻尼谐振子求解的例子证明了这种方法。
+原子钟和光速测量技术的进步导致了米目前的定义，自1983年以来，米被定义为光在真空中1/299,792,458秒内传播的距离。这种精确的定义可以进行精确的测量，例如确定地球和月球之间的距离。
 
-然而，作者也强调了MCP生态系统早期“狂野西部”的性质，指出文档不完善、黑客松质量的实现以及调试挑战。由于MCP服务器在本地运行，可能允许LLMs调用任意代码，因此提出了一个重大的安全问题。作者建议谨慎，并鼓励读者由于缺乏安全措施，在安装MCP服务器之前审查源代码。
-
----
-
-## 9. Show HN: DockFlow – 瞬间切换多个macOS Dock布局
-
-**原文标题**: Show HN: DockFlow – Switch between multiple macOS Dock layouts instantly
-
-**原文链接**: [https://dockflow.appitstudio.com/](https://dockflow.appitstudio.com/)
-
-DockFlow 是一款 macOS 应用程序，旨在通过允许用户即时切换多个自定义的 Dock 布局来提高生产力。 这消除了在编码、设计或写作等任务之间切换时手动重新排列 Dock 的需要。
-
-该应用程序设计简洁，设置快捷：用户按需排列 Dock，在 DockFlow 中为配置命名并保存。 然后只需单击一下或使用自定义热键即可在这些已保存的布局之间切换。
-
-除了应用程序之外，DockFlow 还允许用户将文件夹、文件和网站链接添加到 Dock 布局中，从而进一步自定义工作区。 用户还可以插入空白区域进行视觉分组，并使用快捷指令或 CLI 进行更高级的自动化。
-
-DockFlow 以一次性购买方式提供终身访问权限，无需订阅费，目前以折扣价出售。 用户评价强调了它在简化工作流程和提高专注力方面的有效性。 该应用程序通过提供动态且适应性强的 Dock 体验，解决了开发人员和其他同时处理多个角色和项目的专业人士的常见痛点。
+虽然以米为基础的公制已被全球广泛采用，但本文强调了不同国家采用速度的差异。即使是《米制条约》的原始签署国美国，尽管在法律上承认公制，但在日常生活中仍然主要使用英制单位。文章还指出了即使在使用公制单位的国家内部，测量也存在不一致性，例如澳大利亚的汤匙测量与其他国家/地区的不同。
 
 ---
 
-## 10. 星落
+## 6. 进入隧道：风洞的秘密生活
 
-**原文标题**: Planetfall
+**原文标题**: Into The Tunnel: The secret life of wind tunnels
 
-**原文链接**: [https://somethingaboutmaps.wordpress.com/2025/05/20/planetfall/](https://somethingaboutmaps.wordpress.com/2025/05/20/planetfall/)
+**原文链接**: [https://jordanwtaylor2.substack.com/p/into-the-tunnel](https://jordanwtaylor2.substack.com/p/into-the-tunnel)
 
-丹尼尔·霍夫曼详细介绍了其精心制作喀戎星（1999年电脑游戏《席德·梅尔之半人马座阿尔法星》中的虚构星球）详细地图的流程。受自身对游戏的热爱驱动，他试图利用游戏中提供的海拔、降雨量、岩石密度和异种真菌分布等数据，扩展游戏最初的128x64像素地图。
+无法访问文章链接。
 
-最耗时的任务是手动转录游戏地图中8192个像素的海拔值，这一过程历时数年。降雨量和岩石密度数据则通过截图和GIS软件提取。
+---
 
-一个关键挑战是将这种低分辨率数据转换为更详细的地形图。霍夫曼描述了他迭代的过程，包括随机散布点、进行三角剖分、平均海拔值以及添加随机噪声，以创建更具自然感的数字高程模型（DEM）。他通过使用圆柱等面积投影，特别是Trystan Edwards投影，来解决投影问题，以匹配游戏地图的属性。
+## 7. Show HN: Samchika – 用于快速多线程文件处理的 Java 库
 
-为了纠正与原始游戏地图的差异，例如确保岛屿的准确位置和重塑花环环形山，付出了巨大的努力。霍夫曼还为两极生成了单独的、更高分辨率的DEM，以解决投影变形问题。最后，他混合并平滑了各种DEM，以达到他想要的效果。作者强调了他的工作如何展示真实世界制图与虚构世界制图之间的差异。
+**原文标题**: Show HN: Samchika – A Java Library for Fast, Multithreaded File Processing
+
+**原文链接**: [https://github.com/MayankPratap/Samchika](https://github.com/MayankPratap/Samchika)
+
+Samchika是一个Java库，专为快速、多线程的文件处理而设计，通过并行处理实现对大型文件的高效处理。其特性包括简单的API、可选的运行时统计以及适用于CPU密集型任务，如日志分析、ETL操作和数据转换。
+
+该库的核心功能围绕`SmartFileProcessor`展开，它允许用户定义输入和输出路径、批处理大小以及用于自定义逻辑的行处理器。通过Maven或Gradle可以轻松集成。
+
+针对标准`BufferedReader`实现的性能基准测试表明，尤其是在多核系统上，性能有显著提升，处理速度最多可提高70%。在提供更高速度的同时，即使对于大型文件，内存使用量也保持在可控范围内。
+
+Samchika采用MIT许可证，鼓励免费使用和修改。该项目的灵感来自一个JavaScript库和一个LinkedIn讨论，其中强调了大型文件处理中的挑战。开发者感谢Shubham Maurya提供的灵感。
+
+---
+
+## 8. 史莱姆 (2021)
+
+**原文标题**: Slime (2021)
+
+**原文链接**: [https://granta.com/slime/](https://granta.com/slime/)
+
+苏珊娜·韦德利希的《粘液》深入探讨了粘液在我们世界中出人意料的深刻作用，挑战了我们对这种常常被忽视的物质的普遍厌恶。这本书以作者在亨特博物馆寻找一瓶特定的“原始粘液”开始，这个样本最终驳斥了粘液是生命起源的理论。
+
+韦德利希认为，粘液，一种存在于固态和液态之间的物质，不仅仅是一种令人作呕的副产品，而是生命的关键组成部分。它在自然界中无处不在，为生物体提供从结构支撑到防御的各种功能。许多熟悉的物质，如粘液和海洋雪，实际上都是粘液的形式。粘液充当生态系统的水泥，并在我们自己的身体中发挥着至关重要的作用，保护我们免受病原体的侵害并维持基本功能。
+
+这本书探讨了粘液的历史观念，从其在古埃及受人尊敬的地位到其在现代社会中与怪物和厌恶的联系。它还考察了对粘液的科学研究，包括原始粘液作为生命起源的被驳斥的理论。尽管存在负面含义，科学家们现在正在研究粘液的独特特性，用于机器人技术和医学等各个领域。韦德利希警告说，气候变化等环境危机威胁着基于粘液的生态系统，但也可能迎来粘液重新占据主导地位的新时代。最终，这本书旨在颠覆我们对粘液的负面认知，揭示它是生命、健康和环境的重要元素。
+
+---
+
+## 9. 为高质量类型错误设计类型推断
+
+**原文标题**: Designing type inference for high quality type errors
+
+**原文链接**: [https://blog.polybdenum.com/2025/02/14/designing-type-inference-for-high-quality-type-errors.html](https://blog.polybdenum.com/2025/02/14/designing-type-inference-for-high-quality-type-errors.html)
+
+本文探讨了如何设计能够提供高质量错误信息的类型推断系统，并指出类型推断在这方面声名狼藉的原因是特定的设计选择，而非其固有的局限性。
+
+作者指出了导致不良错误信息的两个主要缺陷：
+
+1.  **猜测和回溯：** 使用临时重载或类似功能的语言会迫使类型检查器在多种可能性之间进行猜测。这可能导致编译时间呈指数级增长，并产生与用户预期代码无关的冗长错误信息。作者认为，类型系统的设计应确保类型检查器永远不必猜测。
+
+2.  **仓促下结论：** 像 OCaml 这样的语言通常会根据它们遇到的第一个类型来报告错误，而不跟踪冲突中涉及的其他类型。这可能导致误导性的错误信息，无法识别类型不匹配的根本原因。作者提供了一个例子，其中 OCaml 错误地将浮点数识别为期望的整数，但没有说明原因或期望的来源。
+
+作者介绍了 PolySubML，一种在设计时充分考虑了良好错误信息的语言。其方法与 OCaml 形成对比，展示了 PolySubML 如何跟踪类型冲突的双方，并提供添加手动类型注释的提示，以缩小错误原因的范围。 最关键的结论是，将错误信息质量作为核心关注点来设计类型系统对于积极的开发者体验至关重要。
+
+---
+
+## 10. 纪念阿拉斯代尔·麦金太尔
+
+**原文标题**: Remembering Alasdair MacIntyre
+
+**原文链接**: [https://www.wordonfire.org/articles/remembering-alasdair-macintyre-1929-2025/](https://www.wordonfire.org/articles/remembering-alasdair-macintyre-1929-2025/)
+
+无法访问文章链接。
 
 ---
 
@@ -173,67 +164,68 @@ DockFlow 以一次性购买方式提供终身访问权限，无需订阅费，�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 2 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 3 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 4 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 5 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 6 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 7 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 8 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 9 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 10 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 11 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 12 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 13 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 14 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 15 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 16 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 17 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 18 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 19 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 20 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 21 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 22 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 23 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 24 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 25 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 26 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 27 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 28 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 29 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 30 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 31 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 32 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 1 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 2 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 3 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
+| 4 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 5 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 6 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 7 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 8 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 9 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 10 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 11 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 12 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 13 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 14 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 15 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 16 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 17 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 18 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 19 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 20 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 21 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 22 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 23 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 24 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 25 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 26 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 27 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 28 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 29 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 30 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 31 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 32 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
 | 33 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 34 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 35 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 36 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 37 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 38 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 39 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 40 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 41 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 42 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 43 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 44 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 45 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 46 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 47 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 48 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 49 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 50 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 51 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 52 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 53 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 54 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 55 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 56 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 57 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 58 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 59 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 60 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 61 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 62 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 63 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 64 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 34 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 35 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 36 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 37 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 38 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 39 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 40 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 41 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 42 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 43 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 44 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 45 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 46 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 47 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 48 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 49 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 50 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 51 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 52 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 53 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 54 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 55 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 56 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 57 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 58 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 59 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 60 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 61 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 62 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 63 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 64 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 65 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
