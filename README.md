@@ -1,166 +1,172 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-05-31.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-01.md)
 
-*最后自动更新时间: 2025-05-31 17:47:15*
-## 1. 精密时钟 Mk IV
+*最后自动更新时间: 2025-06-01 17:49:05*
+## 1. M8.2级太阳耀斑，强烈G4级地磁暴预警
 
-**原文标题**: Precision Clock Mk IV
+**原文标题**: M8.2 solar flare, Strong G4 geomagnetic storm watch
 
-**原文链接**: [https://mitxela.com/projects/precision_clock_mk_iv](https://mitxela.com/projects/precision_clock_mk_iv)
+**原文链接**: [https://www.spaceweatherlive.com/en/news/view/581/20250531-m8-2-solar-flare-strong-g4-geomagnetic-storm-watch.html](https://www.spaceweatherlive.com/en/news/view/581/20250531-m8-2-solar-flare-strong-g4-geomagnetic-storm-watch.html)
 
-“精密时钟Mk IV”一文详细介绍了具有先进功能的高精度时钟的设计和开发。该时钟旨在实现毫秒级精度，并在高速拍摄下实现无闪烁显示，通过GPS实现自动时区调整，并在停电期间保持良好的计时。
+太阳耀斑爆发：M8.2级耀斑引发地磁暴预警
 
-主要特点包括带有铰接的分体式显示屏，可实现多种观看模式，以及通过USB大容量存储进行固件更新。该时钟使用两个处理器和缓冲芯片来驱动显示，从而无需可能导致电干扰的高速信号。亮度控制是通过改变缓冲芯片的电压来实现的。
+文章报道了从太阳黑子区域3697爆发的M8.2级太阳耀斑。这次耀斑导致日冕物质抛射(CME) направляющийся към Земята. 因此，已针对2024年6月2日发布了G4（强）地磁暴观测预警。
 
-为了保持精度，该时钟将GPS数据解码为Unix时间戳，并使用双缓冲显示来最大限度地减少抖动。尽管该设计最初考虑使用驯服TCXO来保持精度，但作者决定反对它，而是倾向于直接方法，即随着GPS信号的退化，通过逐步删除数字来明确显示降低的容差。包括纽扣电池和音叉振荡器，以在设备断电时保持时间。包含USB串行接口和配置文件，用于高级配置。
+M8.2级耀斑意义重大，因为它是一种中等强度的耀斑，可能会导致地球向阳面发生无线电中断。 由于CME направляющийся към Земята， 地磁扰动的可能性和强度有所增加。 G4级风暴可能会导致广泛的电压控制问题、保护装置运行故障和卫星异常。 它还可能导致高频无线电传播变得零星或不存在，并且极光可能会在阿拉巴马州和加利福尼亚州北部以南的地方出现。
 
----
-
-## 2. 精益分析I伴侣
-
-**原文标题**: A Lean companion to Analysis I
-
-**原文链接**: [https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/](https://terrytao.wordpress.com/2025/05/31/a-lean-companion-to-analysis-i/)
-
-提供的文本信息極為有限，僅提供了標題、博客平台和作者，因此無法準確總結文章的內容。但根據有限的信息，我們可以推斷如下：
-
-這篇名為“分析I的精益伴侶”的博文，可能討論了一種學習和理解分析I（可能指的是數學分析的第一門課程）的精益方法。“精益”在此語境中可能指的是簡化、高效且重點突出的學習方法。
-
-鑒於該博文由Ben Eastaugh和Chris Sternal-Johnson在WordPress.com上發布，其內容很可能提供補充材料、建議或替代性解釋，以補充標準的分析I課程。這可能包括：
-
-*   簡化的關鍵定理證明。
-*   專注於核心概念而非過度嚴謹（最初）。
-*   旨在建立直覺的練習題。
-*   高效學習和解決問題的策略。
-
-本質上，這篇博文可能呈現了一種簡化、實用，甚至可能不太正式的方法來理解數學分析的基礎知識。要了解具體內容，必須閱讀實際的博文。
+文章强调了CME的预计到达时间以及由此产生的地磁暴可能产生的影响。 建议监测空间天气状况，以了解预测的任何变化或更新。 简而言之，发生了一次重大的太阳事件，并且正在密切监测其对地球的影响，可能会对技术造成破坏并增强极光显示。
 
 ---
 
-## 3. Show HN: PunchCard 密钥备份
+## 2. 如何在信用卡终端上获取 Root Shell 权限
 
-**原文标题**: Show HN: PunchCard Key Backup
+**原文标题**: How I got a Root Shell on a Credit Card Terminal
 
-**原文链接**: [https://github.com/volution/punchcard-key-backup](https://github.com/volution/punchcard-key-backup)
+**原文链接**: [https://stefan-gloor.ch/yomani-hack](https://stefan-gloor.ch/yomani-hack)
 
-Show HN: pckb (打孔卡密钥备份) - 使用打孔卡创建128位数据的物理备份。该项目允许用户将数据转换为CR80 ID卡大小铝片上的孔洞图案，并使用项目自带的HTML页面生成的模板。该HTML工具既能将数据编码成打孔图案，也能将图案解码回原始数据。备份过程需要冲压工具、小型钻头和切割器等常用工具。恢复同样简单，可以使用提供的HTML工具或手动进行二进制转换。作者强调提供的HTML是可选的，主要用于实验，并提供了用于手动编码和解码的Python代码片段。要备份超过128位的数据，作者建议使用128位密码（以十六进制编码）加密数据，使用pckb备份密码，并安全地分发加密后的数据。虽然该方案提供的冗余有限（16位CRC），但使用耐用材料可以提高备份的寿命。该项目是一种数字到物理的编码方案，可以与其他技术（如秘密共享）结合使用。代码和文档均采用CC BY 4.0许可，作者在特定情况下可接受其他许可选项。
+本文详细介绍了安全研究人员对 Worldline Yomani XR 信用卡终端的探索。研究人员发现，尽管存在硬件防篡改机制，但通过设备上的调试接口仍可访问 root shell 漏洞。
 
----
+最初，拆解显示了篡改保护措施，如斑马条纹和蜿蜒的铜线，这些措施在物理入侵时会触发“检测到篡改”状态。然而，研究人员从闪存芯片中提取了固件，发现其未加密。该设备运行的是一个使用 Buildroot 2010.02 构建的过时的 Linux 内核 (3.6)。重新连接闪存芯片后，研究人员发现了一个串行控制台，只需以“root”身份登录，无需密码，即可轻松访问 root shell。
 
-## 4. 小心快速数学
+尽管存在篡改检测，但设备外部可访问的调试端口意味着攻击者可以在不触发篡改保护的情况下获得 root 权限，并可能在几秒钟内部署恶意软件。
 
-**原文标题**: Beware of Fast-Math
+然而，进一步的分析揭示了一个双核系统架构。运行在一个内核 (mp2) 上的 Linux 系统主要处理网络、更新和业务逻辑。另一个内核 (mp1) 处理敏感操作，如读卡、PIN 码输入和显示输出。两个内核之间的通信依赖于处理器间消息。安全内核从加密和签名的镜像启动，这意味着不安全内核无法直接访问敏感信息。
 
-**原文链接**: [https://simonbyrne.github.io/notes/fastmath/](https://simonbyrne.github.io/notes/fastmath/)
-
-本文警告不要滥用“快速数学”编译器标志（例如GCC/Clang中的`-ffast-math`），这些标志优先考虑速度而非严格遵守IEEE 754浮点标准。虽然表面上看似有利，但这些标志会启用优化，从而导致数值计算中出现错误或意外的结果。
-
-作者重点介绍了快速数学触发的特定优化，包括：
-
-*   **-ffinite-math-only：** 假设没有NaN或Inf，可能移除必要的NaN检查，导致未定义行为。
-*   **-fassociative-math：** 允许重新排序浮点运算，由于浮点算术的非结合性，这会显著改变结果。这可能会破坏依赖于特定运算顺序的算法，例如Kahan求和。
-*   **将次正规数刷新为零(FTZ)：** 由`-funsafe-math-optimizations`启用，这可能会全局改变浮点行为，影响不相关的代码。
-
-作者认为，虽然快速数学可以提供性能提升，尤其是在SIMD运算中，但应谨慎且有策略地使用。
-
-建议的做法包括：开发强大的验证测试和基准，有选择地启用/禁用优化以识别问题区域，并验证最终结果。作者建议语言和编译器开发者应该提供对这些优化的更精细控制，并且使用像“快速数学”标志这样粗糙的工具代表着一个根本的设计缺陷。他们建议更好的命名（例如“unsafe-math”）、改进的文档、编译器警告以及对每个函数甚至每个表达式的数学优化控制。最后，讨论了使用替代方法来提高性能，例如代码重写、OpenMP或SIMD内在函数。
+研究人员已向制造商披露了该漏洞，并得出结论，虽然暴露的 root shell 是一个重大疏忽，但由于安全和不安全内核的分离，其对卡数据安全的影响似乎有限。作者怀疑该漏洞可能意外地存在于某些生产固件中，并可能在他们披露之前已得到修复。
 
 ---
 
-## 5. AtomVM，物联网设备的 Erlang 虚拟机
+## 3. 雅达利 Mega ST 商务新选择
 
-**原文标题**: AtomVM, the Erlang virtual machine for IoT devices
+**原文标题**: Atari Means Business with the Mega ST
 
-**原文链接**: [https://www.atomvm.net/](https://www.atomvm.net/)
+**原文链接**: [https://www.goto10retro.com/p/atari-means-business-with-the-mega](https://www.goto10retro.com/p/atari-means-business-with-the-mega)
 
-AtomVM 是为物联网设备设计的 Erlang BEAM 虚拟机的轻量级实现。它允许开发者使用 Erlang 或 Elixir 编写物联网应用程序，利用函数式编程和基于 Actor 的并发。与传统方法相比，这种方法简化了开发并提高了代码可读性。
+本文探讨了雅达利Mega ST，这是雅达利公司于1987年推出的首款面向专业用户的工作站尝试。Mega ST采用了低矮的“披萨盒”设计，可分离的Cherry机械键盘，内置风扇和电池供电的时钟。与之前的ST型号相比，其主要优势在于包含了一个用于更快图形处理的图形加速芯片，以及提供2MB或4MB的RAM，这在当时是一笔可观的容量。它还搭载了TOS 1.02，这是TOS的第一个ROM更新版本。
 
-AtomVM 支持 BEAM 操作码和 Erlang/OTP 库的一个子集，针对资源受限的微控制器进行了优化。它提供诸如进程生成、监控、消息传递、抢占式调度和高效垃圾回收等功能。 此外，AtomVM 可以直接与常见的微控制器外设和协议（如 GPIO、I2C、SPI 和 UART）以及支持的设备（如 ESP32）上的 WiFi 网络进行交互。
+尽管具备这些特点，Mega ST仍然面临挑战。它的机箱设计具有局限性，处理器速度与更早、更便宜的ST型号相同，并且内部总线连接器插槽没有得到广泛使用。雅达利将其作为桌面出版解决方案与SLM804激光打印机一同销售，但由于雅达利品牌与游戏紧密相关，因此很难销售昂贵的产品。
 
-该平台旨在使强大的函数式编程技术可以在廉价的硬件上使用，设备成本低至 2 美元。 文档、示例代码和教程等资源可帮助用户入门。
-
----
-
-## 6. Show HN：AI同行评审员 – 用于科学手稿分析的多智能体系统
-
-**原文标题**: Show HN: AI Peer Reviewer – Multiagent System for Scientific Manuscript Analysis
-
-**原文链接**: [https://github.com/robertjakob/rigorous](https://github.com/robertjakob/rigorous)
-
-Rigorous是一个人工智能驱动的同行评审系统，旨在通过使其更加透明、廉价和快速来改善科学出版。它提供云版本进行稿件分析，并以免费反馈作为回报。该项目有两个主要代理：Agent1_Peer_Review，已准备就绪，可提供全面的稿件分析、详细的反馈和专业的PDF报告；以及Agent2_Outlet_Fit，目前正在开发中，专注于评估稿件与目标期刊或会议的匹配度。
-
-Agent1_Peer_Review分析稿件，提供关于章节、科学严谨性和写作质量的反馈，以JSON格式输出可操作的建议，并生成精美的PDF报告。PDF报告的生成需要特定的依赖项，如ReportLab和Pillow，以及包含分析结果和logo图像的JSON文件。运行特定的Python脚本可以生成报告。该报告包含封面、执行摘要、详细的分析页面、美观的表格和专业的格式。
-
-该项目需要Python 3.7+、OpenAI API密钥以及各自`requirements.txt`文件中列出的依赖项。它采用MIT许可证授权，并鼓励通过Pull Requests进行贡献。
+Mega ST也面临着交付问题，原因是1Mbit DRAM的短缺和价格上涨，这影响了整个计算机行业。生产转向欧洲市场。Mega ST最终在1991/1992年被Mega STE取代。作者总结说，由于其尺寸、有限的可升级性和与1040ST相同的速度（除了键盘之外），Mega ST在今天并不受欢迎。
 
 ---
 
-## 7. 乐器内部照片
+## 4. 《安多》的摄影
 
-**原文标题**: Photos taken inside musical instruments
+**原文标题**: Cinematography of "Andor"
 
-**原文链接**: [https://www.dpreview.com/photography/5400934096/probe-lenses-and-focus-stacking-the-secrets-to-incredible-photos-taken-inside-instruments](https://www.dpreview.com/photography/5400934096/probe-lenses-and-focus-stacking-the-secrets-to-incredible-photos-taken-inside-instruments)
+**原文链接**: [https://www.pushing-pixels.org/2025/05/20/cinematography-of-andor-interview-with-christophe-nuyens.html](https://www.pushing-pixels.org/2025/05/20/cinematography-of-andor-interview-with-christophe-nuyens.html)
 
-乐器内部摄影文章摘要：
+本文是对《安多》第二季摄影师克里斯托夫·纽恩斯的采访，他探讨了自己的职业生涯、电影制作技术的演变以及他在该剧中的工作。纽恩斯从胶片过渡到数字，欣赏这两种媒介，并强调LED照明的进步是一项颠覆性变革。他指出剧集制作发生了转变，如今质量可以与电影媲美，而他在整个职业生涯中都一直支持这种转变。
 
-本文介绍了摄影师（尤其是Charles Brooks）如何通过拍摄乐器内部创造出令人惊叹且超现实的图像。主要技术是探针镜头和焦点堆叠。
+关于《安多》，纽恩斯与导演阿里尔·克莱曼、视觉特效总监莫汉·利奥和美术指导卢克·赫尔密切合作，广泛使用预演和情绪板。他希望提升该剧的视觉效果，通过使用全画幅传感器和变形镜头，力求风格更接近《侠盗一号》。他强调尽可能多地实景拍摄的重要性，以及在可行的情况下，使用LED墙和手绘背景而非绿幕的好处。
 
-探针镜头细长，可让相机进入乐器腔体内部，提供标准镜头无法实现的独特视角，并具有极强的微距拍摄能力。然而，由于如此近距离的景深非常浅，焦点堆叠至关重要。
-
-焦点堆叠涉及拍摄大量图像，每张图像都聚焦于乐器内部场景的不同部分。然后使用软件以数字方式将这些图像组合在一起，以创建具有显着增加景深的单个图像，从而确保整个内部都清晰对焦。
-
-文章强调了所涉及的挑战，包括在乐器内部的弱光条件下工作、控制反射和处理灰尘。尽管存在这些挑战，但最终的图像提供了一个引人入胜且抽象的视角，将这些熟悉的物体的内部运作转化为引人入胜的艺术作品。探针镜头的视角和通过焦点堆叠实现的扩展景深是这些图像成功的关键。
+纽恩斯详细介绍了与视觉特效的合作过程，以及实景搭建和数字延伸之间的平衡，并举例说明了戈尔曼广场和抢劫场景。他分享说，该剧在包括巴塞罗那和伦敦在内的多个国家拍摄。他强调为不同的故事情节创造独特的视觉感受，例如，第4-6集具有受意大利都灵启发的寒冷冬季美学。对于婚礼场景，他选择了钨丝灯来实现经典外观，而雅文则力求营造“老星球大战电影”的感觉。
 
 ---
 
-## 8. 牛津郡时钟500年如一日，守护村庄准时运转
+## 5. Figma幻灯片：美丽的灾难
 
-**原文标题**: Oxfordshire clock still keeping village on time after 500 years
+**原文标题**: Figma Slides Is a Beautiful Disaster
 
-**原文链接**: [https://www.bbc.com/news/articles/cz70p0qevlro](https://www.bbc.com/news/articles/cz70p0qevlro)
+**原文链接**: [https://allenpike.com/2025/figma-slides-beautiful-disaster](https://allenpike.com/2025/figma-slides-beautiful-disaster)
 
-五百年来，位于牛津郡东亨德里德的圣奥古斯丁教堂内的时钟一直在为村庄计时，甚至早于钟面普及之时。据信，这架安装于亨利八世统治时期的时钟是英国仍在原址的最古老时钟之一。它没有可见的钟面和指针，而是使用编钟每刻钟敲响教堂的钟声，并且每天四次播放一首名为“天使之歌”的曲调。
+演示老手艾伦，因经常使用 Figma 进行设计，而探索将 Figma Slides 作为 Keynote 的替代方案。他称赞 Figma Slides 的网格视图、自动布局和组件能高效创建幻灯片，并强调其在构建诸如图表等视觉元素方面的优势。
 
-2015年，当一个锤子掉入机械装置中时，时钟暂时停止了工作，村民们对此深感缺失，因为他们依靠它的声音来标记时间的流逝。经过漫长的翻新，包括安装机械化的上弦系统后，时钟得以修复。
+然而，他很快就遇到了限制，包括缺乏自动调整大小的文本以及难以创建逐行显示的子弹要点。尽管存在这些缺点，艾伦仍然觉得构建过程令人愉快，并看到了 Figma 作为一家公司的发展潜力。
 
-最近，该村庄庆祝了时钟的500岁生日，并提供塔楼参观活动，由修复师西蒙·吉尔克里斯特带领，展示其运转机制。他强调了时钟的历史重要性，并指出，虽然最初时钟是通过日晷校准的，但现在现代数字时钟可确保其准确性，从而考虑了温度变化对其部件的影响。尽管按照现代标准来看它并不完全精确，但就其年龄和最初用途而言，该时钟仍然非常准确。
+真正的问题出现在演示过程中。他发现离线演示不可靠，需要特定的、不直观的过程才能启用。演示视图笨拙，缺少全屏模式和简单的显示切换。最关键的失败发生在动画崩溃时，导致他每张幻灯片都需要多次点击，并尴尬地回溯来解释复杂的概念。
 
----
-
-## 9. Show HN: Fontofweb – 发现网站使用的字体或使用特定字体的网站
-
-**原文标题**: Show HN: Fontofweb – Discover Fonts Used on a Website or Websites Using Font(s)
-
-**原文链接**: [https://fontofweb.com](https://fontofweb.com)
-
-好的，我已根据网站URL以及此类工具的常见模式分析了 Fontofweb 上的可用信息。以下是摘要：
-
-**摘要：**
-
-Fontofweb 是一款网络工具，旨在帮助用户识别特定网站上使用的字体，或发现使用特定字体的网站。其核心功能围绕字体识别和反向字体查找展开。
-
-用户可以输入他们感兴趣的网站 URL，Fontofweb 将分析该网站的 CSS 以检测用于不同元素的字体。 它可能会以清晰且有组织的方式呈现识别出的字体，可能包括字体系列名称、粗细（粗体、常规等），有时甚至包括下载或购买字体的链接（如果可用）。
-
-反之，用户可以输入他们感兴趣的字体名称。 然后，Fontofweb 将搜索其数据库以识别使用该特定字体的网站。 此功能对于寻求灵感或想了解特定字体在实际应用中如何使用的设计师非常有用。
-
-该工具旨在简化字体识别和发现的过程，如果仅使用浏览器开发者工具，这个过程可能会非常耗时。 它提供了一种快速且用户友好的方式来分析网站的排版并为设计项目发现新字体。 该服务可能面向 Web 开发人员、设计师以及任何对排版和 Web 设计感兴趣的人。
+艾伦将这些失败归因于 Figma 没有将 Slides 的演示方面视为至关重要的任务。他将此与 Keynote 进行了对比，后者虽然在某些方面很笨拙，但受益于苹果公司对可靠演示体验的承诺。他总结说，虽然 Figma Slides 提供了有前途的设计功能，但其演示功能不可靠，最终巩固了像 Keynote 这样“无聊”但有效的技术的价值。他以幽默的口吻结束，成为了一个告诫人们不要优先考虑华而不实的新工具，而应选择可靠解决方案的反面教材。
 
 ---
 
-## 10. 场的两种理想
+## 6. 新一代Tailscale访问控制
 
-**原文标题**: The Two Ideals of Fields
+**原文标题**: A new generation of Tailscale access controls
 
-**原文链接**: [https://susam.net/two-ideals-of-fields.html](https://susam.net/two-ideals-of-fields.html)
+**原文链接**: [https://tailscale.com/blog/grants-ga](https://tailscale.com/blog/grants-ga)
 
-本文探讨了域与其理想之间的关系，重点在于域仅具有两个理想：零理想（仅包含加法单位元）和域本身（平凡理想）。文章还证明了，一个具有不同加法和乘法单位元的交换环，如果仅有这些平凡理想，则必然是一个域。
+Tailscale发布"Grants"，新一代访问控制系统正式可用。 Grants的设计比现有的ACL语法更易于读写，同时提供新的功能。重要的是，现有的ACL不会被弃用，可以与Grants共存。
 
-文章首先定义了环的左理想和右理想，强调在交换环中，它们是等价的，通常简称为理想。文章提供了整数环和多项式环中理想的例子作为说明。
+主要改进和新功能包括：
 
-文章的核心证明了一个域*K*仅有两个理想。 它确定了零理想和*K*本身都是理想。 然后，它证明了*K*中的任何其他理想*I*必须等于*K*。 这是通过表明如果*I*包含一个非零元素*b*，那么*I*也必须包含*b*的乘法逆元，从而导致*I*包含乘法单位元(1)，因此包含*K*的每个元素。
+*   **简化语法：** Grants将端口和协议合并到单个“ip”字段中，并删除冗余的“action”字段，使规则更简洁。
+*   **应用能力：** Grants允许在Tailscale访问控制策略中直接定义特定于应用程序的权限。这是通过命名空间的JSON对象实现的，这些对象被传递给应用程序，然后应用程序可以使用它们进行授权决策，从而更容易与`tsnet`等工具集成。 一个Golink示例演示了如何使用Grants来分配管理员角色。
+*   **路由感知（via）：** “via”字段允许指定设备在访问特定资源时必须使用的出口节点、子网路由器或应用连接器。 这支持基于位置的路由、区域路由和高可用性设置。
 
-文章进一步证明，一个乘法单位元与零不同的交换环*R*，如果仅具有平凡理想，则必然是一个域。 这是通过证明*R*中的每个非零元素*a*都必须具有乘法逆元来完成的。 通过考虑由*a*生成的理想，该理想必须等于*R*本身（因为唯一的理想是平凡的）。 因此，1属于由*a*生成的理想，这意味着存在*R*中的元素*s*使得*a* * s = 1，从而证明了乘法逆元的存在。
+文章强调了一种渐进式的采用策略，向用户保证现有的ACL规则仍然完全支持，并且只有在他们希望利用Grants的新功能时才能增量更新。 TailSQL、Setec 和 Kubernetes API 服务器代理等多个开源工具证明了使用 Grants 的强大功能。
+
+---
+
+## 7. 微调的意义：开发者指南
+
+**原文标题**: When Fine-Tuning Makes Sense: A Developer's Guide
+
+**原文链接**: [https://getkiln.ai/blog/why_fine_tune_LLM_models_and_how_to_get_started](https://getkiln.ai/blog/why_fine_tune_LLM_models_and_how_to_get_started)
+
+本文是一篇开发者指南，解释了何时以及为何微调大型语言模型（LLMs）。它认为微调解决了具体、可衡量的问题，例如JSON输出不一致、高昂的推理成本、复杂的提示和专业化的行为。
+
+本文详细介绍了微调的益处，包括：
+
+*   **提高任务质量：** 提升特定任务的性能、风格一致性和JSON格式的准确性。
+*   **降低成本和提高速度：** 缩短提示长度，支持使用更小、更快的模型，并促进本地模型部署以实现隐私保护和成本节约。
+*   **工具调用：** 教会模型如何以及何时有效地使用特定工具。
+*   **更好的逻辑/规则遵循：** 帮助模型比单独使用提示更有效地学习规则和条件逻辑，并修复模型行为中的“错误”。
+*   **从更大模型中提炼知识：** 将知识从更大的模型转移到更小、更高效的模型。
+*   **更好的思考/推理：** 使模型能够有效地使用推理模式。
+
+本文还告诫不要使用微调来添加知识，建议使用RAG、上下文加载和工具调用作为替代方案。
+
+该指南强调了基于所需目标（移动部署、成本降低、最大化质量）选择适当的基础模型，并使用实验和评估（评估）来迭代和优化微调过程的重要性。最后，它建议使用Kiln，一个旨在简化微调工作流程的免费应用程序。
+
+---
+
+## 8. 为什么DeepSeek在大规模使用时很便宜，但本地运行却很昂贵
+
+**原文标题**: Why DeepSeek is cheap at scale but expensive to run locally
+
+**原文链接**: [https://www.seangoedecke.com/inference-batching-and-deepseek/](https://www.seangoedecke.com/inference-batching-and-deepseek/)
+
+本文解释了为什么像 DeepSeek-V3 这样的模型大规模使用时成本低廉，但在本地运行时却很昂贵，原因在于服务大型语言模型 (LLM) 时吞吐量/延迟之间的权衡。
+
+GPU 擅长进行大型矩阵乘法 (GEMM)。将用户请求批量处理可以更有效地利用 GPU，因为单个大型 GEMM 比许多小型 GEMM 更快。推理提供商通过排队传入的 token 请求，然后将它们一起处理来实现请求的批量处理。批量大小是一种权衡：大的批次可以提高吞吐量，但也会增加延迟，因为用户需要等待批次填满。
+
+像 DeepSeek-V3 这样使用混合专家 (MoE) 架构并具有许多层的模型，需要大的批次大小才能提高效率。MoE 模型将计算分散在多个“专家”中，如果不进行批量处理，会导致许多小型矩阵乘法。具有许多层的大型模型需要在多个 GPU 上进行流水线处理，需要大的批次以避免流水线气泡（GPU 空闲时间）。
+
+Transformer 中的注意力机制是基于序列长度进行批处理的。为了批量处理注意力，序列必须具有相同的长度，因此使用“ticks”系统。大的批次大小会导致更高的延迟，但可以提高 GPU 利用率和吞吐量。
+
+作者认为 OpenAI 和 Anthropic 的模型速度更快，是因为它们要么具有更高效的架构，要么使用巧妙的技巧来提供推理服务，要么过度配置了 GPU。总而言之，DeepSeek-V3 的架构需要大的批次大小，因此导致高延迟，使其不适合单用户本地部署。
+
+---
+
+## 9. 从Amiga API/ABI中学习
+
+**原文标题**: Learning from the Amiga API/ABI
+
+**原文链接**: [https://asm-basic-coder.neocities.org/rants/amigaapilearn](https://asm-basic-coder.neocities.org/rants/amigaapilearn)
+
+本文是对Amiga API/ABI的褒扬之词，称赞其设计和功能优于现代操作系统。作者强调其通过已知地址的跳转指令表直接调用共享库，特别提到Exec.library是访问其他库的基础。
+
+Amiga ABI因其CPU独立性和与内存保护方案的兼容性而备受赞誉，使其非常适合多种编程语言。作者强调Amiga OS精心设计的内核（Exec）、列表管理、消息传递和多任务处理能力。Intuition的回调控件和BOOPSI在无需OO语言的情况下进行面向对象编程也受到赞扬。
+
+本文将AmigaDOS最初受BCPL影响的API与后来的ARP.library进行了对比，后者提供了更友好的C接口。作者强调了Amiga的库系统所提供的动态性如何促成了这样的改进。
+
+Intuition独特的事件处理机制也得到了展示，其中窗口系统可以调用应用程序来传递消息，即使主任务暂时冻结也能确保响应。这被认为是优于现代系统的一个重大优势，在现代系统中，主程序循环负责事件处理。作者认为Amiga OS是有史以来最直接、构思最完善的操作系统。
+
+---
+
+## 10. RenderFormer：基于全局光照的三角形网格神经渲染
+
+**原文标题**: RenderFormer: Neural rendering of triangle meshes with global illumination
+
+**原文链接**: [https://microsoft.github.io/renderformer/](https://microsoft.github.io/renderformer/)
+
+RenderFormer是一种新型神经渲染管线，可以直接从场景的三角形网格表示生成图像，无需针对每个场景进行训练或微调即可包含完整的全局光照效果。与传统的基于物理的渲染不同，RenderFormer将渲染构建为使用Transformer架构的序列到序列转换。它将具有反射属性的三角形令牌序列转换为像素块令牌序列。
+
+该管线由两个阶段组成：一个模拟三角形到三角形光传输的与视角无关的阶段，以及一个将光线束转换为像素值的与视角相关的阶段，该阶段由第一阶段的输出引导。这两个阶段都利用了具有最少先验约束的Transformer架构，从而消除了光栅化或光线追踪的需要。
+
+该论文通过渲染图库展示了RenderFormer的功能，展示了康奈尔盒、斯坦福兔子以及更复杂的场景中各种照明条件、材质和几何复杂性。它还展示了RenderFormer渲染动画和基于物理的模拟的能力，突出了其在动态场景渲染方面的潜力。作者提供了视频结果，包括物体旋转、光照变化和材质调整的演示。
 
 ---
 
@@ -168,76 +174,77 @@ Fontofweb 是一款网络工具，旨在帮助用户识别特定网站上使用�
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 2 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 1 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 2 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
 | 3 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 4 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 5 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 6 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 7 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 8 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 9 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 10 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 4 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 5 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 6 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 7 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 8 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 9 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 10 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
 | 11 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 12 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 12 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
 | 13 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 14 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 15 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 16 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 14 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 15 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 16 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
 | 17 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 18 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 19 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 20 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 21 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 18 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 19 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 20 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 21 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
 | 22 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 23 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 24 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 25 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 23 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 24 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 25 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
 | 26 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 27 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 27 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
 | 28 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 29 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 30 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 31 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 32 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 29 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 30 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 31 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 32 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
 | 33 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 34 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 35 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 36 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 37 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 34 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 35 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 36 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 37 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
 | 38 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 39 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 40 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 41 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 42 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 43 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 44 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 45 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 46 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 47 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 48 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 49 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 50 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 39 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 40 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 41 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 42 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 43 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 44 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 45 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 46 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 47 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 48 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 49 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 50 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
 | 51 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 52 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 52 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
 | 53 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
 | 54 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 55 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 55 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
 | 56 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
 | 57 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 58 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 59 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 60 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 61 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 62 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 63 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 64 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 65 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 66 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 67 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 68 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 69 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 70 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 71 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 72 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 73 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 58 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 59 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 60 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 61 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 62 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 63 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 64 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 65 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 66 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 67 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 68 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 69 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 70 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 71 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 72 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 73 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 74 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
