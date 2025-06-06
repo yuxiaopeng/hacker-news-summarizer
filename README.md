@@ -1,161 +1,137 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-05.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-06.md)
 
-*最后自动更新时间: 2025-06-05 17:47:31*
-## 1. 死亡蝾螈的绝境
+*最后自动更新时间: 2025-06-06 17:51:02*
+## 1. Meta: 停止你侵入式的AI发现推送。现在。
 
-**原文标题**: The impossible predicament of the death newts
+**原文标题**: Meta: Shut Down Your Invasive AI Discover Feed. Now
 
-**原文链接**: [https://crookedtimber.org/2025/06/05/occasional-paper-the-impossible-predicament-of-the-death-newts/](https://crookedtimber.org/2025/06/05/occasional-paper-the-impossible-predicament-of-the-death-newts/)
+**原文链接**: [https://www.mozillafoundation.org/en/campaigns/meta-shut-down-your-invasive-ai-discover-feed-now/](https://www.mozillafoundation.org/en/campaigns/meta-shut-down-your-invasive-ai-discover-feed-now/)
 
-道格·缪尔的《死亡蝾螈的绝境》探讨了太平洋西北地区粗皮蝾螈（Taricha granulosa）和普通束带蛇（Thamnophis sirtalis）之间激烈的进化军备竞赛。这种蝾螈因其皮肤上共生细菌产生的剧毒神经毒素河豚毒素而具有极强的毒性。
+由于担心侵犯隐私，Mozilla社区呼吁Meta关闭其AI“发现”信息流。他们声称Meta正在悄悄地将私人AI聊天转化为公共内容，而未经用户的明确同意或知情。这模糊了私人和公共交流之间的界限，并使用户隐私面临风险。
 
-该地区的束带蛇已经进化出对河豚毒素的抵抗力，促使蝾螈进化出更强的毒性作为回应。这形成了一个毒性和抵抗力不断升级的反馈回路。然而，毒性和抵抗力都有代价。毒性需要蝾螈消耗更多的能量来维持细菌，而抵抗力可能会给蛇带来微妙的神经系统缺陷。
+Mozilla要求Meta采取以下行动：
 
-有趣的是，束带蛇会将河豚毒素储存在肝脏中，使其自身对捕食者有毒，从而激励它们不顾不适去吃蝾螈。
+*   立即关闭“发现”信息流，直到隐私保护措施得到实施。
+*   默认情况下将所有AI互动设为私密，需要明确知情同意才能公开分享。
+*   充分透明地披露有多少用户在不知情的情况下分享了私人信息。
+*   在所有Meta平台上创建一个通用的、易于使用的退出系统，以防止用户数据被用于AI训练。
+*   通知那些对话可能已被公开的用户，并允许他们永久删除其内容。
 
-蝾螈处于一个双输的局面。它必须保持高毒性水平，发展出针对自身毒药的防御机制，并且无法进化出警戒色，因为这只会使其成为蛇的目标。它也不能降低毒性，因为蛇需要它们是有毒的。
-
-文章还探讨了一些未解之谜，例如为什么阿拉斯加（束带蛇稀少）的蝾螈仍然表现出一定的毒性，以及为什么温哥华岛上的蝾螈和蛇似乎能够在没有如此激烈的军备竞赛的情况下共存。作者认为，太平洋西北地区相对年轻的生态系统状态促成了这种关系的持续演变。文章的结论是，虽然已经了解了很多，但关于这种复杂的互动仍然存在谜团。
-
----
-
-## 2. 谷歌限制安卓侧载——对用户自主性和自由意味着什么
-
-**原文标题**: Google Restricts Android Sideloading–What It Means for User Autonomy and Freedom
-
-**原文链接**: [https://puri.sm/posts/google-restricts-android-sideloading-what-it-means-for-user-autonomy-and-the-future-of-mobile-freedom/](https://puri.sm/posts/google-restricts-android-sideloading-what-it-means-for-user-autonomy-and-the-future-of-mobile-freedom/)
-
-Purism批评谷歌限制安卓侧载，认为其破坏用户自主权和数字自由。谷歌以安全为由，与新加坡网络安全局合作，阻止通过浏览器、消息应用或文件管理器侧载具有敏感权限的特定应用。此外，Play Integrity API允许开发者限制侧载应用的功能，迫使用户使用谷歌Play商店。
-
-Purism认为，这些措施旨在减少欺诈和恶意软件，但也加强了谷歌对安卓生态系统的垄断控制，限制了用户自由、创新和竞争。侧载作为安卓开放性的关键一环，正被边缘化，与苹果的围墙花园模式相似。
-
-作为替代方案，Purism强调其PureOS驱动的Librem 5和Liberty手机，提供完全的用户自主权、隐私和数据主权。PureOS支持安全、自由和开源的应用，避免剥削性的数据挖掘和对公司应用商店的依赖。面对谷歌对安卓日益收紧的控制，Purism将自己定位为尊重隐私的替代方案。
+核心问题是，用户可能认为他们正在进行私人对话，而Meta可能在未经明确同意的情况下将这些互动公开。 Mozilla强调用户需要知道何时在公开场合发言，尤其是在他们期望隐私时。他们鼓励读者签署请愿书，要求Meta解决这些问题，并确保在公开私人对话之前获得明确的自愿同意。
 
 ---
 
-## 3. 理解 PURL 规范（软件包 URL）
+## 2. 将 Gitlab 仓库备份时间从 48 小时缩短至 41 分钟
 
-**原文标题**: Understanding the PURL Specification (Package URL)
+**原文标题**: Decreasing Gitlab repo backup times from 48 hours to 41 minutes
 
-**原文链接**: [https://fossa.com/blog/understanding-purl-specification-package-url/](https://fossa.com/blog/understanding-purl-specification-package-url/)
+**原文链接**: [https://about.gitlab.com/blog/2025/06/05/how-we-decreased-gitlab-repo-backup-times-from-48-hours-to-41-minutes/](https://about.gitlab.com/blog/2025/06/05/how-we-decreased-gitlab-repo-backup-times-from-48-hours-to-41-minutes/)
 
-本文阐述了Package URL (PURL) 规范，这是一种用于跨不同生态系统唯一标识软件包的开放标准。PURL 创建于 2017 年，是经过特殊格式化的 URL，用于编码软件包的类型（例如，npm、Maven）、名称、版本和其他限定符，从而提供一种通用的、机器可读的标识符。
+GitLab通过解决`git bundle create`命令中低效算法导致的Git扩展性问题，将仓库备份时间从48小时大幅缩短至41分钟。该命令对于创建完整的仓库快照至关重要，但由于`object_array_remove_duplicates()`函数存在O(N²)的复杂度，导致随着引用数量的增长，处理时间呈指数级增长。
 
-本文详细介绍了 PURL 的结构，重点介绍了诸如 scheme、type 和 name 等必需字段，以及诸如 namespace、version、qualifiers 和 subpath 等可选字段。它强调了 PURL 的广泛生态系统覆盖范围，包括 npm、PyPI、Maven、Docker 等，并提供了具体示例。
+GitLab通过火焰图分析确定了瓶颈，并向上游Git贡献了一个修复方案，用更高效的map数据结构替换了嵌套循环。 这种算法的改变极大地提高了性能，在具有大量引用的仓库上进行的基准测试中，速度提高了6倍。
 
-PURL 的一个关键用例是在软件物料清单 (SBOM) 中，它充当每个组件的唯一标识符。虽然 NTIA 没有明确要求，但强烈建议使用 PURL 来提高 SBOM 的准确性，从而能够丰富许可和漏洞数据。CycloneDX 和 SPDX SBOM 格式都支持 PURL。
-
-本文还比较了 PURL 和 CPE（通用平台枚举），CPE 是另一种软件标识符。虽然两者都旨在唯一标识软件，但 CPE 专为 IT 产品和平台设计，而 PURL 则专注于软件包，更适合开源领域。文章的结论是，PURL 通常更擅长处理开源库依赖的长尾，使其成为漏洞管理和 SBOM 计划的理想选择。虽然 PURL 缺乏商业产品支持，但对于大多数组织来说，它是一个更好的选择。
+GitLab客户的受益包括大幅缩短备份时间，从而提高了备份频率，通过降低RPO增强了业务连续性，减少了运营开销，并实现了可随不断增长的代码库无缝扩展的面向未来的基础设施。 所有GitLab客户，无论许可证级别如何，都可以从18.0版本开始使用此改进。 这一突破体现了GitLab对可扩展Git基础设施的承诺，并突出了其通过向更广泛的Git社区贡献修复方案的协作方法。
 
 ---
 
-## 4. 垃圾站的七天
+## 3. 贝尔实验室成功之道
 
-**原文标题**: Seven Days at the Bin Store
+**原文标题**: Why Bell Labs Worked
 
-**原文链接**: [https://defector.com/seven-days-at-the-bin-store](https://defector.com/seven-days-at-the-bin-store)
+**原文链接**: [https://links.fabiomanganiello.com/share/683ee70d0409e6.66273547](https://links.fabiomanganiello.com/share/683ee70d0409e6.66273547)
 
-珍·金尼的文章《垃圾箱商店七日谈》以西费城新开的 Amazing Binz 商店为例，探讨了“垃圾箱商店”的现象。这些商店从沃尔玛、亚马逊和塔吉特等大型企业收购积压和退货商品，并以大幅降低的价格出售，价格在一周内逐渐递减。
+贝尔实验室为何成功及其魔力难以复制
+        
+本文探讨了贝尔实验室如此成功的原因以及复制其魔力为何如此困难。文章认为，贝尔实验室的成功源于其开明的管理风格，该风格由亚历山大·格拉汉姆·贝尔创立，并由默文·凯利达到顶峰。这种风格的关键在于吸引有才华的人，为他们提供极大的自由、自主权和支持性环境，然后信任他们的判断和动力。凯利专注于识别具有内在好奇心和动力的人，而不是对他们进行微观管理。
 
-作者花了一周时间观察这家商店，从补货日开始，一直到整个定价周期结束。盛大的开业吸引了大批顾客，尤其是转售商和寻求廉价商品的人。文章强调了垃圾箱商店热潮背后的动机，这主要归因于在线退货的爆炸式增长、疫情期间的供应链问题以及零售商的过度囤积。随着公司试图弥补未售出或退货商品造成的损失，逆向物流行业正在蓬勃发展。
+文章将这种方法与当前的学术和企业环境进行了对比，后者的特点是痴迷于指标、文书工作过多以及年轻科学家缺乏自由。这种环境受到MBA文化的驱动，该文化专注于狭隘地定义的生产力和责任制，扼杀了创造力，并阻碍了贝尔实验室所培养的那种长期探索性研究。
 
-金尼还探讨了周边社区的反应。虽然有些人对实惠的价格和转售潜力感到兴奋，但另一些人则将这家商店视为晚期资本主义和过度消费的象征，引发了对高档化和废弃商品环境影响的担忧。尽管存在各种不同的意见，但作者指出，这家商店吸引了多元化的顾客，并为一些人提供了作为转售商工作的机会。店主艾哈迈德认为，这家商店是为社区提供价值和支持社区的一种方式。
+作者强调，仅仅靠庞大的资金储备不足以复制贝尔实验室。像谷歌、苹果和微软这样的当代巨头已经在研究上投入了大量资金，但尚未达到同样程度的突破性创新。这是因为贝尔实验室独特的公式包括寻找伟大而有雄心的人，让他们被志同道合的人包围，鼓励交叉融合，并在必要时给予他们思考数年的自由。
 
----
-
-## 5. 双子座2.5 Pro预览版06-05
-
-**原文标题**: Gemini-2.5-pro-preview-06-05
-
-**原文链接**: [https://deepmind.google/models/gemini/pro/](https://deepmind.google/models/gemini/pro/)
-
-Gemini 2.5 Pro 是 Google 最先进的模型，擅长编码和处理复杂提示。它通过新的“深度思考”模式增强推理能力，在数学和科学基准测试中表现出最先进的性能，具备用于 Web 开发的先进编码能力，以及对文本、音频、图像和视频的本地多模态理解。它支持 100 万 token 的上下文窗口，可用于探索庞大的数据集。
-
-该模型具备用于 24 种语言的富有表现力的对话的本地音频输出，并通过各种交互式演示展示其能力，包括用于动画、游戏、分形可视化和经济数据绘图的代码生成。
-
-基准比较突显了 Gemini 2.5 Pro 在推理、知识、数学、代码生成、事实性和视觉/视频理解方面领先于 OpenAI 的模型、Claude Opus、Grok 3 Beta 和 DeepSeek R1 等竞争对手的性能。该文档详细介绍了用于这些基准测试的方法，包括数据来源和评估参数。还提供了输入和输出 token 的定价信息，表明 Gemini 2.5 Pro 相对于某些替代方案的成本效益。
-
-关键模型信息包括其预览状态、对多种数据类型（文本、图像、视频、音频）的支持、100 万输入 token、64k 输出 token、2025 年 1 月的知识截止日期，以及其适用于推理、编码和复杂提示，并通过 Google AI Studio、Gemini API 和 Gemini 应用提供。
+最后，作者对像1517这样的组织表示希望，这些组织试图通过投资个人并允许他们进行探索而不要求立即取得成果来提供贝尔实验室环境的模拟，暗示了未来重塑这种魔力的可能性。
 
 ---
 
-## 6. 半胱氨酸耗竭触发脂肪组织产热和体重减轻
+## 4. 桑迪亚启动类脑无存储超级计算机 - Blocks and Files
 
-**原文标题**: Cysteine depletion triggers adipose tissue thermogenesis and weight loss
+**原文标题**: Sandia turns on brain-like storage-free supercomputer – Blocks and Files
 
-**原文链接**: [https://www.nature.com/articles/s42255-025-01297-8](https://www.nature.com/articles/s42255-025-01297-8)
+**原文链接**: [https://blocksandfiles.com/2025/06/06/sandia-turns-on-brain-like-storage-free-supercomputer/](https://blocksandfiles.com/2025/06/06/sandia-turns-on-brain-like-storage-free-supercomputer/)
 
-本研究调查了含硫氨基酸半胱氨酸在调节代谢和生热作用中的作用。研究发现，人类热量限制（CR）会降低白色脂肪组织中的半胱氨酸水平。小鼠中半胱氨酸的耗竭会导致快速、致命的体重减轻、脂肪利用率增加以及白色脂肪细胞褐变，这一过程会增强热量产生。在饮食中恢复半胱氨酸可以逆转这些影响。
+桑迪亚国家实验室启用SpiNNaker 2超级计算机：一种无需GPU和内部存储的“大脑启发”系统。该系统由SpiNNcloud提供，可模拟1.5亿至1.8亿个神经元，接近同类平台前五名。该架构源自Arm先驱Steve Furber，采用高度并行设计，每块服务器板包含48个SpiNNaker 2芯片，每个芯片包含152个内核和专用加速器。桑迪亚使用的24板系统包含175,000个内核。
 
-从机制上讲，半胱氨酸缺乏诱导的脂肪褐变和体重减轻依赖于通过β3-肾上腺素能受体的交感神经系统信号传导，独立于FGF21和UCP1。在肥胖小鼠中，半胱氨酸缺乏导致快速的脂肪褐变，能量消耗增加，显著的体重减轻（约30%）以及代谢炎症的减少。
+SpiNNaker 2通过消除集中式存储来实现速度和效率，而是依赖于SRAM和DRAM（每个芯片具有20MB SRAM，每块板具有96GB LPDDR4内存）。这种设计促进了高速芯片间通信，避免了对传统存储系统的需求。
 
-主要发现包括：
-
-*   人类的热量限制降低了脂肪组织中的半胱氨酸水平。
-*   小鼠中半胱氨酸的耗竭通过脂肪褐变导致显著的体重减轻。
-*   这一过程需要交感神经系统的信号传导。
-*   半胱氨酸缺乏可以逆转肥胖小鼠的代谢炎症。
-
-这些结果表明，半胱氨酸对于维持代谢平衡至关重要，其去除会触发脂肪褐变和快速体重减轻，突出了其在管理代谢紊乱中的潜在作用。
+桑迪亚的系统与现有HPC系统集成，并且在没有操作系统或磁盘的情况下运行，通过将数据保存在SRAM和DRAM中来保持速度。SpiNNcloud声称其最大的系统超过1050万个内核，能够进行生物实时模拟。SpiNNcloud首席执行官Hector A. Gonzalez预计该系统将被用于“下一代国防及其他领域”，利用其效率用于国家安全应用。
 
 ---
 
-## 7. CircuitHub (YC W12) 招聘全栈机器人工程师 – The Grid
+## 5. Odyc.js – 用于叙事游戏的微型JavaScript库
 
-**原文标题**: CircuitHub (YC W12) Hiring Full-Stack Robotics Engineers – The Grid
+**原文标题**: Odyc.js – A tiny JavaScript library for narrative games
 
-**原文链接**: [https://www.workatastartup.com/jobs/76919](https://www.workatastartup.com/jobs/76919)
+**原文链接**: [https://odyc.dev](https://odyc.dev)
 
-CircuitHub (Y Combinator投资公司) 正在寻找一名全栈机器人工程师，加入其团队，构建“The Grid”，这是一个用于高效电子组装的工厂级机器人平台。该职位需要在马萨诸塞州迪尔菲尔德现场工作至少两年，之后有可能远程办公或搬迁。
-
-该工程师将亲力亲为，负责机器人系统的物理和软件方面，包括调试、调整、部署新子系统以及推动实验以提高吞吐量。这不是一个支持职位；该工程师 *就是* 运营团队。
-
-理想的候选人将具有构建完整机器人系统的经验，精通机械CAD、Python/C++和基础电子知识，并能在压力下调试生产系统。熟悉Python、Beckhoff TwinCAT、SolidWorks/Fusion 360和工业传感器/运动控制系统者优先。
-
-该职位提供了显著影响一家快速发展、盈利且拥有特斯拉和 Meta 等客户的公司的机会。它提供董事会级别的可见性，并有机会塑造 CircuitHub 自动化堆栈的未来。CircuitHub 的技术栈包括 Haskell、Elm、PostgreSQL、AWS/Heroku、NixOS、Prometheus 和 Grafana。面试过程包括展示候选人构建的项目。
+Odyc.js 是一个轻量级的 JavaScript 库，专为创建叙事性视频游戏而设计。其主要目标是赋能用户，即使是没有编程经验的人也能开发自己的视频游戏。该库旨在简化游戏开发过程，使其更容易被广大受众所接受。内容还邀请用户了解更多关于 Odyc.js 的信息，在图库中探索使用该库创建的游戏，并普遍参与该工具的生态系统。本质上，Odyc.js 被定位为一款易于使用的 JavaScript 工具，用于构建叙事游戏。
 
 ---
 
-## 8. Phptop：简单、安全且实用的PHP资源分析器，适用于生产环境
+## 6. 受虐狂的网页开发指南
 
-**原文标题**: Phptop: Simple PHP ressource profiler, safe and useful for production sites
+**原文标题**: A masochist's guide to web development
 
-**原文链接**: [https://github.com/bearstech/phptop](https://github.com/bearstech/phptop)
+**原文链接**: [https://sebastiano.tronto.net/blog/2025-06-06-webdev/](https://sebastiano.tronto.net/blog/2025-06-06-webdev/)
 
-Phptop：一款用于监控LAMP服务器资源使用的简单、生产环境安全的PHP资源分析器。由Bearstech开发并积极维护，它能测量诸如挂钟时间、用户和系统CPU时间以及每个查询的内存使用情况等指标。该工具轻量级，所需资源极少，并且可以通过在`php.ini`或`.user.ini`文件中使用`auto_prepend_file`添加一行代码即可全局启用。
-
-要开始分析，只需将`auto_prepend_file=/path/to/phptop_hook.php`追加到PHP配置并重启Web服务器。经过一段时间的数据收集后，`phptop`命令行工具会提供资源使用情况的摘要，允许您按不同的指标（如内存使用量`phptop -s mem`）对数据进行排序。输出结果会显示URL、点击次数和平均资源消耗。
-
-Phptop兼容PHP 5.2.0及更高版本，已测试至PHP 8.2，并且多年来已在生产服务器上使用而未出现问题。它允许识别资源密集型URL并优化性能。
+WebAssembly开发中的“受虐指南”：C/C++开发者移植指南
 
 ---
 
-## 9. 限制网站访问用户本地网络的提议
+## 7. Exa (YC S21) 正在招聘创始物理设计工程师，构建用于人工智能的芯片
 
-**原文标题**: A proposal to restrict sites from accessing a users’ local network
+**原文标题**: Exa (YC S21) Is Hiring a Founding Physical Design Engineer to Build Chips for AI
 
-**原文链接**: [https://github.com/explainers-by-googlers/local-network-access](https://github.com/explainers-by-googlers/local-network-access)
+**原文链接**: [https://www.ycombinator.com/companies/exa-laboratories/jobs/9TXvyqt-founding-engineer-physical-design-vlsi-rtl](https://www.ycombinator.com/companies/exa-laboratories/jobs/9TXvyqt-founding-engineer-physical-design-vlsi-rtl)
 
-This document proposes a new "Local Network Access" permission to prevent public websites from exploiting vulnerable devices on users' local networks. Currently, websites can freely probe a user's local network, potentially launching CSRF attacks against devices like printers.
+Exa Laboratories (YC S24) 招聘创始物理设计工程师，助力打造用于人工智能的下一代节能型“XPU”芯片。这些多态芯片通过重新配置自身以优化每个模型的数据流，在人工智能训练和推理方面超越现有 GPU，从而显著节省能源并提高性能。
 
-The proposal aims to restrict direct access to private IP addresses from public websites, requiring user permission before a website can connect to the local network. This differs from the previous "Private Network Access" (PNA) proposal, which relied on preflight requests. This new approach prioritizes user control, sacrificing device opt-in for a simpler implementation.
+理想的候选人应具有扎实的电气/计算机工程背景，并具备半导体物理设计、超大规模集成电路 (VLSI)、数字/混合信号 IC 设计和 RTL 方面的经验。熟悉 (科)ML 框架和系统编程者优先。
 
-The core of the proposal involves a new permission that sites must request to make local network requests. A "local network request" is defined as any request crossing an address space boundary to a more-private address space (Public -> Local, Public -> Loopback, Local -> Loopback). This would be triggered when a request's hostname is a private IP address, a .local domain, or when the `fetch()` call is explicitly annotated with `targetAddressSpace="local"` or `targetAddressSpace="loopback"`.
+该职位提供成为早期员工的机会，可直接与旧金山的创始团队合作。工程师将主导塑造 AI 计算未来的关键决策，并成长为技术领导职位。Exa 承诺提供具有竞争力的薪酬和可观的股权。
 
-The design incorporates integrations with Fetch, Mixed Content handling, HTML, WebRTC, Permissions Policy, and the Permissions API. A new `targetAddressSpace` parameter is added to `fetch()` to allow developers to explicitly designate a request as targeting a local or loopback address, bypassing mixed content blocking in specific scenarios. The overall goal is to minimize breakage of existing workflows while significantly reducing the risks associated with unrestricted local network access from the open web.
-
+Exa 的目标是通过创建无需大规模电力基础设施即可支持 AGI 和 ASI 的 XPU，从而打造“下一个英伟达”，最终影响科学发现和知识创造。他们正在寻找一位充满激情、有干劲且核心的工程师，准备好迎接近乎不可能的技术挑战并创造持久的事物。
 
 ---
 
-## 10. Why I wrote the BEAM book
+## 8. 动态场景重建的随时随地免费高斯图元
 
-**原文标题**: Why I wrote the BEAM book
+**原文标题**: Free Gaussian Primitives at Anytime Anywhere for Dynamic Scene Reconstruction
 
-**原文链接**: [https://happihacking.com/blog/posts/2025/why_I_wrote_theBEAMBook/](https://happihacking.com/blog/posts/2025/why_I_wrote_theBEAMBook/)
+**原文链接**: [https://zju3dv.github.io/freetimegs/](https://zju3dv.github.io/freetimegs/)
 
-生成摘要时出错
+FreeTimeGS：随时随地自由高斯基元用于动态场景重建
+
+---
+
+## 9. 过去94年一美元的增值情况 [pdf]
+
+**原文标题**: See how a dollar would have grown over the past 94 years [pdf]
+
+**原文链接**: [https://www.newyorklifeinvestments.com/assets/documents/education/investing-essentials-growthofadollar.pdf](https://www.newyorklifeinvestments.com/assets/documents/education/investing-essentials-growthofadollar.pdf)
+
+无法根据提供的内容总结文章。 该文本似乎是 PDF 文件的二进制数据，并非人类可读的文本。 为了总结文章，需要可读的文本内容。 标题表明该文章将讲述一美元在过去 94 年里的增长情况，暗示它将涵盖投资回报和通货膨胀。
+
+---
+
+## 10. 打开文件过多
+
+**原文标题**: Too Many Open Files
+
+**原文链接**: [https://mattrighetti.com/2025/06/04/too-many-files-open](https://mattrighetti.com/2025/06/04/too-many-files-open)
+
+解决 Rust 测试中 "Too many open files" 错误的实战记录
 
 ---
 
@@ -163,81 +139,82 @@ The design incorporates integrations with Fetch, Mixed Content handling, HTML, W
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 2 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 3 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 4 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
-| 5 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 6 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 7 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 8 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 9 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 10 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 11 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 12 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 13 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 1 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 2 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 3 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
+| 4 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
+| 5 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 6 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 7 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 8 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 9 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 10 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 11 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 12 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 13 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
 | 14 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 15 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 16 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 17 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 18 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 15 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 16 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 17 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
+| 18 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
 | 19 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 20 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 21 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 22 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 23 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 24 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 20 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 21 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 22 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 23 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 24 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
 | 25 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 26 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 27 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 28 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 26 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 27 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 28 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
 | 29 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 30 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 31 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 32 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 33 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 34 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 35 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 36 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 37 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 30 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 31 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 32 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 33 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 34 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 35 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 36 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 37 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
 | 38 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 39 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 40 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 41 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 42 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 39 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 40 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 41 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 42 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
 | 43 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 44 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 45 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 46 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 47 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 48 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 49 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 50 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 51 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 52 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 53 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 44 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 45 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 46 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 47 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 48 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 49 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 50 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 51 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 52 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 53 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
 | 54 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 55 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 56 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 57 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 58 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 59 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 60 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 61 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 62 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 63 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 64 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 65 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 66 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 67 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 68 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 69 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 70 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 71 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 72 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 73 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 74 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 75 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 76 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 77 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 78 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 55 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 56 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 57 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 58 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 59 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 60 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 61 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 62 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 63 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 64 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 65 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 66 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 67 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 68 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 69 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 70 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 71 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 72 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 73 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 74 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 75 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 76 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 77 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 78 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 79 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
