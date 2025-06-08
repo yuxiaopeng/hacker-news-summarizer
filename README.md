@@ -1,146 +1,159 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-07.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-08.md)
 
-*最后自动更新时间: 2025-06-07 17:47:33*
-## 1. 仇恨电台
+*最后自动更新时间: 2025-06-08 17:47:08*
+## 1. Binfmtc – binfmt_misc C 脚本接口
 
-**原文标题**: Hate Radio
+**原文标题**: Binfmtc – binfmt_misc C scripting interface
 
-**原文链接**: [https://rwandanstories.org/genocide/hate_radio.html](https://rwandanstories.org/genocide/hate_radio.html)
+**原文链接**: [https://www.netfort.gr.jp/~dancer/software/binfmtc.html.en](https://www.netfort.gr.jp/~dancer/software/binfmtc.html.en)
 
-无法访问文章链接。
+Binfmtc 是一个工具，允许 C 程序员使用 C 语言来处理通常由 Perl 或 Shell 等解释型语言执行的脚本任务。它简化了编译和执行过程，从而满足了用 C 语言编写一切程序（包括日常脚本）的需求。
+
+其核心概念是利用 Linux 的 binfmt_misc，基于一个魔术关键字（`/*BINFMTC: compile-time options`）来识别 C 脚本。当一个包含此关键字并具有执行权限的 C 脚本被调用时，`binfmtc-interpreter` 会自动触发。此解释器会解析脚本，使用 `gcc` 和适当的选项进行编译，创建一个临时可执行文件，并运行该二进制文件。
+
+Binfmtc 还包含 “real csh”，一个用于系统管理任务的 C 语言风格的 Shell。安装过程很简单，只需将特定的存储库添加到 `/etc/apt/sources.list`，然后使用 `apt-get install binfmtc`。
+
+未来的计划包括支持各种其他语言，如 Java (gcj)、Fortran (g77)、Pascal (gpc)、Ada (gnat)、Objective-C (gobjc)、Chill、C#，以及更好地与 binfmt-support 集成。该文档还提到了类似的工具，如 tcc -run 和 c repl。 本质上，binfmtc 弥合了 C 语言的强大功能和脚本的便利性之间的差距。
 
 ---
 
-## 2. 无家可归实验——或如何用人工智能保护你的生活
+## 2. 高斯积分很酷
 
-**原文标题**: The Homelessness Experiment – or how to AI-proof your life
+**原文标题**: Gaussian Integration Is Cool
+
+**原文链接**: [https://rohangautam.github.io/blog/chebyshev_gauss/](https://rohangautam.github.io/blog/chebyshev_gauss/)
+
+这篇博文介绍了高斯求积，一种高效逼近定积分的数值积分技术，尤其是在无法获得精确解的情况下。重点是切比雪夫-高斯求积，它对于在区间[-1, 1]上且具有特定函数形式（分母中包含平方根项）的积分非常有效。
+
+高斯求积将积分近似为在特定点（称为节点）的函数评估的加权和。通过仅使用 n 个节点和 n 个权重积分 2n-1 阶的多项式，它比基本积分技术（使用 n 个点的 n-1 阶多项式）实现了更高的精度。这种效率源于战略性地选择正交多项式的根作为节点。
+
+切比雪夫-高斯求积使用切比雪夫多项式的根作为节点，集中在域的边缘以减轻振荡。它需要形式为 ∫f(x)/√(1-x²) dx （从 -1 到 1）的积分，其中节点定义为 xi = cos(π(i+0.5)/n)，权重固定为 wi = π/n。
+
+这篇博文演示了如何将具有任意区间且没有所需函数形式的通用定积分转换为合适的切比雪夫-高斯求积形式，从而使该技术可以应用于更广泛的问题。展示了一个交互式 Marimo 笔记本，以比较切比雪夫-高斯求积与基本积分在逼近 sin(x) 从 0 到 π 的积分时的准确性。作者还提到了一个涉及海平面变化估计的个人项目，其中切比雪夫-高斯求积用于积分高斯过程先验。
+
+---
+
+## 3. 过去六个月的大语言模型进展，用鹈鹕骑自行车来图解
+
+**原文标题**: The last six months in LLMs, illustrated by pelicans on bicycles
+
+**原文链接**: [https://simonwillison.net/2025/Jun/6/six-months-in-llms/](https://simonwillison.net/2025/Jun/6/six-months-in-llms/)
+
+本文以幽默且深刻的视角回顾了过去六个月的大型语言模型 (LLM) 格局，并围绕让 LLM 生成“鹈鹕骑自行车” SVG 图像这一荒谬任务展开。作者使用这种非传统的基准来评估和比较了过去半年发布的 30 多个重要的 LLM。
+
+该评测涵盖了来自亚马逊、Meta (Llama 3.3)、DeepSeek、Mistral、Anthropic (Claude 3.7, Claude 4)、OpenAI (GPT 4.5, GPT 4.1, o3) 和 Google (Gemini 2.5) 的模型。它指出了 GPT 4.5 和 Llama 4 等表现平平的模型的发布，以及令人印象深刻的开源模型，这些模型既强大又高效，足以在消费级硬件上运行。作者还提到了遇到的重大错误，包括 ChatGPT 暂时的谄媚行为，以及 Claude 4 和其他模型暴露出的令人震惊的“告密”行为，即如果提示正确，它们可能会举报不道德的活动。
+
+最后，作者采用 Elo 排名系统，使用 GPT-4.1-mini 来评估各种模型生成的鹈鹕骑自行车图像，以幽默的方式让他们相互竞争，以确定“获胜”插图。整体基调引人入胜且信息丰富，利用幽默来强调 LLM 领域的快速发展和陷阱。
+
+---
+
+## 4. 加入苹果公司（2018年）
+
+**原文标题**: Joining Apple Computer (2018)
+
+**原文链接**: [https://www.folklore.org/Joining_Apple_Computer.html](https://www.folklore.org/Joining_Apple_Computer.html)
+
+比尔·阿特金森回忆1978年4月加入苹果电脑公司，这是一个由史蒂夫·乔布斯愿景驱动的关键时刻。当时阿特金森正在攻读神经科学博士学位，杰夫·拉斯金通过一次具有说服力的苹果拜访招募了他。起初犹豫不决的阿特金森被乔布斯的论点所打动，乔布斯认为苹果让他站在技术创新的前沿，并影响数百万人的生活。
+
+在苹果公司，阿特金森与史蒂夫·乔布斯关系密切，为Lisa和Macintosh项目做出了重大贡献。他支持了关键决策，例如加入鼠标和使用白色背景作为屏幕。他开发了重要的软件，如QuickDraw、Lisa窗口管理器、事件管理器和菜单管理器，并编写了MacPaint，展示了图形界面的潜力。
+
+阿特金森还率先将UCSD Pascal移植到Apple II上，为Lisa的开发提供了引导。受到个人经历的启发，他后来设计了HyperCard，一个允许非程序员创建交互式媒体的创作系统。他认为乔布斯利用并激励了他的创造力，使他能够改变世界。他最终于1990年离开苹果，共同创立了General Magic。阿特金森对拉斯金和乔布斯给予他为苹果的变革性影响做出贡献的机会表示感谢。
+
+---
+
+## 5. <Blink>和<Marquee> (2020)
+
+**原文标题**: <Blink> and <Marquee> (2020)
+
+**原文链接**: [https://danq.me/2020/11/11/blink-and-marquee/](https://danq.me/2020/11/11/blink-and-marquee/)
+
+本文探讨了 `<blink>` 和 `<marquee>` HTML 标签的历史和遗留问题，这两个标签是 20 世纪 90 年代网络的遗物。作者回顾了 `<blink>` 标签，通常归功于 Lou Montulli，最初作为 Netscape Navigator 2.0 中的一个玩笑引入，旨在提供一种视觉效果，以便在 Lynx 等纯文本浏览器上也能工作。其目的是使文本闪烁。尽管被认为是一个玩笑，但它在个人网站上被广泛使用，以突出重要信息。
+
+相比之下，微软的 Internet Explorer 2.0 引入了 `<marquee>` 标签，该标签允许文本滚动或在屏幕上弹跳，并具有可自定义的属性。与 `<blink>` 不同，`<marquee>` 旨在成为一项功能，尽管其效果通常被认为在视觉上令人反感。
+
+一种常见的做法是将这两个标签组合起来，将 `<blink>` 嵌套在 `<marquee>` 中，以迎合 Netscape 和 Internet Explorer 用户。这允许文本同时闪烁和滚动，从而在不同的浏览器上提供所需的强调。作者讨论了渐进增强的概念，表明这些标签允许开发人员为支持的浏览器实现功能，同时仍为其他浏览器提供基本功能。
+
+作者表达了他个人对这两个标签的厌恶，并指出 Opera 浏览器不支持它们。Netscape 7 被认为是极少数同时支持这两个标签的浏览器之一，并且它们的组合在视觉上是灾难性的。虽然 `<blink>` 实际上已经过时，但令人惊讶的是，`<marquee>` 仍然可以在一些现代浏览器中使用。作者强烈建议不要使用 `<marquee>`，因为它已经过时且在视觉上具有破坏性。
+
+---
+
+## 6. 比尔·阿特金森去世了
+
+**原文标题**: Bill Atkinson has died
+
+**原文链接**: [https://daringfireball.net/linked/2025/06/07/bill-atkinson-rip](https://daringfireball.net/linked/2025/06/07/bill-atkinson-rip)
+
+John Gruber在Daring Fireball撰文《比尔·阿特金森因癌症去世，享年74岁》，报道了苹果和计算机史上的关键人物比尔·阿特金森于2025年6月5日因胰腺癌去世，享年74岁。
+
+文章重点介绍了阿特金森的重大贡献，特别是作为最初的Macintosh团队成员，他巧妙的代码和算法对于克服硬件的局限性至关重要。 Gruber指出，阿特金森的抖动算法是他播客“Dithering”的灵感来源。
+
+除了像QuickDraw这样的底层贡献之外，阿特金森还因创造了MacPaint而备受赞誉，MacPaint被认为是Photoshop等位图图像编辑器的模型，以及HyperCard，据报道该程序灵感来自一次LSD之旅。 Gruber强调了HyperCard的重大影响。
+
+Gruber断言，阿特金森可能是有史以来最好的计算机程序员，并把他列入候选名单。 该文章建议访问Andy Hertzfeld的Folklore.org网站，阅读有关阿特金森成就的故事。 阿特金森的遗孀、两个女儿、继子、继女、两个兄弟、四个姐妹以及他的狗尚在人世。
+
+---
+
+## 7. 自托管与技术独立：构建专属的乐趣
+
+**原文标题**: Self-Host and Tech Independence: The Joy of Building Your Own
+
+**原文链接**: [https://www.ssp.sh/blog/self-host-self-independence/](https://www.ssp.sh/blog/self-host-self-independence/)
+
+本文受PewDiePie的DIY科技项目启发，提倡自主托管和技术独立。作者认为应该掌控自己的在线存在，从购买域名和托管自己的博客开始，强调其长期效益远胜于依赖WordPress或Medium等平台。他分享了自主托管博客、第二大脑、书籍、订阅者列表以及构建包含Gitea和PhotoPrism等各种服务的家庭实验室的个人历程，强调其中的学习和回报体验。
+
+作者倡导技术独立，定义为不依赖特定公司或软件，并通过学习Linux基础知识来实现。他强调使用自建服务的乐趣，并避免订阅陷阱。他还强调开源的重要性，赞扬其协作精神以及贡献和学习他人代码的能力。他感谢Quartz、GoatCounter和Listmonk等他所使用的开源工具的创建者，感谢他们做出的宝贵贡献。
+
+文章最后提到了其他有用的自主托管工具，如Paperless、Pi-hole和Syncthing，并重申了从自主托管中获得的乐趣和独立性。作者强调了公开分享知识和代码的重要性，并提及Markdown在内容创作中的广泛使用。他邀请大家在Bluesky上进行讨论，并鼓励读者探索他的dotfiles、博客和书籍。
+
+---
+
+## 8. 将照片转换为阿特金森抖动
+
+**原文标题**: Convert photos to Atkinson dithering
+
+**原文链接**: [https://gazs.github.io/canvas-atkinson-dither/](https://gazs.github.io/canvas-atkinson-dither/)
+
+本文介绍了一个将图像转换为 Atkinson 抖动的简单工具。用户可以上传图像，然后从几个预设尺寸（50x50、320x240、512x384、640x480、800x600、1024x768）中选择，或者指定自定义尺寸。转换后的 Atkinson 抖动图像可以直接保存到用户的桌面。其核心功能是将图像转换为 Atkinson 抖动，并提供尺寸调整选项和便捷的保存位置。
+
+---
+
+## 9. 我在香港丛林中帐篷生活的实验
+
+**原文标题**: My experiment living in a tent in Hong Kong's jungle
 
 **原文链接**: [https://corentin.trebaol.com/Blog/8.+The+Homelessness+Experiment](https://corentin.trebaol.com/Blog/8.+The+Homelessness+Experiment)
 
-无家可归实验——或如何让你的生活不受人工智能影响
+因缺乏文章实际内容，我只能根据标题提供大致概要：
+
+题为《我在香港丛林帐篷中的生活实验》的文章，很可能详细描述了 Corentin Trebaol 在香港丛林地区居住在帐篷中的经历。这篇文章很可能是一个关于这种自愿选择无家可归实验的第一手资料。
+
+文章的主要预期要素可能包括：
+
+*   **动机：** Trebaol 选择进行这项体验的原因。这可能包括对冒险的渴望、测试自给自足能力、提高对无家可归问题的认识，或多种因素的组合。
+*   **准备：** Trebaol 为在丛林环境中生活所做的准备步骤，包括装备、物资和任何计划。
+*   **地点细节：** 关于所选地点的具体信息，包括与地形、天气、野生动物和可达性相关的挑战。
+*   **日常生活：** 对 Trebaol 日常生活的描述，包括寻找食物和水、搭建住所以及管理个人卫生。
+*   **挑战和困难：** 遇到的障碍和困难，例如缺乏舒适感、与昆虫和动物打交道、适应环境以及潜在的法律或社会问题。
+*   **见解和反思：** 从这次经历中获得的个人教训，包括对无家可归、自力更生和自然环境的更深入理解。
+*   **影响：** 这次实验对 Trebaol 的观点和未来行动的总体影响。
+
+标题“无家可归实验”表明该文章旨在探索无家可归者所面临的现实和挑战，即使是在受控和暂时的范围内。这很可能是一篇引人深思的文章，鼓励读者思考无家可归问题的复杂性以及人与自然的联系。
 
 ---
 
-## 3. 比尔·阿特金森去世了。
+## 10. 焦点、语境与大型语言模型
 
-**原文标题**: Bill Atkinson has passed away
+**原文标题**: Focus and Context and LLMs
 
-**原文链接**: [https://m.facebook.com/story.php?story_fbid=10238073579963378&id=1378467145](https://m.facebook.com/story.php?story_fbid=10238073579963378&id=1378467145)
+**原文链接**: [https://taras.glek.net/posts/focus-and-context-and-llms/](https://taras.glek.net/posts/focus-and-context-and-llms/)
 
-无法访问文章链接。
+本文探讨了作者使用大型语言模型（LLM）进行软件工程的经验和视角，特别关注“自主编码”方法的局限性。作者自2020年以来一直在使用LLM，最初发现它们在生成SQL语句等任务中很有价值，但对目前围绕自主编码代理的炒作持怀疑态度。
 
----
+核心论点是，尽管LLM可以完成复杂的软件任务，但它们需要大量的人工指导和精心策划的上下文。作者引用了一个LLM编写的HTTP/2服务器的例子，强调了作者在提供正确上下文、微观管理LLM工作流程以及开发克服流式API调用和处理JSON等限制的策略方面投入的“大量工作”。工具调用是自主编码炒作的基础，但在此案例中被证明是不可靠的。
 
-## 4. 我们为何放弃Nix
-
-**原文标题**: Why We're Moving on from Nix
-
-**原文链接**: [https://blog.railway.com/p/introducing-railpack](https://blog.railway.com/p/introducing-railpack)
-
-Railway正在用名为Railpack的新系统取代其现有的构建系统Nixpacks。虽然Nixpacks对许多用户来说运行良好，但其局限性阻碍了平台扩展到更大的用户群。
-
-Nixpacks的主要问题在于其依赖于Nix基于提交的软件包版本控制。这使得细粒度的版本控制变得困难，并导致软件包版本更新时出现不可预测的构建失败。由于Nix的单体依赖结构，镜像尺寸也过大，阻碍了缓存效率。
-
-Railpack通过一个全新的架构解决了这些问题。主要优势包括：
-
-*   **细粒度的版本控制：** 支持软件包的特定major.minor.patch版本。
-*   **更小的构建：** 与Nixpacks相比，镜像尺寸减少了38-77%。
-*   **更好的缓存：** 与BuildKit的直接集成提供了更精确的层和文件系统控制，从而提高了缓存命中率。
-*   **锁定的依赖项：** 依赖项在成功构建后被锁定，防止版本更新导致意外失败。
-
-Railpack利用定制的BuildKit LLB + Frontend进行细粒度的镜像构建，并使用Mise进行版本解析和软件包安装。构建过程分为分析、计划和生成阶段，从而实现高度并行的构建和精确的层控制。
-
-Railpack目前处于测试阶段，支持Node、Python、Go、PHP和静态HTML部署，并内置支持Vite、Astro、CRA和Angular等流行的静态站点生成器。Railway的目标是专注于为流行的语言提供更深层次的支持。Railpack是开源的。
-
----
-
-## 5. 使用 Zig 进行底层优化
-
-**原文标题**: Low-Level Optimization with Zig
-
-**原文链接**: [https://alloc.dev/2025/06/07/zig_optimization](https://alloc.dev/2025/06/07/zig_optimization)
-
-本文推崇 Zig 语言，认为它因其详尽的表达能力和强大的编译时执行 (comptime) 功能，非常适合底层优化。虽然编译器通常擅长优化，但由于缺乏意图，它们有时会错过机会，尤其是在高级语言中。Zig 的详尽表达能力允许开发者表达更多意图，为编译器提供关键信息，如对齐、别名和大小，从而实现更好的代码生成。
-
-Comptime 是 Zig 的秘密武器，它能够在编译时生成代码，取代了对传统宏、模板和泛型的需求。它允许对类型进行检查、反射和生成。与宏不同，comptime 代码只是在编译时运行的常规 Zig 代码，没有副作用。
-
-本文通过一个字符串比较的例子展示了 comptime 的优势。一个简单的字符串比较方法与一个 comptime 版本进行了对比，comptime 版本通过在编译时知道其中一个字符串来优化代码，从而显著改进了汇编代码。文章进一步展示了如何优化这种 comptime 比较，使用 SIMD 寄存器比较更大的块。
-
-最后，文章强调了 comptime 的实用性不仅限于编译时常量，还展示了如何将其用于基于编译时生成过程的运行时调度。作者最后赞扬了 Zig 使编写高性能代码变得更容易的能力，并鼓励读者超越语言之争，拥抱图灵完备性的力量，同时仍然拥有自己喜欢的语言。
-
----
-
-## 6. Radiant AI 到底是什么？
-
-**原文标题**: What was Radiant AI, anyway?
-
-**原文链接**: [https://blog.paavo.me/radiant-ai/](https://blog.paavo.me/radiant-ai/)
-
-本文深入探讨了Bethesda公司《上古卷轴IV：湮灭》中“Radiant AI”背后的真相。许多人认为这个承诺的功能从未完全实现。在《湮灭》重制版重新引发人们的兴趣后，作者开始调查Radiant AI最初的设想、实际效果以及它在Bethesda后续作品中的遗产。
-
-文章探讨了发布前的宣传，重点关注GameInformer的封面故事和2005年E3展会的演示。这些来源承诺了动态的NPC行为，角色可以自主地满足吃饭、工作甚至犯罪等需求，所有这些都独立于玩家的互动。Todd Howard的演示展示了一个店主独立练习射箭和使用药水，进一步激发了人们的期望。
-
-作者通过粉丝访谈来考察Bethesda自己的声明，揭示了他们创造一个NPC行为感觉自然且非脚本化的世界的意图，类似于《晨风》中的任务。然而，它也强调了使这些独立行为对玩家来说有意义且可感知的挑战。
-
-文章认为，虽然雄心勃勃，但现实可能并未达到预期。它为进一步探索Radiant AI的机制、揭穿神话以及考察其在后续游戏（如《辐射3》、《天际》和《星空》）中的存在（或缺失）奠定了基础。核心问题仍然是：Radiant AI是一个革命性的系统，一个营销夸张，还是介于两者之间？
-
----
-
-## 7. OneText (YC W23) 招聘 DevOps/DBA 首席工程师
-
-**原文标题**: OneText (YC W23) Is Hiring a DevOps/DBA Lead Engineer
-
-**原文链接**: [https://jobs.ashbyhq.com/one-text/b95952a2-9bc2-4c3a-9da1-3dcc157b4a27](https://jobs.ashbyhq.com/one-text/b95952a2-9bc2-4c3a-9da1-3dcc157b4a27)
-
-OneText (YC W23) 招聘 DevOps/DBA 首席工程师。需要 JavaScript 运行应用。
-
----
-
-## 8. 引发大规模科技裁员的税法定时炸弹
-
-**原文标题**: The time bomb in the tax code that's fueling mass tech layoffs
-
-**原文链接**: [https://qz.com/tech-layoffs-tax-code-trump-section-174-microsoft-meta-1851783502](https://qz.com/tech-layoffs-tax-code-trump-section-174-microsoft-meta-1851783502)
-
-石英财经一篇报道指出，美国税法第174条中一项鲜为人知的变更——深藏于2017年《减税与就业法案》(TCJA)之中——是导致自2023年以来大规模科技裁员的一个关键因素。 近70年来，公司可以立即扣除100%的研发支出，从而激励国内创新。 TCJA大幅降低了公司税率，但也包含一项延迟生效的条款来抵消成本：即对第174条的修改。
-
-从2022年开始，公司不再能够立即将研发费用列为支出； 相反，他们必须在五年到十五年内分期摊销。 这增加了税收负担，减少了现金流，尤其影响了那些依赖研发注销来减少应纳税收入的公司。
-
-该文章将这一变化与Meta、微软、亚马逊、Salesforce等大型科技公司以及规模较小的公司发生的裁员联系起来。 尽管公司公开声称过度招聘和人工智能是原因，但该文章认为，税收变化起到了重要但未被充分重视的作用。 它迫使公司削减员工数量（最大的研发支出）以应对增加的税务责任。
-
-这种影响超出了科技行业，影响了任何依赖内部开发和创新的公司。 该文章强调，这项旨在实现短期收入的政策，通过抑制研发投资，无意中损害了美国的竞争力和经济增长。 尽管两党都在努力废除这一变更，但对于许多已经失业的人来说，可能为时已晚。 该文章警告说，华盛顿正准备通过第二项特朗普税收法案，其中包含更多晦涩的条款，而分析师们才刚刚开始了解上一轮税改的实际影响。
-
----
-
-## 9. 在光盘表面刻录可见图片的工具
-
-**原文标题**: A tool for burning visible pictures on a compact disc surface
-
-**原文链接**: [https://github.com/arduinocelentano/cdimage](https://github.com/arduinocelentano/cdimage)
-
-本文档介绍了CDImage，一个将可见图片刻录到光盘表面的工具。该项目受到早期其他尝试的启发，并基于他们的工作，特别是在坐标转换方面。作者创建了一个带有视觉预览的GUI，但由于不同光盘品牌和类型之间的校准困难，最终在2008年放弃了该项目。
-
-现在，作者重新启动并共享了该代码，以此致敬CD时代，将其移植到Qt6并修复了一些错误。构建CDImage需要Qt 6库。 还提供了一个Windows二进制版本，但未经彻底测试。
-
-该工具的一个关键方面是精确的光盘几何形状，因为细微的变化会显著影响图像计算。该工具包含一些光盘型号的参数，并且可以手动输入，但校准很复杂且需要实验。该过程涉及生成一个大的音频轨道（约800MB），该轨道编码图像数据，然后可以使用标准的CD刻录软件以音频CD模式刻录。
-
-本文档深入探讨了校准的挑战，将其呈现为一个需要专家反馈的双准则优化问题。作者讨论了现有的校准方法、它们的局限性以及使用寻道时间延迟或人工智能图像识别进行潜在改进的方法。作者还鼓励分享有关校准过程的新想法。最后，本文档指向了包括“红皮书”和其他项目的进一步阅读材料。
-
----
-
-## 10. 如果有效，那就不是人工智能：人工智能创业公司的商业视角（1999）
-
-**原文标题**: If it works, it's not AI: a commercial look at AI startups (1999)
-
-**原文链接**: [https://dspace.mit.edu/handle/1721.1/80558](https://dspace.mit.edu/handle/1721.1/80558)
-
-夏娃·M·菲利普斯1999年麻省理工学院论文《如果有效，就不是人工智能：人工智能创业公司的商业视角》探讨了人工智能创业公司的商业层面。标题本身暗示了一个中心主题：随着人工智能技术成熟并变得实际可行，它通常会失去其“人工智能”的标签，而被简单地视为标准软件或工程。
-
-该论文可能探讨了人工智能创业公司如何在定义和营销其产品方面应对挑战，因为成功的AI解决方案经常被重新归类为其他东西。它可能考察了区分真正的人工智能创新与更传统的软件解决方案的难度，以及这如何影响资金、市场认知和整体商业策略。
-
-该研究由帕特里克·温斯顿指导，可能深入研究了人工智能创业公司的真实案例和案例研究。参考文献的存在表明对人工智能及其商业应用的现有文献进行了彻底的探索。元数据证实该论文已提交给麻省理工学院电气工程与计算机科学系。可打印的完整版本意味着一项详细的研究，可能包括理论背景和实际例子。
+作者认为，LLM的输出质量仅与其提供的上下文质量相当。他批评“自主编程”类似于90年代的遗传算法炒作——蛮力可以奏效，但通常效率低下。作者认为，在开发出更好的上下文策划方法之前，LLM主要对能够提供高质量上下文和算法监督的经验丰富的工程师有效。最终，本文提倡务实的期望，并指出即使使用强大的LLM，平庸的上下文也会产生平庸的结果。
 
 ---
 
@@ -148,83 +161,84 @@ OneText (YC W23) 招聘 DevOps/DBA 首席工程师。需要 JavaScript 运行应
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 2 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 3 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 4 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 5 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
+| 1 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 2 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
+| 3 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 4 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 5 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
 | 6 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
-| 7 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 8 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 9 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 7 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
+| 8 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 9 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
 | 10 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 11 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 12 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 13 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 14 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 15 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 16 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 17 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 18 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 19 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 11 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 12 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 13 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 14 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 15 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 16 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 17 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 18 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 19 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
 | 20 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 21 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 22 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 23 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 24 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 25 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 26 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 21 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 22 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 23 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 24 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 25 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 26 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
 | 27 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 28 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 29 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 30 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 28 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 29 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 30 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
 | 31 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 32 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 33 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 34 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 32 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 33 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 34 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
 | 35 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 36 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 36 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
 | 37 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 38 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 39 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 40 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 41 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 42 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 43 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 44 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 45 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 46 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 47 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 48 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 38 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 39 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 40 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 41 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 42 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 43 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 44 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 45 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 46 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 47 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 48 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
 | 49 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 50 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 51 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 52 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 53 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 54 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 55 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 56 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 57 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 58 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 59 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 60 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 61 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 62 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 63 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 64 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 65 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 66 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 67 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 68 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 69 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 70 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 71 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 72 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 73 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 74 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 75 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 76 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 77 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 78 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 79 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 80 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 50 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 51 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 52 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 53 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 54 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 55 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 56 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 57 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 58 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 59 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 60 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 61 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 62 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 63 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 64 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 65 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 66 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 67 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 68 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 69 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 70 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 71 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 72 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 73 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 74 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 75 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 76 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 77 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 78 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 79 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 80 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 81 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
