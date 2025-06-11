@@ -1,167 +1,147 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-10.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-11.md)
 
-*最后自动更新时间: 2025-06-10 17:50:21*
-## 1. Magistral — Mistral AI 首个推理模型
+*最后自动更新时间: 2025-06-11 17:51:26*
+## 1. V-JEPA 2：世界模型与物理推理新基准
 
-**原文标题**: Magistral — the first reasoning model by Mistral AI
+**原文标题**: V-JEPA 2 world model and new benchmarks for physical reasoning
 
-**原文链接**: [https://mistral.ai/news/magistral](https://mistral.ai/news/magistral)
-
-Mistral AI发布Magistral，其首个推理模型，专为领域特定、透明和多语言推理而设计。它有两个版本：Magistral Small（240亿参数，开源）和Magistral Medium（更强大，企业版）。Magistral Medium在AIME2024上取得了73.6%的成绩（多数投票@64时为90%），而Magistral Small的得分为70.7%（多数投票@64时为83.3%）。
-
-主要特性包括跨多种语言的自然推理、适用于各种企业应用，以及Le Chat中用于10倍速响应的“思考模式”。Magistral针对多步骤逻辑进行了微调，增强了解释性，并在用户的语言中提供可追溯的推理。它擅长英语、法语、西班牙语和中文等语言。
-
-Magistral用途广泛，非常适合需要大量思考处理和精度的任务，例如法律研究、财务预测、软件开发和创意故事讲述。它专为战略规划、风险评估以及法律、金融和医疗保健等受监管行业中以数据驱动的决策而设计。它还可以改善编码和内容创作。
-
-Magistral Small可在Hugging Face上以Apache 2.0许可证下载，而Magistral Medium的预览版可在Le Chat上以及通过La Plateforme上的API获得。它很快将在Amazon SageMaker、IBM WatsonX、Azure AI和Google Cloud Marketplace上提供。Mistral AI也在招聘，寻求为未来AI创新做出贡献的人才。
-
----
-
-## 2. 被美国列入黑名单的魔术师成为了巴西的英雄
-
-**原文标题**: A Blacklisted American Magician Became a Hero in Brazil
-
-**原文链接**: [https://www.wsj.com/lifestyle/careers/magician-brazil-national-celebrity-d31f547a](https://www.wsj.com/lifestyle/careers/magician-brazil-national-celebrity-d31f547a)
+**原文链接**: [https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/](https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/)
 
 无法访问文章链接。
 
 ---
 
-## 3. 伪造OpenPGP.js签名验证
+## 2. 多莉·帕顿的梦幻世界快车
 
-**原文标题**: Spoofing OpenPGP.js signature verification
+**原文标题**: Dolly Parton's Dollywood Express
 
-**原文链接**: [https://codeanlabs.com/blog/research/cve-2025-47934-spoofing-openpgp-js-signatures/](https://codeanlabs.com/blog/research/cve-2025-47934-spoofing-openpgp-js-signatures/)
+**原文链接**: [https://thetransitguy.substack.com/p/dolly-parton-runs-a-train-busier](https://thetransitguy.substack.com/p/dolly-parton-runs-a-train-busier)
 
-Codean Labs 的这篇文章详细介绍了 CVE-2025-47934，OpenPGP.js 中的一个严重漏洞，该漏洞允许攻击者伪造签名。通过将一个格式错误的包（特别是包含恶意数据的压缩数据包）附加到有效的签名消息，攻击者可以诱使 OpenPGP.js 针对原始的有效数据验证签名，同时返回攻击者控制的恶意数据作为签名内容。
-
-该漏洞存在于 OpenPGP.js 解析消息的方式中。它最初只读取部分数据包列表，然后使用 `unwrapCompressed()` 来潜在地从压缩包中提取数据。关键在于，在最初调用 `unwrapCompressed()` 之后，数据包流可能已被完全读取，从而导致验证了真实的签名，但最终输出的 `data` 却是从稍后添加的恶意数据包中检索的。
-
-此缺陷会影响标准签名消息和加密消息，允许攻击者注入任意内容，同时保持有效的签名，可能导致严重的安全漏洞。文章提供了一个概念验证，演示了如何使用 Python 脚本生成伪造的消息。
-
-该漏洞已在 OpenPGP.js v5.11.3 和 v6.1.1 版本中修复。建议用户更新其库和任何依赖软件（如 Mailvelope）以降低风险。修复方案包括实施严格的语法验证，以拒绝格式错误的数据包列表。
+无法访问文章链接。
 
 ---
 
-## 4. 标枪卫士：低成本LLM安全Transformer架构
+## 3. 海滩男孩乐队布莱恩·威尔逊去世，享年82岁
 
-**原文标题**: JavelinGuard: Low-Cost Transformer Architectures for LLM Security
+**原文标题**: The Beach Boys' Brian Wilson Dies at 82
 
-**原文链接**: [https://arxiv.org/abs/2506.07330](https://arxiv.org/abs/2506.07330)
+**原文链接**: [https://pitchfork.com/news/the-beach-boys-brian-wilson-dies-at-82/](https://pitchfork.com/news/the-beach-boys-brian-wilson-dies-at-82/)
 
-本文介绍了JavelinGuard，一套低成本、高性能的Transformer架构，旨在检测LLM交互中的恶意意图，重点关注生产部署效率。作者Yash Datta和Sharath Rajasekar探索了五种架构：Sharanga（基线）、Mahendra（增强的注意力加权池化）、Vaishnava和Ashwina（混合神经集成）、以及Raudra（多任务框架）。这些架构利用紧凑型BERT变体的最新进展，以约4亿参数和标准CPU上的快速推理速度实现高精度。
+海滩男孩乐队联合创始人兼主要词曲作者布莱恩·威尔逊因神经认知障碍去世，享年 82 岁。威尔逊与他的兄弟和堂兄弟组建了海滩男孩乐队，凭借《冲浪美国》等热门歌曲早期成名。他从巡回演出转向专注于录音室制作，创作出具有开创性的专辑《宠物之声》，该专辑最初在商业上令人失望，但后来因其文化和美学重要性而受到认可。
 
-这些模型针对九个不同的对抗性数据集进行了严格的基准测试，包括流行的集合和一个新的数据集JavelinBench，旨在测试泛化能力。JavelinGuard架构的性能与领先的开源护栏模型以及大型仅解码器LLM（如gpt-4o）进行了比较。
+威尔逊雄心勃勃的后续专辑《微笑》最终被废弃，导致他经历了一段与精神健康和成瘾作斗争的个人时期。他曾在精神病院接受治疗，并与备受争议的心理学家尤金·兰迪打交道，兰迪对威尔逊的影响成为了传记电影《爱与慈悲》的主题。尽管面临这些挑战，威尔逊继续与海滩男孩乐队合作，最终开始了个人生涯。
 
-研究结果表明，虽然Raudra凭借其多任务设计提供了最强大的整体性能，但每种架构在速度、可解释性和资源需求方面都提供了不同的权衡。这使得从业者能够根据其特定的LLM安全需求选择最佳平衡。本文认为，在准确性和延迟方面，与现有的护栏解决方案和大型LLM相比，JavelinGuard提供了卓越的性价比。该研究为在实际应用中构建高效、有效的LLM安全措施提供了有价值的见解。
-
----
-
-## 5. 更快速、更简易的2D矢量渲染[视频]
-
-**原文标题**: Faster, easier 2D vector rendering [video]
-
-**原文链接**: [https://www.youtube.com/watch?v=_sv8K190Zps](https://www.youtube.com/watch?v=_sv8K190Zps)
-
-名为“更快、更简单的 2D 矢量渲染 [视频]”的文章似乎是 YouTube 上托管的视频。然而，提供的“内容”部分并未描述视频本身，而是列出了标准的 YouTube 页脚信息，包括指向法律和信息页面的链接，例如：
-
-*   版权信息
-*   联系信息
-*   创作者资源
-*   广告信息
-*   开发者资源
-*   服务条款
-*   隐私政策
-*   安全信息
-*   YouTube 运作方式
-*   测试新功能
-*   NFL Sunday Ticket 信息
-
-因此，仅根据所提供的信息，无法总结关于更快、更简单的 2D 矢量渲染的视频的实际内容。我们只能推断该视频存在于 YouTube 上，并且可能与图形编程、设计或动画相关。所列内容仅仅是与视频主题无关的样板式 YouTube 信息。
+他于 2004 年重新制作并完成了《微笑》，获得了评论界的好评，并发行了更多的个人专辑，包括 2015 年的《无压力》。威尔逊于 1988 年与海滩男孩乐队一起入选摇滚名人堂，并获得了众多奖项，包括两项格莱美奖和海滩男孩乐队的格莱美终身成就奖。他对音乐制作的创新方法给音乐界留下了持久的遗产。
 
 ---
 
-## 6. Denuvo分析
+## 4. Show HN: RomM – 一个开源的、自托管的 ROM 管理器和播放器
 
-**原文标题**: Denuvo Analysis
+**原文标题**: Show HN: RomM – An open-source, self-hosted ROM manager and player
 
-**原文链接**: [https://connorjaydunn.github.io/blog/posts/denuvo-analysis/](https://connorjaydunn.github.io/blog/posts/denuvo-analysis/)
+**原文链接**: [https://github.com/rommapp/romm](https://github.com/rommapp/romm)
 
-本文深入分析了Denuvo，这是一种用于保护视频游戏的重要反篡改和数字版权管理(DRM)系统。文章解释了Denuvo背后的总体思路，即采用半在线DRM方法。该过程包括收集硬件信息，将其发送到Denuvo服务器，接收许可证文件，然后执行运行时检查以确保游戏的完整性。
+RomM 是一个开源、自托管的 ROM 管理器，旨在帮助用户组织、丰富和玩转他们的复古游戏收藏。它拥有一个干净且响应迅速的网页界面，可从桌面和移动设备访问。
 
-文章深入探讨了技术层面，描述了Denuvo如何通过在虚拟机中执行函数并删除部分指令来保护函数，并将这些删除的“被盗常量”存储在与硬件标识混合的许可证文件中。在运行时解密这些常量对于游戏的正常运行至关重要。
+主要功能包括：使用 IGDB、Screenscraper 和 MobyGames 自动扫描和元数据丰富；从 SteamGridDB 获取自定义艺术作品；显示 RetroAchievements；支持超过 400 个平台；通过 EmulatorJS 和 RuffleRS 在浏览器中进行游戏；具有权限控制的库共享；支持多磁盘游戏、DLC、模组和手册；以及基于标签的过滤。
 
-Denuvo功能的核心在于其用户完整性检查，包括验证硬件和软件组件。这些检查在OEP（原始入口点）之前和运行时执行，包括检查KUSER_SHARED_DATA、CPUID、SYSCALL、NTDLL、PEB、XGETBV以及GetWindowsDirectoryW、GetVolumeInformationW、GetComputerNameW和GetUsernameW等函数。还会执行CRC等代码完整性检查以防止篡改。
-
-文章还强调了Denuvo对虚拟机的使用、用于非连续存储值的位向量实现、基于本机寄存器的随机性以及混合布尔算术(MBA)混淆，以使逆向工程复杂化。该分析旨在提供对Denuvo保护机制的教育性见解，同时隐去敏感信息。
+该项目提供快速入门指南和故障排除文档。欢迎贡献，社区已经开发了诸如 Discord 机器人 (romm-comm)、SteamOS 下载器/同步工具 (DeckRommSync) 和 CasaOS 应用程序等工具。用户可以在 Discord 上找到社区支持。错误报告和功能请求通过 GitHub issues 处理。该项目通过 Open Collective 获得支持。
 
 ---
 
-## 7. 《无尽的玩笑》中的可疑数学 (2009)
+## 5. Show HN: Ikuyo，一款旅行计划 Web 应用
 
-**原文标题**: Dubious Math in Infinite Jest (2009)
+**原文标题**: Show HN: Ikuyo a Travel Planning Web Application
 
-**原文链接**: [https://www.thehowlingfantods.com/dfw/dubious-math-in-infinite-jest.html](https://www.thehowlingfantods.com/dfw/dubious-math-in-infinite-jest.html)
+**原文链接**: [https://ikuyo.kenrick95.org/](https://ikuyo.kenrick95.org/)
 
-迈克·斯特朗的文章《〈无尽的玩笑〉中的可疑数学》探讨了戴维·福斯特·华莱士的小说中发现的数学错误。斯特朗自称是华莱士的粉丝，他对华莱士表现出的数学能力与这些错误的存在感到好奇。他记录了在第二次阅读这本书时发现的四个具体错误，其中两个可能是印刷错误。
+Show HN 提交介绍了一款名为“Ikuyo”的旅行规划 Web 应用。“Ikuyo!”这个在标题和内容中都使用的感叹词暗示了对该应用的热情和兴奋。
 
-最显著的错误涉及叙述者计算一场108局网球比赛以54-54平局结束的几率。叙述者声称几率是1/2^27，但斯特朗认为，使用组合数学计算得出的正确概率约为0.0766，明显更高。
+该提交非常简短且缺乏细节。它没有提供任何关于以下方面的信息：
 
-第二个错误出现在一个脚注中，迈克·佩姆利斯在脚注中描述了如何在末世论计算中使用积分中值定理。斯特朗指出，虽然佩姆利斯对该定理的描述是正确的，但该定理本身是证明存在性的理论工具，并没有提供找到佩姆利斯应用所需特定值的方法。与此相关的一个小错误发生在积分中值定理的公式中，缺少了积分符号。
+*   **功能：** Ikuyo 提供了哪些具体的规划功能？（例如，行程创建、住宿预订、航班搜索等）
+*   **目标受众：** Ikuyo 是为谁设计的？（例如，独自旅行者、家庭、预算旅行者等）
+*   **独特卖点 (USP)：** Ikuyo 与其他旅行规划应用相比有何突出之处？
+*   **技术栈：** Ikuyo 使用了哪些技术构建？
+*   **可访问性：** 是否有链接可以访问该应用程序？
 
-最后一个错误也归因于佩姆利斯，涉及x^n的导数。佩姆利斯错误地将导数表示为nx + x^(n-1)，而正确的表达式是nx^(n-1)。
+因此，总结只能是：
 
-斯特朗没有对这些错误的出现提供具体的解释，而是将它们作为记录在案的观察结果呈现出来，并邀请进一步的讨论。
-
----
-
-## 8. Show HN: PyDoll – 具有原生验证码绕过的异步Python爬虫引擎
-
-**原文标题**: Show HN: PyDoll – Async Python scraping engine with native CAPTCHA bypass
-
-**原文链接**: [https://github.com/autoscrape-labs/pydoll](https://github.com/autoscrape-labs/pydoll)
-
-PyDoll：一款新型异步Python爬虫引擎，旨在简化浏览器自动化操作，尤其适用于处理受反爬虫系统保护的网站。其关键特性是原生验证码绕过，无需外部服务或API密钥即可处理Cloudflare Turnstile和reCAPTCHA v3，通过模拟类人交互来避免检测。
-
-传统的浏览器自动化通常依赖webdriver，导致兼容性问题，并且容易被网站识别和屏蔽。PyDoll直接连接到Chrome DevTools Protocol (CDP)，无需驱动程序，从而解决了这个问题。
-
-该引擎强调简单性，易于安装 (`pip install pydoll-python`)，直观的元素查找以及事件驱动架构。它支持异步操作，实现快速性能和多个站点的并发处理。网络监控允许修改和分析流量，从而进一步绕过保护机制。
-
-文档重点介绍了智能验证码绕过、类人交互和强大的网络监控等功能。提供了基本用法、自定义配置、高级验证码处理、元素查找、并发自动化、事件驱动任务和iframe交互的示例。
-
-该项目是开源的（MIT许可证），鼓励贡献，并提供了指南。也鼓励通过GitHub赞助、为仓库加星、在社交媒体上分享以及提供反馈来支持该项目。
+Ikuyo 是一款用于旅行规划的 Web 应用程序。该帖子没有提供关于其功能、目标受众或独特卖点的更多细节。
 
 ---
 
-## 9. Show HN: 高端色彩量化器
+## 6. 安乐死、我的健康等等
 
-**原文标题**: Show HN: High End Color Quantizer
+**原文标题**: Medical Aid in Dying, My Health, and So On
 
-**原文链接**: [https://github.com/big-nacho/patolette](https://github.com/big-nacho/patolette)
+**原文链接**: [https://blog.the-brannons.com/post/Medical-Aid-in-Dying-My-Health-and-so-on](https://blog.the-brannons.com/post/Medical-Aid-in-Dying-My-Health-and-so-on)
 
-Patolette 是一个新的 C/Python 库，用于高端颜色量化和抖动，它实现了一种受吴晓林工作启发的基于加权 PCA 的量化器。它具有避免轴对齐细分等优势，并支持 CIEL*u*v* 和 ICtCp 等颜色空间。值得注意的是，它可以利用显著性图来强调量化过程中视觉上突出的区域，并具有可选的 KMeans 细化功能，以改进调色板的生成。
+克里斯，一位46岁的男子，详细讲述了他因严重心力衰竭而选择于2025年6月13日接受医疗辅助死亡（有尊严地死亡）的历程。一切始于2021年末的一次心脏病发作，导致他接受了搭桥手术，并被诊断为射血分数降低的心力衰竭。2023年，他植入了除颤器（ICD），但它反复电击他，导致剧烈疼痛和急诊就诊。
 
-虽然仍在开发中且尚未准备好用于生产环境，但 patolette 是可用的，需要手动安装（提供了针对 Linux、macOS 和 Windows 的说明，包括依赖项管理）。一个关键特性是能够利用 AVX CPU 扩展来显著提升 KMeans 的性能。
+尽管接受了旨在稳定心脏的射频消融术，但电击仍在继续。在被告知他的预期寿命约为两年后，克里斯选择停用除颤器。他尝试了一个心脏锻炼计划，但这加剧了他的病情。日常任务变得困难，进一步影响了他的生活质量。
 
-该文档解释了基本用法，包括使用 Pillow 读取图像，使用 quantize 函数进行量化（带有抖动、颜色空间选择和瓦片大小等选项），以及保存结果图像。"tile\_size" 参数可以通过引入显著性图来根据视觉突出程度对样本进行加权，从而减轻大簇主导小簇的问题。
-
-该库目前存在高内存占用、速度慢以及缺少完整的 C API 和 RGBA 支持等问题。作者承认了 patolette 所依赖的工作，包括吴晓林的颜色量化算法、显著物体检测方法以及 faiss、flann 和 OpenBLAS 等库。
+他了解了临终关怀和俄勒冈州的“有尊严地死亡”计划，不是因为他想死，而是因为他想掌控自己最后的时刻，而不是经历潜在的痛苦和没有尊严的死亡。他拒绝了再次激活除颤器和心脏移植手术，因为这需要做出承诺，而且他厌恶更多的电击和住院治疗。虽然德国一项有前景的干细胞试验因他的居住身份而无法参加，但他觉得医疗辅助死亡让他可以掌控最后的时刻。他强调这个过程完全是自愿的，并强调他有权随时做出选择。
 
 ---
 
-## 10. 可塑软件：在应用锁定的世界中恢复用户自主性
+## 7. 植物能听见它们的传粉者，并产生甜美的花蜜作为回应。
 
-**原文标题**: Malleable software: Restoring user agency in a world of locked-down apps
+**原文标题**: Plants hear their pollinators, and produce sweet nectar in response
 
-**原文链接**: [https://www.inkandswitch.com/essay/malleable-software/](https://www.inkandswitch.com/essay/malleable-software/)
+**原文链接**: [https://www.cbc.ca/listen/live-radio/1-51-quirks-and-quarks/clip/16150976-plants-hear-pollinators-produce-sweet-nectar-response](https://www.cbc.ca/listen/live-radio/1-51-quirks-and-quarks/clip/16150976-plants-hear-pollinators-produce-sweet-nectar-response)
 
-本文倡导“可塑软件”的概念，即一种计算生态系统，用户能够以最小的阻力根据自身需求调整工具，这与当今流行的僵化、大规模生产的软件形成对比。作者认为，当前的软件常常阻碍生产力并导致用户沮丧，因为它缺乏可定制性，并且受到中心化的开发团队控制，无法满足个体需求。他们举例说明，医疗专业人员难以应对不灵活的电子病历，以及软件团队在切换到僵化的基于Web的问题跟踪器后失去了流程流畅性。
+CBC "Quirks and Quarks"文章《植物能听见授粉者，并产生甜味花蜜》摘要（基于可能讨论的内容）：
 
-本文探讨了现有定制方法的局限性，如设置（过于有限）、插件（API受限且难以创建）、modding（繁琐且不稳定）和开源（需要大量的专业知识）。虽然承认人工智能辅助编码的潜力，但作者强调，它并不能解决所有可塑性障碍，特别是如何调整现有工具、确保互操作性以及在不进行全面编码的情况下提供精确控制。
+文章讨论了一项研究，该研究表明植物可以“听到”授粉者（如蜜蜂）落在它们身上以及访问附近花朵时的振动，并通过增加花蜜的糖浓度来做出反应。这挑战了植物是被动接受授粉者访问的传统观点。
 
-他们设想了一个赋予用户共同创造者地位的生态系统，用户可以调整现有软件、进行修改，甚至构建新工具。目标是使定制变得快速而简单，使用户能够在需求出现时立即调整其工具。本文展望了一个未来，即从用户到创造者的转变是一个平滑、自然的过程。
+研究人员使用了蜜蜂翅膀的录音，并在受控环境中将振动呈现给月见草植物。他们发现植物通过在几分钟内产生更甜的花蜜来响应这些特定的频率，这些频率表明了蜜蜂的活动。暴露于其他声音（如沉默或更高频率）的对照组没有表现出相同的反应。
+
+这表明植物已经进化出一种复杂的机制来检测和响应授粉者。通过在蜜蜂存在时增加花蜜产量，它们使自己在当地环境中更具吸引力和竞争力，从而增加了成功授粉的可能性。
+
+该研究强调了植物和授粉者之间复杂的相互作用，并提出了关于噪声污染对植物繁殖的潜在影响的问题。植物“听到”并响应环境的能力为植物的智能和行为提供了一个新的视角。该研究表明，植物不仅仅是被动的旁观者，而是其授粉生态的积极参与者。
+
+---
+
+## 8. 我如何用智能体编程
+
+**原文标题**: How I Program with Agents
+
+**原文链接**: [https://crawshaw.io/blog/programming-with-agents](https://crawshaw.io/blog/programming-with-agents)
+
+本文探讨了将大型语言模型（LLM）用作编程中的“代理”，将代理定义为一个包含LLM调用的for循环，该循环可以执行命令并观察其输出，而无需人工干预。作者认为，配备了`bash`、`patch`、`web_nav`和`keyword_search`等工具的代理，通过实现反馈驱动的开发，比无代理的LLM有了显著的改进。这种反馈循环使代理能够改进API的使用，通过编译器反馈减少语法错误，管理依赖关系，根据测试失败编写测试，并通过有选择地读取必要部分来处理更大的代码库。
+
+作者提供了包括实现GitHub App身份验证和处理围绕JSON的SQL约定等示例，展示了代理的能力和局限性。虽然代理可以更快地生成代码并处理日常任务，但它们也可能引入安全漏洞或性能问题，需要仔细审查。作者强调，代理并非旨在取代程序员，而是为了增强他们的能力，使他们能够完成更多工作并专注于更有趣的问题。尽管存在潜在的成本和当前的局限性，作者认为代理的潜力值得进一步投资，强调了它们添加和删除代码的能力。
+
+---
+
+## 9. Show HN: S3mini – 轻量快速的S3兼容客户端，无依赖，适用于边缘计算
+
+**原文标题**: Show HN: S3mini – Tiny and fast S3-compatible client, no-deps, edge-ready
+
+**原文链接**: [https://github.com/good-lly/s3mini](https://github.com/good-lly/s3mini)
+
+S3mini 是一个轻量级、无依赖的 Typescript S3 兼容对象存储客户端，非常适合 Cloudflare Workers、Node.js 和 Bun 等边缘计算环境。它具有体积小（压缩后约 14 KB）和性能优势，声称比其他替代方案每秒的操作次数大约多 15%。 它支持基本的 S3 操作，如存储桶创建/存在性检查、对象列表、获取、上传和删除。 还支持分段上传。
+
+S3mini 旨在与各种 S3 兼容服务一起使用，包括 Cloudflare R2、Backblaze B2、DigitalOcean Spaces 和 MinIO。 它使用 AWS SigV4 进行身份验证，无需预签名请求。
+
+该库不适用于浏览器环境，需要在 Cloudflare Workers 上使用 `nodejs_compat` 标志才能正常工作。 文档提供了详细的使用示例，包括存储桶和对象操作、分段上传和安全注意事项。 欢迎贡献者报告问题和提交 pull request，并遵守项目轻量级的理念。 该项目采用 MIT 许可证。 作者们也在寻找赞助商以帮助支持该项目的持续开发。
+
+---
+
+## 10. 塞缪尔·佩皮斯的日记
+
+**原文标题**: The Diary of Samuel Pepys
+
+**原文链接**: [https://www.historytoday.com/archive/feature/hidden-diary-samuel-pepys](https://www.historytoday.com/archive/feature/hidden-diary-samuel-pepys)
+
+《今日历史》选摘：塞缪尔·皮普斯日记的出版与风靡
+
+本文选自《今日历史》，探讨了塞缪尔·皮普斯日记的首次出版以及随后的流行。该日记于1825年6月发行，迅速引起轰动，报纸纷纷突出其中令人难忘的条目，例如皮普斯对伦敦大火的记载、他的新假发以及他第一次喝茶的经历。日记的受欢迎程度在整个19世纪持续增长，使其成为英国历史和文学的经典之作。如今，皮普斯仍然是一个受欢迎的人物，出现在博物馆展览、历史小说中，甚至被纳入国家课程，年轻的学生可以在那里了解他在伦敦大火期间的经历。
+
+摘录的结尾指出，要阅读全文，需要订阅《今日历史》。文章提供了开始试用订阅、为现有用户登录或联系客户服务以获得帮助的选项。
 
 ---
 
@@ -169,86 +149,87 @@ Patolette 是一个新的 C/Python 库，用于高端颜色量化和抖动，它
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
-| 2 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 3 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 1 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 2 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
+| 3 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
 | 4 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 5 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 6 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 7 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 8 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 5 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 6 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 7 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 8 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
 | 9 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 10 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 11 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 12 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 13 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 14 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 15 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 16 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 17 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 18 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 19 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 20 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 21 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 22 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 23 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 10 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 11 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 12 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 13 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 14 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 15 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 16 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 17 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 18 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 19 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 20 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 21 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 22 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
+| 23 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
 | 24 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 25 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 26 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 27 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 28 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 29 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 30 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 31 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 32 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 33 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 34 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 35 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 36 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 37 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 38 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 39 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 25 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 26 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 27 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 28 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 29 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 30 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 31 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 32 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 33 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 34 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 35 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 36 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 37 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 38 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 39 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
 | 40 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 41 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 42 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 43 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 44 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 45 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 46 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 47 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 48 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 49 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 50 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 51 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 52 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 41 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 42 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 43 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 44 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 45 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 46 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 47 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 48 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 49 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 50 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 51 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 52 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 53 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 54 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 55 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 56 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 57 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 58 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 59 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 60 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 61 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 62 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 63 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 64 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 54 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 55 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 56 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 57 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 58 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 59 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 60 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 61 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 62 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 63 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 64 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
 | 65 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 66 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 67 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 68 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 69 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 70 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 71 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 72 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 73 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 74 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 75 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 76 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 77 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 78 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 79 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 80 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 81 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 82 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 83 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 66 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 67 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 68 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 69 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 70 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 71 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 72 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 73 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 74 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 75 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 76 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 77 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 78 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 79 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 80 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 81 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 82 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 83 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 84 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
