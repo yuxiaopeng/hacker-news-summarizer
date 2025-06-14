@@ -1,166 +1,159 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-13.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-14.md)
 
-*最后自动更新时间: 2025-06-13 17:53:51*
-## 1. Meta投资143亿美元于Scale AI，启动超智能实验室
+*最后自动更新时间: 2025-06-14 17:47:49*
+## 1. 我用纯PyTorch从零重新实现了Stable Diffusion 3.5。
 
-**原文标题**: Meta Invests $14.3B in Scale AI to Kick-Start Superintelligence Lab
+**原文标题**: I have reimplemented Stable Diffusion 3.5 from scratch in pure PyTorch
 
-**原文链接**: [https://www.nytimes.com/2025/06/12/technology/meta-scale-ai.html](https://www.nytimes.com/2025/06/12/technology/meta-scale-ai.html)
+**原文链接**: [https://github.com/yousef-rafat/miniDiffusion](https://github.com/yousef-rafat/miniDiffusion)
 
-无法访问文章链接。
+本文介绍了miniDiffusion，一个完全使用纯PyTorch从零开始重新实现的Stable Diffusion 3.5，依赖项极少。该项目旨在用于教育、实验和破解，专注于代码简洁性，以大约2800行代码实现其功能。
 
----
+该仓库包含VAE、CLIP和T5文本编码器，以及Byte-Pair和Unigram分词器等关键组件。对于Stable Diffusion 3.5，它具有多模态扩散Transformer (DiT) 模型、Flow-Matching Euler调度器、Logit-Normal采样和联合注意力。核心文件包括`dit.py`（主模型）、`dit_components.py`（嵌入、归一化、补丁）、`attention.py`（联合注意力）、`noise.py`（Euler调度器）、`t5_encoder.py`、`clip.py`和`tokenizer.py`。`metrics.py`实现了Fréchet Inception Distance (FID)，而`common.py`和`common_ds.py`分别处理训练助手和数据集准备。
 
-## 2. OxCaml - OCaml编程语言的一组扩展。
-
-**原文标题**: OxCaml - a set of extensions to the OCaml programming language.
-
-**原文链接**: [https://oxcaml.org/](https://oxcaml.org/)
-
-OxCaml是由Jane Street开发的OCaml编程语言的一组扩展，旨在提高面向性能的编程能力，同时保留OCaml的核心原则。其主要目标是在OCaml生态系统中，仅在需要时，提供对程序行为中性能关键方面的安全、便捷和可预测的控制。
-
-这些扩展侧重于：
-
-*   **无畏并发：** 类型系统新增功能，以防止数据竞争。
-*   **布局：** 指定内存中的数据布局，并启用对SIMD指令的本地访问。
-*   **分配控制：** 管理分配的工具，减少GC压力并提高缓存效率。
-*   **生活质量：** 增强功能，如多态参数、include functor、带标签的元组和不可变数组。
-
-OxCaml优先考虑安全性、便捷性和可预测性，旨在保持OCaml的类型推断和清晰的性能特征。它采用“按需付费”模式，意味着只有在使用其优化能力时才会遇到增加的复杂性。至关重要的是，有效的OCaml程序也是有效的OxCaml程序。
-
-OxCaml是开源的，欢迎实验用户提供反馈，但对其扩展不提供稳定性或向后兼容性保证。它带有修改后的标准OCaml工具版本，包括包管理、编辑器集成、源代码格式化和文档生成。Jane Street开发的库和工具提供OCaml兼容版本（剥离扩展）和OxCaml版本。由于所用扩展的性质，某些库是OxCaml独有的。
+本文提供了设置环境的说明，包括克隆仓库、通过`requirements.txt`安装依赖项以及使用`get_checkpoints.py`下载必要的检查点（需要Hugging Face令牌）。该项目采用MIT许可，并强调其教育和实验性质，承认其实验性功能并需要进一步测试。
 
 ---
 
-## 3. 如果月亮只有1像素：一个极其精确的太阳系模型 (2014)
+## 2. 阿波罗“8球”飞行姿态指示器内部
 
-**原文标题**: If the moon were only 1 pixel: A tediously accurate solar system model (2014)
+**原文标题**: Inside the Apollo "8-Ball" FDAI (Flight Director / Attitude Indicator)
 
-**原文链接**: [https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html](https://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html)
+**原文链接**: [https://www.righto.com/2025/06/inside-apollo-fdai.html](https://www.righto.com/2025/06/inside-apollo-fdai.html)
 
-如果月亮只有一个像素：乔什·沃思的互动在线项目，以比例可视化太阳系内的巨大距离。该项目用一个像素代表月亮，突出了太空的广袤空虚。旅程从太阳开始，逐个经过每个行星，以公里和其他易于理解的单位强调它们之间相当大的距离。
+本文深入探讨了阿波罗“8球”飞行姿态指示器（FDAI）的复杂工作原理，它是阿波罗任务期间向宇航员显示飞船姿态的关键仪器。FDAI使用一个旋转球体来直观地表示飞船的姿态（滚转、俯仰和偏航），以及指示所需操作和旋转速率的指针。
 
-该作品探讨了人类难以理解如此巨大尺度的困难，转而使用隐喻和比较来使距离更易于理解（例如，乘坐太空飞船的旅行时间、屏幕堆叠）。它认为，传统的地图往往未能传达太空的真实比例，而这才是太阳系最重要的部分。
+FDAI的核心是一个复杂的机械系统。虽然该球体看起来可以在所有三个轴上自由旋转，但它牢固地固定在赤道位置，并在两个轴（滚转和俯仰）上旋转。偏航旋转是使用围绕球体机构旋转的半球形外壳来实现的。三个电机由伺服环控制，驱动这些旋转。
 
-文章深入探讨了这种空虚的哲学意义，表明我们的大脑并非天生就适合理解如此广阔的空间。它讨论了这种感知的“虚无”如何令人不安，导致感觉剥夺效应，并突出了人类感知的局限性。
+FDAI使用同步器和控制变压器来接收和解释旋转信号。伺服环包含放大器和电机/转速表，确保球体的精确和响应性运动。滑环可防止球体旋转时电线缠绕。
 
-最终，该项目以思考物质（行星、恒星，甚至人类）存在于这片巨大空虚中的意义作为结尾。它表明，这些“小点”的存在或许可以使空虚本身变得可测量且有意义，而我们在如此多的虚无中存在，本身就是一个令人惊叹的现象，尽管在宇宙尺度上可能微不足道。它鼓励人们反思我们与宇宙相关的渺小感和重要感之间的对比。
-
----
-
-## 4. 帽子、幽灵与SAT求解器 (2024)
-
-**原文标题**: The Hat, the Spectre and SAT Solvers (2024)
-
-**原文链接**: [https://www.nhatcher.com/post/on-hats-and-sats/](https://www.nhatcher.com/post/on-hats-and-sats/)
-
-这篇博文探讨了一项近期数学发现：用名为“帽子”的单一形状对平面进行非周期性平铺，并介绍了SAT求解器作为解决平铺问题的工具。作者解释了“帽子”的形状、其非周期性平铺性质，以及它与早期发现（如彭罗斯瓷砖）的联系。
-
-博文随后介绍了SAT求解器，解释了它们通过将布尔代数问题转换为合取范式（CNF）来解决这些问题的原理。作者描述了如何在WASM环境中使用SAT求解器来解决数独难题，展示了求解器的实用性并提供了一个实际例子。
-
-接下来，作者解释了如何将SAT求解器应用于平铺问题，灵感来源于Craig Kaplan的研究。他们描述了如何将六边形网格系统与“帽子”结合使用，以及如何制定子句来找到平铺给定区域的解决方案。博文随后介绍了与“帽子”类似的“海龟”瓷砖，它也能非周期性地平铺平面。
-
-最后，博文讨论了“幽灵”，它是“帽子”家族的一个变体，可以在没有其镜像（反幽灵）的情况下非周期性地平铺平面。它解释了定理3.1，描述了“幽灵”的平铺与{帽子，海龟}集合的平铺之间的双射关系。作者描述了如何使用该应用程序，通过更改“帽子”和“海龟”的边长来创建“幽灵”，从而找到一种非周期性单片瓷砖。
+本文还简要介绍了FDAI的历史，追溯了它从比尔·利尔为高性能飞机开发的航空仪器，到利尔·西格勒公司（LSI）采用并在双子座和阿波罗计划中使用的过程。FDAI的设计不断演进，以克服早期姿态指示器的局限性，尤其是在处理陡峭的爬升和旋转时。
 
 ---
 
-## 5. Show HN: Tattoy – 基于文本的终端合成器
+## 3. 无监督语言模型诱导
 
-**原文标题**: Show HN: Tattoy – a text-based terminal compositor
+**原文标题**: Unsupervised Elicitation of Language Models
 
-**原文链接**: [https://tattoy.sh](https://tattoy.sh)
+**原文链接**: [https://arxiv.org/abs/2506.10139](https://arxiv.org/abs/2506.10139)
 
-Tattoy: 一款基于文本的终端合成器，通过视觉效果和实用功能增强终端体验。它与现有终端设置配合使用，在不影响复制粘贴等常规终端操作的前提下，增添视觉效果。
+本文介绍了“无监督语言模型诱导”，一种名为内部一致性最大化(ICM)的新算法，用于在没有外部人工监督的情况下微调语言模型。本文解决的问题是难以获得高质量的人工监督来训练语言模型，特别是那些具有超人能力的模型。ICM通过在模型自身生成的标签上进行微调来克服这一难题。
 
-主要功能包括：
+本文证明了ICM在包括GSM8k验证、TruthfulQA和Alpaca奖励建模在内的各种任务中，表现与人工提供的标签训练相当或更好。重要的是，在语言模型表现出超人能力的任务中，ICM显著优于人工监督训练，表明其在诱导这些能力方面的有效性。
 
-*   **GPU着色器：** 在终端中渲染 Shader Toy 和 Ghostty 着色器。
-*   **后台终端：** 在后台显示另一命令的输出，适用于可视化或系统监控。
-*   **回滚小地图：** 提供终端回滚历史记录的实时更新像素化视图，包括滚动条支持。
-*   **自动文本对比度：** 通过分析终端颜色的真实 RGB 值，智能调整文本颜色，确保可读性，克服终端调色板的局限性。
-*   **插件：** 支持通过 STDIN/STDOUT 上的 JSON 以任何语言编写的插件，从而实现自定义效果以及与终端内容的交互。一个演示示例是烟雾粒子与光标附近的文本交互。
-
-Tattoy 旨在提升现代终端的美观性和可用性。
+作者进一步展示了ICM的实际应用，通过使用它来训练无监督奖励模型和基于Claude 3.5 Haiku的助手。这些ICM训练的模型优于它们的人工监督版本，突显了ICM在改进高级语言模型训练方面的潜力。总而言之，本文认为像ICM这样的无监督方法可以有效地引导预训练语言模型用于下游任务，尤其是在人工监督有限或不足的情况下。
 
 ---
 
-## 6. 策梅洛选择公理百年：问题何在？(2006)
+## 4. 太阳轨道器首次获得太阳两极图像
 
-**原文标题**: 100 years of Zermelo's axiom of choice: What was the problem with it? (2006)
+**原文标题**: Solar Orbiter gets world-first views of the Sun's poles
 
-**原文链接**: [https://research.mietek.io/mi.MartinLof2006.html](https://research.mietek.io/mi.MartinLof2006.html)
+**原文链接**: [https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles](https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles)
 
-本文回顾了策梅洛选择公理（AC）诞生一个世纪后引发的争议，考察了其最初的拒绝和最终在主流数学中的接受，以及直觉主义者对其持续的拒绝。虽然毕肖普主张对选择公理进行构造性解释，但迪亚科内斯库定理突出了构造性观点与拓扑斯理论对选择公理的理解之间潜在的不相容性。
+由欧空局主导的太阳轨道飞行器已实现一个重大里程碑，首次从黄道面外拍摄到太阳两极的图像。通过倾斜轨道获得的这一独特视角，提供了前所未有的太阳南极景象，有望彻底改变我们对太阳磁场、太阳周期和空间天气的理解。
 
-作者在构造类型论的框架内分析了策梅洛1908年对选择公理的表述，将集合表示为外延集合（具有等价关系的集合），将子集表示为外延命题函数。该分析试图基于集合S、索引集合I和一系列子集（A_i）来证明选择公理，这些子集是外延的、互斥的、穷举的和非空的。
+该航天器的仪器，包括PHI、EUI和SPICE，正在提供互补的观测。PHI在可见光下对太阳进行成像并绘制其磁场图，揭示了南极处“混乱”的磁场，这是太阳极大期的特征。EUI拍摄太阳外层大气——日冕的紫外线图像。SPICE测量来自大气不同层的光，使科学家能够测量气体和粒子的速度。特别是，SPICE团队首次测量了太阳物质团块的移动速度，有助于理解太阳风的起源。
 
-作者证明，虽然构造性选择公理可以提供一个函数*f*，满足A_i(f(i))，但它无法保证*f*的外延性（即，i ≍ j → f(i) ≍ f(j)）。这种外延性对于证明策梅洛选择公理所需的唯一性条件是必要的。
+这些观测对于理解大约每11年发生一次并导致太阳活动的太阳磁场反转至关重要。太阳轨道飞行器的独特视角将有助于改进太阳周期的模型和预测。
 
-论文的结论是，策梅洛选择公理由一个*外延的*选择公理（ExtAC）所暗示，该公理明确包括了选择函数必须是外延的的要求。然而，ExtAC缺乏内涵性选择公理所享有的直接论证，后者源于其与布劳威尔-海廷-柯尔莫哥洛夫对逻辑常数的解释的联系。因此，策梅洛选择公理的核心问题在于它依赖于一个外延的选择函数，但没有为其外延性提供构造性的证据。
+初步数据显示，太阳南极的磁场目前是极性的混合，这是太阳极大期预期的现象。
 
----
-
-## 7. 当陌生人给陌生人钱 (2017)
-
-**原文标题**: When random people give money to random other people (2017)
-
-**原文链接**: [https://quomodocumque.wordpress.com/2017/06/27/when-random-people-give-money-to-random-other-people/](https://quomodocumque.wordpress.com/2017/06/27/when-random-people-give-money-to-random-other-people/)
-
-随机财富再分配导致财富不均：一个悖论的解释
+来自首次“极到极”飞行的完整数据集预计将于2025年10月发布。在未来几年，太阳轨道飞行器将进一步倾斜其轨道，提供更好的太阳极地区域景象，并最终改变我们对最近恒星的认识。
 
 ---
 
-## 8. Jemalloc事后分析
+## 5. 皮亚诺算术就足够了，因为皮亚诺算术编码了计算。
 
-**原文标题**: Jemalloc Postmortem
+**原文标题**: Peano arithmetic is enough, because Peano arithmetic  encodes computation
 
-**原文链接**: [https://jasone.github.io/2025/06/12/jemalloc-postmortem/](https://jasone.github.io/2025/06/12/jemalloc-postmortem/)
+**原文链接**: [https://math.stackexchange.com/a/5075056/6708](https://math.stackexchange.com/a/5075056/6708)
 
-jemalloc事后分析：jemalloc内存分配器的开发历程，从最初作为Lyken编程语言的一部分（阶段0）开始，在FreeBSD（阶段1）中获得初步成功，取代了现有的分配器，但也面临碎片化问题，促使其进行重大重新设计。
+皮亚诺算术足以证明所有古德斯坦序列归零吗？本文探讨了皮亚诺算术(PA)是否足以证明所有古德斯坦序列都能归零。已知 PA 可以证明特定数字的这种情况，但证明*所有*数字的情况更具挑战性。作者认为 PA *是*足够的，因为 PA 可以编码计算。
 
-阶段1.5涉及与Mozilla Firefox的集成，由于性能差异，导致了一个分支版本，这令作者非常失望。在Facebook（阶段2），jemalloc的集成是由对pprof兼容的堆分析的需求所推动的，并且该项目极大地受益于Facebook的内部遥测和性能数据。引入了诸如广泛的测试、Valgrind支持（后来颇具争议地被移除）、JSON遥测以及向范围的过渡等功能。在作者离开之前，成立了一个jemalloc团队来解决性能和基础设施的改进问题。
+作者通过证明 PA 可以为任何以'n'开始的古德斯坦序列构造一个长度为 O(log*(n) log(log*(n)))的证明来解释这一点，其中 log* 是迭代对数。核心思想涉及用康托尔范式表示数字，这与序数有关。虽然 PA 无法证明*所有*序数的超限归纳法，但它可以证明直到某个级别（在 ε₀ 内）的序数的超限归纳法。这至关重要，因为古德斯坦序列的下降可以用这些序数来追踪。
 
-Meta阶段（阶段3）看到对投资回报的关注转移，导致长期开发的停滞，并最终导致通用性的下降。作者将此归因于公司优先事项的转变。
+本质上，作者认为可以编写一个程序来自动为任何给定的古德斯坦序列生成 PA 证明。该程序将根据起始数字“n”构建必要的超限归纳证明，直到特定的序数级别。由于 PA 可以证明这种机械程序的有效性，因此 PA 有效地证明了它可以证明任何特定古德斯坦序列的终止。
 
-阶段4标志着上游开发的结束，作者认为这是由于累积的技术债务以及缺乏继续下去的热情。他对缺乏对Valgrind和Android等外部使用的意识表示遗憾，并强调尽管是开放开发，但jemalloc未能保留来自其他组织的主要贡献者。尽管是垃圾收集的倡导者，但他承认jemalloc是一个令人满意的项目。
-
----
-
-## 9. 量子时间关联中的几何学
-
-**原文标题**: Geometry from Quantum Temporal Correlations
-
-**原文链接**: [https://arxiv.org/abs/2502.13293](https://arxiv.org/abs/2502.13293)
-
-James Fullwood 和 Vlatko Vedral 的 arXiv 预印本，题为《量子时间关联中的几何》，探索了量子力学和几何之间令人惊讶的联系。作者证明，欧几里得3维空间可以从对单个量子比特进行 Pauli 观测量的序列测量所产生的量子时间关联结构中唯一地涌现出来。
-
-一个关键发现是，从这些时间关联推导出的几何与量子比特的初始状态无关。 这意味着观察者可以从序列测量中提取几何信息，而无需知道量子比特的初始条件，这是一个非凡的性质，暗示了量子力学和几何之间存在着根本的联系。
-
-基于这些结果，作者提出了一个“玩具模型”，表明空间本身可能从量子时间关联中涌现出来。这是一个高度推测性的想法，将这篇论文定位为对空间基础性质的探索性研究。
-
-这篇论文简洁明了，共 4 页，没有图。它被归类在量子物理（quant-ph）学科下，并提出了一个理论框架，用于理解空间如何可能从系统的底层量子特性中涌现出来。它是一项重要的概念贡献，而不是详细的计算或实验报告。
+文章最后暗示了如何在 PA 中编码编程语言 Lisp，进一步巩固了计算与 PA 表达能力之间的联系。
 
 ---
 
-## 10. 频繁重新验证并不能让你更安全
+## 6. 整数线性规划近五十年：近期实践进展
 
-**原文标题**: Frequent reauth doesn't make you more secure
+**原文标题**: Last fifty years of integer linear programming: Recent practical advances
 
-**原文链接**: [https://tailscale.com/blog/frequent-reath-security](https://tailscale.com/blog/frequent-reath-security)
+**原文链接**: [https://inria.hal.science/hal-04776866v1](https://inria.hal.science/hal-04776866v1)
 
-Avery Pennarun的博文认为，频繁的重新身份验证并不能增强安全性，甚至可能削弱安全性。文章批判了强制用户重复登录的过时做法，强调了由此带来的挫败感和安全风险，例如MFA疲劳。
+François Clautiaux和Ivana Ljubić在2024年《欧洲运筹学杂志》上发表的文章“整数线性规划近五十年：聚焦近期实践进展”回顾了混合整数线性规划(MILP)求解方法所取得的进展。由于现代求解器效率的不断提高，MILP已成为运筹学中至关重要的工具，能够解决运输、物流和金融等各个领域的复杂问题。
 
-作者认为，安全应该侧重于强大的访问管理、快速的策略变更以及检测被盗用的凭据。频繁登录的实施通常是因为管理员对立即执行策略缺乏信心，尤其是在SAML方面。
+本文侧重于MILP的计算方面和实际性能改进，特别是包含计算实验的研究。文章分为三个主要部分：分支切割法、Dantzig-Wolfe分解和Benders分解。这些是解决MILP问题的关键技术。
 
-文章驳斥了频繁登录对常见攻击媒介（如远程网络钓鱼）的有效性，因为被盗用的凭据会使它们的目的失效。相反，作者提倡利用操作系统级别的安全措施，例如自动屏幕锁定，这提供了类似的保护，而无需持续中断。
+作者旨在概述在推进这些方法方面取得的最重要成果。他们承认关于该主题的大量文献，并有意识地选择突出展示实际改进的研究。本文最后讨论了MILP领域内正在进行的挑战和未来的研究机会。与本文相关的关键词是组合优化、混合整数线性规划、分支切割法、Dantzig-Wolfe分解和Benders分解。
 
-作者批评了Web会话过期策略，认为它们基本上是无效的。Pennarun建议，与其进行任意登录提示，不如仅在必要时验证设备所有权，例如在执行敏感操作之前，Tailscale的SSH检查模式和Slack Accessbot就是例证。
+---
 
-该帖子强调通过设备姿势检查和基于SCIM的访问控制进行持续验证，以实现实时安全更新，而无需用户干预。当设备离线或角色发生变化时，访问权限会立即被撤销或更新。
+## 7. SSHTron：通过SSH运行的多人光轮摩托游戏
 
-作者的结论是，最好的安全是无缝且自适应的，它在后台发生，而不会让用户感到沮丧并养成不良的安全习惯。
+**原文标题**: SSHTron: A multiplayer lightcycle game that runs through SSH
+
+**原文链接**: [https://github.com/zachlatta/sshtron](https://github.com/zachlatta/sshtron)
+
+SSHTron：一款可通过SSH游玩的多人光轮摩托游戏。游玩方式很简单，只需SSH连接至`sshtron.zachlatta.com`。控制方式为WASD或vim按键，退出方式为Escape或Ctrl+C。玩家可以通过SSH连接至`color@sshtron.zachlatta.com`（例如，`red@sshtron.zachlatta.com`）来选择特定颜色（红、绿、黄、蓝、品红、青、白）。如果颜色已被占用，则会随机分配一个。
+
+此游戏也可以自行托管。文档提供了直接编译和运行游戏的说明，包括生成RSA密钥对和设置自定义端口。同时包含Docker说明，以及针对Raspberry Pi用户的特殊说明。
+
+文档还警告了CVE-2016-0777，即恶意服务器可利用的SSH客户端漏洞，建议用户在游玩前修补SSH客户端，即使SSHTron声称不会利用这些漏洞。
+
+SSHTron采用MIT许可证。
+
+---
+
+## 8. 埃里克·萨蒂的多面性
+
+**原文标题**: The Many Sides of Erik Satie
+
+**原文链接**: [https://thereader.mitpress.mit.edu/the-many-sides-of-erik-satie/](https://thereader.mitpress.mit.edu/the-many-sides-of-erik-satie/)
+
+伊恩·彭曼的文章探讨了埃里克·萨蒂的多面性，这位作曲家以其看似简单却又深刻动人的钢琴曲（如《吉姆诺佩迪》和《格诺西埃努舞曲》）而闻名。彭曼认为，虽然这些作品广为人知并在流行文化中被广泛使用，但它们仅代表了萨蒂多元化作品中的一小部分。
+
+文章突出了萨蒂生活和作品中固有的矛盾。他既是时代的产物，预见了现代音乐潮流，如个人原声带和休闲音乐，又是一个深深扎根于古典形式和传统的形象。他拥抱高雅文化和流行歌曲，创作前卫芭蕾舞剧，同时创作歌舞表演曲调和神圣音乐。
+
+彭曼深入研究了萨蒂的个人生活，将他描绘成一个复杂的人：可能独身或充满激情，慷慨但又易怒，生活近乎贫困却保持着潇洒的外表。他强调了萨蒂调和表面对立的能力，融合了天主教和新教、高雅文化和低俗文化，以及古代形式和现代情感。
+
+最终，彭曼认为萨蒂难以被简单归类，他存在于极端之间，就像马格里特的一幅画，画中人物站在大海和天空之间。虽然他的人生可能很模糊，但文章认为，他的音乐却具有惊人的清晰度，至今仍能引起听众的共鸣。文章最后指出，本文摘自彭曼关于萨蒂的著作。
+
+---
+
+## 9. 子字符串搜索的SIMD友好算法 (2018)
+
+**原文标题**: SIMD-friendly algorithms for substring searching (2018)
+
+**原文链接**: [http://0x80.pl/notesen/2016-11-28-simd-strfind.html](http://0x80.pl/notesen/2016-11-28-simd-strfind.html)
+
+本文探讨了适用于SIMD的子字符串搜索算法，重点在于利用向量处理的能力来提高性能，优于 Knuth-Morris-Pratt 或 Boyer-Moore 等传统方法。文章强调，现代 CPU 可以通过 SIMD 指令有效地比较多个字节，使得基于简单比较的算法能够与更复杂的、基于 DFA 的方法竞争。
+
+文章提出了两种主要算法。**算法 1（通用 SIMD）** 使用子字符串的第一个和最后一个字符的相等性作为谓词。它加载被搜索字符串的块，并使用 SIMD 指令将它们与第一个和最后一个字符进行比较，从而创建一个潜在匹配位置的掩码。然后仅在这些标记的位置执行精确的子字符串比较。提供了针对 SSE、AVX2、SWAR、AVX512F、ARM Neon (32 位) 和 AArch64 (64 位) 的实现。
+
+**算法 2（SSE 特有，MPSADBW）** 利用 MPSADBW 指令（SSE4.1 和 AVX2）计算 4 字节子向量之间的曼哈顿距离。该指令用作谓词，根据 L1 距离识别潜在匹配项（其中相等子向量的距离为 0）。但是，文章指出它通用性较差，并且在特定情况下可能会遇到二次复杂度。文章提供了 SSE 和 AVX512F 的实现。
+
+文章强调，针对特定子字符串长度的仔细实现和专门化可以通过减少开销和避免函数调用来进一步优化性能。文章讨论了各种 x64 和 ARM 计算机的性能结果。
+
+---
+
+## 10. 减缓核心转储相关CVE的涌现
+
+**原文标题**: Slowing the flow of core-dump-related CVEs
+
+**原文链接**: [https://lwn.net/SubscriberLink/1024160/f18b880c8cd1eef1/](https://lwn.net/SubscriberLink/1024160/f18b880c8cd1eef1/)
+
+LWN.net的文章讨论了Linux系统中与核心转储相关的安全漏洞 (CVE) 持续存在的问题，以及减轻这些问题的努力。 核心转储是崩溃进程的内存映像，传统上是通过启动具有 root 权限的用户模式辅助进程来处理的，这构成了一个具有吸引力的攻击面。 一种常见的攻击涉及利用竞争条件，用恶意进程替换崩溃的进程，从而允许核心转储处理程序无意中暴露原始进程中的敏感数据。
+
+该文章重点介绍了 Christian Brauner 在内核 6.16 中为解决这些问题所做的工作。 第一个解决方案是在 `core_pattern` sysctl knob 中添加一个新的格式说明符 "%F"。 这将使用 *pidfd* 作为文件描述符 3 启动核心转储处理程序，即使 PID 被重用，也能保证对 *预期* 进程的引用。 这已被反向移植到最近的稳定内核。
+
+更长期的修复方案，也在 6.16 中，允许将核心转储写入现有套接字。 用户空间处理程序可以绑定到该套接字，放弃权限并沙盒化自身，从而提高安全性。 然后，处理程序可以使用 `getsockopt()` 和 `PIDFD_GET_INFO` 通过 pidfd 和核心转储标志安全地验证崩溃的进程。 这消除了每次崩溃都需要特权用户模式辅助进程的需求。 虽然这种更强大的解决方案不太可能被反向移植，但随着它被发行版采用，它有望显著减少与核心转储相关的漏洞。 后续的讨论线程强调了简单地增加 PID 大小或随机化 PID 的挑战和替代方案，并指出唯一的 pidfd inode 编号提供了一种新的唯一标识进程的方法。
 
 ---
 
@@ -168,89 +161,90 @@ Avery Pennarun的博文认为，频繁的重新身份验证并不能增强安全
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
-| 2 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
-| 3 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 1 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
+| 2 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 3 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
 | 4 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
-| 5 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 6 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 5 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 6 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
 | 7 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 8 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 9 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 8 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 9 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
 | 10 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 11 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 12 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 11 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 12 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
 | 13 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
-| 14 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 14 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
 | 15 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 16 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 17 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 18 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 16 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 17 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 18 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
 | 19 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 20 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 21 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 22 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 23 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 24 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 25 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 26 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 27 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 28 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 20 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 21 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 22 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 23 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 24 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 25 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
+| 26 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 27 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 28 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
 | 29 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 30 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 30 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
 | 31 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 32 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 32 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
 | 33 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 34 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 35 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 34 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 35 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
 | 36 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
 | 37 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 38 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 39 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 40 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 38 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 39 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 40 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
 | 41 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 42 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 43 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 44 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 45 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 46 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 42 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 43 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 44 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 45 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 46 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
 | 47 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 48 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 49 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 48 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 49 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
 | 50 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 51 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 52 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 53 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 54 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 55 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 51 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 52 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 53 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 54 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 55 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 56 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 57 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 58 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 59 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 60 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 57 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 58 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 59 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 60 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
 | 61 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 62 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 63 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 62 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 63 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
 | 64 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 65 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 66 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 67 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 68 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 69 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 70 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 71 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 72 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 73 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 74 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 75 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 76 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 77 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 78 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 79 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 80 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 81 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 82 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 83 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 84 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 85 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 86 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 65 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 66 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 67 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 68 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 69 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 70 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 71 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 72 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 73 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 74 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 75 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 76 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 77 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 78 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 79 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 80 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 81 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 82 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 83 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 84 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 85 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 86 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 87 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
