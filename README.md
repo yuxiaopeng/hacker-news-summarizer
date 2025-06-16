@@ -1,180 +1,166 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-15.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-16.md)
 
-*最后自动更新时间: 2025-06-15 17:48:48*
-## 1. 使用树莓派修改HDMI虚拟显示器的EDID
+*最后自动更新时间: 2025-06-16 17:50:43*
+## 1. 200度的苯
 
-**原文标题**: Modifying an HDMI dummy plug's EDID using a Raspberry Pi
+**原文标题**: Benzene at 200
 
-**原文链接**: [https://www.downtowndougbrown.com/2025/06/modifying-an-hdmi-dummy-plugs-edid-using-a-raspberry-pi/](https://www.downtowndougbrown.com/2025/06/modifying-an-hdmi-dummy-plugs-edid-using-a-raspberry-pi/)
+**原文链接**: [https://www.chemistryworld.com/opinion/benzene-at-200/4021504.article](https://www.chemistryworld.com/opinion/benzene-at-200/4021504.article)
 
-道格·布朗详细介绍了如何使用树莓派修改 HDMI 虚拟显示器的 EDID（扩展显示标识数据）。目标是通过将原始 EDID 替换为 1080p HDMI 采集卡的 EDID，从而更改虚拟显示器所宣称的显示器性能，特别是从 4K 更改为 1080p。
+本文庆祝迈克尔·法拉第发现苯200周年，强调其对化学及各个领域的深远影响。苯最初被认为是一种具有特殊芳香气味的神秘液体，但其独特的稳定性和反应性推动了芳香化学的发展。
 
-虚拟显示器模拟连接的显示器，用于无头计算机。EDID 存储在插头内的 I2C EEPROM 芯片中。布朗利用树莓派 HDMI 端口上的内置 I2C 控制器来读取和写入该 EEPROM。
+本文追溯了苯的遗产，包括多环芳烃（PAHs）、纳米石墨烯、富勒烯和碳纳米管，并强调了它们电子和光学性质的可调性。六苯并苯并苯的合成以及随后更大的石墨烯分子的创造是一个重要的里程碑，展示了有机合成的潜力。
 
-该过程包括在树莓派上启用 I2C，安装 `i2c-tools`，并识别 HDMI 端口的正确 I2C 总线（不同型号的 Pi 型号不同）。在进行任何写入操作之前，先备份了虚拟显示器的原始 EDID。然后，使用相同的方法提取目标 HDMI 采集卡的 EDID。
+石墨烯是融合苯环的单层结构，被认为是苯的通用性的终极体现，其卓越的性能正在革新电子学、储能、医学和材料科学。苯的重要性还延伸到教育领域，是理解芳香性和分子轨道的便捷入门点。
 
-最后，布朗编写了一个 bash 脚本，利用 `od` 和 `i2cset` 迭代采集卡的 EDID 字节，并将它们写入虚拟显示器的 EEPROM。写入操作完成后，将虚拟显示器上的 EDID 读回，并与采集卡的 EDID 进行比较，以确认写入成功。作者强调了注意事项，警告不要在真正的显示器上使用此过程，因为存在使其变砖的风险，并建议使用树莓派，以避免主计算机出现潜在问题。该过程成功更改了虚拟显示器报告的显示器性能。
-
----
-
-## 2. 1998年的红帽Linux (2009)
-
-**原文标题**: Red Hat Linux in 1998 (2009)
-
-**原文链接**: [https://linuxgazette.net/165/laycock.html](https://linuxgazette.net/165/laycock.html)
-
-奥斯卡·莱科克的文章《1998年的红帽Linux (2009)》是对红帽Linux 5.1 “曼哈顿”以及当时开源软件状态的怀旧回顾。作者回忆了购买盒装版的经历，并将其与当时可用的其他Linux发行版进行了比较。
-
-该文章重点介绍了红帽5.1的关键方面，包括内核版本（2.0.34）以及诸如WordPerfect和Tripwire之类的第三方应用程序的包含。它深入探讨了1998年的自由软件格局，提到了Netscape的开源、GNU C库（glibc）和GNU C编译器的EGCS分支。 PHP的演变也被讨论，最终发展到PHP 3。
-
-文章的很大一部分重点介绍了GNOME beta，它作为红帽5.1的预览版包含在内。莱科克描述了GNOME创建用户友好桌面环境的目标、它缺少窗口管理器以及诸如Midnight Commander、Electric Eyes（GNOME Eye的前身）和一个更简单的GIMP之类的核心应用程序。然后，他介绍了GNOME包含的其他关键应用程序，例如没有现代功能的终端、Extace Waveform、gEdit、日历、GTimeTracker和一些系统监视工具。他还提到了包含的一些简单游戏。
-
-最后，作者详细介绍了可用于监视系统资源和网络活动的面板小程序，并对1998年GNOME桌面的简洁性和速度提供了一个总结性的想法。 Rick Moen的评论也作为脚注附加在文章末尾，提供了有关所提及的某些产品的更多详细信息。
+为纪念二百周年，英国皇家化学会将发布一期特刊，刊登关于芳香和反芳香化合物、PAHs、纳米石墨烯、石墨烯衍生物、碳纳米管、富勒烯和基于苯的分子机器的研究，进一步彰显该分子持久的意义。
 
 ---
 
-## 3. 峡谷中路
+## 2. 在监狱里处理数据库工作
 
-**原文标题**: Canyon.mid
+**原文标题**: Working on databases from prison
 
-**原文链接**: [https://canyonmid.com/](https://canyonmid.com/)
+**原文链接**: [https://turso.tech/blog/working-on-databases-from-prison](https://turso.tech/blog/working-on-databases-from-prison)
 
-这篇文章并非文章，而是关于名为“CANYON.MID”的MIDI文件的信息。全部内容仅仅是文件名：“CANYON.MID”。
+目前在押的普雷斯顿·索普分享了他如何在监狱牢房里获得Turso软件工程师职位，从事数据库开发工作的故事。在发表了一篇关于他背景的博客文章后，科技界的积极反响激励了他。他参加了一个监狱大学项目，获得了有限的互联网访问权限，这重新燃起了他对编程的热情。他每天投入超过15个小时用于项目和开源贡献。
 
-因此，总结为：这篇“文章”仅是MIDI文件CANYON.MID的标题和文件名，没有提供更多信息或背景。
+索普入选了缅因州的远程工作计划，并在Unlocked Labs找到了一份软件工程师的工作，为被监禁的学习者构建教育解决方案。他最终领导了他们的开发团队。他发现了Turso的Project Limbo（重写SQLite），并开始大量贡献。他的奉献精神促使Turso创始人Glauber联系了他，并最终向他提供了一份工作。
 
----
+在The Primeagen直播阅读了他的博客文章后，索普的故事引起了更广泛的关注。现在，他经常收到来自开发人员的咨询，寻求关于开源贡献和应对类似挑战的建议。
 
-## 4. 如何修改星链迷你版，使其无需内置WiFi路由器运行
-
-**原文标题**: How to modify Starlink Mini to run without the built-in WiFi router
-
-**原文链接**: [https://olegkutkov.me/2025/06/15/how-to-modify-starlink-mini-to-run-without-the-built-in-wifi-router/](https://olegkutkov.me/2025/06/15/how-to-modify-starlink-mini-to-run-without-the-built-in-wifi-router/)
-
-本文详细介绍如何改装星链Mini (2025年6月14日，版本1)，以绕过内置的WiFi路由器，直接通过以太网连接。该改装面向需要定制网络设置、嵌入式安装或功耗受限环境的高级用户。
-
-该过程涉及小心地拆卸星链Mini，强调使用合适的工具并谨慎操作以避免损坏的重要性，尤其是在移除路由器PCB时。强烈不建议移除金属板，因为它在散热和电磁干扰屏蔽方面起着关键作用。
-
-本文提供了星链Mini PCB连接器的引脚定义，重点介绍了1 Gbps以太网链路和12VDC电源。文中提供了一个直接以太网连接的原理图，强调需要通过变压器进行以太网隔离以及最小的电源滤波。"Ethermod"适配器作为概念验证提供。
-
-关于网络配置，星链终端最初在192.168.100.0/24范围内提供一个DHCP IP。连接到星链网络后，它会提供一个具有CGNAT IPv4和链路本地IPv6地址的隧道DHCP服务，提供互联网访问，但只有一个IP地址。提供了添加静态路由的说明，以便在获得“外部”IP地址后，保持对终端Web UI和gRPC服务器的访问。
-
-最后，本文列出了重要的gRPC状态代码，包括“中断”原因（BOOTING、THERMAL_SHUTDOWN、NO_SCHEDULE等）和“disablementCode”值（OKAY、NO_ACTIVE_ACCOUNT、TOO_FAR_FROM_SERVICE_ADDRESS等），用于监控连接和帐户状态。本文强调，终端遵守卫星传输的关于服务计划、区域和速度限制的命令。
+索普对缅因州惩教署、Unlocked Labs、Turso、他的父母以及采取公平机会雇佣政策的公司表示感谢。尽管最近他的释放日期遇到了挫折，但他仍然致力于在Turso的工作，并将延长的这段时间视为进一步提高自己技能的机会。他希望成为努力工作、决心和自律的力量的榜样。
 
 ---
 
-## 5. Rust 中的 Datalog
+## 3. Zjs组件：Web开发中可重用UI片段的实用方法
 
-**原文标题**: Datalog in Rust
+**原文标题**: ZjsComponent: A Pragmatic Approach to Reusable UI Fragments for Web Development
 
-**原文链接**: [https://github.com/frankmcsherry/blog/blob/master/posts/2025-06-03.md](https://github.com/frankmcsherry/blog/blob/master/posts/2025-06-03.md)
+**原文链接**: [https://arxiv.org/abs/2506.11016](https://arxiv.org/abs/2506.11016)
 
-“Rust中的Datalog”一文，推测位于GitHub的`frankmcsherry/blog`下，可能探讨了在Rust编程语言中Datalog的实现和使用。鉴于作者Frank McSherry以其在分布式系统和数据处理领域的工作而闻名，该文章很可能深入探讨了一个实用、高性能的实现，而不是纯粹的理论概述。
+本文介绍了 ZjsComponent，一个轻量级的、与框架无关的 Web 组件，旨在促进 Web 开发中模块化和可重用 UI 元素的创建。ZjsComponent 的主要优势在于其简单性；它允许开发人员直接从 HTML 创建组件，而无需构建步骤、转译、预编译、特定生态系统，或浏览器中基本 JavaScript 执行之外的外部依赖。
 
-以下是基于标题和作者背景对文章内容的一个可能的总结：
-
-该文章可能介绍了Datalog，一种常用于数据查询、推理和分析的声明式逻辑编程语言。 然后，它侧重于如何在Rust中实现和利用Datalog。作者可能会讨论将Datalog的声明式特性与Rust的性能、内存安全和并发特性相结合的优势。这种组合允许构建高效可靠的数据处理系统。
-
-该文章可能涵盖以下主题：
-
-*   **在Rust中实现Datalog引擎：** 讨论Datalog引擎所需的核心数据结构和算法。
-*   **将Datalog与Rust数据结构集成：** 展示如何使用Rust结构体和枚举来表示Datalog事实和规则。
-*   **性能考量：** 讨论如何在Rust环境中优化Datalog查询和规则评估，可能涉及诸如索引、并行处理和增量计算等技术。
-*   **用例：** 强调Datalog在Rust中的实际应用，例如程序分析、网络安全或分布式系统管理。
-*   **代码示例：** 提供Rust代码片段，演示如何定义Datalog规则、加载数据和执行查询。
-
-该文章可能强调使用Rust完成此任务的优势，例如内存安全、对性能的细粒度控制以及构建高度并发和可扩展系统的能力。
+ZjsComponent 能够动态加载和隔离 HTML 和 JavaScript 片段。这为构建可重用的用户界面提供了一种直接的方法。ZjsComponent 背后的方法强调无依赖操作、显著的 DOM 和代码隔离，以及对标准生命周期钩子和实例方法的支持。作者 Lelanthran Manickum 认为，ZjsComponent 为更复杂的组件架构提供了一种务实的替代方案。该论文共 12 页，包含 7 个图表。
 
 ---
 
-## 6. 社交焦虑症相关肠道菌群增加社交恐惧
+## 4. Show HN: Zeekstd – ZSTD可搜索格式的Rust实现
 
-**原文标题**: Social anxiety disorder-associated gut microbiota increases social fear
+**原文标题**: Show HN: Zeekstd – Rust Implementation of the ZSTD Seekable Format
 
-**原文链接**: [https://www.pnas.org/doi/abs/10.1073/pnas.2308706120](https://www.pnas.org/doi/abs/10.1073/pnas.2308706120)
+**原文链接**: [https://github.com/rorosen/zeekstd](https://github.com/rorosen/zeekstd)
 
-我能够访问互联网并总结这篇文章。
+Zeekstd 是 Zstandard Seekable Format 的 Rust 实现，旨在高效解压压缩文档中的特定部分。与标准 Zstd 压缩不同，可查找格式将数据分割成独立帧，无需处理整个文档即可解压一部分。
 
-文章“社交焦虑症相关的肠道菌群增加社交恐惧”发表在PNAS上，研究了肠道菌群组成与社交焦虑症（SAD）之间的联系，特别关注社交恐惧。 该研究使用了来自被诊断患有SAD的个体的粪便微生物群移植（FMT）到无菌小鼠中，以检查肠道微生物组在社交焦虑样行为发展中的因果作用。
+Zeekstd 实现了可查找格式的更新规范，同时保持与原始格式的兼容性。该库包含编码和解码功能，具有压缩期间的自动帧创建（默认为 2MiB 帧大小）以及自定义压缩参数的选项。默认情况下，解码器解压缩整个文档，但可以配置为仅解压缩特定帧，从而在只需要部分数据时提高效率。
 
-研究人员发现，接受来自SAD患者的FMT的小鼠，与接受来自健康对照组的FMT的小鼠相比，表现出更高的社交回避和更少的社交互动。这表明与SAD相关的肠道菌群组成可以直接导致小鼠社交恐惧相关行为的出现。
+提供的代码示例演示了如何使用 `Encoder` 从文件创建可查找的 Zstd 文档，以及如何使用 `Decoder` 解压缩整个文档或特定帧。
 
-进一步的分析揭示了SAD患者肠道微生物群组成的特定改变，与健康对照组相比，某些细菌物种要么富集，要么减少。然后将这些差异与接受者小鼠中观察到的行为变化相关联。
-
-该研究还探讨了肠道菌群可能影响社交行为的潜在机制。他们发现在接受SAD微生物群的小鼠的肠道和大脑中，特定代谢物的水平发生了改变，这表明肠道菌群可能通过影响神经化学通路来影响社交行为。 该研究确定了似乎在观察到的效应中起作用的特定代谢物。
-
-总之，这项研究提供了令人信服的证据，表明肠道菌群在与SAD相关的社交恐惧的发展中起着因果作用。 它表明，肠道菌群组成的改变以及随之而来的肠脑沟通途径的变化可能有助于社交焦虑症的发病机制。 这项研究强调了靶向肠道微生物组作为管理SAD的新型治疗方法的潜力。
+该存储库还包含一个利用该库的 CLI 工具。Zeekstd 在 BSD 2-Clause 许可下获得许可，而底层 Zstd 库使用双重 BSD/GPLv2 许可。
 
 ---
 
-## 7. 密歇根州北部发现千年古老三姐妹农田
+## 5. 用于 Go 的 OpenTelemetry：测量开销成本
 
-**原文标题**: 1k year old 3 sisters crop farm found in Northern Michigan
+**原文标题**: OpenTelemetry for Go: Measuring overhead costs
 
-**原文链接**: [https://www.smithsonianmag.com/smart-news/massive-field-where-native-american-farmers-grew-corn-beans-and-squash-1000-years-ago-discovered-in-michigan-180986758/](https://www.smithsonianmag.com/smart-news/massive-field-where-native-american-farmers-grew-corn-beans-and-squash-1000-years-ago-discovered-in-michigan-180986758/)
+**原文链接**: [https://coroot.com/blog/opentelemetry-for-go-measuring-the-overhead/](https://coroot.com/blog/opentelemetry-for-go-measuring-the-overhead/)
 
-密歇根上半岛考古调查揭示千年农耕系统
+尼古拉·西夫科的这篇博文探讨了如何使用OpenTelemetry和Go来衡量与可观测性工具相关的开销成本，特别是在Kubernetes上利用GPU的应用程序中。虽然标题暗示了对开销测量的关注，但核心主题似乎围绕着在复杂环境（Kubernetes上的GPU）中使用OpenTelemetry实现可观测性。
 
-近期在密歇根上半岛进行的一项考古调查揭示了一个由威斯康星州梅诺米尼印第安部落祖先建造的、拥有千年历史的土墩农耕系统。该“三姐妹”（玉米、豆类和南瓜）农耕系统位于梅诺米尼河沿岸，在被称为Anaem Omot的地区，通过激光雷达技术被发现，据信是美国东部保存最完好的大型考古田野系统。
+这篇文章可能探讨了如何在Kubernetes上运行并利用GPU的Go应用程序中实现OpenTelemetry。它可能涵盖以下几个方面：
 
-放射性碳定年法证实这些土墩大约在1000年前建造，并维持了600年。研究人员发现利用湿地土壤和生活垃圾作为堆肥来改良土壤的证据。这项发现意义重大，因为大多数前殖民时期的田野系统已被摧毁，它为我们罕见地提供了一个了解前殖民时期梅诺米尼人生活的窗口。
+*   **Instrumentation（工具化）：** 如何使用OpenTelemetry来工具化Go代码，以收集跟踪、指标和日志。
+*   **Deployment（部署）：** 在Kubernetes环境中部署OpenTelemetry收集器和代理以收集遥测数据的注意事项。
+*   **GPU-specific metrics（GPU特定指标）：** 识别和收集与GPU利用率相关的相关指标（内存、计算、功耗）。
+*   **Observability Pipeline（可观测性管道）：** 设置有效的可观测性管道，以使用Prometheus、Jaeger或其他可观测性平台等工具来处理、分析和可视化收集的遥测数据。
 
-考虑到小冰期期间较冷的气候会使农业，特别是玉米种植，更具挑战性，科学家们对该遗址的位置感到困惑。 关于作物的用途仍然存在疑问：它们是用于维持生计、贸易还是剩余产品？ 激光雷达调查还发现了其他考古特征，包括舞蹈圈、殖民建筑地基、伐木营地和墓葬土墩。
-
-这项调查建立在先前的研究基础上，是与梅诺米尼部落当局合作进行的。 研究人员希望继续与该部落合作，以发掘梅诺米尼祖先的村庄，并进一步了解他们的历史和农业实践。
-
----
-
-## 8. 我想再次成为一名旅程程序员。
-
-**原文标题**: I want to be a Journey Programmer Again
-
-**原文链接**: [https://hexhowells.com/posts/journey.html](https://hexhowells.com/posts/journey.html)
-
-作者于2025年6月撰文，反思日益依赖大型语言模型（LLM）对自身编程体验的影响。最初，LLM被视为学习和调试的工具，但现在作者发现自己正在使用它们编写大量代码，从而减少了对问题解决过程的参与和对新概念的学习。
-
-作者区分了“目标程序员”和“旅程程序员”，前者优先考虑最终产品，并受益于LLM抽象编码细节的能力，后者则重视开发过程中固有的学习和问题解决。作者认为自己属于后者，乐于探索新技术和解决复杂问题，但感觉LLM正在削弱这种乐趣。
-
-这种转变不仅归因于LLM，还归因于创造对他人有用的项目的愿望，以及对人工智能辅助工具的易用性日益增长的依赖和“惰性”。作者最后表达了减少对LLM依赖的愿望，从事具有个人意义的项目，并重新发现编程旅程的内在满足感。这篇文章旨在反思LLM如何从根本上改变编程体验，并希望回归一种更投入、更充实的方式。
+由于GPU工作负载的资源密集型特性，对衡量开销成本的关注可能是这种背景下的一个问题。这篇文章可能探讨了最小化OpenTelemetry工具化性能影响的技术，例如采样、批处理和遥测数据的异步处理。它也可能讨论如何量化OpenTelemetry引入的开销，以及如何优化工具化以最大程度地减少对应用程序性能的影响。最终，本文的目标是指导读者如何在Kubernetes中为运行在GPU上的Go应用程序实现强大的可观测性，同时仔细考虑并减轻相关的开销。
 
 ---
 
-## 9. 儿童白血病：致命癌症如何变得可治愈
+## 6. 离经叛道的理查德·福尔曼
 
-**原文标题**: Childhood leukemia: how a deadly cancer became treatable
+**原文标题**: The Renegade Richard Foreman
 
-**原文链接**: [https://ourworldindata.org/childhood-leukemia-treatment-history](https://ourworldindata.org/childhood-leukemia-treatment-history)
+**原文链接**: [https://yalereview.org/article/jennifer-krasinski-richard-foreman](https://yalereview.org/article/jennifer-krasinski-richard-foreman)
 
-本文详细介绍了儿童白血病治疗方面取得的显著进展，使其从几乎必死的绝症转变为一种很大程度上可治愈的疾病。在20世纪70年代之前，生存率很低，确诊后五年内只有不到10%的儿童能够存活。如今，在北美和欧洲，约有85%的儿童能够存活这么长时间。
+詹妮弗·克拉辛斯基的文章《叛逆者理查德·福尔曼》纪念了先锋派剧作家和导演理查德·福尔曼的一生及其作品，他享年八十七岁。文章强调了福尔曼对戏剧的创新方法，专注于创作的“当下”，并拒绝传统的叙事结构，转而探索“存在的崇高混乱”。
 
-本文强调，这一显著改善并非源于单一的突破，而是一系列进步的结果。这些包括：
+福尔曼的戏剧，从1968年到2013年间超过五十部作品，以其独特的审美为特征，结合了超现实主义视觉效果、哲学探究和闹剧喜剧元素。他的“本体论-歇斯底里剧院”旨在成为一个“回响机器”，突出事物之间的相互联系。
 
-*   **联合化疗：** 联合使用多种化疗药物，靶向中枢神经系统，并采用多阶段治疗方案。
-*   **风险分层：** 根据个体风险因素（年龄、白细胞计数、基因检测结果）调整化疗强度，以最大限度地减少低风险患者的副作用，并最大限度地提高高风险患者的生存率。
-*   **微小残留病灶 (MRD) 检测：** 识别剩余的白血病细胞，以指导进一步的治疗决策。
-*   **大型合作临床试验：** 由于该疾病的罕见性，使得研究人员能够更有效地测试治疗方案。
-*   **基因和分子研究：** 识别特定的基因突变，以便使用伊马替尼和CAR-T细胞疗法等专门药物和疗法进行靶向治疗。
-*   **改善的支持治疗：** 通过血小板输注、抗生素、抗真菌药、抗病毒药物和疫苗来管理感染和出血等并发症。
+文章详细介绍了福尔曼的早年生活、他的艺术影响（包括格特鲁德·斯坦和杰克·史密斯）以及他对纽约市中心先锋派场景的沉浸。他拒绝现实主义和偶然性操作，而是寻求创造持续不断的“精神食粮”。他的过程包括原始的运行文本，在排练期间重新排列台词，以及不断演变的布景和服装。
 
-虽然化疗等治疗方法仍然具有挑战性，但长期健康结果已经得到改善。本文强调了继续研究和在全球范围内扩大这些进步的重要性，以确保所有儿童都有机会过上长寿和健康的生活。
+曾在福尔曼的戏剧《永久性脑损伤》中演出的克拉辛斯基，也分享了她对他的排练过程的见解，强调了他的亲力亲为的方式以及他的作品形成的有机方式。福尔曼专注于创造一种完整的戏剧体验，优先考虑问题和对意义的探寻，而不是传统的讲故事。
 
 ---
 
-## 10. 生物燃料政策：美国农业的支柱，气候的失败
+## 7. Show HN: dk – 一个用 OCaml 编写的脚本运行器和交叉编译器
 
-**原文标题**: Biofuels Policy, a Mainstay of American Agriculture, a Failure for the Climate
+**原文标题**: Show HN: dk – A script runner and cross-compiler, written in OCaml
 
-**原文链接**: [https://insideclimatenews.org/news/13062025/agriculture-ethanol-biofuel-policy-climate-failure/](https://insideclimatenews.org/news/13062025/agriculture-ethanol-biofuel-policy-climate-failure/)
+**原文链接**: [https://diskuv.com/dk/help/latest/](https://diskuv.com/dk/help/latest/)
 
-本文批判了美国的生物燃料政策，特别是关于玉米乙醇的政策，认为它在气候方面是失败的，并且在经济上对许多中西部社区造成损害。世界资源研究所的一份报告，引用了大量学术研究，断言生物燃料政策已经重塑了农作物生产，排挤了粮食作物，通过土地转换和化肥使用增加了温室气体排放，并降低了水质。
+此“Show HN”介绍 `dk`，一个用 OCaml 编写的脚本运行器和交叉编译器，专为新手和经验丰富的程序员设计。它旨在通过解决“README-itis”来简化软件分发。
 
-文章强调了玉米和大豆种植为乙醇生产而大规模扩张的情况，指出约有3000万英亩土地用于乙醇生产，尽管它仅占交通燃料的6%。虽然生物燃料行业声称具有环境和经济效益，但研究表明，乙醇可能比化石燃料产生更多的温室气体，并释放有害物质。
+对于新手，快速入门指南提供了带有示例的介绍。开发者可以探索 dk Runtime 以了解支持的平台（Windows、macOS、Linux），并使用 dk Parties 进行项目组织。参考手册（dk Libraries、dk Macros）可用于脚本编辑。OCaml 用户可以查阅 Coming From OCaml 指南。
 
-该报告认为，由于其他国家的森林砍伐以及玉米集约化种植中一氧化二氮的释放，生物燃料产量的增加可能会增加排放。此外，承诺的社会和经济效益并未在许多中西部社区实现，补贴偏向于大型农业企业，并导致农田整合。拟议的政策可能会加剧这些问题，优先考虑生物燃料生产而非粮食作物。
+该工具提供命令行工具，如 `dk`、`dk-Embed`、`dk-Exe`、`dk-REPL`、`dk-Run`、`dk-SBOM`，以及几个用于文件系统和网络操作的实用程序。 完整的参考手册涵盖库、宏、运行时、parties、设计安全、链接和限制。
 
-虽然生物燃料贸易团体没有回应置评请求，但美国清洁燃料联盟为大豆燃料辩护，理由是其经济影响，并辩称排放量被夸大了。
+示例项目包括：
+*   **DkSubscribeWebhook**: 一个使用 GitLab、AWS SES 和 1Password 的 Stripe webhook。
+*   **Sonic Scout**: 使用 `dk` 进行学生开发，其中 `dk` 脚本被交叉编译到 Android 应用程序的数据层中。
+*   **SanetteBogue**: 演示了在不修改的情况下运行现有 OCaml 代码。
+
+还提供了发行说明以进行版本跟踪。
+
+---
+
+## 8. Darklang 开源了
+
+**原文标题**: Darklang Goes Open Source
+
+**原文链接**: [https://blog.darklang.com/darklang-goes-open-source/](https://blog.darklang.com/darklang-goes-open-source/)
+
+Darklang最初因担心可持续性及维护其独特架构（仅托管平台，具备安全代码迁移和统一部署等特性）而选择采用源代码可用模式，现在已将其代码库以 Apache License 2.0 开源。 这一策略转变主要源于三个因素：产品成熟和用户反馈要求更高的开放性；转向本地优先开发需要非专有语言二进制文件；以及开发者工具市场中出现新的商机（团队协作和 AI 驱动功能收费），这使得在开源核心之外能够建立可持续的商业模式。
+
+开源旨在使 Darklang 更易于访问、检查和社区所有，这符合其 democratizing programming 和确保平台长期发展的理念。 他们现在相信，无需特定的编辑器或托管，也能提供 Darklang 的关键优势（隐形基础设施、无需部署的部署、跟踪驱动的开发）。文章还承认 Darklang 生态系统中仍然存在与许可相关的挑战，尤其是在包管理器直接同步类型和函数的场景中。 开源基金会为解决这些未来的挑战提供了坚实的基础。
+
+---
+
+## 9. Nanonets-OCR-s – 将文档转换为结构化 Markdown 的 OCR 模型
+
+**原文标题**: Nanonets-OCR-s – OCR model that transforms documents into structured markdown
+
+**原文链接**: [https://huggingface.co/nanonets/Nanonets-OCR-s](https://huggingface.co/nanonets/Nanonets-OCR-s)
+
+Nanonets-OCR-s 是一个先进的 OCR 模型，可将文档转换为结构化 Markdown，它超越了简单的文本提取，集成了智能内容识别和语义标记，以实现更好的 LLM 处理。主要特性包括：
+
+*   **LaTeX 公式识别：** 将数学公式转换为 LaTeX 语法。
+*   **智能图像描述：** 使用 `<img>` 标签描述图像，详细说明内容、风格和上下文。
+*   **签名检测与隔离：** 在 `<signature>` 标签内识别和隔离签名。
+*   **水印提取：** 将水印文本检测并提取到 `<watermark>` 标签中。
+*   **智能复选框处理：** 将复选框和单选按钮转换为标准化的 Unicode 符号 (☐, ☑, ☒)。
+*   **复杂表格提取：** 提取复杂表格并将其转换为 Markdown 和 HTML。
+
+该模型可以通过 Transformers、vLLM 或 docext 使用。提供的示例代码片段演示了如何使用每种方法进行 OCR 处理，包括定义预期输出格式的提示，指定 LaTeX 用于公式，HTML 用于表格，描述用于没有标题的图像，以及用于水印和页码的特殊标签。该模型可在 Hugging Face 上找到，包含下载统计信息、模型详细信息以及相关模型的链接。
+
+---
+
+## 10. Salesforce研究发现，LLM Agent未能通过CRM和保密性测试
+
+**原文标题**: Salesforce study finds LLM agents flunk CRM and confidentiality tests
+
+**原文链接**: [https://www.theregister.com/2025/06/16/salesforce_llm_agents_benchmark/](https://www.theregister.com/2025/06/16/salesforce_llm_agents_benchmark/)
+
+Salesforce研究显示：基于LLM的AI代理在关键CRM任务中表现不佳，且未能充分保护机密信息。研究人员开发了一种新基准CRMArena-Pro，利用合成数据评估这些代理在模拟Salesforce环境中的能力。
+
+该研究发现，LLM代理在简单的单步任务中的成功率仅为58%，而对于需要多个步骤的任务，成功率降至35%。一个主要担忧是代理的保密意识低下，这可能会在尝试通过提示来提高任务性能时影响任务表现。
+
+Salesforce AI研究团队认为，现有的基准不足以衡量AI代理的实际能力和局限性，尤其是在数据敏感性和处理方面。这些发现引起了LLM驱动代理的开发者和用户的担忧，特别是考虑到Salesforce期望通过AI驱动的效率提升为客户带来高利润机会。英国政府计划到2029年通过采用AI代理节省数十亿英镑的计划也受到质疑，表明各组织在严重依赖这些代理之前应保持谨慎。该研究强调，需要进一步开发和改进LLM代理，以满足实际企业场景的需求。
 
 ---
 
@@ -182,91 +168,92 @@
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
-| 2 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 1 | [2025-06-16](output/hacker_news_summary_2025-06-16.md) |
+| 2 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
 | 3 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
-| 4 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
-| 5 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
-| 6 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
-| 7 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
-| 8 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 9 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 10 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 11 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 12 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 13 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 14 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 4 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 5 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
+| 6 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 7 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
+| 8 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 9 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
+| 10 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
+| 11 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 12 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 13 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
+| 14 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
 | 15 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 16 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 17 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 18 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 19 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 20 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 16 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 17 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 18 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 19 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 20 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
 | 21 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 22 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 23 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 24 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 25 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 26 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 22 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 23 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 24 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 25 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 26 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
 | 27 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 28 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 29 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 28 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 29 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
 | 30 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 31 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 32 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 31 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 32 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
 | 33 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 34 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 34 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
 | 35 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 36 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 37 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 38 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 39 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 40 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 41 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 42 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 36 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 37 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 38 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 39 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 40 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 41 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 42 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
 | 43 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 44 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 45 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 44 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 45 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
 | 46 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 47 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 48 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 49 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 50 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 51 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 52 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 53 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 54 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 55 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 56 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 57 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 47 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 48 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
+| 49 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 50 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 51 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 52 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 53 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 54 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 55 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 56 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 57 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 58 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 59 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 60 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 61 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 62 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 63 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 64 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 59 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 60 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 61 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 62 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 63 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 64 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
 | 65 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 66 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 67 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 68 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 69 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 70 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 71 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 72 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 73 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 74 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 75 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 76 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 77 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 78 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 79 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 80 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 81 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 82 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 83 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 84 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 85 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 86 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 87 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 88 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 66 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 67 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 68 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 69 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 70 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 71 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 72 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 73 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 74 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 75 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 76 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 77 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 78 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 79 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 80 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 81 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 82 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 83 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 84 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 85 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 86 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 87 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 88 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 89 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
