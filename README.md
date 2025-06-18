@@ -1,149 +1,150 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-17.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-18.md)
 
-*最后自动更新时间: 2025-06-17 17:50:56*
-## 1. 本田成功进行实验性可重复使用火箭的发射和着陆
+*最后自动更新时间: 2025-06-18 17:52:15*
+## 1. Show HN: Workout.cool – 开源健身指导平台
 
-**原文标题**: Honda Conducts Successful Launch and Landing of Experimental Reusable Rocket
+**原文标题**: Show HN: Workout.cool – Open-source fitness coaching platform
 
-**原文链接**: [https://global.honda/en/topics/2025/c_2025-06-17ceng.html](https://global.honda/en/topics/2025/c_2025-06-17ceng.html)
+**原文链接**: [https://github.com/Snouzy/workout-cool](https://github.com/Snouzy/workout-cool)
 
-本田于2025年6月17日在日本北海道大树町成功进行了实验性可重复使用火箭的发射和着陆测试。这是本田首次在火箭达到300米高度后成功着陆。该测试旨在验证火箭可重复使用的关键技术，包括飞行稳定性和着陆能力。火箭飞行56.6秒后，到达271.4米的高度，并在距离目标着陆点37厘米的范围内着陆。
+Workout.cool 是一个全新的开源健身教练平台，脱胎于被废弃的 workout.lol 项目。由于目睹该项目因视频版权问题失败，并被新所有者放弃，原开发者决定重建并改进这一理念。
 
-本田的火箭研究源于这样一种信念：它可以通过发射卫星为各种与本田其他业务兼容的服务提供支持，从而利用其核心技术为人们的日常生活做出贡献。该公司设想将卫星用于遥感、互联移动的广域通信以及其他应用。
+Workout.cool 提供全面的锻炼计划创建、进度跟踪以及包含详细说明和视频演示的庞大练习数据库。它强调社区参与，旨在为健身爱好者提供可靠且现代的替代方案。
 
-安全是重中之重，设有半径1公里的限制区域、安保人员以及防止偏离飞行路径的安全系统。
+该平台使用 Next.js 构建，并遵循 Feature-Sliced Design 原则，从而提高模块化和可维护性。该架构围绕特性、实体和共享组件构建。
 
-虽然仍处于基础研究阶段，没有商业化计划，但本田的目标是在2029年前实现亚轨道发射能力。本田全球CEO三部敏宏强调了公司致力于解决环境和安全问题，并通过技术创新创造新价值，以改善人们的生活。
+主要功能包括练习数据库导入（来自 CSV）、使用 Docker 或手动 PostgreSQL 设置的快速入门说明，以及包含添加新练习、开发移动应用程序、实施游戏化、高级统计、可穿戴设备集成、多语言支持、OAuth 身份验证和社区论坛的路线图。
 
----
-
-## 2. 我们正在扩展 Gemini 2.5 系列模型。
-
-**原文标题**: We're expanding our Gemini 2.5 family of models
-
-**原文链接**: [https://blog.google/products/gemini/gemini-2-5-model-family-expands/](https://blog.google/products/gemini/gemini-2-5-model-family-expands/)
-
-本文宣布扩展谷歌Gemini 2.5模型系列，重点在于提高性能、成本效益和速度。主要公告包括：
-
-*   **Gemini 2.5 Flash和Pro全面上线：** 这些模型的稳定版本现已可用于生产环境，并融入了开发者和组织在生产中使用后的反馈。
-*   **推出Gemini 2.5 Flash-Lite（预览版）：** 这款新模型是2.5系列中成本效益最高、速度最快的，专为翻译和分类等大批量、对延迟敏感的任务而设计。与2.0 Flash-Lite相比，它在各种基准测试中都展现出更高的质量。
-*   **Gemini 2.5 Flash-Lite的功能：** 尽管侧重于速度和成本，Flash-Lite仍保留了Gemini 2.5的关键功能，如可调节的思考预算、工具集成（Google 搜索、代码执行）、多模态输入以及100万token的上下文长度。
-*   **可用性：** Gemini 2.5 Flash-Lite的预览版已在Google AI Studio和Vertex AI中提供，同时提供Flash和Pro的稳定版本。Flash和Pro也可在Gemini应用中访问。Flash-Lite和Flash的自定义版本也已在Google搜索中实现。
-
-本文强调，Gemini 2.5系列旨在平衡性能、成本和速度，并鼓励开发者探索新模型并提供反馈。
+该项目欢迎贡献，并提供详细的开发说明。它采用 MIT 许可证。作者正在积极寻求社区支持，包括错误报告、功能请求、代码贡献和赞助，以帮助支付托管费用和进一步开发。最终目标是创建一个由社区为社区服务的繁荣的开源健身平台。
 
 ---
 
-## 3. O3专业版
+## 2. 同态加密的CRDT
 
-**原文标题**: O3 Turns Pro
+**原文标题**: Homomorphically Encrypting CRDTs
 
-**原文链接**: [https://thezvi.substack.com/p/o3-turns-pro](https://thezvi.substack.com/p/o3-turns-pro)
+**原文链接**: [https://jakelazaroff.com/words/homomorphically-encrypted-crdts/](https://jakelazaroff.com/words/homomorphically-encrypted-crdts/)
 
-无法访问文章链接。
+本文探讨了同态加密（HE）在解决本地优先软件中的隐私问题方面的应用，特别是当使用CRDT进行协同文档编辑时。传统的端到端加密阻止同步服务器合并更新，要求用户同时在线。HE提供了一种解决方案，它允许服务器在不解密的情况下对加密数据执行计算（如合并CRDT更新）。
 
----
+本文介绍了HE的概念，解释了它允许对加密数据进行数学运算，从而产生与对明文执行相同运算等效的加密结果。它根据支持的运算（加法和乘法）以及由于“噪声”对其使用的限制，区分了部分同态加密、某种程度上同态加密、分级同态加密和全同态加密。本文使用TFHE-rs（一个Rust HE库）来演示如何添加加密数字。它还解释了布尔电路（使用AND和XOR逻辑门）如何实现对加密数据的复杂计算。
 
-## 4. Windows 10 停止服务
-
-**原文标题**: Windows 10 EOL
-
-**原文链接**: [https://solhsa.com/oldernews2025.html#WINDOWS-10-EOL](https://solhsa.com/oldernews2025.html#WINDOWS-10-EOL)
-
-这篇博文讨论了作者应对2025年即将到来的Windows 10停止支持（EOL）的经历，以及为其家人升级或更换多台电脑和笔记本电脑的过程。作者批评了微软的决定，认为这造成了浪费，因为性能完全足够的硬件变得过时。他们详细描述了对其儿子的电脑（BIOS调整以支持Win11）、妻子的电脑（因老化和损坏而更换）以及他们自己的电脑（升级到Ryzen 9900x 12核系统）的升级过程。
-
-作者还分享了他们在旧系统上安装Windows 11用于音频制作和迁移软件（包括一份合法但不受支持的Photoshop CS5拷贝）的经验。他们还详细介绍了用翻新的ThinkPad替换岳母的笔记本电脑，并在剩余的笔记本电脑上安装Linux (Ubuntu) 的过程，在此过程中遇到了各种硬件兼容性和软件问题，尤其是在屏幕捕获和CLion方面。
-
-这篇博文还包含文件格式设计指南，涵盖了诸如检查现有格式、人类可读性、分块二进制文件、部分解析、版本控制、文档编写、避免不必要的字段、考虑目标硬件、压缩和文件名扩展名等方面。
-
-最后，作者提到了他们最近回归ZX Spectrum编程的经历，详细介绍了为Comp.Sys.Sinclair Crap Games竞赛开发的一款钓鱼游戏（“深海捕鱼”）。他们分享了最初的设计文档，以及他们创建素材和编写游戏代码的过程，并使用了自定义工具进行图像转换。
+最后，本文开始构建一个同态加密的后写胜出注册CRDT，展示了未加密版本的结构和加密版本的框架，突出了使用来自TFHE-rs库的加密数据类型（FheUint64、FheUint8）。它强调，数据的大小需要静态地知道，这是由于HE的工作方式所造成的限制。
 
 ---
 
-## 5. AMD Zen架构前互连：Trinity北桥测试
+## 3. 模糊测试在程序移植中的惊人有效性
 
-**原文标题**: AMD's Pre-Zen Interconnect: Testing Trinity's Northbridge
+**原文标题**: The Unreasonable Effectiveness of Fuzzing for Porting Programs
 
-**原文链接**: [https://chipsandcheese.com/p/amds-pre-zen-interconnect-testing](https://chipsandcheese.com/p/amds-pre-zen-interconnect-testing)
+**原文链接**: [https://rjp.io/blog/2025-06-17-unreasonable-effectiveness-of-fuzzing](https://rjp.io/blog/2025-06-17-unreasonable-effectiveness-of-fuzzing)
 
-本文深入探讨了AMD 2012年推出的“Trinity” APU（加速处理器）的架构，重点关注其互连设计，这与现代的Infinity Fabric有显著不同。“Trinity”集成了CPU和GPU，但它们的通信并不像现在这样无缝。
+本文探讨了使用大型语言模型（LLM）自动将 C 代码移植到 Rust 的方法，以解决维护背负技术债务的大型复杂库的难题。作者认为，LLM 可以执行彻底的更新，例如移植语言，而这些更新以前由于成本和破坏现有功能的风险而不可行。
 
-本文重点介绍了iGPU使用的两个关键链接：“Garlic”链接（Radeon 内存总线）和“Onion”链接（Fusion 控制链接）。“Garlic”允许 GPU 通过绕过 CPU 的内存控制器 (MCT) 和缓存一致性机制来饱和 DRAM 带宽，这对于 CPU 和 GPU 通常不共享数据的 GPU 密集型任务非常有效。但是，这种绕过意味着 GPU 无法直接访问 CPU 缓存中最新的数据。“Onion”链接允许 GPU 通过 MCT 访问具有缓存一致性的 CPU 分配的内存，但带宽却大大降低。
+作者详细介绍了使用 Claude 等编码代理的经验，强调了它们在被赋予具体目标和强大的测试用例时解决微妙问题的能力。核心思想是通过比较 C 和 Rust 实现的输出来约束 LLM，并使用模糊测试来识别差异。
 
-作者发现，虽然“Garlic”链接为图形工作负载提供了高带宽，但 CPU 访问 GPU 内存会受到惩罚。 从 CPU 访问 GPU 内存需要禁用缓存，从而导致带宽降低和延迟增加。 在实践中，“Trinity”互连在图形工作负载方面表现良好，iGPU 有效地利用了“Garlic”链接，而不会显着影响 CPU 内存延迟。 然而，本文指出，“Trinity”的互连当时不如英特尔集成得好。 AMD 后来的 Infinity Fabric 通过为 CPU 和 GPU 提供统一的、一致的内存访问路径，解决了这些问题。
+本文概述了移植 Zopfli 压缩库的三次尝试。前两次是半手动的，揭示了与 C 版本直接比较的重要性以及自动化的必要性。成功的“真正”尝试包括：1) 以拓扑顺序对符号进行排序。2) 生成 FFI 条目和 Rust 实现。3) 创建比较 C 和 Rust 输出的模糊测试。4) 迭代修复差异，直到模糊测试通过。
 
----
-
-## 6. 旅行者：在您的手机上实时溅射城市规模的3D高斯函数
-
-**原文标题**: Voyager: Real-Time Splatting City-Scale 3D Gaussians on Your Phone
-
-**原文链接**: [https://arxiv.org/abs/2506.02774](https://arxiv.org/abs/2506.02774)
-
-航海家：在您的手机上实时喷溅城市级3D高斯分布
-本文题为“航海家：在您的手机上实时喷溅城市级3D高斯分布”，旨在解决在资源有限的移动设备上渲染大规模3D高斯溅射(3DGS)场景的挑战。作者承认，虽然云渲染是一种解决方案，但直接流式传输渲染帧会导致高延迟和带宽需求。
-
-航海家提出了一种新颖的方法，该方法利用了在典型用户移动过程中，新可见高斯分布的数量保持相对恒定的观察结果。该系统专注于仅将必要的高斯分布流式传输到移动客户端。
-
-云端采用异步细节层次搜索来有效地识别这些必要的高斯分布。在客户端，使用基于查找表的栅格化技术来加速渲染。通过这些创新，以及整体运行时优化，航海家能够在智能手机上实现低延迟、城市级3DGS渲染。
-
-该论文声称显著减少了数据传输，与现有解决方案相比，实现了超过100倍的改进。此外，航海家在保持可比视觉质量的同时，提供了高达8.9倍的渲染性能加速。因此，这项工作为在移动设备上渲染复杂的3D场景提供了一种可行的解决方案，而无需显著的延迟或带宽限制。
+作者强调了这种方法的简单性和直接性，并将其与 Syzygy 等更复杂的方法进行了对比。通过利用模糊测试，LLM 被迫找到真正的解决方案，从而产生更健壮和准确的移植。文章总结说，这种自动化方法大大降低了移植的成本，使以前不可行的重构成为可能。
 
 ---
 
-## 7. 我们应该为不稳定的网络设计吗？
+## 4. "poline"：一个使用极坐标的神秘调色板生成器
 
-**原文标题**: Should we design for iffy internet?
+**原文标题**: "poline" is an enigmatic color palette generator using polar coordinates
 
-**原文链接**: [https://bytes.zone/posts/should-we-design-for-iffy-internet/](https://bytes.zone/posts/should-we-design-for-iffy-internet/)
+**原文链接**: [https://meodai.github.io/poline/](https://meodai.github.io/poline/)
 
-布莱恩·希克斯的文章《我们应该为不稳定的网络设计吗？》探讨了截至2025年美国不太理想的网络连接的普遍性及其对软件设计的影响。希克斯认为，虽然绝大多数（约97%）美国家庭都能上网，但假设拥有高速网络（高于25Mbps下载/3Mbps上传）是不明智的，尤其是对于B2C软件。
-
-他使用来自 FCC 和 NCES 的数据来说明宽带接入的差异，尤其是在城市和农村地区之间。 FCC 宽带地图显示，高速互联网 (250/25Mbps) 在农村地区的可用性明显较低。 NCES 2021 年的数据表明，虽然学生的互联网接入正在增加，但仍有大量学生（尤其是来自低收入家庭的学生）仍然缺乏可靠的接入或仅依赖移动连接。
-
-希克斯强调了考虑使用缓慢、按流量计费或限额的互联网连接的用户的重要性。 他建议考虑“飞机 WiFi”体验（高延迟、低速度）以及 4G (5/1Mbps) 和 3G 的局限性。 虽然这篇文章以美国为中心，但它强调不可靠的互联网问题是真实存在的，并且应该是软件设计中的一个关键因素，以避免排除相当一部分用户群。
+Poline：一个使用极坐标生成调色板的 TypeScript 微型库。它名称源于 "polar"（极坐标）和 "line"（线）的组合，代表其核心功能：在极坐标空间中的锚点之间绘制线条以创建颜色变化。用户定义锚点，这些锚点作为调色板每个段的起始和结束颜色。每个锚点对之间生成的颜色数量由指定的点数决定。本质上，“Poline”通过在极坐标系中沿锚颜色之间的线进行插值来创建平滑的颜色渐变，颜色的密度由生成的点数控制。位置函数确定生成点的确切位置。总之，Poline 是一种利用极坐标和线性插值来生成多样化调色板的工具，它可以控制锚点颜色、渐变平滑度（通过点数）和点定位。
 
 ---
 
-## 8. Cmapv2：一个高性能的并发映射
+## 5. Show HN: 我用 C++/CUDA 从零开始构建了一个张量库
 
-**原文标题**: Cmapv2: A high performance, concurrent map
+**原文标题**: Show HN: I built a tensor library from scratch in C++/CUDA
 
-**原文链接**: [https://github.com/sirgallo/cmapv2](https://github.com/sirgallo/cmapv2)
+**原文链接**: [https://github.com/nirw4nna/dsc](https://github.com/nirw4nna/dsc)
 
-`cmapv2` 是一个 Go 语言库，提供高性能的并发 Map 实现。可以使用 `go get github.com/sirgallo/cmapv2` 和 `go mod tidy` 进行安装。 该库提供了两种初始化并发 Map 的方式：`cmap.NewMap()` 创建一个标准的并发 Map，而 `cmap.NewMap(numShards)` 创建一个分片并发 Map，从而实现更细粒度的并发控制。
-
-其核心功能包括 `Put(key, value)` 用于插入键值对（其中键和值是字节切片），`Get(key)` 用于检索值，以及 `Delete(key)` 用于删除条目。该库提供了 `CMap` 指代并发 Map 本身，以及与所使用的哈希算法相关的 `Murmur`。
-
-该软件包包含全面的测试，可通过 `go test -v ./tests` 访问。 也支持使用带有 CPU 和内存分析工具的基准测试进行性能分析。 这使开发人员能够彻底评估该库的性能特征。
+DSC：一个全新的机器学习张量库和推理框架
 
 ---
 
-## 9. 富士X半格：它是完美的家庭相机吗？
+## 6. 使用流式SQL查询构建代理
 
-**原文标题**: Fujifilm X half: Is it the perfect family camera?
+**原文标题**: Building agents using streaming SQL queries
 
-**原文链接**: [https://arslan.io/2025/06/14/fujifilm-x-half-is-it-the-perfect-family-camera/](https://arslan.io/2025/06/14/fujifilm-x-half-is-it-the-perfect-family-camera/)
+**原文链接**: [https://www.morling.dev/blog/this-ai-agent-should-have-been-sql-query/](https://www.morling.dev/blog/this-ai-agent-should-have-been-sql-query/)
 
-作者评测富士X half：或为家庭相机之选
+本文对比了传统的拉取式SQL查询与流式SQL查询。传统的SQL查询按需执行，扫描整个数据集并返回完整的结果集。相反，流式SQL查询持续且增量式地运行。它们在数据发生变化时处理数据，仅用受影响的记录更新查询结果，并将这些增量推送给客户端。这种“推送式”方法意味着流式SQL查询避免了为每个更改重新处理整个数据集，使其对于数据不断演变的实时或近实时应用程序而言更加高效。关键的区别在于数据处理方式：按需检索与持续、增量更新。流式SQL更适合需要对数据变化做出立即反应的应用程序。
 
 ---
 
-## 10. 基于CPU的拣货员到货位托盘仓库布局设计
+## 7. Attimet (YC F24) – 量化交易研究实验室 – 招聘创始工程师
 
-**原文标题**: CPU-Based Layout Design for Picker-to-Parts Pallet Warehouses
+**原文标题**: Attimet (YC F24) – Quant Trading Research Lab – Is Hiring Founding Engineer
 
-**原文链接**: [https://arxiv.org/abs/2506.04266](https://arxiv.org/abs/2506.04266)
+**原文链接**: [https://www.ycombinator.com/companies/attimet/jobs/b1w9pjE-founding-engineer](https://www.ycombinator.com/companies/attimet/jobs/b1w9pjE-founding-engineer)
 
-这篇 arXiv 提交 (arXiv:2506.04266) 提出了一种新型拣货员到货位托盘仓库的布局设计，旨在提高效率并减少劳动力需求。作者 Timo Looms 和 Lin Xie 提出了一种基于 CPU 的布局，灵感来自计算机处理单元架构。
+Attimet (YC F24)是一家位于旧金山的量化交易研究实验室，正在寻找一名创始工程师加入其团队。他们正在建立一个研究实验室，利用数据驱动系统和机器学习来改进传统的、基于直觉的交易方法，以测试金融市场（特别是期权）中的想法。
 
-其核心概念是将仓库划分为专门的区域：性能 (P)、效率 (E) 和共享 (S)。这种划分旨在优化特定的仓储任务，从而提高整体性能。
+该职位涉及从头开始构建数据摄取、模型训练、策略模拟和实时执行的核心系统。工程师还将设计基础设施以加速研究，包括特征存储、实验跟踪和反馈循环。他们将与创始人紧密合作，在实际市场中测试预测。
 
-该研究采用离散事件仿真来评估基于 CPU 布局的有效性。该布局与传统仓库布局进行基准测试，包括使用随机和 ABC 存储策略的矩形布局，以及 Flying-V 布局。
+Attimet 正在寻找具有构建分布式计算或 ML 管道等实际系统经验，并且精通 Python、C++、Rust 和云技术的人才。他们重视迭代速度、清晰的抽象和强大的系统设计。不需要事先的金融经验，但好奇心和解决复杂问题的意愿至关重要。
 
-仿真结果表明，与传统仓库布局相比，基于 CPU 的布局在吞吐时间和劳动力需求方面均有显著改善。这表明基于 CPU 的设计具有大幅优化仓库运营的潜力。该论文共 8 页，包含 6 个图，旨在用于会议展示。它属于多智能体系统 (cs.MA) 领域。
+该公司强调快节奏、所有权驱动的环境，尽量减少繁文缛节。该职位提供 10 万美元至 15 万美元的薪水，以及 0.25% 至 1.00% 的股权。这是一个全职职位，面向美国公民或签证持有者开放，包括应届毕业生。Attimet 的目标是构建一个在流动性市场中进行实验的平台，弥合理论研究和实际应用之间的差距。
+
+---
+
+## 8. Terpstra 键盘
+
+**原文标题**: Terpstra Keyboard
+
+**原文链接**: [http://terpstrakeyboard.com/web-app/keys.htm](http://terpstrakeyboard.com/web-app/keys.htm)
+
+本文介绍了Terpstra键盘WebApp，它是对20世纪80年代末设计的实体Terpstra键盘的数字化再现。该Web应用程序最初由James Fenn开发，随后由Brandon Lewis、Bo Constantinsen和陈谷望改进和修改。Scott Thompson和Ozan Yarman博士提供了样本。当前版本1.5.2的时间跨度为2015年1月至2019年5月。该WebApp以GPL-3.0许可发布，属于自由/开放源码软件，欢迎用户通过GitHub下载、派生、贡献和改进该项目。
+
+---
+
+## 9. Framework Laptop 12 评测
+
+**原文标题**: Framework Laptop 12 review
+
+**原文链接**: [https://arstechnica.com/gadgets/2025/06/framework-laptop-12-review-im-excited-to-see-what-the-2nd-generation-looks-like/](https://arstechnica.com/gadgets/2025/06/framework-laptop-12-review-im-excited-to-see-what-the-2nd-generation-looks-like/)
+
+评测：Framework Laptop 12
+
+本次评测考察了 Framework Laptop 12，这是 Framework 最新推出的模块化、可维修笔记本电脑。Laptop 12 以其色彩鲜艳的塑料外壳脱颖而出，提供了比其金属前代产品更平易近人的设计。它保留了 Framework 的标志性功能，例如通过扩展卡自定义端口、易于拆卸和 Linux 支持。
+
+该评测称赞了 Laptop 12 的设计和坚固的结构，但也指出了一些缺点。12.2 英寸触摸屏虽然亮度很高，但边框很厚，色域平庸。键盘缺少背光灯和指纹传感器，这对于它的价格来说是一个重大的疏忽。虽然维修和升级相对容易，但该笔记本电脑使用单个 RAM 插槽，限制了内存带宽和容量。
+
+得益于其第 13 代英特尔酷睿处理器，性能足以满足基本计算需求，但在要求苛刻的任务和游戏中落后于较新的芯片。单个 RAM 插槽会影响 GPU 性能。电池续航能力尚可，在测试中持续约 10 小时。
+
+主要的批评集中在价格上。尽管 Laptop 12 的定位是更实惠的选择，但其价格与 MacBook Air、Surface Laptop 甚至 Framework Laptop 13 大致相同，同时提供了不太完善的用户体验。评测人员得出结论，虽然 Laptop 12 很有吸引力，但其成本削减妥协和相当的价格使其不如竞争对手那样具有吸引力。
+
+---
+
+## 10. 为人工智能编写文档：最佳实践
+
+**原文标题**: Writing documentation for AI: best practices
+
+**原文链接**: [https://docs.kapa.ai/improving/writing-best-practices](https://docs.kapa.ai/improving/writing-best-practices)
+
+本文概述了编写对人类读者和AI/LLM都有效的文档的最佳实践，尤其是在Kapa等检索增强生成 (RAG) 系统中。高质量的文档至关重要，因为它直接影响 AI 回复的质量；糟糕的文档会导致糟糕的 AI 答案。
+
+本文详细介绍了 AI 系统如何处理文档：摄取、查询处理、检索和答案生成。它强调 AI 系统处理的是文本块，依赖于内容匹配，可能会遗漏隐含的联系，并且无法推断未说明的信息。因此，文档应明确、自包含且上下文完整。
+
+主要建议包括：
+
+*   **使用标准化的语义 HTML**: 确保正确使用 HTML 元素以获得清晰的结构。
+*   **首选 HTML 或 Markdown 而不是 PDF**: 简化机器解析。
+*   **创建对爬虫友好的内容**: 尽量减少复杂的 UI 元素和 JavaScript。
+*   **确保语义清晰**: 使用描述性标题和有意义的 URL。
+*   **为视觉内容提供文本等效内容**: 包括图表和屏幕截图的文本描述。
+*   **保持布局简单**: 避免依赖视觉定位的布局。
+
+本文还讨论了内容设计挑战，强调了将相关信息放在一起以避免上下文依赖的重要性、使用一致的术语以提高语义可发现性、明确说明假设以避免隐含的知识差距以及提供基于文本的视觉信息替代方案。最后，它建议避免依赖布局或表格结构的信息。通过实施这些实践，文档可以显著提高 AI 的准确性和可用性。
 
 ---
 
@@ -151,93 +152,94 @@
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-17](output/hacker_news_summary_2025-06-17.md) |
+| 1 | [2025-06-18](output/hacker_news_summary_2025-06-18.md) |
 | 2 | [2025-06-16](output/hacker_news_summary_2025-06-16.md) |
-| 3 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
-| 4 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
-| 5 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
-| 6 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
-| 7 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
-| 8 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
-| 9 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 3 | [2025-06-17](output/hacker_news_summary_2025-06-17.md) |
+| 4 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
+| 5 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
+| 6 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 7 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
+| 8 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 9 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
 | 10 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 11 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 12 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 11 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
+| 12 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
 | 13 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 14 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 15 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 16 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 14 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 15 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
+| 16 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
 | 17 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 18 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 19 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 20 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 21 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 18 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 19 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 20 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 21 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
 | 22 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 23 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 24 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 23 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
+| 24 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
 | 25 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
-| 26 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 27 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 28 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 26 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
+| 27 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 28 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
 | 29 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 30 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 31 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 30 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 31 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
 | 32 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 33 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 34 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 33 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 34 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
 | 35 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 36 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 36 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
 | 37 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 38 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 39 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 38 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 39 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
 | 40 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 41 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 42 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 43 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 44 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 41 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 42 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 43 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 44 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
 | 45 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 46 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 47 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 46 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 47 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
 | 48 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 49 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 50 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 49 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 50 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
 | 51 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 52 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 53 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 52 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 53 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
 | 54 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 55 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 56 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 57 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 58 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 59 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 55 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 56 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 57 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 58 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 59 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 60 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 61 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 62 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 63 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 64 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 65 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 66 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 67 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 68 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 69 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 61 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 62 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 63 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
+| 64 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
+| 65 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 66 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 67 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 68 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 69 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
 | 70 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
 | 71 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 72 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 72 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
 | 73 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
 | 74 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
 | 75 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 76 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 77 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 78 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 79 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 80 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 81 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 82 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 83 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 84 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 85 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 86 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 87 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 88 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 89 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 76 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 77 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 78 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 79 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 80 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 81 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 82 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 83 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 84 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 85 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 86 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 87 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 88 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 89 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
 | 90 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 91 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
