@@ -1,167 +1,149 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-23.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-06-24.md)
 
-*最后自动更新时间: 2025-06-23 17:52:02*
-## 1. 让 TRAMP 嗡嗡作响
+*最后自动更新时间: 2025-06-24 17:50:54*
+## 1. 编写玩具软件是一种乐趣
 
-**原文标题**: Making TRAMP go Brrrr
+**原文标题**: Writing toy software is a joy
 
-**原文链接**: [https://coredumped.dev/2025/06/18/making-tramp-go-brrrr./](https://coredumped.dev/2025/06/18/making-tramp-go-brrrr./)
+**原文链接**: [https://blog.jsbarretto.com/post/software-is-joy](https://blog.jsbarretto.com/post/software-is-joy)
 
-本文详细介绍了如何优化Emacs中的TRAMP (透明远程访问，多协议) 以实现更快的远程开发。TRAMP虽然强大，但由于网络延迟可能会很慢。
+约书亚·巴雷托的文章倡导创建“玩具程序”，认为这对软件开发者来说是一项有价值且能带来乐趣的学习活动。他认为，尽管人工智能兴起和软件开发日益商品化，但构建简化的个人项目，以重新发现编码的乐趣并加深理解，仍具有巨大的益处。
 
-作者建议了几种配置调整来提高性能：
+其核心原则是“创造以理解”，强调构建自己简陋的复杂系统版本（例如正则表达式引擎或操作系统内核）比单纯地研究它们能提供更深刻的见解。这些玩具程序旨在遵循80/20法则，专注于核心功能，同时积极避免过度设计。
 
-*   **基本设置：** 禁用锁，使用直接SCP进行文件传输，并禁止自动保存。
-*   **内联与带外文件复制：** 增加`tramp-copy-size-limit`到2MB左右，因为即使在较慢的连接上，内联复制（使用压缩的、base64编码的文本）通常对较小的文件更快，从而抵消了建立新连接进行带外传输的开销。
-*   **直接异步进程：** 启用`tramp-direct-async-process`可显著加速异步进程，从而提高像Magit这样的包的性能。
-*   **修复远程编译：** 重新启用SSH连接共享，用于编译命令，因为它通常会禁用它。
-*   **调试：** 使用内置的Emacs性能分析器和`debug-on-entry`在`tramp-send-command`上，以识别由特定包或命令引起的性能瓶颈。
+除了固有的学习之外，作者还强调了意想不到的实际好处，即从这些项目中获得的知识经常在专业环境中证明是有价值的。他提供了一份建议的玩具程序清单，按难度和时间投入进行分级，范围从简单的正则表达式引擎到更具雄心的编译器或操作系统内核。这些建议涵盖了各种领域，包括模拟器、游戏开发、解释器和图形渲染。
 
-文章随后重点介绍了优化Magit：
-
-*   使用`magit-dispatch`和`magit-file-dispatch`以避免缓慢的状态缓冲区刷新。
-*   考虑直接使用shell命令进行简单的Git操作。
-*   禁用不必要的Magit功能，如自动还原、提交缓冲区中的diff、自动状态缓冲区刷新。
-
-它还建议禁用TRAMP上的LSP (语言服务器协议)，因为它存在性能问题，并提供`lsp-bridge`作为替代方案（尽管未经测试）。
-
-最后，作者介绍了一个`memoize-remote`函数来缓存频繁访问的远程信息，从而减少冗余的TRAMP调用。
-
-作者打算进一步探索对TRAMP本身进行更重大的更改，以解决根本的性能限制。
+巴雷托告诫不要依赖大型语言模型来完成这些项目，而是提倡亲身探索和发现。他强调，学习的乐趣在于克服挑战和开发独特的解决方案，而不是仅仅接收预先打包的答案。文章最后呼吁拥抱焦油坑，承认潜在的挫折，但强调了从头开始构建和理解某些东西所带来的令人欣慰的“跑步者高峰”体验。
 
 ---
 
-## 2. 京都后院咖啡与爵士
+## 2. 在Power Mac G3 ROM中发现一个27年前的彩蛋
 
-**原文标题**: Backyard Coffee and Jazz in Kyoto
+**原文标题**: Finding a 27-year-old easter egg in the Power Mac G3 ROM
 
-**原文链接**: [https://thedeletedscenes.substack.com/p/backyard-coffee-and-jazz-in-kyoto](https://thedeletedscenes.substack.com/p/backyard-coffee-and-jazz-in-kyoto)
+**原文链接**: [https://www.downtowndougbrown.com/2025/06/finding-a-27-year-old-easter-egg-in-the-power-mac-g3-rom/](https://www.downtowndougbrown.com/2025/06/finding-a-27-year-old-easter-egg-in-the-power-mac-g3-rom/)
 
-无法访问文章链接。
+道格·布朗详细描述了他对 Power Mac G3 ROM 中一个先前未被记录的彩蛋的发现。在使用 Hex Fiend 和 Eric Harmon 的 ROM Fiend 模板检查 ROM 时，他发现了 Apple 员工的 JPEG 图像（资源类型为 HPOE）以及 SCSI Manager 4.3 代码中的 Pascal 字符串（nitt 资源 ID 为 43），特别是“.Edisk”和“secret ROM image”。
 
----
+由于对“secret ROM image”文本和隐藏图片之间的联系感兴趣，道格使用 Ghidra 反汇编了代码。他发现代码会检查名为“secret ROM image”的 RAM 磁盘。如果找到，它会从 HPOE 资源加载 JPEG 图像数据，并在 RAM 磁盘中创建一个名为“The Team”的文件，类型为 JPEG。
 
-## 3. Rocknix是一款用于掌上游戏设备且不可变的Linux发行版。
+与 Libera 上 #mac68k 的 ^alex 合作，他们发现，在格式化过程中格式化 RAM 磁盘并将卷命名为“secret ROM image”会触发这个彩蛋。用这个名称格式化 RAM 磁盘后，一个名为“The Team”的文件会出现在 RAM 磁盘中，打开时会包含 JPEG 图像。
 
-**原文标题**: Rocknix is an immutable Linux distribution for handheld gaming devices
-
-**原文链接**: [https://rocknix.org/](https://rocknix.org/)
-
-ROCKNIX 是一款为掌上游戏设备设计的不可变 Linux 发行版，专注于复古游戏模拟。由爱好者开发，旨在提供一个功能丰富且令人愉悦的操作系统，并采纳社区意见。
-
-主要功能包括：集成网络游戏（本地和远程），游戏内触摸支持，电池续航和性能的精细控制，媒体播放支持（音乐和视频），蓝牙音频和控制器支持，HDMI 和 USB 音频/视频输出支持，通过 Syncthing 和 rclone 实现的设备间和云同步，VPN 支持（Wireguard、Tailscale、ZeroTier），以及内置的抓取和 RetroAchievements 支持。
-
-ROCKNIX 社区主要通过 Discord 进行互动。该发行版基于在各自条款下获得许可的开源组件构建，其中一些组件仅供非商业用途。ROCKNIX 品牌以 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 获得许可。ROCKNIX 团队的原创软件和脚本以 GNU GPL Version 2 获得许可。
-
-该项目承认其依赖于更广泛的开源社区的贡献，特别是 CoreELEC 和 LibreELEC。
+该彩蛋适用于高达 Mac OS 9.0.4 的版本，可能在 9.1 中被禁用。布朗认为这是史蒂夫·乔布斯据报道禁止彩蛋之前的最后一个彩蛋之一。他希望与“The Team”中的任何一位成员联系，他们可能还记得这个彩蛋。
 
 ---
 
-## 4. 我用我的终端
+## 3. 食品塑料含量列表
 
-**原文标题**: I Use My Terminal
+**原文标题**: PlasticList – Plastic Levels in Foods
 
-**原文链接**: [https://jyn.dev/how-i-use-my-terminal/](https://jyn.dev/how-i-use-my-terminal/)
+**原文链接**: [https://www.plasticlist.org/](https://www.plasticlist.org/)
 
-这篇文章详细介绍了作者围绕 Tmux 构建的高度定制化终端工作流，使其能够高效地管理文件、代码并在它们之间导航，主要是在远程服务器上进行。由于对编辑器卡顿和快捷键冲突感到沮丧，他们构建了一个系统，可以直接在终端中模拟 IDE 的“Ctrl+单击打开文件”功能。
+鉴于内容极其有限，“塑料清单 – 食品中的塑料含量”难以进行简明扼要的总结。但我们可以推断其可能用途并进行概括。
 
-该工作流涉及使用 Tmux 搜索回滚中的文件名，突出显示它们，然后打开选定的文件。打开文件涉及多个步骤，包括利用 Tmux 在远程服务器上的新或现有 Neovim 实例中打开文件的脚本，处理文件名/行号解析，甚至默认使用自定义脚本（一个 Perl 脚本，默认使用 Neovim 打开）打开文本文件。
+**总结:**
 
-关键组件包括用于文件名搜索的 Tmux 配置、用于在默认应用程序或带有 Neovim 的新 Tmux 窗格中打开文件的 shell 脚本以及文件关联技巧。作者承认其设置的复杂性和脆弱性，并承认除非他们愿意投入时间来理解和调试它，否则它可能不适合其他人。
-
-尽管存在一些怪癖，但作者发现该系统值得使用，理由是减少了编辑器延迟、更易于调试、一致的快捷键以及无需本地克隆即可处理远程文件的能力。虽然作者正在考虑切换到 Kitty 以改进终端仿真，但这篇文章最终认为终端功能强大且可编写脚本，从而实现令人惊讶的自定义级别。这篇文章还推荐了其他不太密集的选择（Fish + Zoxide + FZF、qf、e、vim --remote）来实现类似的结果。
+“塑料清单 – 食品中的塑料含量”可能是一种资源（文章、数据库或指南），提供关于各种食品中存在的塑料污染及其含量的信息。它可能旨在告知消费者通过食物摄入塑料的潜在来源，并可能根据食品中的塑料含量对食品进行排名或分类。 这些信息可能来源于关于食品中微塑料和纳米塑料的科学研究、研究结果或报告。该资源还可能提供关于检测到的塑料类型、其潜在健康影响以及通过饮食选择减少塑料暴露的可能缓解策略的见解。最终，“塑料清单”可能作为一种工具，提高人们的意识并使个人能够就与塑料污染相关的食品消费做出更明智的决定。
 
 ---
 
-## 5. 新的Linux udisks漏洞允许攻击者在主流Linux发行版上获取root权限
+## 4. 星舰：适用于任何 Shell 的极简、快速且可定制的提示符
 
-**原文标题**: New Linux udisks flaw lets attackers get root on major Linux distros
+**原文标题**: Starship: The minimal, fast, and customizable prompt for any shell
 
-**原文链接**: [https://www.bleepingcomputer.com/news/linux/new-linux-udisks-flaw-lets-attackers-get-root-on-major-linux-distros/](https://www.bleepingcomputer.com/news/linux/new-linux-udisks-flaw-lets-attackers-get-root-on-major-linux-distros/)
+**原文链接**: [https://starship.rs/](https://starship.rs/)
 
-本文详细介绍了影响主要Linux发行版的两个新发现的本地提权（LPE）漏洞。第一个漏洞(CVE-2025-6018)存在于openSUSE Leap 15和SUSE Linux Enterprise 15的PAM配置中，可能授予本地攻击者“allow_active”用户权限。第二个漏洞(CVE-2025-6019)存在于libblockdev中，允许“allow_active”用户通过udisks守护程序（大多数Linux系统上的默认服务）获得root权限。
-
-安全公司Qualys发现了这两个漏洞，开发了概念验证的漏洞利用程序，并演示了使用CVE-2025-6019在Ubuntu、Debian、Fedora和openSUSE Leap 15上成功实现root权限提升。本文强调了udisks漏洞的严重性，因为它广泛存在，实际上使几乎所有Linux系统都容易受到攻击，即使获得“allow_active”权限需要额外的步骤。
-
-强烈建议管理员立即应用PAM和libblockdev/udisks漏洞的可用补丁，以防止攻击者获得root访问权限，从而可能导致广泛的系统破坏。本文还指出Qualys在发现重大Linux安全漏洞方面的记录，并提到了其他最近的漏洞，如PwnKit、Looney Tunables、Sequoia和Baron Samedit。最后，文章呼吁使用自动化补丁管理解决方案。
+Starship：极简、快速、可定制的终端提示符。其主要优势在于广泛的兼容性，可跨多种Shell和操作系统运行，几乎可在任何环境中使用。关键在于其“随处可用”的原则，意味着通用且可移植的提示解决方案。
 
 ---
 
-## 6. 官员承认他们不知道伊朗铀储备的下落
+## 5. 北欧半导体收购Memfault
 
-**原文标题**: Officials Concede They Don't Know the Fate of Iran's Uranium Stockpile
+**原文标题**: Nordic Semiconductor Acquires Memfault
 
-**原文链接**: [https://www.nytimes.com/2025/06/22/us/politics/iran-uranium-stockpile-whereabouts.html](https://www.nytimes.com/2025/06/22/us/politics/iran-uranium-stockpile-whereabouts.html)
+**原文链接**: [https://www.nordicsemi.com/Nordic-news/2025/06/Nordic-Semiconductor-acquires-Memfault](https://www.nordicsemi.com/Nordic-news/2025/06/Nordic-Semiconductor-acquires-Memfault)
 
-无法访问文章链接。
+Nordic Semiconductor于2025年6月24日收购Memfault，标志着Nordic从硬件供应商向提供硬件、软件和云服务的完整解决方案合作伙伴的重要转变。Memfault是市场领先的云平台供应商，专门从事大规模互联产品部署。
 
----
+此次收购旨在简化产品开发，加速上市时间，并通过持续的软件升级和设备管理，增强互联产品的安全性、性能和功能。Nordic计划将Memfault的功能集成到其产品组合和nRF Cloud服务平台中，从而创建更强大、更有效的解决方案。
 
-## 7. 如何从汇编中存储 Go 指针
+Nordic Semiconductor首席执行官Vegard Wollan强调，此举将使客户能够与现场数百万台设备进行交互。Memfault首席执行官François Baldassari强调了为互联产品创建全栈解决方案。
 
-**原文标题**: How to store Go pointers from assembly
-
-**原文链接**: [https://mazzo.li/posts/go-asm-pointers.html](https://mazzo.li/posts/go-asm-pointers.html)
-
-本文探讨了如何从汇编代码中正确存储 Go 指针，重点关注与 Go 垃圾回收器 (GC) 的交互。由于 Go 执行并发垃圾回收，它采用写屏障来跟踪指针存储并确保准确的内存管理。写屏障会在每个指针赋值中添加代码，以告知 GC 新的引用。
-
-核心问题出现在从汇编写入内存时，因为 Go 编译器通常会自动处理写屏障的检测。本文重点介绍了一个涉及并发哈希表的场景，其中原子 128 位存储是在汇编中实现的，需要手动实现写屏障。
-
-推荐的方法是使用 `runtime.gcWriteBarrier2` 来通知 GC 指针存储。但是，直接链接到 runtime 符号受到限制，以防止依赖问题。本文提供了一个使用 `//go:linkname` 和版本约束的解决方法，通过将未来的 Go 版本列入黑名单来访问 `gcWriteBarrier2` 和 `runtimeWriteBarrier`。
-
-最后，本文解决了 Go 中分配对齐内存的相关问题（特别是 AVX 指令的 128 位对齐）。标准分配方法不能保证对齐，本文提出了一种巧妙但复杂的方法，涉及 `unsafe.Slice` 和多次分配尝试来实现所需的对齐。提供的代码尝试了不同的分配策略和偏移，以确保分配的内存是 16 字节对齐的。运行时根据 Go 的类型系统跟踪指针，而不是根据精确的来源，这使得这个技巧可行。
+预计此次收购将加强Nordic在边缘人工智能和安全解决方案方面的地位，使开发人员能够满足不断发展的行业和监管标准，例如欧盟网络弹性法案。Nordic致力于支持现有的Memfault客户，无论他们选择何种硬件，确保该平台通过对硬件集成、设备管理和人工智能功能的投资而持续发展。最终目标是缩短上市时间，降低运营成本，并改善互联产品的生命周期管理。
 
 ---
 
-## 8. 美国宇航局的旅行者号在太阳系边缘发现3万-5万开尔文的“墙”
+## 6. GPU基本知识
 
-**原文标题**: NASA's Voyager Found a 30k-50k Kelvin "Wall" at the Edge of Solar System
+**原文标题**: Basic Facts about GPUs
 
-**原文链接**: [https://www.iflscience.com/nasas-voyager-spacecraft-found-a-30000-50000-kelvin-wall-at-the-edge-of-our-solar-system-79454](https://www.iflscience.com/nasas-voyager-spacecraft-found-a-30000-50000-kelvin-wall-at-the-edge-of-our-solar-system-79454)
+**原文链接**: [https://damek.github.io/random/basic-facts-about-gpus/](https://damek.github.io/random/basic-facts-about-gpus/)
 
-美国宇航局的旅行者探测器于1977年发射，旨在探索太阳系边缘和星际介质。它们已穿越日球层顶，即太阳磁场（日球层）与星际介质相遇的边界。该边界由太阳风形成，太阳风是来自太阳的带电粒子的持续流动，推挤着星际介质。平衡点，即日球层顶，导致太阳风向后折返，从而形成日球层的“尾巴”。
+本文概述了GPU架构和优化技术的基础知识，重点介绍了NVIDIA A100 GPU。它解释了计算和内存层次结构，突出了快速计算和较慢内存访问之间的性能不平衡。
 
-旅行者1号于2012年穿越日球层顶，旅行者2号随后于2018年穿越，两者穿越的距离不同，这支持了日球层顶是动态的，会随着太阳活动而膨胀和收缩的观点。虽然不是坚固的墙，但两个探测器都在这个边界测量到极高的温度，达到30,000-50,000开尔文（54,000-90,000华氏度），导致了“火墙”一词的出现。由于粒子密度低，最大限度地减少了热传递，探测器得以幸存。
+核心概念是Roofline模型，它定义了两种性能状态：内存受限和计算受限。内存受限的操作受限于内存带宽，而计算受限的操作受限于SM的算术速度。算术强度 (AI)，即FLOPs与访问字节的比率，决定了性能状态。目标是最大化AI以实现计算受限的性能。
 
-旅行者号继续从日球层顶之外传输数据，提供了对星际介质的独特见解。一个令人惊讶的发现是，日球层顶之外的磁场与日球层内部的磁场平行，旅行者1号和2号都证实了这一发现。这些探测器代表了人类首次瞥见我们太阳系之外的空间。
+本文介绍了两种关键的优化策略：**算子融合**和**分块**。算子融合将多个内存受限的操作组合成一个内核，消除中间内存流量并减少开销。分块用于计算受限的内核，如矩阵乘法，其中线程协同工作，将数据块加载到共享内存（SRAM）中，以最大化数据重用并增加AI。分块算法包括将数据加载到共享内存、同步线程和执行计算。
 
----
-
-## 9. 铁甲骑兵：黑海地区约公元1300年的中世纪奇幻角色扮演战争游戏
-
-**原文标题**: Cataphract: Medieval-fantasy roleplaying wargame, in the Black-Sea C. 1300
-
-**原文链接**: [https://samsorensen.blot.im/cataphracts-design-diary-1](https://samsorensen.blot.im/cataphracts-design-diary-1)
-
-本文是“重骑兵”的首篇设计日志。“重骑兵”是一款异步的、通过帖子进行的、实时战争游戏，背景设定在 1300 年左右的伪黑海地区。作者的灵感来自军事历史学家布雷特·德弗罗的作品，特别是对经常被忽视的作战层面（后勤、通讯、行动）的关注，以及战略和战术。
-
-“重骑兵”强调这些作战细节，实时追踪部队的移动、信使的旅行时间和信息延迟。规则集很简单，使用六边形和基本骰子投掷，但指挥结构很复杂。五个初始派系（诺万帝国、萨卡兹亚神圣教区、兹拉尼奇公国、第三瓦尔加王国和卡尔汗国）各自从一名指挥官开始，然后可以任命下属，从而创建一个分散的指挥网络。指挥官之间的沟通仅限于信使，除非他们实际共处一地。
-
-游戏的一个关键要素是指挥官可获得的信息有限。他们只知道他们的侦察兵报告的内容以及通过信件到达的内容，从而营造出强大的“战争迷雾”。这会导致战略失误、协调失败和非理性决策。指挥官依赖于简单、可靠的计划，而不是复杂的演习，因为作战情报是最宝贵的资源。
-
-尽管存在背叛的可能性，但指挥官往往忠于他们的上级，因为他们依赖方向和信息。联盟的失败往往不是因为故意的背叛，而是因为后勤问题和沟通中断。“重骑兵”的最终成功取决于协调、组织和态势感知，使其成为一种独特而具有挑战性的战争游戏体验。
+最后，本文讨论了来自主机CPU的开销影响，强调内核大小的重要性。如果内核太小或数量过多，则GPU会将时间花费在等待主机上，而不是执行计算。
 
 ---
 
-## 10. 最小布尔公式
+## 7. 痛苦的教训即将降临到Token化领域。
 
-**原文标题**: Minimal Boolean Formulas
+**原文标题**: The Bitter Lesson is coming for Tokenization
 
-**原文链接**: [https://research.swtch.com/boolean](https://research.swtch.com/boolean)
+**原文链接**: [https://lucalp.dev/bitter-lesson-tokenization-and-blt/](https://lucalp.dev/bitter-lesson-tokenization-and-blt/)
 
-本文详细介绍了确定表示五变量布尔函数所需的最小AND或OR运算符数量的计算工作。作者与Alex Healy共同发现，答案是28。
+“Tokenization的苦涩教训即将到来”：本文认为，分词（LLM 中的常见做法）是一个瓶颈，应该用更通用、计算和数据驱动的方法来取代。
 
-最初的方法是基于Floyd-Warshall所有对最短路径算法的蛮力方法，并将其调整为计算每个布尔函数的最小公式大小。这种方法计算成本很高，尤其是对于五个变量。作者使用伪代码解释了算法1。
+作者批评了字节对编码 (BPE) 这种流行的分词方法，强调了它的局限性，例如创建建模不佳的“故障标记”和不连贯的数字分词。 虽然承认存在变通方法，但文章质疑由于不完美的分词，有多少模型能力被浪费了。它质疑是否可以完全绕过分词。
 
-为了提高效率，他们利用了布尔函数中的对称性，例如德摩根定律和输入置换/求反。通过识别具有相同复杂度的函数的等价类，他们可以减少存储和迭代的函数数量。这促成了算法2。
+文章指出 ByT5 是一个初步答案，表明纯字节建模可以用更少的数据实现相当的性能，但代价是增加了预训练和推理时间。 它还提到了替代架构，如 MambaByte，以绕过注意力的复杂性并减少增加的推理步骤。
 
-进一步的优化包括将搜索策略从“循环直到事物停止改变”更改为有条不紊的探索，按复杂性顺序构建函数（算法3和4）。这减少了仅考虑一次的函数对的迭代次数。
+文章强调，要成功取代分词，模型应表现出具有竞争力的损失分数，改进下游任务，并在增加计算和数据的情况下表现出更好的缩放曲线。它讨论了无分词模型的设计空间，围绕具有下/上采样的压缩表示和灵活的字节宽度。 探索包括 CANINE、Charformer 和 Hourglass Transformers 等架构，它们使用各种方法来压缩字节表示并减轻计算成本。 作者还提到了通过学习边界预测器来进行动态令牌池化。
 
-最后，在计算接近尾声时，他们切换到定向搜索。他们没有组合函数对，而是专注于特定的缺失函数，并探索使用已知函数创建它们的方法，从而大大加快了最后阶段。
+---
 
-这些优化的综合影响将计算时间从最初估计的800天缩短到更易于管理的20天。作者最终成功地确定了先前未知的五变量布尔函数所需的最小运算符数量。
+## 8. Gemini机器人设备端：将AI引入本地机器人设备
+
+**原文标题**: Gemini Robotics On-Device brings AI to local robotic devices
+
+**原文链接**: [https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/](https://deepmind.google/discover/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/)
+
+Gemini Robotics On-Device是谷歌推出的一款新型高效AI模型，旨在本地运行于机器人设备上，无需持续的数据网络连接即可实现更强的灵活性和更快的任务适应性。这使其适用于对延迟敏感的应用以及在连接受限区域的稳定性能。
+
+该模型建立在Gemini Robotics模型的功能之上，但针对最小化计算资源进行了优化。主要特点包括快速实验、通过少量（仅50-100个）演示进行微调以适应新任务以及低延迟推理。它擅长视觉、语义和行为泛化，能够遵循自然语言指令并完成复杂的任务，例如拉开拉链和折叠衣服，所有这些都直接在机器人上运行。
+
+谷歌正在通过一个可信测试者计划向开发者提供Gemini Robotics SDK，以促进评估、在物理模拟器中进行测试以及快速适应新领域。该模型已展示了对各种机器人形态的适应性，包括双臂 Franka FR3 机器人和 Apptronik 公司的 Apollo 人形机器人。
+
+谷歌强调负责任的开发和安全，秉承其 AI 原则，整合语义和物理安全措施，并进行红队演练以识别漏洞。该模型最初发布给精选的可信测试者群体，以收集反馈并确保负责任的使用。Gemini Robotics SDK 旨在通过使强大的模型更易于访问来加速机器人技术的创新。
+
+---
+
+## 9. Show HN: Oasis – 一款开源的3D打印智能生态箱
+
+**原文标题**: Show HN: Oasis – an open-source, 3D-printed smart terrarium
+
+**原文链接**: [https://github.com/justbuchanan/oasis](https://github.com/justbuchanan/oasis)
+
+Oasis是一个开源的、主要采用3D打印技术的智能生态缸，旨在为喜湿植物创造理想的环境。它配备高功率LED照明、喷雾器、用于气流循环的风扇以及温湿度传感器。通过WiFi连接，可以使用网页界面进行控制和配置。
+
+该项目完全开源，包括CAD模型（CadQuery）、电子原理图（KiCad）和软件（使用esp-rs的Rust）。虽然拥有3D打印机的DIY爱好者可以使用，但电子组装较为复杂。可以从像JLCPCB这样的公司订购组装好的电子元件，但少量订购可能比较昂贵。经验丰富的用户可以订购裸PCB板和元件进行DIY组装。
+
+创建者计划将来提供组装好的电子元件套件，并邀请有兴趣的人通过Google表单表达兴趣并订阅更新。该网站提供了图片和构建细节。
+
+---
+
+## 10. Timdle – 将历史事件按时间顺序排列
+
+**原文标题**: Timdle – Place historical events in chronological order
+
+**原文链接**: [https://www.timdle.com/](https://www.timdle.com/)
+
+Timdle：一款每日在线游戏，挑战玩家通过按时间顺序排列历史事件来测试他们的历史知识。核心玩法涉及在时间线上安排事件，网站鼓励玩家“玩今天的timeline”。页面还包含“如何玩”的说明，表明其设计旨在易于上手且引人入胜。最后，电子邮件地址(daily.timdle@gmail.com)表明了一个联系点，用于解答疑问或潜在的用户生成内容。总而言之，Timdle被呈现为一款有趣且具有教育意义的游戏，通过时间线排列来测试和加强历史知识。
 
 ---
 
@@ -169,99 +151,100 @@ ROCKNIX 社区主要通过 Discord 进行互动。该发行版基于在各自条
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-06-23](output/hacker_news_summary_2025-06-23.md) |
+| 1 | [2025-06-24](output/hacker_news_summary_2025-06-24.md) |
 | 2 | [2025-06-21](output/hacker_news_summary_2025-06-21.md) |
 | 3 | [2025-06-22](output/hacker_news_summary_2025-06-22.md) |
-| 4 | [2025-06-20](output/hacker_news_summary_2025-06-20.md) |
-| 5 | [2025-06-19](output/hacker_news_summary_2025-06-19.md) |
-| 6 | [2025-06-18](output/hacker_news_summary_2025-06-18.md) |
-| 7 | [2025-06-17](output/hacker_news_summary_2025-06-17.md) |
-| 8 | [2025-06-16](output/hacker_news_summary_2025-06-16.md) |
-| 9 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
-| 10 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
-| 11 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 4 | [2025-06-23](output/hacker_news_summary_2025-06-23.md) |
+| 5 | [2025-06-20](output/hacker_news_summary_2025-06-20.md) |
+| 6 | [2025-06-19](output/hacker_news_summary_2025-06-19.md) |
+| 7 | [2025-06-18](output/hacker_news_summary_2025-06-18.md) |
+| 8 | [2025-06-17](output/hacker_news_summary_2025-06-17.md) |
+| 9 | [2025-06-16](output/hacker_news_summary_2025-06-16.md) |
+| 10 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
+| 11 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
 | 12 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
-| 13 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
-| 14 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
+| 13 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
+| 14 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
 | 15 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 16 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
-| 17 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
+| 16 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
+| 17 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
 | 18 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
-| 19 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 20 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 21 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 22 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 19 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
+| 20 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 21 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
+| 22 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
 | 23 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
-| 24 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 25 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 24 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 25 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
 | 26 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 27 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 28 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 27 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 28 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
 | 29 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
-| 30 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 31 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 30 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
+| 31 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
 | 32 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
-| 33 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 33 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
 | 34 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 35 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 36 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 35 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
+| 36 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
 | 37 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 38 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 39 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 38 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 39 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
 | 40 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 41 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 42 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 43 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 44 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 45 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 41 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 42 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 43 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 44 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 45 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
 | 46 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 47 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 48 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 49 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 50 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 47 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 48 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 49 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 50 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
 | 51 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 52 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 53 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 52 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 53 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
 | 54 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 55 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 56 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 55 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
+| 56 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
 | 57 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
-| 58 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 59 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 58 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 59 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
 | 60 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 61 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 62 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 63 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 64 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 61 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 62 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 63 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 64 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
 | 65 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 66 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 66 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
 | 67 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
 | 68 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 69 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 70 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 69 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 70 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
 | 71 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
-| 72 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 73 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 72 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 73 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
 | 74 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 75 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 76 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 75 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 76 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
 | 77 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 78 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 79 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 80 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 81 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 82 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 83 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 78 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 79 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 80 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 81 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 82 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 83 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
 | 84 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 85 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 86 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 87 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 88 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 85 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 86 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 87 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 88 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
 | 89 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 90 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
-| 91 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 92 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 93 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 90 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 91 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 92 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 93 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
 | 94 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 95 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 96 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 95 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 96 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 97 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
