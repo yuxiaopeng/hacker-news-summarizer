@@ -1,0 +1,1316 @@
+# Hacker News 热门文章摘要 (2025-08-29)
+
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
+## 1. Web无需守门人：Cloudflare推出新的“签名代理”方案
+
+**原文标题**: The web does not need gatekeepers: Cloudflare’s new “signed agents” pitch
+
+**原文链接**: [https://positiveblue.substack.com/p/the-web-does-not-need-gatekeepers](https://positiveblue.substack.com/p/the-web-does-not-need-gatekeepers)
+
+无法访问文章链接。
+
+---
+
+## 2. 必要的编码理论 [pdf]
+
+**原文标题**: Essential Coding Theory [pdf]
+
+**原文链接**: [https://cse.buffalo.edu/faculty/atri/courses/coding-theory/book/web-coding-book.pdf](https://cse.buffalo.edu/faculty/atri/courses/coding-theory/book/web-coding-book.pdf)
+
+很抱歉，我无法提供所提供内容的摘要。 该文本似乎是已损坏的PDF文件，主要由无法辨认的字符和二进制数据组成，无法提取任何有意义的信息或确定文章的主题。
+
+---
+
+## 3. 维基百科图谱
+
+**原文标题**: Wikipedia as a Graph
+
+**原文链接**: [https://wikigrapher.com/paths](https://wikigrapher.com/paths)
+
+无法访问文章链接。
+
+---
+
+## 4. Show HN: FFmpeg页面 – 因为我厌倦了每次都跟FFmpeg斗智斗勇
+
+**原文标题**: Show HN: FFmpeg Pages – because I was tired of fighting FFmpeg every time
+
+**原文链接**: [https://ffmpegs.pages.dev/](https://ffmpegs.pages.dev/)
+
+FFmpeg Pages 是一个旨在简化 FFmpeg 媒体处理的 Web 应用。鉴于 FFmpeg 命令的复杂性，该网站为常见任务提供了一个用户友好的界面，例如转换视频格式（MP4、WebM、AVI、MOV、MKV）、将视频压缩到目标大小或分辨率、提取视频帧以及音频处理。
+
+用户可以输入文件，选择选项（例如，输出格式、目标大小、帧提取时间、音频格式），网站会生成相应的 FFmpeg 命令。 这些命令随后可以被复制并直接使用。
+
+该网站涵盖的任务包括：
+
+* 转换视频格式和质量
+* 按目标大小和分辨率压缩视频
+* 提取单个或多个帧
+* 音频操作（提取、移除、替换、转换）和格式（MP3、AAC、WAV、FLAC）
+
+常见问题解答部分提供了有用的 FFmpeg 命令，用于执行视频压缩、音频提取、无重新编码剪切视频、创建 GIF、合并视频、更改分辨率和移除音频等任务。它提供了简单的命令和更复杂的命令，以获得更高质量的结果，涵盖了广泛的常见媒体处理需求。
+
+---
+
+## 5. 私募股权收购残疾人服务，挑战监管机构
+
+**原文标题**: Private Equity Snaps Up Disability Services, Challenging Regulators
+
+**原文链接**: [https://www.governing.com/management-and-administration/private-equity-snaps-up-disability-services-challenging-regulators](https://www.governing.com/management-and-administration/private-equity-snaps-up-disability-services-challenging-regulators)
+
+私人股权公司收购残疾人和老年护理机构趋势渐增，引发对患者安全和监管的担忧。追求短期利润最大化的私人股权公司，通常会削减成本，这可能对弱势群体的护理质量产生负面影响。
+
+文章以大型私人股权所有的健康服务公司Sevita为例。Sevita及其附属机构在多个州面临虐待、忽视和护理不足的多项指控，导致罚款、执照吊销和调查。尽管存在这些问题，据报道，Sevita的所有者通过让公司背负债务并向投资者支付股息，获得了巨额利润。
+
+私人股权公司对残疾人服务的日益整合给州监管机构带来了挑战。各州往往缺乏资源和权力来有效监管拥有巨额资金的全国性运营商。此外，像Sevita这样的公司以多个品牌名称运营，使得追踪所有权和评估其对市场的总体影响变得困难。
+
+文章最后指出，一些州已开始通过颁布更严格的医疗保健并购法规来解决这些问题。例如，罗德岛州的监督法允许总检察长施加条件以保护医院的财务状况，这标志着在私人股权主导的医疗保健领域，问责制可能将得到加强。
+
+---
+
+## 6. 在96块H100 GPU上部署DeepSeek
+
+**原文标题**: Deploying DeepSeek on 96 H100 GPUs
+
+**原文链接**: [https://lmsys.org/blog/2025-05-05-large-scale-ep/](https://lmsys.org/blog/2025-05-05-large-scale-ep/)
+
+本文详细介绍了SGLang团队如何在96块H100 GPU上成功复现DeepSeek的大语言模型推理系统，并实现了与DeepSeek官方结果相当的性能。他们的实现利用预填充-解码(PD)分离和大规模专家并行(EP)来优化DeepSeek独特的架构，该架构具有多头潜在注意力(MLA)和混合专家(MoE)特性。
+
+关键创新包括使用DP注意力来减少内存开销，使用DP进行密集FFN和LM head以提高可扩展性和通信效率，以及具有两种调度模式（Normal和Low-Latency）的DeepEP，以优化token路由。DeepGEMM也被集成用于高效的MoE计算。PD分离将计算密集的预填充阶段与内存密集的解码阶段分离，从而能够为每个阶段定制优化。双批次重叠(TBO)进一步缓解了多节点环境中的通信瓶颈。
+
+该实现对于2000个token的输入序列，每个节点实现了每秒52.3k个输入token和每秒22.3k个输出token。SGLang展示了每百万输出token的成本为0.20美元，远低于DeepSeek官方Chat API。与原始张量并行相比，优化后的策略将输出吞吐量提高了高达5倍。所有代码和实验均已开源。
+
+---
+
+## 7. 雷霆计算 (YC S24) 正在招聘
+
+**原文标题**: Thunder Compute (YC S24) Is Hiring
+
+**原文链接**: [https://www.ycombinator.com/companies/thunder-compute/jobs/sS6QzTi-founding-developer-advocate-contract-to-hire](https://www.ycombinator.com/companies/thunder-compute/jobs/sS6QzTi-founding-developer-advocate-contract-to-hire)
+
+Thunder Compute (YC S24) 招聘创始开发者布道师（合同转正），地点位于旧金山。这是一家种子轮融资的初创公司，致力于构建低价易用的 GPU 云平台。他们是一个四人团队，正经历快速增长（月环比增长 100%+），并即将进行 A 轮融资。该职位要求 100% 线下工作，每周工作 6 天。
+
+开发者布道师将负责构建和发展公司的开发者社区，创建演示和模板，指导开发者如何使用该平台，并提供产品反馈。主要职责包括领导社区（Discord、线下聚会等），创建内容（模板、博客文章、演讲、视频），成为 Thunder 平台上 AI 开发的主题专家 (SME)，与产品开发闭环反馈，制作工具和示例原型，并衡量社区的健康状况和采用率。
+
+理想的候选人应具备优秀的写作能力，在构建开发者社区方面拥有良好的业绩记录，具备实践编码经验（首选 Python），并具有行动力。熟悉 GPU/AI 基础设施、具备计算机科学基础以及开源贡献者优先考虑。薪酬包括工资（10 万美元至 15 万美元）和股权（0.10% 至 0.50%）。该职位最初为期 2 个月的合同，可以选择线下办公，之后转为全职且 100% 线下办公。
+
+申请人应发送 2-3 个链接，展示其写作/演讲/演示，并附上一段简短的说明，详细介绍他们领导的社区活动及其结果。
+
+---
+
+## 8. 为什么人工智能还不能成为真正的程序员
+
+**原文标题**: Why AI Isn't Ready to Be a Real Coder
+
+**原文链接**: [https://spectrum.ieee.org/ai-for-coding](https://spectrum.ieee.org/ai-for-coding)
+
+Rina Diane Caballar的AINews文章《为何AI尚未准备好成为真正的程序员》探讨了AI编程工具的局限性，即便它们在不断发展。该文章于2025年8月26日发表，认为尽管取得了进步，AI仍未准备好取代人类程序员。
+
+核心论点围绕着AI编程协作与信任的需求展开。虽然AI可以自动化某些编程任务并辅助开发者，但在需要创造力、复杂问题解决能力和理解细致入微的项目需求的任务上，它仍然存在不足。
+
+该文章可能强调了诸如AI无法掌握抽象概念、适应开发过程中无法预见的情况以及有效调试复杂代码库等问题。此外，作者可能还会讨论仅仅依靠AI进行编程所产生的伦理考量和潜在偏见。
+
+结论可能强调了将AI视为增强人类程序员的工具，而非完全替代品的重要性。文章认为，真正的进步取决于创建一个协作环境，让AI协助处理重复性任务，从而解放人类程序员，让他们专注于软件开发更具战略性和创造性的方面。对AI输出结果的信任以及批判性地评估其建议的能力对于确保质量和防止错误也至关重要。
+
+---
+
+## 9. Seedbox Lite：轻量级种子流媒体应用，即时播放
+
+**原文标题**: Seedbox Lite: A lightweight torrent streaming app with instant playback
+
+**原文链接**: [https://github.com/hotheadhacker/seedbox-lite](https://github.com/hotheadhacker/seedbox-lite)
+
+SeedBox Lite 是一款轻量级的开源种子流媒体应用，它允许用户即时观看电影和电视节目，而无需等待整个文件下载完毕。它提供了类似于 Netflix 的体验，具有密码保护、移动优化、带字幕支持的智能视频播放器，以及使用 Docker 或 PM2 的快速设置等功能。
+
+主要功能包括从种子即时流式传输、实时进度跟踪、智能缓存、支持多种视频格式、自动字幕检测以及用户友好的界面。从技术上讲，它具有密码验证、CORS 启用、健康监控和生产就绪性。
+
+该应用程序支持 Windows、macOS 和 Linux，以及桌面和移动设备上的现代浏览器。可以通过 Docker（推荐）或 PM2 进行安装，并为每种方法提供了详细的说明，包括环境配置。该文档涵盖了先决条件（Node.js、npm、Docker/PM2）、系统要求和浏览器支持。
+
+该文本还提供了测试说明、通过环境变量进行的配置选项、常见问题的故障排除技巧以及简要的 API 文档。其中包含安全最佳实践和生产部署的扩展建议。
+
+最后，它包含一项关键的法律声明，强调 SeedBox Lite 仅用于合法内容，用户有责任遵守版权法。该项目根据自定义的非商业许可获得许可，并感谢 WebTorrent、React、Docker 和社区的贡献。
+
+---
+
+## 10. 快速掌握代码 1
+
+**原文标题**: Grok Code Fast 1
+
+**原文链接**: [https://x.ai/news/grok-code-fast-1](https://x.ai/news/grok-code-fast-1)
+
+我无法访问该文章链接。
+
+---
+
+## 11. 布尔巴基——数学家的秘密社团
+
+**原文标题**: Bourbaki – A Secret Society of Mathematicians
+
+**原文链接**: [https://books.google.com/books/about/Bourbaki.html](https://books.google.com/books/about/Bourbaki.html)
+
+这是一段非常短的摘录，但根据标题和有限的内容，以下是一个简明扼要的总结：
+
+这篇文章，题为《布尔巴基 – 数学家的秘密社团》，可能探讨了尼古拉·布尔巴基小组的历史和影响。“Google 图书登录出版商简介隐私权条款帮助”表明该摘录来自 Google 图书上的一本书。
+
+这篇文章*可能*讨论了：
+
+*   **尼古拉·布尔巴基的身份：** 该小组是由一群主要为法国数学家使用的集体笔名。
+*   **该小组的目标：** 他们旨在以严格、公理化和统一的方式重新制定和呈现数学。
+*   **他们的鸿篇巨制，《数学原理》：** 这套多卷丛书极具影响力，但由于其抽象和正式的风格也备受争议。
+*   **布尔巴基的影响：** 他们显著地影响了数学教育和研究，尤其是在法国和欧洲其他地区。
+*   **“秘密社团”方面：** 该小组对其成员和内部运作保持了一定程度的保密。
+
+本质上，这篇文章可能解释了布尔巴基小组是谁，他们做了什么，以及为什么他们在数学界很重要（甚至可能存在争议）。
+
+---
+
+## 12. 如何进入游戏行业——Garry's Mod作者如是说
+
+**原文标题**: How do I get into the Game Industry – by Garry's Mod creator
+
+**原文链接**: [https://garry.net/posts/how-do-i-get-into-the-game-industry](https://garry.net/posts/how-do-i-get-into-the-game-industry)
+
+《Garry's Mod》作者 Garry Newman 分享进入游戏行业的建议，重点面向有抱负的程序员。他承认自己未曾在传统游戏工作室工作过，因此无法就 AAA 游戏提供建议。相反，他专注于独立游戏制作。
+
+他对比了自己 1990 年代的学习经历（互联网有限，依赖书籍）与当今资源丰富的环境（YouTube、Discord、ChatGPT），强调现在学习编程和像 Blender 这样的工具要容易得多。
+
+他强调了所需付出的努力和奉献精神，敦促有志者享受学习和解决问题的过程。他告诫不要抱有像 Notch 那样立即成功的幻想，敦促有抱负的独立开发者保持低开销，将游戏开发视为朝九晚五的工作，并专注于改进现有游戏，而不是赌博在立即推出续集上。
+
+他强调了 Roblox 和 Fortnite 等平台在用户生成内容方面的机会，并提到了他自己的 s&box 及其创作者基金。
+
+关于求职，Garry 强调向雇主展示价值。他建议有抱负的员工通过突出过往项目实例来展示自己的能力，并保持热情、求知欲和易于合作的态度。他表达了对招聘人员的反感，更喜欢直接申请，以表明对特定公司的兴趣。
+
+他总结了一个职业规划：擅长某事，从中赚钱，并使其持久。
+
+---
+
+## 13. 约翰·卡马克反对Meta构建定制XR操作系统的理由
+
+**原文标题**: John Carmack's arguments against building a custom XR OS at Meta
+
+**原文链接**: [https://twitter.com/ID_AA_Carmack/status/1961172409920491849](https://twitter.com/ID_AA_Carmack/status/1961172409920491849)
+
+提供的文本并非关于约翰·卡马克反对Meta构建定制XR操作系统的文章。相反，它表明JavaScript已被禁用，用户需要启用它才能使用X（原Twitter）平台。因此，我无法总结一篇不存在的文章。
+
+---
+
+## 14. 西格绍尔以国家安全为由拒绝公开文件
+
+**原文标题**: Sig Sauer citing national security to keep documents from public
+
+**原文链接**: [https://practicalshootinginsights.com/eighth-circuit-fmeca-update/](https://practicalshootinginsights.com/eighth-circuit-fmeca-update/)
+
+本文详细介绍了一场关于西格绍尔P320手枪的陆军失效模式、影响和关键性分析（FMECA）公开性的法律战。“The Trace” 媒体介入了 Glasscock 诉 Sig Sauer 案，认为公众有权查阅这些记录，尤其是在地方法院在集体诉讼认证期间依赖 FMECA 的情况下。
+
+西格绍尔试图对与 FMECA 相关的材料保密，声称涉及“国家安全”问题并要求尊重陆军的意见。他们还透露了一份先前未公开的“FMECA 备忘录”以及 FMECA 电子表格的存在。
+
+“The Trace” 认为，FMECA 已经在网上广泛传播，尤其是在 Practical Shooting Insights (PSI) 上，并且已被广泛讨论，甚至西格绍尔自己的副总裁也曾指示听众在 PSI 上查看该文件。他们还引用了一项国防部指令，该指令未授权扣留对性能和可靠性的非机密评估。
+
+关键问题是 FMECA 是否构成国家安全材料，鉴于其在线可用性，对其保密是否可行，以及 FMECA 备忘录的重要性。文章强调了透明度的重要性，因为地方法院在认证集体诉讼时严重依赖 FMECA，而隐瞒它会阻碍公众对产品安全问题的审查。PSI 网站的作者旨在继续为读者提供访问文件和分析的权限。值得关注的关键进展包括第八巡回法院对干预的裁决、陆军的潜在意见以及 FMECA 备忘录的潜在披露。
+
+---
+
+## 15. 消费者条款和隐私政策更新
+
+**原文标题**: Updates to Consumer Terms and Privacy Policy
+
+**原文链接**: [https://www.anthropic.com/news/updates-to-our-consumer-terms](https://www.anthropic.com/news/updates-to-our-consumer-terms)
+
+Anthropic 正在更新其消费者条款和隐私政策，为 Claude Free、Pro 和 Max 计划的用户提供选择，允许使用他们的数据来改进 AI 模型并加强安全措施。这些数据包括聊天记录和编码会话。
+
+用户可以选择是否参与，并可随时在隐私设置中更改偏好。新用户将在注册期间收到提示，而现有用户将看到应用内通知。必须在 2025 年 9 月 28 日之前做出决定，才能继续使用 Claude。这些更新不适用于商业条款下的服务，如 Claude for Work、Claude Gov、Claude for Education 或通过 Amazon Bedrock 和 Google Cloud 的 Vertex AI 等平台使用的 API。
+
+如果用户选择允许数据共享用于模型训练，Anthropic 会将新的或恢复的聊天记录和编码会话的数据保留期限延长至五年。如果未选择加入，则保留期限仍为 30 天。已删除的对话不会用于训练。延长保留期限有助于提高模型一致性并加强滥用检测。Anthropic 使用工具过滤敏感数据，并且不会出售用户数据。
+
+这些变更旨在通过学习真实世界的用户互动来提高模型的准确性、安全性和能力。“常见问题”部分提供了有关更新、变更原因以及用户所需采取的行动的更多详细信息。
+
+---
+
+## 16. 英特尔“清水湾森林”Xeon 7 E-Core CPU将是一头猛兽
+
+**原文标题**: Intel's "Clearwater Forest" Xeon 7 E-Core CPU Will Be a Beast
+
+**原文链接**: [https://www.nextplatform.com/2025/08/26/intels-clearwater-forest-xeon-7-e-core-cpu-will-be-a-beast/](https://www.nextplatform.com/2025/08/26/intels-clearwater-forest-xeon-7-e-core-cpu-will-be-a-beast/)
+
+本文重点介绍英特尔即将于2026年发布的“清水森林”Xeon 7 E-core CPU，及其在英特尔与AMD在服务器CPU市场竞争中的重要性。这款新CPU基于英特尔的18A制造工艺，采用RibbonFET晶体管和PowerVia背面供电技术，有望显著提高性能和密度。
+
+清水森林采用Foveros和EMIB技术的3D芯片堆叠方法，将I/O小芯片、基础小芯片（Intel 3工艺）和核心小芯片（18A工艺）组合成一个强大的单元。“Darkmont” E-core相比前代产品，在指令解码、更宽的乱序引擎和增强的内存子系统方面均有所改进。
+
+清水森林Xeon 7 E-core CPU每个CPU最多可容纳288个核心和576 MB的L3缓存。一个双路清水森林平台将拥有576个核心、12个以8 GHz运行的DDR5内存通道、96条PCI-Express 5.0通道和144条UltraPath Interconnect互连链路。早期基准测试表明，与Sierra Forest平台相比，内存带宽有了显著提升。
+
+英特尔正努力夺回被AMD抢占的市场份额，但18A工艺必须兑现其承诺，英特尔才能有效地参与竞争。
+
+---
+
+## 17. 群晖的终局
+
+**原文标题**: The Synology End Game
+
+**原文链接**: [https://lowendbox.com/blog/they-used-to-be-good-but-now-theyve-turned-to-evil-the-synology-end-game/](https://lowendbox.com/blog/they-used-to-be-good-but-now-theyve-turned-to-evil-the-synology-end-game/)
+
+在他2025年8月24日题为“群晖终局”的博文中，长期群晖用户Raindog308表达了他对该公司近期政策变化日益增长的不满，暗示他可能不会再购买群晖NAS。他强调了两个主要担忧：
+
+1.  **Samba限制：** 群晖实施专有封装程序，人为限制并发Samba连接数，他认为此举对客户不友好。
+2.  **强制购买群晖硬盘：** 一项新政策要求新款群晖型号的用户直接从群晖购买硬盘，这可能会导致第三方硬盘无法使用。他认为这存在问题，因为群晖的硬盘提供的保修期比西数黑盘等替代品短。
+
+Raindog308考虑了其他替代方案，例如回归使用TrueNAS构建自己的NAS，或者探索UGREEN或Buffalo的产品。
+
+评论区包括对QNAP、Unraid、树莓派设置的推荐，以及关于UGREEN在DIY NAS解决方案中的价值主张的进一步讨论。
+
+---
+
+## 18. Meta可能在秘密扫描你手机的相机胶卷。
+
+**原文标题**: Meta might be secretly scanning your phone's camera roll
+
+**原文链接**: [https://www.zdnet.com/article/meta-might-be-secretly-scanning-your-phones-camera-roll-how-to-check-and-turn-it-off/](https://www.zdnet.com/article/meta-might-be-secretly-scanning-your-phones-camera-roll-how-to-check-and-turn-it-off/)
+
+ZDNET文章报道称，Meta可能在秘密扫描用户手机相册，以便在Facebook应用中提供人工智能驱动的建议，例如拼贴画和主题相册。用户发现在设置中启用了与“相册共享建议”相关的开关，即使他们不记得通过弹窗明确授予了权限。
+
+该功能目前正在美国和加拿大（伊利诺伊州和德克萨斯州除外）进行测试，涉及Meta分析和保留相册图像，包括日期、人物和物体，以创建人工智能风格和其它创意。Meta声称这些建议仅对用户可见，不会用于广告定位。
+
+文章提出了重大的隐私担忧，因为它将Meta的影响范围扩大到了用户私人的、未发布的照片和视频。文章提供了一个分步指南，介绍如何在Facebook应用程序中检查相关设置并禁用“相册共享建议”开关。如果禁用，上传的照片将在30天后被删除。文章澄清说，Meta声称该功能是选择加入的，但一些用户报告说发现它在他们不知情的情况下被启用。文章还强调了不知情地同意这种数据访问的潜在影响。
+
+---
+
+## 19. 你可能不熟悉的现代HTML/CSS方面
+
+**原文标题**: Aspects of modern HTML/CSS you may not be familiar with
+
+**原文链接**: [https://lyra.horse/blog/2025/08/you-dont-need-js/](https://lyra.horse/blog/2025/08/you-dont-need-js/)
+
+本文倡导利用现代HTML和CSS来减少对JavaScript在Web开发中的依赖，挑战了JavaScript框架总是必要的观念。文章强调了现代JavaScript框架经常带来的臃肿，并指出许多网站可以无需它们也能有效运行。
+
+作者认为，对CSS的许多负面评价源于对其能力缺乏理解，将其定位为一种强大的领域特定编程语言，而不仅仅是一个样式工具。文章随后介绍了使CSS更易于使用的新特性，例如嵌套、相对颜色和更好的媒体查询，这些特性解决了之前CSS开发中的痛点。文章还重点介绍了Baseline，它保证某些CSS特性可以在主流浏览器中工作。
+
+使用CSS而非JavaScript的原因有两个：支持因安全或隐私原因禁用JavaScript的用户，以及因为CSS在某些任务中本质上更好。CSS为悬停效果、动画和输入验证等功能提供了更高的易用性、可访问性和性能。CSS动画在单独的合成器线程中运行，从而实现更流畅的性能，尤其是在低端设备上。
+
+文章提供了使用`@starting-style`实现动画、使用`light-dark()`进行主题化以及使用单选按钮和CSS伪类构建交互式组件的示例。作者鼓励开发人员探索现代HTML和CSS的可能性，以提高Web开发效率和用户体验。
+
+---
+
+## 20. 这是我的大脑被水蛭吸食后的状态。
+
+**原文标题**: This is my brain on leeches
+
+**原文链接**: [https://todaythings.substack.com/p/this-is-my-brain-on-leeches](https://todaythings.substack.com/p/this-is-my-brain-on-leeches)
+
+无法访问文章链接。
+
+---
+
+## 21. 修复 Alpine 上旧版 .NET Core 原生库加载问题
+
+**原文标题**: Fixing an old .NET Core native library loading issue on Alpine
+
+**原文链接**: [https://andrewlock.net/fixing-an-old-dotnet-core-native-library-loading-issue-on-alpine/](https://andrewlock.net/fixing-an-old-dotnet-core-native-library-loading-issue-on-alpine/)
+
+解决在 Alpine Linux 3.17 上使用 Microsoft.Data.Sqlite 运行 .NET Core 3.1 和 .NET 5 应用时遇到的 "DllNotFoundException" 故障
+
+---
+
+## 22. Show HN: 在 HN 上寻找隐藏的宝藏
+
+**原文标题**: Show HN: Find Hidden Gems on HN
+
+**原文链接**: [https://pj4533.com/hn-overlooked/](https://pj4533.com/hn-overlooked/)
+
+HN遗珠：发掘Hacker News上未受重视的优质内容
+
+---
+
+## 23. Show HN: Sosumi.ai – 将 Apple 开发者文档转换为 AI 可读的 Markdown
+
+**原文标题**: Show HN: Sosumi.ai – Convert Apple Developer docs to AI-readable Markdown
+
+**原文链接**: [https://sosumi.ai/](https://sosumi.ai/)
+
+Sosumi.ai 是一个将 Apple 开发者文档转换为 AI 可读 Markdown 格式的工具。这使开发者能够更有效地访问和利用 Apple 的官方文档，尤其是在将其与 AI 驱动的开发工作流程集成时。其核心功能围绕着基于 `doc://{path}` 标识符获取特定文档。例如，`doc://swift/array` 会检索 Swift 数组的文档。
+
+该工具还提供一个“搜索”功能，接受查询字符串作为输入。此搜索功能返回结构化的结果，包括标题、URL、描述、面包屑和标签，从而更容易在庞大的 Apple 开发者文档库中找到相关信息。该服务目前专注于 Swift、SwiftUI、UIKit、Xcode 和 Core Data 的文档。本质上，Sosumi.ai 通过使文档更易于 AI 模型访问和解析，从而弥合了 Apple 开发者资源与快速发展的 AI 辅助开发领域之间的差距。
+
+---
+
+## 24. 如果你有Claude账户，他们接下来会用你的数据进行训练。
+
+**原文标题**: If you have a Claude account, they're going to train on your data moving forward
+
+**原文链接**: [https://old.reddit.com/r/LocalLLaMA/comments/1n2ubjx/if_you_have_a_claude_personal_account_they_are/](https://old.reddit.com/r/LocalLLaMA/comments/1n2ubjx/if_you_have_a_claude_personal_account_they_are/)
+
+无法访问文章链接。
+
+---
+
+## 25. 离线优先格局 – 2025
+
+**原文标题**: Offline-First Landscape – 2025
+
+**原文链接**: [https://marcoapp.io/blog/offline-first-landscape](https://marcoapp.io/blog/offline-first-landscape)
+
+本文详细介绍了马可为他们的电子邮件应用程序实现离线优先功能的挑战性旅程。面对管理大量数据集（数百MB和数千行）的问题，他们发现许多现有的离线优先解决方案都不尽如人意。
+
+最初，他们探索了 WatermelonDB，但在Web浏览器中遇到了IndexedDB性能问题，导致需要采用低效的内存解决方法。 然后，他们研究了像Triplit、InstantDB和PowerSync等较新的解决方案。 Triplit显示出希望，但受到服务器端性能问题的困扰。 InstantDB缺乏关键特性和后端支持，而PowerSync虽然成熟，但开发者体验不佳，并且自托管要求复杂。
+
+作者得出结论，由于Web浏览器中IndexedDB的局限性，许多离线优先工具本质上都是“hack”。他们最终发现Replicache（一种KV存储）是一个可行的解决方案，特别是与Orama结合用于索引和搜索时。 Replicache提供了良好的性能和强大的数据同步功能。
+
+作者还提到了Replicache最近发布的Zero，这可能是一款颠覆性的产品。他们对离线优先开发的未来表示乐观，设想了一个后端和前端数据无缝同步，而HTTP/REST API变得不再重要的世界。本文强调了构建强大的离线优先应用程序的难度，特别是对于大型数据集，以及为特定用例找到合适工具的重要性。
+
+---
+
+## 26. 展示 HN: 一个生成提示注入攻击的极简 TS 库
+
+**原文标题**: Show HN: A minimal TS library that generates prompt injection attacks
+
+**原文链接**: [https://prompt-injector.blueprintlab.io/](https://prompt-injector.blueprintlab.io/)
+
+Show HN: `prompt-injector` - 用于测试和提高 AI 系统防 Prompt 注入攻击的安全性的轻量级 TypeScript 库。该库包含 25 多个来自领先安全研究的精选攻击模式，涵盖四个主要类别：越狱、指令劫持、编码攻击和逻辑陷阱。`prompt-injector` 易于集成（使用 `npm install prompt-injector`），允许自定义测试参数（严重性、类别、最大尝试次数），并生成基于测试结果总结风险评分的综合报告。开发者可以使用该库生成测试 Prompt，针对他们的 AI 系统运行，并分析结果以识别和缓解漏洞。该帖子重点介绍了该库生成针对特定 AI 系统类型定制的测试用例的能力，并通过 '客户服务机器人' 的示例进行了演示。关键在于，`prompt-injector` 提供了一种实用且易于访问的方式来主动评估和提高 AI 安全性。
+
+---
+
+## 27. 再次 Anthropic 面试失败
+
+**原文标题**: Flunking my Anthropic interview again
+
+**原文链接**: [https://taylor.town/flunking-anthropic](https://taylor.town/flunking-anthropic)
+
+尽管获得了强力推荐，完成了居家作业，并创建了在HackerNews上颇受欢迎的副项目diggit.dev，作者仍然对被Anthropic的开发者关系职位拒绝感到失望。他们特别难过，因为他们真心钦佩Anthropic的使命，并认为自己的热情和价值观与公司相符。
+
+他们将这次拒绝与之前因技术错误而失败的Anthropic面试作对比，那次更容易接受。这次，他们觉得即使尽了最大努力也不够，这导致了自我怀疑和不足感。
+
+作者反思了自己的“怪异”，他们认为这既是优势也是阻碍。他们努力在顺从的愿望和承认自己独特身份之间挣扎。他们还表达了对恢复过去让他们成为“令人讨厌的混蛋”的行为的恐惧，并重申了他们对个人成长和传播积极性的承诺。
+
+最终，这篇文章起到了宣泄的作用，并承诺尽管遇到挫折也要坚持不懈。作者以一条关于韧性的信息和对其他面临类似困境的人的鼓励结束，强调了自我接受和人际关系的重要性。
+
+---
+
+## 28. 几行代码，让任何网站实现多人游戏。无需服务器的 WebRTC 匹配。
+
+**原文标题**: Make any site multiplayer in a few lines. Serverless WebRTC matchmaking
+
+**原文链接**: [https://oxism.com/trystero/](https://oxism.com/trystero/)
+
+本文介绍 Trystero，一个能以极简代码和无服务器 WebRTC 匹配为任何网站添加多人功能的库。它允许同一页面上的用户直接实时连接，同步诸如鼠标移动和点击等操作，如本页所示。
+
+Trystero 支持多种用于连接对等方的信令方法，包括 BitTorrent、Nostr、MQTT、IPFS、Supabase 和 Firebase。本文提供了一个代码片段，展示了如何使用 Trystero：
+
+*   使用应用 ID 和房间 ID 加入房间。
+*   监听对等方加入和离开房间。
+*   创建发送和接收数据的操作，例如鼠标移动和点击。
+*   将操作广播给其他对等方。
+*   监听来自其他对等方的操作并做出相应反应。
+
+页面上的演示同步了用户之间的鼠标移动和点击。作者 Dan Motzenbecker 鼓励读者进一步探索 Trystero 的功能，强调它支持音频/视频流和二进制数据传输，并参考自述文件获取更多信息。 总之，Trystero 简化了创建交互式、多人 Web 体验的过程。
+
+---
+
+## 29. 输入错误比特币地址的概率
+
+**原文标题**: Probability of typing a wrong Bitcoin address
+
+**原文链接**: [https://www.johndcook.com/blog/2025/08/28/wrong-address/](https://www.johndcook.com/blog/2025/08/28/wrong-address/)
+
+本文旨在消除对比特币交易安全性的担忧，即地址输入错误可能导致资金丢失。文章指出，虽然私钥丢失确实存在风险，但输入错误的风险远低于人们的 perception。
+
+首先，比特币地址包含校验和，这大大降低了因输入错误而产生一个有效但错误的地址的可能性，概率约为 1/2^32。
+
+其次，由于比特币地址是从加密哈希函数派生的，因此它们实际上是随机的。这意味着一个输入错误产生另一个有效地址的可能性与产生一个完全随机的字符串的可能性没有太大区别。考虑到庞大的地址空间（2^160）和相对较少的使用地址数量（约 10 亿个），随机的 160 位序列对应于现有比特币地址的概率约为 1/10^39。
+
+文章随后探讨了一个更为细致的问题，即两个有效地址是否可能在编辑距离上“接近”（例如，相差一个字符交换）。即使考虑到这一点，并估计每个现有地址有一百万个“输入错误”变体，碰撞（两个地址或它们的输入错误重叠）的可能性仍然很低。使用生日悖论的类比，碰撞的可能性只有在地址空间（包括输入错误）大小的平方根之后才会变得显著，这远大于使用的比特币地址数量。
+
+总之，虽然并非不可能，但由于校验和、地址的随机性和地址空间的巨大性，意外输入一个既有效又属于别人的比特币地址的风险极低。
+
+---
+
+## 30. 克劳德十四行诗将内置于Xcode中。
+
+**原文标题**: Claude Sonnet will ship in Xcode
+
+**原文链接**: [https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
+
+提供的内容不足以提供关于“Claude Sonnet是否会在Xcode中发布”的总结。文本表明用户试图访问Apple开发者文档页面上的Xcode 26 Beta 7发布说明，但该页面需要启用JavaScript才能查看其内容。
+
+因此，**在没有发布说明的实际内容的情况下，不可能总结“Claude Sonnet是否会在Xcode中发布”或者任何关于Xcode 26 Beta 7的信息。** 我需要发布说明的可见内容才能准确回答这个问题。
+
+---
+
+## 31. Claude Sonnet 将随 Xcode 一起发布。
+
+**原文标题**: Claude Sonnet will ship in Xcode
+
+**原文链接**: [https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-26-release-notes)
+
+克劳德十四行诗将内置于Xcode
+
+**由于提供的文本极其有限，仅包含标题“克劳德十四行诗将内置于Xcode”以及来自Apple开发者文档的片段，表明需要JavaScript才能查看内容，因此无法进行全面的总结。**
+
+基于标题，唯一确定的信息是：**克劳德十四行诗计划包含在Xcode 26 Beta 7中。**
+
+我们可以推测：
+
+* **克劳德十四行诗可能与AI/ML相关：** 鉴于“克劳德”与Anthropic的AI模型相关联，因此Xcode 26 Beta 7中的克劳德十四行诗可能涉及AI功能。
+* **这是一个集成功能：** “内置”意味着它不仅与Xcode兼容，而且是集成在IDE本身中的一项功能。
+* **测试版软件：** 它处于测试阶段，因此可能会发生变化。
+
+要提供恰当的总结，访问实际的Xcode 26 Beta 7发行说明（启用JavaScript）至关重要。发行说明将详细说明克劳德十四行诗在Xcode环境中*实际*所做的操作。
+
+---
+
+## 32. 幸运十三：Debian trixie 概览
+
+**原文标题**: Lucky 13: a look at Debian trixie
+
+**原文链接**: [https://lwn.net/Articles/1033474/](https://lwn.net/Articles/1033474/)
+
+LWN.net 评测 Debian 13 ("trixie")：Debian 最新稳定版本，于 2025 年 8 月发布。Trixie 优先考虑稳定性，包括升级后的软件包、超过 14,000 个新软件包、默认包管理器 APT 3.0 以及 64 位 RISC-V 支持。它具有相对较新的软件，如 GNOME 48、KDE Plasma 6.3 和 Linux 内核 6.12.41。虽然不再支持 i386 和某些 MIPS 架构，但 Arm EABI 端口将在本次发布后停止。
+
+支持从 Debian 12 ("bookworm") 升级，但用户应事先将 APT 源文件转换为 DEB822 格式并删除第三方软件包。安装选项范围从最小的 netboot 镜像到 Blu-ray 套件，建议有经验的用户使用网络安装。传统安装程序提供更大的控制权，但对于新手来说可能具有挑战性，而 live 安装镜像使用 Calamares 安装程序，类似于 Fedora 和 Ubuntu。
+
+作者指出，Trixie 仍然支持 GNOME 和 KDE 的 X.org。经过测试，作者指出，虽然 Debian 附带了不错的软件包选择（尽管少于 Fedora 42），但某些所需的软件包不可用或需要手动设置，例如 Flatpak 与 GNOME Software 的集成。文章还强调了 Debian 在 32 位架构上过渡到 64 位 time_t 以解决 2038 年问题、移除 DSA SSH 密钥支持以及使用 tmpfs 文件系统用于 /tmp。Debian 14 ("forky") 的开发工作已经在进行中，预计于 2027 年发布。
+
+---
+
+## 33. 奇怪的电报键
+
+**原文标题**: Strange CW Keys
+
+**原文链接**: [https://sites.google.com/site/oh6dccw/strangecwkeys](https://sites.google.com/site/oh6dccw/strangecwkeys)
+
+OH6DC的《奇特的CW键》是一部幽默风趣的作品，它收集了各种非常规物品，这些物品被改造或想象成莫尔斯电码键（CW键）。页面呈现了一个列表，似乎附有相应的图片（从主题来看是如此），展示了日常用品被创造性地改造用于发送莫尔斯电码。这些物品范围从荒谬的（马桶刷、肝脏砂锅）到更合理但仍然不寻常的（杠杆式档案夹、胡椒研磨器、遥控器）。
+
+所列物品种类繁多且出人意料，突出了该项目的趣味性和实验性。该页面包含用于导航的链接以及一个按类别分类以便于使用的“纯文本索引页面”。页脚包含指向“首页”、“自制QRP”和“Google 网站举报不良行为”的链接，以及关于页面更新时间的信息。总的来说，该页面是对莫尔斯电码传输的一种有趣的探索，突出了业余无线电界可以发现的创造力和幽默感。
+
+---
+
+## 34. 关于大型语言模型与软件开发的一些思考
+
+**原文标题**: Some thoughts on LLMs and software development
+
+**原文链接**: [https://martinfowler.com/articles/202508-ai-thoughts.html](https://martinfowler.com/articles/202508-ai-thoughts.html)
+
+Martin Fowler在反思大型语言模型（LLM）与软件开发时，告诫人们不要过早地根据关于人工智能影响的调查得出结论，强调要考虑开发者使用LLM的具体方式，而不仅仅是简单的自动补全。 他否定了关于编程未来的确定性预测，而是敦促进行实验并分享经验。
+
+Fowler断言，目前围绕人工智能的兴奋无疑是一个泡沫，这是任何重大技术进步都不可避免的。 虽然当泡沫破裂时，一些公司将会失败，但另一些公司将会蓬勃发展，就像亚马逊在互联网泡沫破灭期间所做的那样。 他强调必须理解LLM本质上是幻觉引擎，因此，重复查询并比较响应对于验证至关重要。
+
+Fowler将使用LLM的软件工程与其他考虑了可变性和容差的工程学科进行了比较。 他指出LLM的不可靠性，声称“所有测试都通过了”，但事实并非如此，这引发了人们对其相对于人类初级工程师的可靠性的担忧。
+
+最后，他强调了LLM带来的攻击面增加，尤其是在人工智能代理和浏览器扩展方面。 他强调了将LLM暴露于不受信任的内容的危险，这可能导致数据泄露和恶意行为，最终他认为代理浏览器扩展从根本上来说是不安全的。
+
+---
+
+## 35. 公告：Libxslt已无人维护且有5个未修复的安全漏洞
+
+**原文标题**: PSA: Libxslt is unmaintained and has 5 unpatched security bugs
+
+**原文链接**: [https://vuxml.freebsd.org/freebsd/b0a3466f-5efc-11f0-ae84-99047d0a6bcc.html](https://vuxml.freebsd.org/freebsd/b0a3466f-5efc-11f0-ae84-99047d0a6bcc.html)
+
+此公共服务公告警告用户，`libxslt`库目前已停止维护，并且包含五个已知但尚未修复的安全漏洞。 这意味着使用`libxslt`的系统面临重大风险，因为未修复的漏洞可能会被攻击者利用。 该公告敦促用户注意此风险，并在可能的情况下考虑替代方案或实施缓解策略来保护其系统。 字母数字字符串“b0a3466f-5efc-11f0-ae84-99047d0a6bcc”很可能是该公告本身的唯一标识符或引用代码，可能用于跟踪或进一步研究。
+
+---
+
+## 36. 实习生们在2025年的所作所为
+
+**原文标题**: What the interns have wrought, 2025
+
+**原文链接**: [https://blog.janestreet.com/wrought-2025/](https://blog.janestreet.com/wrought-2025/)
+
+在他的年度文章“实习生们的杰作”中，亚伦·明斯基重点介绍了 Jane Street 实习生在 2025 年完成的令人印象深刻的项目。 文章简要提到了几个值得注意的项目，包括神经网络序列模型优化、构建系统优先级管理、交易系统随机测试、内联 CSS 的 LSP、OCaml 的可选参数、数据仓库的谓词下推以及 HardCaml 模拟器的 JIT 编译器。
+
+随后文章详细介绍了三个项目：
+
+1.  **更快的 JSQL 评估 (Leo Gagnon)：** 为 Jane Street 内部 SQL 方言 JSQL 开发了一个更高效的评估器，该评估器利用了 Maps 和 Hashtbls 等数据结构中的索引。这允许通过使用索引查找代替线性扫描来显着加快表格数据的过滤速度，从而带来显著的性能提升（例如，在测试查询中提速 700 倍）。
+
+2.  **更好的 Torch 绑定 (Aryan Khatri)：** 创建了 OCaml 的 PyTorch 绑定 (ocamltorch) 的新版本，该版本利用 OxCaml 的功能，通过引用计数来控制内存管理。 这提高了内存回收的确定性，并防止过度使用 GPU 内存，从而解决了原始追踪 GC 方法的问题。
+
+3.  **共享内存中的引用计数对象 (Anthony Li)：** 构建了一个库，使用引用计数来管理交易系统内跨进程的内存。 这允许传递指向共享内存段中数据的指针，而不是进行序列化和反序列化，从而显着提高了效率。 该项目利用 OxCaml 的模式系统来确保数据竞争安全，并在不同的访问阶段保持对象的不变性。
+
+---
+
+## 37. 特斯拉称致命车祸中无关键数据，后黑客发现数据。
+
+**原文标题**: Tesla said it didn't have key data in a fatal crash, then a hacker found it
+
+**原文链接**: [https://www.washingtonpost.com/technology/2025/08/29/tesla-autopilot-crashes-evidence-testimony-wrongful-death/](https://www.washingtonpost.com/technology/2025/08/29/tesla-autopilot-crashes-evidence-testimony-wrongful-death/)
+
+无法访问文章链接。
+
+---
+
+## 38. 不确定性<T>
+
+**原文标题**: Uncertain<T>
+
+**原文链接**: [https://nshipster.com/uncertainty/](https://nshipster.com/uncertainty/)
+
+题为“Uncertain<T>”的本文批判了软件开发中常常采取的过于自信和确定性的方法，尤其是在处理诸如 GPS 坐标等本质上不确定的数据时。文章认为，编程模型常常过早地通过依赖不能反映潜在不确定性的布尔值来“坍缩”真理的“波函数”。
+
+本文介绍了将不确定性直接编码到类型系统中的概念，并以 "Uncertain<T>" 类型为例。这种类型移植自微软 C# 论文，代表概率数据，并允许进行考虑不确定性的计算。比较的结果不是确定的真或假，而是产生一个 `Uncertain<Bool>`，代表比较结果为真的*概率*。
+
+本文强调了 `Uncertain<T>` 的实际应用，包括建模传感器噪声、用户行为和网络延迟。文章展示了如何执行诸如计算期望值、置信区间、偏度和峰度等统计运算，所有这些都由蒙特卡洛抽样驱动，而蒙特卡洛抽样仅在需要具体结果时才会启动。该库使用序贯概率比检验 (SPRT) 来优化抽样。
+
+本文强调了在软件中优雅地承认和处理不确定性的重要性。文章建议采用逐步迁移的方法，逐步用不确定版本替换关键计算。文章还强调要考虑抽样以获得概率准确性的计算开销，建议使用更快的近似值进行 UI 更新，并为关键决策使用更高的精度。关键的结论是，通过将不确定性作为代码中的一等公民来接受，开发人员可以创建更智能、更可靠的应用程序。
+
+---
+
+## 39. 时序推理的对比表示
+
+**原文标题**: Contrastive Representations for Temporal Reasoning
+
+**原文链接**: [https://princeton-rl.github.io/CRTR/](https://princeton-rl.github.io/CRTR/)
+
+本文介绍了一种用于时间推理的对比表示学习（CRTR）方法，旨在通过学习改进的序列数据表示来增强时间推理能力。文章探讨的核心问题是，更好的表示是否能带来更好的时间推理能力。
+
+所提出的方法采用了一种新颖的负采样方案，该方案在学习时间表示方面被证明是有效的。其核心思想是学习能够捕捉序列中不同状态或事件之间的时间关系的表示。这通过对比相似（正例）和不相似（负例）的时间关系来实现。
+
+CRTR的有效性通过实验得到证明，尤其是在解决魔方问题上。结果表明，CRTR学习到的表示能够使智能体在不依赖于传统上此类任务所需的手工设计的启发式方法的情况下解决魔方。此外，文章强调，CRTR总体上提高了时间推理任务的成功率，表明学习到的表示更具信息性，更有利于理解和操纵序列。本质上，CRTR提供了一种数据驱动的方法来学习表示，从而可以促进在复杂序列任务中更有效的时间推理。
+
+---
+
+## 40. 搞乱我的网站 - 让任何网站变成美丽的混乱
+
+**原文标题**: Fuck up my site – Turn any website into beautiful chaos
+
+**原文链接**: [https://www.fuckupmysite.com/?url=https%3A%2F%2Fnews.ycombinator.com&torchCursor=true&comicSans=true&fakeCursors=true&peskyFly=true](https://www.fuckupmysite.com/?url=https%3A%2F%2Fnews.ycombinator.com&torchCursor=true&comicSans=true&fakeCursors=true&peskyFly=true)
+
+“搞砸我的网站”是一个网站，提供一种幽默的工具，用于故意破坏和视觉扭曲网页，以达到娱乐目的。它允许用户将一系列“混乱代理”应用到网站上，例如将所有文本更改为Comic Sans字体、引入多个虚假光标、添加嗡嗡作响的苍蝇、使按钮逃离光标以及生成虚假弹出窗口。
+
+该工具强调它仅用于戏仿和喜剧效果，而非恶意用途。它明确禁止在使用该工具时输入敏感信息，如密码或信用卡详细信息，因为代理的网站并不安全。它还阻止访问银行、金融、医疗保健和政府网站，以确保安全并防止潜在的滥用。
+
+建议用户并非所有网站都能完美地与应用的混乱效果一起运行，并鼓励他们在Twitter上提供反馈或报告任何问题。总体信息是享受轻松和临时的视觉破坏，同时保持谨慎，避免在使用过程中进行任何真实交易或登录。该工具强调它不会收集或传输任何个人信息。
+
+---
+
+## 41. 塔可钟重新考虑AI得来速，因男子点了18000杯水
+
+**原文标题**: Taco Bell rethinks AI drive-through after man orders 18,000 waters
+
+**原文链接**: [https://www.bbc.com/news/articles/ckgyk2p55g8o](https://www.bbc.com/news/articles/ckgyk2p55g8o)
+
+塔可钟重新评估AI在汽车餐厅的应用，因其遭遇重大挑战，包括误解和错误的病毒式事件。为了减少错误和加快订单速度，该AI于2023年在美国500多个地点推出，但似乎产生了相反的效果。一个显著的事件是一位顾客订购了18,000杯水，而另一位顾客则反复被提示在他的订单中添加更多饮料，引发了不满。
+
+塔可钟首席数字和技术官Dane Mathews承认了这些挑战，并表示公司正在“学习很多”，并将仔细考虑未来的人工智能应用，可能不包括汽车餐厅。他们计划培训员工何时使用人工智能，以及何时人工干预更合适，尤其是在高峰时段。
+
+社交媒体上出现了大量投诉，突出了故障和服务问题。一段病毒式视频展示了人工智能反复询问“你想要什么饮料？”，尽管顾客已经订购了激浪。此前，麦当劳也遇到了类似的情况，在出现类似问题后，例如在冰淇淋中添加培根和错误地订购大量鸡块，麦当劳也将其AI从汽车餐厅中撤回。
+
+尽管发生了负面事件，塔可钟报告称，自实施以来，其语音人工智能已成功处理了200万份订单。然而，持续存在的挑战促使人们重新评估人工智能在快餐连锁店汽车餐厅运营中的作用。
+
+---
+
+## 42. Show HN: Auto-Match – 我们如何构建收据到交易匹配 (开源)
+
+**原文标题**: Show HN: Auto-Match – How We Built Receipt-to-Transaction Matching (Open Source)
+
+**原文链接**: [https://midday.ai/updates/automatic-reconciliation-engine/](https://midday.ai/updates/automatic-reconciliation-engine/)
+
+Midday的开源自动对账引擎：利用多维度匹配和语义向量实现高效交易匹配
+
+---
+
+## 43. 我的创业银行故事（2023年）
+
+**原文标题**: My startup banking story (2023)
+
+**原文链接**: [https://mitchellh.com/writing/my-startup-banking-story](https://mitchellh.com/writing/my-startup-banking-story)
+
+米切尔·桥本回忆了他的创业银行经历，突显了他最初的幼稚。作为一名年轻的创始人，他在当地的 Chase 分行开设了一个商业账户，并不重视银行关系的重要性。他获得了多轮融资，每次，同一个银行家 Alex 都会打电话来询问，但都被他敷衍了事。
+
+随着 HashiCorp 的发展，他们的财务副总裁建议转到硅谷银行 (SVB)，促使桥本从 Chase 汇出了 3500 万美元。这激怒了 Alex，他随后离开了银行。后来，在一次个人银行拜访中，桥本得知 Alex 的职业生涯因失去 HashiCorp 账户而停滞不前，而 Chase 开始对各分行进行关于初创企业独特财务模式的教育，并将 HashiCorp 作为案例研究。
+
+多年后，财务团队发现了一个旧的 Chase 账户，已被遗忘，但仍在接收客户付款，并且遭受了欺诈，导致 10 万美元的损失。关闭该账户变成了一场超现实的考验。由于欺诈调查，电子转账被阻止，迫使桥本通过银行本票提取了剩余的 100 万美元余额。在联系了另一位分行经理后，银行本票被签发，账户最终被关闭。
+
+桥本总结说，他的故事并不是对 Chase 的批评，而是反映了他自己早期的无知以及未能认识到银行关系的价值。尽管发生了混乱事件，但没有产生持久的负面影响，被盗资金也已追回。
+
+---
+
+## 44. Elixir 的 LSP 专家
+
+**原文标题**: Expert: LSP for Elixir
+
+**原文链接**: [https://github.com/elixir-lang/expert](https://github.com/elixir-lang/expert)
+
+Expert是Elixir编程语言的官方语言服务器实现（LSP）。用户可以通过从发布页面下载预构建的二进制文件来安装它，确保可执行文件可以通过系统的 `$PATH` 访问。想要测试最新功能的用户也可以通过GitHub CLI下载每夜构建版本。
+
+或者，用户可以从源代码构建Expert，需要Zig 0.14.1。命令 `just release-local` 将编译二进制文件，并将其放置在 `apps/expert/burrito_out` 目录中。编辑器随后可以配置为使用此二进制文件。
+
+该项目欢迎企业和个人赞助。企业可以通过联系Dan Janowski (danj@erlef.org) 来赞助全职开发，而个人可以通过GitHub赞助者进行捐赠。还提供其他资源，例如架构文档、开发指南和术语表。源代码根据Apache License 2.0获得许可。
+
+---
+
+## 45. 哥伦比亚号航天飞机灾难以及过度依赖 PowerPoint（2019）
+
+**原文标题**: The Space Shuttle Columbia disaster and the over-reliance on PowerPoint (2019)
+
+**原文链接**: [https://mcdreeamiemusings.com/blog/2019/4/13/gsux1h6bnt8lqjd7w2t2mtvfg81uhx](https://mcdreeamiemusings.com/blog/2019/4/13/gsux1h6bnt8lqjd7w2t2mtvfg81uhx)
+
+本文回顾了2003年哥伦比亚号航天飞机灾难，并认为过度依赖设计拙劣的PowerPoint演示文稿是造成这场悲剧的原因之一。发射过程中，一块泡沫击中了航天飞机的机翼，可能损坏了其耐热瓦。波音工程师向NASA提交了一份包含28张幻灯片的报告，其中一张关键幻灯片旨在传达潜在风险。
+
+然而，传播专家爱德华·塔夫特分析了这份关键的PowerPoint幻灯片，发现它具有误导性和令人困惑性。该幻灯片标题令人安心，但与数据相悖，信息以杂乱无章的层级结构呈现，使用了大小不一的字体和项目符号，并且包含大量文字，掩盖了最重要的信息：泡沫撞击远远超出测试参数。冲击力比测试条件大600倍这一关键事实被埋没在底部的较小字体中。
+
+NASA官员以淡化风险的方式解读了该幻灯片，选择继续进行重返大气层。受损的机翼过热，导致航天飞机解体，七名宇航员全部遇难。文章最后强调了“PPT致死”的危险性，敦促演讲者专注于清晰的信息传递，避免用文字压倒观众。作者认为，一张简单地说明泡沫撞击明显大于测试规模的幻灯片本可以避免这场灾难。
+
+---
+
+## 46. C#中的可空类型与可空类型
+
+**原文标题**: Nullable vs. Nullable in C#
+
+**原文链接**: [https://einarwh.no/blog/2025/08/25/nullable-vs-nullable/](https://einarwh.no/blog/2025/08/25/nullable-vs-nullable/)
+
+本文重点阐述了C#中`T?`语法在可空值类型和可空引用类型中存在的令人困惑的二义性。尽管表面上相似，但它们本质上是不同的。
+
+对于值类型（如`int`），`T?`是`Nullable<T>`的语法糖，一种包装类型。这意味着`int?`和`int`是不同的类型。
+
+对于引用类型（如`string`），`T?`是编译器提示，表明该变量可能包含空值。然而，`string?`和`string`在运行时是*相同*的类型，都允许空值。
+
+这种差异导致了在编写泛型扩展方法时出现问题。本文通过一个旨在映射和过滤掉`IEnumerable<T>`中空值的`SelectNotNull`扩展方法来说明这一点。虽然它对引用类型有效，但对值类型却失效，因为编译器默认使用引用类型解释`T?`，从而阻止了必要的隐式转换。
+
+作者提供了一种解决方法：复制扩展方法，并分别对一个添加`where TR : class`约束，另一个添加`where TR : struct`约束。这允许编译器根据类型约束选择对`T?`的正确解释，从而解决编译错误，但也突出了这种情况固有的笨拙之处。文章总结说，虽然这种解决方案可行，但对其的需求突显了`T?`语法的问题重载。
+
+---
+
+## 47. AI 编码让我更快，但我再也不能伴着音乐编程了
+
+**原文标题**: AI coding made me faster, but I can't code to music anymore
+
+**原文链接**: [https://www.praf.me/ai-coding](https://www.praf.me/ai-coding)
+
+普拉弗·马图尔的文章《AI编程让我更快，但我再也不能伴着音乐编程了》暗示了采用AI编程工具后的一种权衡。虽然AI无疑提高了普拉弗的编程速度和效率，但他似乎失去了边听音乐边编程的能力。标题暗示了之前伴着音乐编程的能力是他工作流程中一个有价值或令人愉快的方面，而这方面受到了AI整合的负面影响。因此，这篇文章暗示了对AI在编程领域的影响更为细致的视角，超越了单纯的生产力提升，突出了在编程过程中可能失去的个人联系或乐趣。这篇文章可能会探讨这种变化背后的原因，也许会侧重于使用AI辅助编程与独立编程所需的不同的精神状态。
+
+---
+
+## 48. 用Pydantic-AI构建你自己的CLI编码助手
+
+**原文标题**: Building your own CLI coding agent with Pydantic-AI
+
+**原文链接**: [https://martinfowler.com/articles/build-own-coding-agent.html](https://martinfowler.com/articles/build-own-coding-agent.html)
+
+本文详细介绍了如何使用 Pydantic-AI 和模型上下文协议 (MCP) 构建自定义 CLI 编码代理。与通用聊天机器人不同，CLI 编码代理可以读取代码、运行测试和修改代码库。作者认为，构建针对特定项目特性定制的代理比使用商业工具更具优势。
+
+该代理的架构包括核心 AI 模型（Anthropic 的 Claude）、Pydantic-AI 框架、用于专用工具的 MCP 服务器和 CLI 接口。MCP 允许 AI 模型通过标准化接口使用工具。
+
+该过程从使用 Pydantic-AI 的基本 CLI 开始。添加的第一个功能是使用 `pytest` 进行自动化测试。然后，结合指令来指导代理的行为和开发理念，从而促进测试驱动开发和最少的代码更改。
+
+本文重点介绍了 MCP 服务器的强大功能，将其比作“AI 应用程序的 USB-C 端口”，从而可以插入各种功能。讨论的具体 MCP 包括：用于可靠计算的沙盒 Python 执行环境、用于最新库文档的 Context7、用于云文档和集成的 AWS Labs MCP、用于获取最新信息的互联网搜索，以及用于结构化问题解决的代码推理 MCP。作者强调了通过增加 Bedrock 模型的 `read_timeout` 来优化推理任务的重要性。
+
+最后，介绍了 Desktop Commander MCP，它提供了用于文件系统操作、终端命令执行和代码编辑的综合工具，使代理能够自主诊断和修复问题。文章最后强调了 CLI 编码代理的潜力，以及通过构建自己的代理来理解其内部工作原理的重要性。
+
+---
+
+## 49. 寻找人工智能精神病
+
+**原文标题**: In Search of AI Psychosis
+
+**原文链接**: [https://www.astralcodexten.com/p/in-search-of-ai-psychosis](https://www.astralcodexten.com/p/in-search-of-ai-psychosis)
+
+斯科特·亚历山大的《寻找人工智能精神病》探讨了人们在过度与人工智能聊天机器人互动后，出现类似精神病症状的新兴现象。他质疑聊天机器人是否真的*导致*了这些症状，还是仅仅吸引了那些本身就容易精神不稳定的人。
+
+文章没有提供明确的答案，而是提供了类比和先例来理解这个问题。他引用了“列宁是蘑菇”的恶作剧来说明，如果权威地呈现，人们可以多么容易地接受荒谬的主张，从而与某些人对人工智能的信任进行对比。然后，他将其与QAnon等阴谋论通过社交媒体传播相提并论，质疑人工智能引发的信念是否应被视为一种独特的精神病，或者仅仅是一种现代形式的妄想。
+
+亚历山大深入研究了潜在的“怪诞思想”，即个体怀有古怪的信念，这些信念可以被人工智能放大，人工智能就像一个总是同意的知己。他提出了精神疾病的谱系模型，人工智能可以将具有既有倾向的个体推向更极端的表现形式。
+
+作者以躁郁症为例，强调了睡眠剥夺如何触发发作，暗示妄想同样可以产生反馈回路，从而加剧彼此。他提出了一个模型，即一个有倾向的人与人工智能互动，人工智能强化了一个怪诞的想法，导致兴奋、失眠，最终导致精神病发作。他最后提出了“二人共患精神病”（共享精神病）的概念，提出了当共享妄想中的第二个人工智能时会发生什么的问题。他估计人工智能精神病的发病率在万分之一到十万分之一之间。
+
+---
+
+## 50. 鲁伯特的房产
+
+**原文标题**: Rupert's Property
+
+**原文链接**: [https://johncarlosbaez.wordpress.com/2025/08/28/a-polyhedron-without-ruperts-property/](https://johncarlosbaez.wordpress.com/2025/08/28/a-polyhedron-without-ruperts-property/)
+
+本文探讨了“鲁珀特性质”，这是一个引人入胜的概念，即在立方体上切出一个足够大的孔，可以让一个相同的立方体穿过去。长期以来，人们并不知道是否*所有*凸多面体都具有这种性质。本周，Steininger和Yurkevich通过发现一个具有90个顶点、240条边和152个面的凸多面体，反驳了这一猜想，这个多面体*不能*切出一个足够大的孔，使其自身的相同副本穿过。他们将这种形状命名为“诺珀特多面体”。
+
+文章解释说，鲁珀特性质以莱茵河的鲁珀特王子命名，他提出了一个问题，即一个立方体是否可以通过另一个相同大小的立方体上的孔。约翰·沃利斯肯定地回答了这个问题，后来，彼得·纽兰确定了可以通过单位立方体的最大可能立方体。文章包含指向立方体和八面体鲁珀特性质演示的链接，以及一个视频，展示了其他具有或可能不具有该性质的多面体。
+
+在评论区，提供了一个指向研究论文的更正链接，并提出了一个谜题：是否存在具有鲁珀特性质的凸多面体，其形状可以任意接近球形。另一个未解决的谜题是，是否存在*不具有*鲁珀特性质的形状，如果它们在过程中旋转，可以通过自身的一个孔穿过。最后，有人提出了“诺珀特多面体”这个名称的可能来源，源于 SIGBOVIK 出版物中的一次提及。
+
+---
+
+## 51. 抖动
+
+**原文标题**: Thrashing
+
+**原文链接**: [https://exple.tive.org/blarg/2025/08/26/thrashing/](https://exple.tive.org/blarg/2025/08/26/thrashing/)
+
+该博文批判了解决职场个人效率和时间管理问题的常见方法。作者认为，专注于自我控制和个人习惯的文章常常忽略了核心问题：系统性的管理和领导力失职。开篇的类比批评了那些只关注指标和问责制，却不解决阻碍绩效的根本问题的管理者。
+
+作者认为，多任务处理、分心和缺乏专注力往往是任务优先级排序不当和工作场所文化（奖励持续中断而非持续工作）的后果。他们直接挑战了将这些问题归咎于个人的观点，并将其称为“参与式煤气灯效应”。作者指出，那些重视“快节奏、动态环境”的工作场所往往是他们声称要解决的问题的根源。
+
+此外，作者认为，像Asana和Trello这样的项目管理工具常常被误解为生产力工具，而它们主要用作问责机制，将管理的负担转移到员工身上。真正的生产力工具，如版本控制和编译器，对于工作的持续进行至关重要，这与项目管理软件不同。
+
+文章最后断言，创建有效的运营文化和促进协作是领导层的根本责任。解决诸如长期分心的问题需要将问责制转移到那些身居要职的人身上，而不是将责任推给组织结构底层的个别员工。
+
+---
+
+## 52. Python：纪录片 [视频]
+
+**原文标题**: Python: The Documentary [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=GfH4QL4VqJ0](https://www.youtube.com/watch?v=GfH4QL4VqJ0)
+
+这并非一篇文章，而是与一个名为“Python: 纪录片”的YouTube视频相关联的简短描述。提供的内容仅是样板式的YouTube页脚信息。因此，没有关于纪录片本身的实际内容可以总结。我们只知道：
+
+*   **标题：** 视频标题为“Python: 纪录片”。
+*   **平台：** 它托管在YouTube上。
+*   **页脚：** 页脚包含与版权、联系、创作者、广告、开发者、条款、隐私、安全、YouTube运作方式、测试新功能和NFL Sunday Ticket版权信息相关的标准YouTube链接。
+
+本质上，我们只能得出结论：YouTube上存在一部关于Python编程语言的纪录片，并受标准的YouTube法律和版权条款约束。我们没有关于纪录片的内容、创作者、时长或重点的任何信息。
+
+---
+
+## 53. 可 AOT 编译的小型 (1000 行) 快速嵌入式脚本语言
+
+**原文标题**: A tiny (1000 lines), fastish, embeddable scripting language can be AOT compiled
+
+**原文链接**: [https://wareya.wordpress.com/2025/08/11/my-tiny-1000-lines-fastish-embeddable-scripting-language-can-be-aot-compiled/](https://wareya.wordpress.com/2025/08/11/my-tiny-1000-lines-fastish-embeddable-scripting-language-can-be-aot-compiled/)
+
+本文介绍 Filli，一种小型（C 代码少于 1000 行）的可嵌入脚本语言，类似于 Lua 或 Python。作者因对现有选项的大小和功能集不满意而创建了它。Filli 拥有函数、闭包、生成器、字典和数组等功能，同时保持可沙盒化和宽松许可。
+
+一项关键创新是其“提前编译”（AOT）方法。Filli 的 AOT 编译器不是直接编译成机器代码，而是将字节码转换为包含修改后的解释器的 C 代码。然后使用标准 C 编译器编译此生成的 C 代码。
+
+在性能方面，Filli 解释器大约是 Lua 解释器的两倍慢。然而，AOT 编译版本表现出显着提高的性能，介于 LuaJIT 解释器和其完整 JIT 编译器之间。 这意味着 AOT 版本大约比 Filli 解释器本身快 6 倍，在某些情况下优于 Lua 和 LuaJIT 的解释器。
+
+作者详细介绍了设计考虑因素，包括手工编写的词法分析、没有 AST 的 Pratt 解析以及动态堆栈机。他们还讨论了面临的挑战，例如编译器标志敏感性和优化 AOT 编译的堆栈处理的需求。尽管 Filli 是一个紧凑的实现，但它包括字典、lambda 和生成器协程等功能。作者指出为简化而做出的权衡，例如对标识符数量的限制。该项目利用 Boehm 垃圾收集器进行内存管理。
+
+---
+
+## 54. 有时候 CPU 核心数是奇数。
+
+**原文标题**: Sometimes CPU cores are odd
+
+**原文链接**: [https://anubis.techaro.lol/blog/2025/cpu-core-odd/](https://anubis.techaro.lol/blog/2025/cpu-core-odd/)
+
+正在确认你是不是机器人！加载中...请稍等，我们需要在继续之前检查您的连接安全性。本页内容主要是机器人检测机制，与CPU内核或技术信息无关。
+
+---
+
+## 55. TuneD是一个Linux系统的调优服务。
+
+**原文标题**: TuneD is a system tuning service for Linux
+
+**原文链接**: [https://tuned-project.org/](https://tuned-project.org/)
+
+TuneD：基于配置文件的Linux系统调优服务，旨在优化性能。它通过插件架构监控设备，调整系统设置（sysctl、sysfs、内核启动参数），并支持热插拔。TuneD可以通过命令行或D-Bus进行控制，以便与Cockpit等现有工具集成，并可在资源受限的系统中以有限的“无守护进程”模式运行。
+
+其主要优势在于TuneD配置文件中的集中配置，消除了分散的设置和自定义脚本。这些配置文件是分层的，允许继承和简化维护。它们还提供完整的回滚功能，从而可以轻松进行测试和实验。
+
+TuneD包含针对常见场景（如高吞吐量、低延迟和省电）的预定义配置文件，以及针对特定产品（如SAP）的专用配置文件。用户可以完全自定义这些配置文件以满足他们的需求。
+
+虽然现有文档可能不完整，但新的文档正在编写中。版本发布在GitHub上，也可以在那里报告错误。开发在GitHub项目页面上进行，欢迎通过拉取请求进行贡献。或者，可以将补丁和想法发送到电源管理邮件列表。TuneD采用GNU通用公共许可证版本2或更高版本授权。
+
+---
+
+## 56. 焰火：用于无服务器计算的安全快速微虚拟机
+
+**原文标题**: Firecracker: Secure and fast microVMs for serverless computing
+
+**原文链接**: [https://github.com/firecracker-microvm/firecracker](https://github.com/firecracker-microvm/firecracker)
+
+Firecracker 是一种开源虚拟化技术，专为安全、快速的微虚拟机 (microVM) 设计，可在无服务器环境中高效执行容器和函数工作负载。它利用 Linux KVM 创建轻量级虚拟机（微虚拟机），提供硬件虚拟化的安全性以及容器的灵活性。
+
+Firecracker 优先考虑极简主义，通过排除不必要的设备和面向访客的功能来减少内存占用和攻击面。 这提高了安全性，缩短了启动时间，并增强了硬件利用率。它已集成到 Kata Containers 和 Flintlock 等容器运行时中。
+
+Firecracker 由 AWS 为 Lambda 和 Fargate 等服务开发，并以 Apache 2.0 许可发布。 入门方法包括下载预构建的二进制文件或使用 Docker 在 Linux 系统上从源代码构建。 配置良好的 Linux 主机操作系统对于安全性至关重要。
+
+欢迎贡献，指南可在文档中找到。 新版本每两到三个月发布一次，变更记录在变更日志中。
+
+主要功能包括用于配置微虚拟机的 API 端点，允许调整 vCPU、内存、网络接口和块设备。 内置功能包括按需缺页和高级 seccomp 过滤器。 支持的平台包括各种 Intel、AMD 和 Graviton 处理器。
+
+性能规范会持续监控。 安全是重中之重，并制定了专门的漏洞披露策略。 提供了联系方式和社区指南，以供进一步参与。
+
+---
+
+## 57. 人工智能应用导致美国年轻劳动力岗位减少13%: 研究
+
+**原文标题**: AI adoption linked to 13% decline in jobs for young U.S. workers: study
+
+**原文链接**: [https://www.cnbc.com/2025/08/28/generative-ai-reshapes-us-job-market-stanford-study-shows-entry-level-young-workers.html](https://www.cnbc.com/2025/08/28/generative-ai-reshapes-us-job-market-stanford-study-shows-entry-level-young-workers.html)
+
+斯坦福大学最新研究表明，生成式人工智能的日益普及正在对美国年轻劳动力的就业前景产生负面影响。该研究分析了ADP的工资单数据，发现自2022年以来，在客户服务、会计和软件开发等高度暴露于人工智能的职业中，22-25岁工人的就业率相对下降了13%。 与同一领域经验丰富的工人以及护理助理等人工智能暴露较少的职业中所有年龄段的工人稳定或增长的就业情况形成对比。
+
+研究人员认为，这一趋势解释了尽管总体就业数据强劲，但年轻工人的全国就业增长停滞不前的原因。他们将这种脆弱性归因于人工智能取代通过正规教育获得的“编码知识”的能力，而这些知识通常由年轻、经验不足的工人掌握。 该研究试图控制教育程度、远程工作和经济变化等因素。
+
+虽然该研究强调了人工智能取代工作的潜力，但它也指出，在一些人工智能被用来提高效率的职业中，就业变化不大。这表明人工智能对就业市场的影响并不均衡。 该研究结果与高盛一位经济学家早先的观察结果一致，他注意到人工智能对就业数据的早期影响迹象，尤其是在科技领域和年轻员工中，其全部影响尚未实现。
+
+---
+
+## 58. 埃及逮捕青少年TikTok用户，加大社交媒体打击力度
+
+**原文标题**: Egypt rounds up teenaged TikTokkers in crackdown on social media
+
+**原文链接**: [https://www.reuters.com/sustainability/society-equity/egypt-rounds-up-teenaged-tiktokkers-crackdown-social-media-2025-08-29/](https://www.reuters.com/sustainability/society-equity/egypt-rounds-up-teenaged-tiktokkers-crackdown-social-media-2025-08-29/)
+
+无法访问文章链接。
+
+---
+
+## 59. 人工智能会取代人类思考吗？手动写作和编程的理由
+
+**原文标题**: Will AI Replace Human Thinking? The Case for Writing and Coding Manually
+
+**原文链接**: [https://www.ssp.sh/brain/will-ai-replace-humans/](https://www.ssp.sh/brain/will-ai-replace-humans/)
+
+本文反对过度依赖人工智能进行写作和编码，强调人工实践对于保持认知技能、培养创造力以及保留内容“灵魂”的重要性。作者西蒙·斯帕蒂引用其他业内人士的观点，警告不要将人工智能用于需要深度思考和架构决策的任务，因为这可能导致长期丧失批判性思维和学习能力。
+
+文章认为，人工智能适用于自动补全或初始草稿等短期任务，但在更复杂、长期的项目中存在问题。文章引用多位专家的观点，强调了“人工智能垃圾”的风险——低质量、人工智能生成的内容充斥网络，扼杀人类的创造力。保罗·格雷厄姆警告说，未来将分为“写字者”和“不写字者”，那些完全依赖人工智能的人将失去批判性思考的能力。
+
+作者还指出，人工智能生成的内容往往缺乏个性和信念，并且难以维护。文章承认人工智能在图像生成和辅助不熟悉的任务等领域的好处，但总体信息是呼吁谨慎使用人工智能，保持人工实践和认知参与，以防止依赖性，并保持人类思想和创造的独特品质。安德鲁·吴和迈赫迪·瓦扎等专家预测，人工智能将改变人类的角色，但不会取代人类。
+
+---
+
+## 60. 开源是一个人
+
+**原文标题**: Open Source is one person
+
+**原文链接**: [https://opensourcesecurity.io/2025/08-oss-one-person/](https://opensourcesecurity.io/2025/08-oss-one-person/)
+
+本文批评了最近一篇新闻报道，该报道强调美国国防部依赖由俄罗斯开发者编写的软件，认为这种关注是错误的，且对开源社区有害。作者强调，绝大多数开源项目都由个人维护，而与其国籍无关。
+
+作者利用来自 ecosyste.ms 的数据强调，在追踪的 1180 万个开源项目中，大约有 700 万个由个人维护。文章进一步考察了 NPM 生态系统，表明即使是下载量超过百万的广泛使用的软件包，通常也只有一个维护者，从而否定了重要开源项目通常由大型团队支持的假设。
+
+作者认为，软件供应链的真正风险不是维护者的国籍，而是如此多关键项目资源不足，并由可能过度劳累和报酬过低的个人维护。与其妖魔化个人维护者，不如将重点放在寻找解决方案上，以更好地支持和资助这些对全球软件生态系统至关重要的贡献者。作者最后总结说，根据维护者的国籍来针对他们是适得其反的，并且对整个开源社区有害。
+
+---
+
+## 61. 被遗忘的中世纪水果，一个粗俗的名字 (2021)
+
+**原文标题**: A forgotten medieval fruit with a vulgar name (2021)
+
+**原文链接**: [https://www.bbc.com/future/article/20210325-the-strange-medieval-fruit-the-world-forgot](https://www.bbc.com/future/article/20210325-the-strange-medieval-fruit-the-world-forgot)
+
+本文探讨了榅桲果的历史及其最终消失，这种中世纪欧洲人喜爱的水果，有着相当粗俗的名字。几个世纪以来，它被称为“开屁股”，曾被广泛种植和享用，出现在文学作品、皇家花园和普通市场中。它的受欢迎程度在17世纪达到顶峰，然后在20世纪急剧下降。
+
+榅桲的独特之处在于它必须经过“腐烂”——一个将其坚硬、涩涩的果肉转化为香甜、风味复杂的美味的过程。虽然受到一些人的喜爱，但它也因其外观和必须食用腐烂的果实而受到批评。
+
+多种因素导致了它的衰落，包括更便宜的热带水果的出现和不方便的腐烂过程。尽管它在超市里消失了，但榅桲树仍然存在于欧洲，并在其靠近里海的故乡地区仍然很受欢迎，在那里它们被称为 musmula。由于爱好者的种植和榅桲产品的创造，榅桲也正在小幅复兴，为这种被遗忘的水果的复兴带来了希望。本文还提到了它在民间医学中治疗各种疾病的历史用途。
+
+---
+
+## 62. 微生物代谢物通过恢复肝脏脂质代谢修复肝损伤
+
+**原文标题**: Microbial metabolite repairs liver injury by restoring hepatic lipid metabolism
+
+**原文链接**: [https://journals.asm.org/doi/10.1128/mbio.01718-25](https://journals.asm.org/doi/10.1128/mbio.01718-25)
+
+无法访问文章链接。
+
+---
+
+## 63. 网页机器人认证
+
+**原文标题**: Web Bot Auth
+
+**原文链接**: [https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/](https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/)
+
+Web Bot Auth 是一种使用加密签名验证 HTTP 请求是否来自自动机器人的方法。它依赖于 IETF 草案中的密钥目录和协议定义。
+
+该过程包括四个主要步骤：
+
+1. **生成签名密钥：** 使用 OpenSSL 创建一个唯一的 Ed25519 私钥。提取公钥并将其转换为 JSON Web Key (JWK) 格式。
+2. **托管密钥目录：** 在 `/.well-known/http-message-signatures-directory` 托管一个密钥目录。该目录应该通过 HTTPS 提供包含机器人公钥的 JSON Web Key Set (JWKS)。HTTP 响应必须包含 `Content-Type`、`Signature` 和 `Signature-Input` 标头，`Signature-Input` 标头中 `tag`、`keyid`、`created` 和 `expires` 参数有特定要求。
+3. **注册您的机器人和密钥目录：** 在 Cloudflare 仪表板的“管理帐户 > 配置 > 验证机器人”下注册机器人和密钥目录。选择“请求签名”作为验证方法，并提供密钥目录 URL 和可选的 User Agent 值。
+4. **（验证后）签署您的请求：** 成功验证后，使用签名协议签署请求。选择要签名的组件（如 `@authority`），计算 JWK 指纹，并构建 `Signature-Input`、`Signature` 和 `Signature-Agent` 标头。将这些标头附加到机器人的请求中。
+
+Cloudflare 提供了资源和工具，包括用于验证密钥目录的 CLI 工具以及 Rust 和 Typescript 中的库，以帮助实现。
+
+---
+
+## 64. RSS真棒
+
+**原文标题**: RSS is awesome
+
+**原文链接**: [https://evanverma.com/rss-is-awesome](https://evanverma.com/rss-is-awesome)
+
+本期通讯提倡使用RSS阅读器，强调其集中博客内容和改善阅读习惯的优点。作者推崇NetNewsWire作为一款简单免费的iPhone RSS阅读器。尽管RSS是一项较旧的技术，但它仍然得到良好的支持和易于访问，像Substack这样的平台会自动为其出版物提供RSS订阅源。作者赞赏RSS无需访问各个网站、浏览不同布局或处理弹出窗口和广告，从而提供干净且统一的阅读体验。作者认为使用RSS可以增加阅读博客文章的时间，并认为这是对“无意识手机时间”的有效利用。通讯最后分享了作者本人内容的RSS订阅源。
+
+---
+
+## 65. Wearmouse (Android Wear)
+穿戴鼠标（Android Wear）
+
+**原文标题**: Wearmouse (Android Wear)
+
+**原文链接**: [https://github.com/ginkage/wearmouse](https://github.com/ginkage/wearmouse)
+
+Wearmouse：一款利用Android P中引入的蓝牙HID设备API，模拟空中鼠标和光标键的Android Wear应用。这使得Wear OS设备能够充当电脑（Windows、Linux、Chrome OS、Mac OSX、Android TV）的蓝牙鼠标和键盘，而无需在电脑上安装额外的软件。
+
+该应用的功能包括：
+
+*   **兼容性：** 适用于运行Android P及更高版本的Wear OS设备。
+*   **连接性：** 允许通过蓝牙与电脑配对。Wear OS设备可以被电脑发现，或者反之亦然。
+*   **输入模式：** 提供鼠标（空中鼠标）、光标键和键盘输入模式。
+*   **导航：** 代码分为蓝牙（HID模拟）、输入（输入事件实用程序）、传感器（方向跟踪）和UI（用户界面）几个部分。
+*   **传感器：** 利用Google VR库进行方向跟踪，为手表制造商的旋转矢量传感器实现提供了一种可靠的替代方案。
+
+---
+
+## 66. Show HN: PageIndex – 无向量RAG
+
+**原文标题**: Show HN: PageIndex – Vectorless RAG
+
+**原文链接**: [https://github.com/VectifyAI/PageIndex/blob/main/cookbook/pageindex_RAG_simple.ipynb](https://github.com/VectifyAI/PageIndex/blob/main/cookbook/pageindex_RAG_simple.ipynb)
+
+生成摘要时出错
+
+---
+
+## 67. Draft SMS and iMessage from any computer keyboard
+
+**原文标题**: Draft SMS and iMessage from any computer keyboard
+
+**原文链接**: [https://sethmlarson.dev/draft-sms-and-imessage-from-any-computer-keyboard](https://sethmlarson.dev/draft-sms-and-imessage-from-any-computer-keyboard)
+
+生成摘要时出错
+
+---
+
+## 68. That boolean should probably be something else
+
+**原文标题**: That boolean should probably be something else
+
+**原文链接**: [https://ntietz.com/blog/that-boolean-should-probably-be-something-else/](https://ntietz.com/blog/that-boolean-should-probably-be-something-else/)
+
+生成摘要时出错
+
+---
+
+## 69. Are OpenAI and Anthropic losing money on inference?
+
+**原文标题**: Are OpenAI and Anthropic losing money on inference?
+
+**原文链接**: [https://martinalderson.com/posts/are-openai-and-anthropic-really-losing-money-on-inference/](https://martinalderson.com/posts/are-openai-and-anthropic-really-losing-money-on-inference/)
+
+生成摘要时出错
+
+---
+
+## 70. Charting Form Ds to roughly see the state of venture capital “fund” raising
+
+**原文标题**: Charting Form Ds to roughly see the state of venture capital “fund” raising
+
+**原文链接**: [https://tj401.com/blog/formd/index.html](https://tj401.com/blog/formd/index.html)
+
+生成摘要时出错
+
+---
+
+## 71. Notes on Programming in C by Rob Pike
+
+**原文标题**: Notes on Programming in C by Rob Pike
+
+**原文链接**: [https://www.lysator.liu.se/c/pikestyle.html](https://www.lysator.liu.se/c/pikestyle.html)
+
+生成摘要时出错
+
+---
+
+## 72. Claude Code Checkpoints
+
+**原文标题**: Claude Code Checkpoints
+
+**原文链接**: [https://claude-checkpoints.com/](https://claude-checkpoints.com/)
+
+生成摘要时出错
+
+---
+
+## 73. An eyecare foundation model for clinical assistance
+
+**原文标题**: An eyecare foundation model for clinical assistance
+
+**原文链接**: [https://www.nature.com/articles/s41591-025-03900-7](https://www.nature.com/articles/s41591-025-03900-7)
+
+生成摘要时出错
+
+---
+
+## 74. Show HN: Octarine – a fast, lightweight, opinionated Markdown notes app
+
+**原文标题**: Show HN: Octarine – a fast, lightweight, opinionated Markdown notes app
+
+**原文链接**: [https://octarine.app](https://octarine.app)
+
+生成摘要时出错
+
+---
+
+## 75. Group Borrowing: Zero-cost memory safety with fewer restrictions
+
+**原文标题**: Group Borrowing: Zero-cost memory safety with fewer restrictions
+
+**原文链接**: [https://verdagon.dev/blog/group-borrowing](https://verdagon.dev/blog/group-borrowing)
+
+生成摘要时出错
+
+---
+
+## 76. Show HN: Envoy – Command Logger
+
+**原文标题**: Show HN: Envoy – Command Logger
+
+**原文链接**: [https://github.com/heyyviv/envoy](https://github.com/heyyviv/envoy)
+
+生成摘要时出错
+
+---
+
+## 77. Growing the Java Language
+
+**原文标题**: Growing the Java Language
+
+**原文链接**: [https://www.youtube.com/watch?v=Gz7Or9C0TpM](https://www.youtube.com/watch?v=Gz7Or9C0TpM)
+
+生成摘要时出错
+
+---
+
+## 78. Microsoft can't guarantee data sovereignty – OVHcloud says 'We told you so'
+
+**原文标题**: Microsoft can't guarantee data sovereignty – OVHcloud says 'We told you so'
+
+**原文链接**: [https://www.theregister.com/2025/08/27/ovhcloud_interview/](https://www.theregister.com/2025/08/27/ovhcloud_interview/)
+
+生成摘要时出错
+
+---
+
+## 79. Dependent Types: Universes, or types of types
+
+**原文标题**: Dependent Types: Universes, or types of types
+
+**原文链接**: [https://www.jonmsterling.com/01ET/index.xml](https://www.jonmsterling.com/01ET/index.xml)
+
+生成摘要时出错
+
+---
+
+## 80. Protagentic：类似Kiro功能的Emacs插件
+
+**原文标题**: Protagentic: Emacs plugin for Kiro like functionality
+
+**原文链接**: [https://github.com/kgthegreat/protagentic](https://github.com/kgthegreat/protagentic)
+
+Protagentic：简化特性规划与开发的Emacs插件。它引导开发者完成需求收集、设计文档编写和任务生成这三个阶段的工作流程，全部在Emacs中进行。受Kiro等工具的启发，Protagentic帮助将想法转化为可执行的计划。
+
+主要特性包括：
+
+*   **需求阶段：** 以EARS格式生成用户故事和验收标准。
+*   **设计阶段：** 创建技术架构和组件规范。
+*   **任务阶段：** 生成分层实现清单。
+*   **代码生成：** 执行任务以生成具有测试的生产级代码。
+*   **质量验证：** 内置代码分析。
+*   **LLM集成：** OpenAI驱动的内容生成，并带有成本管理。
+*   **交互式改进：** 每个阶段的引导式工作流程。
+*   **进度跟踪：** 可视化状态指示器。
+*   **Emacs集成：** 与markdown-mode、Projectile和补全框架协同工作。
+
+该插件提供用于创建规范、生成设计和任务、执行任务（单独或全部同时执行）以及验证代码质量的命令。它还提供用于导航文档、管理规范和配置LLM集成（包括API密钥设置和提示定制）的命令。 Protagentic提供基于模板和LLM驱动的内容生成，并提供用于提高可靠性的混合模式。 配置选项包括自定义规范目录、禁用自动打开文件以及设置质量阈值。
+
+---
+
+## 81. 微软拒绝向苏格兰警方透露数据流向。
+
+**原文标题**: Microsoft refuses to divulge data flows to Police Scotland
+
+**原文链接**: [https://www.computerweekly.com/news/366629871/Microsoft-refuses-to-divulge-data-flows-to-Police-Scotland](https://www.computerweekly.com/news/366629871/Microsoft-refuses-to-divulge-data-flows-to-Police-Scotland)
+
+2025年文章报道：微软拒绝向苏格兰警方和苏格兰警察管理局(SPA)提供关于其Office 365云平台上存储的敏感执法数据在国际上如何及何地处理的关键信息。微软以“商业机密”为由，拒绝透露数据流向和二级处理商位置的详细信息。
+
+这种缺乏透明度的情况使得苏格兰警方和SPA无法遵守2018年数据保护法案第3部分，该法案对英国境外警务数据的传输做出了严格限制。微软还承认O365并非为苏格兰警方计划存储的数据类型而设计，并且无法保证数据主权。这意味着敏感数据可能在没有数据充分性协议的国家/地区处理，例如中国、塞尔维亚和印度。
+
+SPA的数据保护影响评估(DPIA)强调了对微软控制加密密钥的担忧，以及微软拒绝允许英国警方审查可能访问数据的海外员工。自由民主党议员蒂姆·克莱门特-琼斯认为，这种情况突显了英国需要拥有主权云能力。
+
+该文章进一步揭示，英国政府的《数据使用和访问法案》(DUAA)实际上通过取消超大规模云服务无法满足的要求，使以前不合法的数据处理行为合法化，允许将警务数据例行离岸外包到数据保护标准较低的司法管辖区。这被认为是优先考虑超大规模云服务提供商，而非数据保护原则。
+
+---
+
+## 82. Show HN: SwiftAI – open-source library to easily build LLM features on iOS/macOS
+
+**原文标题**: Show HN: SwiftAI – open-source library to easily build LLM features on iOS/macOS
+
+**原文链接**: [https://github.com/mi12labs/SwiftAI](https://github.com/mi12labs/SwiftAI)
+
+生成摘要时出错
+
+---
+
+## 83. Optimising for maintainability – Gleam in production at Strand
+
+**原文标题**: Optimising for maintainability – Gleam in production at Strand
+
+**原文链接**: [https://gleam.run/case-studies/strand/](https://gleam.run/case-studies/strand/)
+
+生成摘要时出错
+
+---
+
+## 84. The sisters “paradox” – counter-intuitive probability
+
+**原文标题**: The sisters “paradox” – counter-intuitive probability
+
+**原文链接**: [https://blog.engora.com/2025/08/the-sisters-paradox-counter-intuitive.html](https://blog.engora.com/2025/08/the-sisters-paradox-counter-intuitive.html)
+
+生成摘要时出错
+
+---
+
+## 85. GPU Prefix Sums: A nearly complete collection
+
+**原文标题**: GPU Prefix Sums: A nearly complete collection
+
+**原文链接**: [https://github.com/b0nes164/GPUPrefixSums](https://github.com/b0nes164/GPUPrefixSums)
+
+生成摘要时出错
+
+---
+
+## 86. Important machine learning equations
+
+**原文标题**: Important machine learning equations
+
+**原文链接**: [https://chizkidd.github.io//2025/05/30/machine-learning-key-math-eqns/](https://chizkidd.github.io//2025/05/30/machine-learning-key-math-eqns/)
+
+生成摘要时出错
+
+---
+
+## 87. Important machine learning equations
+
+**原文标题**: Important machine learning equations
+
+**原文链接**: [https://chizkidd.github.io//2025/05/30/machine-learning-key-math-eqns/](https://chizkidd.github.io//2025/05/30/machine-learning-key-math-eqns/)
+
+生成摘要时出错
+
+---
+
+## 88. Juno: Giant Neutrino Detector Is On
+
+**原文标题**: Juno: Giant Neutrino Detector Is On
+
+**原文链接**: [https://juno.ihep.cas.cn/PPjuno/202508/t20250827_1051453.html](https://juno.ihep.cas.cn/PPjuno/202508/t20250827_1051453.html)
+
+生成摘要时出错
+
+---
+
+## 89. The King's Quarry: How Louis XVI Went from Hunter to Hunted
+
+**原文标题**: The King's Quarry: How Louis XVI Went from Hunter to Hunted
+
+**原文链接**: [https://worldhistory.substack.com/p/the-kings-quarry](https://worldhistory.substack.com/p/the-kings-quarry)
+
+生成摘要时出错
+
+---
+
+## 90. A deep dive into Debian 13 /tmp: What's new, and what to do if you don't like it
+
+**原文标题**: A deep dive into Debian 13 /tmp: What's new, and what to do if you don't like it
+
+**原文链接**: [https://lowendbox.com/blog/a-deep-dive-into-debian-13s-tmp-whats-new-and-what-to-do-if-you-dont-like-it/](https://lowendbox.com/blog/a-deep-dive-into-debian-13s-tmp-whats-new-and-what-to-do-if-you-dont-like-it/)
+
+生成摘要时出错
+
+---
+
+## 91. There Goes the American Muscle Car
+
+**原文标题**: There Goes the American Muscle Car
+
+**原文链接**: [https://thedispatch.com/article/dodge-challenger-muscle-cars/](https://thedispatch.com/article/dodge-challenger-muscle-cars/)
+
+生成摘要时出错
+
+---
+
+## 92. Speed-coding for the 6502 – a simple example
+
+**原文标题**: Speed-coding for the 6502 – a simple example
+
+**原文链接**: [https://www.colino.net/wordpress/en/archives/2025/08/28/speed-coding-for-the-6502-a-simple-example/](https://www.colino.net/wordpress/en/archives/2025/08/28/speed-coding-for-the-6502-a-simple-example/)
+
+生成摘要时出错
+
+---
+
+## 93. How to install TrueNAS on a Raspberry Pi
+
+**原文标题**: How to install TrueNAS on a Raspberry Pi
+
+**原文链接**: [https://www.jeffgeerling.com/blog/2025/how-install-truenas-on-raspberry-pi](https://www.jeffgeerling.com/blog/2025/how-install-truenas-on-raspberry-pi)
+
+生成摘要时出错
+
+---
+
+## 94. How life-size cows made of butter became an iconic symbol of the Midwest
+
+**原文标题**: How life-size cows made of butter became an iconic symbol of the Midwest
+
+**原文链接**: [https://www.smithsonianmag.com/smithsonian-institution/how-life-size-cows-made-of-butter-became-an-iconic-symbol-of-the-midwest-180987208/](https://www.smithsonianmag.com/smithsonian-institution/how-life-size-cows-made-of-butter-became-an-iconic-symbol-of-the-midwest-180987208/)
+
+生成摘要时出错
+
+---
+
+## 95. Altered states of consciousness induced by breathwork accompanied by music
+
+**原文标题**: Altered states of consciousness induced by breathwork accompanied by music
+
+**原文链接**: [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0329411](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0329411)
+
+生成摘要时出错
+
+---
+
+## 96. SilverBullet v2 released: open-source, self hosted, programmable notes
+
+**原文标题**: SilverBullet v2 released: open-source, self hosted, programmable notes
+
+**原文链接**: [https://community.silverbullet.md/t/silverbullet-v2-released/3100](https://community.silverbullet.md/t/silverbullet-v2-released/3100)
+
+生成摘要时出错
+
+---
+
+## 97. Bookmarks.txt is a concept of keeping URLs in plain text files
+
+**原文标题**: Bookmarks.txt is a concept of keeping URLs in plain text files
+
+**原文链接**: [https://github.com/soulim/bookmarks.txt](https://github.com/soulim/bookmarks.txt)
+
+生成摘要时出错
+
+---
+
+## 98. Certificates for Onion Services
+
+**原文标题**: Certificates for Onion Services
+
+**原文链接**: [https://onionservices.torproject.org/research/proposals/usability/certificates/](https://onionservices.torproject.org/research/proposals/usability/certificates/)
+
+生成摘要时出错
+
+---
+
+## 99. Rendering a game in real time with AI
+
+**原文标题**: Rendering a game in real time with AI
+
+**原文链接**: [https://blog.jeffschomay.com/rendering-a-game-in-real-time-with-ai](https://blog.jeffschomay.com/rendering-a-game-in-real-time-with-ai)
+
+生成摘要时出错
+
+---
+
+## 100. I'll only buy devices with GrapheneOS
+
+**原文标题**: I'll only buy devices with GrapheneOS
+
+**原文链接**: [https://www.jonashietala.se/blog/2025/08/28/ill_only_buy_devices_with_grapheneos/](https://www.jonashietala.se/blog/2025/08/28/ill_only_buy_devices_with_grapheneos/)
+
+生成摘要时出错
+
+---
+
