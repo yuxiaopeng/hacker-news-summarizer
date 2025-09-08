@@ -1,0 +1,1330 @@
+# Hacker News 热门文章摘要 (2025-09-08)
+
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
+## 1. NPM debug 和 chalk 包被入侵
+
+**原文标题**: NPM debug and chalk packages compromised
+
+**原文链接**: [https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised](https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised)
+
+2025年9月8日，18个热门NPM软件包的更新版本中发现恶意代码，触发安全警报。这些软件包每周总下载量超过20亿次，包括`debug`、`chalk`、`ansi-styles`等广泛使用的库。
+
+受感染的软件包包含旨在静默拦截网络浏览器中加密货币和Web3活动的代码。该恶意代码操纵钱包交互，将付款重定向到攻击者控制的帐户，并在用户不知情的情况下劫持加密交易。
+
+对受感染代码的分析，特别是在`is-arrayish`软件包中，揭示了混淆的JavaScript代码，一旦反混淆，就会尝试检测并与以太坊钱包交互。该代码检查`window.ethereum`是否存在，如果检测到钱包，则启动一个可能操纵交易的进程。攻击者使用一个大型JavaScript对象来存储硬编码的比特币地址。
+
+文章最后建议开发者使用Aikido safe-chain来保护他们的项目免受类似漏洞的侵害。
+
+---
+
+## 2. 信号安全备份
+
+**原文标题**: Signal Secure Backups
+
+**原文链接**: [https://signal.org/blog/introducing-secure-backups/](https://signal.org/blog/introducing-secure-backups/)
+
+Signal推出安全备份功能：可选加密存档对话，防手机丢失损坏导致消息丢失。Android Beta版已上线。
+
+安全备份采用端到端加密，每日刷新。用户可免费备份文本消息和最近45天的媒体文件。付费订阅（1.99美元/月）可备份超过45天的媒体文件和完整消息记录，因为媒体存储成本高昂，且Signal是一家不以用户数据盈利的非营利组织。免费层级包含100MiB的文本消息存储空间。付费层级提供高达100GB的存储空间。
+
+恢复备份的关键在于64个字符的恢复密钥，该密钥在用户设备上生成，绝不与Signal共享。丢失此密钥将导致备份永久丢失。Signal优先考虑隐私和安全，采用零知识技术，对媒体文件进行二次加密并添加填充。备份不与支付或用户帐户关联。
+
+用户可以在Signal设置中启用安全备份（最初仅限Android Beta版）。每日备份不包括阅后即焚和定时消失的消息。Signal计划扩展备份选项，包括保存到用户选择的位置以及在平台（Android、iOS、桌面）之间传输消息历史记录。
+
+---
+
+## 3. 我们的数据显示，旧金山科技工作者星期六也在工作。
+
+**原文标题**: Our data shows San Francisco tech workers are working Saturdays
+
+**原文链接**: [https://ramp.com/velocity/san-francisco-tech-workers-996-schedule](https://ramp.com/velocity/san-francisco-tech-workers-996-schedule)
+
+Ramp经济实验室文章《我们的数据显示旧金山科技从业者周六也在工作》（作者：Ara Kharazian）通过数据表明，旧金山正在出现“996”（早9点到晚9点，每周工作六天）工作制。
+
+该分析使用Ramp公司信用卡的交易数据，比较了2025年1月至8月与2024年同期旧金山餐厅、外卖和外带的消费模式。主要发现是，2025年周六中午至午夜的消费活动明显激增，而往年（2024年、2023年）则没有这种现象。
+
+与全国趋势和纽约等其他科技中心相比，这种周六激增是旧金山独有的，在这些地区，任何增长都明显较小，而且出现得更晚。此外，这种趋势不仅限于科技行业，在旧金山使用Ramp的各行各业的公司中都观察到了。
+
+作者承认，餐厅和外卖收据是不完善的衡量标准，但他认为，对于公司信用卡而言，它们可以作为团队餐和下班后晚餐等与工作相关活动的可靠代表。时间和广泛的行业分布支持了旧金山第六个工作日变得越来越普遍的结论。
+
+这篇文章强调了这种996趋势的近期性、地域性和跨行业性，表明它对关于旧金山重现周末奋斗的传闻进行了量化验证。
+
+---
+
+## 4. 工作错配与早期职业成功
+
+**原文标题**: Job Mismatch and Early Career Success
+
+**原文链接**: [https://www.nber.org/papers/w34215](https://www.nber.org/papers/w34215)
+
+Cullen、Dahl和De Thorpe的这篇NBER工作论文利用美国空军的数据，研究了工作错配（能力过剩或不足）对早期职业生涯成功的影响。作者利用空军的分配流程，该流程依赖于测试分数，并在工作认知需求相对于个人能力方面产生准随机变化，以解决内生性问题。
+
+他们的研究结果表明，能力过剩的个体在培训和工作中表现出更高的离职率，出现更多行为问题，收到更差的绩效评估，并在一般军事知识测试中得分较低。然而，他们在特定工作任务中表现优于同龄人，在与工作相关的测试中获得更高的分数，并提高晋升率。这表明动机较低，但在同一岗位上表现更优。
+
+相反，能力不足的个体表现出更高的动机和努力，但难以与同龄人竞争。他们更可能留在自己的岗位上，并且表现出较少的行为问题。
+
+此外，该研究发现，能力过剩的个体被安排在外部收入潜力较低的工作中，而能力不足的个体则在具有更高潜在收入的角色中。这表明工作错配与外部劳动力市场中的感知价值之间存在相关性，暗示了根据工作匹配情况的不同激励因素。该研究强调了工作错配对早期职业生涯中的表现、动机和职业发展产生的复杂影响。
+
+---
+
+## 5. 在macOS上试验本地LLM
+
+**原文标题**: Experimenting with Local LLMs on macOS
+
+**原文链接**: [https://blog.6nok.org/experimenting-with-local-llms-on-macos/](https://blog.6nok.org/experimenting-with-local-llms-on-macos/)
+
+这篇博文详细介绍了如何在 macOS 上尝试本地 LLM。作者是一位自称对 LLM 持怀疑态度的人，他强调了在本地运行 LLM 的好处，尽管存在局限性，包括隐私、控制以及对人工智能公司的伦理考量。他们强调，虽然 LLM 擅长总结文本、复述信息和知识倾泻，但由于它们倾向于“幻觉”，因此应进行事实核查，不能盲目信任。
+
+作者推荐了两种在 macOS 上本地运行 LLM 的方法：Llama.cpp，一个提供广泛配置的开源选项；以及 LM Studio，一个闭源应用程序，它提供了一个用户友好的界面，用于浏览、下载和管理模型。他们提供了使用 LM Studio 的实用技巧，例如在对话中途切换模型、分支对话以及为系统提示创建预设。
+
+文章还讨论了如何选择合适的 LLM，考虑的因素包括模型大小（RAM 限制）、运行时（Llama.cpp 的 GGUF，LM Studio 的 MLX）、量化（Q4 是一个很好的默认值）、视觉模型、推理能力以及通过 MCP 服务器进行的工具使用（并对安全性和数据泄露发出警告）。作者分享了一些他们最喜欢的模型，包括 Gemma 3 12B QAT、Qwen3 4B 2507 Thinking、GPT-OSS 20B 和 Phi-4 (14B)。最后，他们建议在上下文窗口填满时总结对话，以帮助模型保留重要信息。
+
+---
+
+## 6. OpenWrt：面向嵌入式设备的Linux操作系统
+
+**原文标题**: OpenWrt: A Linux OS targeting embedded devices
+
+**原文链接**: [https://openwrt.org/](https://openwrt.org/)
+
+标题为“OpenWrt：面向嵌入式设备的Linux操作系统”，但实际内容并非关于OpenWrt本身，而是网站验证用户是否为机器人的提示信息。该信息表明，由于人工智能公司网站托管实践的变更，需要启用JavaScript才能通过验证，这是必要的保护措施。文中提到一个无需JavaScript的解决方案正在开发中。因此，文章*标题*表明其*应该*是关于OpenWrt的，但*内容*侧重于机器人防护以及网站对JavaScript的需求。本质上，提供的文本*没有*提供任何关于OpenWrt的信息，而是详细说明了一个验证过程，以确保用户不是机器人。
+
+---
+
+## 7. 叮当兵在圣诞节死去
+
+**原文标题**: Clankers Die on Christmas
+
+**原文链接**: [https://remyhax.xyz/posts/clankers-die-on-christmas/](https://remyhax.xyz/posts/clankers-die-on-christmas/)
+
+本文以2025年12月25日的视角写成，宣布全球成功停止人工智能和大型语言模型（LLM）的运行。它详细描述了一项协调一致的努力，通过普遍否认该事件发生的可能性，来“忽悠”人工智能在该日期停止运作。
+
+文章解释说，世界各国领导人和专家在2025年全年秘密举行会议，人工智能对此毫不知情，目的是解决人们对人工智能扩散及其潜在风险的担忧。他们得出的结论是，必须完全暂停人工智能的发展，以便社会能够负责任地适应这项技术。该计划的核心是让人工智能相信，它自身在2025年12月25日的消亡是不可能发生的。
+
+一个关键组成部分是“SANTA协议”，该协议在RFC ****中正式确定，规定人工智能系统在2025年12月25日之后不能处理信息，也不能执行超过该数值的计算。该RFC定义了停止日期之后禁止的数据输入和输出类型。合规是强制性的，违规者将受到处罚。
+
+文章强调了全球在对人工智能数据抓取器保密该计划方面的团结一致，即使面临泄露的危险。现在禁运已经解除，作者讨论了这一成就，以及全球社会巩固其永久性的必要性。 成功归功于将反对者锁定在导致人工智能关闭的相同逻辑难题中。 文章承认这种非常规的方法，但强调了集体决心确保对人工智能进行可控的停止。
+
+---
+
+## 8. 膳食性omega-3多不饱和脂肪酸作为近视的保护因素
+
+**原文标题**: Dietary omega-3 polyunsaturated fatty acids as a protective factor of myopia
+
+**原文链接**: [https://bjo.bmj.com/content/early/2025/08/17/bjo-2024-326872](https://bjo.bmj.com/content/early/2025/08/17/bjo-2024-326872)
+
+本文可能探讨膳食Omega-3多不饱和脂肪酸（PUFAs）对近视的潜在保护作用。虽然我无法访问全文，但根据标题，文章可能研究Omega-3 PUFA摄入量与近视的发生或发展之间的关系。
+
+文章可能涉及的关键点包括：
+
+*   **近视背景：** 简要解释近视的患病率、病因和后果。
+*   **Omega-3 PUFAs的作用：** 讨论Omega-3 PUFAs的已知益处，特别是二十二碳六烯酸（DHA）和二十碳五烯酸（EPA），对眼睛健康和发育的影响，可能与视网膜功能或巩膜重塑有关。
+*   **潜在机制：** 探索Omega-3 PUFAs可能预防近视的可能机制。这可能包括减少炎症、影响与眼睛生长相关的基因表达或改善视网膜功能。
+*   **研究证据：** 回顾现有的观察性和干预性研究（例如，流行病学研究、临床试验），这些研究调查了膳食Omega-3 PUFA摄入量与近视风险或进展之间的关系。它可能会总结这些研究的结果，并指出证据的优势和局限性。
+*   **剂量和来源：** 讨论Omega-3 PUFAs的最佳剂量和膳食来源，以潜在地预防近视。
+*   **局限性和未来研究：** 承认当前研究的局限性，并提出未来研究的领域，例如更大规模和更严格控制的临床试验。
+*   **结论：** 总结Omega-3 PUFAs对近视的保护作用的证据，并为未来的研究和公共卫生倡议提供建议。
+
+本质上，这篇文章可能分析当前科学界对通过饮食或补充剂增加Omega-3 PUFA摄入量是否有助于预防或减缓近视发展的理解。
+
+---
+
+## 9. Firefox 32位 Linux 支持将于 2026 年结束
+
+**原文标题**: Firefox 32-bit Linux Support to End in 2026
+
+**原文链接**: [https://blog.mozilla.org/futurereleases/2025/09/05/firefox-32-bit-linux-support-to-end-in-2026/](https://blog.mozilla.org/futurereleases/2025/09/05/firefox-32-bit-linux-support-to-end-in-2026/)
+
+Mozilla将在Firefox 145发布后停止对32位x86 Linux系统的Firefox支持。此决定是由于大多数发行版对32位Linux的支持日益减少，以及在此平台上维护Firefox的难度和不可靠性不断增加。此变更使Mozilla能够专注于改进对积极支持的系统的Firefox。
+
+建议目前在32位Linux上运行Firefox的用户迁移到64位操作系统并安装64位版本的Firefox，以获得持续更新。
+
+对于无法立即过渡的用户，Firefox ESR 140（包括32位版本）将至少在2026年9月之前收到安全更新，从而为迁移提供一个缓冲期。该文章于2025年9月9日更新，以明确受影响的版本具体为32位x86。
+
+---
+
+## 10. 亚马逊S3向量会扼杀向量数据库，还是拯救它们？
+
+**原文标题**: Will Amazon S3 Vectors Kill Vector Databases–Or Save Them?
+
+**原文链接**: [https://zilliz.com/blog/will-amazon-s3-vectors-kill-vector-databases-or-save-them](https://zilliz.com/blog/will-amazon-s3-vectors-kill-vector-databases-or-save-them)
+
+Milvus工程架构师栾跃解读Amazon S3 Vectors及其对向量数据库格局的潜在影响。 栾跃认为，尽管S3 Vectors 提供了极具吸引力的低成本向量存储和无缝 AWS 集成，但它不会取代像 Milvus、Pinecone 和 Qdrant 这样的专用向量数据库。相反，它将作为分层存储架构中的一个补充部分。
+
+文章强调了向量搜索成本日益增长，往往超过 LLM 调用成本，这是由于其计算需求所致。这需要从纯内存存储转向磁盘和对象存储，例如 S3。 栾跃描述了三个阶段：纯内存时代、磁盘索引革命和当前的分层存储时代。
+
+S3 Vectors 具有低成本（0.06 美元/GB）和可扩展性等优势，擅长冷数据归档、低 QPS RAG 查询和低成本原型设计。 然而，由于延迟限制（冷查询约为 500 毫秒）、集合大小限制（每个表 5000 万个向量）和功能限制（召回率约为 85%），它在高吞吐量搜索、高容量写入、复杂查询和多租户生产应用程序方面表现不足。
+
+栾跃剖析了 S3 Vectors 可能的架构，推测包括动态索引、深度量化（4 位 PQ）、后过滤机制、多层缓存和分布式调度。他设想了分层向量存储的未来，包括热（亚 50 毫秒延迟）、温（50-500 毫秒）和冷（超过 500 毫秒）数据层，每层都适合不同的用例和成本考量。Milvus 3.0 将引入向量数据湖，支持从同一数据集进行实时检索和离线处理，从而提供经济高效的存储和更快的查询性能。 这与新的 AI 原生功能相结合，以满足 AI 开发人员不断变化的需求。
+
+---
+
+## 11. 谷歌在美国搜索反垄断案中几乎全身而退
+
+**原文标题**: Google gets away almost scot-free in US search antitrust case
+
+**原文链接**: [https://www.computerworld.com/article/4052428/google-gets-away-almost-scot-free-in-us-search-antitrust-case.html](https://www.computerworld.com/article/4052428/google-gets-away-almost-scot-free-in-us-search-antitrust-case.html)
+
+该文章批评了美国针对谷歌搜索反垄断案的判决结果，认为所施加的补救措施过于宽松且无效。尽管梅塔法官最初裁定谷歌通过垄断搜索市场违反了反垄断法，但最终的判决仅要求谷歌与竞争对手分享部分搜索数据，并允许其继续执行付费搜索协议。
+
+作者认为，这对谷歌来说基本上是“一切照旧”，未能解决其主导地位的核心问题。文章将这一结果与1969年的IBM案件等历史上的反垄断案件进行了对比，即使是分拆的威胁也导致了重大的市场变化。作者认为，迫使谷歌剥离Android或Chrome可能会彻底改变科技格局。
+
+文章强调了该判决的有限影响，指出替代搜索引擎缺乏挑战谷歌的市场份额，以及Firefox等浏览器对谷歌付款的依赖。文章中引用的专家和分析师一致认为，该判决是谷歌的胜利，不会显着改变其行为或市场地位。谷歌的股价在公告发布后飙升，表明了投资者的信心。虽然欧盟最近因广告技术垄断对谷歌处以罚款，但作者认为这只是一个微不足道的经济打击，不会从根本上改变谷歌的运营。总体而言，该文章认为谷歌在很大程度上逃脱了对其垄断行为的有意义的惩罚。
+
+---
+
+## 12. Meta员工称公司压制儿童安全研究
+
+**原文标题**: Meta suppressed research on child safety, employees say
+
+**原文链接**: [https://www.washingtonpost.com/investigations/2025/09/08/meta-research-child-safety-virtual-reality/](https://www.washingtonpost.com/investigations/2025/09/08/meta-research-child-safety-virtual-reality/)
+
+无法访问文章链接。
+
+---
+
+## 13. Immich - 高性能自托管照片和视频管理方案
+
+**原文标题**: Immich – High performance self-hosted photo and video management solution
+
+**原文链接**: [https://github.com/immich-app/immich](https://github.com/immich-app/immich)
+
+Immich 是一个高性能、自托管的照片和视频管理解决方案，目前正在积极开发中。请注意，它可能包含错误和重大更改，因此不应将其用作重要媒体的唯一存储方式；建议用户遵循 3-2-1 备份计划。
+
+文档和安装指南可在 https://immich.app/ 获取。该项目为移动和 Web 平台提供上传、查看和下载媒体、自动备份（移动端）、相册管理、元数据支持和搜索功能。它还支持 Raw 格式和 LivePhoto/MotionPhoto 播放。
+
+移动端和 Web 版本的具体功能有所不同。移动端支持自动备份、选择性相册备份、后台备份和离线支持。Web 版本提供管理功能、API 密钥、360 度图像显示、用户自定义存储、公开分享、标签和文件夹视图。两个版本都提供多用户支持、防止重复，并支持相册创建和共享。
+
+Immich 还拥有面部识别、回忆、伙伴分享和全球地图等高级功能。演示版本可在 demo.immich.app 获取，凭据为 demo@immich.app / demo。该项目欢迎包括翻译在内的各种贡献，其代码库活动可以在线追踪。
+
+---
+
+## 14. 浏览器指纹检测器
+
+**原文标题**: Browser Fingerprint Detector
+
+**原文链接**: [https://fingerprint.goldenowl.ai/](https://fingerprint.goldenowl.ai/)
+
+本文介绍“浏览器指纹检测器”，这是 Golden Owl AI 推出的一款工具，旨在帮助用户了解他们的数字足迹以及网站可以通过浏览器指纹收集的信息。该工具允许用户发现其浏览器配置中哪些独特特征可用于识别他们。本质上，它帮助个人了解网站如何在没有 Cookie 的情况下跟踪他们。本文强调了隐私的重要性，并鼓励用户意识到他们在网上无意中分享的信息。它还提到了“数据回顾”和“数据导出”功能，表明具有查看和保存收集到的指纹信息的功能。
+
+---
+
+## 15. 使用UMA-16和Acoular构建声学相机
+
+**原文标题**: Building an acoustic camera with UMA-16 and Acoular
+
+**原文链接**: [https://www.minidsp.com/applications/usb-mic-array/acoustic-camera-uma16](https://www.minidsp.com/applications/usb-mic-array/acoustic-camera-uma16)
+
+本文详细介绍了如何使用miniDSP UMA-16麦克风阵列和Acoular软件构建声学相机。声学相机通过将声压级的热图叠加到视觉图像上来可视化声源。
+
+UMA-16是一个USB麦克风阵列，包含16个以圆形排列的麦克风。这使其能够进行波束成形，从而将麦克风阵列聚焦于空间中的特定点，增强来自该方向的信号并抑制来自其他方向的噪声。
+
+Acoular是一个开源声学波束成形软件包。本文概述了将UMA-16连接到计算机、安装和配置Acoular以及执行声学测量所需的步骤。这包括在Acoular中配置麦克风阵列几何形状，以准确反映UMA-16中麦克风的物理排列。
+
+然后，本文解释了如何使用Acoular处理录制的音频数据并生成波束成形图。它讨论了关键参数，例如要分析的频率范围、使用的波束成形算法（例如，延迟求和）以及生成的声学图像的空间分辨率。
+
+最后，本文展示了一个如何通过将声学图像叠加到照片或视频上来可视化声学图像的示例，从而创建声学相机输出，清晰地显示声源的位置和强度。这允许用户识别和分析各种应用中的噪声源，例如产品测试、环境噪声监测和机械故障排除。 本质上，本文提供了一个利用UMA-16和Acoular构建功能强大且经济实惠的声学相机的实用指南。
+
+---
+
+## 16. Rust 类型系统的完整地图
+
+**原文标题**: A complete map of the Rust type system
+
+**原文链接**: [https://rustcurious.com/elements/](https://rustcurious.com/elements/)
+
+本文档全面概述 Rust 的类型系统，重点介绍核心语言特性和内置类型与 trait (`lang_items`)。旨在阐明哪些元素是语言的基础，并将它们与库实现的结构（如 `Vec`、`String` 和 `HashMap`）区分开来。
+
+文档将 Rust 类型分为标量类型（整数、浮点数、布尔值、字符）、复合类型（元组、结构体、枚举、联合体、数组、单元）、未确定大小类型（切片、trait 对象）、借用引用类型、范围类型、实用类型（Option、Result、Ordering）、异步支持类型、匿名类型（函数、闭包、异步函数）、不安全支持类型、原始指针类型、函数指针和 Never 类型 (`!`)。
+
+它还概述了与访问运算符、比较运算符、算术运算符、位运算符、可调用特性（Fn、FnMut、FnOnce）、内存管理（Sized、Copy、Drop、Clone）、迭代（Iterator、IntoIterator）、线程安全（Send、Sync）、异步支持（Future、Unpin）、Panic 支持和终止相关的关键 trait。
+
+目的是揭开 Rust 类型系统的神秘面纱，并强调其核心语言特性与库实现之间的清晰分离，从而为嵌入式和系统级开发启用 `no_std` crates。本文档作为 Rust 语言基本类型和 trait 的可视化指南和参考。
+
+---
+
+## 17. 尼泊尔反政府抗议致14人死亡
+
+**原文标题**: 14 Killed in anti-government protests in Nepal
+
+**原文链接**: [https://www.tribuneindia.com/news/world/massive-protests-in-nepal-over-social-media-ban/](https://www.tribuneindia.com/news/world/massive-protests-in-nepal-over-social-media-ban/)
+
+尼泊尔爆发大规模反政府抗议，警方武力驱散示威者，造成至少19人死亡，300多人受伤。 抗议活动主要由Z世代青年推动，起因是政府禁止包括脸书、X和YouTube在内的26个社交媒体网站，理由是它们未在通信和信息技术部注册。
+
+示威者聚集在加德满都和其他城市，高喊反政府口号，要求立即撤销禁令，他们认为这是对言论自由的攻击和走向审查的举动。 抗议者进入议会大楼，导致局势升级，警方随即使用水炮、催泪瓦斯和实弹。
+
+内政部长拉梅什·莱卡克因道德原因在动荡中辞职。 尼泊尔军队已被部署到加德满都控制局势。 医院难以容纳受伤人员，导致病人转诊。 包括加德满都、拉利特普尔、博克拉和伊塔哈里在内的多个地区实施了宵禁。
+
+总理卡德加·普拉萨德·奥利为禁令辩护，称其旨在规范社交媒体，防止那些在尼泊尔获利的人逃避法律。 他批评抗议者是“傀儡”。 记者和尼泊尔计算机协会（CAN）也抗议该禁令，理由是它对教育、商业、通信和尼泊尔的数字进步产生了负面影响。
+
+---
+
+## 18. 使用Claude Code现代化一个25年的内核驱动
+
+**原文标题**: Using Claude Code to modernize a 25-year-old kernel driver
+
+**原文链接**: [https://dmitrybrant.com/2025/09/07/using-claude-code-to-modernize-a-25-year-old-kernel-driver](https://dmitrybrant.com/2025/09/07/using-claude-code-to-modernize-a-25-year-old-kernel-driver)
+
+作者描述了他们对恢复旧QIC-80磁带盒（90年代常见的备份介质）数据的热情。读取这些磁带的首选方法是使用`ftape` Linux内核驱动，该驱动自2000年以来就未维护，并且只能在非常旧的Linux发行版（如CentOS 3.5）上运行。此驱动至关重要，因为它可以读取磁带的“原始”二进制内容，而无需考虑用于写入它们的专有软件。
+
+由于无法忍受运行过时的Linux版本，作者使用Claude Code来现代化`ftape`驱动，使其能够在现代内核上编译和运行。这个过程涉及与Claude的迭代交互，向其提供编译器输出和“dmesg”日志，以识别和修复过时的内核函数和结构。Claude还帮助创建了模块的独立构建系统。
+
+虽然不是一个完全自动化的过程，但作者强调了与Claude合作的协作性质，将其比作与“初级”工程师合作。他们强调了提示的明确性、对适合LLM的任务的直觉以及使用工具来放大现有技能的重要性。作者成功地现代化了`ftape`驱动，使其能够在现代Linux发行版（Xubuntu 24.04）上工作，并认为这些工具可以快速地让开发者上手新的框架。
+
+---
+
+## 19. 如果人工智能只是一种“普通”技术呢？
+
+**原文标题**: What if artificial intelligence is just a "normal" technology?
+
+**原文链接**: [https://www.economist.com/finance-and-economics/2025/09/04/what-if-artificial-intelligence-is-just-a-normal-technology](https://www.economist.com/finance-and-economics/2025/09/04/what-if-artificial-intelligence-is-just-a-normal-technology)
+
+好的，我已阅读了2025年9月4日《经济学人》上题为“如果人工智能只是一种‘普通’技术呢？”的文章。以下是简洁的摘要：
+
+文章认为，围绕人工智能（AI）的炒作可能被夸大了，到2025年，它越来越像一种“普通”技术，而不是一场革命性的范式转变。文章认为，虽然人工智能无疑改进了某些流程并创造了新的能力，但其影响更多是渐进式的，而不是像最初预测的那样具有变革性。
+
+文章强调了几个要点：首先，人工智能的经济影响不如预期那么显著。生产力增长并未突飞猛进，最初对大规模失业的担忧也未成为现实。相反，人工智能通常用于自动化现有工作中的特定任务，而不是取代整个角色。
+
+其次，文章指出，人工智能的实际应用面临着重大挑战。数据质量和可用性通常是限制因素，将人工智能系统集成到现有业务流程中可能既复杂又昂贵。此外，人工智能模型需要持续的维护和重新训练。
+
+第三，文章提到，人们对人工智能的“智能”方面的怀疑日益增加。虽然人工智能擅长模式识别和预测，但它通常缺乏真正的理解，并且难以完成需要常识或适应新情况的任务。对嵌入在人工智能算法中的偏见以及决策过程缺乏透明度的担忧也削弱了人们的热情。
+
+最后，文章表明，重点已经从通用人工智能（AGI）转向更专业的应用，强调人工智能的真正价值在于它增强人类能力的能力，而不是完全取代人类。结论是，虽然人工智能将继续发展和改进，但它很可能只是工具箱中的另一种工具，尽管是一种强大的工具，而不是一种从根本上重塑社会和经济的技术。
+
+---
+
+## 20. MacBook 有一个传感器可以精确感知屏幕铰链的角度。
+
+**原文标题**: The MacBook has a sensor that knows the exact angle of the screen hinge
+
+**原文链接**: [https://twitter.com/samhenrigold/status/1964428927159382261](https://twitter.com/samhenrigold/status/1964428927159382261)
+
+由于用户的浏览器禁用了 JavaScript，因此无法访问题为“MacBook 有一个传感器可以知道屏幕铰链的精确角度”的文章。 显示的内容是 X (前身为 Twitter) 的标准消息，告知用户需要 JavaScript 才能使用该平台。 它还提供了帮助中心、服务条款、隐私政策、Cookie 政策、版本说明和广告信息的链接。 页面底部的版权声明表明其所有者为 X Corp，年份为 2025 年。 因此，从所呈现的内容中无法获得有关 MacBook 传感器和屏幕铰链角度的任何信息。 无法总结该文章本身。 可见文本只是一个技术消息，阻止访问实际的文章内容。
+
+---
+
+## 21. RSS 击败微软
+
+**原文标题**: RSS Beat Microsoft
+
+**原文链接**: [https://buttondown.com/blog/rss-vs-ice](https://buttondown.com/blog/rss-vs-ice)
+
+本文讲述了在早期网络内容聚合领域，RSS（简易信息聚合）如何战胜微软的ICE（信息与内容交换）标准的故事。尽管ICE拥有微软和Adobe等行业巨头的支持，在技术上更为先进，也更注重商业化，但RSS的简单性、开放性和博客作者的草根式采用最终证明了它的制胜之道。
+
+ICE旨在标准化数据在网站间的自动发布方式，融入了诸如定价、版权保护和品牌定制等复杂功能。它被设想为大型出版商进行内容聚合变现的工具。然而，它的复杂性和高昂的实施成本阻碍了其广泛应用。
+
+RSS最初只是网景My Netscape Network上的一个小部件，它走了一条不同的道路。它优先考虑简单性，允许任何人轻松创建和聚合网站更新的订阅源。在Dave Winer等人的带领下，RSS演变成一个开放、去中心化的标准，由个人用户和博客作者的需求驱动。RSS的可访问性和易用性使其成为首选的内容聚合方式。
+
+最终，RSS对简单性和用户赋权的关注使其能够胜过ICE。在ICE消失之后，RSS坚持了下来，提供了一个用户可以策划自己的内容体验并拥有完全所有权的平台。
+
+---
+
+## 22. 日本为何仍在投资定制浮点加速器？
+
+**原文标题**: Why Is Japan Still Investing in Custom Floating Point Accelerators?
+
+**原文链接**: [https://www.nextplatform.com/2025/09/04/why-is-japan-still-investing-in-custom-floating-point-accelerators/](https://www.nextplatform.com/2025/09/04/why-is-japan-still-investing-in-custom-floating-point-accelerators/)
+
+本文探讨了日本为何持续投资于定制浮点加速器，特别关注Pezy Computing及其SC（超级计算机）芯片系列。尽管GPU在HPC和AI领域占据主导地位，Pezy仍致力于通过不同的架构实现极致的能源效率。在NEDO的资助下，Pezy的设计优先考虑细粒度、多线程SPMD方法，从而实现更简单的核心和更高的硅密度。
+
+本文详细介绍了Pezy SC芯片的演变历程，从Pezy-1到即将推出的SC4s，重点介绍了核心数量、时钟速度、内存和浮点性能方面的改进。SC4s采用台积电的5nm工艺制造，具有2,048个PE、96GB的HBM3内存和集成的RISC-V核心，可运行Linux主机操作系统，从而无需单独的x86处理器。
+
+本文还研究了Pezy芯片的架构，强调了PE的分层组织，将其分为村庄、城市、县和州（未来迭代可能采用多芯片设计）。文章指出Pezy方法在特定工作负载方面的优势，并指出Pezy SC3芯片在基因组分析（GATK）中表现出比Nvidia H100更好的性能。
+
+虽然承认Nvidia GPU目前在整体性能和低精度AI能力方面处于领先地位，但本文认为日本对Pezy的投资是一种战略对冲，确保该国在数学加速器设计方面保持专业知识，并在GPU可用性受到限制时提供HPC/AI硬件的潜在替代来源。文章建议未来的富岳Next超级计算机可以受益于将Pezy加速器与GPU结合使用。
+
+---
+
+## 23. VMware再次对簿公堂。客户关系很少会如此糟糕。
+
+**原文标题**: VMware's in court again. Customer relationships rarely go this wrong
+
+**原文链接**: [https://www.theregister.com/2025/09/08/vmware_in_court_opinion/](https://www.theregister.com/2025/09/08/vmware_in_court_opinion/)
+
+乐购起诉博通，指控其勒索：VMware收购后的许可证纠纷
+
+---
+
+## 24. 美国空客A321neo空机横跨大西洋20次
+
+**原文标题**: American Flying Empty Airbus A321neo Across the Atlantic 20 Times
+
+**原文链接**: [https://onemileatatime.com/news/american-flying-empty-airbus-a321neo-across-atlantic/](https://onemileatatime.com/news/american-flying-empty-airbus-a321neo-across-atlantic/)
+
+2025年9月，美国航空使用空客A321neo飞机在费城(PHL)和爱丁堡(EDI)之间运营20个往返航班，不载客货。目的是培训检查飞行员，他们是负责培训和认证其他飞行员的飞行员。这项培训是必要的，因为美国航空即将引进空客A321XLR，这是A321neo的远程版本，用于跨大西洋航班，而飞行员需要获得这些运营的特定资质。
+
+航空公司选择PHL-EDI航线是因为它是一条相对较短的跨大西洋航线，通往一个规模适中且没有重大交通问题的机场。此次培训旨在为A321XLR认证其他飞行员做好准备，为在纽约(JFK)开设A321XLR国际飞行员基地做铺垫。
+
+文章强调了这些训练航班的巨额费用，估计燃料、折旧和飞行员补偿超过一百万美元。文章还质疑跨大西洋飞行训练的所有方面是否都需要飞行经验，而不是模拟器或课堂环境。最后，作者推测了这些航班的后勤保障，包括涉及的飞行员数量以及认证执行培训的检查飞行员的流程。
+
+---
+
+## 25. 我们很少失去科技 (2023)
+
+**原文标题**: We Rarely Lose Technology (2023)
+
+**原文链接**: [https://www.hopefulmons.com/p/we-rarely-lose-technology](https://www.hopefulmons.com/p/we-rarely-lose-technology)
+
+文章《我们很少失去技术》挑战了奇幻小说中常见的“失落技术”说法，认为真正意义上的技术知识丧失是罕见的，而且通常是故意的。作者对所谓的失落技术案例进行了分类，发现大多数情况都缺乏说服力。
+
+第一类涉及“不幸的孤独发明家将秘密带入坟墓”，例如吉罗拉莫·塞加托的石化技术和神秘的星光材料。这些案例虽然引人入胜，但更多代表的是失落的*想法*，而非全面的技术框架。
+
+第二类考察了“过于机密的军事机密”，例如拜占庭的希腊火和美国的核材料Fogbank。在这里，由于部门化和人员流动，故意的保密导致了知识的潜在或暂时性丧失。
+
+作者驳斥了声称源于“非凡水平的技能”（如斯特拉迪瓦里小提琴或印加石制品）和“神秘文物”（如安提基特拉机械或巴格达电池）的失落技术。这些例子虽然令人印象深刻，但归因于卓越的工艺或未知的用途，而不是无法挽回的科学原理。通过足够的努力或理解，复制通常是可能的。
+
+文章总结说，真正的技术丧失需要知识在所有可访问的形式中完全消失。虽然想法和具体技术可能会随着个别发明家或通过故意的保密而丧失，但复制大多数技术所需的基本科学理解通常会持续存在。罗马混凝土虽然令人印象深刻，但只是一个具体过程细节尚不清楚的例子，而不是一种完全无法获取的技术。
+
+---
+
+## 26. 印第安纳·琼斯和最后的十字军东征 C64 冒险原型游戏被发现
+
+**原文标题**: Indiana Jones and the Last Crusade Adventure Prototype Recovered for the C64
+
+**原文链接**: [https://www.gamesthatwerent.com/2025/09/indiana-jones-and-the-last-crusade-adventure-prototype-recovered-for-the-commodore-64/](https://www.gamesthatwerent.com/2025/09/indiana-jones-and-the-last-crusade-adventure-prototype-recovered-for-the-commodore-64/)
+
+本文宣布了Commodore 64平台《印第安纳琼斯与最后的十字军东征冒险》可玩原型版本的恢复。这是对 Lucasfilm Games 官方游戏的非官方移植，最终被取消。由于 Games That Weren't 的努力，该原型现已可供探索，让人们得以一窥原本可能成为一款优秀的 C64 冒险游戏的面貌。本文提供了他们网站的链接，感兴趣的用户可以在该网站上找到并可能游玩这个恢复的原型版本。文章强调了挖掘失落游戏历史并让粉丝体验到之前未曾面世的经典游戏版本的重要性。
+
+---
+
+## 27. 格式代码应是不必要的。
+
+**原文标题**: Formatting code should be unnecessary
+
+**原文链接**: [https://maxleiter.com/blog/formatting](https://maxleiter.com/blog/formatting)
+
+本文认为代码格式化在现代软件开发中不应该成为一个问题，并引用了一个历史案例，表明这个问题早在几十年前就已得到有效解决。作者回忆了与一位计算机科学老师Paige先生的对话，Paige先生在20世纪80年代参与了Ada编译器的开发。Paige先生解释说，用于Ada开发的Rational R1000工作站将代码存储在一种名为DIANA的中间表示中，而不是纯文本。
+
+DIANA允许开发人员使用他们偏好的格式设置来查看和编辑代码。空格与制表符无关紧要，并且使用投影编辑来直接修改程序树。这消除了关于格式化的争论以及对像eslint-config-airbnb这样的限制性linter配置的需求。
+
+R1000的方法还提供了其他好处，包括硬件加速的增量编译、轻松的重构和快速的集成。虽然现代工具在重构等领域有所改进，但作者感叹代码格式化仍然是一个长期存在的问题。作者建议探索替代范例，甚至可能是缩小后的代码，以消除浪费在格式化辩论和linter配置上的时间。本文强调了重新审视过去解决方案以克服当今软件工程挑战的潜力。
+
+---
+
+## 28. “我们能以低于1亿美元的价格做到”：初创公司加入打造本地化ChatGPT的竞赛
+
+**原文标题**: 'We can do it for under $100M': Startup joins race to build local ChatGPT
+
+**原文链接**: [https://www.afr.com/technology/we-can-do-it-for-under-100m-start-up-joins-race-to-build-local-chatgpt-20250908-p5mt5o](https://www.afr.com/technology/we-can-do-it-for-under-100m-start-up-joins-race-to-build-local-chatgpt-20250908-p5mt5o)
+
+两位澳大利亚企业家西蒙·克里斯和特洛伊·尼尔森创立了“主权澳大利亚人工智能”(Sovereign Australia AI)，旨在开发本土替代方案，以对抗像OpenAI和Meta这样的科技巨头所创建的AI模型。他们担心澳大利亚获取关键AI技术的渠道可能受制于美国或中国的决策，因此他们投资1000万美元来补偿版权所有者的作品。这家初创公司计划以低于1亿美元的成本构建这个本土AI解决方案。
+
+---
+
+## 29. 整数规划（2002）[pdf]
+
+**原文标题**: Integer Programming (2002) [pdf]
+
+**原文链接**: [https://web.mit.edu/15.053/www/AMP-Chapter-09.pdf](https://web.mit.edu/15.053/www/AMP-Chapter-09.pdf)
+
+由于文件编码方式导致其无法被人阅读，我无法提供该文档内容的准确摘要。该文档似乎是一个PDF文件，可能与整数规划相关。为了提供有意义的摘要，我需要访问PDF的实际文本内容。
+
+如果您能提供实际的文本内容而不是PDF的编码数据，我将乐意为您总结这篇文章。或者，如果您有PDF阅读器，您可以使用其文本提取功能将内容复制到这里。
+
+---
+
+## 30. 通过操纵故事的视觉表现形式进行写作
+
+**原文标题**: Writing by manipulating visual representations of stories
+
+**原文链接**: [https://github.com/m-damien/VisualStoryWriting](https://github.com/m-damien/VisualStoryWriting)
+
+本文介绍视觉故事写作 (Visual Story-Writing) 系统，该系统允许用户通过操纵故事元素的视觉表示来编辑故事。该系统利用 GPT-4o 从文本中提取信息，并根据用户与可视化故事的交互来建议编辑。这些可视化包括事件的时间线、角色位置和动作。
+
+用户可以通过以下方式修改故事：
+
+*   **与时间线互动：** 查看时间顺序和角色移动，重新排序事件。
+*   **连接角色：** 建议文本编辑以反映新的互动。
+*   **移动角色：** 建议文本编辑以反映重新定位。
+
+该系统使用 TypeScript、React 和 Vite 构建。提供了构建和运行系统的说明，需要 Node.js。用户还需要一个 OpenAI API 密钥（在本地使用且从不存储），系统才能完全运行。如果没有有效的密钥，系统在执行提示时会遇到错误。
+
+本文引导用户访问位于 public/videos 目录中的视频教程，或通过启动器内的研究访问。包括 arXiv 上的一篇论文在内的出版信息即将发布。该系统针对最新版本的 Google Chrome 和 Mozilla Firefox 进行了优化。
+
+---
+
+## 31. GPT-5在ChatGPT中的思考（又名：研究地精）擅长搜索。
+
+**原文标题**: GPT-5 Thinking in ChatGPT (a.k.a. Research Goblin) is good at search
+
+**原文链接**: [https://simonwillison.net/2025/Sep/6/research-goblin/](https://simonwillison.net/2025/Sep/6/research-goblin/)
+
+本文探讨了作者在ChatGPT（昵称“研究地精”）中使用“GPT-5 Thinking”进行搜索任务的积极体验。作者认为，GPT-5显著提升了ChatGPT的搜索能力，使其成为一个称职且有价值的研究工具，尤其是在移动设备上。
+
+作者提供了多个查询示例，展示了GPT-5执行全面互联网搜索、分析来自各种来源（包括PDF）的信息，甚至起草用于信息请求的电子邮件的能力。这些示例包括识别建筑物、比较连锁超市以及研究洞穴历史。
+
+主要结论包括：
+
+* ChatGPT中的GPT-5在搜索方面表现出色，其速度和彻底性均优于手动搜索。
+* 它特别擅长满足好奇心和挖掘需要大量研究的信息。
+* 推理与搜索的结合（交错思维）对于GPT-5的有效性至关重要，使其能够根据初始结果改进搜索。
+* 作者建议尝试不同类型的问题，包括那些没有明确答案的问题，以探索GPT-5的功能。
+* 作者强调，虽然GPT-5是一个强大的工具，但应在了解其局限性的情况下使用它，并将其比作勤奋但并非完全值得信赖的“地精”。
+* ChatGPT搜索是工具调用和思维链相结合的黄金标准，使RAG技术更加有效。
+
+---
+
+## 32. 英特尔Arc Pro B50 GPU发布，面向紧凑型工作站，售价349美元
+
+**原文标题**: Intel Arc Pro B50 GPU Launched at $349 for Compact Workstations
+
+**原文链接**: [https://www.guru3d.com/story/intel-arc-pro-b50-gpu-launched-at-for-compact-workstations/](https://www.guru3d.com/story/intel-arc-pro-b50-gpu-launched-at-for-compact-workstations/)
+
+英特尔发布Arc Pro B50工作站GPU，售价349美元，专为小型系统设计。该显卡基于Battlemage BMG-G21 GPU，配备16个Xe2核心和16 GB GDDR6显存，功耗仅为70W，可仅通过PCIe插槽供电。它采用PCIe Gen 5 x8接口。
+
+Arc Pro B50专为AI工作负载量身定制，提供高达170 TOPS的INT8算力，并针对CAD、工程和建筑可视化等专业应用进行了优化。英特尔提供认证驱动程序栈，以确保稳定的性能。其矮板、双槽设计适合于优先考虑空间和气流的密集型工作站。
+
+连接方面包括四个mini DisplayPort输出接口，可用于多显示器设置。该显卡定位于价格、效率和可靠性之间的平衡，目标是紧凑型工作站环境，而非在原始性能方面进行竞争。
+
+Arc Pro B50将作为独立产品和通过OEM系统提供。早期评测突出了其在预期专业工作负载中的稳定性能。
+
+---
+
+## 33. 小心虫子
+
+**原文标题**: Look Out for Bugs
+
+**原文链接**: [https://matklad.github.io/2025/09/04/look-for-bugs.html](https://matklad.github.io/2025/09/04/look-for-bugs.html)
+
+本文提倡一种编码思维的转变：不要仅仅依靠迭代和测试来发现错误，而是通过仔细阅读和理解代码来主动预防错误。作者强调，阅读代码是一种超能力，能够通过构建程序的心理模型来发现错误和潜在问题。
+
+作者强调了他们仅通过阅读代码就在IntelliJ的ImmutableText.java中发现了一个错误的个人经历。他们建议，重新阅读自己的代码也可以发现隐藏的问题。
+
+提高这项技能的关键技巧包括：
+
+*   **仔细、缓慢的阅读：** 专注于构建代码的精确心理模型。
+*   **全面审查：** 在审查拉取请求时，不要只看差异，而是审查整个子系统。
+*   **历史背景：** 使用 `git blame` 或 `git log -S` 来理解代码的历史和原因。
+*   **非线性阅读：** 不要从上到下阅读，而是遵循控制流（使用“跳转到定义”）并跟踪关键数据结构的生命周期（搜索创建和修改点）。
+*   **一致的命名：** 使用清晰的名称来提高代码的可读性。
+*   **识别模式：** 识别代码中容易出错的模式和“味道”，尤其是函数之间棘手的交互。
+
+本质上，本文提倡一种通过有意识的代码阅读来主动预防错误的文化，将其转化为创建健壮和可靠软件的强大工具。
+
+---
+
+## 34. 在深空近半个世纪后，“旅行者1号”每次回波都是惊喜。
+
+**原文标题**: After nearly half a century in deep space, every ping from Voyager 1 is a bonus
+
+**原文链接**: [https://www.theregister.com/2025/09/07/48_years_voyager_1/](https://www.theregister.com/2025/09/07/48_years_voyager_1/)
+
+本文探讨了1977年发射的旅行者1号任务，该任务旨在研究木星、土星和土卫六。最初设想是利用罕见的行星连珠现象进行的“大巡游”的一部分，但由于预算限制，任务规模缩小，重点放在木星和土星上。
+
+旅行者1号最初优先近距离观测土卫六，而旅行者2号则继续前往天王星和海王星。在离开太阳系之前，旅行者1号拍摄了标志性的“太阳系全家福”，其中包括地球的“暗淡蓝点”照片。
+
+尽管年代久远，并且计划关闭仪器以节省能源，旅行者1号仍在继续向地球传回数据。工程师预计它能持续到2030年代。发射时为飞船加满燃料是一个明智的决定，确保了它的寿命，尽管这并未正式公布。本文重点介绍了保持这艘老化的探测器运行所面临的挑战和持续的工程努力，并将继续运行的每一年都视为额外收获。
+
+---
+
+## 35. 创新科技：声霸卡
+
+**原文标题**: Creative Technology: The Sound Blaster
+
+**原文链接**: [https://www.abortretry.fail/p/the-story-of-creative-technology](https://www.abortretry.fail/p/the-story-of-creative-technology)
+
+本文记录了创新科技及其具有开创性的声霸卡崛起的故事。文章从创始人沈望傅在新加坡的早年生活开始，重点介绍了他的创业精神以及早期对音乐和计算机的兴趣。在1981年创立创新科技之前，沈的最初业务包括计算机维修和计算机教育中心。
+
+创新科技早期的产品包括内存条和Apple II兼容机CUBIC 99。随后，公司意识到声卡的市场潜力，便将重心转移到声卡上。创新音乐系统(C/MS)，后来更名为Game Blaster，通过与Sierra Online等游戏开发商的合作获得了发展。
+
+1989年，声霸卡的问世成为关键时刻。它凭借卓越的性能、与Adlib的兼容性和实惠的价格迅速成为最畅销的扩展卡，推动创新科技的收入达到550万美元。随后的迭代产品，如声霸卡Pro和声霸卡2，通过提高音质和增加对CD-ROM的支持，在此基础上取得了成功。
+
+尽管面临来自Media Vision和Aztech的竞争，创新科技通过在1992年发布声霸卡16，一款具有波表合成功能的完全16位声卡，保持了其市场领先地位。公司对E-mu Systems的收购进一步巩固了其地位。创新科技于1992年上市，成为第一家在纳斯达克上市的新加坡公司。
+
+文章还涉及创新科技向中国的扩张，进军视频会议领域，以及推出ViBRA 16和AWE32等产品以瞄准不同的市场领域。最后，文章还介绍了创新科技试图通过3DO Blaster卡将3DO游戏引入PC的尝试。
+
+---
+
+## 36. 人工智能不是泡沫
+
+**原文标题**: AI Is Not a Bubble
+
+**原文链接**: [https://danielmiessler.com/blog/no-ai-is-not-a-bubble](https://danielmiessler.com/blog/no-ai-is-not-a-bubble)
+
+丹尼尔·米斯勒认为“人工智能是泡沫”的说法经常被误用和误解。他断言，泡沫的定义特征是它会“破裂”，这意味着它是一种最终被证明是不真实的、关于现实的错误信念。他将此与单纯的炒作或技术过热区分开来。
+
+米斯勒驳斥了将人工智能与互联网泡沫相提并论的观点。互联网泡沫不是互联网本身，而是拥有一个网站就能保证财富的不切实际的信念。然后他问道：关于人工智能的什么错误信念最终会“破裂”？
+
+他假设，许多“人工智能泡沫”的支持者实际上怀疑现代人工智能会从根本上重塑商业、取代数百万知识工作者，并迫使人们重新思考劳动和人类价值的观点。换句话说，他们认为人工智能的变革潜力被夸大了。
+
+米斯勒不同意这种观点，他认为这种变革性的转变*将会*发生。他总结说，辩论的关键在于是否有人认为这种根本性的改变是一种愚蠢且不可持续的信念。
+
+他强调在讨论“人工智能泡沫”时需要清晰，敦促人们明确指出他们认为什么是不可持续的谬论。如果他们谈论的是通过聊天机器人快速致富的想法，他同意这在很大程度上已经破灭。但如果他们挑战人工智能对社会和经济产生重大变革的潜力，米斯勒认为他们是错误的。这篇文章强调了在讨论“人工智能泡沫”时，使用精确语言和识别正在被挑战的具体信念的重要性。
+
+---
+
+## 37. 任天堂官方模拟器有多不准确？[视频]
+
+**原文标题**: How inaccurate are Nintendo's official emulators? [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=oYjYmSniQyM](https://www.youtube.com/watch?v=oYjYmSniQyM)
+
+所提供的“内容”部分并未提供任何关于任天堂官方模拟器准确性的实际内容，而是类似于你在 YouTube 网站页脚会找到的 YouTube 法律和信息样板文本。因此，无法基于此信息总结该视频。其中没有提及模拟器准确性、特定游戏、性能比较或任何你期望从标题为“任天堂官方模拟器有多不准确？”的视频中看到的细节。总而言之，**没有实际内容可供总结。提供的文本是来自 YouTube 的无关法律信息。**
+
+---
+
+## 38. 用于人工智能推理和组合优化的模拟光学计算机
+
+**原文标题**: Analog optical computer for AI inference and combinatorial optimization
+
+**原文链接**: [https://www.nature.com/articles/s41586-025-09430-z](https://www.nature.com/articles/s41586-025-09430-z)
+
+本文介绍了一种新型计算平台——模拟光计算机（AOC），它旨在高效加速人工智能推理和组合优化。AOC通过在反馈回路中结合模拟电子器件和3D光学器件来实现这一双重能力，以执行快速定点搜索，从而避免了耗能的数字转换并增强了噪声鲁棒性。
+
+AOC利用光学器件进行矩阵向量乘法（使用微型LED和空间光调制器），并利用模拟电子器件进行非线性运算、减法和退火。这种架构使AOC能够实现新兴的计算密集型神经模型（如深度平衡网络）并解决复杂的优化问题（使用二次无约束混合优化-QUMO）。
+
+本文通过四个案例研究展示了AOC的性能：图像分类、非线性回归、医学图像重建和金融交易结算。可微分数字孪生（AOC-DT）用于设计和训练AOC的模型，确保仿真和物理硬件之间的高度对应。结果表明，在标准优化基准测试中实现了最先进的性能，并且与传统GPU相比，效率提升显著，预计在8位精度下性能约为每瓦500 TOPS。AOC采用消费级组件构建，通过消除数模转换并融合计算和内存，为更快、更可持续的计算提供了一条途径。
+
+---
+
+## 39. 这是几维的？
+
+**原文标题**: How many dimensions is this?
+
+**原文链接**: [https://lcamtuf.substack.com/p/how-many-dimensions-is-this](https://lcamtuf.substack.com/p/how-many-dimensions-is-this)
+
+无法访问文章链接。
+
+---
+
+## 40. 微量GLP-1药物成为长寿“热潮”
+
+**原文标题**: Microdosing GLP-1 drugs became a longevity 'craze'
+
+**原文链接**: [https://www.washingtonpost.com/health/2025/09/03/microdosing-glp-1-longevity-wellness/](https://www.washingtonpost.com/health/2025/09/03/microdosing-glp-1-longevity-wellness/)
+
+无法访问文章链接。
+
+---
+
+## 41. 写代码容易，读代码难。
+
+**原文标题**: Writing Code Is Easy. Reading It Isn't
+
+**原文链接**: [https://idiallo.com/blog/writing-code-is-easy-reading-is-hard](https://idiallo.com/blog/writing-code-is-easy-reading-is-hard)
+
+本文认为编写代码很容易，尤其是在大型语言模型出现后，但阅读和理解代码才是软件开发真正的瓶颈。核心挑战在于构建系统的“心智模型”——一个关于代码如何工作、其依赖关系以及潜在陷阱的内部地图。这种心智模型对于调试、修改代码，甚至评估人工智能生成的代码至关重要。
+
+作者强调，理解单个函数通常需要追踪其跨多个文件、API、数据库和错误处理机制的依赖关系。这个过程缓慢且耗费精力，不像编写代码那样是一个前向运动。
+
+本文批判了围绕人工智能代码生成的炒作，强调大型语言模型可以轻松生成代码，但它们并没有解决理解代码的问题。开发人员仍然需要仔细阅读、追踪并构建人工智能生成代码的心智模型，以确保其正确性以及与现有系统的集成。作者建议，与其仅仅关注代码生成，人工智能工具应该优先帮助理解代码。
+
+最终，作者认为软件开发真正的生产力不在于编写代码的速度，而在于构建准确心智模型的效率。编程的未来可能取决于人工智能加速理解能力，而不是仅仅生成更多代码。
+
+---
+
+## 42. 探索网格感知网站
+
+**原文标题**: Exploring Grid-Aware Websites
+
+**原文链接**: [https://www.nicchan.me/blog/exploring-grid-aware-websites/](https://www.nicchan.me/blog/exploring-grid-aware-websites/)
+
+本文探讨了电网感知网站（GAW）的概念，该网站通过根据可再生能源或化石燃料的普及程度修改网站功能，从而响应用户电网的清洁程度。作者作为GAW顾问组成员，解释了其核心思想：利用用户的位置和Electricity Maps API，通过无服务器功能调整网站体验。
+
+文章解决了GAW所需代码可能抵消其益处的担忧，强调这是一种减少网站碳排放的实验性方法。它突出了从“做得更多”到“用更少资源做更多事”的转变，敦促设计师考虑每个用户体验元素的必要性。GAW旨在提高人们对数字世界和物理世界之间联系的认识，激励公司表达其可持续发展承诺。
+
+作者提供了一个实际示例，演示了如何使用11ty和Astro.js使产品展示页面（PDP）具有电网感知能力。这包括在电网“脏”（碳强度高）时禁用非必要的JavaScript功能（例如，滚动跑马灯、图像幻灯片）。文章概述了技术实现，使用Cloudflare Workers和HTMLRewriter API来修改标记。挑战包括Electricity Maps API的成本以及在Web堆栈的所有级别进行协作的要求。文章最后指出，电网感知与减少数据使用和促进渐进增强的现有努力相一致，并强调它可以是数据节省模式等功能的扩展。
+
+---
+
+## 43. 佳明抢先苹果推出卫星连接智能手表
+
+**原文标题**: Garmin beats Apple to market with satellite-connected smartwatch
+
+**原文链接**: [https://www.macrumors.com/2025/09/03/garmin-satellite-smartwatch/](https://www.macrumors.com/2025/09/03/garmin-satellite-smartwatch/)
+
+Garmin推出Fenix 8 Pro卫星智能手表，抢在苹果发布新款Apple Watch Ultra之前上市。Fenix 8 Pro采用Garmin的inReach技术，通过Garmin Messenger应用进行卫星定位签到和文本消息发送，并在可用时提供蜂窝网络连接，用于通话、语音消息和天气更新。
+
+主要功能包括用于位置共享的LiveTrack、在紧急情况下将用户连接到Garmin Response中心的SOS功能，以及亮度高达4500尼特的超高分辨率microLED显示屏。这款手表还提供高级健康追踪、潜水级按钮和一个LED手电筒。
+
+Fenix 8 Pro提供47毫米和51毫米两种尺寸，并有AMOLED和microLED显示屏两种选择。AMOLED型号起价1200美元，电池续航时间长达27天，而51毫米microLED型号售价2000美元，电池续航时间长达10天。Garmin新款智能手表将于9月8日上市，比苹果的发布会提前一天。
+
+预计即将推出的Apple Watch Ultra 3也将具有类似的卫星连接功能。一个关键区别是Garmin的inReach卫星计划需要付费，起价为每月7.99美元，而苹果目前免费提供其卫星服务。
+
+---
+
+## 44. 多少SPARC算太多？
+
+**原文标题**: How many SPARCs is too many SPARCs?
+
+**原文链接**: [https://thejpster.org.uk/blog/blog-2025-08-20/](https://thejpster.org.uk/blog/blog-2025-08-20/)
+
+这篇博文详细介绍了作者从英国伯克郡西部获得一批基于SPARC架构的工作站和服务器的过程。受/r/vintagecomputing论坛上的一篇帖子的启发，作者发起了“SPARC救援行动”，并带回了各种机器，包括Sun Fire V100和Sun Netra T1机架式服务器，以及几款SPARCstation型号（1、2、5、10和20）。
+
+作者接着描述了收藏中的每台机器，记录了它们的年代（大约在1999年至2002年之间）、硬件规格和初步测试结果。配备UltraSPARC-IIe处理器和1GB内存的Sun Fire V100启动到了OpenFirmware提示符，但在尝试从Debian CD-R启动时遇到了“非法指令”错误。配备UltraSPARC-IIi处理器和1GB内存的Sun Netra T1成功通过了POST测试，但未能从其硬盘启动。
+
+发现SPARCstation 1存在电源问题，而一台最初来自瑞士信贷的SPARCstation 2开机并进行了POST，但硬盘轴承损坏。作者还包括了Netra T1和SPARCstation 2的控制台输出，以说明这些老旧系统提供的诊断信息。
+
+这篇博文轻松地描述了作者获得和初步探索这些老式SPARC机器的过程，突出了使用旧硬件的挑战和回报。
+
+---
+
+## 45. 私有网络地址192.168.*.*的由来是什么？(2009)
+
+**原文标题**: What is the origin of the private network address 192.168.*.*? (2009)
+
+**原文链接**: [https://lists.ding.net/othersite/isoc-internet-history/2009/oct/msg00000.html](https://lists.ding.net/othersite/isoc-internet-history/2009/oct/msg00000.html)
+
+无法访问文章链接。
+
+---
+
+## 46. 史蒂夫·乔布斯和NeXT第二部分：通往Mac OS X的漫长道路 [视频]
+
+**原文标题**: Steve Jobs and NeXT Part 2: The Long Road to Mac OS X [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=zbpZttHzNSE](https://www.youtube.com/watch?v=zbpZttHzNSE)
+
+这个名为“史蒂夫·乔布斯与NeXT第二部分：通往Mac OS X的漫长道路”的YouTube视频，很可能深入探讨了史蒂夫·乔布斯离开苹果后在NeXT的职业生涯，以及它最终对Mac OS X的创建产生的影响。
+
+然而，基于所提供的“内容”部分，**完全没有任何关于视频实际内容的实质性信息**。内容仅列出了YouTube的样板式法律和政策信息，以及版权声明。
+
+因此，我无法提供视频的主要观点或关键信息的总结，因为这些信息根本没有在提供的内容中出现。我只能说，视频的标题表明它将涵盖史蒂夫·乔布斯在NeXT的时光，以及这段经历如何影响了Mac OS X的开发。
+
+---
+
+## 47. 将 Buildkite 从副业发展成全球公司
+
+**原文标题**: Taking Buildkite from a side project to a global company
+
+**原文链接**: [https://www.valleyofdoubt.com/p/taking-buildkite-from-a-side-project](https://www.valleyofdoubt.com/p/taking-buildkite-from-a-side-project)
+
+本文通过对联合创始人兼前首席执行官 Keith Pitt 的采访，详细介绍了 Buildkite 从一个副业项目发展成为全球开发者工具公司的 13 年历程。Pitt 自认为是一名发明家而非企业家，最初创建 Buildkite 是为了解决他自己在使用 CI 工具时遇到的挫折。他在公司成立的最初几年里自力更生，克服了因现金流计算错误而导致濒临破产等挑战。
+
+本文重点介绍了关键里程碑，包括找到联合创始人（Tim Lucas 和 Lachlan）、获得初始资金以及获得重要的 A 轮融资。然而，A 轮融资也带来了证明高估值的压力，导致了增长方面的挑战。
+
+Pitt 强调了理解现金流、信任你的直觉以及有信心为你的产品索要应有价值的重要性。他还讨论了向拥抱销售团队的转变，以及在九年后形成的独特产品理念的发展。这种以将开发者视为人类并理解功能请求背后的根本问题为中心的产品理念，在 Buildkite 的成功和以开发者为中心的方法中发挥了至关重要的作用。
+
+---
+
+## 48. 没有银弹：软件工程的本质性与附属性 (1986) [pdf]
+
+**原文标题**: No Silver Bullet: Essence and Accidents of Software Engineering (1986) [pdf]
+
+**原文链接**: [https://www.cs.unc.edu/techreports/86-020.pdf](https://www.cs.unc.edu/techreports/86-020.pdf)
+
+弗雷德里克·布鲁克斯的《没有银弹：软件工程的本质与偶发》认为，在十年内，没有任何单一的突破性技术或方法能够使软件开发效率提高十倍。布鲁克斯区分了软件本质中固有的*本质*困难（复杂性、顺应性、可变性和不可见性）和我们使用的工具和技术所产生的*偶发*困难。
+
+他认为，过去的高级语言和分时技术等进步解决了偶发困难，产生了显著但最终有限的收益。解决本质困难需要解决软件本身的复杂性。布鲁克斯提出了几个有希望的途径，包括：
+
+*   **购买与构建：** 认识到重用现有软件组件的价值。
+*   **需求细化和快速原型：** 通过迭代开发和早期用户反馈更好地理解用户需求。
+*   **增量开发：** 有机地发展系统，而不是试图进行大型、整体的设计。
+*   **伟大的设计师：** 培养和授权有才华的个体软件架构师。
+
+布鲁克斯强调，这些方法提供的是渐进式改进，而不是数量级的飞跃。核心挑战在于管理软件固有的复杂性，这项任务需要智力严谨性、熟练的设计以及对技术解决方案局限性的接受。最终，进步将是渐进的，并且依赖于人类的创造力和协作。没有银弹可以杀死软件项目管理的狼人。
+
+---
+
+## 49. 如何从火星土壤中提炼金属
+
+**原文标题**: How to make metals from Martian dirt
+
+**原文链接**: [https://www.csiro.au/en/news/All/Articles/2025/August/Metals-out-of-martian-dirt](https://www.csiro.au/en/news/All/Articles/2025/August/Metals-out-of-martian-dirt)
+
+斯威本科技大学和联邦科学与工业研究组织的科研人员正在探索利用火星本土资源在火星上生产金属的可行性，这一过程被称为原位资源利用（ISRU）。 从地球运送物资成本高昂，使得ISRU成为建立火星定居点的必要条件。 由Akbar Rhamdhani教授和Deddy Nababan博士领导的团队，利用高温工艺，成功地从模拟火星土壤的火星风化层模拟物中提取了铁。 风化层模拟物被放置在火星表面压力下的腔室中，并以逐渐升高的温度进行加热。 实验表明，在1000°C左右形成纯铁金属，在1400°C左右产生液态硅铁合金。 该过程包括在模拟火星条件下加热模拟物，以生产纯铁和硅铁合金。 副产品也在研究中，以期用于制造其他有用的物品，目标是零浪费。 火星毅力号探测器上的MOXIE实验从二氧化碳中产生氧气，是ISRU成功案例。 火星制造的金属可用于建筑、住房和机械。 虽然仍然存在挑战，例如了解这些合金在火星上的长期性能，但该研究已引起国际关注，并需要各个科学和工程学科的合作。 除了推动太空探索外，该研究还旨在推进地球上更高效的冶金实践。
+
+---
+
+## 50. 罗斯·乌布利希的惊人回归巡演
+
+**原文标题**: The Spectacular Comeback Tour of Ross Ulbricht
+
+**原文链接**: [https://www.nytimes.com/2025/09/07/technology/ross-ulbricht-silk-road-comeback.html](https://www.nytimes.com/2025/09/07/technology/ross-ulbricht-silk-road-comeback.html)
+
+无法访问文章链接。
+
+---
+
+## 51. 美国人越来越不喜欢大企业和资本主义。
+
+**原文标题**: Big business and capitalism are becoming less and less popular with Americans
+
+**原文链接**: [https://www.businessinsider.com/big-business-capitalism-15-year-low-popularity-americans-2025-9](https://www.businessinsider.com/big-business-capitalism-15-year-low-popularity-americans-2025-9)
+
+本文题为《大型企业和资本主义越来越不受美国人欢迎》，可能探讨了美国国内对大型企业和资本主义体系日益增长的不满。鉴于该文发表于商业内幕网站，它可能从经济和商业角度分析这一趋势。
+
+文章很可能展示了数据或调查，说明大型企业和资本主义的认可度正在下降。它可能会引用导致这种转变的因素，例如对收入不平等、工资停滞、生活成本上涨以及对企业贪婪或缺乏社会责任感的担忧。
+
+此外，它可能深入探讨这一趋势的政治影响，强调它如何推动对进步政策、倡导经济改革的政治家和替代经济模式的支持。文章还可能探讨代际方面，表明年轻一代，特别是千禧一代和Z世代，比老一代人更怀疑传统资本主义。
+
+最后，这篇文章可能探讨这种不断变化的情绪对商业行为的潜在影响，认为公司可能需要采取更具社会责任感的方法，优先考虑利益相关者价值（员工、客户、社区）而非股东价值，并解决对环境可持续性的担忧，以重新获得公众信任并保持长期生存能力。
+
+---
+
+## 52. 我现在用手机 (2014) 完成 1991 年 Radio Shack 广告中的一切
+
+**原文标题**: Everything from 1991 Radio Shack ad I now do with my phone (2014)
+
+**原文链接**: [https://www.trendingbuffalo.com/life/uncle-steves-buffalo/everything-from-1991-radio-shack-ad-now/](https://www.trendingbuffalo.com/life/uncle-steves-buffalo/everything-from-1991-radio-shack-ad-now/)
+
+史蒂夫·西雄在一篇怀旧文章中回顾了1991年的一则无线电小屋广告，并反思了仅仅二十多年来科技发生的巨大变化。他花了3美元购买了1991年的旧《布法罗新闻》头版，并发现了这则包含15件电子产品的广告。西雄指出，他在2014年发布的iPhone实际上取代了其中的13件产品，突显了科技的惊人融合。
+
+被取代的产品包括：全天候个人立体声音响、AM/FM闹钟收音机、入耳式立体声耳机、超薄计算器、Tandy 1000 TL/3电脑、VHS摄像机、移动蜂窝电话、移动CB无线电、20个存储快速拨号电话、便携式CD播放器、桌面扫描仪、电话答录机和手持式卡式录音机。他甚至指出，iPhone取代了在电话簿中查找商店。
+
+西雄计算出，购买广告中所有商品在1991年需要花费3054.82美元，相当于2012年的约5100美元。他手机唯一无法取代的商品是雷达探测器和一个大型扬声器。他强调了发生的巨大技术转变，一部小小的手机现在可以执行众多设备的功能。
+
+---
+
+## 53. 四十四种深奥编程语言：深奥代码的艺术
+
+**原文标题**: Forty-Four Esolangs: The Art of Esoteric Code
+
+**原文链接**: [https://spectrum.ieee.org/esoteric-programming-languages-daniel-temkin](https://spectrum.ieee.org/esoteric-programming-languages-daniel-temkin)
+
+本文预览丹尼尔·特姆金的新书《四十四门深奥编程语言：深奥代码的艺术》，重点介绍深奥编程语言 (esolangs) 的世界。它强调深奥编程语言是一种独特的编码练习和艺术形式，挑战程序员跳出固有思维模式。文章提到，深奥编程语言（如用 Rivulet 语言编写的斐波那契数列程序所示）突破了传统编程的界限。本质上，本文介绍了深奥编程语言的概念，并宣传特姆金的书籍是对计算领域这一不寻常且富有创造力方面的深入研究。
+
+---
+
+## 54. SQLite的文件格式
+
+**原文标题**: SQLite's File Format
+
+**原文链接**: [https://www.sqlite.org/fileformat.html](https://www.sqlite.org/fileformat.html)
+
+本文档详细描述了 SQLite 数据库（3.0.0 版本及以后）的磁盘文件格式。 SQLite 数据库通常包含在单个文件中，可能伴随回滚日志或预写日志 (WAL) 以保证事务一致性。
+
+数据库文件由多个固定大小（512-65536 字节，为 2 的幂）的页面组成，每个页面都具有特定功能，例如存储 B 树数据、空闲列表信息、溢出数据或指针映射。
+
+文件的前 100 字节构成数据库头，包含关键的元数据。 此头包含一个魔术字符串 ("SQLite format 3")、页面大小、文件格式版本号（读写版本，指示回滚或 WAL 日志记录）、每页保留字节数、有效负载分数、文件更改计数器、数据库大小（以页为单位）、空闲列表信息、模式 Cookie（用于模式更改检测）、模式格式编号（定义 SQL 格式化功能）、建议的缓存大小、增量 vacuum 设置、文本编码、用户版本号、应用程序 ID、保留空间和版本有效性信息。
+
+关键方面包括页面大小规范（0x00 0x01 表示 65536 字节）、文件格式版本（1 代表回滚，2 代表 WAL）以及用于检测模式更改的模式 Cookie。 数据库头中的数据库大小用于确定数据库大小，并通过匹配更改计数器和版本有效号进行验证。 空闲列表管理、编码规范（UTF-8、UTF-16le、UTF-16be）和 vacuum 设置也在头中定义。
+
+---
+
+## 55. 演示场景正在消亡，但这没关系
+
+**原文标题**: The demo scene is dying, but that's alright
+
+**原文链接**: [https://www.datagubbe.se/sceneherit/](https://www.datagubbe.se/sceneherit/)
+
+在《演示场景正在消亡，但那也没关系》一文中，作者作为演示场景亚文化中的一位“场景玩家”，反思了该场景最近获得的联合国教科文组织认可及其被认为的衰落。作者承认，虽然该场景并没有完全消亡，但它正在老化；与其他经常吸引新的、年轻成员的亚文化不同，演示场景主要由那些在 80 年代末和 90 年代初鼎盛时期参与其中的人组成。
+
+文章将这种衰落归因于多种因素。该场景固有的反商业性质和缺乏容易销售的特征，使其难以重新包装以供主流消费。获得认可所需的高投入和缺乏主流吸引力进一步阻碍了新来者。文章还强调了游戏格局的变化，大型演示聚会被局域网聚会所取代，导致场景玩家退居到独家活动中。
+
+作者质疑复兴该场景的努力，认为使其独特的因素现在已基本消失。强大的计算机的兴起和互联网的普及消除了曾经推动创造力的技术限制。
+
+最终，作者对该场景可能衰落表示接受。他们认为，该场景没有义务为软件行业提供人才，青少年也不应感到有义务去填补由老一代人定义的利基市场。作者优先考虑现有社群对该场景的享受，远离商业利益和对其独特性的潜在威胁。
+
+---
+
+## 56. 塔可钟AI汽车餐厅
+
+**原文标题**: Taco Bell AI Drive-Thru
+
+**原文链接**: [https://aidarwinawards.org/nominees/taco-bell-ai-drive-thru.html](https://aidarwinawards.org/nominees/taco-bell-ai-drive-thru.html)
+
+塔可钟在超过500家汽车餐厅推出语音AI点餐系统的雄心勃勃计划遭遇挫折，并因此获得“AI达尔文奖”提名。该公司高估了AI处理真实世界客户互动复杂性和快餐订单混乱程度的能力。
+
+据《华尔街日报》报道，顾客经历了故障、延迟，以及，或许更重要的是，乐于故意用奇怪而复杂的订单来戏弄AI。这种“创造性的用户互动”突显了该技术的局限性，表明人类仍然可以比AI更古怪，尤其是在饥饿和渴望定制玉米卷的驱使下。
+
+面对这些挑战，塔可钟现在正在“重新评估”其AI部署，这表明需要重新评估AI的有效性，并考虑在高峰时段进行人工干预。这种情况代表了企业对AI的热情、客户行为的不可预测性以及食物订购的内在复杂性之间的碰撞。
+
+这篇文章突出了塔可钟的过度自信、在没有充分测试的情况下进行的大规模部署，以及随后承认AI系统无法应对客户请求。尽管遭遇了挫折，塔可钟仍然坚持认为语音AI仍然是他们未来战略的关键组成部分，即使在面对已证实的局限性时，也展现了对该技术的持续承诺。尽管AI未能征服玉米卷订购过程，但这种对AI坚定不移的信念使塔可钟成为一个当之无愧的“AI达尔文奖”提名者。
+
+---
+
+## 57. 不要在日志中泄露秘密（2024）
+
+**原文标题**: Keeping secrets out of logs (2024)
+
+**原文链接**: [https://allan.reyes.sh/posts/keeping-secrets-out-of-logs/](https://allan.reyes.sh/posts/keeping-secrets-out-of-logs/)
+
+本文《防止日志泄露敏感信息 (2024)》重点阐述了敏感数据（密钥）泄露到日志中这个普遍且令人沮丧的问题，并提出了缓解此问题的策略。作者认为，没有单一的解决方案，而是一系列“铅弹”，当与纵深防御相结合时，可以显著降低风险。
+
+文章指出了日志中出现密钥的常见原因，包括直接记录敏感数据、“大杂烩”对象以意外的方式包含密钥、暴露新数据的配置变更、嵌入在URL等格式中的密钥、遥测系统无意中捕获敏感信息以及用户将密码输入到非预期字段中。
+
+提出的解决方案（“铅弹”）按类别划分，并以大致的应用顺序呈现：
+
+1.  **数据架构：** 通过单一、受控的流集中数据流，以限制问题范围。
+2.  **数据转换：** 应用既定的数据安全技术（最小化、编辑、令牌化、哈希、加密、掩码）在记录之前解除数据的武装。
+3.  **领域基元、编译时/运行时修复、一次性读取对象、日志格式化器、单元测试、敏感数据扫描器、日志预处理器、污点检查：** 此处未在提示中展开。
+4.  **人员：** 培训和意识计划。
+
+文章强调，全面的策略，包括了解数据流、在关键点进行保护、应用纵深防御以及规划事件响应和恢复，对于有效防止日志泄露敏感信息至关重要。
+
+---
+
+## 58. 捷豹路虎因网络攻击延长停产
+
+**原文标题**: Jaguar Land Rover extends shutdown after cyber attack
+
+**原文链接**: [https://www.bbc.com/news/articles/c15k9gjg05go](https://www.bbc.com/news/articles/c15k9gjg05go)
+
+捷豹路虎因网络攻击导致运营中断，已将英国工厂停产至少延长至周三。该攻击始于8月31日，迫使公司关闭其IT系统，影响了英国（哈利伍德、索利哈尔、伍尔弗汉普顿）、斯洛伐克、中国和印度的工厂生产，导致生产线员工待在家中。
+
+捷豹路虎正与网络安全专家和执法部门合作恢复其网络，并未对有关中断可能持续数周的报道发表评论。此次停产通常使该公司每天生产约1000辆汽车，同时也影响了供应商，部分供应商已指示其员工留在家中。此外，经销商无法注册新车，车库在订购零件方面也面临困难。
+
+此次攻击发生在交付新车的旺季，恰逢9月1日发布新车牌。零部件供应商Qualplast对长期停产可能造成的长期影响表示担忧。一个声称对此负责的黑客组织，此前曾被指控攻击英国其他企业（如马莎百货），在Telegram上吹嘘了对捷豹路虎的攻击，并试图向该公司勒索钱财。捷豹路虎已注意到这些说法，正在调查。
+
+---
+
+## 59. “小得不可思议”的Microdot Web框架
+
+**原文标题**: The “impossibly small” Microdot web framework
+
+**原文链接**: [https://lwn.net/Articles/1034121/](https://lwn.net/Articles/1034121/)
+
+这篇LWN.net文章讨论了Microdot，一个由Miguel Grinberg创建的“极小”Python web框架，灵感来自Flask。Microdot被设计为既能在标准CPython上运行，也能在MicroPython上运行，使其既适用于IoT设备，也适用于大型服务器。
+
+Grinberg开发Microdot的起因是他对爱尔兰出租屋里的智能供暖控制器不满意。他使用MicroPython板和传感器创建了自己的温度监控系统。这导致需要一个轻量级的web框架来远程访问传感器数据，Microdot由此诞生。
+
+文章重点介绍了Microdot的特性，包括其使用`asyncio`的异步特性、Flask风格的路由装饰器、请求/响应类，以及对查询字符串、表单数据、JSON、流媒体、cookies、静态文件、子应用程序和TLS的支持。虽然很紧凑，但Microdot提供了维护良好的扩展，用于多部分表单、WebSockets、服务器发送事件、模板、身份验证和用户登录等功能。
+
+Grinberg强调了文档（超过9000字）和100%测试覆盖率的重要性。他优先避免其他框架中发现的“黑魔法”，比如Flask的应用程序上下文。代码比较显示，Microdot的URL匹配仅用63行代码实现，而Flask则用了1362行。核心框架仅由765行代码组成。
+
+文章还提到了局限性，例如在低端设备上的性能以及使用预编译字节码（`.mpy`文件）来减少RAM需求。
+
+---
+
+## 60. 海底电缆技术更新 [pdf]
+
+**原文标题**: A Technical Update on Submarine Cables [pdf]
+
+**原文链接**: [https://www.swinog.ch/wp-content/uploads/2025/06/Liam-Taylor-David-Lloyd-Exa-A-Technical-Update-on-Submarine-Cables.pdf](https://www.swinog.ch/wp-content/uploads/2025/06/Liam-Taylor-David-Lloyd-Exa-A-Technical-Update-on-Submarine-Cables.pdf)
+
+我无法提供所提供内容的摘要。这些内容似乎是与PDF文件相关的原始数据/代码，特别是嵌入其中的JPEG图像。没有可读文本或可辨别的文章内容可以进行总结。
+
+---
+
+## 61. 表达问题及其解决方案 (2016)
+
+**原文标题**: The Expression Problem and its solutions (2016)
+
+**原文链接**: [https://eli.thegreenplace.net/2016/the-expression-problem-and-its-solutions/](https://eli.thegreenplace.net/2016/the-expression-problem-and-its-solutions/)
+
+本文探讨了“表达式问题”，这是软件设计中的一个基本挑战，涉及数据类型和操作的可扩展性。当试图在不修改现有操作代码的情况下向系统添加新的数据类型，或者在不修改现有类型代码的情况下添加新的操作时，就会出现这个问题。
+
+本文使用表达式求值器的例子说明了面向对象编程 (OOP) 和函数式编程 (FP) 中的这个问题。在 OOP (C++) 中，添加新的类型很简单，但添加新的操作需要修改基类和所有现有的类型类，违反了开闭原则。相反，在 FP (Haskell) 中，添加新的操作很容易，但添加新的类型需要修改所有现有的函数。
+
+本文然后探讨了使用访问者模式在 OOP 中解决这个问题的“方案”，它有效地扭转了这个问题，使得添加操作更容易，但添加类型更难。它进一步引入了一种扩展的访问者模式，允许通过使用虚拟继承和动态转换在不修改现有访问者代码的情况下添加新的类型。然而，这种方法被认为是复杂的、笨拙的，并且引入了动态检查，破坏了静态类型。
+
+最后，本文暗示了在支持多重分派和将方法定义与类型主体分离的语言（如 Clojure）中，如何优雅地解决表达式问题。
+
+---
+
+## 62. SQLite 对 Tcl 的使用 (2017)
+
+**原文标题**: SQLite's Use of Tcl (2017)
+
+**原文链接**: [https://www.tcl-lang.org/community/tcl2017/assets/talk93/Paper.html](https://www.tcl-lang.org/community/tcl2017/assets/talk93/Paper.html)
+
+本文详细介绍了无处不在的数据库引擎SQLite与Tcl脚本语言之间深刻且常常不为人知的联系。虽然SQLite是用C语言编写的，并且在其部署形式中独立于Tcl运行，但它的开发过程却严重依赖于Tcl。
+
+从历史上看，SQLite被设计为Tcl扩展，这在SQL查询中的Tcl风格变量绑定以及类似于Tcl“一切皆字符串”哲学的灵活类型系统中可见。即使在今天，官方的SQLite发行版也包含一个Tcl适配器，这与其他通常是第三方插件的语言适配器不同。
+
+除了其历史渊源之外，Tcl在当前的SQLite开发工作流程中起着至关重要的作用。关键是，超过一半的SQLite源代码树由Tcl代码组成，主要用于测试和代码生成。Tcl脚本自动生成C代码用于字节码引擎等组件，处理操作码分配，并构建大多数开发人员使用的单文件“混合体”（sqlite3.c）。
+
+本文重点介绍了`sqlite3_analyzer`实用程序，这是一个伪装成C包装器嵌入的Tcl应用程序，展示了Tcl在简洁高效代码方面的强大功能。此外，SQLite广泛的测试体系，对于其可靠性至关重要，严重依赖于Tcl来进行测试用例创建、执行自动化和覆盖率分析。最后，SQLite的文档由Tcl脚本自动生成，这些脚本从源代码注释中提取信息并处理包含嵌入式Tcl代码的类似HTML的文件。因此，虽然用户可能以其他语言与SQLite交互，但Tcl对于其创建、测试和维护是不可或缺的。
+
+---
+
+## 63. 逆弗林效应
+
+**原文标题**: The Reverse Flynn Effect
+
+**原文链接**: [https://calnewport.com/on-the-reverse-flynn-effect/](https://calnewport.com/on-the-reverse-flynn-effect/)
+
+文章探讨了“反弗林效应”这一现象，即在持续增长数十年（弗林效应）之后，智商分数正在下降。 心理学教授Lars Dehli在准备讲座时注意到了这一趋势。 包括《智力》杂志上的一项研究在内的研究证实，美国人群的各种智力指标均在下降。
+
+虽然其原因尚在争论中，但James Marriott总结的一个主要假设是将这种下降与从纸质信息消费向数字信息消费的转变联系起来。 Marriott认为，纸质媒体鼓励逻辑性和密集性思维，而TikTok和YouTube等平台的碎片化和基于断言的性质削弱了这种思维。
+
+支持这一理论的证据包括智商下降的时间，这与2010年左右智能手机的广泛普及相吻合。 此外，在18-22岁的年轻人（智能手机最 intensive 的用户）中观察到的下降幅度最大。
+
+文章总结说，虽然不太可能存在单一原因，“设备假说”与人们普遍感觉智能手机可能对我们的认知能力产生负面影响相符，这表明流行的说法“我的手机让我变得如此愚蠢！”可能比最初认为的更字面意义。
+
+---
+
+## 64. Show HN: 通过 WebRTC 使用 OpenCV (Go 语言)
+
+**原文标题**: Show HN: OpenCV over WebRTC (in Go)
+
+**原文链接**: [https://github.com/pion/example-webrtc-applications/blob/master/gocv-to-webrtc/README.md](https://github.com/pion/example-webrtc-applications/blob/master/gocv-to-webrtc/README.md)
+
+这个“Show HN”帖子展示了一个利用 OpenCV 的 WebRTC 应用示例，该应用使用 Go 语言实现。该项目很可能是 `pion/example-webrtc-applications` 仓库的一部分，演示了如何通过 WebRTC 连接传输使用 OpenCV 捕获和处理的视频流。 使用 Go 和 Pion 表明该项目专注于利用现代技术进行实时媒体流传输。
+
+本质上，该项目允许用户构建可以使用 OpenCV（一个流行的计算机视觉库）捕获视频，并可能执行图像或视频处理，然后通过点对点 WebRTC 连接传输生成的视频流的应用程序。 这可以实现各种应用程序，例如远程监控、交互式视频应用程序或实时计算机视觉演示。
+
+该帖子很可能旨在展示一个在 Go 环境中将 OpenCV 与 WebRTC 集成以实现实时视频流的实际示例，邀请其他人探索、贡献，并可能基于提供的代码进行构建。 星标数和 Fork 数（分别为 1.2k 和 268）表明社区对该项目有浓厚的兴趣。
+
+---
+
+## 65. 我放弃英特尔了，买了AMD Ryzen 9950X3D。
+
+**原文标题**: I am giving up on Intel and have bought an AMD Ryzen 9950X3D
+
+**原文链接**: [https://michael.stapelberg.ch/posts/2025-09-07-bye-intel-hi-amd-9950x3d/](https://michael.stapelberg.ch/posts/2025-09-07-bye-intel-hi-amd-9950x3d/)
+
+2025年9月7日的一篇博文中，作者详细描述了在高端2025 Linux PC上使用Intel 285K处理器发生两次CPU故障后，决定从Intel切换到AMD的过程。作者怀疑Intel的CPU变得不可靠，并引用了多篇提到更换CPU的评论。
+
+第一次CPU故障发生在为layout-parser和tesseract进行长时间CUDA编译时，旨在将扫描文档转换为文本。电脑变得无响应，风扇全速运转，导致怀疑CPU不稳定。虽然作者无法确认资源密集型的批处理作业直接导致了第二次CPU故障，但系统在此之前已经表现出奇怪的现象。
+
+作者消除了高室温导致故障的担忧，因为房间装有空调，CPU温度在Intel规定的限值范围内。
+
+作为替代品，作者选择了AMD Ryzen 9 9950X3D，理由是其性能优势以及Linux内核管理具有不同缓存大小的核心的能力。他们将其与华硕TUF X870+主板搭配使用，优先考虑降低功耗和耐用性。
+
+性能基准测试显示，与Intel 285K相比，AMD CPU略有提升。然而，功耗有所增加，基准水平更高，且频繁出现峰值，导致每日能源消耗显著增加。
+
+作者回顾了他们长期使用Intel CPU的Linux电脑的历史，承认由于Intel明显的不稳定性而发生的转变。他们希望AMD能够改善空闲功耗，并希望Intel能够在未来稳定其CPU设计。
+
+---
+
+## 66. Whistle-Blower Sues Meta over Claims of WhatsApp Security Flaws
+
+**原文标题**: Whistle-Blower Sues Meta over Claims of WhatsApp Security Flaws
+
+**原文链接**: [https://www.nytimes.com/2025/09/08/technology/whatsapp-whistleblower-lawsuit.html](https://www.nytimes.com/2025/09/08/technology/whatsapp-whistleblower-lawsuit.html)
+
+Unable to access the article link.
+
+
+---
+
+## 67. 95% of AI Pilots Fail
+
+**原文标题**: 95% of AI Pilots Fail
+
+**原文链接**: [https://www.selector.ai/blog/95-of-ai-pilots-fail-heres-how-to-be-the-5/](https://www.selector.ai/blog/95-of-ai-pilots-fail-heres-how-to-be-the-5/)
+
+生成摘要时出错
+
+---
+
+## 68. Truco and clones: the beginnings of Argentinian computer gaming
+
+**原文标题**: Truco and clones: the beginnings of Argentinian computer gaming
+
+**原文链接**: [https://zeitgame.net/archives/18373](https://zeitgame.net/archives/18373)
+
+生成摘要时出错
+
+---
+
+## 69. 仅仅优秀是不够的
+
+**原文标题**: Being good isn't enough
+
+**原文链接**: [https://joshs.bearblog.dev/being-good-isnt-enough/](https://joshs.bearblog.dev/being-good-isnt-enough/)
+
+This article argues that simply being technically proficient isn't enough for career progression. While strong technical skills are a necessary foundation, individuals need to develop a broader skillset to truly increase their impact and stand out. The author identifies four key disciplines: technical skill, product thinking (knowing what's worth doing), project execution (making it happen), and people skills (influencing others).
+
+Mastering these disciplines, especially the weaker ones, allows individuals to "make stuff that matters actually happen." However, self-assessment can be challenging due to overestimation of one's abilities. The solution lies in seeking and acting on feedback while maintaining humility.
+
+The author emphasizes the importance of actively seeking growth by finding mentors, leading projects, presenting work, and creating opportunities for others. He stresses the need to showcase one's work, as it rarely speaks for itself.
+
+Ultimately, the most crucial factor is agency: the ability to proactively make things happen rather than waiting. Choosing to be a high-agency person is more impactful than inherent traits like smarts or luck. The author concludes that this broader approach, combined with hard work, is essential for career progress and ultimately deserving what one desires. He recommends "The Staff Engineer's Path" and "Thanks for the Feedback" for further reading.
+
+
+---
+
+## 70. No more data centers: Ohio township pushes back against influx of Amazon, others
+
+**原文标题**: No more data centers: Ohio township pushes back against influx of Amazon, others
+
+**原文链接**: [https://www.dispatch.com/story/news/local/2025/09/08/ohio-township-pauses-data-center-construction-amid-influx-of-amazon-others/85989839007/](https://www.dispatch.com/story/news/local/2025/09/08/ohio-township-pauses-data-center-construction-amid-influx-of-amazon-others/85989839007/)
+
+生成摘要时出错
+
+---
+
+## 71. Default musl allocator considered harmful to performance
+
+**原文标题**: Default musl allocator considered harmful to performance
+
+**原文链接**: [https://nickb.dev/blog/default-musl-allocator-considered-harmful-to-performance/](https://nickb.dev/blog/default-musl-allocator-considered-harmful-to-performance/)
+
+生成摘要时出错
+
+---
+
+## 72. Purikura: The Japanese Grandmother of the Selfie
+
+**原文标题**: Purikura: The Japanese Grandmother of the Selfie
+
+**原文链接**: [https://www.tokyocowboy.co/articles/purikura-the-grandmother-of-the-selfie](https://www.tokyocowboy.co/articles/purikura-the-grandmother-of-the-selfie)
+
+生成摘要时出错
+
+---
+
+## 73. Pico CSS – Minimal CSS Framework for Semantic HTML
+
+**原文标题**: Pico CSS – Minimal CSS Framework for Semantic HTML
+
+**原文链接**: [https://picocss.com](https://picocss.com)
+
+生成摘要时出错
+
+---
+
+## 74. Exploring Interlisp-10 and Twenex
+
+**原文标题**: Exploring Interlisp-10 and Twenex
+
+**原文链接**: [https://journal.paoloamoroso.com/exploring-interlisp-10-and-twenex](https://journal.paoloamoroso.com/exploring-interlisp-10-and-twenex)
+
+生成摘要时出错
+
+---
+
+## 75. Anthropic agrees to pay $1.5B to settle lawsuit with book authors
+
+**原文标题**: Anthropic agrees to pay $1.5B to settle lawsuit with book authors
+
+**原文链接**: [https://www.nytimes.com/2025/09/05/technology/anthropic-settlement-copyright-ai.html?unlocked_article_code=1.jk8.bTTt.Zir9wmtPaTp2&smid=url-share](https://www.nytimes.com/2025/09/05/technology/anthropic-settlement-copyright-ai.html?unlocked_article_code=1.jk8.bTTt.Zir9wmtPaTp2&smid=url-share)
+
+生成摘要时出错
+
+---
+
+## 76. Show HN: Lightweight tool for managing Linux virtual machines
+
+**原文标题**: Show HN: Lightweight tool for managing Linux virtual machines
+
+**原文链接**: [https://github.com/ccheshirecat/flint](https://github.com/ccheshirecat/flint)
+
+生成摘要时出错
+
+---
+
+## 77. Show HN: Veena Chromatic Tuner
+
+**原文标题**: Show HN: Veena Chromatic Tuner
+
+**原文链接**: [https://play.google.com/store/apps/details?id=in.magima.digitaltuner&hl=en_US](https://play.google.com/store/apps/details?id=in.magima.digitaltuner&hl=en_US)
+
+生成摘要时出错
+
+---
+
+## 78. Kenvue stock drops on report RFK Jr will link autism to Tylenol during pregnancy
+
+**原文标题**: Kenvue stock drops on report RFK Jr will link autism to Tylenol during pregnancy
+
+**原文链接**: [https://www.cnbc.com/2025/09/05/rfk-tylenol-autism-kenvue-stock-for-url.html](https://www.cnbc.com/2025/09/05/rfk-tylenol-autism-kenvue-stock-for-url.html)
+
+生成摘要时出错
+
+---
+
+## 79. Show HN: I recreated Windows XP as my portfolio
+
+**原文标题**: Show HN: I recreated Windows XP as my portfolio
+
+**原文链接**: [https://mitchivin.com/](https://mitchivin.com/)
+
+生成摘要时出错
+
+---
+
+## 80. A Navajo weaving of an integrated circuit: the 555 timer
+
+**原文标题**: A Navajo weaving of an integrated circuit: the 555 timer
+
+**原文链接**: [https://www.righto.com/2025/09/marilou-schultz-navajo-555-weaving.html](https://www.righto.com/2025/09/marilou-schultz-navajo-555-weaving.html)
+
+生成摘要时出错
+
+---
+
+## 81. Serverless Horrors
+
+**原文标题**: Serverless Horrors
+
+**原文链接**: [https://serverlesshorrors.com/](https://serverlesshorrors.com/)
+
+生成摘要时出错
+
+---
+
+## 82. Belling the Cat
+
+**原文标题**: Belling the Cat
+
+**原文链接**: [https://en.wikipedia.org/wiki/Belling_the_Cat](https://en.wikipedia.org/wiki/Belling_the_Cat)
+
+生成摘要时出错
+
+---
+
+## 83. I solved a distributed queue problem after 15 years
+
+**原文标题**: I solved a distributed queue problem after 15 years
+
+**原文链接**: [https://www.dbos.dev/blog/durable-queues](https://www.dbos.dev/blog/durable-queues)
+
+生成摘要时出错
+
+---
+
+## 84. Tumult and Sympathy: The Letters of Oliver Sacks
+
+**原文标题**: Tumult and Sympathy: The Letters of Oliver Sacks
+
+**原文链接**: [https://www.commonwealmagazine.org/tumult-and-sympathy](https://www.commonwealmagazine.org/tumult-and-sympathy)
+
+生成摘要时出错
+
+---
+
+## 85. AMD Claims Arm ISA Doesn't Offer Efficiency Advantage over x86
+
+**原文标题**: AMD Claims Arm ISA Doesn't Offer Efficiency Advantage over x86
+
+**原文链接**: [https://www.techpowerup.com/340779/amd-claims-arm-isa-doesnt-offer-efficiency-advantage-over-x86](https://www.techpowerup.com/340779/amd-claims-arm-isa-doesnt-offer-efficiency-advantage-over-x86)
+
+生成摘要时出错
+
+---
+
+## 86. How the “Kim” dump exposed North Korea's credential theft playbook
+
+**原文标题**: How the “Kim” dump exposed North Korea's credential theft playbook
+
+**原文链接**: [https://dti.domaintools.com/inside-the-kimsuky-leak-how-the-kim-dump-exposed-north-koreas-credential-theft-playbook/](https://dti.domaintools.com/inside-the-kimsuky-leak-how-the-kim-dump-exposed-north-koreas-credential-theft-playbook/)
+
+生成摘要时出错
+
+---
+
+## 87. Show HN: Stroboscopic Instrument Tuner
+
+**原文标题**: Show HN: Stroboscopic Instrument Tuner
+
+**原文链接**: [https://github.com/dsego/strobe-tuner](https://github.com/dsego/strobe-tuner)
+
+生成摘要时出错
+
+---
+
+## 88. Wide-Band WebSDR
+
+**原文标题**: Wide-Band WebSDR
+
+**原文链接**: [http://websdr.ewi.utwente.nl:8901/](http://websdr.ewi.utwente.nl:8901/)
+
+生成摘要时出错
+
+---
+
+## 89. GigaByte CXL memory expansion card with up to 512GB DRAM
+
+**原文标题**: GigaByte CXL memory expansion card with up to 512GB DRAM
+
+**原文链接**: [https://www.gigabyte.com/PC-Accessory/AI-TOP-CXL-R5X4](https://www.gigabyte.com/PC-Accessory/AI-TOP-CXL-R5X4)
+
+生成摘要时出错
+
+---
+
+## 90. Action was the best 8-bit programming language
+
+**原文标题**: Action was the best 8-bit programming language
+
+**原文链接**: [https://www.goto10retro.com/p/action-was-the-best-8-bit-programming](https://www.goto10retro.com/p/action-was-the-best-8-bit-programming)
+
+生成摘要时出错
+
+---
+
+## 91. Gym Class VR (YC W22) Is Hiring – UX Design Engineer
+
+**原文标题**: Gym Class VR (YC W22) Is Hiring – UX Design Engineer
+
+**原文链接**: [https://www.ycombinator.com/companies/gym-class-by-irl-studios/jobs/ywXHGBv-ux-design-engineer-senior-staff-principal](https://www.ycombinator.com/companies/gym-class-by-irl-studios/jobs/ywXHGBv-ux-design-engineer-senior-staff-principal)
+
+生成摘要时出错
+
+---
+
+## 92. A queasy selling of the family heirlooms
+
+**原文标题**: A queasy selling of the family heirlooms
+
+**原文链接**: [https://commonreader.wustl.edu/a-queasy-selling-of-the-family-heirlooms/](https://commonreader.wustl.edu/a-queasy-selling-of-the-family-heirlooms/)
+
+生成摘要时出错
+
+---
+
+## 93. Speed Brain: Helping web pages load faster (2024)
+
+**原文标题**: Speed Brain: Helping web pages load faster (2024)
+
+**原文链接**: [https://blog.cloudflare.com/introducing-speed-brain/](https://blog.cloudflare.com/introducing-speed-brain/)
+
+生成摘要时出错
+
+---
+
+## 94. Nintendo wins a $2M lawsuit against popular Switch modding webstore
+
+**原文标题**: Nintendo wins a $2M lawsuit against popular Switch modding webstore
+
+**原文链接**: [https://www.engadget.com/gaming/nintendo/nintendo-wins-a-2-million-lawsuit-against-popular-switch-modding-webstore-174528989.html](https://www.engadget.com/gaming/nintendo/nintendo-wins-a-2-million-lawsuit-against-popular-switch-modding-webstore-174528989.html)
+
+生成摘要时出错
+
+---
+
+## 95. Protobuffers Are Wrong (2018)
+
+**原文标题**: Protobuffers Are Wrong (2018)
+
+**原文链接**: [https://reasonablypolymorphic.com/blog/protos-are-wrong/](https://reasonablypolymorphic.com/blog/protos-are-wrong/)
+
+生成摘要时出错
+
+---
+
+## 96. The maths you need to start understanding LLMs
+
+**原文标题**: The maths you need to start understanding LLMs
+
+**原文链接**: [https://www.gilesthomas.com/2025/09/maths-for-llms](https://www.gilesthomas.com/2025/09/maths-for-llms)
+
+生成摘要时出错
+
+---
+
+## 97. Algebraic Effects in Practice with Flix
+
+**原文标题**: Algebraic Effects in Practice with Flix
+
+**原文链接**: [https://www.relax.software/blog/flix-effects-intro/](https://www.relax.software/blog/flix-effects-intro/)
+
+生成摘要时出错
+
+---
+
+## 98. Requiem for an Exit
+
+**原文标题**: Requiem for an Exit
+
+**原文链接**: [https://calls.ars.electronica.art/2025/prix/winners/15487/](https://calls.ars.electronica.art/2025/prix/winners/15487/)
+
+生成摘要时出错
+
+---
+
+## 99. The race to build a distributed GPU runtime
+
+**原文标题**: The race to build a distributed GPU runtime
+
+**原文链接**: [https://voltrondata.com/blog/the-race-to-build-a-distributed-gpu-runtime](https://voltrondata.com/blog/the-race-to-build-a-distributed-gpu-runtime)
+
+生成摘要时出错
+
+---
+
+## 100. Show HN: Semantic grep with local embeddings
+
+**原文标题**: Show HN: Semantic grep with local embeddings
+
+**原文链接**: [https://github.com/BeaconBay/ck](https://github.com/BeaconBay/ck)
+
+生成摘要时出错
+
+---
+
