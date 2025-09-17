@@ -2,31 +2,340 @@
 正在获取 Hacker News 上的前 100 篇热门文章...
 成功获取 100 篇文章
 
-正在处理第 1/100 篇文章: Waymo has received our pilot permit allowing for commercial operations at SFO
-成功提取文章内容，长度: 652 字符
+正在处理第 1/100 篇文章: Apple Photos App Corrupts Images
+成功提取文章内容，长度: 6180 字符
 已完成第 1 篇文章的处理
 
-正在处理第 2/100 篇文章: Things you can do with a Software Defined Radio (2024)
-成功提取文章内容，长度: 15000 字符
+正在处理第 2/100 篇文章: Tau² Benchmark: How a Prompt Rewrite Boosted GPT-5-Mini by 22%
+成功提取文章内容，长度: 7910 字符
 已完成第 2 篇文章的处理
 
-正在处理第 3/100 篇文章: Bertrand Russell to Oswald Mosley (1962)
-成功提取文章内容，长度: 2059 字符
+正在处理第 3/100 篇文章: Launch HN: RunRL (YC X25) – Reinforcement learning as a service
+成功提取文章内容，长度: 5 字符
 已完成第 3 篇文章的处理
 
-正在处理第 4/100 篇文章: Plugin System
-成功提取文章内容，长度: 2752 字符
+正在处理第 4/100 篇文章: Alibaba's new AI chip: Key specifications comparable to H20
+提取文章内容时出错: HTTPSConnectionPool(host='news.futunn.com', port=443): Max retries exceeded with url: /en/post/62202518/alibaba-s-new-ai-chip-unveiled-key-specifications-comparable-to (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4349cbf250>, 'Connection to news.futunn.com timed out. (connect timeout=15)'))
+错误类型: ConnectTimeout
+错误详情: Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f4349cbf250>, 'Connection to news.futunn.com timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='news.futunn.com', port=443): Max retries exceeded with url: /en/post/62202518/alibaba-s-new-ai-chip-unveiled-key-specifications-comparable-to (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4349cbf250>, 'Connection to news.futunn.com timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/hacker-news-summarizer/hacker-news-summarizer/main.py", line 84, in extract_article_content
+    response = requests.get(url, headers=headers, timeout=15)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/adapters.py", line 665, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='news.futunn.com', port=443): Max retries exceeded with url: /en/post/62202518/alibaba-s-new-ai-chip-unveiled-key-specifications-comparable-to (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f4349cbf250>, 'Connection to news.futunn.com timed out. (connect timeout=15)'))
+
+无法提取文章内容，尝试直接生成摘要（可能会失败）
 已完成第 4 篇文章的处理
 
-正在处理第 5/100 篇文章: Launch HN: Rowboat (YC S24) – Open-source IDE for multi-agent systems
-成功提取文章内容，长度: 1616 字符
+正在处理第 5/100 篇文章: How to motivate yourself to do a thing you don't want to do
+成功提取文章内容，长度: 10891 字符
 已完成第 5 篇文章的处理
 
-正在处理第 6/100 篇文章: UTF-8 history (2003)
-成功提取文章内容，长度: 15000 字符
+正在处理第 6/100 篇文章: Determination of the fifth Busy Beaver value
+成功提取文章内容，长度: 4117 字符
 已完成第 6 篇文章的处理
 
-正在处理第 7/100 篇文章: CIA Freedom of Information Act Electronic Reading Room
+正在处理第 7/100 篇文章: Event Horizon Labs (YC W24) Is Hiring
+成功提取文章内容，长度: 2919 字符
+已完成第 7 篇文章的处理
+
+正在处理第 8/100 篇文章: UUIDv47: Store UUIDv7 in DB, emit UUIDv4 outside (SipHash-masked timestamp)
+成功提取文章内容，长度: 3429 字符
+已完成第 8 篇文章的处理
+
+正在处理第 9/100 篇文章: Microsoft Python Driver for SQL Server
+成功提取文章内容，长度: 7068 字符
+已完成第 9 篇文章的处理
+
+正在处理第 10/100 篇文章: GNU Midnight Commander
+成功提取文章内容，长度: 1832 字符
+已完成第 10 篇文章的处理
+
+正在处理第 11/100 篇文章: Shai-Hulud malware attack: Tinycolor and over 40 NPM packages compromised
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 11 篇文章的处理
+
+正在处理第 12/100 篇文章: Procedural Island Generation (III)
+成功提取文章内容，长度: 6996 字符
+已完成第 12 篇文章的处理
+
+正在处理第 13/100 篇文章: PureVPN IPv6 Leak
+成功提取文章内容，长度: 2387 字符
+已完成第 13 篇文章的处理
+
+正在处理第 14/100 篇文章: YouTube addresses lower view counts which seem to be caused by ad blockers
+成功提取文章内容，长度: 3825 字符
+已完成第 14 篇文章的处理
+
+正在处理第 15/100 篇文章: Firefox 143 for Android to introduce DoH
+成功提取文章内容，长度: 4173 字符
+已完成第 15 篇文章的处理
+
+正在处理第 16/100 篇文章: Stategraph: Terraform state as a distributed systems problem
+成功提取文章内容，长度: 9416 字符
+已完成第 16 篇文章的处理
+
+正在处理第 17/100 篇文章: SQLiteData: A fast, lightweight replacement for SwiftData using SQL and CloudKit
+成功提取文章内容，长度: 8265 字符
+已完成第 17 篇文章的处理
+
+正在处理第 18/100 篇文章: Slow social media
+成功提取文章内容，长度: 6311 字符
+已完成第 18 篇文章的处理
+
+正在处理第 19/100 篇文章: Things you can do with a Software Defined Radio (2024)
+成功提取文章内容，长度: 15000 字符
+已完成第 19 篇文章的处理
+
+正在处理第 20/100 篇文章: Notion API importer, with Databases to Bases conversion bounty
+成功提取文章内容，长度: 2769 字符
+已完成第 20 篇文章的处理
+
+正在处理第 21/100 篇文章: Doom crash after 2.5 years of real-world runtime confirmed on real hardware
+成功提取文章内容，长度: 1506 字符
+已完成第 21 篇文章的处理
+
+正在处理第 22/100 篇文章: EU Chat Control: Germany's position has been reverted to undecided
+成功提取文章内容，长度: 143 字符
+已完成第 22 篇文章的处理
+
+正在处理第 23/100 篇文章: The Asus Gaming Laptop ACPI Firmware Bug: A Deep Technical Investigation
+成功提取文章内容，长度: 15000 字符
+已完成第 23 篇文章的处理
+
+正在处理第 24/100 篇文章: Murex – An intuitive and content aware shell for a modern command line
+成功提取文章内容，长度: 1931 字符
+已完成第 24 篇文章的处理
+
+正在处理第 25/100 篇文章: You can't test if quantum uses complex numbers
+成功提取文章内容，长度: 15000 字符
+已完成第 25 篇文章的处理
+
+正在处理第 26/100 篇文章: Bringing fully autonomous rides to Nashville, in partnership with Lyft
+成功提取文章内容，长度: 2649 字符
+已完成第 26 篇文章的处理
+
+正在处理第 27/100 篇文章: Oh no, not again a meditation on NPM supply chain attacks
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 27 篇文章的处理
+
+正在处理第 28/100 篇文章: How to make the Framework Desktop run even quieter
+成功提取文章内容，长度: 5188 字符
+已完成第 28 篇文章的处理
+
+正在处理第 29/100 篇文章: Denmark close to wiping out cancer-causing HPV strains after vaccine roll-out
+成功提取文章内容，长度: 11002 字符
+已完成第 29 篇文章的处理
+
+正在处理第 30/100 篇文章: Algebraic Types are not Scary
+成功提取文章内容，长度: 15000 字符
+已完成第 30 篇文章的处理
+
+正在处理第 31/100 篇文章: XeroxNostalgia.com
+成功提取文章内容，长度: 6913 字符
+已完成第 31 篇文章的处理
+
+正在处理第 32/100 篇文章: AMD Open Source Driver for Vulkan project is discontinued
+成功提取文章内容，长度: 5671 字符
+已完成第 32 篇文章的处理
+
+正在处理第 33/100 篇文章: A dumb introduction to z3
+成功提取文章内容，长度: 15000 字符
+已完成第 33 篇文章的处理
+
+正在处理第 34/100 篇文章: Waymo has received our pilot permit allowing for commercial operations at SFO
+成功提取文章内容，长度: 391 字符
+已完成第 34 篇文章的处理
+
+正在处理第 35/100 篇文章: I built my own phone because innovation is sad rn [video]
+成功提取文章内容，长度: 89 字符
+已完成第 35 篇文章的处理
+
+正在处理第 36/100 篇文章: DataTables CDN Outage – post incident review
+成功提取文章内容，长度: 8376 字符
+已完成第 36 篇文章的处理
+
+正在处理第 37/100 篇文章: Bertrand Russell to Oswald Mosley (1962)
+成功提取文章内容，长度: 2059 字符
+已完成第 37 篇文章的处理
+
+正在处理第 38/100 篇文章: U.S. investors, Trump close in on TikTok deal with China
+获取文章失败，状态码: 401
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 38 篇文章的处理
+
+正在处理第 39/100 篇文章: Top UN legal investigators conclude Israel is guilty of genocide in Gaza
+成功提取文章内容，长度: 9172 字符
+已完成第 39 篇文章的处理
+
+正在处理第 40/100 篇文章: How Container Filesystem Works: Building a Docker-Like Container from Scratch
+成功提取文章内容，长度: 15000 字符
+已完成第 40 篇文章的处理
+
+正在处理第 41/100 篇文章: Samsung 870 QVO 4TB SATA SSD-s: how are they doing after 4 years of use?
+成功提取文章内容，长度: 2559 字符
+已完成第 41 篇文章的处理
+
+正在处理第 42/100 篇文章: In Praise of Idleness (1932)
+成功提取文章内容，长度: 15000 字符
+已完成第 42 篇文章的处理
+
+正在处理第 43/100 篇文章: In Defense of C++
+成功提取文章内容，长度: 14570 字符
+已完成第 43 篇文章的处理
+
+正在处理第 44/100 篇文章: CubeSats are fascinating learning tools for space
+成功提取文章内容，长度: 11743 字符
+已完成第 44 篇文章的处理
+
+正在处理第 45/100 篇文章: About the security content of iOS 15.8.5 and iPadOS 15.8.5
+成功提取文章内容，长度: 1550 字符
+已完成第 45 篇文章的处理
+
+正在处理第 46/100 篇文章: Should we drain the Everglades?
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 46 篇文章的处理
+
+正在处理第 47/100 篇文章: Normal-order syntax-rules and proving the fix-point of call/cc
+成功提取文章内容，长度: 15000 字符
+已完成第 47 篇文章的处理
+
+正在处理第 48/100 篇文章: Meta RayBan AR glasses shows Lumus waveguide structures in leaked video
+成功提取文章内容，长度: 4392 字符
+已完成第 48 篇文章的处理
+
+正在处理第 49/100 篇文章: I got the highest score on ARC-AGI again swapping Python for English
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 49 篇文章的处理
+
+正在处理第 50/100 篇文章: "Your" vs. "My" in user interfaces
+成功提取文章内容，长度: 1906 字符
+已完成第 50 篇文章的处理
+
+正在处理第 51/100 篇文章: Launch HN: Rowboat (YC S24) – Open-source IDE for multi-agent systems
+成功提取文章内容，长度: 1616 字符
+已完成第 51 篇文章的处理
+
+正在处理第 52/100 篇文章: AI fares better than doctors at predicting deadly complications after surgery
+成功提取文章内容，长度: 5507 字符
+已完成第 52 篇文章的处理
+
+正在处理第 53/100 篇文章: Obtaining Global Admin in Every Entra ID Tenant
+成功提取文章内容，长度: 15000 字符
+已完成第 53 篇文章的处理
+
+正在处理第 54/100 篇文章: Irssi: IRC client in a Docker image
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 54 篇文章的处理
+
+正在处理第 55/100 篇文章: 'Privatisation premium': billions from UK energy bills paid to shareholders
+成功提取文章内容，长度: 8347 字符
+已完成第 55 篇文章的处理
+
+正在处理第 56/100 篇文章: When the job search becomes impossible
+成功提取文章内容，长度: 10291 字符
+已完成第 56 篇文章的处理
+
+正在处理第 57/100 篇文章: AI Chip Startup Groq Raises $750M at $6.9B Valuation
+成功提取文章内容，长度: 1027 字符
+已完成第 57 篇文章的处理
+
+正在处理第 58/100 篇文章: Tuberculosis shaped Victorian fashion (2016)
+成功提取文章内容，长度: 7266 字符
+已完成第 58 篇文章的处理
+
+正在处理第 59/100 篇文章: A new experimental Google app for Windows
+成功提取文章内容，长度: 756 字符
+已完成第 59 篇文章的处理
+
+正在处理第 60/100 篇文章: The "most hated" CSS feature: cos() and sin()
+成功提取文章内容，长度: 15000 字符
+已完成第 60 篇文章的处理
+
+正在处理第 61/100 篇文章: Scammed out of $130K via fake Google call, spoofed Google email and auth sync
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 61 篇文章的处理
+
+正在处理第 62/100 篇文章: Gmail Mail Delivery Subsystem Being Used for Spam Delivery Bypassing Filters
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
+已完成第 62 篇文章的处理
+
+正在处理第 63/100 篇文章: CIA Freedom of Information Act Electronic Reading Room
 提取文章内容时出错: Exceeded 30 redirects.
 错误类型: TooManyRedirects
 错误详情: Traceback (most recent call last):
@@ -49,258 +358,22 @@
 requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 
 无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 7 篇文章的处理
-
-正在处理第 8/100 篇文章: A new experimental Google app for Windows
-成功提取文章内容，长度: 756 字符
-已完成第 8 篇文章的处理
-
-正在处理第 9/100 篇文章: Self Propagating NPM Malware
-成功提取文章内容，长度: 15000 字符
-已完成第 9 篇文章的处理
-
-正在处理第 10/100 篇文章: Implicit Ode Solvers Are Not Universally More Robust Than Explicit Ode Solvers
-成功提取文章内容，长度: 15000 字符
-已完成第 10 篇文章的处理
-
-正在处理第 11/100 篇文章: Development of the MOS Technology 6502: A Historical Perspective (2022)
-成功提取文章内容，长度: 15000 字符
-已完成第 11 篇文章的处理
-
-正在处理第 12/100 篇文章: Generative AI as Seniority-Biased Technological Change
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 12 篇文章的处理
-
-正在处理第 13/100 篇文章: Microsoft Favors Anthropic over OpenAI for Visual Studio Code
-成功提取文章内容，长度: 3015 字符
-已完成第 13 篇文章的处理
-
-正在处理第 14/100 篇文章: Teen safety, freedom, and privacy
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 14 篇文章的处理
-
-正在处理第 15/100 篇文章: 60 years after Gemini, newly processed images reveal details
-成功提取文章内容，长度: 15000 字符
-已完成第 15 篇文章的处理
-
-正在处理第 16/100 篇文章: Robert Redford has died
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 16 篇文章的处理
-
-正在处理第 17/100 篇文章: Java 25 Officially Released
-成功提取文章内容，长度: 1764 字符
-已完成第 17 篇文章的处理
-
-正在处理第 18/100 篇文章: Scientists uncover extreme life inside the Arctic ice
-成功提取文章内容，长度: 8062 字符
-已完成第 18 篇文章的处理
-
-正在处理第 19/100 篇文章: Migrating to React Native's New Architecture
-成功提取文章内容，长度: 15000 字符
-已完成第 19 篇文章的处理
-
-正在处理第 20/100 篇文章: Will I Run Boston 2026?
-成功提取文章内容，长度: 855 字符
-已完成第 20 篇文章的处理
-
-正在处理第 21/100 篇文章: After escaping Russian energy dependence, Europe is locking itself in to US LNG
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 21 篇文章的处理
-
-正在处理第 22/100 篇文章: Learn x86-64 assembly by writing a GUI from scratch (2023)
-成功提取文章内容，长度: 15000 字符
-已完成第 22 篇文章的处理
-
-正在处理第 23/100 篇文章: "Your" vs. "My" in user interfaces
-成功提取文章内容，长度: 1906 字符
-已完成第 23 篇文章的处理
-
-正在处理第 24/100 篇文章: macOS Tahoe
-成功提取文章内容，长度: 5755 字符
-已完成第 24 篇文章的处理
-
-正在处理第 25/100 篇文章: Adding FRM parser utility to MariaDB
-成功提取文章内容，长度: 15 字符
-已完成第 25 篇文章的处理
-
-正在处理第 26/100 篇文章: William Gibson Reads Neuromancer (2004)
-成功提取文章内容，长度: 3461 字符
-已完成第 26 篇文章的处理
-
-正在处理第 27/100 篇文章: Word numbers: Billion approaches (2008)
-成功提取文章内容，长度: 7012 字符
-已完成第 27 篇文章的处理
-
-正在处理第 28/100 篇文章: Wanted to spy on my dog, ended up spying on TP-Link
-成功提取文章内容，长度: 7605 字符
-已完成第 28 篇文章的处理
-
-正在处理第 29/100 篇文章: Hosting a website on a disposable vape
-成功提取文章内容，长度: 7189 字符
-已完成第 29 篇文章的处理
-
-正在处理第 30/100 篇文章: Trucker built a scale model of NYC over 21 years
-成功提取文章内容，长度: 6151 字符
-已完成第 30 篇文章的处理
-
-正在处理第 31/100 篇文章: The Japanese landscapes that inspired Studio Ghibli films
-成功提取文章内容，长度: 7546 字符
-已完成第 31 篇文章的处理
-
-正在处理第 32/100 篇文章: I feel Apple has lost its alignment with me and other long-time customers
-成功提取文章内容，长度: 15000 字符
-已完成第 32 篇文章的处理
-
-正在处理第 33/100 篇文章: Mother of All Demos (1968)
-成功提取文章内容，长度: 10063 字符
-已完成第 33 篇文章的处理
-
-正在处理第 34/100 篇文章: Klotski
-成功提取文章内容，长度: 7 字符
-已完成第 34 篇文章的处理
-
-正在处理第 35/100 篇文章: When will Jaguar Land Rover restart production? "No one knows."
-成功提取文章内容，长度: 4171 字符
-已完成第 35 篇文章的处理
-
-正在处理第 36/100 篇文章: GPT-5-Codex
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 36 篇文章的处理
-
-正在处理第 37/100 篇文章: The Mythical Creatures of London
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 37 篇文章的处理
-
-正在处理第 38/100 篇文章: Addendum to GPT-5 system card: GPT-5-Codex
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 38 篇文章的处理
-
-正在处理第 39/100 篇文章: The old SF tech scene is dead. What it's morphing into is more sinister
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 39 篇文章的处理
-
-正在处理第 40/100 篇文章: Recession Probability Surges to 93%: UBS
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 40 篇文章的处理
-
-正在处理第 41/100 篇文章: Why do we keep gravitating toward complexity?
-成功提取文章内容，长度: 5048 字符
-已完成第 41 篇文章的处理
-
-正在处理第 42/100 篇文章: Teens turned their rooms into tech-free zones. This was the result
-成功提取文章内容，长度: 9598 字符
-已完成第 42 篇文章的处理
-
-正在处理第 43/100 篇文章: React is winning by default and slowing innovation
-成功提取文章内容，长度: 11174 字符
-已完成第 43 篇文章的处理
-
-正在处理第 44/100 篇文章: Linux phones are more important now than ever
-成功提取文章内容，长度: 170 字符
-已完成第 44 篇文章的处理
-
-正在处理第 45/100 篇文章: Samsung smart fridge displaying advertisements
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 45 篇文章的处理
-
-正在处理第 46/100 篇文章: Bike: macOS 26
-成功提取文章内容，长度: 1023 字符
-已完成第 46 篇文章的处理
-
-正在处理第 47/100 篇文章: How People Use ChatGPT [pdf]
-成功提取文章内容，长度: 15000 字符
-已完成第 47 篇文章的处理
-
-正在处理第 48/100 篇文章: I wish my web server were in the corner of my room (2022)
-成功提取文章内容，长度: 7819 字符
-已完成第 48 篇文章的处理
-
-正在处理第 49/100 篇文章: Harvard cuts threaten a giant in the research community: A fruit fly database
-成功提取文章内容，长度: 7797 字符
-已完成第 49 篇文章的处理
-
-正在处理第 50/100 篇文章: Show HN: Pyproc – Call Python from Go Without CGO or Microservices
-成功提取文章内容，长度: 14809 字符
-已完成第 50 篇文章的处理
-
-正在处理第 51/100 篇文章: DuckDB 1.4.0 LTS
-成功提取文章内容，长度: 9687 字符
-已完成第 51 篇文章的处理
-
-正在处理第 52/100 篇文章: People Who Hunt Down Old TVs
-成功提取文章内容，长度: 15000 字符
-已完成第 52 篇文章的处理
-
-正在处理第 53/100 篇文章: Office 2016 and 2019 face October 14 execution date
-成功提取文章内容，长度: 4178 字符
-已完成第 53 篇文章的处理
-
-正在处理第 54/100 篇文章: How to self-host a web font from Google Fonts
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 54 篇文章的处理
-
-正在处理第 55/100 篇文章: Massive Attack turns concert into facial recognition surveillance experiment
-成功提取文章内容，长度: 5725 字符
-已完成第 55 篇文章的处理
-
-正在处理第 56/100 篇文章: Mullvad Hides WireGuard in QUIC to Bypass Censorship
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
-已完成第 56 篇文章的处理
-
-正在处理第 57/100 篇文章: Death to type classes
-成功提取文章内容，长度: 15000 字符
-已完成第 57 篇文章的处理
-
-正在处理第 58/100 篇文章: A qualitative analysis of pig-butchering scams
-成功提取文章内容，长度: 4472 字符
-已完成第 58 篇文章的处理
-
-正在处理第 59/100 篇文章: Which NPM package has the largest version number?
-成功提取文章内容，长度: 15000 字符
-已完成第 59 篇文章的处理
-
-正在处理第 60/100 篇文章: Why "AI consciousness" isn't coming anytime soon. (Anil Seth)
-成功提取文章内容，长度: 15000 字符
-已完成第 60 篇文章的处理
-
-正在处理第 61/100 篇文章: When Your Father Is a Magician, What Do You Believe?
-成功提取文章内容，长度: 5664 字符
-已完成第 61 篇文章的处理
-
-正在处理第 62/100 篇文章: Boring work needs tension
-成功提取文章内容，长度: 1575 字符
-已完成第 62 篇文章的处理
-
-正在处理第 63/100 篇文章: PayPal to support Ethereum and Bitcoin
-成功提取文章内容，长度: 5368 字符
 已完成第 63 篇文章的处理
 
-正在处理第 64/100 篇文章: How big a solar battery do I need to store all my home's electricity?
-成功提取文章内容，长度: 6448 字符
+正在处理第 64/100 篇文章: Plugin System
+成功提取文章内容，长度: 2752 字符
 已完成第 64 篇文章的处理
 
-正在处理第 65/100 篇文章: California reached a union deal with tech giants
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
+正在处理第 65/100 篇文章: UTF-8 history (2003)
+成功提取文章内容，长度: 15000 字符
 已完成第 65 篇文章的处理
 
-正在处理第 66/100 篇文章: The productivity paradox of AI coding assistants
-成功提取文章内容，长度: 13615 字符
+正在处理第 66/100 篇文章: Implicit ODE solvers are not universally more robust than explicit ODE solvers
+成功提取文章内容，长度: 15000 字符
 已完成第 66 篇文章的处理
 
-正在处理第 67/100 篇文章: Debian Upgrade Marathon: 3.1 Sarge
-成功提取文章内容，长度: 8750 字符
+正在处理第 67/100 篇文章: Repeat creepy meat problems at Boar's Head plants draw congressional scrutiny
+成功提取文章内容，长度: 3732 字符
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -319,7 +392,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 19
+  seconds: 41
 }
 ]
 错误类型: ResourceExhausted
@@ -341,389 +414,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 19
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 16
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 16
+  seconds: 41
 }
 ]
 已完成第 67 篇文章的处理
 
-正在处理第 68/100 篇文章: Rupert's Snub Cube and Other Math Holes [video]
-成功提取文章内容，长度: 89 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 10
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 7
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 7
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 4
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 4
-}
-]
-已完成第 68 篇文章的处理
-
-正在处理第 69/100 篇文章: Basics of Equality Saturation
-成功提取文章内容，长度: 6908 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 58
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 55
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 55
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 52
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 52
-}
-]
-已完成第 69 篇文章的处理
-
-正在处理第 70/100 篇文章: From unit tests to whole universe tests (with will wilson of antithesis) [video]
-成功提取文章内容，长度: 89 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 46
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 43
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 43
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 40
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 40
-}
-]
-已完成第 70 篇文章的处理
-
-正在处理第 71/100 篇文章: WarpOS is a multitasking kernel for the PowerPC (PPC) architecture
-成功提取文章内容，长度: 15000 字符
+正在处理第 68/100 篇文章: I just want an 80×25 console, but that's no longer possible
+成功提取文章内容，长度: 2344 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -831,9 +528,9 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 29
 }
 ]
-已完成第 71 篇文章的处理
+已完成第 68 篇文章的处理
 
-正在处理第 72/100 篇文章: GuitarPie: Electric Guitar Fretboard Pie Menus
+正在处理第 69/100 篇文章: Learn x86-64 assembly by writing a GUI from scratch (2023)
 成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
@@ -853,7 +550,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 23
+  seconds: 24
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -942,10 +639,309 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 17
 }
 ]
-已完成第 72 篇文章的处理
+已完成第 69 篇文章的处理
 
-正在处理第 73/100 篇文章: Programming Deflation
-获取文章失败，状态码: 403
+正在处理第 70/100 篇文章: The Linux Process Journey (2023) [pdf]
+成功提取文章内容，长度: 15000 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+已完成第 70 篇文章的处理
+
+正在处理第 71/100 篇文章: Hosting a website on a disposable vape
+成功提取文章内容，长度: 7189 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 58
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+已完成第 71 篇文章的处理
+
+正在处理第 72/100 篇文章: Show HN: A PSX/DOS style 3D game written in Rust with a custom software renderer
+提取文章内容时出错: HTTPSConnectionPool(host='totenarctanz.itch.io', port=443): Read timed out. (read timeout=15)
+错误类型: ReadTimeout
+错误详情: Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connection.py", line 565, in getresponse
+    httplib_response = super().getresponse()
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/http/client.py", line 1430, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+        self, url, f"Read timed out. (read timeout={timeout_value})"
+    ) from err
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='totenarctanz.itch.io', port=443): Read timed out. (read timeout=15)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/hacker-news-summarizer/hacker-news-summarizer/main.py", line 84, in extract_article_content
+    response = requests.get(url, headers=headers, timeout=15)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages/requests/adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='totenarctanz.itch.io', port=443): Read timed out. (read timeout=15)
+
 无法提取文章内容，尝试直接生成摘要（可能会失败）
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
@@ -965,7 +961,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 12
+  seconds: 32
 }
 ]
 错误类型: ResourceExhausted
@@ -987,7 +983,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 12
+  seconds: 32
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1008,7 +1004,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 9
+  seconds: 29
 }
 ]
 错误类型: ResourceExhausted
@@ -1030,7 +1026,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 9
+  seconds: 29
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1051,7 +1047,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 6
+  seconds: 25
 }
 ]
 错误类型: ResourceExhausted
@@ -1073,13 +1069,124 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 6
+  seconds: 25
+}
+]
+已完成第 72 篇文章的处理
+
+正在处理第 73/100 篇文章: Wait4X allows you to wait for a port or a service to enter the requested state
+成功提取文章内容，长度: 15000 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
 }
 ]
 已完成第 73 篇文章的处理
 
-正在处理第 74/100 篇文章: Human writers have always used the em dash
-成功提取文章内容，长度: 10863 字符
+正在处理第 74/100 篇文章: Wind turbine blade transportation challenges
+成功提取文章内容，长度: 14098 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1098,7 +1205,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 1
+  seconds: 8
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1119,7 +1226,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 57
+  seconds: 5
 }
 ]
 错误类型: ResourceExhausted
@@ -1141,7 +1248,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 57
+  seconds: 5
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1162,7 +1269,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 54
+  seconds: 2
 }
 ]
 错误类型: ResourceExhausted
@@ -1184,13 +1291,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 54
+  seconds: 2
 }
 ]
 已完成第 74 篇文章的处理
 
-正在处理第 75/100 篇文章: GPT‑5-Codex and upgrades to Codex
-成功提取文章内容，长度: 3147 字符
+正在处理第 75/100 篇文章: Development of the MOS Technology 6502: A Historical Perspective (2022)
+成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1209,7 +1316,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 49
+  seconds: 51
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1230,7 +1337,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 46
+  seconds: 48
 }
 ]
 错误类型: ResourceExhausted
@@ -1252,7 +1359,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 46
+  seconds: 48
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1273,7 +1380,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 43
+  seconds: 45
 }
 ]
 错误类型: ResourceExhausted
@@ -1295,14 +1402,57 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 43
+  seconds: 45
 }
 ]
 已完成第 75 篇文章的处理
 
-正在处理第 76/100 篇文章: IBM Technology Atlas
-成功提取文章内容，长度: 300 字符
+正在处理第 76/100 篇文章: Writing an operating system kernel from scratch – RISC-V/OpenSBI/Zig
+成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 40
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 37
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
   quota_dimensions {
@@ -1366,53 +1516,10 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 34
 }
 ]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 31
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 31
-}
-]
 已完成第 76 篇文章的处理
 
-正在处理第 77/100 篇文章: NASA's Guardian Tsunami Detection Tech Catches Wave in Real Time
-成功提取文章内容，长度: 6896 字符
+正在处理第 77/100 篇文章: Public static void main(String[] args) is dead
+成功提取文章内容，长度: 1259 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1431,7 +1538,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 26
+  seconds: 28
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1452,7 +1559,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 23
+  seconds: 25
 }
 ]
 错误类型: ResourceExhausted
@@ -1474,7 +1581,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 23
+  seconds: 25
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1495,7 +1602,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 20
+  seconds: 22
 }
 ]
 错误类型: ResourceExhausted
@@ -1517,13 +1624,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 20
+  seconds: 22
 }
 ]
 已完成第 77 篇文章的处理
 
-正在处理第 78/100 篇文章: PythonBPF – Writing eBPF Programs in Pure Python
-成功提取文章内容，长度: 5946 字符
+正在处理第 78/100 篇文章: Mixed Excitation Linear Predictive (MELP) Vocoders
+成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1542,7 +1649,50 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 15
+  seconds: 17
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1586,55 +1736,12 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 }
 , retry_delay {
   seconds: 11
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 8
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 8
 }
 ]
 已完成第 78 篇文章的处理
 
-正在处理第 79/100 篇文章: Just Use HTML
-成功提取文章内容，长度: 4282 字符
+正在处理第 79/100 篇文章: Scientists uncover extreme life inside the Arctic ice
+成功提取文章内容，长度: 8062 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1653,7 +1760,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 3
+  seconds: 5
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1674,6 +1781,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
+  seconds: 2
 }
 ]
 错误类型: ResourceExhausted
@@ -1695,6 +1803,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
+  seconds: 2
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1715,7 +1824,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 57
+  seconds: 59
 }
 ]
 错误类型: ResourceExhausted
@@ -1737,13 +1846,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 57
+  seconds: 59
 }
 ]
 已完成第 79 篇文章的处理
 
-正在处理第 80/100 篇文章: Experimental browser MMO with bots, boss fights and power-ups
-成功提取文章内容，长度: 1362 字符
+正在处理第 80/100 篇文章: Migrating to React Native's new architecture
+成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1762,7 +1871,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 52
+  seconds: 53
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1783,7 +1892,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 49
+  seconds: 50
 }
 ]
 错误类型: ResourceExhausted
@@ -1805,7 +1914,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 49
+  seconds: 50
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -1853,8 +1962,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 80 篇文章的处理
 
-正在处理第 81/100 篇文章: How Tim Cook sold out Steve Jobs
-成功提取文章内容，长度: 10835 字符
+正在处理第 81/100 篇文章: Paper Folding Assembly Line [video]
+成功提取文章内容，长度: 89 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -1937,7 +2046,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 34
+  seconds: 35
 }
 ]
 错误类型: ResourceExhausted
@@ -1959,12 +2068,12 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 34
+  seconds: 35
 }
 ]
 已完成第 81 篇文章的处理
 
-正在处理第 82/100 篇文章: Show HN: A store that generates products from anything you type in search
+正在处理第 82/100 篇文章: Teen safety, freedom, and privacy
 获取文章失败，状态码: 403
 无法提取文章内容，尝试直接生成摘要（可能会失败）
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2098,8 +2207,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 82 篇文章的处理
 
-正在处理第 83/100 篇文章: Tesla Faces US Auto Safety Investigation over Door Handles
-成功提取文章内容，长度: 983 字符
+正在处理第 83/100 篇文章: Global Peace Index 2025
+成功提取文章内容，长度: 10591 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2139,7 +2248,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 15
+  seconds: 14
 }
 ]
 错误类型: ResourceExhausted
@@ -2161,7 +2270,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 15
+  seconds: 14
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2182,7 +2291,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 12
+  seconds: 11
 }
 ]
 错误类型: ResourceExhausted
@@ -2204,14 +2313,37 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 12
+  seconds: 11
 }
 ]
 已完成第 83 篇文章的处理
 
-正在处理第 84/100 篇文章: The Culture novels as a dystopia
-成功提取文章内容，长度: 6284 字符
+正在处理第 84/100 篇文章: Generative AI as Seniority-Biased Technological Change
+获取文章失败，状态码: 403
+无法提取文章内容，尝试直接生成摘要（可能会失败）
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
   quota_dimensions {
@@ -2318,8 +2450,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 84 篇文章的处理
 
-正在处理第 85/100 篇文章: Turgot Map of Paris
-成功提取文章内容，长度: 4645 字符
+正在处理第 85/100 篇文章: Apple Explains Why Mac Users in the EU Can't Use iPhone Mirroring
+成功提取文章内容，长度: 2546 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2429,8 +2561,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 85 篇文章的处理
 
-正在处理第 86/100 篇文章: Asciinema CLI 3.0 rewritten in Rust, adds live streaming, upgrades file format
-成功提取文章内容，长度: 8895 字符
+正在处理第 86/100 篇文章: Science's answer to the ultimate question: Where do we come from?
+成功提取文章内容，长度: 15000 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2540,8 +2672,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 86 篇文章的处理
 
-正在处理第 87/100 篇文章: Automating Distro Updates in CI
-成功提取文章内容，长度: 2331 字符
+正在处理第 87/100 篇文章: Cex.C – Comprehensively EXtended C Language
+成功提取文章内容，长度: 10782 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2651,8 +2783,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 87 篇文章的处理
 
-正在处理第 88/100 篇文章: Tesla Faces US Auto Safety Investigation over Door Handles
-成功提取文章内容，长度: 983 字符
+正在处理第 88/100 篇文章: Micro-LEDs boost random number generation
+成功提取文章内容，长度: 4154 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2762,8 +2894,8 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 ]
 已完成第 88 篇文章的处理
 
-正在处理第 89/100 篇文章: The Mac app flea market
-成功提取文章内容，长度: 2855 字符
+正在处理第 89/100 篇文章: Java 25 officially released
+成功提取文章内容，长度: 1764 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2782,7 +2914,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 9
+  seconds: 8
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2803,7 +2935,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 6
+  seconds: 5
 }
 ]
 错误类型: ResourceExhausted
@@ -2825,7 +2957,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 6
+  seconds: 5
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2846,7 +2978,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 3
+  seconds: 2
 }
 ]
 错误类型: ResourceExhausted
@@ -2868,13 +3000,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 3
+  seconds: 2
 }
 ]
 已完成第 89 篇文章的处理
 
-正在处理第 90/100 篇文章: The Artistry of Avril Harrison (2024)
-成功提取文章内容，长度: 5104 字符
+正在处理第 90/100 篇文章: React is winning by default and slowing innovation
+成功提取文章内容，长度: 11174 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -2893,7 +3025,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 58
+  seconds: 56
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2914,7 +3046,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 55
+  seconds: 53
 }
 ]
 错误类型: ResourceExhausted
@@ -2936,7 +3068,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 55
+  seconds: 53
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -2957,7 +3089,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 51
+  seconds: 50
 }
 ]
 错误类型: ResourceExhausted
@@ -2979,567 +3111,13 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 51
+  seconds: 50
 }
 ]
 已完成第 90 篇文章的处理
 
-正在处理第 91/100 篇文章: Show HN: I reverse engineered macOS to allow custom Lock Screen wallpapers
-成功提取文章内容，长度: 4556 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 46
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 43
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 43
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 40
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 40
-}
-]
-已完成第 91 篇文章的处理
-
-正在处理第 92/100 篇文章: The Revised Report on Scheme or An UnCommon Lisp (1985) [pdf]
-成功提取文章内容，长度: 15000 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 34
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 31
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 31
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 28
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 28
-}
-]
-已完成第 92 篇文章的处理
-
-正在处理第 93/100 篇文章: CubeSats are fascinating learning tools for space
-成功提取文章内容，长度: 11642 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 23
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 20
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 20
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 17
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 17
-}
-]
-已完成第 93 篇文章的处理
-
-正在处理第 94/100 篇文章: Is a Memory Palace Useful?
-成功提取文章内容，长度: 7982 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 11
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 8
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 8
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 5
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 5
-}
-]
-已完成第 94 篇文章的处理
-
-正在处理第 95/100 篇文章: Show HN: Daffodil – Open-Source Ecommerce Framework to connect to any platform
-成功提取文章内容，长度: 2317 字符
-生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 56
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 56
-}
-]
-翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 53
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 53
-}
-]
-已完成第 95 篇文章的处理
-
-正在处理第 96/100 篇文章: Removing newlines in FASTA file increases ZSTD compression ratio by 10x
-成功提取文章内容，长度: 3192 字符
+正在处理第 91/100 篇文章: Mystery in the Moon
+成功提取文章内容，长度: 9769 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -3647,10 +3225,10 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 38
 }
 ]
-已完成第 96 篇文章的处理
+已完成第 91 篇文章的处理
 
-正在处理第 97/100 篇文章: Self-Assembly Gets Automated in Reverse of 'Game of Life'
-成功提取文章内容，长度: 15000 字符
+正在处理第 92/100 篇文章: Devenv 1.9: Scaling Nix projects using modules and profiles
+成功提取文章内容，长度: 4871 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -3758,11 +3336,10 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 27
 }
 ]
-已完成第 97 篇文章的处理
+已完成第 92 篇文章的处理
 
-正在处理第 98/100 篇文章: Betty Crocker broke recipes by shrinking boxes
-获取文章失败，状态码: 403
-无法提取文章内容，尝试直接生成摘要（可能会失败）
+正在处理第 93/100 篇文章: Hypervisor from Scratch
+成功提取文章内容，长度: 3437 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -3781,29 +3358,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 22
-}
-]
-错误类型: ResourceExhausted
-错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
-  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.0-flash"
-  }
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_value: 200
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 22
+  seconds: 21
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -3824,7 +3379,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 19
+  seconds: 18
 }
 ]
 错误类型: ResourceExhausted
@@ -3846,7 +3401,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 19
+  seconds: 18
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -3892,10 +3447,10 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 15
 }
 ]
-已完成第 98 篇文章的处理
+已完成第 93 篇文章的处理
 
-正在处理第 99/100 篇文章: Show HN: Drop-in Redis replacement in Rust with 5M+ GET/s
-成功提取文章内容，长度: 6651 字符
+正在处理第 94/100 篇文章: ByteDance unveils new AI image model to rival Google DeepMind's 'Nano Banana'
+成功提取文章内容，长度: 1943 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -4003,10 +3558,10 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   seconds: 4
 }
 ]
-已完成第 99 篇文章的处理
+已完成第 94 篇文章的处理
 
-正在处理第 100/100 篇文章: Not all browsers perform revocation checking
-成功提取文章内容，长度: 446 字符
+正在处理第 95/100 篇文章: PyPI Blog: Token Exfiltration Campaign via GitHub Actions Workflows
+成功提取文章内容，长度: 3815 字符
 生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
   quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
   quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
@@ -4025,7 +3580,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 58
+  seconds: 59
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -4046,7 +3601,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 55
+  seconds: 56
 }
 ]
 错误类型: ResourceExhausted
@@ -4068,7 +3623,7 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
   url: "https://ai.google.dev/gemini-api/docs/rate-limits"
 }
 , retry_delay {
-  seconds: 55
+  seconds: 56
 }
 ]
 翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
@@ -4112,6 +3667,561 @@ requests.exceptions.TooManyRedirects: Exceeded 30 redirects.
 }
 , retry_delay {
   seconds: 52
+}
+]
+已完成第 95 篇文章的处理
+
+正在处理第 96/100 篇文章: 60 years after Gemini, newly processed images reveal details
+成功提取文章内容，长度: 15000 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 41
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 41
+}
+]
+已完成第 96 篇文章的处理
+
+正在处理第 97/100 篇文章: Show HN: STT –> LLM –> TTS pipeline in C
+成功提取文章内容，长度: 108 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 36
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 32
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 32
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+已完成第 97 篇文章的处理
+
+正在处理第 98/100 篇文章: Microsoft Favors Anthropic over OpenAI for Visual Studio Code
+成功提取文章内容，长度: 2964 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+已完成第 98 篇文章的处理
+
+正在处理第 99/100 篇文章: Which NPM package has the largest version number?
+成功提取文章内容，长度: 15000 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+已完成第 99 篇文章的处理
+
+正在处理第 100/100 篇文章: Death to type classes
+成功提取文章内容，长度: 15000 字符
+生成摘要时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+翻译时出错: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]
+错误类型: ResourceExhausted
+错误详情: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 200
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
 }
 ]
 已完成第 100 篇文章的处理
