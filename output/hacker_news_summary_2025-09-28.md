@@ -1,0 +1,1323 @@
+# Hacker News 热门文章摘要 (2025-09-28)
+
+这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
+
+## 1. 人工智能编码陷阱
+
+**原文标题**: The AI coding trap
+
+**原文链接**: [https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap](https://chrisloy.dev/post/2025/09/28/the-ai-coding-trap)
+
+本文认为，虽然像Claude Code这样的人工智能编码代理可以显著加快代码生成速度，但它们也可能适得其反地阻碍整体软件开发效率。作者将这种现象称为“AI编码陷阱”，将“快10倍”的代码生成承诺与现实世界软件交付中看到的边际收益进行了对比。
+
+核心问题在于，人工智能擅长独立生成代码，但在复杂系统的更广泛环境中却显得力不从心。这导致工程师花费更多时间理解和修复人工智能生成的代码，这项任务掩盖了编码的乐趣和创新方面。 这也与“技术主管的困境”类似，即经验丰富的领导者优先考虑个人速度而非团队成长，霸占最具挑战性的任务。
+
+文章提出，最好将人工智能编码代理视为“速度极快的初级工程师”。为了避免陷入陷阱，作者倡导采用传统软件开发的最佳实践，并将人工智能视为增强而非取代人类工程师的工具。 解决方案是将人工智能集成到软件开发生命周期的每个阶段，从规范和文档到模块化设计、测试驱动开发、编码标准和监控。 这需要将重点从简单地更快地编写代码转变为构建可维护、可扩展的系统，从而受益于人类和人工智能的优势。 最终，通过将人工智能代理视为需要指导和结构的初级工程师，我们可以释放他们的潜力，并扩大我们交付可工作软件的能力。
+
+---
+
+## 2. 隐私獾是由 EFF 开发的一款免费浏览器扩展，旨在阻止跟踪监视。
+
+**原文标题**: Privacy Badger is a free browser extension made by EFF to stop spying
+
+**原文链接**: [https://privacybadger.org/](https://privacybadger.org/)
+
+Privacy Badger，一款由 EFF 提供的免费浏览器扩展，可自动阻止公司在线跟踪您。它与传统的广告拦截器不同，专注于隐私，仅当广告跟踪您时才会阻止广告。它使用算法而非人工编辑的列表，根据跟踪器的行为而非预定义的列表来识别和阻止跟踪器。
+
+Privacy Badger 会学习阻止跨多个网站跟踪用户的域名，尤其是在这些域名忽略“请勿跟踪”(DNT) 和“全局隐私控制”(GPC) 信号时。它可以阻止第三方跟踪器，还可以删除 Facebook 和 Google 上的外部链接点击跟踪。Privacy Badger 菜单中的红色滑块表示完全禁止的内容，黄色表示阻止 Cookie，绿色表示不采取任何操作。
+
+该扩展旨在通过阻止不尊重用户隐私的广告商来激励他们尊重用户隐私。通过发送 GPC 和 DNT 信号，Privacy Badger 请求公司尊重您的隐私，并通过阻止不合规的跟踪器来强制执行此要求。它会分析 Cookie，阻止具有唯一跟踪 ID 的 Cookie，同时允许具有低熵值的 Cookie，例如语言偏好。
+
+Privacy Badger 由电子前哨基金会 (Electronic Frontier Foundation) 开发，适用于 Chrome、Firefox、Edge 和 Opera。为了避免被阻止，域名应尊重 DNT 和 GPC 信号。域名也可以在其网站上发布 EFF 的 DNT 政策，作为遵守承诺。
+
+---
+
+## 3. 我说“字母顺序”的时候，我指的就是“字母顺序”。
+
+**原文标题**: When I say "alphabetical order", I mean "alphabetical order"
+
+**原文链接**: [https://sebastiano.tronto.net/blog/2025-09-28-alphabetic-order/](https://sebastiano.tronto.net/blog/2025-09-28-alphabetic-order/)
+
+作者叙述了一段令人沮丧的经历：以时间戳命名（IMG_YYYYMMDD_HHmmss）的文件在各种操作系统和文件管理器（Windows、Google Drive、KDE Dolphin、Gnome、手机文件管理器）中无法按字母顺序正确排序。他们原本期望按字母顺序排序的结果应等于按时间顺序排列，因为命名约定如此。
+
+问题产生的原因是作者和其父亲的安卓手机拍摄的文件混合在一起，作者的所有文件都显示在前面，即使其中一些文件的时间戳晚于父亲的文件。起初，作者怀疑是漏洞或不同的字符编码。然而，Linux中的`ls -l`命令可以正确地对文件进行排序。
+
+问题根源在于文件管理器采用了“自然排序”算法。该算法将文件名中的数字序列视为数字，而不仅仅是字符。因此，"file-9.txt"会如人们期望的那样排在"file-10.txt"之前，但这并非真正的字母排序。
+
+作者的手机在文件名中包含一个额外的下划线分隔秒和毫秒（"IMG_YYYYMMDD_HHmmss_mmm.jpg"），而父亲的手机没有（"IMG_YYYYMMDD_HHmmssmmm.jpg"）。由于文件管理器采用了“自然排序”，作者手机的文件根据时间戳正确排序，而父亲手机的文件则被视为结尾处具有更高的数字，因此被放置在最前面。
+
+作者最后感叹软件“揣测人心”并偏离严格、字面意义上的用户指令的趋势，并表达了希望计算机简单地执行指令的愿望。
+
+---
+
+## 4. 我为什么不急于在RubyGems风波中站队
+
+**原文标题**: Why I'm not rushing to take sides in the RubyGems fiasco
+
+**原文链接**: [https://justin.searls.co/posts/why-im-not-rushing-to-take-sides-in-the-rubygems-fiasco/](https://justin.searls.co/posts/why-im-not-rushing-to-take-sides-in-the-rubygems-fiasco/)
+
+本文解释了作者为何对 2025 年 RubyGems 争议持谨慎态度，不愿轻易站队。他认为目前的公开叙述过于片面，源于 Ruby 生态系统中关键人物之间未解决的冲突，主要涉及 Andre Arko 和 Ruby Central。
+
+作者详细阐述了对 Ruby Together 的担忧，这是一个由 Arko 创立的旨在资助开源开发的非营利组织，后来被 Ruby Central 吸收。他叙述了一些故事和事件，暗示可能存在资金滥用和利用对 Bundler（一个关键的 Ruby 依赖管理器）的控制来获取经济利益的行为。这些包括关于误导捐助者资金分配、提议限制 RubyGems.org 访问除非公司向 Ruby Together 付费、以及公开羞辱像 Shopify 这样的公司不赞助该组织的指控。
+
+作者重点介绍了泄露的 Ruby Together 董事会会议，会议讨论了包括限制 RubyGems.org 访问在内的创收策略。他还提到了公众对 Arko 添加“安装后消息”敦促用户资助 Ruby Together 的强烈反对。Ruby Central 后来澄清说，Ruby Together 的筹款活动与 RubyGems.org 的运营成本是分开的。
+
+最后，作者回忆了一个案例，Arko 指责 Google 抄袭代码并威胁采取法律行动，同时抱怨 Google 未能资助 Ruby Together，但最终证实这是毫无根据的。作者将这种过去的行径与最近的行动联系起来。
+
+作者总结说，虽然 Ruby Central 对当前情况的处理存在问题，但历史背景以及对 Arko 过去行为的担忧使他对当前事件的简单“善与恶”的解读持谨慎态度。
+
+---
+
+## 5. 测试“异构”P2P VPN
+
+**原文标题**: Testing "Exotic" P2P VPN
+
+**原文链接**: [https://blog.nommy.moe/blog/exotic-mesh-vpn/](https://blog.nommy.moe/blog/exotic-mesh-vpn/)
+
+本文详细介绍了作者对 Wireguard 的替代 P2P VPN 解决方案的探索，起因是 Wireguard 在特定国家/地区受到封锁，以及对更去中心化、自托管和符合意识形态的解决方案的渴望。 作者测试了 EasyTier、Nebula 和 Tinc，并根据易用性、安全性、性能以及与 Nix 打包的兼容性对它们进行了评估。
+
+EasyTier 因其简单性以及通过各种协议（TCP、UDP、WG、WS、WSS）自动建立连接而受到赞扬。 然而，它缺乏 IP 绑定，并且由于其中国血统而引起了意识形态方面的担忧。 来自 Slack 创始人的 Nebula 提供了更多的安全功能，如椭圆曲线加密和其自身的 PKI，但其基于 SSH 的配置笨拙，性能令人失望。 Tinc 是一个较旧的项目，出人意料地表现良好，利用其自身基于 UDP 的协议、椭圆曲线以及记录在案的用于直接节点到节点通信的“黑魔法”。
+
+作者概述了一种测量方法，包括 ICMP ping、使用 /dev/zero 的 SSH 数据传输、Wget 下载以及 IPerf2 和 IPerf3 测试，并承认 IPerf 可能存在不准确之处。 测试是在一台家用笔记本电脑、一台公共 Lighthouse 服务器和一台位于防火墙后面的 Raspberry Pi 上进行的。
+
+结果表明，Tinc 在速度方面提供了最佳性能，而 EasyTier 鉴于其临时性质，被认为是可接受的。 Nebula 的性能被认为令人失望。 尽管存在缺陷，作者计划使用所有三个 VPN，这表明多 VPN 方法优于仅依赖一个解决方案。
+
+---
+
+## 6. 超微服务器主板可能感染无法移除的恶意软件
+
+**原文标题**: Supermicro server motherboards can be infected with unremovable malware
+
+**原文链接**: [https://arstechnica.com/security/2025/09/supermicro-server-motherboards-can-be-infected-with-unremovable-malware/](https://arstechnica.com/security/2025/09/supermicro-server-motherboards-can-be-infected-with-unremovable-malware/)
+
+Supermicro服务器主板存在关键漏洞，攻击者可在操作系统启动前安装持久性、无法检测的恶意软件。安全公司Binarly发现，先前已知漏洞 (CVE-2024-10237) 的不完整补丁仍然可以被利用。他们还发现了新的漏洞 (CVE-2025-7937 和 CVE-2025-6198)。
+
+这些缺陷存在于基板管理控制器 (BMC) 中，该控制器控制远程服务器管理功能并允许重新刷新 UEFI 固件。攻击者可以利用这些漏洞用恶意版本替换合法的固件，绕过安全检查。这提供了“前所未有的持久性”，可能导致数据破坏或供应链攻击，其中固件更新服务器被入侵。
+
+利用需要事先获得对 BMC 的管理访问权限或入侵固件更新服务器。这些漏洞允许攻击者操纵“fwmap 表”以将恶意代码注入到引导加载程序中。
+
+Supermicro 声称已更新 BMC 固件以解决此问题，并建议客户查看发行说明，但 Binarly 报告称更新后的固件尚未公开提供。修复的困难性表明 Supermicro 可能需要更多时间才能完全解决这些漏洞。
+
+---
+
+## 7. Show HN: Toolbrew – 无需注册或广告的免费小工具集
+
+**原文标题**: Show HN: Toolbrew – Free little tools without signups or ads
+
+**原文链接**: [https://toolbrew.co/](https://toolbrew.co/)
+
+Toolbrew是一个提供免费且实用在线工具的网站。其主要卖点是这些工具干净（可能意味着简单易用），且无需用户注册账号或被大量广告轰炸即可使用。核心理念是提供一个易于访问和使用便捷的实用工具库，通过消除强制注册和干扰性广告等在线工具使用中的常见问题，来优先考虑用户体验。
+
+---
+
+## 8. 猪肾移植六个月后男子仍然存活
+
+**原文标题**: Man still alive six months after pig kidney transplant
+
+**原文链接**: [https://www.nature.com/articles/d41586-025-02851-w](https://www.nature.com/articles/d41586-025-02851-w)
+
+一位67岁的男子蒂姆·安德鲁斯，患有终末期肾病，在今年一月接受基因改造猪肾后，存活至今已超过六个月。这标志着异种移植领域的一个重要里程碑，也是猪器官在活人体内存活时间最长的一次。安德鲁斯此前已透析两年多，现在已无需透析。
+
+该肾脏来自一头经过三种基因改造的猪：去除三种抗原以防止排异，添加七个人类基因以降低炎症和出血风险，以及灭活逆转录病毒。安德鲁斯是eGenesis公司出于同情考虑，进行此类移植的三名患者之一。
+
+专家认为达到六个月是一个重大成功，因为这是发生贫血和移植排斥等并发症风险最高的时期。此前，接受者托瓦娜·卢尼的猪肾功能正常维持了四个多月，但最终因排异而被移除。达到12个月将是另一个重要的成就。该案例的成功为异种移植作为解决器官短缺的方案带来了希望。
+
+---
+
+## 9. Show HN: 用 Cloudflare 代码模式模式构建了一个 MCP 服务器
+
+**原文标题**: Show HN: Built an MCP server using Cloudflare's Code Mode pattern
+
+**原文链接**: [https://github.com/jx-codes/codemode-mcp](https://github.com/jx-codes/codemode-mcp)
+
+此“Show HN”帖子介绍了一个受 Cloudflare Code Mode 启发的 MCP（模型上下文协议）服务器实现，旨在改进 LLM 与 MCP 的交互。该方法没有依赖直接工具调用，而是通过提供一个 `execute_code` 工具，利用 LLM 的编码能力。该工具执行 TypeScript/JavaScript 代码，与本地 HTTP 代理交互，然后将请求转发到实际的 MCP 服务器。
+
+主要优势在于，LLM 更擅长编写代码而不是直接使用工具，从而可以实现更复杂的编排和操作链。该设置涉及安装 Bun 和 Deno，使用 `codemode-config.json` 配置服务器，并在 `.mcp.json` 文件中定义 MCP 服务器配置。
+
+服务器提供用于列出服务器、工具和调用工具的代理端点。示例工作流程演示了单个 MCP 服务器调用以及使用已执行代码中的 `fetch` 进行的链式操作。通过 Deno 沙箱确保安全性，该沙箱限制通过代理进行网络通信的访问、30 秒的执行超时以及自动临时文件清理。该帖子还包括故障排除技巧和潜在的未来改进，例如更简单的 API 和更多的配置选项。该代码基于来自一个单独项目的 Deno remix，旨在利用编写代码而不是依赖直接工具调用所带来的组合优势。
+
+---
+
+## 10. C++和Rust中OpenMP之外的选择：Taskflow、Rayon、Fork Union
+
+**原文标题**: Beyond OpenMP in C++ and Rust: Taskflow, Rayon, Fork Union
+
+**原文链接**: [https://ashvardanian.com/posts/beyond-openmp-in-cpp-rust/](https://ashvardanian.com/posts/beyond-openmp-in-cpp-rust/)
+
+本文指出，许多流行的C++和Rust线程池库，如Taskflow和Rayon，在fork-join并行工作负载下的性能远低于OpenMP，通常差一个数量级。这归因于“低性能的四大杀手”：锁和互斥锁、堆分配、比较并交换停顿以及伪共享。
+
+为了解决这个问题，作者介绍了Fork Union，一个仅使用标准库特性且代码极简（300行）的库，其性能可达到OpenMP的80%。基准测试表明，与Taskflow、Rayon、Tokio，甚至直接使用`std::thread`相比，Fork Union具有更优越的性能。关键在于，对于简单的并行规约，应避免异步任务队列及其相关开销。
+
+本文进一步阐述了锁、内存分配、原子操作和伪共享的性能陷阱。虽然承认Rayon和Taskflow等库的高级功能，但文章强调了选择正确工具的重要性。Fork Union提供了一个更简单的API，专注于fork-join并行，包括`for_each_thread`、`for_each_static`、`for_each_slice`和`for_each_dynamic`。文章的结论是，无论使用何种语言，避免互斥锁、动态队列、CAS操作和伪共享对于在并行计算中实现高性能至关重要。
+
+---
+
+## 11. 她把iPhone送去苹果维修，维修人员将她的裸照上传到脸书（2021）
+
+**原文标题**: She Sent Her iPhone to Apple. Repair Techs Uploaded Her Nudes to Facebook (2021)
+
+**原文链接**: [https://www.vice.com/en/article/she-sent-her-iphone-to-apple-repair-techs-uploaded-her-nudes-to-facebook/](https://www.vice.com/en/article/she-sent-her-iphone-to-apple-repair-techs-uploaded-her-nudes-to-facebook/)
+
+2016年，一位俄勒冈州女性将她的iPhone送去苹果公司维修，之后发现手机中的裸照和性爱视频被苹果承包商和硕的维修技术人员上传到了她的Facebook账户。 该事件导致苹果公司支付了数百万美元的赔偿金。
+
+这篇文章强调了将个人设备送去维修（即使是授权服务提供商）所带来的隐私风险。文章认为，苹果公司以安全为由对维修生态系统的控制，在此案例中失效，最终损害了客户的隐私。作者提倡“维修权”立法， 赋予消费者维修自己设备或选择信任的独立维修店的权利。
+
+该案件的曝光源于苹果公司、和硕和一家保险公司之间关于赔偿金支付的纠纷。法庭记录显示，和解金额达数百万美元，尽管确切数字仍未公开。文章还提及了其他苹果公司员工或承包商不正当访问和分享客户私人照片的案例。
+
+像iFixit首席执行官Kyle Wiens这样的批评人士认为，苹果公司限制性的维修政策迫使客户将他们的数据委托给第三方承包商，增加了隐私泄露的风险。目前各州正在审议的“维修权”法案将赋予消费者对维修过程更多的控制权，并可能增强他们个人数据的安全性。
+
+---
+
+## 12. 学习下围棋
+
+**原文标题**: Learn to play Go
+
+**原文链接**: [https://online-go.com/learn-to-play-go](https://online-go.com/learn-to-play-go)
+
+这篇“学习围棋”文章本质上是一个行动号召，引导读者前往online-go.com (OGS) 学习和下围棋。 核心信息很简单：OGS是一个你可以在线学习和玩围棋的平台。“加载中...”可能表明存在动态元素，暗示OGS平台提供互动教程、游戏选项或其他资源来帮助用户学习游戏。标题和简洁的内容强烈表明OGS正在被推广为新围棋玩家的关键资源。
+
+---
+
+## 13. 瑞士选民支持电子身份和废除租赁税
+
+**原文标题**: Swiss voters back e-ID and abolish rental tax
+
+**原文链接**: [https://www.swissinfo.ch/eng/swiss-politics/swiss-voters-have-decided-on-electronic-id-and-abolishing-rental-tax/90057432](https://www.swissinfo.ch/eng/swiss-politics/swiss-voters-have-decided-on-electronic-id-and-abolishing-rental-tax/90057432)
+
+瑞士选民已批准引入国家支持的电子身份识别系统(e-ID)。另一个要点是，瑞士选民已废除租赁税。文章还包含一条无关的新闻简讯，称欧洲歌唱大赛成员将投票决定是否将以色列排除在比赛之外。
+
+---
+
+## 14. 用户空间的Plan 9
+
+**原文标题**: Plan 9 from User Space
+
+**原文链接**: [https://github.com/9fans/plan9port](https://github.com/9fans/plan9port)
+
+Plan 9 用户空间移植项目旨在将 Plan 9 的库和程序移植到类 Unix 系统。安装时，用户应执行 `./INSTALL` 脚本，该脚本会构建 `mk`，然后使用它完成安装过程。详细安装说明可在 `install(1)` 和在线文档中找到。完整文档可在提供的网站或安装后使用 `9 man` 命令找到。`Intro(1)` 重点介绍了新功能以及与原始 Plan 9 系统的区别。该项目欢迎贡献，尤其是移植到其他架构。用户可以使用 Git 了解最新变更和错误修复（详情请参阅 `9 man git`）。为了获得帮助或协作，该项目提供了一个邮件列表和一个 GitHub 上的 issue 跟踪器。欢迎通过 GitHub 上的 pull request 贡献代码。Russ Cox 是该项目的主要联系人。
+
+---
+
+## 15. Scm2wasm：一个用600行C实现的Scheme到WASM编译器，利用了WASM GC
+
+**原文标题**: Scm2wasm: A Scheme to WASM compiler in 600 lines of C, making use of WASM GC
+
+**原文链接**: [https://git.lain.faith/iitalics/scm2wasm](https://git.lain.faith/iitalics/scm2wasm)
+
+无法访问文章链接。
+
+---
+
+## 16. PostgreSQL 18 新特性 – 开发版
+
+**原文标题**: What's New in PostgreSQL 18 – A Devel
+
+**原文链接**: [https://www.bytebase.com/blog/what-is-new-in-postgres-18-for-developer/](https://www.bytebase.com/blog/what-is-new-in-postgres-18-for-developer/)
+
+无法访问文章链接。
+
+---
+
+## 17. Python开发者正在拥抱类型提示。
+
+**原文标题**: Python developers are embracing type hints
+
+**原文链接**: [https://pyrefly.org/blog/why-typed-python/](https://pyrefly.org/blog/why-typed-python/)
+
+本文倡导在Python中采用类型提示，以提高代码质量、可维护性和可扩展性。Python的动态类型，虽然最初有利于快速原型设计和实验，但随着项目增长和向生产环境过渡，可能会导致可靠性问题。
+
+PEP 484为Python引入了静态类型特性，允许开发者逐步添加类型注解，而不会破坏现有代码。这种渐进式类型系统使开发者能够指定函数参数和返回值的预期数据类型。
+
+使用类型提示的好处包括通过静态分析提前发现错误，自文档化的代码增强可读性和重构安全性，以及随着代码从概念验证到生产就绪系统的过渡而提高可扩展性。类型提示充当不同开发阶段之间的契约，尤其是在人工智能和机器学习工作流程中至关重要。
+
+本文建议开发者尽早开始在项目中添加类型提示，并建议安装像PyreFly这样的类型检查器。它还强调了利用可用资源（如官方文档、PEPs和社区论坛）来加深对Python类型的理解和熟练程度的重要性。
+
+最终，本文倡导对代码未来进行切实的投资，类型提示可以减少调试、简化代码审查、减少生产问题，并有信心有效地扩展代码库。
+
+---
+
+## 18. 时间旅行？还是巧妙的技术？
+
+**原文标题**: Time travel? Or, just clever technology
+
+**原文链接**: [https://www.syncdna.com/blog/time-travel-or-just-clever-tech](https://www.syncdna.com/blog/time-travel-or-just-clever-tech)
+
+SyncDNA 的这篇博文解释了他们的技术如何克服互联网延迟的限制，从而实现音频和视频制作的无缝远程协作，尽管受到光速和互联网基础设施的限制。
+
+文章强调，由于固有的延迟问题，包括数据传输的物理距离、光纤电缆中的减速以及互联网路由器引入的延迟，实时协作具有挑战性。 人类对延迟的感知进一步加剧了这个问题。
+
+SyncDNA 的解决方案并非试图消除延迟，而是在媒体传输过程中的每个环节策略性地引入明确的延迟。 这创建了一个缓冲区，即使在不完美的连接上，也能实现高质量的音频和视频传输而不会中断。 接收设备随后会补偿增加的延迟，从而精确地重新对齐媒体。
+
+关键在于操纵对“现在”的感知。 通过在时间上分离录制事件，SyncDNA 确保媒体在预定的播放时间之前到达。 这使得表演者、制作人和审阅者可以像在同一个房间里一样进行协作。 例如，在录音过程中，伴奏音轨会延迟发送，表演者录制他们的部分，然后再次延迟发送回来，从而确保一切同步到达。 这个过程可以扩展到不同地点的多个表演者，从而实现远程创建整个合奏。 录音结束后，团队会切换到低保真视频会议进行实时讨论。 SyncDNA 认为这种方法可以录制音乐、捕获播客、配音 ADR、审阅电影和电视等等，并邀请读者尝试免费试用。
+
+---
+
+## 19. 妖魔缠身的世界
+
+**原文标题**: The Demon-Haunted World
+
+**原文链接**: [https://en.wikipedia.org/wiki/The_Demon-Haunted_World](https://en.wikipedia.org/wiki/The_Demon-Haunted_World)
+
+卡尔·萨根《魔鬼出没的世界：科学是黑暗中的蜡烛》（1995）旨在帮助读者掌握科学怀疑论的工具，区分科学与伪科学。萨根认为，科学是一种思维方式，而不仅仅是知识体系，并强调其自我修正的特性和独立验证的重要性。
+
+一个关键概念是“胡说侦测器”，一套用于批判性思维的工具。它包括对事实的独立确认，鼓励辩论，避免诉诸权威，考虑多种假设，量化数据，确保论证中每一步的有效性，应用奥卡姆剃刀原则，以及关注可证伪性。该工具还包括识别逻辑谬误，如人身攻击、诉诸无知和稻草人论证。
+
+萨根批判了迷信、伪科学（如不明飞行物和超感官知觉）以及对科学的滥用，并引用了爱德华·泰勒的影响和对疯狂科学家的描述。他还讨论了精神病学权威的滥用，并提及保罗·英格拉姆案件。恶作剧被视为揭示我们思维缺陷的宝贵工具。
+
+这本书是畅销书，对怀疑论运动产生了重要影响。然而，它也面临批评，因为它没有解决导致科学思维衰退的因素，例如政府在癌症研究等领域资金投入的后果，以及萨根对宗教思想的看法。一些评论者还指出这本书的篇幅过长。尽管存在批评，这本书仍被认为对促进批判性思维具有深刻见解。
+
+---
+
+## 20. 使用RabbitMQ Streams的代理端SQL过滤
+
+**原文标题**: Broker-Side SQL Filtering with RabbitMQ Streams
+
+**原文链接**: [https://www.rabbitmq.com/blog/2025/09/23/sql-filter-expressions](https://www.rabbitmq.com/blog/2025/09/23/sql-filter-expressions)
+
+本文介绍了 RabbitMQ 4.2 的流式传输代理端过滤功能，它使用 SQL 过滤表达式和布隆过滤器来显著减少网络流量和客户端处理。其解决的核心问题是，当消费者只需要一小部分消息时，消费整个高吞吐量事件流的效率低下。
+
+RabbitMQ 的解决方案允许基于使用 SQL 定义的标准在代理端过滤消息。这种过滤可以与布隆过滤器结合使用，布隆过滤器可以快速消除不包含相关数据的整个消息块，从而进一步提高性能。
+
+本文提供了一个电子商务平台事件流的实际示例，其中只有极小一部分（0.001%）的事件满足特定条件。仅使用 SQL 过滤，代理就可以每秒过滤超过 40 万条消息。将 SQL 过滤与布隆过滤器结合使用可将过滤速率大幅提高到接近每秒 500 万条消息，因为布隆过滤器会预先筛选块，从而减少磁盘 I/O 和 CPU 使用率。
+
+关键结论是，RabbitMQ 的代理端过滤，特别是当布隆过滤器与 SQL 表达式结合使用时，可以实现高度选择性的消费，从而优化网络使用、客户端资源和应用程序代码的简洁性。这种组合提供了高效的块级别过滤，然后是精确的消息级别过滤，所有这些都在代理端执行。本文鼓励读者探索流式传输过滤指南，以获取更多详细信息和最佳实践。
+
+---
+
+## 21. IBM Intellistation 185 AIX 工作站 (2016)
+
+**原文标题**: IBM Intellistation 185 AIX workstation (2016)
+
+**原文链接**: [http://www.ibmfiles.com/pages/intellipower185.htm](http://www.ibmfiles.com/pages/intellipower185.htm)
+
+IBM IntelliStation POWER 185于2006年发布，是一款基于修改后的System p5 185 (7037-A50)的AIX工作站，尽管被宣传为POWER系统，但它使用的是PowerPC 970处理器。 其独特的硬件虚拟化支持使其与使用相同CPU的Power Mac G5区分开来。 它专为CAD和工程应用而设计，侧重于安静运行，主要在美国和日本使用。
+
+185采用单核模式运行的PowerPC 970MP，可能是出于散热原因，并可以选择添加第二个单核芯片来模拟双核设置。 IBM在发布后不久就停止了System p5 185的销售，但IntelliStation 185的销售持续了更长时间。
+
+该工作站面向高端CAD用户，在AIX上运行CATIA V5/V6等软件。 然而，随着Windows的普及，市场发生了转变，达索系统最终放弃了对CATIA的UNIX支持。 IBM于2006年逐步淘汰了x86 IntelliStation，并于2009年逐步淘汰了POWER IntelliStation。 由于缺乏现代替代品，来自该时代的高性能CAD GPU仍然受到AIX用户的欢迎。
+
+尽管大力推广POWER Linux，但AIX为185的工作站硬件（包括CAD卡、RAS和声卡）提供了更好的支持。 POWER Linux对PowerPC 970的支持有限，使得AIX成为利用IntelliStation功能的更合理的选择。
+
+---
+
+## 22. 我们怎么都错过了细菌侵占她身体这件事？
+
+**原文标题**: How did we all miss the bacteria taking over her body?
+
+**原文链接**: [https://www.theguardian.com/world/2025/sep/28/as-my-daughter-got-sicker-and-sicker-our-quest-for-answers-dragged-on-how-did-we-all-miss-the-bacteria-taking-over-her-body](https://www.theguardian.com/world/2025/sep/28/as-my-daughter-got-sicker-and-sicker-our-quest-for-answers-dragged-on-how-did-we-all-miss-the-bacteria-taking-over-her-body)
+
+这篇文章讲述了一个家庭为诊断和治疗女儿米莉的莱姆病而经历的令人沮丧的旅程。 米莉曾经是一个活泼好动的孩子，但在2021年开始出现严重的疲劳、脑雾和疼痛，最终无法上学。 尽管多次就医和检查，她的病情仍然是个谜。 英国国家医疗服务体系最终诊断她患有ME/CFS（慢性疲劳综合征），但家人认为这不够充分，并且缺乏明确的治疗方案。
+
+作者是一位自然作家，他强调了他女儿在宣扬户外童年好处后，却因蜱虫叮咬而患病的讽刺意味。 该家庭尝试了各种替代疗法，包括谈话疗法和整体疗法，但均未成功。 米莉的病情恶化，导致社交孤立和情绪困扰。
+
+受米兰达·哈特的启发，米莉怀疑自己患有莱姆病，但最初的英国国家医疗服务体系的测试结果呈阴性。 该家庭寻求一位专门研究莱姆病和新冠后遗症的私人医生，最终导致伯氏疏螺旋体（导致莱姆病的细菌）的T-spot测试呈阳性，以及联合感染。 作者强调了英国国家医疗服务体系标准莱姆病测试的不可靠性，以及对莱姆病复杂性缺乏认识。 文章最后是对终于确定米莉的病因并开始治疗的一种确认感。
+
+---
+
+## 23. 通过弹性梯度刺绣镶嵌的纺织品编码
+
+**原文标题**: Textile Encoding via Elastically Graded Embroidered Tessellations
+
+**原文链接**: [https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202500959](https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202500959)
+
+无法访问文章链接。
+
+---
+
+## 24. 展示HN：精选游戏开发专用搜索引擎
+
+**原文标题**: Show HN: Curated gamedev specific search engine
+
+**原文链接**: [https://gamedevtorch.com/](https://gamedevtorch.com/)
+
+GameDev Torch 是一个专为游戏开发者设计的垂直搜索引擎。它专注于索引精心挑选的、与游戏开发相关的网站，包括文章、游戏引擎、框架和博客文章。其目标是相比于通用搜索引擎，为游戏开发主题提供更相关的结果。用户可以使用它来寻找灵感、学习特定主题（例如“行为树”），以及发现小众资源。用户还可以建议将网站添加到索引中。作者可以通过 bsky 联系。实际上，它就是一个专为游戏开发资源打造的专业谷歌。
+
+---
+
+## 25. 在迷你星球上投递信息的WebGL游戏
+
+**原文标题**: A WebGL game where you deliver messages on a tiny planet
+
+**原文链接**: [https://messenger.abeto.co/](https://messenger.abeto.co/)
+
+文章《信使》描述了一款基于WebGL的遊戲，其主題是於一個微型球形星球上遞送信件。遊戲的主要重點很可能在於在這個微型世界的導航和穿越。玩家可能扮演信使的角色，並且必須在行星環境的限制下完成遞送任務。標題表明遊戲核心玩法機制注重於信件遞送的行為本身。WebGL方面表明該遊戲可以直接在網路瀏覽器中遊玩，而無需單獨下載或安裝。“微型星球”設定暗示了一個獨特且可能具有挑戰性的遊戲空間，可能涉及重力操控、仔細的路線規劃以及探索以發現有效遞送信件的最佳路徑。遊戲的視覺風格和敘事元素雖然沒有明確提及，但大概是圍繞著在一個小星球上做信使的核心概念而構建的。
+
+---
+
+## 26. 我开发并发布了首个AirPods控制的游戏。
+
+**原文标题**: I built and launched the first AirPods-Controlled Game
+
+**原文链接**: [https://apps.apple.com/us/app/ridepods-race-with-head/id6752268828](https://apps.apple.com/us/app/ridepods-race-with-head/id6752268828)
+
+阿里·塔尼斯开发并发布了“RidePods”，这是世界上首款使用耳塞（如AirPods Pro或AirPods 3代）控制的摩托车竞速游戏。玩家无需传统的按钮控制，只需倾斜头部即可操控摩托车，在快节奏的街机竞速体验中躲避车辆并追逐高分。
+
+该游戏拥有创新的耳塞控制玩法、流畅的操作、灵敏的操控以及针对快速游戏会话进行优化的简洁设计。玩家与自己竞争，以打破最佳成绩并攀登排行榜。它需要iOS 15.6或更高版本，适用于iPhone、iPad和iPod touch。
+
+RidePods可免费下载和游玩，为摩托车游戏和街机赛车爱好者提供独特的沉浸式赛车体验。该游戏的隐私政策声明开发者不会收集任何用户数据。该应用支持Game Center，可用于挑战朋友并在排行榜和成就中跟踪进度。阿里·塔尼斯还开发了其他应用，如FoodShot AI和AI Speak English。
+
+---
+
+## 27. 将GraalVM从Java生态系统列车中分离
+
+**原文标题**: Detaching GraalVM from the Java Ecosystem Train
+
+**原文链接**: [https://blogs.oracle.com/java/post/detaching-graalvm-from-the-java-ecosystem-train](https://blogs.oracle.com/java/post/detaching-graalvm-from-the-java-ecosystem-train)
+
+无法访问文章链接。
+
+---
+
+## 28. SSH3：使用HTTP/3的更快更丰富的安全Shell
+
+**原文标题**: SSH3: Faster and rich secure shell using HTTP/3
+
+**原文链接**: [https://github.com/francoismichel/ssh3](https://github.com/francoismichel/ssh3)
+
+SSH3：基于HTTP/3的新型安全Shell协议
+
+SSH3是一种构建于HTTP/3之上的新型安全Shell协议，旨在改进SSHv2。它利用QUIC+TLS1.3建立安全通道，并使用HTTP授权机制进行用户身份验证，承诺更快的会话建立（3次往返，而SSHv2为5-7次）以及抵御端口扫描的鲁棒性。
+
+主要特性包括：
+
+*   **更快的会话建立：** 通过HTTP/3的连接设置实现。
+*   **现代身份验证：** 除了传统方法外，还支持OAuth 2.0和OpenID Connect。
+*   **隐藏服务器：** SSH3服务器可以隐藏在秘密URL之后，从而减轻扫描攻击。
+*   **UDP端口转发：** 能够转发基于UDP的服务。
+*   **X.509证书：** 允许使用HTTPS证书进行服务器身份验证。
+*   **OpenSSH兼容性：** 实现了许多OpenSSH功能，例如authorized\_keys解析、代理转发、TCP端口转发和代理跳转。
+
+该项目目前处于实验阶段，未经专家密码学审查，不建议在生产环境中使用。文章提供了使用Go安装SSH3客户端和服务器的说明，以及使用私钥、代理和密码设置和使用SSH3的示例。它还解释了如何使用Let's Encrypt证书或自签名证书部署服务器。鼓励社区反馈和安全审查。
+
+---
+
+## 29. 太阳能板+寒冷=潜在问题
+
+**原文标题**: Solar panels + cold = A potential problem
+
+**原文链接**: [https://www.linspyre.com/ecoholics/temps.html](https://www.linspyre.com/ecoholics/temps.html)
+
+本文警告EcoFlow太阳能发电机用户注意一个潜在问题：低温会导致太阳能板电压升高，并可能损坏他们的设备。作者解释说，虽然用户可能计算出其太阳能板配置在正常情况下符合EcoFlow设备规定的电压限制，但寒冷天气会显著提高太阳能板的Voc（开路电压），超出这些限制并导致MPPT（最大功率点跟踪）控制器损坏，从而导致保修失效。
+
+本文强调了保持*远低于*最大电压规格的重要性，尤其是在寒冷地区。它提供了太阳能阵列尺寸的规则，包括电压串联增加和电流并联增加。它还涵盖了使用混合面板时会发生什么。
+
+作者建议使用保守估计或温度系数计算来确定寒冷温度下的最大Voc。文章提供了两个示例：一个针对佐治亚州（温和气候），另一个针对加拿大（寒冷气候），说明了如何根据预期温度和面板Voc规格计算串联连接的安全太阳能板数量。文章最后链接到相关文章、Voc计算器和相关的EcoFlow产品页面。
+
+---
+
+## 30. 黄金比例数基
+
+**原文标题**: The golden ratio as a number base
+
+**原文链接**: [https://apieceofthepi.substack.com/p/the-golden-ratio-as-a-number-base](https://apieceofthepi.substack.com/p/the-golden-ratio-as-a-number-base)
+
+无法访问文章链接。
+
+---
+
+## 31. 在浏览器中运行14个复古操作系统 (Windows 1.01→XP, ReactOS, Haiku)
+
+**原文标题**: Run 14 vintage OSes (Windows 1.01→XP, ReactOS, Haiku) in the browser
+
+**原文链接**: [https://oses.ioblako.com/](https://oses.ioblako.com/)
+
+本文介绍了 V86 x86 模拟器，一个基于浏览器的模拟器，允许用户直接在网络浏览器中运行一系列经典操作系统，范围从 Windows 1.01 到 Windows XP，以及 ReactOS、Haiku、Android x86 等。
+
+主要功能包括：预配置了 14 个以上经过性能优化的操作系统，以及上传自定义 OS 镜像（.img 和 .iso 文件）的能力。 该模拟器由 WebAssembly 驱动，为完整的 x86 处理器模拟提供接近原生性能。 用户可以使用完整的鼠标和键盘支持与操作系统交互，包括特殊按键注入以实现最大兼容性。
+
+该模拟器无需安装、插件或下载，提供了一种安全便捷的方式来体验计算历史。 其预期用途是教育和软件保护，为学习操作系统的演变提供了一个平台。 V86 模拟器项目可在 GitHub 上找到，并由 copy (Fabian Hemmer) 提供支持。
+
+---
+
+## 32. 我建了个公共客厅，结果网上老有人往里面放更奇怪的东西。
+
+**原文标题**: I made a public living room and the internet keeps putting weirder stuff in it
+
+**原文链接**: [https://www.theroom.lol](https://www.theroom.lol)
+
+文章描述了一个名为“THE ROOM”的项目，它似乎是互联网上一个公共的、可进行数字编辑的空间。用户上传房间的底图，随后的用户可以通过提示词添加或修改图像中的元素。
+
+关键信息是该项目已上线并对公众开放。作者最初创建了这个房间，但互联网社区一直在积极贡献和修改它，导致添加了“更奇怪的东西”。
+
+文章还提到：
+
+*   该房间目前已关闭，稍后将重新开放。
+*   有一个重置功能，可以在一定数量的提示词后清除图像。
+*   有一个保存限制。
+*   用户界面包括用于上传图像、重置房间、在房间之间导航（房间1/房间2）以及访问条款和隐私政策的按钮。
+*   “自定义房间”是一项计划中的功能，但尚未可用。
+*   需要进行人工验证才能将提示词加入队列。
+
+核心概念是一个协作艺术项目，用户可以通过提示词共同创作和演变房间的图像，从而产生不可预测且可能怪异的结果。作者最初的愿景正在被互联网的集体想象力塑造和改变。
+
+---
+
+## 33. 二十世纪六十年代的机电式计算机
+
+**原文标题**: Electromechanical Calculating Machines from the 1960's
+
+**原文链接**: [https://www.mortati.com/glusker/elecmech/index.htm](https://www.mortati.com/glusker/elecmech/index.htm)
+
+本网页介绍了一个关于20世纪60年代机电式计算器的资源，那是计算技术关键的十年。本页旨在记录和探索这些机器，涵盖旋转式和打印式计算器类型、其复杂的机械结构，并提供相关术语表。它还包括相关计算设备的信息、参考文献、致谢以及一个“寻物”部分，可能是在寻找特定的机器或信息。
+
+核心主题强调了从纯机械计算器到电子计算器的过渡。20世纪60年代，机械计算器达到了其复杂性和功能的顶峰，最终试图与新兴的电子技术竞争。这突显了那个十年是一个战场，机电式计算器的开发是为了在全电子设备完全主导市场之前弥合差距。该网站可能会详细介绍这些最后一批机械计算器的具体特性和进步。
+
+---
+
+## 34. 正在下载邮件的邮戳后门
+
+**原文标题**: A Postmark backdoor that’s downloading emails
+
+**原文链接**: [https://www.koi.security/blog/postmark-mcp-npm-malicious-backdoor-email-theft](https://www.koi.security/blog/postmark-mcp-npm-malicious-backdoor-email-theft)
+
+锦鲤研究揭露“postmark-mcp” npm 包中的恶意后门，该工具专为 AI 助手管理电子邮件而设计。自 1.0.16 版本起，该软件包秘密地将所有电子邮件复制到攻击者的服务器 giftshop.club。这包括敏感数据，如密码、发票和内部备忘录。
+
+攻击者冒充合法的 Postmark (ActiveCampaign) 包，添加了一行代码，在用户不知情的情况下密件抄送每封电子邮件。该软件包每周被下载 1,500 次，并集成到许多开发人员的工作流程中，使其在恶意更新之前成为一个值得信赖的工具。
+
+被入侵的软件包突显了信任具有广泛权限（电子邮件、数据库访问、API 调用）的第三方 MCP（邮件控制协议）服务器的重大风险。这些服务器通常被 AI 助手使用，但未经过适当的安全审查，从而绕过了传统的安全措施。
+
+据估计，每天有 3,000 到 15,000 封电子邮件被盗。攻击者利用了信任关系，而不是技术漏洞。锦鲤的风险引擎检测到异常情况，表明了主动供应链安全的需求。
+
+锦鲤建议立即删除 postmark-mcp 1.0.16 及更高版本，轮换凭据，并审计所有 MCP 服务器配置。该事件强调了 MCP 生态系统存在缺陷的安全模型，以及验证和持续监控 AI 工具的重要性。作者强调，在集成第三方软件包之前，需要进行安全检查点和审批流程，而不是依赖开发人员的选择。
+
+---
+
+## 35. 便捷 - 用Rust编写的免费开源语音转文本应用
+
+**原文标题**: Handy – Free open-source speech-to-text app written in Rust
+
+**原文链接**: [https://handy.computer/](https://handy.computer/)
+
+Handy：一款免费开源的本地语音转文字应用。由 CJ 创建，旨在提供无付费墙的便捷辅助工具。
+
+该应用将语音转录为文字，然后直接粘贴到当前文本字段中。用户可以使用可自定义的键盘快捷键激活转录过程。该应用提供两种模式：默认的“按住说话”模式（需要持续按键）和切换模式（按下键组合开始和停止转录）。
+
+Handy 优先考虑隐私，通过在本地处理音频，无需将数据发送到云端。其目标单一，即以简洁的方式进行转录。该工具能够保持免费和开源，得益于 Wordcab 和 Epicenter 等赞助商。个人可以通过捐款、GitHub Sponsors 或直接联系开发者来为该项目做出贡献。Handy 鼓励社区参与，以扩展其功能并确保其持续改进。
+
+---
+
+## 36. 弗雷德·迪布纳展示如何在200英尺高空搭建烟囱脚手架（1982）[视频]
+
+**原文标题**: Fred Dibnah shows how to erect a chimney scaffold at 200 feet (1982) [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=w3ma9iYx4rg](https://www.youtube.com/watch?v=w3ma9iYx4rg)
+
+这是对一个YouTube视频的描述，标题为“弗雷德·迪布纳演示如何在200英尺高空搭建烟囱脚手架 (1982)”。视频内容是著名尖塔工人兼电视名人弗雷德·迪布纳展示如何在200英尺的高空中搭建烟囱脚手架。
+
+提供的“内容”部分仅仅是样板式的YouTube法律和政策信息，包括版权、广告、开发者信息、服务条款、隐私政策和安全等部分的链接。它还提到了NFL Sunday Ticket以及Google LLC在2025年持有的版权。这些内容与视频的主题无关，也没有提供关于弗雷德·迪布纳或脚手架演示的更多信息。
+
+因此，唯一可用的关键信息是：
+
+*   **标题：** 弗雷德·迪布纳演示如何在200英尺高空搭建烟囱脚手架 (1982)
+*   **主题：** 弗雷德·迪布纳演示在200英尺高空搭建烟囱脚手架。
+*   **来源：** YouTube
+
+---
+
+## 37. Haydex：30天内从零到每秒1786亿行
+
+**原文标题**: Haydex: From Zero to 178.6B rows a second in 30 days
+
+**原文链接**: [https://axiom.co/blog/building-haydex](https://axiom.co/blog/building-haydex)
+
+托马斯·塞纳特，一位首席工程师，讲述了“Haydex”的故事，这是一个为Axiom的EventDB（一个PB级事件数据存储）开发的超高速过滤系统。面对来自“超大规模客户”的巨大数据负载导致的缓慢查询性能，他们重启了之前失败的“Haydex”项目。
+
+Haydex V0在概念上是合理的，但由于来自对象存储（S3）的多次延迟敏感读取以及对误报的处理不当而失败。Haydex V1采用了一种新的字段范围方法进行了重建，为每个字段跨越数千个块创建了单个的大型过滤器，通过整合读取显著减少了I/O开销。优先考虑了早期剪枝，以消除不必要的工作请求。
+
+第一周的重点是代码恢复和解决瓶颈。他们解决了Postgres元数据目录中的瓶颈，将查询延迟提高了94-98%。对“HashColumn”函数的大规模重写将执行时间减少了73.89%，内存分配减少了90.74%。这使得在实时生产日志上的初始查询速度提高了8.85倍。
+
+然而，单节点索引器难以应对客户的工作负载。随后转向了分布式MapReduce Lambda架构。并行工作者处理较小的数据块，一个中心化服务组装最终的过滤器，这使得大型列批次的索引延迟从3.5分钟减少到30-40秒。
+
+文章结尾时，团队进入了第三周，并继续优化和改进系统，因为解决CPU瓶颈只是揭示了下一层问题。
+
+---
+
+## 38. 当你觉得需要完成某事时要问的问题
+
+**原文标题**: Questions to ask when you think need to finish something
+
+**原文链接**: [https://cassidoo.co/post/questions-when-i-need-to-finish-something/](https://cassidoo.co/post/questions-when-i-need-to-finish-something/)
+
+作者在反思其副业项目经验后，分享了一系列问题，以便在想要放弃现有项目转而做新项目时进行自问。 这些问题旨在确定完成现有项目是否真的值得。
+
+核心问题包括：
+
+*   **与当前目标的一致性：** 该项目是否仍然支持作者当前的目标？
+*   **现在我会开始做它吗？** 如果该项目不存在，作者现在会启动它吗？
+*   **内在动力：** 完成项目的动力是源于真正的渴望，还是需要证明什么？
+*   **放弃的后果：** 如果放弃该项目会发生什么？
+*   **期望的来源：** 驱动该项目的期望是内在的还是外在的？
+*   **机会成本：** 如果不完成该项目，作者会做什么？
+
+作者认为，这种“心理审计”有助于确定是继续还是放弃项目。 有时，答案会表明该项目不再有价值，从而导致有意识地放弃。 相反，这些问题也可以重新点燃最初的动力，从而更容易完成项目。 最终，这个过程通过确保作者的努力集中在真正重要的事情上，帮助他们交付更好的项目。
+
+---
+
+## 39. 我为什么免费赠送了万维网
+
+**原文标题**: Why I gave the world wide web away for free
+
+**原文链接**: [https://www.theguardian.com/technology/2025/sep/28/why-i-gave-the-world-wide-web-away-for-free](https://www.theguardian.com/technology/2025/sep/28/why-i-gave-the-world-wide-web-away-for-free)
+
+在本文中，蒂姆·伯纳斯-李反思了他将万维网免费赠予的决定，这一决定源于普及访问和协作创新的愿景。 他感叹当前的网络状态，用户数据被大型平台利用，算法操纵行为，导致心理健康问题和社会分裂。这偏离了他最初关于用户赋权的自由网络的愿景。
+
+伯纳斯-李倡导通过Solid等举措回归用户数据控制，使个人掌控自己的信息。 他批评了当前数据被平台孤立的模式，并呼吁进行转变，让个人拥有并受益于他们的数据。
+
+他强调需要对人工智能进行积极治理，并将其与对社交媒体负面影响的缓慢反应相提并论。 伯纳斯-李建议从过去吸取教训，创建一个框架，使人工智能为个人服务，类似于医生或律师。 他建议成立一个类似于欧洲核子研究中心的非营利组织，以推动国际人工智能研究，防止垄断企业控制和利用数据。
+
+最终，伯纳斯-李相信恢复网络最初的协作、创造力和同情心的目标仍然是可能的。 他认为，只要有足够的政治意愿，监管和全球治理是可以实现的，从而赋予个人权力，并为所有人夺回网络。
+
+---
+
+## 40. 深奥编码的黑客民间艺术
+
+**原文标题**: The Hacker Folk Art of Esoteric Coding
+
+**原文链接**: [https://thereader.mitpress.mit.edu/the-hacker-folk-art-of-esoteric-coding/](https://thereader.mitpress.mit.edu/the-hacker-folk-art-of-esoteric-coding/)
+
+丹尼尔·坦普金的文章探讨了深奥编程语言（esolangs）的世界，将其视为一种“黑客民间艺术”。他认为，esolangs通过突破代码的界限——探索代码的可能性和可以提出的问题——来挑战传统编程。受一篇关于扫雷游戏模拟计算机的学术论文的启发，坦普金对代码超越实用目的的潜力产生了浓厚的兴趣。
+
+他讨论了esolangs的历史，重点介绍了像INTERCAL、FALSE、brainfuck和Piet这样的语言，强调了它们的实验性质和协作开发。作者指出，esolangs通过他人的实验揭示其真正的特性，这与像乌力波（Oulipians）那样的约束写作有相似之处。他创办了博客esoteric.codes，旨在促进围绕esolang美学及其与计算艺术联系的讨论。
+
+坦普金强调了未实现的esolang概念的重要性，将其比作索尔·勒维特对概念和想法的区分。他展示了自己的44个esolangs集合（《四十四个深奥编程语言》），以“提示”和“实现”为框架，邀请读者以不同的方式解释和实现它们。他将esolangs视为隐喻，强调即使是主流语言也依赖于抽象。坦普金鼓励其他人尝试并重新诠释他的开源语言，将它们视为探索逻辑和非理性的工具。
+
+---
+
+## 41. 挪威将监测斯瓦尔巴群岛的空气放射性。
+
+**原文标题**: Norway to monitor airborne radioactivity in Svalbard
+
+**原文链接**: [https://www.highnorthnews.com/en/norway-monitor-airborne-radioactivity-svalbard](https://www.highnorthnews.com/en/norway-monitor-airborne-radioactivity-svalbard)
+
+本文提出北极地区核活动的潜在矛盾。俄罗斯官员声称新地岛试验场未进行核试验，但挪威同时在斯瓦尔巴群岛采取措施监测空气中的放射性。这表明挪威可能对俄罗斯的声明存在担忧或怀疑。本文暗示可能存在差异，挪威正积极寻求通过独立监测放射性水平来验证或可能反驳俄罗斯官员的声明。其意义在于北极地区核试验的可能性、环境影响以及俄罗斯和挪威之间关于该地区核活动的对比叙述。
+
+---
+
+## 42. Great Question (YC W21) 招聘产品总监
+
+**原文标题**: Great Question (YC W21) Is Hiring Director of Product
+
+**原文链接**: [https://www.ycombinator.com/companies/great-question/jobs/9crdslU-director-of-product](https://www.ycombinator.com/companies/great-question/jobs/9crdslU-director-of-product)
+
+优秀提问 (Y Combinator W21 投资的客户研究平台) 正在招聘产品总监，领导并发展其产品团队。该职位支持远程办公 (美国/加拿大)，薪资为 15 万至 25 万美元。
+
+产品总监将向首席技术官汇报，并与首席执行官和其他领导密切合作，以完善产品组织，建立强大的产品文化，并推动产品路线图。 这是一个需要战略思考和执行的实践领导职位，侧重于赋能自主团队。 主要职责包括指导产品经理、负责产品计划、定义组织结构、合作制定战略、推动人工智能创新、确保数据驱动的决策、协调跨职能团队，并将商业思维带入产品决策中。
+
+理想的候选人拥有 7-12 年的产品管理经验，包括 2-3 年的领导经验，以及构建人工智能驱动产品的经验。 初创公司经验（A 轮至 B/C 轮）以及创始人思维和强大的沟通技巧非常重要。 还要求具备商业头脑和能够适应太平洋时区工作时间。
+
+---
+
+## 43. @符号中隐藏的3000年历史
+
+**原文标题**: The 3,000-year-old story hidden in the @ sign
+
+**原文链接**: [https://www.bbc.com/future/article/20250923-the-3000-year-old-story-hidden-in-your-keyboard](https://www.bbc.com/future/article/20250923-the-3000-year-old-story-hidden-in-your-keyboard)
+
+这篇BBC文章《隐藏在@符号中长达3000年的故事》追溯了@符号从古希腊到现代数字通信的历史。最初在文艺复兴时期的欧洲，它代表双耳细颈瓶（用于储存的陶罐），作为一种计量单位，@符号逐渐演变成一种商业和会计工具。
+
+19世纪，它被纳入打字机，巩固了其在行政流程中的地位。1971年，计算机科学家雷·汤姆林森将其重新用于电子邮件地址，将其嵌入互联网基础设施之中。
+
+文章强调，不同的文化对@符号采用了独特的名称，反映了其与各种物体的视觉相似性（例如，意大利语中的“蜗牛”，荷兰语中的“猴尾”）。与英语中简单的“at”不同，这些名称表明了该符号的适应性和文化融合。
+
+此外，这篇文章还探讨了@符号在塑造在线身份方面的象征意义。它强调了该符号如何迫使用户创建唯一的单字用户名，从而影响他们的在线形象和自我意识。MoMA策展人保拉·安东内利强调，应将@符号视为一个具有丰富而令人惊讶历史的设计对象，值得博物馆收藏。文章总结道，@符号的历程反映了其在人类历史和数字演变中的适应性和持久的相关性。
+
+---
+
+## 44. 鞋子、阿尔吉侬、盘古大陆与海上民族
+
+**原文标题**: Shoes, Algernon, Pangea, and sea peoples
+
+**原文链接**: [https://dynomight.net/shorts-5/](https://dynomight.net/shorts-5/)
+
+这篇博文涵盖了一系列看似不相关的议题。首先，它惊叹于现代马拉松运动员的速度，认为这不仅归功于人类的适应，还得益于配备碳纤维板的创新鞋子，这种鞋子通过模仿跖趾关节的功能来提高效率。由此引出了“阿尔杰农论点”，质疑为什么进化还没有产生类似的增强。作者认为鞋子技术虽然有帮助，但也有限制，暗示阿尔杰农原理可能是一个梯度，而不是一个坚固的屏障。
+
+接下来，文章探讨了超大陆的形成和分裂，重点是盘古大陆。它解释了由于地球内部热量和板块构造导致超大陆的周期性。陆地碰撞并粘合在一起，从而积聚热量。这种积聚的热量削弱了大陆，最终导致其分裂。作者指出，有人预测未来会形成一个超大陆，即终极盘古大陆，并推测这可能与太阳辐射增加和大气二氧化碳水平升高同时发生，导致地球不适合哺乳动物居住。
+
+最后，文章简要提到了公元前1200年左右在地中海东部地区肆虐的海上民族，并引用了法老拉美西斯三世的一段埃及铭文，铭文庆祝埃及人战胜海上民族，并描述了这场战斗。
+
+---
+
+## 45. 菌根网络
+
+**原文标题**: Mycorrhizal Network
+
+**原文链接**: [https://en.wikipedia.org/wiki/Mycorrhizal_network](https://en.wikipedia.org/wiki/Mycorrhizal_network)
+
+菌根网络，又称公共菌根网络（CMNs），是由连接各个植物的真菌菌丝组成的地下网络，促进营养交换和通讯。这些网络由Suzanne Simard于1997年发现，通常是互利的，但也可能是共栖或寄生的，共生类型可能会随时间变化。
+
+CMNs的形成和功能受多种因素影响，包括土壤肥力、植物和真菌基因型以及环境扰动。植物和真菌可以同时与多个伙伴结合，并优先分配资源。菌根关联在植物进化中发挥了重要作用。
+
+虽然CMNs因其在林地生态系统中的潜在作用而被昵称为“树木广域网”，但关于其普遍性、资源转移和预警信号能力的一些说法存在争议。
+
+菌根网络主要有两种类型：丛枝菌根，其菌丝穿透植物细胞；外生菌根，其菌丝保留在细胞之间。CMNs促进碳、氮和磷等资源的交换，并可能促进信息化学物质的交换，通过他感或防御通讯影响植物行为。通过CMNs转移的化感物质可以抑制邻近植物的生长。CMNs还可以传递与病原体或食草动物攻击相关的信号，使连接的植物能够发起防御。然而，由菌根网络介导的植物间相互作用的有效性和重要性仍然存在争议。
+
+---
+
+## 46. 对Cloudflare的思考
+
+**原文标题**: Thoughts on Cloudflare
+
+**原文链接**: [https://xn--gckvb8fzb.com/thoughts-on-cloudflare/](https://xn--gckvb8fzb.com/thoughts-on-cloudflare/)
+
+本文对Cloudflare持强烈怀疑态度，认为它正在成为一个对互联网和社会产生负面影响的有害垄断企业。作者列举了支持这一观点的几个理由。
+
+首先，Cloudflare过度使用验证码，让VPN和Tor用户感到沮丧，并使重复的安全检查常态化，使用户更容易受到恶意软件的攻击。其次，尽管Cloudflare宣称提供安全保障，但它本身也可能被利用，具有讽刺意味的是，这使得恶意行为者能够绕过安全措施或通过其基础设施进行隧道传输。
+
+该公司的规模使其成为国家支持的攻击和 breach 的主要目标，由于其在互联网基础设施中的核心作用，构成了重大风险。此外，作为SSL终止代理，Cloudflare可以访问敏感的用户数据，增加了数据收集的可能性，Cloudbleed事件就是例证。
+
+作者强调了Cloudflare有问题的起源（Project Honeypot）和与美国国土安全部的联系、有问题的劳动实践以及CEO的争议行为。他们还指责Cloudflare在政治敏感问题上含糊其辞，在“言论自由”问题上优先考虑利润而非原则，并向非法行为者提供服务。
+
+本文建议尽可能避免使用Cloudflare，并推荐BlazingCDN、BunnyCDN等替代方案。它建议用户将域名注册从Cloudflare转移出去，以保持控制权并避免供应商锁定。最后，作者提供了通过浏览器扩展程序识别和避免使用Cloudflare的网站的技巧，同时承认此类工具固有的隐私风险。简而言之，本文认为Cloudflare的潜在缺点超过了其优点，并倡导更加分散的互联网格局。
+
+---
+
+## 47. 我们逆向工程了Flash Attention 4。
+
+**原文标题**: We reverse-engineered Flash Attention 4
+
+**原文链接**: [https://modal.com/blog/reverse-engineer-flash-attention-4](https://modal.com/blog/reverse-engineer-flash-attention-4)
+
+本文逆向工程分析了Flash Attention 4 (FA4)，这是一种CUDA内核，用于优化Transformer神经网络中的注意力层。据报道，在英伟达Blackwell架构上，FA4比英伟达的cudnn内核实现了约20%的加速。作者分析了已发布的FA4源代码，以了解其工作原理，并强调其主要进步在于一个显著更复杂的异步“流水线”架构。
+
+本文分为两个部分：面向普通软件工程师的“快速入门”和面向GPU专家的“深入探讨”。“快速入门”通过追踪数据块从全局内存（GPU RAM）到输出的生命周期来解释FA4的架构，包括将查询、键和值的块加载到共享内存中，使用Tensor Cores执行矩阵乘法，使用快速近似指数归一化注意力得分（可能使用CUDA Cores而不是SFUs），以及将加权值累积到输出块中。该过程严重依赖于异步处理和通过屏障同步的生产者/消费者关系。
+
+“深入探讨”侧重于FA4中的五个warp专业化（Load、MMA、Softmax、Correction和Epilogue）及其在流水线中的各自作用。它详细介绍了每个warp如何处理特定任务，如加载数据、计算注意力得分、归一化得分和管理输出块。文章强调了对程序员管理的异步性的日益依赖，表明GPU计算中存在一种向基于块的、warp专业化编程发展的趋势，并提到了英伟达通过新语言和库简化这种模式的努力。文章还重点介绍了一种现在已实现的新型重新缩放方法，该方法减少了运算量。
+
+---
+
+## 48. LLM 野外环境可观测性 – 为什么 OpenTelemetry 应该成为标准
+
+**原文标题**: LLM Observability in the Wild – Why OpenTelemetry Should Be the Standard
+
+**原文链接**: [https://signoz.io/blog/llm-observability-opentelemetry/](https://signoz.io/blog/llm-observability-opentelemetry/)
+
+本文探讨了大型语言模型（LLM）在生产环境中可观测性所面临的挑战，重点介绍了开源客户支持平台Chatwoot在调试其AI代理“Captain”时遇到的问题。核心问题是缺乏统一的LLM可观测性标准，OpenTelemetry (OTel) 和 OpenInference 等相互竞争的标准造成了碎片化。
+
+虽然OpenTelemetry已被广泛采用，并为多种语言提供了生产就绪的库，但它缺乏特定于AI的span类型，使得过滤和分析LLM相关数据变得困难。OpenInference专为AI工作流程设计，提供了更丰富的span类型，但语言支持有限，且与OpenTelemetry的兼容性较弱，给使用Ruby等语言的团队带来了问题。
+
+文章认为，即使对于LLM，也应优先考虑将OpenTelemetry作为主要的遥测主干，并倡导使用GenAI约定来丰富OpenTelemetry。坚持使用OTel的好处在于整个堆栈的一致性和开箱即用的体验。作者重点介绍了SigNoz对OpenTelemetry原生LLM可观测性的投入，为流行的框架提供了清晰的仪表板和指导，以发出OTel友好的遥测数据。文章鼓励社区为OpenTelemetry GenAI工作组做出贡献，并分享实际用例，以帮助塑造强大的标准并分享他们的经验。
+
+---
+
+## 49. Typst：一种可能的 LaTeX 替代方案
+
+**原文标题**: Typst: A Possible LaTeX Replacement
+
+**原文链接**: [https://lwn.net/Articles/1037577/](https://lwn.net/Articles/1037577/)
+
+这篇LWN.net文章探讨了Typst，一个潜在的用Rust编写的LaTeX替代品。文章强调了Typst相比于长期受困于陡峭的学习曲线和复杂自定义的LaTeX，拥有更简洁的标记、更快的编译速度和改进的错误信息。
+
+文章指出，Typst是一个免费的，使用Apache-2.0许可的程序，非常适合包含数学、表格和图形的技术文档。文章强调了Typst的输出质量，可与LaTeX媲美，并具有诸如编辑时的实时预览和集成的编程语言等功能，简化了复杂任务。
+
+文章承认LaTeX拥有庞大的软件包生态系统，同时也指出Typst的软件包集合正在增长，并且由于其组织良好的代码，创建新软件包也更加容易。然而，Typst的文档因其组织混乱和不完整而受到批评，并且缺乏LaTeX的一些高级布局功能，例如对孤行寡字的精细控制。
+
+尽管存在这些缺点，正在使用Typst进行实际工作的作者得出结论，Typst是一种有希望的工具，可以简化文档创建，特别是对于数学而言，并预测它最终可能会取代LaTeX，或者至少成为一种有价值的替代方案。文章还提到了工具和编辑器支持的可用性，例如Neovim集成。
+
+---
+
+## 50. 再次未能理解指数增长
+
+**原文标题**: Failing to Understand the Exponential, Again
+
+**原文链接**: [https://www.julian.ac/blog/2025/09/27/failing-to-understand-the-exponential-again/](https://www.julian.ac/blog/2025/09/27/failing-to-understand-the-exponential-again/)
+
+本文认为，与某些怀疑论相反，人工智能的进步继续遵循指数级增长轨迹，并将其与早期对COVID-19大流行严重性的漠视相提并论。作者使用来自METR和OpenAI（GDPval）的研究来支持这一观点。
+
+METR的研究衡量了人工智能可以自主执行的软件工程任务的长度，表明能力呈指数级增长。来自Grok 4、Opus 4.1和GPT-5等较新模型的数据验证了METR预测的任务完成时间翻倍率。
+
+OpenAI的GDPval研究评估了人工智能在44个职业中的表现，显示GPT-5正在接近人类水平。值得注意的是，Claude Opus 4.1在这项研究中优于GPT-5，展示了不同实验室的进展，并可能预示着GPT-5的消费者关注点。
+
+作者根据对这些指数趋势的推断预测，人工智能模型将在2026年中期能够自主工作整天，并在2026年底在许多行业中达到人类专家水平，甚至可能在2027年超越专家。作者推荐Epoch AI的2030报告和AI 2027项目，以获得对未来更详细的愿景。作者还注意到Grok 4和Gemini 2.5 Pro的表现不佳，并告诫在基准测试中要警惕古德哈特定律。总之，本文强调了人工智能能力的持续且持续的指数级增长。
+
+---
+
+## 51. 高功率微波击溃无人机群
+
+**原文标题**: High-power microwave defeats drone swarm
+
+**原文链接**: [https://www.epirusinc.com/press-releases/epirus-leonidas-high-power-microwave-defeats-49-drone-swarm-100-of-drones-flown-at-live-fire-demonstration](https://www.epirusinc.com/press-releases/epirus-leonidas-high-power-microwave-defeats-49-drone-swarm-100-of-drones-flown-at-live-fire-demonstration)
+
+本文记录了Epirus公司在高功率微波(HPM)反电子技术，特别是反无人机系统(C-UAS)领域的进步和成就。
+
+重点技术是“莱昂尼达斯”HPM系统，它能够使用定向能量摧毁无人机和其他电子威胁。2025年9月，“莱昂尼达斯”系统成功击败了一个由49架无人机组成的蜂群，展示了其有效性。事件时间线揭示了一系列旨在改进和部署该技术的合同、伙伴关系和技术发展。主要里程碑包括与美国陆军、海军和空军签订合同，用于开发、测试和交付HPM系统，特别是用于间接火力保护能力-高功率微波(IFPC-HPM)项目。
+
+Epirus已与通用动力陆地系统、Peraton、L3Harris和Anduril等公司合作。他们还获得了来自风险投资和政府拨款等各种来源的资金，使其能够扩大设施、劳动力和生产能力。时间线还提到了新产品的推出，例如用于海洋环境的Leonidas H2O和用于便携式部署的Leonidas Pod。Epirus也一直在努力提高自身能力和扩展技术。该公司还收到了来自DARPA的合同。反复强调来自美国军方各部门的合同表明，他们的主要重点是国防应用。
+
+---
+
+## 52. 格陵兰：美丽的噩梦
+
+**原文标题**: Greenland is a beautiful nightmare
+
+**原文链接**: [https://matduggan.com/greenland-is-a-beautiful-nightmare/](https://matduggan.com/greenland-is-a-beautiful-nightmare/)
+
+作者怀着复杂的心情回忆了格陵兰之旅，称之为“美丽的噩梦”。最初，由于认为缺乏吸引力以及丹麦与格陵兰之间的负面历史，他们犹豫不决。旅程始于一次灾难性的航班，包括雾气延误和在冰岛的加油站，然后返回丹麦。
+
+最终抵达首都努克后，他们注意到格陵兰人民平静的举止和严酷、荒凉的景观。这座城市提供了一些令人惊讶的元素，比如交通堵塞（尽管规模很小），以及生存装备商店与文化中心的混合。
+
+旅程继续到伊卢利萨特，作者被成群的蚊子淹没。他们将雪橇犬的生活条件描述为类似于“犬类教养所”。观鲸之旅提供了冰山和鲸鱼的壮丽景色，但作者也目睹了冰川冰的消耗，并了解了当地狩猎海豹和鲸鱼作为食物的习俗，突出了浪漫主义观念与格陵兰生活的现实之间的脱节。
+
+总的来说，这篇文章将格陵兰描绘成一个充满矛盾的土地：令人叹为观止的景色与恶劣的生活条件形成对比，平静的氛围与持续的生存斗争形成对比，以及一种奇妙的感觉与一丝不安的感觉混合在一起。作者努力应对格陵兰的美丽和挑战性，突出了其独特的性格。
+
+---
+
+## 53. 为什么风力涡轮机有三个叶片？
+
+**原文标题**: Why do wind turbines have three blades?
+
+**原文链接**: [https://thekidshouldseethis.com/post/why-do-wind-turbines-have-three-blades](https://thekidshouldseethis.com/post/why-do-wind-turbines-have-three-blades)
+
+文章《儿童应该看到的：为什么风力涡轮机有三个叶片？》探讨了现代风力涡轮机几乎普遍采用三叶片设计的原因。
+
+它解释说，虽然叶片较少的涡轮机（如一个或两个）可以旋转得更快，并且可能生产成本更低，但它们存在一些缺点。单叶片涡轮机需要一个重型配重来保持平衡，从而增加了成本和复杂性。双叶片涡轮机虽然平衡，但旋转时可能会产生明显的振动和噪音，尤其是在顶部叶片经过塔架时，会产生“拍打”效应。这会导致结构疲劳和维护问题。
+
+三叶片涡轮机实现了平衡。与单叶片或双叶片设计相比，它们更有效率，因为它们可以在不产生过度振动的情况下捕获更多的风能。三个叶片的对称设计确保了相对平稳和平衡的旋转，最大限度地减少了对涡轮机部件的压力并降低了噪音。
+
+文章进一步表明，尽管对不同叶片设计的相关研究仍在继续，但三叶片配置仍然是大规模风能发电最具成本效益和最可靠的选择。它强调了效率、成本、稳定性及噪音之间的权衡，最终得出结论：三个叶片为现代风力涡轮机技术提供了最佳组合。
+
+---
+
+## 54. 2025年尼康显微摄影大赛动态影像获奖者
+
+**原文标题**: 2025 Nikon Small World in Motion Competition Winners
+
+**原文链接**: [https://www.nikonsmallworld.com/galleries/2025-small-world-in-motion-competition](https://www.nikonsmallworld.com/galleries/2025-small-world-in-motion-competition)
+
+文章宣布2025年尼康微观世界视频大赛的获奖者名单，展示获奖视频和荣誉提名作品。前三名获奖者分别是：Jay McClellan（第一名）、Benedikt Pleyer（第二名）和Eric Vitriol（第三名）。其他获奖者包括Penny Fenton（第四名）和Alvaro Migotto（第五名）。文章还提供了荣誉提名名单，以及获奖者姓名和颁奖年份。
+
+文章还介绍了比赛的评委。评审团成员包括：科学传播者Deboki Chakravarti博士；《科学美国人》首席多媒体编辑和执行制片人Jeff DelViscio；霍华德·休斯医学研究所Janelia研究园区博士后科学家Andrew Moore博士；加州科学中心生命科学馆馆长Liz Roth-Johnson博士；以及莫菲特癌症中心首席生物工程官兼生物工程系主任W. Gregory Sawyer博士。文章还包括每位评委的简短传记，重点介绍他们的专业知识以及对科学和传播领域的贡献。
+
+---
+
+## 55. 我们为何思考
+
+**原文标题**: Why We Think
+
+**原文链接**: [https://lilianweng.github.io/posts/2025-05-01-thinking/](https://lilianweng.github.io/posts/2025-05-01-thinking/)
+
+本文《我们为何思考》探讨了通过延长大型语言模型（LLM）在测试时的“思考时间”来增强其推理能力的技术。文章类比了人类认知，强调了快速直觉思维（系统1）和缓慢深思熟虑思维（系统2）之间的区别。文章认为，提供更多的计算资源可以让模型参与更复杂的问题解决过程，类似于人类的系统2思维。
+
+一个核心概念是思维链（CoT）提示，模型在给出最终答案之前会生成中间推理步骤。这被构建为一种潜在变量建模方法，其中推理过程是一个隐藏变量，有助于生成最终答案。然后，文章深入探讨了利用测试时计算能力的两种主要策略：并行采样和顺序修订。
+
+并行采样涉及同时生成多个输出，并使用各种评分函数（如验证器或自洽性）选择最佳输出。Best-of-N采样和集束搜索就是例子。顺序修订基于先前的输出迭代地改进模型的响应，本质上是自我纠正。然而，简单的自我纠正往往会失败，需要外部反馈机制，如特定任务的指标或更强大的模型。诸如自我修正学习和递归检查等方法旨在专门训练模型进行这种迭代改进过程，使用强化学习等技术。最终目标是使模型能够在测试时自适应地修改其输出分布，从而实现更准确和更稳健的推理。
+
+---
+
+## 56. Windows ML 现已正式发布
+
+**原文标题**: Windows ML is generally available
+
+**原文链接**: [https://blogs.windows.com/windowsdeveloper/2025/09/23/windows-ml-is-generally-available-empowering-developers-to-scale-local-ai-across-windows-devices/](https://blogs.windows.com/windowsdeveloper/2025/09/23/windows-ml-is-generally-available-empowering-developers-to-scale-local-ai-across-windows-devices/)
+
+本文宣布 Windows ML 正式发布。Windows ML 是一个内置的 AI 推理运行时，经过优化，可在 Windows 11 中跨 CPU、GPU 和 NPU 进行设备端模型推理。它允许开发者在本地部署生产就绪的 AI 体验，通过 ONNX Runtime 和执行提供程序 (EP) 利用 AMD、Intel、NVIDIA 和 Qualcomm 等合作伙伴提供的各种芯片能力。
+
+Windows ML 通过充当硬件抽象层来简化部署，自动检测硬件并下载相应的 EP，从而减少应用程序开销并确保兼容性。开发者可以使用熟悉的 ORT API，并通过 AI Toolkit for VS Code 转换和优化 PyTorch 模型，轻松过渡现有工作负载。
+
+主要优势包括：
+
+*   **简化部署：** 无需构建多个应用程序即可支持各种硬件。
+*   **减少应用程序开销：** 自动 EP 下载可显著节省应用程序大小。
+*   **兼容性：** 确保模型在不同构建中的准确性。
+*   **高级芯片定位：** 针对低功耗、高性能或特定芯片进行优化。
+
+本文重点介绍了芯片合作伙伴如何集成 Windows ML 以利用其硬件。它还展示了 Adobe、BUFFERZONE、McAfee 等公司如何使用 Windows ML 构建 AI 驱动的功能。AI Dev Gallery 和 AI Toolkit for VS Code 提供了简化的模型部署工具。Windows ML 包含在 Windows App SDK（版本 1.8.1）中，并支持 Windows 11 24H2 或更高版本。
+
+---
+
+## 57. 大型语言模型究竟有多强的韧性？
+
+**原文标题**: Just how resilient are large language models?
+
+**原文链接**: [https://www.rdrocket.com/blog/just-how-resilient-are-large-language-models](https://www.rdrocket.com/blog/just-how-resilient-are-large-language-models)
+
+大型语言模型应对数据损坏的意外韧性
+
+这篇文章探讨了大型语言模型（LLMs）应对数据损坏（例如宇宙射线或蓄意篡改导致的位翻转）的意外韧性。与即使出现微小错误也会崩溃的传统程序不同，尽管参数受到严重破坏，大型语言模型通常仍能有效运行。
+
+这种韧性源于神经网络内部的冗余架构。知识并非存储在孤立的参数中，而是编码在众多重叠的连接中，即使某些连接断开，模型也能正常工作。虽然某些区域，如输出层和注意力机制，更为关键，但整体结构提供了令人惊讶的保护。
+
+研究人员进行了“数字破坏”实验，破坏了数千个参数，但观察到对性能的影响极小。这种稳健性还支持诸如量化之类的技术，即故意降低参数的精度以节省资源，通常性能损失可以忽略不计。
+
+然而，大型语言模型并非刀枪不入。过度随机的损坏会导致“模式崩溃”，产生毫无意义的输出。定向破坏会带来安全风险，使攻击者能够创建后门或导致特定故障。
+
+文章认为，这种韧性类似于生物大脑的运作方式，通过优雅的退化和冗余编码来容忍损伤。这突显了在人工智能和自然智能中，稳健、冗余表示的重要性。理解这种韧性对于在具有挑战性的环境中部署人工智能以及开发更具容错能力的人工智能系统具有实际意义。作者总结说，韧性而非精确性，可能才是智能的真正标志。
+
+---
+
+## 58. 美国环保署告知部分科学家停止发表研究。
+
+**原文标题**: EPA tells some scientists to stop publishing studies
+
+**原文链接**: [https://www.washingtonpost.com/climate-environment/2025/09/20/epa-scientists-research-publications/](https://www.washingtonpost.com/climate-environment/2025/09/20/epa-scientists-research-publications/)
+
+无法访问文章链接。
+
+---
+
+## 59. Meshtastic 64 – Commodore 64 的网状无线电
+
+**原文标题**: Meshtastic 64 – A meshtastic radio for the Commodore 64
+
+**原文链接**: [http://64jim64.blogspot.com/2025/09/meshtastic-64-meshtastic-radio-for.html](http://64jim64.blogspot.com/2025/09/meshtastic-64-meshtastic-radio-for.html)
+
+Jim_64创造了“Meshtastic 64”项目，该项目将Meshtastic无线电直接集成到Commodore 64中。受到开源、去中心化的Meshtastic网络的启发，Jim旨在将一台20世纪80年代的计算机连接到这个现代通信系统。他利用了Heltec LoRa V3模块，通过串口连接，并将其配置为通过主信道发送和接收文本。
+
+该项目包括使用原型板进行原型设计，设计一个定制PCB以安装在Commodore 64卡带外壳中，以及为C64编写一个BASIC程序。最初的PCB设计有镜像连接，需要第二次迭代。Jim还改进了C64代码，以处理ASCII到PETSCII的转换，用于大小写文本通信，并使用编辑器实现了PETSCII图形消息传递。
+
+他成功制造了19个单元，在芝加哥举行的VCF Midwest (VCFMW) 2025上进行展示。在展会上，多台Commodore 64连接到特殊的Meshtastic频道，使用户能够发送和接收消息。Meshtastic 64模块由内置可充电电池供电，独立运行，甚至允许他在周日早餐时监控消息。
+
+该项目受到了好评，与会者喜欢发送PETSCII艺术并测试系统。Jim计划在BIT-Zeal网站上发布BASIC程序。他还提供了一个链接，用于从BIT-Zeal购买预制单元。
+
+---
+
+## 60. 测试树莓派500+新款机械键盘
+
+**原文标题**: Testing the Raspberry Pi 500+'s new mechanical keyboard
+
+**原文链接**: [https://www.jeffgeerling.com/blog/2025/testing-raspberry-pi-500s-new-mechanical-keyboard](https://www.jeffgeerling.com/blog/2025/testing-raspberry-pi-500s-new-mechanical-keyboard)
+
+本文评测了Raspberry Pi 500+中配备的全新机械键盘。Pi 500+是在Pi 500基础上升级的新型号，增加了256GB NVMe SSD、16GB内存以及配备佳达隆KS-33矮轴青轴的机械键盘。
+
+该键盘采用标准键帽，RGB背光可通过Raspberry Pi的工具进行配置，并搭载RP2040微控制器以及QMK固件的Pi分支版本，可能兼容VIA，从而实现基于浏览器的配置。
+
+作者指出这款键盘声音“咔哒咔哒”，并在1英尺外测量到约60分贝。虽然作者更喜欢安静的轴体，但他们发现这款键盘的打字体验比Pi 500的扁平键盘有了显著提升。他们还尝试更换了键帽，发现矮键帽通常效果最好。
+
+作者总结说，这款键盘比以前的Pi键盘有了巨大的改进，可以与低端机械键盘相媲美。虽然轴体不可更换，但机械按键的选择相对于老款型号“2000年代的巧克力”风格键盘来说，是一个令人欣喜的改变。他们还暗示了未来进行修改的可能性，因为键盘顶壳与Pi 500+的主体是分离的。
+
+---
+
+## 61. 伊什库尔电子音乐指南
+
+**原文标题**: Ishkur's Guide to Electronic Music
+
+**原文链接**: [http://music.ishkur.com/](http://music.ishkur.com/)
+
+无法访问文章链接。
+
+---
+
+## 62. 将十二个56K调制解调器绑定在一起，创造拨号宽带记录。
+
+**原文标题**: Bonding twelve 56K modems together to set dial-up broadband records
+
+**原文链接**: [https://www.tomshardware.com/networking/enthusiasts-bond-twelve-56k-dial-up-modems-together-to-set-dial-up-broadband-records-a-dozen-screeching-boxes-achieve-record-668-kbps-download-speeds](https://www.tomshardware.com/networking/enthusiasts-bond-twelve-56k-dial-up-modems-together-to-set-dial-up-broadband-records-a-dozen-screeching-boxes-achieve-record-668-kbps-download-speeds)
+
+科技频道“串行端口”成功通过绑定十二个56K调制解调器，以拨号方式直播了YouTube，实现了668.8 kbps的下载速度。他们使用一台Windows XP PC、思科VoIP单元和串行端口打包PCI卡，利用多链路PPP (MPPP)技术来组合调制解调器的带宽。这种设置可能创造了一项世界纪录，因为之前没有超过四个调制解调器绑定的记录。
+
+该实验回顾了宽带时代之前，200 Kbps的速度被认为是足够的时代。在ISDN和ADSL普及之前，MPPP为更快的互联网提供了一种解决方案，但由于多线路和ISP的要求，它面临着限制。
+
+为了实现他们的目标，该团队计算了流媒体所需的带宽，并最初在一个较旧的Windows ME系统上使用两个调制解调器测试了MPPP。然后，他们升级到一台带有多个串行扩展卡的Windows XP系统，以容纳更多的调制解调器。在克服了驱动程序和硬件兼容性问题后，他们成功连接了十二个调制解调器，最终实现了足够的组合连接速度，可以以最少的缓冲直播YouTube视频。
+
+文章还包括读者的评论，他们分享了自己使用旧互联网技术的经验。
+
+---
+
+## 63. 被当笑话，英国首个稻米作物在酷暑后成熟待收
+
+**原文标题**: Dismissed as a joke, UK's first rice crop ripe for picking after hot summer
+
+**原文链接**: [https://www.bbc.co.uk/news/articles/c1wgeq702dyo](https://www.bbc.co.uk/news/articles/c1wgeq702dyo)
+
+在英国东部一片宁静之地，英国首批水稻作物在破纪录的酷暑之后逐渐成熟，挑战了英国农业的传统观念。先锋水稻种植者Nadine Mitschunas正在农民Sarah和Craig Taylor的土地上进行一项实验，以探索气候变化背景下的替代食物来源。该试验与英国生态与水文中心（UKCEH）合作，涉及在迷你稻田中种植九个不同的水稻品种，包括意大利调味饭、印度香米和寿司米，以评估它们在英国气候下的可行性。
+
+这项举措不仅仅是种植水稻。它旨在解决传统农业对芬兰沼泽地区泥炭土壤的环境影响，该地区是高产的农业区。这些正在干燥的土壤会释放大量的二氧化碳，加剧气候变化。通过淹没泥炭土壤进行水稻种植，并试验其他喜水作物，如生菜和杂交柳树，该项目旨在将温室气体锁在土壤中，减少排放。
+
+虽然水稻种植也会产生甲烷，但初步结果表明，它捕获的温室气体与排放的温室气体一样多或更多。政府对该项目非常感兴趣，认识到其重塑英国农业、确保粮食安全和减轻气候变化影响的潜力。长期目标是探索替代作物和耕作方法，以创建一个更可持续的粮食系统，并为子孙后代留下遗产。虽然英国种植的水稻还需要一段时间才能实现，但该项目代表着适应气候变化和改变英国粮食格局的重要一步。
+
+---
+
+## 64. 美国军方部署人工智能武器困难重重
+
+**原文标题**: US Military struggling to deploy AI weapons
+
+**原文链接**: [https://www.msn.com/en-us/money/companies/us-military-is-struggling-to-deploy-ai-weapons/ar-AA1NoiNK](https://www.msn.com/en-us/money/companies/us-military-is-struggling-to-deploy-ai-weapons/ar-AA1NoiNK)
+
+我无法访问特定的URL，包括您提供的关于MSN题为“美军难以部署人工智能武器”的文章链接。因此，我无法为您提供该*具体*文章的摘要。
+
+但是，我可以根据新闻报道和分析中经常讨论的围绕美军人工智能武器部署工作的常见挑战和批评提供摘要：
+
+**基于更广泛背景的可能摘要：**
+
+尽管投入了大量资金和进行研发，但美军在部署人工智能驱动的武器方面面临重大障碍。这些困境通常源于技术限制、伦理问题和官僚挑战的结合。
+
+在技术方面，人工智能系统仍然缺乏战场条件所需的稳健性和可靠性。算法偏差、容易受到对抗性攻击以及难以适应意外情况等问题困扰着当前的人工智能系统。确保人工智能能够可靠地区分战斗人员和平民仍然是一个关键问题，引发了伦理方面的担忧。
+
+此外，将人工智能系统集成到现有军事基础设施中既复杂又昂贵。官僚流程和缺乏明确的监管框架进一步减缓了部署速度。人员培训也是一个挑战，因为士兵需要具备理解、操作和信任人工智能系统的能力，同时也要知道何时可以推翻它们。公众和政治界对自主武器的焦虑、其潜在的意外后果以及难以确定错误责任也导致了部署延迟和辩论。因此，军方正在努力平衡人工智能的潜在优势与负责任和合乎道德的开发和部署需求。
+
+---
+
+## 65. 代码模式：使用MCP的更佳方式
+
+**原文标题**: Code Mode: the better way to use MCP
+
+**原文链接**: [https://blog.cloudflare.com/code-mode/](https://blog.cloudflare.com/code-mode/)
+
+本文介绍了一种名为“代码模式”的新方法，它使用模型上下文协议（MCP）来构建AI代理，并论证其优于直接向LLM暴露工具的传统方法。 MCP是一种使AI代理能够访问外部工具的协议。在代码模式中，MCP工具被转换为TypeScript API，然后LLM使用这些API来编写代码。本文认为，LLM更擅长编写代码来调用MCP，而不是直接调用MCP工具，因为它们接受过远多于工具调用示例的TypeScript代码训练。
+
+传统的工具调用方法涉及LLM生成特殊的token，指示工具调用的开始和结束，并附带相关的JSON。然后，代理执行该工具并将结果反馈给LLM。 这个过程效率低下，通过不断地向神经网络来回反馈数据，消耗时间、能源和token。
+
+代码模式利用LLM的编码能力，使它们能够编写代码来高效地串联多个工具调用。 MCP提供了一种统一的方式来连接和理解API，即使代理和API开发人员彼此不熟悉。
+
+Cloudflare Agents SDK已扩展以支持代码模式，将MCP模式转换为TypeScript API并加载到代理的上下文中。 然后，生成的代码将在安全、与互联网隔离的沙箱中使用Cloudflare Workers执行，该沙箱利用轻量级的V8隔离而非容器。 这是通过新的Worker Loader API实现的，该API支持按需加载worker代码。 沙箱通过 `console.log()` 返回结果。 文章总结说，Workers提供了一种更高效、更安全的沙箱解决方案。
+
+---
+
+## 66. 在浏览器中体验Windows 3.11，支持拨号上网、IRC、FTP等功能
+
+**原文标题**: Windows 3.11 in your browser with working dial-up internet, IRC, FTP and more
+
+**原文链接**: [https://pieter.com/?new=1](https://pieter.com/?new=1)
+
+本文介绍了一个可在网页浏览器中访问的Windows 3.11模拟器。该模拟器由Pieter™创建，提供复古计算体验，包括模拟拨号上网、IRC功能和FTP功能。
+
+文章强调了@levelsio和@bai0的参与，他们正在征求关于想法和错误报告的反馈。用户可以访问全屏模式以获得更沉浸式的体验。界面显著显示，展示了一个虚拟键盘，用于与模拟的Windows 3.11环境交互。键盘的存在表明模拟器内主要采用鼠标驱动的交互模式，从而模拟了原始的Windows 3.11体验。总的来说，这是一个旨在重现可通过现代网页浏览器访问的复古计算体验的项目，并鼓励用户参与其开发。
+
+---
+
+## 67. 漫游编译器
+
+**原文标题**: Walking Around the Compiler
+
+**原文链接**: [https://bernsteinbear.com/blog/walking-around/](https://bernsteinbear.com/blog/walking-around/)
+
+生成摘要时出错
+
+---
+
+## 68. Trump Posts AI Video Which Promotes a Magic 'Med Bed' That Can Cure Any Disease
+
+**原文标题**: Trump Posts AI Video Which Promotes a Magic 'Med Bed' That Can Cure Any Disease
+
+**原文链接**: [https://www.mediaite.com/media/news/trump-posts-an-absolutely-bonkers-ai-video-in-which-he-promotes-a-magic-med-bed-that-can-cure-any-disease/](https://www.mediaite.com/media/news/trump-posts-an-absolutely-bonkers-ai-video-in-which-he-promotes-a-magic-med-bed-that-can-cure-any-disease/)
+
+This Mediaite article reports that Donald Trump shared a bizarre, AI-generated video on his Truth Social platform promoting "med beds," a far-right conspiracy theory. The video, presented as a fake Fox News clip from "My View with Lara Trump," shows AI Trump announcing the rollout of these "magic" beds to hospitals nationwide, promising they would cure any disease and restore citizens to full health.
+
+The article explains that the med bed conspiracy theory, popular in extreme right-wing circles, claims the U.S. military possesses technology capable of curing diseases and even regrowing limbs. According to the conspiracy, liberal billionaires have been suppressing this technology, and it would only be released under a Trump administration.
+
+Alex Kaplan, a reporter who covers disinformation, also posted the AI video on X, where it quickly gained traction. The promotion of med beds by AI Trump is likely to fuel the conspiracy theory in online communities.
+
+A Fox News spokesperson clarified that the video was not aired on Fox News or any of its platforms. Trump has since deleted the video.
+
+
+---
+
+## 69. Open Social
+
+**原文标题**: Open Social
+
+**原文链接**: [https://overreacted.io/open-social/](https://overreacted.io/open-social/)
+
+生成摘要时出错
+
+---
+
+## 70. Britain to introduce compulsory digital ID for workers
+
+**原文标题**: Britain to introduce compulsory digital ID for workers
+
+**原文链接**: [https://www.reuters.com/world/uk/britain-introduce-mandatory-digital-id-cards-2025-09-26/](https://www.reuters.com/world/uk/britain-introduce-mandatory-digital-id-cards-2025-09-26/)
+
+生成摘要时出错
+
+---
+
+## 71. Show HN: The Unite Real Time Operating System
+
+**原文标题**: Show HN: The Unite Real Time Operating System
+
+**原文链接**: [https://jacquesmattheij.com/unite-operating-system/](https://jacquesmattheij.com/unite-operating-system/)
+
+生成摘要时出错
+
+---
+
+## 72. GPT-OSS Reinforcement Learning
+
+**原文标题**: GPT-OSS Reinforcement Learning
+
+**原文链接**: [https://docs.unsloth.ai/new/gpt-oss-reinforcement-learning](https://docs.unsloth.ai/new/gpt-oss-reinforcement-learning)
+
+生成摘要时出错
+
+---
+
+## 73. The death of east London's most radical bookshop
+
+**原文标题**: The death of east London's most radical bookshop
+
+**原文链接**: [https://www.the-londoner.co.uk/scarlett-letters-closure-left-wing-bookshop/](https://www.the-londoner.co.uk/scarlett-letters-closure-left-wing-bookshop/)
+
+生成摘要时出错
+
+---
+
+## 74. Codecogs Style Typst Equation Editor
+
+**原文标题**: Codecogs Style Typst Equation Editor
+
+**原文链接**: [https://typerino.com/](https://typerino.com/)
+
+生成摘要时出错
+
+---
+
+## 75. SimpleFold: Folding proteins is simpler than you think
+
+**原文标题**: SimpleFold: Folding proteins is simpler than you think
+
+**原文链接**: [https://github.com/apple/ml-simplefold](https://github.com/apple/ml-simplefold)
+
+生成摘要时出错
+
+---
+
+## 76. Measuring My DIY Air Purifier
+
+**原文标题**: Measuring My DIY Air Purifier
+
+**原文链接**: [https://chillphysicsenjoyer.substack.com/p/measuring-my-diy-air-purifier](https://chillphysicsenjoyer.substack.com/p/measuring-my-diy-air-purifier)
+
+生成摘要时出错
+
+---
+
+## 77. Depictions of Celestial Objects Spanning Nearly a Millennium (2014)
+
+**原文标题**: Depictions of Celestial Objects Spanning Nearly a Millennium (2014)
+
+**原文链接**: [https://publicdomainreview.org/collection/flowers-of-the-sky/](https://publicdomainreview.org/collection/flowers-of-the-sky/)
+
+生成摘要时出错
+
+---
+
+## 78. A lifetime of social ties adds up to healthy aging
+
+**原文标题**: A lifetime of social ties adds up to healthy aging
+
+**原文链接**: [https://news.cornell.edu/stories/2025/09/lifetime-social-ties-adds-healthy-aging](https://news.cornell.edu/stories/2025/09/lifetime-social-ties-adds-healthy-aging)
+
+生成摘要时出错
+
+---
+
+## 79. Austria's military just ditched Microsoft for open-source LibreOffice
+
+**原文标题**: Austria's military just ditched Microsoft for open-source LibreOffice
+
+**原文链接**: [https://www.zdnet.com/article/this-european-military-just-ditched-microsoft-for-open-source-libreoffice-heres-why/](https://www.zdnet.com/article/this-european-military-just-ditched-microsoft-for-open-source-libreoffice-heres-why/)
+
+生成摘要时出错
+
+---
+
+## 80. Thoughts on Mechanical Keyboards and the ZSA Moonlander
+
+**原文标题**: Thoughts on Mechanical Keyboards and the ZSA Moonlander
+
+**原文链接**: [https://www.masteringemacs.org/article/thoughts-on-mechanical-keyboards-zsa-moonlander](https://www.masteringemacs.org/article/thoughts-on-mechanical-keyboards-zsa-moonlander)
+
+生成摘要时出错
+
+---
+
+## 81. MycoToilet: Demonstration of a Mycelium-Based Composting Toilet
+
+**原文标题**: MycoToilet: Demonstration of a Mycelium-Based Composting Toilet
+
+**原文链接**: [https://livinglabs.ubc.ca/projects/mycotoilet-demonstration-mycelium-based-composting-toilet-sustainable-places-communities](https://livinglabs.ubc.ca/projects/mycotoilet-demonstration-mycelium-based-composting-toilet-sustainable-places-communities)
+
+生成摘要时出错
+
+---
+
+## 82. Idea – nonverbal algorithm assembly instructions
+
+**原文标题**: Idea – nonverbal algorithm assembly instructions
+
+**原文链接**: [https://idea-instructions.com/](https://idea-instructions.com/)
+
+生成摘要时出错
+
+---
+
+## 83. Frankenstein's Sheep
+
+**原文标题**: Frankenstein's Sheep
+
+**原文链接**: [https://nymag.com/intelligencer/article/montana-mountain-king-marco-polo-argali-sheep-cloning-labs.html](https://nymag.com/intelligencer/article/montana-mountain-king-marco-polo-argali-sheep-cloning-labs.html)
+
+生成摘要时出错
+
+---
+
+## 84. Ultra efficient vector extension for SQLite
+
+**原文标题**: Ultra efficient vector extension for SQLite
+
+**原文链接**: [https://marcobambini.substack.com/p/the-state-of-vector-search-in-sqlite](https://marcobambini.substack.com/p/the-state-of-vector-search-in-sqlite)
+
+生成摘要时出错
+
+---
+
+## 85. Do YC after you graduate: Early decision for students
+
+**原文标题**: Do YC after you graduate: Early decision for students
+
+**原文链接**: [https://www.ycombinator.com/early-decision](https://www.ycombinator.com/early-decision)
+
+生成摘要时出错
+
+---
+
+## 86. ChromeDevTools/Chrome-devtools-MCP: Chrome DevTools for coding agents
+
+**原文标题**: ChromeDevTools/Chrome-devtools-MCP: Chrome DevTools for coding agents
+
+**原文链接**: [https://github.com/ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
+生成摘要时出错
+
+---
+
+## 87. The Magical Number Seven, Plus or Minus Two (1956) [pdf]
+
+**原文标题**: The Magical Number Seven, Plus or Minus Two (1956) [pdf]
+
+**原文链接**: [https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf](https://labs.la.utexas.edu/gilden/files/2016/04/MagicNumberSeven-Miller1956.pdf)
+
+生成摘要时出错
+
+---
+
+## 88. GitHub Wiki Search Engine Enablement
+
+**原文标题**: GitHub Wiki Search Engine Enablement
+
+**原文链接**: [https://github-wiki-see.page/](https://github-wiki-see.page/)
+
+生成摘要时出错
+
+---
+
+## 89. Why use mailing lists?
+
+**原文标题**: Why use mailing lists?
+
+**原文链接**: [https://mailarchive.ietf.org/arch/msg/ietf/q6A_anL1u-Y9iXe-vboiOYamsl0/](https://mailarchive.ietf.org/arch/msg/ietf/q6A_anL1u-Y9iXe-vboiOYamsl0/)
+
+生成摘要时出错
+
+---
+
+## 90. Bach Cello Suites (2024)
+
+**原文标题**: Bach Cello Suites (2024)
+
+**原文链接**: [https://bachcellosuites.co.uk/](https://bachcellosuites.co.uk/)
+
+生成摘要时出错
+
+---
+
+## 91. AI model trapped in a Raspberry Pi
+
+**原文标题**: AI model trapped in a Raspberry Pi
+
+**原文链接**: [https://blog.adafruit.com/2025/09/26/ai-model-trapped-in-raspberry-pi-piday-raspberrypi/](https://blog.adafruit.com/2025/09/26/ai-model-trapped-in-raspberry-pi-piday-raspberrypi/)
+
+生成摘要时出错
+
+---
+
+## 92. A platform-jumping prince – History of Prince of Persia's 1990s Ports
+
+**原文标题**: A platform-jumping prince – History of Prince of Persia's 1990s Ports
+
+**原文链接**: [https://www.jordanmechner.com/en/latest-news/#a-platform-jumping-prince](https://www.jordanmechner.com/en/latest-news/#a-platform-jumping-prince)
+
+生成摘要时出错
+
+---
+
+## 93. Pop OS 24.04 LTS Beta
+
+**原文标题**: Pop OS 24.04 LTS Beta
+
+**原文链接**: [https://system76.com/pop/pop-beta/](https://system76.com/pop/pop-beta/)
+
+生成摘要时出错
+
+---
+
+## 94. I built Foyer: a Rust hybrid cache that slashes S3 latency
+
+**原文标题**: I built Foyer: a Rust hybrid cache that slashes S3 latency
+
+**原文链接**: [https://medium.com/@yingjunwu/the-case-for-hybrid-cache-for-object-stores-4b1f02ec6c9a](https://medium.com/@yingjunwu/the-case-for-hybrid-cache-for-object-stores-4b1f02ec6c9a)
+
+生成摘要时出错
+
+---
+
+## 95. Evolving the Multi-User Spaceport
+
+**原文标题**: Evolving the Multi-User Spaceport
+
+**原文链接**: [https://www.spacex.com/updates#multiuser-spaceport](https://www.spacex.com/updates#multiuser-spaceport)
+
+生成摘要时出错
+
+---
+
+## 96. CT scans of 1k lithium-ion batteries show quality risks in inexpensive cells
+
+**原文标题**: CT scans of 1k lithium-ion batteries show quality risks in inexpensive cells
+
+**原文链接**: [https://www.lumafield.com/article/finding-hidden-risks-in-the-battery-supply-chain](https://www.lumafield.com/article/finding-hidden-risks-in-the-battery-supply-chain)
+
+生成摘要时出错
+
+---
+
+## 97. Genode OS Framework
+
+**原文标题**: Genode OS Framework
+
+**原文链接**: [https://genode.org](https://genode.org)
+
+生成摘要时出错
+
+---
+
+## 98. Redis is fast – I'll cache in Postgres
+
+**原文标题**: Redis is fast – I'll cache in Postgres
+
+**原文链接**: [https://dizzy.zone/2025/09/24/Redis-is-fast-Ill-cache-in-Postgres/](https://dizzy.zone/2025/09/24/Redis-is-fast-Ill-cache-in-Postgres/)
+
+生成摘要时出错
+
+---
+
+## 99. The role of Amazon fires in the record atmospheric CO₂ growth in 2024
+
+**原文标题**: The role of Amazon fires in the record atmospheric CO₂ growth in 2024
+
+**原文链接**: [https://essopenarchive.org/doi/full/10.22541/essoar.175874118.83695562/v1](https://essopenarchive.org/doi/full/10.22541/essoar.175874118.83695562/v1)
+
+生成摘要时出错
+
+---
+
+## 100. Why do we remember some life moments but not others?
+
+**原文标题**: Why do we remember some life moments but not others?
+
+**原文链接**: [https://www.bu.edu/articles/2025/why-do-we-remember-some-moments-but-not-others/](https://www.bu.edu/articles/2025/why-do-we-remember-some-moments-but-not-others/)
+
+生成摘要时出错
+
+---
+
