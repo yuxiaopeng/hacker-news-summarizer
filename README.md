@@ -1,153 +1,151 @@
 # Hacker News 每日摘要
     
-这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-10-07.md)
+这是 Top 10 的每日摘要，更多请点击 [Top 100](output/hacker_news_summary_2025-10-08.md)
 
-*最后自动更新时间: 2025-10-07 17:48:52*
-## 1. 高通将收购Arduino
+*最后自动更新时间: 2025-10-08 17:48:02*
+## 1. 经过二十年的调整，MAME破解了Hyper Neo Geo 64。
 
-**原文标题**: Qualcomm to Acquire Arduino
+**原文标题**: After 2 decades of tinkering, MAME cracks the Hyper Neo Geo 64
 
-**原文链接**: [https://www.qualcomm.com/news/releases/2025/10/qualcomm-to-acquire-arduino-accelerating-developers--access-to-i](https://www.qualcomm.com/news/releases/2025/10/qualcomm-to-acquire-arduino-accelerating-developers--access-to-i)
+**原文链接**: [https://www.readonlymemo.com/mame-hyper-neo-geo-support-sound-emulation/](https://www.readonlymemo.com/mame-hyper-neo-geo-support-sound-emulation/)
 
-高通计划收购Arduino——加速开发者获取其领先的边缘计算和人工智能 | 高通
+本文主要探讨了近期在模拟两个复古游戏平台上的进展：Hyper Neo Geo 64 和 Pioneer LaserActive。
 
-基于标题“高通计划收购Arduino——加速开发者获取其领先的边缘计算和人工智能 | 高通”，主要内容是**高通计划收购Arduino。**
+经过二十年的努力，MAME 终于实现了对 Hyper Neo Geo 64 街机系统的正确模拟，包括正常的声音。最初，模拟能够运行，但音质很差。MAME 开发者的近期贡献，特别是 R. Belmont、Happy 和 O. Galibert，显著改善了声音模拟，使该系统真正可玩。即将发布的 MAME 0.282 版本将进一步完善音频，尤其是在具有挑战性的游戏《Xtreme Rally》中。
 
-标题还暗示了收购的一个关键原因：高通认为收购Arduino将**加速开发者获取其领先的边缘计算和人工智能技术。** 这意味着高通将Arduino视为一个有价值的平台，可以扩大其技术在开发者中的覆盖范围和采用率。 这项收购可能会使高通能够将其计算和人工智能能力更直接地整合到Arduino生态系统中，从而为开发者提供更容易获得先进工具和资源的机会。
-
----
-
-## 2. 你用Rails的方式不对
-
-**原文标题**: You're Doing Rails Wrong
-
-**原文链接**: [https://www.bananacurvingmachine.com/articles/you-re-doing-rails-wrong](https://www.bananacurvingmachine.com/articles/you-re-doing-rails-wrong)
-
-这篇幽默文章讽刺了过度复杂化 Rails 开发的趋势，即通过堆叠大量的现代 JavaScript 工具和框架。凯文热情地倡导在 Rails 基础上整合 Vite、React、Babel、PostCSS、Tailwind、ESLint、Prettier、Husky 等技术，甚至可能包括用于服务器端渲染的 Next.js 或 Remix。他还建议使用 StimulusReflex 或 Hotwire 来构建响应式组件，这需要 ActionCable 和 Redis。为了管理这种复杂的环境，他建议使用 Docker、Docker Compose、Fly.io 和 GitHub Actions。
-
-约翰起初印象深刻，但随着技术栈的不断扩展，他变得越来越不知所措。当约翰轻松展示“原生 Rails”的强大和简洁时，文章的核心观点得以凸显，暗示着开发者常常为了使用最新技术而无谓地引入复杂性，而 Rails 本身的核心形式可能非常高效和富有成效。这篇文章最终倡导坚持 Rails 的核心原则，避免来自外部依赖的不必要膨胀。
+本文还涵盖了 Pioneer LaserActive 模拟方面出乎意料的快速进展。在成功模拟 Sega Mega LD 游戏之后，模拟开发者 Nemesis 现在已经支持在该平台上运行 NEC PC Engine 游戏。此外，还实施了重大的性能优化，允许用户从标准硬盘流畅运行 LaserActive 游戏镜像。推荐尝试的游戏包括《Vajra》、《Triad Stone》和《J.B. Harold - Blue Chicago Blues》。
 
 ---
 
-## 3. 宜家产品目录 1951-2021
+## 2. 在法治国家，无端监视聊天内容必须是禁忌。
 
-**原文标题**: IKEA Catalogs 1951-2021
+**原文标题**: Suspicionless ChatControl must be taboo in a state governed by the rule of law
 
-**原文链接**: [https://ikeamuseum.com/en/explore/ikea-catalogue/](https://ikeamuseum.com/en/explore/ikea-catalogue/)
+**原文链接**: [https://digitalcourage.social/@echo_pbreyer/115337976340299372](https://digitalcourage.social/@echo_pbreyer/115337976340299372)
 
-宜家博物馆网站的这个页面是为了庆祝宜家目录，该目录从1951年出版至2021年。现在以数字形式提供，这些目录让人们得以一窥宜家的历史、室内设计趋势以及瑞典人的日常生活。
+文章（如标题和引文所示）围绕着“无端监控聊天”在法治国家中应被视为禁忌这一观点展开。Patrick Breyer在Mastodon上的帖子（如链接digitalcourage.social所示）提到了德国司法部长和“无端……”的概念，暗示了一场关于在没有事先怀疑的情况下监控数字通信的合法性和伦理性的讨论。
 
-数字档案使所有人都能访问这些目录。这些目录多年来发生了显著变化，反映了不断发展的趋势和社会规范。早期的目录很少出现人物，而后来的版本则展示了儿童玩耍，并反映了吸烟或政治观点等文化转变。
+核心问题是大规模监控私人通信（聊天监控）与法治国家原则之间的潜在冲突，后者优先考虑个人权利和自由。“无端监控聊天”意味着在没有任何合理理由的情况下，对公民的数字互动进行全面监控，可能侵犯隐私和言论自由。
 
-虽然目前只有瑞典语目录以数字形式提供，但宜家博物馆希望在未来扩展该档案。这些目录仅精选了商店中销售的部分产品。
+该帖子在去中心化且注重隐私的社交媒体平台Mastodon上分享的背景，进一步强调了对数字监控的担忧。 关于使用Web应用程序需要JavaScript的说明也间接突出了对技术通信的依赖以及与之相关的潜在漏洞。
 
-该网站提供目录内的搜索功能，虽然可能难以找到有关旧产品的详细信息，但博物馆会在可能的情况下提供帮助。1951年之前，宜家是一家邮购公司，并不销售家具。
-
-虽然宜家博物馆为了保存目的而保留了少量纸质目录档案，但数字档案是主要的访问资源。用户可以下载和分享有限数量的目录和图像用于非商业目的，但必须注明出处。该网站提供新闻资料，虽然博物馆不再需要更多的目录，但他们有兴趣听取拥有与宜家相关的独特历史材料的人们的故事。
+本质上，文章和链接的帖子引发了对隐私侵蚀和政府在没有合理怀疑的情况下实施监控措施时可能滥用权力的担忧，并认为这种做法与法治国家不相容。
 
 ---
 
-## 4. Show HN: Timelinize – 在本地私密地整理来自各处你自己的数据
+## 3. 美国证监会批准德克萨斯证券交易所成立，为数十年来首个美国新增综合交易所
 
-**原文标题**: Show HN: Timelinize – Privately organize your own data from everywhere, locally
+**原文标题**: SEC approves Texas Stock Exchange, first new US integrated exchange in decades
 
-**原文链接**: [https://timelinize.com](https://timelinize.com)
+**原文链接**: [https://www.cbsnews.com/texas/news/sec-approves-texas-stock-exchange-txse/](https://www.cbsnews.com/texas/news/sec-approves-texas-stock-exchange-txse/)
 
-Timelinize：一款开源个人档案套件，帮助用户将来自各种来源（照片、视频、消息、社交媒体等）的数据整理到自己计算机上的一个统一时间线上，从而确保隐私和控制。与将数据存储在云端的应用程序不同，Timelinize保留了用户生活中更丰富、更完整的故事。
+美国证券交易委员会(SEC)已批准德克萨斯证券交易所(TXSE)成为国家证券交易所，这是几十年来美国首个新建的完全整合的证券交易所。TXSE总部位于达拉斯，旨在与纽约证券交易所(NYSE)和纳斯达克竞争，计划于2026年推出交易服务、交易所交易产品(ETP)和公司上市。
 
-它不会取代现有应用程序，而是充当“幕后”档案，从Facebook、Google Photos、iMessage、Strava等服务导入数据。Timelinize提供数据的多种视图，包括时间线、地理定位数据的地图、跨平台的对话视图和图库。
+TXSE首席执行官James H. Lee强调，一致性、透明度和伙伴关系是核心价值观。德克萨斯州州长Greg Abbott赞扬该批准是对德克萨斯州经济发展的推动，巩固了该州作为金融中心的地位。
 
-主要功能包括灵活的高速导入、对Live Photos的支持、用于合并数据点的实体感知处理，以及在没有坐标的情况下对数据进行地理定位的能力。它还具有高级位置处理、适用于开发人员的CLI和HTTP API、语义搜索以及灵活的模式。
+在贝莱德和城堡证券等公司的支持下，TXSE从投资者那里筹集了1.2亿美元。其总部于2024年春季在达拉斯开业。该交易所希望避免之前与纽约证券交易所或纳斯达克合并的区域性交易所的命运。
 
-未来的计划包括从时间线创建注释和故事，用天气和新闻等公共数据对其进行扩充，与家人安全共享数据，以及具有直接同步功能的移动应用程序。该应用程序强调独立的、可移植的存储库，并避免使用专有存储方案，从而允许用户使用其他工具探索他们的数据。其目标是利用已生成的数据，而不会中断现有的工作流程。
-
----
-
-## 5. 警方称，他们监视了一名堕胎女性，是为了她的“安全”。
-
-**原文标题**: Police Said They Surveilled Woman Who Had an Abortion for Her 'Safety.'
-
-**原文链接**: [https://www.404media.co/police-said-they-surveilled-woman-who-had-an-abortion-for-her-safety-court-records-show-they-considered-charging-her-with-a-crime/](https://www.404media.co/police-said-they-surveilled-woman-who-had-an-abortion-for-her-safety-court-records-show-they-considered-charging-her-with-a-crime/)
-
-五月，404 Media 报道称，德克萨斯州约翰逊县警长办公室使用 Flock 摄像头（一种人工智能车牌监控系统）定位了一名自行堕胎的女性。警长办公室声称，搜寻并非刑事性质，而是完全为了该女性的安全，并称担心她可能失血过多致死。Flock 也声明该女性从未受到刑事调查，而是作为失踪人员被搜寻。文章的其余部分只有付费订阅者才能访问。
+德克萨斯州拥有强大的经济，美国财富500强企业数量最多，拥有超过5,000家私募股权支持的公司，以及超过1,500家上市公司。其2.4万亿美元的经济规模超过了许多国家。
 
 ---
 
-## 6. 发布 HN：LlamaFarm (YC W22) – 分布式 AI 开源框架
+## 4. 我们在Go的ARM64编译器中发现了一个错误。
 
-**原文标题**: Launch HN: LlamaFarm (YC W22) – Open-source framework for distributed AI
+**原文标题**: We found a bug in Go's ARM64 compiler
 
-**原文链接**: [https://github.com/llama-farm/llamafarm](https://github.com/llama-farm/llamafarm)
+**原文链接**: [https://blog.cloudflare.com/how-we-found-a-bug-in-gos-arm64-compiler/](https://blog.cloudflare.com/how-we-found-a-bug-in-gos-arm64-compiler/)
 
-LlamaFarm 是一个开源框架，旨在简化检索增强和 Agentic AI 应用的创建。它提供以本地优先的开发体验，配备 CLI 工具 (`lf`) 用于管理项目、数据集和聊天会话。主要功能包括约定优于配置（Ollama, Chroma）、可扩展性以替换模型和数据库等组件、生产级架构以及可通过 YAML 配置的可组合 RAG 管道。
+Cloudflare arm64 基础设施偶发性 panic 事件调查报告
 
-该框架强调“配置优于代码”，利用 YAML 模式进行项目定义，并提供友好的 CLI 用于项目初始化、数据集管理和 RAG 查询等任务。它旨在扩展新的提供者、向量存储、解析器和 CLI 命令。
+本文详细介绍了 Cloudflare 对影响其 arm64 基础设施的偶发性 panic 事件的调查。最初，这些 panic 被认为是罕见的堆栈内存损坏而被忽略，但随着 panic 持续且加剧，调查也随之深入。这些错误表现为堆栈展开期间的崩溃，特别是在 `(*unwinder).next` 函数中，原因是致命错误表明展开不完整或由于无效内存访问导致的段错误。
 
-LlamaFarm 包含一个全面的 REST API（OpenAI 兼容），用于集成。`llamafarm.yaml` 文件是项目配置的唯一来源。
+通过分析 coredump 文件，该团队确定崩溃始终发生在从 `Go Netlink` 库的 `(*NetlinkSocket).Receive` 函数进行抢占期间。 这种抢占发生在函数的结尾部分，特别是在两个堆栈指针调整之间。 抢占期间堆栈状态的不一致导致堆栈展开器读取无效的堆栈指针，从而导致崩溃。
 
-本文提供使用 Docker 的快速入门说明，以及手动运行服务的详细信息。它还包括 FDA 信函和罗利 UDO 规划的示例应用程序，演示了多文档摄取和地理空间查询。文档涵盖开发和测试程序、社区支持渠道以及 Apache 2.0 许可。
-
----
-
-## 7. Pigeon (YC W23) 招聘首席全栈工程师
-
-**原文标题**: Pigeon (YC W23) is hiring a lead full stack engineer
-
-**原文链接**: [https://www.ycombinator.com/companies/pigeon/jobs/sjuJOg3-lead-full-stack-software-engineer-remote-us](https://www.ycombinator.com/companies/pigeon/jobs/sjuJOg3-lead-full-stack-software-engineer-remote-us)
-
-Pigeon (YC W23) 招聘首席全栈软件工程师，薪资$12万-$18万+股权 (0.50% - 2.00%)，工作地点纽约市或美国境内远程。
+为了验证他们的假设，他们开发了一个最小化重现程序，这是一个简单的 Go 程序，它创建了一个大型堆栈帧，需要在 arm64 上将堆栈指针调整拆分为两个操作。 这个程序可靠地触发了 panic，证实该问题是与特定堆栈操作期间的异步抢占相关的 Go 运行时错误。当 Go 运行时在这两个操作码之间进行抢占时，就会发生此错误，然后堆栈展开器将读取无效的堆栈指针并崩溃。
 
 ---
 
-## 8. Erlang ARM32 JIT 诞生
+## 5. Show HN: Recall：用Redis支持的持久上下文赋予Claude完美记忆
 
-**原文标题**: Erlang ARM32 JIT is born
+**原文标题**: Show HN: Recall: Give Claude perfect memory with Redis-backed persistent context
 
-**原文链接**: [https://www.grisp.org/blog/posts/2025-10-07-jit-arm32.3](https://www.grisp.org/blog/posts/2025-10-07-jit-arm32.3)
+**原文链接**: [https://www.npmjs.com/package/@joseairosa/recall](https://www.npmjs.com/package/@joseairosa/recall)
 
-BEAM JIT 成功移植至 ARM32 位架构
-
-此博文宣布 BEAM JIT 成功移植至 ARM32 位架构，这是 Erlang 生态系统基金会资助的一个重要里程碑。该团队通过 JIT 编译的 ARM32 机器码成功执行了一个简单的 Erlang 函数 `hello:start/2`。
-
-修改后的 `hello.erl` 模块，替换了 `erl_init:start/2`，仅调用 `erlang:halt/2` 并返回退出代码 42。文章详细介绍了编译过程，包括生成用于分析的 BEAM 汇编代码。QEMU 用于模拟 ARM32，直接运行 `beam.smp`。
-
-JIT 初始化涉及加载共享代码片段和 `erts_beamasm` 模块（用于进程执行的关键指令）。通过将预加载模块精简到仅包含 `hello.erl`，团队简化了调试过程。汇编输出（使用 `-JDdump true` 获取）显示了许多 "Not Yet Implemented" (NYI) 调用，因为仅实现了通往 `halt` 的代码路径。
-
-文章重点介绍了 Erlang 进程的历程，从初始生成到调用 `apply_only` 函数和 Erlang 函数序言。一个关键的见解是解释了标签值，特别是看似随机的数字 687 如何表示带有 BEAM 标签的 Erlang 整数 42，用于类型识别。这一成就为逐步添加更多 Erlang 指令和扩展 JIT 的功能铺平了道路。代码可在 GitHub 上找到。
+无法访问文章链接。
 
 ---
 
-## 9. 梯度下降法是如何运作的？
+## 6. 多克托罗：美国科技卡特尔利用应用程序违法
 
-**原文标题**: How does gradient descent work?
+**原文标题**: Doctorow: American Tech Cartels Use Apps to Break the Law
 
-**原文链接**: [https://centralflows.github.io/part1/](https://centralflows.github.io/part1/)
+**原文链接**: [https://lithub.com/how-american-tech-cartels-use-apps-to-break-the-law/](https://lithub.com/how-american-tech-cartels-use-apps-to-break-the-law/)
 
-本文探讨了梯度下降在深度学习中的工作原理，并将传统优化理论与观察到的行为进行了对比。传统上，人们认为梯度下降会保持在“稳定区域”内，在该区域内，锐度（Hessian矩阵的最大特征值，S(w)）小于2/η（η为学习率）。然而，在实践中，训练经常将锐度推到超过此限制，导致算法退出稳定区域。
+科里·多克托罗在其著作《垃圾化》的节选中指出，美国科技垄断集团正在利用应用程序的复杂性来规避监管并违反法律，他将这种策略称为“如果我们用应用程序来做，那就不是犯罪”。他认为，科技行业竞争的衰落导致了监管俘获，即强大的公司可以影响或逃避监管监督。
 
-尽管超过了这个限制，梯度下降并不会简单地发散。相反，它会沿着顶部Hessian特征向量振荡。关键的见解是，这些振荡，当足够大时，会触发锐度本身的降低。通过考虑三阶泰勒展开可以揭示这一点，它表明沿着顶部Hessian特征向量的振荡隐式地对损失的锐度采取了一个负梯度步骤。
+多克托罗强调，少数几家公司主导的集中行业可以轻松协调政策，并积累资源来压倒监管机构。他认为，由于放松管制而经常缺乏资源的监管机构，无法有效监督这些科技巨头。
 
-这创建了一个负反馈回路：当锐度超过2/η时，振荡会增长，而这些振荡反过来会降低锐度，将系统拉回稳定区域。这种现象被称为“边缘稳定性训练”(EOS)。本文用视频展示了训练期间的锐度、损失和特征向量位移，阐明了这种行为。结果表明，这种动态在各种架构和数据集中都具有普遍性。这与传统的优化理论相矛盾，并强调了考虑高阶泰勒展开以理解深度学习优化的重要性。
+他提供了诸如优步对司机的分类、爱彼迎对住房市场的影响以及金融科技平台等例子，来说明公司如何使用应用程序来掩盖非法活动，例如无视劳动法、高利贷法和价格操纵。他还提到了Plexure，该公司出售供应商用来提高价格的监控数据，以及RealPage，该公司向房东提供租金建议。
+
+多克托罗还指出，知识产权法正被用来阻止用户和竞争对手修改或“去垃圾化”有问题的应用程序，从而进一步巩固了这些科技垄断集团的权力。他认为，科技公司不仅声称由于使用了应用程序而免受法律约束，还通过将修复这些应用程序以保护用户的行为定为犯罪，来维护自己的权力。他的论点核心是，应用程序提供的复杂性使得这些公司能够在现有法规无法触及的范围内运营。
 
 ---
 
-## 10. Tcl语言展示
+## 7. 奥特加假说
 
-**原文标题**: Tcl-Lang Showcase
+**原文标题**: Ortega Hypothesis
 
-**原文链接**: [https://wiki.tcl-lang.org/page/Showcase](https://wiki.tcl-lang.org/page/Showcase)
+**原文链接**: [https://en.wikipedia.org/wiki/Ortega_hypothesis](https://en.wikipedia.org/wiki/Ortega_hypothesis)
 
-标题为“Tcl-Lang 案例展示”的文档本质上是维基页面上突出显示的 Tcl/Tk 项目列表。它展示了 Tcl 脚本语言的多功能性，尤其是在与 GUI 工具包 Tk 一起使用时。
+奥尔特加假说认为，科学进步主要由普通或平庸的科学家做出小型、专业化的累积贡献所驱动。这与“牛顿假说”形成对比，“牛顿假说”认为，重大突破主要是一些杰出科学家在彼此工作的基础上构建的结果。
 
-所列项目涵盖了各种应用，展示了 Tcl 在以下领域的强大功能：
+引文研究普遍支持牛顿假说，表明高引用论文不成比例地引用了精英机构的精英科学家发表的其他高引用论文，这表明小研究在很大程度上依赖于少数杰出论文。然而，文章指出，引用次数可能无法准确反映科学工作的真正影响或价值，并且可能受到社会分层、肤浅的引用习惯以及理论论文比实验报告更容易被引用的趋势的影响而产生偏差。
 
-*   **图形和可视化：** 创建螺线图、在 Tk 画布上渲染 3D 多面体，以及可能的通用 3D 画布实现 (Canvas3d)。
-*   **GUI 开发：** 利用和扩展 Tk 的功能，包括自定义几何管理器 (Pave)、窗口部件池 (TkPool) 和用户界面引擎 (tkEngine)。
-*   **游戏和模拟：** 开发各种游戏，如 1010!、TriPeaks Solitaire、Triangle Madness，以及模拟，如 HP-15 计算器模拟。
-*   **实用程序和工具：** 可能的 hyperhelp 包和其他实用程序，如 GRIDPLUS2。
-*   **编程概念：** 演示循环技术 (Zen Loops) 以及可能的其他编程概念 (trains3.tcl)。
+该假说以何塞·奥尔特加·伊·加塞特的名字命名，他认为虽然一些科学工作可以由进行“机械性脑力劳动”的“令人震惊的平庸”专家完成，但真正的科学进步取决于天才们在其他天才建立的框架基础上进行构建。“奥尔特加假说”仅捕捉到奥尔特加整体理论的一小部分，误导了他的观点，即天才而非庸才是科学进步的主要驱动力。关于普通科学家与精英科学家相对贡献的争论仍未解决。
 
-一些项目标题旁边存在维基页面链接表明这些是社区贡献的项目或示例，进一步说明了 Tcl 活跃的用户群和易于获得的资源。本质上，该文档作为一个精选列表，旨在展示 Tcl 和 Tk 组合的实际应用和优势。
+---
+
+## 8. 现在开放构建： Gemini CLI 扩展介绍
+
+**原文标题**: Now open for building: Introducing Gemini CLI extensions
+
+**原文链接**: [https://blog.google/technology/developers/gemini-cli-extensions/](https://blog.google/technology/developers/gemini-cli-extensions/)
+
+本文宣布推出 Gemini CLI 扩展，这是一个全新的框架，允许开发者自定义 Gemini CLI（一个由 AI 驱动的终端代理），并将其连接到他们偏好的工具。 这些扩展充当“增强功能”，提供与数据库、设计平台和支付服务等外部工具的预打包集成。 每个扩展都包含一个“剧本”，指导 AI 如何有效地使用新工具，无需复杂的设置即可立即获得有意义的结果。
+
+开发者可以使用命令“gemini extensions install <GitHub URL or local path>”来安装扩展。 本文重点介绍了开放生态系统的发展，该生态系统得到了 Google、Dynatrace、Elastic、Figma、Harness、Postman、Shopify、Snyk 和 Stripe 等行业领导者以及开源社区的贡献。
+
+本文还介绍了 Gemini CLI 扩展页面，用于发现和浏览可用的扩展。 文章重点介绍了几个启动合作伙伴，展示了用于应用程序性能监控 (Dynatrace)、Elasticsearch 数据分析 (Elastic)、设计集成 (Figma)、CI/CD 智能 (Harness)、API 管理 (Postman)、Shopify 开发 (Shopify)、安全集成 (Snyk) 和 Stripe API 交互 (Stripe) 的扩展。
+
+本文强调，扩展通过模型上下文协议 (MCP) 增加了智能和个性化，超越了简单的连接。 还展示了 Google 创建的扩展，包括用于云原生部署（Cloud Run、GKE、gcloud、Google Cloud Observability）、应用程序构建器（代码审查、安全、Google Maps Platform、Flutter、Chrome DevTools、Firebase、Genkit）以及生成式 AI 和数据交互（Nano Banana、Looker、Data Cloud、数据库 MCP 工具箱）的扩展。 开发者可以组合扩展并链接命令来创建个性化的工具链。
+
+---
+
+## 9. 2025年诺贝尔化学奖
+
+**原文标题**: Nobel Prize in Chemistry 2025
+
+**原文链接**: [https://www.nobelprize.org/prizes/chemistry/2025/popular-information/](https://www.nobelprize.org/prizes/chemistry/2025/popular-information/)
+
+2025年诺贝尔化学奖授予北川进、理查德·罗布森和奥马尔·亚吉，以表彰他们开发了金属有机框架（MOFs），一种具有大腔室的新型分子结构，可以捕获和释放分子。
+
+受分子模型启发，理查德·罗布森于1989年创造了第一个MOF，展示了设计具有宽敞内部空间晶体结构的潜力。北川进秉持着在“无用”中发现价值的原则，在20世纪90年代创造了具有开放通道的稳定三维MOF。他还认识到它们与沸石等现有材料相比具有独特的灵活性。奥马尔·亚吉受控制材料创造的愿望驱动，于1995年创造了“金属有机框架”一词，并在1999年展示了MOF-5，这是一种高度稳定且空间宽敞的材料，几克重的面积相当于一个足球场。
+
+亚吉进一步展示了MOFs的合理设计和修改，为它们的多样化应用铺平了道路。如今，MOFs被用于各种目的，包括从沙漠空气中收集水、污染物提取、二氧化碳捕获、氢气储存和水果的缓慢成熟。获奖者的开创性工作使化学家能够设计数千种不同的MOF，彻底改变了材料科学，并为各种化学应用创造了新的可能性。
+
+---
+
+## 10. Synology据称销量暴跌后，撤回禁止第三方硬盘的政策
+
+**原文标题**: Synology reverses policy banning third-party HDDs after sales allegedly plummet
+
+**原文链接**: [https://www.guru3d.com/story/synology-reverses-policy-banning-thirdparty-hdds-after-nas-sales-plummet/](https://www.guru3d.com/story/synology-reverses-policy-banning-thirdparty-hdds-after-nas-sales-plummet/)
+
+群晖取消限制第三方硬盘政策，此前销量因政策下跌。2025年初，群晖强制用户购买其更昂贵的硬盘，导致希捷和西数等品牌的第三方硬盘几乎无法使用。此举引发用户和评测人员的强烈反对，他们批评此举贪婪，并试图锁定客户。
+
+据报道，在限制政策实施后，群晖2025款NAS型号的销量急剧下降。随着DSM 7.3的发布，群晖悄然恢复了对第三方硬盘和2.5英寸SATA固态硬盘的支持。希捷、西数和其他品牌的硬盘现在可以像以前一样工作，具有完整的监控、警报和存储功能。
+
+虽然群晖没有明确承认错误，但这一决定被视为对销售压力和社区强烈抗议的回应。批评人士认为，这一事件损害了群晖的声誉，因为许多用户已经转向其他品牌，或者犹豫是否购买另一款群晖产品。恢复开放硬盘支持被认为是一个积极的发展，恢复了最初使群晖受欢迎的灵活性。但这种逆转是否足以重新获得沮丧用户的信任，还有待观察。
 
 ---
 
@@ -155,205 +153,206 @@ JIT 初始化涉及加载共享代码片段和 `erts_beamasm` 模块（用于进
 
 | 序号 | 文件 |
 | --- | --- |
-| 1 | [2025-10-07](output/hacker_news_summary_2025-10-07.md) |
-| 2 | [2025-10-06](output/hacker_news_summary_2025-10-06.md) |
-| 3 | [2025-10-04](output/hacker_news_summary_2025-10-04.md) |
+| 1 | [2025-10-08](output/hacker_news_summary_2025-10-08.md) |
+| 2 | [2025-10-07](output/hacker_news_summary_2025-10-07.md) |
+| 3 | [2025-10-06](output/hacker_news_summary_2025-10-06.md) |
 | 4 | [2025-10-05](output/hacker_news_summary_2025-10-05.md) |
-| 5 | [2025-10-02](output/hacker_news_summary_2025-10-02.md) |
+| 5 | [2025-10-04](output/hacker_news_summary_2025-10-04.md) |
 | 6 | [2025-10-03](output/hacker_news_summary_2025-10-03.md) |
-| 7 | [2025-09-30](output/hacker_news_summary_2025-09-30.md) |
+| 7 | [2025-10-02](output/hacker_news_summary_2025-10-02.md) |
 | 8 | [2025-10-01](output/hacker_news_summary_2025-10-01.md) |
-| 9 | [2025-09-28](output/hacker_news_summary_2025-09-28.md) |
+| 9 | [2025-09-30](output/hacker_news_summary_2025-09-30.md) |
 | 10 | [2025-09-29](output/hacker_news_summary_2025-09-29.md) |
-| 11 | [2025-09-26](output/hacker_news_summary_2025-09-26.md) |
+| 11 | [2025-09-28](output/hacker_news_summary_2025-09-28.md) |
 | 12 | [2025-09-27](output/hacker_news_summary_2025-09-27.md) |
-| 13 | [2025-09-24](output/hacker_news_summary_2025-09-24.md) |
+| 13 | [2025-09-26](output/hacker_news_summary_2025-09-26.md) |
 | 14 | [2025-09-25](output/hacker_news_summary_2025-09-25.md) |
-| 15 | [2025-09-23](output/hacker_news_summary_2025-09-23.md) |
-| 16 | [2025-09-21](output/hacker_news_summary_2025-09-21.md) |
+| 15 | [2025-09-24](output/hacker_news_summary_2025-09-24.md) |
+| 16 | [2025-09-23](output/hacker_news_summary_2025-09-23.md) |
 | 17 | [2025-09-22](output/hacker_news_summary_2025-09-22.md) |
-| 18 | [2025-09-19](output/hacker_news_summary_2025-09-19.md) |
-| 19 | [2025-09-20](output/hacker_news_summary_2025-09-20.md) |
-| 20 | [2025-09-17](output/hacker_news_summary_2025-09-17.md) |
+| 18 | [2025-09-20](output/hacker_news_summary_2025-09-20.md) |
+| 19 | [2025-09-21](output/hacker_news_summary_2025-09-21.md) |
+| 20 | [2025-09-19](output/hacker_news_summary_2025-09-19.md) |
 | 21 | [2025-09-18](output/hacker_news_summary_2025-09-18.md) |
-| 22 | [2025-09-15](output/hacker_news_summary_2025-09-15.md) |
+| 22 | [2025-09-17](output/hacker_news_summary_2025-09-17.md) |
 | 23 | [2025-09-16](output/hacker_news_summary_2025-09-16.md) |
-| 24 | [2025-09-14](output/hacker_news_summary_2025-09-14.md) |
-| 25 | [2025-09-13](output/hacker_news_summary_2025-09-13.md) |
-| 26 | [2025-09-11](output/hacker_news_summary_2025-09-11.md) |
-| 27 | [2025-09-12](output/hacker_news_summary_2025-09-12.md) |
-| 28 | [2025-09-09](output/hacker_news_summary_2025-09-09.md) |
+| 24 | [2025-09-15](output/hacker_news_summary_2025-09-15.md) |
+| 25 | [2025-09-14](output/hacker_news_summary_2025-09-14.md) |
+| 26 | [2025-09-12](output/hacker_news_summary_2025-09-12.md) |
+| 27 | [2025-09-13](output/hacker_news_summary_2025-09-13.md) |
+| 28 | [2025-09-11](output/hacker_news_summary_2025-09-11.md) |
 | 29 | [2025-09-10](output/hacker_news_summary_2025-09-10.md) |
 | 30 | [2025-09-08](output/hacker_news_summary_2025-09-08.md) |
-| 31 | [2025-09-07](output/hacker_news_summary_2025-09-07.md) |
-| 32 | [2025-09-05](output/hacker_news_summary_2025-09-05.md) |
+| 31 | [2025-09-09](output/hacker_news_summary_2025-09-09.md) |
+| 32 | [2025-09-07](output/hacker_news_summary_2025-09-07.md) |
 | 33 | [2025-09-06](output/hacker_news_summary_2025-09-06.md) |
-| 34 | [2025-09-03](output/hacker_news_summary_2025-09-03.md) |
-| 35 | [2025-09-04](output/hacker_news_summary_2025-09-04.md) |
-| 36 | [2025-09-02](output/hacker_news_summary_2025-09-02.md) |
-| 37 | [2025-08-31](output/hacker_news_summary_2025-08-31.md) |
-| 38 | [2025-09-01](output/hacker_news_summary_2025-09-01.md) |
-| 39 | [2025-08-29](output/hacker_news_summary_2025-08-29.md) |
-| 40 | [2025-08-30](output/hacker_news_summary_2025-08-30.md) |
-| 41 | [2025-08-27](output/hacker_news_summary_2025-08-27.md) |
-| 42 | [2025-08-28](output/hacker_news_summary_2025-08-28.md) |
-| 43 | [2025-08-26](output/hacker_news_summary_2025-08-26.md) |
-| 44 | [2025-08-25](output/hacker_news_summary_2025-08-25.md) |
-| 45 | [2025-08-23](output/hacker_news_summary_2025-08-23.md) |
-| 46 | [2025-08-24](output/hacker_news_summary_2025-08-24.md) |
-| 47 | [2025-08-22](output/hacker_news_summary_2025-08-22.md) |
-| 48 | [2025-08-21](output/hacker_news_summary_2025-08-21.md) |
-| 49 | [2025-08-20](output/hacker_news_summary_2025-08-20.md) |
-| 50 | [2025-08-19](output/hacker_news_summary_2025-08-19.md) |
-| 51 | [2025-08-17](output/hacker_news_summary_2025-08-17.md) |
-| 52 | [2025-08-18](output/hacker_news_summary_2025-08-18.md) |
-| 53 | [2025-08-15](output/hacker_news_summary_2025-08-15.md) |
-| 54 | [2025-08-16](output/hacker_news_summary_2025-08-16.md) |
-| 55 | [2025-08-14](output/hacker_news_summary_2025-08-14.md) |
-| 56 | [2025-08-13](output/hacker_news_summary_2025-08-13.md) |
+| 34 | [2025-09-04](output/hacker_news_summary_2025-09-04.md) |
+| 35 | [2025-09-05](output/hacker_news_summary_2025-09-05.md) |
+| 36 | [2025-09-03](output/hacker_news_summary_2025-09-03.md) |
+| 37 | [2025-09-02](output/hacker_news_summary_2025-09-02.md) |
+| 38 | [2025-08-31](output/hacker_news_summary_2025-08-31.md) |
+| 39 | [2025-09-01](output/hacker_news_summary_2025-09-01.md) |
+| 40 | [2025-08-29](output/hacker_news_summary_2025-08-29.md) |
+| 41 | [2025-08-30](output/hacker_news_summary_2025-08-30.md) |
+| 42 | [2025-08-27](output/hacker_news_summary_2025-08-27.md) |
+| 43 | [2025-08-28](output/hacker_news_summary_2025-08-28.md) |
+| 44 | [2025-08-26](output/hacker_news_summary_2025-08-26.md) |
+| 45 | [2025-08-25](output/hacker_news_summary_2025-08-25.md) |
+| 46 | [2025-08-23](output/hacker_news_summary_2025-08-23.md) |
+| 47 | [2025-08-24](output/hacker_news_summary_2025-08-24.md) |
+| 48 | [2025-08-22](output/hacker_news_summary_2025-08-22.md) |
+| 49 | [2025-08-21](output/hacker_news_summary_2025-08-21.md) |
+| 50 | [2025-08-20](output/hacker_news_summary_2025-08-20.md) |
+| 51 | [2025-08-19](output/hacker_news_summary_2025-08-19.md) |
+| 52 | [2025-08-17](output/hacker_news_summary_2025-08-17.md) |
+| 53 | [2025-08-18](output/hacker_news_summary_2025-08-18.md) |
+| 54 | [2025-08-15](output/hacker_news_summary_2025-08-15.md) |
+| 55 | [2025-08-16](output/hacker_news_summary_2025-08-16.md) |
+| 56 | [2025-08-14](output/hacker_news_summary_2025-08-14.md) |
 | 57 | [2025-08-12](output/hacker_news_summary_2025-08-12.md) |
-| 58 | [2025-08-11](output/hacker_news_summary_2025-08-11.md) |
-| 59 | [2025-08-08](output/hacker_news_summary_2025-08-08.md) |
+| 58 | [2025-08-13](output/hacker_news_summary_2025-08-13.md) |
+| 59 | [2025-08-11](output/hacker_news_summary_2025-08-11.md) |
 | 60 | [2025-08-10](output/hacker_news_summary_2025-08-10.md) |
-| 61 | [2025-08-09](output/hacker_news_summary_2025-08-09.md) |
+| 61 | [2025-08-08](output/hacker_news_summary_2025-08-08.md) |
 | 62 | [2025-08-07](output/hacker_news_summary_2025-08-07.md) |
-| 63 | [2025-08-06](output/hacker_news_summary_2025-08-06.md) |
-| 64 | [2025-08-05](output/hacker_news_summary_2025-08-05.md) |
-| 65 | [2025-08-04](output/hacker_news_summary_2025-08-04.md) |
-| 66 | [2025-08-02](output/hacker_news_summary_2025-08-02.md) |
-| 67 | [2025-08-03](output/hacker_news_summary_2025-08-03.md) |
-| 68 | [2025-07-31](output/hacker_news_summary_2025-07-31.md) |
-| 69 | [2025-08-01](output/hacker_news_summary_2025-08-01.md) |
-| 70 | [2025-07-30](output/hacker_news_summary_2025-07-30.md) |
-| 71 | [2025-07-29](output/hacker_news_summary_2025-07-29.md) |
-| 72 | [2025-07-28](output/hacker_news_summary_2025-07-28.md) |
-| 73 | [2025-07-27](output/hacker_news_summary_2025-07-27.md) |
-| 74 | [2025-07-25](output/hacker_news_summary_2025-07-25.md) |
-| 75 | [2025-07-26](output/hacker_news_summary_2025-07-26.md) |
-| 76 | [2025-07-24](output/hacker_news_summary_2025-07-24.md) |
-| 77 | [2025-07-23](output/hacker_news_summary_2025-07-23.md) |
-| 78 | [2025-07-22](output/hacker_news_summary_2025-07-22.md) |
-| 79 | [2025-07-20](output/hacker_news_summary_2025-07-20.md) |
+| 63 | [2025-08-09](output/hacker_news_summary_2025-08-09.md) |
+| 64 | [2025-08-06](output/hacker_news_summary_2025-08-06.md) |
+| 65 | [2025-08-05](output/hacker_news_summary_2025-08-05.md) |
+| 66 | [2025-08-04](output/hacker_news_summary_2025-08-04.md) |
+| 67 | [2025-08-02](output/hacker_news_summary_2025-08-02.md) |
+| 68 | [2025-08-03](output/hacker_news_summary_2025-08-03.md) |
+| 69 | [2025-07-31](output/hacker_news_summary_2025-07-31.md) |
+| 70 | [2025-08-01](output/hacker_news_summary_2025-08-01.md) |
+| 71 | [2025-07-30](output/hacker_news_summary_2025-07-30.md) |
+| 72 | [2025-07-29](output/hacker_news_summary_2025-07-29.md) |
+| 73 | [2025-07-28](output/hacker_news_summary_2025-07-28.md) |
+| 74 | [2025-07-27](output/hacker_news_summary_2025-07-27.md) |
+| 75 | [2025-07-25](output/hacker_news_summary_2025-07-25.md) |
+| 76 | [2025-07-26](output/hacker_news_summary_2025-07-26.md) |
+| 77 | [2025-07-24](output/hacker_news_summary_2025-07-24.md) |
+| 78 | [2025-07-23](output/hacker_news_summary_2025-07-23.md) |
+| 79 | [2025-07-22](output/hacker_news_summary_2025-07-22.md) |
 | 80 | [2025-07-21](output/hacker_news_summary_2025-07-21.md) |
-| 81 | [2025-07-18](output/hacker_news_summary_2025-07-18.md) |
+| 81 | [2025-07-20](output/hacker_news_summary_2025-07-20.md) |
 | 82 | [2025-07-19](output/hacker_news_summary_2025-07-19.md) |
 | 83 | [2025-07-17](output/hacker_news_summary_2025-07-17.md) |
-| 84 | [2025-07-16](output/hacker_news_summary_2025-07-16.md) |
-| 85 | [2025-07-14](output/hacker_news_summary_2025-07-14.md) |
-| 86 | [2025-07-15](output/hacker_news_summary_2025-07-15.md) |
+| 84 | [2025-07-18](output/hacker_news_summary_2025-07-18.md) |
+| 85 | [2025-07-15](output/hacker_news_summary_2025-07-15.md) |
+| 86 | [2025-07-16](output/hacker_news_summary_2025-07-16.md) |
 | 87 | [2025-07-13](output/hacker_news_summary_2025-07-13.md) |
-| 88 | [2025-07-12](output/hacker_news_summary_2025-07-12.md) |
-| 89 | [2025-07-10](output/hacker_news_summary_2025-07-10.md) |
+| 88 | [2025-07-14](output/hacker_news_summary_2025-07-14.md) |
+| 89 | [2025-07-12](output/hacker_news_summary_2025-07-12.md) |
 | 90 | [2025-07-11](output/hacker_news_summary_2025-07-11.md) |
 | 91 | [2025-07-09](output/hacker_news_summary_2025-07-09.md) |
-| 92 | [2025-07-08](output/hacker_news_summary_2025-07-08.md) |
-| 93 | [2025-07-05](output/hacker_news_summary_2025-07-05.md) |
-| 94 | [2025-07-07](output/hacker_news_summary_2025-07-07.md) |
-| 95 | [2025-07-06](output/hacker_news_summary_2025-07-06.md) |
-| 96 | [2025-07-04](output/hacker_news_summary_2025-07-04.md) |
-| 97 | [2025-07-03](output/hacker_news_summary_2025-07-03.md) |
-| 98 | [2025-07-01](output/hacker_news_summary_2025-07-01.md) |
-| 99 | [2025-07-02](output/hacker_news_summary_2025-07-02.md) |
-| 100 | [2025-06-30](output/hacker_news_summary_2025-06-30.md) |
-| 101 | [2025-06-29](output/hacker_news_summary_2025-06-29.md) |
-| 102 | [2025-06-28](output/hacker_news_summary_2025-06-28.md) |
-| 103 | [2025-06-27](output/hacker_news_summary_2025-06-27.md) |
-| 104 | [2025-06-25](output/hacker_news_summary_2025-06-25.md) |
-| 105 | [2025-06-26](output/hacker_news_summary_2025-06-26.md) |
-| 106 | [2025-06-23](output/hacker_news_summary_2025-06-23.md) |
-| 107 | [2025-06-24](output/hacker_news_summary_2025-06-24.md) |
-| 108 | [2025-06-22](output/hacker_news_summary_2025-06-22.md) |
-| 109 | [2025-06-21](output/hacker_news_summary_2025-06-21.md) |
-| 110 | [2025-06-20](output/hacker_news_summary_2025-06-20.md) |
-| 111 | [2025-06-19](output/hacker_news_summary_2025-06-19.md) |
-| 112 | [2025-06-18](output/hacker_news_summary_2025-06-18.md) |
+| 92 | [2025-07-10](output/hacker_news_summary_2025-07-10.md) |
+| 93 | [2025-07-07](output/hacker_news_summary_2025-07-07.md) |
+| 94 | [2025-07-08](output/hacker_news_summary_2025-07-08.md) |
+| 95 | [2025-07-05](output/hacker_news_summary_2025-07-05.md) |
+| 96 | [2025-07-06](output/hacker_news_summary_2025-07-06.md) |
+| 97 | [2025-07-04](output/hacker_news_summary_2025-07-04.md) |
+| 98 | [2025-07-03](output/hacker_news_summary_2025-07-03.md) |
+| 99 | [2025-07-01](output/hacker_news_summary_2025-07-01.md) |
+| 100 | [2025-07-02](output/hacker_news_summary_2025-07-02.md) |
+| 101 | [2025-06-30](output/hacker_news_summary_2025-06-30.md) |
+| 102 | [2025-06-29](output/hacker_news_summary_2025-06-29.md) |
+| 103 | [2025-06-28](output/hacker_news_summary_2025-06-28.md) |
+| 104 | [2025-06-27](output/hacker_news_summary_2025-06-27.md) |
+| 105 | [2025-06-25](output/hacker_news_summary_2025-06-25.md) |
+| 106 | [2025-06-26](output/hacker_news_summary_2025-06-26.md) |
+| 107 | [2025-06-23](output/hacker_news_summary_2025-06-23.md) |
+| 108 | [2025-06-24](output/hacker_news_summary_2025-06-24.md) |
+| 109 | [2025-06-22](output/hacker_news_summary_2025-06-22.md) |
+| 110 | [2025-06-21](output/hacker_news_summary_2025-06-21.md) |
+| 111 | [2025-06-20](output/hacker_news_summary_2025-06-20.md) |
+| 112 | [2025-06-19](output/hacker_news_summary_2025-06-19.md) |
 | 113 | [2025-06-17](output/hacker_news_summary_2025-06-17.md) |
-| 114 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
+| 114 | [2025-06-18](output/hacker_news_summary_2025-06-18.md) |
 | 115 | [2025-06-16](output/hacker_news_summary_2025-06-16.md) |
-| 116 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
-| 117 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
+| 116 | [2025-06-15](output/hacker_news_summary_2025-06-15.md) |
+| 117 | [2025-06-14](output/hacker_news_summary_2025-06-14.md) |
 | 118 | [2025-06-13](output/hacker_news_summary_2025-06-13.md) |
-| 119 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
-| 120 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
-| 121 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
-| 122 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
-| 123 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 119 | [2025-06-12](output/hacker_news_summary_2025-06-12.md) |
+| 120 | [2025-06-10](output/hacker_news_summary_2025-06-10.md) |
+| 121 | [2025-06-11](output/hacker_news_summary_2025-06-11.md) |
+| 122 | [2025-06-09](output/hacker_news_summary_2025-06-09.md) |
+| 123 | [2025-06-08](output/hacker_news_summary_2025-06-08.md) |
 | 124 | [2025-06-07](output/hacker_news_summary_2025-06-07.md) |
-| 125 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
-| 126 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
-| 127 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
-| 128 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
-| 129 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
-| 130 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
-| 131 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
-| 132 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
-| 133 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
-| 134 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
+| 125 | [2025-06-06](output/hacker_news_summary_2025-06-06.md) |
+| 126 | [2025-06-04](output/hacker_news_summary_2025-06-04.md) |
+| 127 | [2025-06-05](output/hacker_news_summary_2025-06-05.md) |
+| 128 | [2025-06-03](output/hacker_news_summary_2025-06-03.md) |
+| 129 | [2025-06-02](output/hacker_news_summary_2025-06-02.md) |
+| 130 | [2025-06-01](output/hacker_news_summary_2025-06-01.md) |
+| 131 | [2025-05-31](output/hacker_news_summary_2025-05-31.md) |
+| 132 | [2025-05-30](output/hacker_news_summary_2025-05-30.md) |
+| 133 | [2025-05-29](output/hacker_news_summary_2025-05-29.md) |
+| 134 | [2025-05-28](output/hacker_news_summary_2025-05-28.md) |
 | 135 | [2025-05-26](output/hacker_news_summary_2025-05-26.md) |
-| 136 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
+| 136 | [2025-05-27](output/hacker_news_summary_2025-05-27.md) |
 | 137 | [2025-05-25](output/hacker_news_summary_2025-05-25.md) |
-| 138 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 138 | [2025-05-24](output/hacker_news_summary_2025-05-24.md) |
 | 139 | [2025-05-22](output/hacker_news_summary_2025-05-22.md) |
-| 140 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
-| 141 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
-| 142 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
-| 143 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
-| 144 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
-| 145 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
-| 146 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
-| 147 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
-| 148 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
-| 149 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
-| 150 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
-| 151 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
-| 152 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
-| 153 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
-| 154 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
-| 155 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
-| 156 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
-| 157 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
-| 158 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
-| 159 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
-| 160 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
-| 161 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 140 | [2025-05-23](output/hacker_news_summary_2025-05-23.md) |
+| 141 | [2025-05-21](output/hacker_news_summary_2025-05-21.md) |
+| 142 | [2025-05-20](output/hacker_news_summary_2025-05-20.md) |
+| 143 | [2025-05-19](output/hacker_news_summary_2025-05-19.md) |
+| 144 | [2025-05-18](output/hacker_news_summary_2025-05-18.md) |
+| 145 | [2025-05-16](output/hacker_news_summary_2025-05-16.md) |
+| 146 | [2025-05-17](output/hacker_news_summary_2025-05-17.md) |
+| 147 | [2025-05-15](output/hacker_news_summary_2025-05-15.md) |
+| 148 | [2025-05-14](output/hacker_news_summary_2025-05-14.md) |
+| 149 | [2025-05-13](output/hacker_news_summary_2025-05-13.md) |
+| 150 | [2025-05-12](output/hacker_news_summary_2025-05-12.md) |
+| 151 | [2025-05-10](output/hacker_news_summary_2025-05-10.md) |
+| 152 | [2025-05-11](output/hacker_news_summary_2025-05-11.md) |
+| 153 | [2025-05-09](output/hacker_news_summary_2025-05-09.md) |
+| 154 | [2025-05-08](output/hacker_news_summary_2025-05-08.md) |
+| 155 | [2025-05-07](output/hacker_news_summary_2025-05-07.md) |
+| 156 | [2025-05-06](output/hacker_news_summary_2025-05-06.md) |
+| 157 | [2025-05-05](output/hacker_news_summary_2025-05-05.md) |
+| 158 | [2025-05-04](output/hacker_news_summary_2025-05-04.md) |
+| 159 | [2025-05-03](output/hacker_news_summary_2025-05-03.md) |
+| 160 | [2025-05-02](output/hacker_news_summary_2025-05-02.md) |
+| 161 | [2025-05-01](output/hacker_news_summary_2025-05-01.md) |
 | 162 | [2025-04-30](output/hacker_news_summary_2025-04-30.md) |
-| 163 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
-| 164 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
-| 165 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
-| 166 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
-| 167 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
-| 168 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
-| 169 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
-| 170 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
-| 171 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
-| 172 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
-| 173 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
-| 174 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
-| 175 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 163 | [2025-04-29](output/hacker_news_summary_2025-04-29.md) |
+| 164 | [2025-04-28](output/hacker_news_summary_2025-04-28.md) |
+| 165 | [2025-04-27](output/hacker_news_summary_2025-04-27.md) |
+| 166 | [2025-04-26](output/hacker_news_summary_2025-04-26.md) |
+| 167 | [2025-04-24](output/hacker_news_summary_2025-04-24.md) |
+| 168 | [2025-04-25](output/hacker_news_summary_2025-04-25.md) |
+| 169 | [2025-04-23](output/hacker_news_summary_2025-04-23.md) |
+| 170 | [2025-04-21](output/hacker_news_summary_2025-04-21.md) |
+| 171 | [2025-04-22](output/hacker_news_summary_2025-04-22.md) |
+| 172 | [2025-04-20](output/hacker_news_summary_2025-04-20.md) |
+| 173 | [2025-04-19](output/hacker_news_summary_2025-04-19.md) |
+| 174 | [2025-04-18](output/hacker_news_summary_2025-04-18.md) |
+| 175 | [2025-04-17](output/hacker_news_summary_2025-04-17.md) |
 | 176 | [2025-04-16](output/hacker_news_summary_2025-04-16.md) |
-| 177 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
-| 178 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
-| 179 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
-| 180 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
-| 181 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
-| 182 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
-| 183 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
-| 184 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
-| 185 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
-| 186 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
-| 187 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
-| 188 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
-| 189 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
-| 190 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
-| 191 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
-| 192 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
-| 193 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
-| 194 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
-| 195 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
-| 196 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
-| 197 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
-| 198 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
-| 199 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
-| 200 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
-| 201 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
-| 202 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
+| 177 | [2025-04-15](output/hacker_news_summary_2025-04-15.md) |
+| 178 | [2025-04-14](output/hacker_news_summary_2025-04-14.md) |
+| 179 | [2025-04-13](output/hacker_news_summary_2025-04-13.md) |
+| 180 | [2025-04-12](output/hacker_news_summary_2025-04-12.md) |
+| 181 | [2025-04-11](output/hacker_news_summary_2025-04-11.md) |
+| 182 | [2025-04-09](output/hacker_news_summary_2025-04-09.md) |
+| 183 | [2025-04-08](output/hacker_news_summary_2025-04-08.md) |
+| 184 | [2025-04-06](output/hacker_news_summary_2025-04-06.md) |
+| 185 | [2025-03-31](output/hacker_news_summary_2025-03-31.md) |
+| 186 | [2025-04-01](output/hacker_news_summary_2025-04-01.md) |
+| 187 | [2025-03-29](output/hacker_news_summary_2025-03-29.md) |
+| 188 | [2025-04-07](output/hacker_news_summary_2025-04-07.md) |
+| 189 | [2025-04-03](output/hacker_news_summary_2025-04-03.md) |
+| 190 | [2025-03-30](output/hacker_news_summary_2025-03-30.md) |
+| 191 | [2025-04-05](output/hacker_news_summary_2025-04-05.md) |
+| 192 | [2025-04-04](output/hacker_news_summary_2025-04-04.md) |
+| 193 | [2025-04-02](output/hacker_news_summary_2025-04-02.md) |
+| 194 | [2025-03-19](output/hacker_news_summary_2025-03-19.md) |
+| 195 | [2025-03-22](output/hacker_news_summary_2025-03-22.md) |
+| 196 | [2025-03-25](output/hacker_news_summary_2025-03-25.md) |
+| 197 | [2025-03-26](output/hacker_news_summary_2025-03-26.md) |
+| 198 | [2025-03-27](output/hacker_news_summary_2025-03-27.md) |
+| 199 | [2025-03-20](output/hacker_news_summary_2025-03-20.md) |
+| 200 | [2025-03-23](output/hacker_news_summary_2025-03-23.md) |
+| 201 | [2025-03-28](output/hacker_news_summary_2025-03-28.md) |
+| 202 | [2025-03-21](output/hacker_news_summary_2025-03-21.md) |
+| 203 | [2025-03-24](output/hacker_news_summary_2025-03-24.md) |
