@@ -2,147 +2,228 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. Gemini 3 Flash：为速度而生的前沿智能
+## 1. 从2026年1月起，所有ACM出版物都将实现开放获取。
 
-**原文标题**: Gemini 3 Flash: Frontier intelligence built for speed
+**原文标题**: Beginning January 2026, all ACM publications will be made open access
 
-**原文链接**: [https://blog.google/products/gemini/gemini-3-flash/](https://blog.google/products/gemini/gemini-3-flash/)
+**原文链接**: [https://dl.acm.org/openaccess](https://dl.acm.org/openaccess)
 
-2025年12月17日，谷歌宣布发布 Gemini 3 模型家族的最新成员——**Gemini 3 Flash**。该模型旨在以高速和低成本提供“前沿智能”，在具备专业级推理能力的同时，其延迟较前代产品显著降低。
+美国计算机协会 (ACM) 宣布，将于 2026 年 1 月正式全面转型为完全开放获取 (OA) 的出版模式。此举标志着自 2020 年启动的五年战略计划进入收官阶段，旨在推动 ACM 数字图书馆彻底脱离基于订阅的“付费阅读”系统。
 
-**核心性能亮点：**
-*   **卓越智能：** 该模型在多项基准测试中超越了 Gemini 2.5 Pro，在 GPQA Diamond（博士级推理）上得分 90.4%，在 MMMU Pro 上得分 81.2%。
-*   **效率与速度：** 其运行速度比 Gemini 2.5 Pro 快 3 倍，完成任务平均可节省 30% 的 token 使用量。
-*   **卓越编程：** 在 SWE-bench Verified 测试中获得 78% 的评分，在智能体编程能力上甚至超越了 Gemini 3 Pro。
-*   **高性价比：** 价格设定为每 100 万输入 token 0.50 美元，每 100 万输出 token 3.00 美元。
+**此次转型的关键点包括：**
 
-**对用户与开发者的影响：**
-*   **面向开发者：** Gemini 3 Flash 针对智能体工作流、实时多模态分析和高频编程任务进行了优化。开发者可通过 Google AI Studio 中的 Gemini API、Vertex AI 以及全新的智能体开发平台 **Google Antigravity** 调用该模型。
-*   **面向普通用户：** 该模型现已成为 Gemini 应用和搜索中 AI 模式的默认模型。用户可以体验增强的多模态功能，例如实时视频分析（如高尔夫挥杆动作指导）、通过语音即时创建应用，以及根据音频录音生成测试题。
+*   **ACM Open 模式：** 变革的核心机制是“ACM Open”，这是一种转换模式。参与机构通过支付一笔年度固定费用，即可为其所属作者提供无限量的 OA 出版支持，并获得对整个 ACM 数字图书馆的永久访问权。
+*   **时间表：** 转型目前已在进行中。从 2026 年 1 月起，所有发表在 ACM 期刊、会议论文集和杂志上的新研究文章都将默认以 OA 形式发布。
+*   **全球影响：** 通过取消付费墙，ACM 旨在提升计算机科学研究的知名度、覆盖面和影响力，与更广泛的“开放科学”运动保持一致。这确保了全球的研究人员、从业者和学生都能无障碍地获取 70 多年的学术内容。
+*   **公平性与包容性：** 为确保模式的可持续性和包容性，ACM 将为来自中低收入国家或所属机构尚未加入 ACM Open 计划的作者提供费用减免和补贴。其目标是确保没有任何作者会因缺乏资金而无法发表论文。
 
-Gemini 3 Flash 目前已面向开发者和企业提供预览版，同时正在全球范围内的 Gemini 应用和搜索中逐步推出。它与 Gemini 3 Pro 及 Deep Think 共同构成了目前的下一代模型阵容。
+到 2026 年，ACM 数字图书馆预计将成为一个完全开放的资源库，由机构合作伙伴关系而非个人或图书馆订阅提供支持。这一转变代表了科学界在将高质量技术研究转化为公共利益方面迈出的重要里程碑。
 
 ---
 
-## 2. 来自两栖和爬行动物的肠道细菌可消除小鼠体内的肿瘤。
+## 2. 古典雕像的彩绘并不难看。
 
-**原文标题**: Gut bacteria from amphibians and reptiles achieve tumor elimination in mice
+**原文标题**: Classical statues were not painted horribly
 
-**原文链接**: [https://www.jaist.ac.jp/english/whatsnew/press/2025/12/17-1.html](https://www.jaist.ac.jp/english/whatsnew/press/2025/12/17-1.html)
+**原文链接**: [https://worksinprogress.co/issue/were-classical-statues-painted-horribly/](https://worksinprogress.co/issue/were-classical-statues-painted-horribly/)
 
-日本北陆先端科学技术大学院大学（JAIST）由Eijiro Miyako教授领导的研究团队发现了一种突破性的癌症治疗方法，该方法利用了从两栖动物和爬行动物肠道中分离出的细菌。这项发表在《肠道微生物》（*Gut Microbes*）杂志上的研究指出，源自日本树蛙的美洲尤文氏菌（*Ewingella americana*）是一种极其强效的抗癌剂。
+在《古典雕像的彩绘并不丑陋》一文中，作者指出，当代对古希腊和古罗马雕像进行的彩绘复原呈现出一种俗丽且“丑陋”的外观，这其实是当代制作水平低劣所致，而非古代审美取向的反映。
 
-在结直肠癌小鼠模型中，仅需单次静脉注射美洲尤文氏菌，即可实现100%的完全缓解率，其疗效显著优于标准化学疗法（阿霉素）和免疫疗法（抗PD-L1）。该细菌利用独特的双重作用机制发挥药效：
-1. **直接细胞毒性：** 作为一种兼性厌氧菌，它能选择性地定植在肿瘤的缺氧及免疫抑制环境中，并在24小时内繁殖3000倍，从而直接摧毁癌细胞。
-2. **免疫激活：** 它的存在会引发T细胞、B细胞和中性粒细胞的大规模招募，同时刺激促炎细胞因子（TNF-α和IFN-γ）的产生，以进一步攻击肿瘤。
+尽管史学界已公认古典大理石雕像最初是经过彩绘的，但一些备受瞩目的复原作品（如文森兹·布林克曼的作品）往往呈现出平淡、无光泽且饱和度过高的色彩，令现代观众在审美上感到不悦。对此，普遍的解释是“审美变迁论”，该理论认为，数百年来看惯了白色大理石雕像的现代人已成为“色彩恐惧症”患者，无法欣赏古代那种“异质”的审美。
 
-该疗法的一个核心亮点是其卓越的安全性。基于肿瘤独特的血管和代谢特征，这些细菌仅在癌组织中聚集，而在肝脏或肺部等健康器官中完全没有定植。细菌在24小时内即可从血液中清除，仅引起短暂、轻微的炎症，且无慢性毒性。
+作者通过以下证据挑战了这一理论：
+1. **古代视觉艺术**：古罗马的壁画和马赛克对雕塑及人物的描绘展现了精妙、自然且细腻的色彩运用，在现代人眼中依然非常美观。
+2. **跨文化比较**：其他时代和文化（如古埃及、中世纪尼泊尔和西班牙巴洛克时期）的彩绘雕塑通常被认为令人震撼或带有神秘感，但很少会像现代的古典复原品那样显得“丑陋”。
 
-这项研究为利用天然、非工程化细菌作为“活体药物”建立了概念验证。未来的研究将致力于将该疗法扩展到其他难治性恶性肿瘤（如胰腺癌和乳腺癌），并优化给药方法。研究结果表明，尚未开发的生物多样性在下一代肿瘤治疗中蕴藏着巨大的潜力。
-
----
-
-## 3. OBS Studio 迎来全新渲染器
-
-**原文标题**: OBS Studio Gets a New Renderer
-
-**原文链接**: [https://obsproject.com/blog/obs-studio-gets-a-new-renderer](https://obsproject.com/blog/obs-studio-gets-a-new-renderer)
-
-OBS Studio 32.0.0 为 macOS 引入了实验性的 Metal 图形 API 渲染器，旨在最终取代旧有的 OpenGL 后端。此次更新旨在通过利用现代 GPU 架构，解锁更高的性能并降低开销。
-
-向 Metal 的过渡面临着重大的技术挑战，因为 OBS Studio 的核心渲染器最初是仿照 Direct3D 等旧版 API 构建的。旧版 API 会自动处理资源管理和同步，而 Metal 等现代 API 则要求应用程序手动管理这些任务。为了避免彻底重写 OBS 核心，开发人员直接在新的 Metal 后端中实现了这些管理职责。
-
-其中一个主要的障碍涉及**着色器转译 (Shader Transpilation)**。OBS 使用的是一种较旧的 HLSL（高级着色器语言）方言，必须在运行时将其转换为 Metal 着色语言 (MSL)。这一过程非常复杂，原因如下：
-*   **更严格的类型定义：** MSL 要求输入和输出使用独立的结构体，而 HLSL 仅使用一个。后端必须扫描并相应地拆分这些结构。
-*   **无全局变量：** 与 HLSL 或 OpenGL 不同，MSL 不支持全局“uniform”变量。转译器必须重写每个着色器函数，以显式地将这些数据作为参数传递，这实际上重构了应用程序中每个特效文件的代码。
-
-目前，由于存在已知问题且缺乏大规模测试，Metal 后端被标记为“实验性”。虽然 OpenGL 目前仍是默认选项，但开发人员正邀请用户和有经验的 Metal 开发者测试新系统并提供反馈。本文是详细介绍 OBS 渲染引擎演进系列文章的第一篇。
+作者总结道，这些复原作品纯粹是“拙劣的画作”。它们的失败是因为现代专家缺乏古代大师的艺术造诣，且刻板地遵循只复原考古证实部分的保护原则。这导致复原品成了只有“底色”的版本，忽略了原本能提供深度和真实感的细腻叠色、罩染和艺术细节。最后，作者暗示，这些复原作品之所以维持这种博人眼球的丑陋感，可能是因为这比细腻、高水准的艺术再创作更能引发公众的兴趣。
 
 ---
 
-## 4. 我的支付代理名叫 George，而不是 stripe-agent。
+## 3. 你的职责是交付经你验证可运行的代码。
 
-**原文标题**: My payment agent is named George, not stripe-agent
+**原文标题**: Your job is to deliver code you have proven to work
 
-**原文链接**: [https://blog.kestrelsnest.social/posts/2025-12-14-why-my-payment-agent-is-named-george-not-stripe-agent/](https://blog.kestrelsnest.social/posts/2025-12-14-why-my-payment-agent-is-named-george-not-stripe-agent/)
+**原文链接**: [https://simonwillison.net/2025/Dec/18/code-proven-to-work/](https://simonwillison.net/2025/Dec/18/code-proven-to-work/)
 
-在这篇文章中，一位资深开发者反对科技行业过度使用功能化术语来剥离人性的倾向。作者没有将AI子代理命名为“stripe-agent”或“security-checker”等技术化标签，而是以体现特定价值观的历史人物为其命名：负责支付的叫“乔治”（华盛顿·卡弗），负责设计的叫“瑞”（伊姆斯），负责安全审计的叫“阿加莎”（克里斯蒂），负责无障碍化的则叫“海伦”（凯勒）。
+在《交付经过验证的代码是你的职责》一文中，作者指出，AI 辅助开发的兴起导致部分工程师出现了“失职”现象——他们提交大量未经测试的拉取请求（PR），将验证负担转嫁给了审查者。文章的核心观点是：开发者的首要责任不仅是生成代码，而是提供代码确实有效的确凿证明。
 
-这种做法被称为“意图仪式”，旨在对抗将用户简化为“日活（MAU）”或“转化率”等数据指标的非人化趋向。通过援引“乔治”，作者会提醒自己构建可持续且资源丰富的系统；通过召唤“阿加莎”，他会代入侦探思维去挖掘隐藏的漏洞。这些名字充当了心理框架，在工作开始前便塑造了开发者的思考方式，确保软件是为了服务人类需求，而非仅仅追求技术基准。
+作者概述了证明代码质量的两个核心步骤：
 
-作者强调，在他四十年的职业生涯中，软件始终是为生物学家、农民等不同群体解决现实问题的媒介。以那些激励人心的人物来命名工具，创造出了一种“价值观的合奏”，让不同的视角相互叠加以完善产品。例如，通过为海伦·凯勒设立专属代理，作者发现了一些通用设计代理所忽略的无障碍缺陷。
+1.  **手动测试：** 开发者必须亲眼见证代码在预期状态下运行。这种证明应通过终端输出、日志或 UI 更改的录屏记录在 PR 中，且过程必须涵盖“正常路径”和复杂的边缘情况。
+2.  **自动化测试：** 既然大语言模型（LLM）已让编写测试变得轻而易举，那么就没有任何理由跳过这一步。每一次代码提交都应包含自动化测试，用以验证更改，并确保在代码被回滚时测试会报错。
 
-文章最终指出，尽管AI工具并不具备人格，但我们赋予它们的名字决定了我们对自身工作的要求标准。通过将工具人格化，作者确保他的代码始终处于为人服务的状态，并以此提醒自己：软件只是手段，而非目的。
+展望 2025 年的“编程智能体”（如 Claude Code），作者强调开发者必须教会这些工具证明自己的工作。这包括提示智能体执行其编写的代码、截取 CSS 更改的截图，以及扩展现有的测试模式。
 
----
-
-## 5. Coursera 将与 Udemy 合并
-
-**原文标题**: Coursera to combine with Udemy
-
-**原文链接**: [https://investor.coursera.com/news/news-details/2025/Coursera-to-Combine-with-Udemy-to-Empower-the-Global-Workforce-with-Skills-for-the-AI-Era/default.aspx](https://investor.coursera.com/news/news-details/2025/Coursera-to-Combine-with-Udemy-to-Empower-the-Global-Workforce-with-Skills-for-the-AI-Era/default.aspx)
-
-Coursera 与 Udemy 宣布达成最终协议，将通过全股票交易进行合并，打造在线学习与技能发展领域的全球领导者。此次合并旨在通过整合两大平台的独特优势，应对“AI 时代”下劳动力技能提升的迫切需求。
-
-**合并要点：**
-
-*   **战略目标：** 此次合并旨在通过将 Coursera 的学术及专业证书认证与 Udemy 庞大且灵活的技能市场相结合，为全球劳动力赋能。其目标是为学习者、企业和政府提供“一站式”服务。
-*   **规模与影响力：** 合并后的公司将服务超过 2 亿名学习者，以及逾 16,000 家企业、政府和校园客户。它将提供海量的内容库，包含来自 77,000 名专家讲师以及 325 多家领先大学和行业合作伙伴的 220,000 多门课程。
-*   **AI 整合：** 新实体计划加速对 AI 驱动工具（如个性化学习助手和自动化课程映射）的投资，以帮助各机构更高效地填补技能缺口。
-*   **领导层：** Coursera 现任首席执行官 Jeff Maggioncalda 将领导合并后的公司。Udemy 首席执行官 Greg Brown 预计将加入董事会。
-*   **财务协同效应：** 两家公司预计在交易完成后两年内，主要通过优化营销支出和提升企业运营效率，每年实现超过 1.5 亿美元的成本协同效应。
-*   **时间表：** 在获得监管批准和双方股东同意的前提下，该交易预计将于 2025 年初完成。
-
-此次合并代表了教育科技（EdTech）行业的重大整合，使合并后的实体成为全球终身学习和职业发展领域的主导力量。
+归根结底，虽然 AI 可以“批量炮制”代码，但它无法承担责任。人类开发者的价值现在体现在通过证据确立问责机制，确保每一项提交在交付给同事或维护者之前都经过了充分验证。
 
 ---
 
-## 6. 解释美国中年死亡率日益扩大的差距：是否存在确凿证据？
+## 4. 利用开源技术实现 NVIDIA HGX B200 GPU 虚拟化
 
-**原文标题**: Explaining the Widening Divides in US Midlife Mortality: Is There a Smoking Gun?
+**原文标题**: Virtualizing Nvidia HGX B200 GPUs with Open Source
 
-**原文链接**: [https://www.nber.org/papers/w34553](https://www.nber.org/papers/w34553)
+**原文链接**: [https://www.ubicloud.com/blog/virtualizing-nvidia-hgx-b200-gpus-with-open-source](https://www.ubicloud.com/blog/virtualizing-nvidia-hgx-b200-gpus-with-open-source)
 
-在NBER工作论文《解释美国中年死亡率差距的扩大：是否存在“确凿证据”？》中，Christopher L. Foote及其同事研究了1992年至2019年间美国死亡率不平等的剧增现象。在此期间，大学毕业生与无学位者之间的预期寿命差距增加了一倍以上，从2.6年扩大到6.3年。同时，县域间的死亡率不平等程度上升了30%，且日益严重的农村健康劣势进一步加剧了这一趋势。
+Ubicloud 最近记录了其利用开源技术栈成功实现 NVIDIA HGX B200 GPU 虚拟化的过程。与前几代产品不同，B200 采用 SXM 架构，依赖高度集成的 NVLink/NVSwitch 互联结构，相比离散的 PCIe 插卡，其在虚拟化方面面临独特挑战。
 
-作者指出，受教育程度驱动了地理死亡率模式的根本转变。研究结果揭示了“两个美国”的故事：
-1.  **大学毕业生：** 该群体的死亡率大幅下降，地理不平等程度降低，这意味着全美范围内的健康结果不仅得到了改善，而且趋于一致。
-2.  **非大学毕业生：** 该群体呈现出截然相反的趋势，死亡率上升且空间不平等加剧，这意味着对于没有学位的人来说，居住地对生存率的影响显著增强。
+为了平衡灵活性与性能，Ubicloud 采用了“共享 NVSwitch 多租户”（Shared NVSwitch Multitenancy）模式。该方法允许进行 GPU 分区（分配 1、2、4 或 8 个 GPU），同时在每个分区内保持全额 NVLink 带宽，既避免了完全直通的局限性，也规避了 vGPU 切片带来的性能开销。
 
-研究确认**吸烟率**是解释这三种趋势的主要“确凿证据”。虽然收入、州政策和其他健康行为起到了次要作用，但烟草使用的差异是导致差距扩大的首要原因。尽管有此发现，作者指出仍有一个谜团待解：目前尚不完全清楚，为什么“地方效应”（即个人局部环境的具体影响）对非大学毕业生的吸烟习惯和死亡率的影响，会比对大学毕业生的影响大得多。
+**关键技术发现：**
 
----
+*   **驱动程序同步：** B200 需要 NVIDIA “开源”驱动系列。至关重要的是，宿主机上的 NVIDIA Fabric Manager 版本必须与客户机（Guest VM）内部的驱动程序版本完全匹配，以防止 CUDA 初始化失败。
+*   **PCI 拓扑
 
-## 7. TikTok非法追踪购物习惯和约会软件的使用？
-
-**原文标题**: TikTok unlawfully tracks shopping habits and use of dating apps?
-
-**原文链接**: [https://noyb.eu/en/tiktok-unlawfully-tracks-your-shopping-habits-and-your-use-dating-apps](https://noyb.eu/en/tiktok-unlawfully-tracks-your-shopping-habits-and-your-use-dating-apps)
-
-隐私保护组织 **noyb** 已向奥地利数据保护局 (DSB) 对 **TikTok**、社交应用 **Grindr** 以及追踪公司 **AppsFlyer** 提起两项正式投诉。投诉的核心在于非法的跨应用追踪以及系统性地向用户隐瞒个人数据。
-
-主要指控包括：
-
-*   **非法跨应用追踪：** TikTok 被指控在缺乏有效法律依据的情况下，跨第三方网站和应用追踪用户。具体而言，一名用户通过数据访问请求发现，他在 Grindr 的使用记录通过 AppsFlyer 被分享给了 TikTok。这使得 TikTok 能够推断出涉及其性取向的敏感信息，而此类信息受到 GDPR 第 9 条的严格保护。
-*   **未经同意共享数据：** 投诉称，Grindr 和 AppsFlyer 在未经用户同意且缺乏 GDPR 第 6 条规定的有效法律依据的情况下，与 TikTok 共享了这些敏感数据。据报道，AppsFlyer 充当了中间商，协助数据从第三方应用流向 TikTok。
-*   **阻碍数据访问权：** TikTok 被指控违反了 GDPR 第 12 条和第 15 条，未能向用户提供其个人数据的完整副本。尽管 TikTok 提供了一个“下载工具”，但 noyb 声称该工具是刻意不完整的，仅提供 TikTok 认为“相关”的内容，而非所有被处理的数据。投诉人在经过反复且持续的查询后，才最终获得了完全的透明度。
-
-**诉求行动：**
-noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现完整的数据透明。此外，他们还呼吁根据 GDPR 第 83 条处以“有效、适度且具有威慑力”的罚款，以防止未来的违规行为。
+通过编排这些组件并直接与 Fabric Manager API 交互，Ubicloud 成功为现代 AI 工作负载提供了高性能、私有且开源的 GPU 虚拟化方案。
 
 ---
 
-## 8. AWS CEO says replacing junior devs with AI is 'one of the dumbest ideas'
+## 5. 苹果礼品卡兑换安全吗？
 
-**原文标题**: AWS CEO says replacing junior devs with AI is 'one of the dumbest ideas'
+**原文标题**: Are Apple gift cards safe to redeem?
 
-**原文链接**: [https://www.finalroundai.com/blog/aws-ceo-ai-cannot-replace-junior-developers](https://www.finalroundai.com/blog/aws-ceo-ai-cannot-replace-junior-developers)
+**原文链接**: [https://daringfireball.net/linked/2025/12/17/are-apple-gift-cards-safe-to-redeem](https://daringfireball.net/linked/2025/12/17/are-apple-gift-cards-safe-to-redeem)
+
+John Gruber 的这篇文章讨论了兑换 Apple 礼品卡的风险，重点介绍了 Paris Buttfield-Addison 的典型案例。在尝试兑换从大型零售商购买的 500 美元礼品卡后，Buttfield-Addison 的整个 Apple 账户（包括 iCloud 数据和多年的媒体购买记录）在没有任何解释的情况下被停用。
+
+Gruber 强调了苹果反欺诈系统“卡夫卡式”的荒诞本质，称其运作如同一个不透明的“黑盒”。即便在案件升级至苹果“高管关系”团队后，也耗时近一周才恢复账户。这种延迟和缺乏透明度的现状，促使 Adam Engst 等技术评论员将兑换礼品卡比作“数字俄罗斯轮盘赌”，并建议消费者完全避免使用，以防账户面临“瓦解”。
+
+核心观点包括：
+*   **账户风险：** 单张受损或被篡改的礼品卡就可能导致用户数字生活和购买记录的永久丢失。
+*   **系统性不透明：** 苹果不提供停用理由，且最初不提供明确的恢复路径。
+*   **自动化担忧：** Gruber 质疑这些关乎重大的决定是否是由存在缺陷的算法而非人工做出的。
+*   **安全建议：** 在苹果澄清相关流程之前，Gruber 建议仅在 Apple Store 实体店兑换礼品卡，且仅用于不与主账户关联的消费。
+
+虽然在巨大的公众压力下，Buttfield-Addison 的账户最终得以恢复，但文章总结认为，Apple 礼品卡的安全性依然存疑，用户在这一宁可过度防范欺诈也不惜牺牲消费者安全的系统面前依然脆弱。
+
+---
+
+## 6. 乔纳森·布洛在过去的十年里为你设计了1400个谜题。
+
+**原文标题**: Jonathan Blow has spent the past decade designing 1,400 puzzles for you
+
+**原文链接**: [https://arstechnica.com/gaming/2025/12/jonathan-blow-has-spent-the-past-decade-designing-1400-puzzles-for-you/](https://arstechnica.com/gaming/2025/12/jonathan-blow-has-spent-the-past-decade-designing-1400-puzzles-for-you/)
+
+《见证者》（The Witness）的著名开发者乔纳森·布洛（Jonathan Blow）揭晓了他的最新项目——《沉星之令》（Order of the Sinking Star）。该游戏最初构思于2016年，原计划是一个为期两年的新引擎“概念验证”小项目，但在九年的开发过程中，它已成长为一部计划于2026年发布的宏大解谜史诗。
+
+游戏采用2D网格化移动系统，包含约1,400个独立谜题。布洛估计，大多数玩家需要60至100小时才能达成“第一重结局”，而追求全收集的玩家可能需要花费400至500小时才能掌握其深层内容。
+
+**核心特性与机制：**
+*   **四个迥异的世界：** 玩家从中心枢纽出发向四个基准方向探索，每个方向都引入了独特的机制：方块搬运能力、基于镜面的克隆与传送、踏脚石寻路，以及由能量束驱动的外骨骼。
+*   **组合复杂性：** 在初期的线性阶段之后，这四个世界的机制将开始交织。布洛将其描述为一种“组合爆炸”，游戏的真正复杂性与“魔力”也由此展开。
+*   **开发理念：** 得益于《见证者》在商业上的成功，布洛将延长的开发时间用于“设计研究”。值得注意的是，巨大的游戏规模迫使布洛比以往项目更依赖玩家测试，以管理那种“无法一次性全部装进脑海”的复杂程度。
+
+尽管开发周期漫长且成本高昂，布洛坚称该项目代表了他对探索游戏设计全部潜力的承诺，而非仅仅是为了交付一个“可上市”的产品。
+
+---
+
+## 7. 军用软件控制等级标准
+
+**原文标题**: Military Standard on Software Control Levels
+
+**原文链接**: [https://entropicthoughts.com/mil-std-882e-software-control](https://entropicthoughts.com/mil-std-882e-software-control)
+
+本文简要概述了 **MIL-STD-882E** 标准。该标准根据软件对潜在危险系统的控制程度，将软件风险分为四个等级：
+
+1.  **直接即时控制：** 最高风险等级。软件直接管理系统，一旦发生故障，会立即造成伤害。
+2.  **延迟或间接关键控制：** 高风险。表现为软件错误与产生的危险之间存在时间延迟，或者需要人类对软件信号立即做出反应以防止灾难（例如反应堆紧急停堆）。
+3.  **经核实的间接控制：** 较低风险。软件仅提供建议，在采取任何行动之前，可以通过独立方法对这些建议进行核实。
+4.  **辅助用途：** 最低风险等级。软件仅承担次要功能，不参与关键系统的控制。
+
+作者总结认为，该框架在当今的意义日益凸显。随着大语言模型 (LLMs) 和计算机视觉等技术的进步，软件正被集成到此前完全由人类管理的复杂流程中，这使得明确了解软件控制及其潜在危险变得至关重要。
+
+---
+
+## 8. Using TypeScript to Obtain One of the Rarest License Plates
+
+**原文标题**: Using TypeScript to Obtain One of the Rarest License Plates
+
+**原文链接**: [https://www.jack.bio/blog/licenseplate](https://www.jack.bio/blog/licenseplate)
 
 生成摘要时出错
 
 ---
 
-## 9. I got hacked: My Hetzner server started mining Monero
+## 9. Dogalog: A realtime Prolog-based livecoding music environment
+
+**原文标题**: Dogalog: A realtime Prolog-based livecoding music environment
+
+**原文链接**: [https://github.com/danja/dogalog](https://github.com/danja/dogalog)
+
+生成摘要时出错
+
+---
+
+## 10. Please Just Try Htmx
+
+**原文标题**: Please Just Try Htmx
+
+**原文链接**: [http://pleasejusttryhtmx.com/](http://pleasejusttryhtmx.com/)
+
+生成摘要时出错
+
+---
+
+## 11. Creating apps like Signal could be 'hostile activity' claims UK watchdog
+
+**原文标题**: Creating apps like Signal could be 'hostile activity' claims UK watchdog
+
+**原文链接**: [https://www.techradar.com/vpn/vpn-privacy-security/creating-apps-like-signal-or-whatsapp-could-be-hostile-activity-claims-uk-watchdog](https://www.techradar.com/vpn/vpn-privacy-security/creating-apps-like-signal-or-whatsapp-could-be-hostile-activity-claims-uk-watchdog)
+
+生成摘要时出错
+
+---
+
+## 12. RCE via ND6 Router Advertisements in FreeBSD
+
+**原文标题**: RCE via ND6 Router Advertisements in FreeBSD
+
+**原文链接**: [https://www.freebsd.org/security/advisories/FreeBSD-SA-25:12.rtsold.asc](https://www.freebsd.org/security/advisories/FreeBSD-SA-25:12.rtsold.asc)
+
+生成摘要时出错
+
+---
+
+## 13. Slowness is a virtue
+
+**原文标题**: Slowness is a virtue
+
+**原文链接**: [https://blog.jakobschwichtenberg.com/p/slowness-is-a-virtue](https://blog.jakobschwichtenberg.com/p/slowness-is-a-virtue)
+
+生成摘要时出错
+
+---
+
+## 14. Microscopic robots that sense, think, act, and compute
+
+**原文标题**: Microscopic robots that sense, think, act, and compute
+
+**原文链接**: [https://www.science.org/doi/10.1126/scirobotics.adu8009](https://www.science.org/doi/10.1126/scirobotics.adu8009)
+
+生成摘要时出错
+
+---
+
+## 15. Hightouch (YC S19) Is Hiring
+
+**原文标题**: Hightouch (YC S19) Is Hiring
+
+**原文链接**: [https://hightouch.com/careers](https://hightouch.com/careers)
+
+生成摘要时出错
+
+---
+
+## 16. Egyptian Hieroglyphs: Lesson 1
+
+**原文标题**: Egyptian Hieroglyphs: Lesson 1
+
+**原文链接**: [https://www.egyptianhieroglyphs.net/egyptian-hieroglyphs/lesson-1/](https://www.egyptianhieroglyphs.net/egyptian-hieroglyphs/lesson-1/)
+
+生成摘要时出错
+
+---
+
+## 17. I got hacked: My Hetzner server started mining Monero
 
 **原文标题**: I got hacked: My Hetzner server started mining Monero
 
@@ -152,87 +233,107 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 10. Show HN: High-Performance Wavelet Matrix for Python, Implemented in Rust
+## 18. What is an elliptic curve? (2019)
 
-**原文标题**: Show HN: High-Performance Wavelet Matrix for Python, Implemented in Rust
+**原文标题**: What is an elliptic curve? (2019)
 
-**原文链接**: [https://pypi.org/project/wavelet-matrix/](https://pypi.org/project/wavelet-matrix/)
-
-生成摘要时出错
-
----
-
-## 11. Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE
-
-**原文标题**: Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE
-
-**原文链接**: [https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/](https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/)
+**原文链接**: [https://www.johndcook.com/blog/2019/02/21/what-is-an-elliptic-curve/](https://www.johndcook.com/blog/2019/02/21/what-is-an-elliptic-curve/)
 
 生成摘要时出错
 
 ---
 
-## 12. A Safer Container Ecosystem with Docker: Free Docker Hardened Images
+## 19. Show HN: A local-first memory store for LLM agents (SQLite)
 
-**原文标题**: A Safer Container Ecosystem with Docker: Free Docker Hardened Images
+**原文标题**: Show HN: A local-first memory store for LLM agents (SQLite)
 
-**原文链接**: [https://www.docker.com/blog/docker-hardened-images-for-every-developer/](https://www.docker.com/blog/docker-hardened-images-for-every-developer/)
-
-生成摘要时出错
-
----
-
-## 13. The Number That Turned Sideways
-
-**原文标题**: The Number That Turned Sideways
-
-**原文链接**: [https://zuriby.github.io/math.github.io/the-number-that-turned-sideways.html](https://zuriby.github.io/math.github.io/the-number-that-turned-sideways.html)
+**原文链接**: [https://github.com/CaviraOSS/OpenMemory](https://github.com/CaviraOSS/OpenMemory)
 
 生成摘要时出错
 
 ---
 
-## 14. Developers can now submit apps to ChatGPT
+## 20. After ruining a treasured water resource, Iran is drying up
 
-**原文标题**: Developers can now submit apps to ChatGPT
+**原文标题**: After ruining a treasured water resource, Iran is drying up
 
-**原文链接**: [https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/](https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/)
-
-生成摘要时出错
-
----
-
-## 15. Fast SEQUENCE iteration in Common Lisp
-
-**原文标题**: Fast SEQUENCE iteration in Common Lisp
-
-**原文链接**: [https://world-playground-deceit.net/blog/2025/12/fast-sequence-iteration-in-common-lisp.html](https://world-playground-deceit.net/blog/2025/12/fast-sequence-iteration-in-common-lisp.html)
+**原文链接**: [https://e360.yale.edu/features/iran-water-drought-dams-qanats](https://e360.yale.edu/features/iran-water-drought-dams-qanats)
 
 生成摘要时出错
 
 ---
 
-## 16. Cloudflare Radar 2025 Year in Review
+## 21. systemd v259 Released
 
-**原文标题**: Cloudflare Radar 2025 Year in Review
+**原文标题**: systemd v259 Released
 
-**原文链接**: [https://radar.cloudflare.com/year-in-review/2025](https://radar.cloudflare.com/year-in-review/2025)
-
-生成摘要时出错
-
----
-
-## 17. Zmij: Faster floating point double-to-string conversion
-
-**原文标题**: Zmij: Faster floating point double-to-string conversion
-
-**原文链接**: [https://vitaut.net/posts/2025/faster-dtoa/](https://vitaut.net/posts/2025/faster-dtoa/)
+**原文链接**: [https://github.com/systemd/systemd/releases/tag/v259](https://github.com/systemd/systemd/releases/tag/v259)
 
 生成摘要时出错
 
 ---
 
-## 18. Working quickly is more important than it seems (2015)
+## 22. Heart and Kidney Diseases and Type 2 Diabetes May Be One Ailment
+
+**原文标题**: Heart and Kidney Diseases and Type 2 Diabetes May Be One Ailment
+
+**原文链接**: [https://www.scientificamerican.com/article/heart-and-kidney-diseases-plus-type-2-diabetes-may-be-one-illness-treatable/](https://www.scientificamerican.com/article/heart-and-kidney-diseases-plus-type-2-diabetes-may-be-one-illness-treatable/)
+
+生成摘要时出错
+
+---
+
+## 23. From profiling to kernel patch: the journey to an eBPF performance fix
+
+**原文标题**: From profiling to kernel patch: the journey to an eBPF performance fix
+
+**原文链接**: [https://rovarma.com/articles/from-profiling-to-kernel-patch-the-journey-to-an-ebpf-performance-fix/](https://rovarma.com/articles/from-profiling-to-kernel-patch-the-journey-to-an-ebpf-performance-fix/)
+
+生成摘要时出错
+
+---
+
+## 24. Most parked domains now serving malicious content
+
+**原文标题**: Most parked domains now serving malicious content
+
+**原文链接**: [https://krebsonsecurity.com/2025/12/most-parked-domains-now-serving-malicious-content/](https://krebsonsecurity.com/2025/12/most-parked-domains-now-serving-malicious-content/)
+
+生成摘要时出错
+
+---
+
+## 25. The Big City; Save the Flophouses (1996)
+
+**原文标题**: The Big City; Save the Flophouses (1996)
+
+**原文链接**: [https://www.nytimes.com/1996/01/14/magazine/the-big-city-save-the-flophouses.html](https://www.nytimes.com/1996/01/14/magazine/the-big-city-save-the-flophouses.html)
+
+生成摘要时出错
+
+---
+
+## 26. AI helps ship faster but it produces 1.7× more bugs
+
+**原文标题**: AI helps ship faster but it produces 1.7× more bugs
+
+**原文链接**: [https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report](https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report)
+
+生成摘要时出错
+
+---
+
+## 27. It's all about momentum
+
+**原文标题**: It's all about momentum
+
+**原文链接**: [https://combo.cc/posts/its-all-about-momentum-innit/](https://combo.cc/posts/its-all-about-momentum-innit/)
+
+生成摘要时出错
+
+---
+
+## 28. Working quickly is more important than it seems (2015)
 
 **原文标题**: Working quickly is more important than it seems (2015)
 
@@ -242,347 +343,37 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 19. How SQLite is tested
+## 29. Online Textbook for Braid groups and knots and tangles
 
-**原文标题**: How SQLite is tested
+**原文标题**: Online Textbook for Braid groups and knots and tangles
 
-**原文链接**: [https://sqlite.org/testing.html](https://sqlite.org/testing.html)
-
-生成摘要时出错
-
----
-
-## 20. A Cosmic Offense: Elias Canetti's contest against death
-
-**原文标题**: A Cosmic Offense: Elias Canetti's contest against death
-
-**原文链接**: [https://www.commonwealmagazine.org/cosmic-offense](https://www.commonwealmagazine.org/cosmic-offense)
+**原文链接**: [https://matthematics.com/redoak/redoak.html](https://matthematics.com/redoak/redoak.html)
 
 生成摘要时出错
 
 ---
 
-## 21. Pornhub extorted after hackers steal Premium member activity data
+## 30. Breaking Paragraphs into Lines [pdf] (1981)
 
-**原文标题**: Pornhub extorted after hackers steal Premium member activity data
+**原文标题**: Breaking Paragraphs into Lines [pdf] (1981)
 
-**原文链接**: [https://www.bleepingcomputer.com/news/security/pornhub-extorted-after-hackers-steal-premium-member-activity-data/](https://www.bleepingcomputer.com/news/security/pornhub-extorted-after-hackers-steal-premium-member-activity-data/)
-
-生成摘要时出错
-
----
-
-## 22. Flick (YC F25) Is Hiring Founding Engineer to Build Figma for AI Filmmaking
-
-**原文标题**: Flick (YC F25) Is Hiring Founding Engineer to Build Figma for AI Filmmaking
-
-**原文链接**: [https://www.ycombinator.com/companies/flick/jobs/Tdu6FH6-founding-frontend-engineer](https://www.ycombinator.com/companies/flick/jobs/Tdu6FH6-founding-frontend-engineer)
+**原文链接**: [https://gwern.net/doc/design/typography/tex/1981-knuth.pdf](https://gwern.net/doc/design/typography/tex/1981-knuth.pdf)
 
 生成摘要时出错
 
 ---
 
-## 23. A16z-backed Doublespeed hacked, revealing what its AI-generated accounts promote
+## 31. Building a High-Performance OpenAPI Parser in Go
 
-**原文标题**: A16z-backed Doublespeed hacked, revealing what its AI-generated accounts promote
+**原文标题**: Building a High-Performance OpenAPI Parser in Go
 
-**原文链接**: [https://www.404media.co/hack-reveals-the-a16z-backed-phone-farm-flooding-tiktok-with-ai-influencers/](https://www.404media.co/hack-reveals-the-a16z-backed-phone-farm-flooding-tiktok-with-ai-influencers/)
-
-生成摘要时出错
-
----
-
-## 24. Learning Fortran (2024)
-
-**原文标题**: Learning Fortran (2024)
-
-**原文链接**: [https://uncenter.dev/posts/learning-fortran/](https://uncenter.dev/posts/learning-fortran/)
+**原文链接**: [https://www.speakeasy.com/blog/building-speakeasy-openapi-go-library](https://www.speakeasy.com/blog/building-speakeasy-openapi-go-library)
 
 生成摘要时出错
 
 ---
 
-## 25. I created a publishing system for step-by-step coding guides in Typst
-
-**原文标题**: I created a publishing system for step-by-step coding guides in Typst
-
-**原文链接**: [https://press.knowledge.dev/p/new-150-pages-rust-guide-create-a](https://press.knowledge.dev/p/new-150-pages-rust-guide-create-a)
-
-生成摘要时出错
-
----
-
-## 26. Thin desires are eating life
-
-**原文标题**: Thin desires are eating life
-
-**原文链接**: [https://www.joanwestenberg.com/thin-desires-are-eating-your-life/](https://www.joanwestenberg.com/thin-desires-are-eating-your-life/)
-
-生成摘要时出错
-
----
-
-## 27. Is Mozilla trying hard to kill itself?
-
-**原文标题**: Is Mozilla trying hard to kill itself?
-
-**原文链接**: [https://infosec.press/brunomiguel/is-mozilla-trying-hard-to-kill-itself](https://infosec.press/brunomiguel/is-mozilla-trying-hard-to-kill-itself)
-
-生成摘要时出错
-
----
-
-## 28. I ported JustHTML from Python to JavaScript with Codex CLI and GPT-5.2 in hours
-
-**原文标题**: I ported JustHTML from Python to JavaScript with Codex CLI and GPT-5.2 in hours
-
-**原文链接**: [https://simonwillison.net/2025/Dec/15/porting-justhtml/](https://simonwillison.net/2025/Dec/15/porting-justhtml/)
-
-生成摘要时出错
-
----
-
-## 29. TLA+ Modeling Tips
-
-**原文标题**: TLA+ Modeling Tips
-
-**原文链接**: [http://muratbuffalo.blogspot.com/2025/12/tla-modeling-tips.html](http://muratbuffalo.blogspot.com/2025/12/tla-modeling-tips.html)
-
-生成摘要时出错
-
----
-
-## 30. Show HN: GitForms – Zero-cost contact forms using GitHub Issues as database
-
-**原文标题**: Show HN: GitForms – Zero-cost contact forms using GitHub Issues as database
-
-**原文链接**: [https://gitforms-landing.vercel.app/](https://gitforms-landing.vercel.app/)
-
-生成摘要时出错
-
----
-
-## 31. The State of AI Coding Report 2025
-
-**原文标题**: The State of AI Coding Report 2025
-
-**原文链接**: [https://www.greptile.com/state-of-ai-coding-2025](https://www.greptile.com/state-of-ai-coding-2025)
-
-生成摘要时出错
-
----
-
-## 32. AI will make formal verification go mainstream
-
-**原文标题**: AI will make formal verification go mainstream
-
-**原文链接**: [https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)
-
-生成摘要时出错
-
----
-
-## 33. A look back: LANPAR, the first spreadsheet
-
-**原文标题**: A look back: LANPAR, the first spreadsheet
-
-**原文链接**: [https://technicallywewrite.com/2025/12/16/lanpar](https://technicallywewrite.com/2025/12/16/lanpar)
-
-生成摘要时出错
-
----
-
-## 34. I couldn't find a logging library that worked for my library, so I made one
-
-**原文标题**: I couldn't find a logging library that worked for my library, so I made one
-
-**原文链接**: [https://hackers.pub/@hongminhee/2025/logtape-fedify-case-study](https://hackers.pub/@hongminhee/2025/logtape-fedify-case-study)
-
-生成摘要时出错
-
----
-
-## 35. AI's real superpower: consuming, not creating
-
-**原文标题**: AI's real superpower: consuming, not creating
-
-**原文链接**: [https://msanroman.io/blog/ai-consumption-paradigm](https://msanroman.io/blog/ai-consumption-paradigm)
-
-生成摘要时出错
-
----
-
-## 36. alpr.watch
-
-**原文标题**: alpr.watch
-
-**原文链接**: [https://alpr.watch/](https://alpr.watch/)
-
-生成摘要时出错
-
----
-
-## 37. Modern SID chip substitutes [video]
-
-**原文标题**: Modern SID chip substitutes [video]
-
-**原文链接**: [https://www.youtube.com/watch?v=nooPmXxO6K0](https://www.youtube.com/watch?v=nooPmXxO6K0)
-
-生成摘要时出错
-
----
-
-## 38. Japan to revise romanization rules for first time in 70 years
-
-**原文标题**: Japan to revise romanization rules for first time in 70 years
-
-**原文链接**: [https://www.japantimes.co.jp/news/2025/08/21/japan/panel-hepburn-style-romanization/](https://www.japantimes.co.jp/news/2025/08/21/japan/panel-hepburn-style-romanization/)
-
-生成摘要时出错
-
----
-
-## 39. Announcing the Beta release of ty
-
-**原文标题**: Announcing the Beta release of ty
-
-**原文链接**: [https://astral.sh/blog/ty](https://astral.sh/blog/ty)
-
-生成摘要时出错
-
----
-
-## 40. Venezuela's Navy Begins Escorting Ships as U.S. Threatens Blockade
-
-**原文标题**: Venezuela's Navy Begins Escorting Ships as U.S. Threatens Blockade
-
-**原文链接**: [https://www.nytimes.com/live/2025/12/17/us/trump-news](https://www.nytimes.com/live/2025/12/17/us/trump-news)
-
-生成摘要时出错
-
----
-
-## 41. No Graphics API
-
-**原文标题**: No Graphics API
-
-**原文链接**: [https://www.sebastianaaltonen.com/blog/no-graphics-api](https://www.sebastianaaltonen.com/blog/no-graphics-api)
-
-生成摘要时出错
-
----
-
-## 42. AI Isn't Just Spying on You. It's Tricking You into Spending More
-
-**原文标题**: AI Isn't Just Spying on You. It's Tricking You into Spending More
-
-**原文链接**: [https://newrepublic.com/article/204525/artificial-intelligence-consumers-data-dynamic-pricing](https://newrepublic.com/article/204525/artificial-intelligence-consumers-data-dynamic-pricing)
-
-生成摘要时出错
-
----
-
-## 43. The US govt has revoked the non-immigrant visa of Nobel laureate Wole Soyinka [video]
-
-**原文标题**: The US govt has revoked the non-immigrant visa of Nobel laureate Wole Soyinka [video]
-
-**原文链接**: [https://www.youtube.com/watch?v=ple4xophXfM](https://www.youtube.com/watch?v=ple4xophXfM)
-
-生成摘要时出错
-
----
-
-## 44. VRChat: “There are more Japanese creators than all other countries combined”
-
-**原文标题**: VRChat: “There are more Japanese creators than all other countries combined”
-
-**原文链接**: [https://twitter.com/chyadosensei/status/2001356290531156159](https://twitter.com/chyadosensei/status/2001356290531156159)
-
-生成摘要时出错
-
----
-
-## 45. US admits liability in helicopter collision with American jet that killed 67
-
-**原文标题**: US admits liability in helicopter collision with American jet that killed 67
-
-**原文链接**: [https://www.cnbc.com/2025/12/17/us-army-helicopter-collision-american-airlines-jet.html](https://www.cnbc.com/2025/12/17/us-army-helicopter-collision-american-airlines-jet.html)
-
-生成摘要时出错
-
----
-
-## 46. Introduction to Software Development Tooling (2024)
-
-**原文标题**: Introduction to Software Development Tooling (2024)
-
-**原文链接**: [https://bernsteinbear.com/isdt/](https://bernsteinbear.com/isdt/)
-
-生成摘要时出错
-
----
-
-## 47. UNC System President Peter Hans confirms all syllabuses will be public records
-
-**原文标题**: UNC System President Peter Hans confirms all syllabuses will be public records
-
-**原文链接**: [https://dailytarheel.com/article/university-peter-hans-syllabi-policy-confirmation-breaking-20251211](https://dailytarheel.com/article/university-peter-hans-syllabi-policy-confirmation-breaking-20251211)
-
-生成摘要时出错
-
----
-
-## 48. The World Happiness Report is beset with methodological problems
-
-**原文标题**: The World Happiness Report is beset with methodological problems
-
-**原文链接**: [https://yaschamounk.substack.com/p/the-world-happiness-report-is-a-sham](https://yaschamounk.substack.com/p/the-world-happiness-report-is-a-sham)
-
-生成摘要时出错
-
----
-
-## 49. Nvidia Nemotron 3 Family of Models
-
-**原文标题**: Nvidia Nemotron 3 Family of Models
-
-**原文链接**: [https://research.nvidia.com/labs/nemotron/Nemotron-3/](https://research.nvidia.com/labs/nemotron/Nemotron-3/)
-
-生成摘要时出错
-
----
-
-## 50. Semiquincentennial $1 Coin Candidate Designs
-
-**原文标题**: Semiquincentennial $1 Coin Candidate Designs
-
-**原文链接**: [https://www.usmint.gov/news/media-kit/semiq-dollar-coin](https://www.usmint.gov/news/media-kit/semiq-dollar-coin)
-
-生成摘要时出错
-
----
-
-## 51. No AI* Here – A Response to Mozilla's Next Chapter
-
-**原文标题**: No AI* Here – A Response to Mozilla's Next Chapter
-
-**原文链接**: [https://www.waterfox.com/blog/no-ai-here-response-to-mozilla/](https://www.waterfox.com/blog/no-ai-here-response-to-mozilla/)
-
-生成摘要时出错
-
----
-
-## 52. OpenAI Is Maneuvering for a Government Bailout
-
-**原文标题**: OpenAI Is Maneuvering for a Government Bailout
-
-**原文链接**: [https://prospect.org/2025/11/07/openai-maneuvering-for-government-bailout/](https://prospect.org/2025/11/07/openai-maneuvering-for-government-bailout/)
-
-生成摘要时出错
-
----
-
-## 53. GitHub postponing the announced billing change for self-hosted GitHub Actions
+## 32. GitHub postponing the announced billing change for self-hosted GitHub Actions
 
 **原文标题**: GitHub postponing the announced billing change for self-hosted GitHub Actions
 
@@ -592,7 +383,567 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 54. Pricing Changes for GitHub Actions
+## 33. Gemini 3 Flash: Frontier intelligence built for speed
+
+**原文标题**: Gemini 3 Flash: Frontier intelligence built for speed
+
+**原文链接**: [https://blog.google/products/gemini/gemini-3-flash/](https://blog.google/products/gemini/gemini-3-flash/)
+
+生成摘要时出错
+
+---
+
+## 34. Developers can now submit apps to ChatGPT
+
+**原文标题**: Developers can now submit apps to ChatGPT
+
+**原文链接**: [https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/](https://openai.com/index/developers-can-now-submit-apps-to-chatgpt/)
+
+生成摘要时出错
+
+---
+
+## 35. Spain fines Airbnb €65M: Why the government is cracking down on illegal rentals
+
+**原文标题**: Spain fines Airbnb €65M: Why the government is cracking down on illegal rentals
+
+**原文链接**: [https://www.euronews.com/travel/2025/12/15/spain-fines-airbnb-65-million-why-the-government-is-cracking-down-on-illegal-rentals](https://www.euronews.com/travel/2025/12/15/spain-fines-airbnb-65-million-why-the-government-is-cracking-down-on-illegal-rentals)
+
+生成摘要时出错
+
+---
+
+## 36. Fluent: A Localization System for Natural-Sounding Translations
+
+**原文标题**: Fluent: A Localization System for Natural-Sounding Translations
+
+**原文链接**: [https://projectfluent.org/](https://projectfluent.org/)
+
+生成摘要时出错
+
+---
+
+## 37. AWS CEO says replacing junior devs with AI is 'one of the dumbest ideas'
+
+**原文标题**: AWS CEO says replacing junior devs with AI is 'one of the dumbest ideas'
+
+**原文链接**: [https://www.finalroundai.com/blog/aws-ceo-ai-cannot-replace-junior-developers](https://www.finalroundai.com/blog/aws-ceo-ai-cannot-replace-junior-developers)
+
+生成摘要时出错
+
+---
+
+## 38. The Mysterious Forces Steering Views on Hacker News
+
+**原文标题**: The Mysterious Forces Steering Views on Hacker News
+
+**原文链接**: [https://xn--gckvb8fzb.com/the-mysterious-forces-steering-views-on-hacker-news/](https://xn--gckvb8fzb.com/the-mysterious-forces-steering-views-on-hacker-news/)
+
+生成摘要时出错
+
+---
+
+## 39. Finland Gave Two Groups Identical Payments. One Saw 33% Better Mental Health
+
+**原文标题**: Finland Gave Two Groups Identical Payments. One Saw 33% Better Mental Health
+
+**原文链接**: [https://scottsantens.substack.com/p/finland-basic-income-experiment-mental-health-ubi](https://scottsantens.substack.com/p/finland-basic-income-experiment-mental-health-ubi)
+
+生成摘要时出错
+
+---
+
+## 40. Gut bacteria from amphibians and reptiles achieve tumor elimination in mice
+
+**原文标题**: Gut bacteria from amphibians and reptiles achieve tumor elimination in mice
+
+**原文链接**: [https://www.jaist.ac.jp/english/whatsnew/press/2025/12/17-1.html](https://www.jaist.ac.jp/english/whatsnew/press/2025/12/17-1.html)
+
+生成摘要时出错
+
+---
+
+## 41. Don MacKinnon: Why Simplicity Beats Cleverness in Software Design [audio]
+
+**原文标题**: Don MacKinnon: Why Simplicity Beats Cleverness in Software Design [audio]
+
+**原文链接**: [https://maintainable.fm/episodes/don-mackinnon-why-simplicity-beats-cleverness-in-software-design](https://maintainable.fm/episodes/don-mackinnon-why-simplicity-beats-cleverness-in-software-design)
+
+生成摘要时出错
+
+---
+
+## 42. A Safer Container Ecosystem with Docker: Free Docker Hardened Images
+
+**原文标题**: A Safer Container Ecosystem with Docker: Free Docker Hardened Images
+
+**原文链接**: [https://www.docker.com/blog/docker-hardened-images-for-every-developer/](https://www.docker.com/blog/docker-hardened-images-for-every-developer/)
+
+生成摘要时出错
+
+---
+
+## 43. Judge hints Vizio TV buyers may have rights to source code licensed under GPL
+
+**原文标题**: Judge hints Vizio TV buyers may have rights to source code licensed under GPL
+
+**原文链接**: [https://www.theregister.com/2025/12/05/vizio_gpl_source_code_ruling/](https://www.theregister.com/2025/12/05/vizio_gpl_source_code_ruling/)
+
+生成摘要时出错
+
+---
+
+## 44. Coursera to combine with Udemy
+
+**原文标题**: Coursera to combine with Udemy
+
+**原文链接**: [https://investor.coursera.com/news/news-details/2025/Coursera-to-Combine-with-Udemy-to-Empower-the-Global-Workforce-with-Skills-for-the-AI-Era/default.aspx](https://investor.coursera.com/news/news-details/2025/Coursera-to-Combine-with-Udemy-to-Empower-the-Global-Workforce-with-Skills-for-the-AI-Era/default.aspx)
+
+生成摘要时出错
+
+---
+
+## 45. OBS Studio Gets a New Renderer
+
+**原文标题**: OBS Studio Gets a New Renderer
+
+**原文链接**: [https://obsproject.com/blog/obs-studio-gets-a-new-renderer](https://obsproject.com/blog/obs-studio-gets-a-new-renderer)
+
+生成摘要时出错
+
+---
+
+## 46. Valve Is Running Apple's Playbook in Reverse
+
+**原文标题**: Valve Is Running Apple's Playbook in Reverse
+
+**原文链接**: [https://www.garbagecollected.dev/p/valve-the-reverse-apple](https://www.garbagecollected.dev/p/valve-the-reverse-apple)
+
+生成摘要时出错
+
+---
+
+## 47. Show HN: I built a fast RSS reader in Zig
+
+**原文标题**: Show HN: I built a fast RSS reader in Zig
+
+**原文链接**: [https://github.com/superstarryeyes/hys](https://github.com/superstarryeyes/hys)
+
+生成摘要时出错
+
+---
+
+## 48. Assange brings 'instrument of war' case against Nobel Foundation
+
+**原文标题**: Assange brings 'instrument of war' case against Nobel Foundation
+
+**原文链接**: [https://dailytelegraph.co.nz/news/assange-brings-instrument-of-war-case-against-nobel-foundation/](https://dailytelegraph.co.nz/news/assange-brings-instrument-of-war-case-against-nobel-foundation/)
+
+生成摘要时出错
+
+---
+
+## 49. Explaining the widening divides in us midlife mortality: Is there a smoking gun?
+
+**原文标题**: Explaining the widening divides in us midlife mortality: Is there a smoking gun?
+
+**原文链接**: [https://www.nber.org/papers/w34553](https://www.nber.org/papers/w34553)
+
+生成摘要时出错
+
+---
+
+## 50. Zmij: Faster floating point double-to-string conversion
+
+**原文标题**: Zmij: Faster floating point double-to-string conversion
+
+**原文链接**: [https://vitaut.net/posts/2025/faster-dtoa/](https://vitaut.net/posts/2025/faster-dtoa/)
+
+生成摘要时出错
+
+---
+
+## 51. How SQLite is tested
+
+**原文标题**: How SQLite is tested
+
+**原文链接**: [https://sqlite.org/testing.html](https://sqlite.org/testing.html)
+
+生成摘要时出错
+
+---
+
+## 52. Microsoft kills IntelliCode in favor of the paid Copilot
+
+**原文标题**: Microsoft kills IntelliCode in favor of the paid Copilot
+
+**原文链接**: [https://visualstudiomagazine.com/articles/2025/12/17/microsoft-quietly-kills-intellicode-as-ai-strategy-shifts-to-copilot.aspx](https://visualstudiomagazine.com/articles/2025/12/17/microsoft-quietly-kills-intellicode-as-ai-strategy-shifts-to-copilot.aspx)
+
+生成摘要时出错
+
+---
+
+## 53. Show HN: High-Performance Wavelet Matrix for Python, Implemented in Rust
+
+**原文标题**: Show HN: High-Performance Wavelet Matrix for Python, Implemented in Rust
+
+**原文链接**: [https://pypi.org/project/wavelet-matrix/](https://pypi.org/project/wavelet-matrix/)
+
+生成摘要时出错
+
+---
+
+## 54. EU Launches Multi-Billion "Scaleup Europe Fund"
+
+**原文标题**: EU Launches Multi-Billion "Scaleup Europe Fund"
+
+**原文链接**: [https://eic.ec.europa.eu/eic-fund/scaleup-europe-fund_en](https://eic.ec.europa.eu/eic-fund/scaleup-europe-fund_en)
+
+生成摘要时出错
+
+---
+
+## 55. 'Ghost jobs' are on the rise – and so are calls to ban them
+
+**原文标题**: 'Ghost jobs' are on the rise – and so are calls to ban them
+
+**原文链接**: [https://www.bbc.com/news/articles/clyzvpp8g3vo](https://www.bbc.com/news/articles/clyzvpp8g3vo)
+
+生成摘要时出错
+
+---
+
+## 56. Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE
+
+**原文标题**: Inside PostHog: SSRF, ClickHouse SQL Escape and Default Postgres Creds to RCE
+
+**原文链接**: [https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/](https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/)
+
+生成摘要时出错
+
+---
+
+## 57. Fast SEQUENCE iteration in Common Lisp
+
+**原文标题**: Fast SEQUENCE iteration in Common Lisp
+
+**原文链接**: [https://world-playground-deceit.net/blog/2025/12/fast-sequence-iteration-in-common-lisp.html](https://world-playground-deceit.net/blog/2025/12/fast-sequence-iteration-in-common-lisp.html)
+
+生成摘要时出错
+
+---
+
+## 58. The Number That Turned Sideways
+
+**原文标题**: The Number That Turned Sideways
+
+**原文链接**: [https://zuriby.github.io/math.github.io/the-number-that-turned-sideways.html](https://zuriby.github.io/math.github.io/the-number-that-turned-sideways.html)
+
+生成摘要时出错
+
+---
+
+## 59. TikTok unlawfully tracks shopping habits and use of dating apps?
+
+**原文标题**: TikTok unlawfully tracks shopping habits and use of dating apps?
+
+**原文链接**: [https://noyb.eu/en/tiktok-unlawfully-tracks-your-shopping-habits-and-your-use-dating-apps](https://noyb.eu/en/tiktok-unlawfully-tracks-your-shopping-habits-and-your-use-dating-apps)
+
+生成摘要时出错
+
+---
+
+## 60. Cloudflare Radar 2025 Year in Review
+
+**原文标题**: Cloudflare Radar 2025 Year in Review
+
+**原文链接**: [https://radar.cloudflare.com/year-in-review/2025](https://radar.cloudflare.com/year-in-review/2025)
+
+生成摘要时出错
+
+---
+
+## 61. AI will make formal verification go mainstream
+
+**原文标题**: AI will make formal verification go mainstream
+
+**原文链接**: [https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html](https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html)
+
+生成摘要时出错
+
+---
+
+## 62. Oasis: Pooling PCIe Devices over CXL to Boost Utilization
+
+**原文标题**: Oasis: Pooling PCIe Devices over CXL to Boost Utilization
+
+**原文链接**: [https://dl.acm.org/doi/10.1145/3731569.3764812](https://dl.acm.org/doi/10.1145/3731569.3764812)
+
+生成摘要时出错
+
+---
+
+## 63. How getting richer made teenagers less free
+
+**原文标题**: How getting richer made teenagers less free
+
+**原文链接**: [https://www.theargumentmag.com/p/how-getting-richer-made-teenagers](https://www.theargumentmag.com/p/how-getting-richer-made-teenagers)
+
+生成摘要时出错
+
+---
+
+## 64. Learning Fortran (2024)
+
+**原文标题**: Learning Fortran (2024)
+
+**原文链接**: [https://uncenter.dev/posts/learning-fortran/](https://uncenter.dev/posts/learning-fortran/)
+
+生成摘要时出错
+
+---
+
+## 65. alpr.watch
+
+**原文标题**: alpr.watch
+
+**原文链接**: [https://alpr.watch/](https://alpr.watch/)
+
+生成摘要时出错
+
+---
+
+## 66. A look back: LANPAR, the first spreadsheet
+
+**原文标题**: A look back: LANPAR, the first spreadsheet
+
+**原文链接**: [https://technicallywewrite.com/2025/12/16/lanpar](https://technicallywewrite.com/2025/12/16/lanpar)
+
+生成摘要时出错
+
+---
+
+## 67. Japan to revise romanization rules for first time in 70 years
+
+**原文标题**: Japan to revise romanization rules for first time in 70 years
+
+**原文链接**: [https://www.japantimes.co.jp/news/2025/08/21/japan/panel-hepburn-style-romanization/](https://www.japantimes.co.jp/news/2025/08/21/japan/panel-hepburn-style-romanization/)
+
+生成摘要时出错
+
+---
+
+## 68. Is Mozilla trying hard to kill itself?
+
+**原文标题**: Is Mozilla trying hard to kill itself?
+
+**原文链接**: [https://infosec.press/brunomiguel/is-mozilla-trying-hard-to-kill-itself](https://infosec.press/brunomiguel/is-mozilla-trying-hard-to-kill-itself)
+
+生成摘要时出错
+
+---
+
+## 69. AI's real superpower: consuming, not creating
+
+**原文标题**: AI's real superpower: consuming, not creating
+
+**原文链接**: [https://msanroman.io/blog/ai-consumption-paradigm](https://msanroman.io/blog/ai-consumption-paradigm)
+
+生成摘要时出错
+
+---
+
+## 70. No Graphics API
+
+**原文标题**: No Graphics API
+
+**原文链接**: [https://www.sebastianaaltonen.com/blog/no-graphics-api](https://www.sebastianaaltonen.com/blog/no-graphics-api)
+
+生成摘要时出错
+
+---
+
+## 71. Nvidia Nemotron 3 Family of Models
+
+**原文标题**: Nvidia Nemotron 3 Family of Models
+
+**原文链接**: [https://research.nvidia.com/labs/nemotron/Nemotron-3/](https://research.nvidia.com/labs/nemotron/Nemotron-3/)
+
+生成摘要时出错
+
+---
+
+## 72. TLA+ Modeling Tips
+
+**原文标题**: TLA+ Modeling Tips
+
+**原文链接**: [http://muratbuffalo.blogspot.com/2025/12/tla-modeling-tips.html](http://muratbuffalo.blogspot.com/2025/12/tla-modeling-tips.html)
+
+生成摘要时出错
+
+---
+
+## 73. Announcing the Beta release of ty
+
+**原文标题**: Announcing the Beta release of ty
+
+**原文链接**: [https://astral.sh/blog/ty](https://astral.sh/blog/ty)
+
+生成摘要时出错
+
+---
+
+## 74. Opencoil – appropriating inductive charging pads in the wild (2020) [video]
+
+**原文标题**: Opencoil – appropriating inductive charging pads in the wild (2020) [video]
+
+**原文链接**: [https://media.ccc.de/v/rc3-11575-opencoil_a_roaming_speedshow](https://media.ccc.de/v/rc3-11575-opencoil_a_roaming_speedshow)
+
+生成摘要时出错
+
+---
+
+## 75. The State of AI Coding Report 2025
+
+**原文标题**: The State of AI Coding Report 2025
+
+**原文链接**: [https://www.greptile.com/state-of-ai-coding-2025](https://www.greptile.com/state-of-ai-coding-2025)
+
+生成摘要时出错
+
+---
+
+## 76. More than half of researchers now use AI for peer review, often against guidance
+
+**原文标题**: More than half of researchers now use AI for peer review, often against guidance
+
+**原文链接**: [https://www.nature.com/articles/d41586-025-04066-5](https://www.nature.com/articles/d41586-025-04066-5)
+
+生成摘要时出错
+
+---
+
+## 77. Show HN: DocsRouter – The OpenRouter for OCR and Vision Models
+
+**原文标题**: Show HN: DocsRouter – The OpenRouter for OCR and Vision Models
+
+**原文链接**: [https://docsrouter.com](https://docsrouter.com)
+
+生成摘要时出错
+
+---
+
+## 78. A16z-backed Doublespeed hacked, revealing what its AI-generated accounts promote
+
+**原文标题**: A16z-backed Doublespeed hacked, revealing what its AI-generated accounts promote
+
+**原文链接**: [https://www.404media.co/hack-reveals-the-a16z-backed-phone-farm-flooding-tiktok-with-ai-influencers/](https://www.404media.co/hack-reveals-the-a16z-backed-phone-farm-flooding-tiktok-with-ai-influencers/)
+
+生成摘要时出错
+
+---
+
+## 79. The World Happiness Report is beset with methodological problems
+
+**原文标题**: The World Happiness Report is beset with methodological problems
+
+**原文链接**: [https://yaschamounk.substack.com/p/the-world-happiness-report-is-a-sham](https://yaschamounk.substack.com/p/the-world-happiness-report-is-a-sham)
+
+生成摘要时出错
+
+---
+
+## 80. Go-boot: bare metal Go UEFI boot manager
+
+**原文标题**: Go-boot: bare metal Go UEFI boot manager
+
+**原文链接**: [https://github.com/usbarmory/go-boot](https://github.com/usbarmory/go-boot)
+
+生成摘要时出错
+
+---
+
+## 81. Introduction to Software Development Tooling (2024)
+
+**原文标题**: Introduction to Software Development Tooling (2024)
+
+**原文链接**: [https://bernsteinbear.com/isdt/](https://bernsteinbear.com/isdt/)
+
+生成摘要时出错
+
+---
+
+## 82. Truth Social Parent to Merge with Nuclear Fusion Firm in $6B Deal
+
+**原文标题**: Truth Social Parent to Merge with Nuclear Fusion Firm in $6B Deal
+
+**原文链接**: [https://www.nytimes.com/2025/12/18/business/trump-media-tae-technologies-fusion-power-deal.html](https://www.nytimes.com/2025/12/18/business/trump-media-tae-technologies-fusion-power-deal.html)
+
+生成摘要时出错
+
+---
+
+## 83. Pornhub extorted after hackers steal Premium member activity data
+
+**原文标题**: Pornhub extorted after hackers steal Premium member activity data
+
+**原文链接**: [https://www.bleepingcomputer.com/news/security/pornhub-extorted-after-hackers-steal-premium-member-activity-data/](https://www.bleepingcomputer.com/news/security/pornhub-extorted-after-hackers-steal-premium-member-activity-data/)
+
+生成摘要时出错
+
+---
+
+## 84. Creating Diagrams in Markdown on GitHub
+
+**原文标题**: Creating Diagrams in Markdown on GitHub
+
+**原文链接**: [https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
+
+生成摘要时出错
+
+---
+
+## 85. Modern SID chip substitutes [video]
+
+**原文标题**: Modern SID chip substitutes [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=nooPmXxO6K0](https://www.youtube.com/watch?v=nooPmXxO6K0)
+
+生成摘要时出错
+
+---
+
+## 86. In secret missile factory, Ukraine is ramping up its domestic arms industry
+
+**原文标题**: In secret missile factory, Ukraine is ramping up its domestic arms industry
+
+**原文链接**: [https://www.bbc.co.uk/news/articles/c1dz6wgn2w9o](https://www.bbc.co.uk/news/articles/c1dz6wgn2w9o)
+
+生成摘要时出错
+
+---
+
+## 87. Feather Detective (2016)
+
+**原文标题**: Feather Detective (2016)
+
+**原文链接**: [https://www.audubon.org/magazine/behind-scenes-worlds-top-feather-detective](https://www.audubon.org/magazine/behind-scenes-worlds-top-feather-detective)
+
+生成摘要时出错
+
+---
+
+## 88. No AI* Here – A Response to Mozilla's Next Chapter
+
+**原文标题**: No AI* Here – A Response to Mozilla's Next Chapter
+
+**原文链接**: [https://www.waterfox.com/blog/no-ai-here-response-to-mozilla/](https://www.waterfox.com/blog/no-ai-here-response-to-mozilla/)
+
+生成摘要时出错
+
+---
+
+## 89. Pricing Changes for GitHub Actions
 
 **原文标题**: Pricing Changes for GitHub Actions
 
@@ -602,37 +953,7 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 55. AI capability isn't humanness
-
-**原文标题**: AI capability isn't humanness
-
-**原文链接**: [https://research.roundtable.ai/capabilities-humanness/](https://research.roundtable.ai/capabilities-humanness/)
-
-生成摘要时出错
-
----
-
-## 56. GPT Image 1.5
-
-**原文标题**: GPT Image 1.5
-
-**原文链接**: [https://openai.com/index/new-chatgpt-images-is-here/](https://openai.com/index/new-chatgpt-images-is-here/)
-
-生成摘要时出错
-
----
-
-## 57. Show HN: Minimal DL library in C – 24 NAIVE CUDA/CPU ops, autodiff, Python API
-
-**原文标题**: Show HN: Minimal DL library in C – 24 NAIVE CUDA/CPU ops, autodiff, Python API
-
-**原文链接**: [https://github.com/IaroslavElistratov/ml-systems-course](https://github.com/IaroslavElistratov/ml-systems-course)
-
-生成摘要时出错
-
----
-
-## 58. Show HN: Sqlit – A lazygit-style TUI for SQL databases
+## 90. Show HN: Sqlit – A lazygit-style TUI for SQL databases
 
 **原文标题**: Show HN: Sqlit – A lazygit-style TUI for SQL databases
 
@@ -642,27 +963,7 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 59. Dafny: Verification-Aware Programming Language
-
-**原文标题**: Dafny: Verification-Aware Programming Language
-
-**原文链接**: [https://dafny.org/](https://dafny.org/)
-
-生成摘要时出错
-
----
-
-## 60. 30 years of <br> tags
-
-**原文标题**: 30 years of <br> tags
-
-**原文链接**: [https://www.artmann.co/articles/30-years-of-br-tags](https://www.artmann.co/articles/30-years-of-br-tags)
-
-生成摘要时出错
-
----
-
-## 61. Full Unicode Search at 50× ICU Speed with AVX‑512
+## 91. Full Unicode Search at 50× ICU Speed with AVX‑512
 
 **原文标题**: Full Unicode Search at 50× ICU Speed with AVX‑512
 
@@ -672,77 +973,27 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 62. Mozilla appoints new CEO Anthony Enzor-Demeo
+## 92. GPT Image 1.5
 
-**原文标题**: Mozilla appoints new CEO Anthony Enzor-Demeo
+**原文标题**: GPT Image 1.5
 
-**原文链接**: [https://blog.mozilla.org/en/mozilla/leadership/mozillas-next-chapter-anthony-enzor-demeo-new-ceo/](https://blog.mozilla.org/en/mozilla/leadership/mozillas-next-chapter-anthony-enzor-demeo-new-ceo/)
-
-生成摘要时出错
-
----
-
-## 63. Rust GCC backend: Why and how
-
-**原文标题**: Rust GCC backend: Why and how
-
-**原文链接**: [https://blog.guillaume-gomez.fr/articles/2025-12-15+Rust+GCC+backend%3A+Why+and+how](https://blog.guillaume-gomez.fr/articles/2025-12-15+Rust+GCC+backend%3A+Why+and+how)
+**原文链接**: [https://openai.com/index/new-chatgpt-images-is-here/](https://openai.com/index/new-chatgpt-images-is-here/)
 
 生成摘要时出错
 
 ---
 
-## 64. 40 percent of fMRI signals do not correspond to actual brain activity
+## 93. Thin desires are eating life
 
-**原文标题**: 40 percent of fMRI signals do not correspond to actual brain activity
+**原文标题**: Thin desires are eating life
 
-**原文链接**: [https://www.tum.de/en/news-and-events/all-news/press-releases/details/40-percent-of-mri-signals-do-not-correspond-to-actual-brain-activity](https://www.tum.de/en/news-and-events/all-news/press-releases/details/40-percent-of-mri-signals-do-not-correspond-to-actual-brain-activity)
-
-生成摘要时出错
-
----
-
-## 65. P: Formal Modeling and Analysis of Distributed (Event-Driven) Systems
-
-**原文标题**: P: Formal Modeling and Analysis of Distributed (Event-Driven) Systems
-
-**原文链接**: [https://github.com/p-org/P](https://github.com/p-org/P)
+**原文链接**: [https://www.joanwestenberg.com/thin-desires-are-eating-your-life/](https://www.joanwestenberg.com/thin-desires-are-eating-your-life/)
 
 生成摘要时出错
 
 ---
 
-## 66. Living Particle System
-
-**原文标题**: Living Particle System
-
-**原文链接**: [https://creative-art-points.vercel.app/](https://creative-art-points.vercel.app/)
-
-生成摘要时出错
-
----
-
-## 67. Purrtran – ᓚᘏᗢ – A Programming Language for Cat People
-
-**原文标题**: Purrtran – ᓚᘏᗢ – A Programming Language for Cat People
-
-**原文链接**: [https://github.com/cmontella/purrtran](https://github.com/cmontella/purrtran)
-
-生成摘要时出错
-
----
-
-## 68. Testing a cheaper laminar flow hood
-
-**原文标题**: Testing a cheaper laminar flow hood
-
-**原文链接**: [https://chillphysicsenjoyer.substack.com/p/testing-a-cheaper-laminar-flow-hood](https://chillphysicsenjoyer.substack.com/p/testing-a-cheaper-laminar-flow-hood)
-
-生成摘要时出错
-
----
-
-## 69. Bonsai: A Voxel Engine, from scratch
+## 94. Bonsai: A Voxel Engine, from scratch
 
 **原文标题**: Bonsai: A Voxel Engine, from scratch
 
@@ -752,311 +1003,61 @@ noyb 已要求奥地利当局命令相关公司停止非法处理行为并实现
 
 ---
 
-## 70. Writing a blatant Telegram clone using Qt, QML and Rust. And C++
+## 95. 30 years of <br> tags
 
-**原文标题**: Writing a blatant Telegram clone using Qt, QML and Rust. And C++
+**原文标题**: 30 years of <br> tags
 
-**原文链接**: [https://kemble.net/blog/provoke/](https://kemble.net/blog/provoke/)
-
-生成摘要时出错
-
----
-
-## 71. Pizlix: Memory Safe Linux from Scratch
-
-**原文标题**: Pizlix: Memory Safe Linux from Scratch
-
-**原文链接**: [https://fil-c.org/pizlix](https://fil-c.org/pizlix)
+**原文链接**: [https://www.artmann.co/articles/30-years-of-br-tags](https://www.artmann.co/articles/30-years-of-br-tags)
 
 生成摘要时出错
 
 ---
 
-## 72. Chat-tails: Throwback terminal chat, built on Tailscale
+## 96. Rust GCC backend: Why and how
 
-**原文标题**: Chat-tails: Throwback terminal chat, built on Tailscale
+**原文标题**: Rust GCC backend: Why and how
 
-**原文链接**: [https://tailscale.com/blog/chat-tails-terminal-chat](https://tailscale.com/blog/chat-tails-terminal-chat)
-
-生成摘要时出错
-
----
-
-## 73. Playing Santa changed Bob Rutan profoundly
-
-**原文标题**: Playing Santa changed Bob Rutan profoundly
-
-**原文链接**: [https://www.esquire.com/lifestyle/a69597294/santaland-bob-rutan/](https://www.esquire.com/lifestyle/a69597294/santaland-bob-rutan/)
+**原文链接**: [https://blog.guillaume-gomez.fr/articles/2025-12-15+Rust+GCC+backend%3A+Why+and+how](https://blog.guillaume-gomez.fr/articles/2025-12-15+Rust+GCC+backend%3A+Why+and+how)
 
 生成摘要时出错
 
 ---
 
-## 74. Nvidia 800 Gbps ConnectX-8 SuperNIC
+## 97. Mozilla appoints new CEO Anthony Enzor-Demeo
 
-**原文标题**: Nvidia 800 Gbps ConnectX-8 SuperNIC
+**原文标题**: Mozilla appoints new CEO Anthony Enzor-Demeo
 
-**原文链接**: [https://www.servethehome.com/nvidia-connectx-8-dual-400gbe-400g-nic-review/3/](https://www.servethehome.com/nvidia-connectx-8-dual-400gbe-400g-nic-review/3/)
-
-生成摘要时出错
-
----
-
-## 75. Nvidia plans heavy cuts to GPU supply in early 2026
-
-**原文标题**: Nvidia plans heavy cuts to GPU supply in early 2026
-
-**原文链接**: [https://overclock3d.net/news/gpu-displays/nvidia-plans-heavy-cuts-to-gpu-supply-in-early-2026/](https://overclock3d.net/news/gpu-displays/nvidia-plans-heavy-cuts-to-gpu-supply-in-early-2026/)
+**原文链接**: [https://blog.mozilla.org/en/mozilla/leadership/mozillas-next-chapter-anthony-enzor-demeo-new-ceo/](https://blog.mozilla.org/en/mozilla/leadership/mozillas-next-chapter-anthony-enzor-demeo-new-ceo/)
 
 生成摘要时出错
 
 ---
 
-## 76. Browser 'privacy' extensions have eye on your AI, log all your chats
+## 98. 40 percent of fMRI signals do not correspond to actual brain activity
 
-**原文标题**: Browser 'privacy' extensions have eye on your AI, log all your chats
+**原文标题**: 40 percent of fMRI signals do not correspond to actual brain activity
 
-**原文链接**: [https://www.theregister.com/2025/12/16/chrome_edge_privacy_extensions_quietly/](https://www.theregister.com/2025/12/16/chrome_edge_privacy_extensions_quietly/)
-
-生成摘要时出错
-
----
-
-## 77. The biggest heat pumps
-
-**原文标题**: The biggest heat pumps
-
-**原文链接**: [https://www.bbc.com/news/articles/c17p44w87rno](https://www.bbc.com/news/articles/c17p44w87rno)
+**原文链接**: [https://www.tum.de/en/news-and-events/all-news/press-releases/details/40-percent-of-mri-signals-do-not-correspond-to-actual-brain-activity](https://www.tum.de/en/news-and-events/all-news/press-releases/details/40-percent-of-mri-signals-do-not-correspond-to-actual-brain-activity)
 
 生成摘要时出错
 
 ---
 
-## 78. Short-Circuiting Correlated Subqueries in SQLite
+## 99. Security vulnerability found in Rust Linux kernel code
 
-**原文标题**: Short-Circuiting Correlated Subqueries in SQLite
+**原文标题**: Security vulnerability found in Rust Linux kernel code
 
-**原文链接**: [https://emschwartz.me/short-circuiting-correlated-subqueries-in-sqlite/](https://emschwartz.me/short-circuiting-correlated-subqueries-in-sqlite/)
-
-生成摘要时出错
-
----
-
-## 79. A2UI: A Protocol for Agent-Driven Interfaces
-
-**原文标题**: A2UI: A Protocol for Agent-Driven Interfaces
-
-**原文链接**: [https://a2ui.org/](https://a2ui.org/)
+**原文链接**: [https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3e0ae02ba831da2b707905f4e602e43f8507b8cc](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3e0ae02ba831da2b707905f4e602e43f8507b8cc)
 
 生成摘要时出错
 
 ---
 
-## 80. FVWM-95 (2001)
+## 100. Purrtran – ᓚᘏᗢ – A Programming Language for Cat People
 
-**原文标题**: FVWM-95 (2001)
+**原文标题**: Purrtran – ᓚᘏᗢ – A Programming Language for Cat People
 
-**原文链接**: [https://fvwm95.sourceforge.net/](https://fvwm95.sourceforge.net/)
-
-生成摘要时出错
-
----
-
-## 81. Various locale mismatch scenarios in Windows clipboard text format synthesis
-
-**原文标题**: Various locale mismatch scenarios in Windows clipboard text format synthesis
-
-**原文链接**: [https://devblogs.microsoft.com/oldnewthing/20251211-37/?p=111858](https://devblogs.microsoft.com/oldnewthing/20251211-37/?p=111858)
-
-生成摘要时出错
-
----
-
-## 82. Canada's Carney called out for 'utilizing' British spelling
-
-**原文标题**: Canada's Carney called out for 'utilizing' British spelling
-
-**原文链接**: [https://www.bbc.com/news/articles/cj69d89l8l5o](https://www.bbc.com/news/articles/cj69d89l8l5o)
-
-生成摘要时出错
-
----
-
-## 83. Overconsumption is a spiritual problem
-
-**原文标题**: Overconsumption is a spiritual problem
-
-**原文链接**: [https://www.sherryning.com/p/youre-overspending-because-you-lack-values](https://www.sherryning.com/p/youre-overspending-because-you-lack-values)
-
-生成摘要时出错
-
----
-
-## 84. A brief history of Times New Roman
-
-**原文标题**: A brief history of Times New Roman
-
-**原文链接**: [https://typographyforlawyers.com/a-brief-history-of-times-new-roman.html](https://typographyforlawyers.com/a-brief-history-of-times-new-roman.html)
-
-生成摘要时出错
-
----
-
-## 85. A Guide to Magnetizing N48 Magnets in Ansys Maxwell
-
-**原文标题**: A Guide to Magnetizing N48 Magnets in Ansys Maxwell
-
-**原文链接**: [https://blog.ozeninc.com/resources/from-datasheet-to-demagnetization-a-guide-to-magnetizing-n48-magnets-in-ansys-maxwell](https://blog.ozeninc.com/resources/from-datasheet-to-demagnetization-a-guide-to-magnetizing-n48-magnets-in-ansys-maxwell)
-
-生成摘要时出错
-
----
-
-## 86. ArkhamMirror: Airgapped investigation platform with CIA-style hypothesis testing
-
-**原文标题**: ArkhamMirror: Airgapped investigation platform with CIA-style hypothesis testing
-
-**原文链接**: [https://github.com/mantisfury/ArkhamMirror](https://github.com/mantisfury/ArkhamMirror)
-
-生成摘要时出错
-
----
-
-## 87. FCC chair suggests agency isn't independent, word cut from mission statement
-
-**原文标题**: FCC chair suggests agency isn't independent, word cut from mission statement
-
-**原文链接**: [https://www.axios.com/2025/12/17/brendan-carr-fcc-independent-senate-testimony-website](https://www.axios.com/2025/12/17/brendan-carr-fcc-independent-senate-testimony-website)
-
-生成摘要时出错
-
----
-
-## 88. Creating custom yellow handshake emojis with zero-width joiners
-
-**原文标题**: Creating custom yellow handshake emojis with zero-width joiners
-
-**原文链接**: [https://blog.alexbeals.com/posts/custom-yellow-handshake-emojis-with-zero-width-joiners](https://blog.alexbeals.com/posts/custom-yellow-handshake-emojis-with-zero-width-joiners)
-
-生成摘要时出错
-
----
-
-## 89. Sega Channel: VGHF Recovers over 100 Sega Channel ROMs (and More)
-
-**原文标题**: Sega Channel: VGHF Recovers over 100 Sega Channel ROMs (and More)
-
-**原文链接**: [https://gamehistory.org/segachannel/](https://gamehistory.org/segachannel/)
-
-生成摘要时出错
-
----
-
-## 90. Annual Production of 1/72 (22mm) scale plastic soldiers, 1958-2025
-
-**原文标题**: Annual Production of 1/72 (22mm) scale plastic soldiers, 1958-2025
-
-**原文链接**: [https://plasticsoldierreview.com/ShowFeature.aspx?id=27](https://plasticsoldierreview.com/ShowFeature.aspx?id=27)
-
-生成摘要时出错
-
----
-
-## 91. SHARP, an approach to photorealistic view synthesis from a single image
-
-**原文标题**: SHARP, an approach to photorealistic view synthesis from a single image
-
-**原文链接**: [https://apple.github.io/ml-sharp/](https://apple.github.io/ml-sharp/)
-
-生成摘要时出错
-
----
-
-## 92. Show HN: Interactive Common Lisp: An Enhanced REPL
-
-**原文标题**: Show HN: Interactive Common Lisp: An Enhanced REPL
-
-**原文链接**: [https://github.com/atgreen/icl](https://github.com/atgreen/icl)
-
-生成摘要时出错
-
----
-
-## 93. Reverse-engineering the RK3588 NPU: Hacking limits to run vision transformers
-
-**原文标题**: Reverse-engineering the RK3588 NPU: Hacking limits to run vision transformers
-
-**原文链接**: [https://amohan.dev/blog/2025/shard-optimizing-vision-transformers-edge-npu/](https://amohan.dev/blog/2025/shard-optimizing-vision-transformers-edge-npu/)
-
-生成摘要时出错
-
----
-
-## 94. Economics of Orbital vs. Terrestrial Data Centers
-
-**原文标题**: Economics of Orbital vs. Terrestrial Data Centers
-
-**原文链接**: [https://andrewmccalip.com/space-datacenters](https://andrewmccalip.com/space-datacenters)
-
-生成摘要时出错
-
----
-
-## 95. US threatens EU digital services market access
-
-**原文标题**: US threatens EU digital services market access
-
-**原文链接**: [https://twitter.com/ustraderep/status/2000990028835508258](https://twitter.com/ustraderep/status/2000990028835508258)
-
-生成摘要时出错
-
----
-
-## 96. A linear-time alternative for Dimensionality Reduction and fast visualisation
-
-**原文标题**: A linear-time alternative for Dimensionality Reduction and fast visualisation
-
-**原文链接**: [https://medium.com/@roman.f/a-linear-time-alternative-to-t-sne-for-dimensionality-reduction-and-fast-visualisation-5cd1a7219d6f](https://medium.com/@roman.f/a-linear-time-alternative-to-t-sne-for-dimensionality-reduction-and-fast-visualisation-5cd1a7219d6f)
-
-生成摘要时出错
-
----
-
-## 97. The appropriate amount of effort is zero
-
-**原文标题**: The appropriate amount of effort is zero
-
-**原文链接**: [https://expandingawareness.org/blog/the-appropriate-amount-of-effort-is-zero/](https://expandingawareness.org/blog/the-appropriate-amount-of-effort-is-zero/)
-
-生成摘要时出错
-
----
-
-## 98. NOAA deploys new generation of AI-driven global weather models
-
-**原文标题**: NOAA deploys new generation of AI-driven global weather models
-
-**原文链接**: [https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models](https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models)
-
-生成摘要时出错
-
----
-
-## 99. Chafa: Terminal Graphics for the 21st Century
-
-**原文标题**: Chafa: Terminal Graphics for the 21st Century
-
-**原文链接**: [https://hpjansson.org/chafa/](https://hpjansson.org/chafa/)
-
-生成摘要时出错
-
----
-
-## 100. Show HN: TheAuditor v2.0 – A “Flight Computer” for AI Coding Agents
-
-**原文标题**: Show HN: TheAuditor v2.0 – A “Flight Computer” for AI Coding Agents
-
-**原文链接**: [https://github.com/TheAuditorTool/Auditor](https://github.com/TheAuditorTool/Auditor)
+**原文链接**: [https://github.com/cmontella/purrtran](https://github.com/cmontella/purrtran)
 
 生成摘要时出错
 
