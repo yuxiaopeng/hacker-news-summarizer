@@ -18,8 +18,8 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# 创建 Gemini 模型 gemini-2.0-flash-lite/gemini-2.0-flash/gemini-2.0-pro-exp/gemini-3-pro-preview
-model = genai.GenerativeModel('gemini-3-pro-preview')
+# 创建 Gemini 模型 gemini-2.0-flash-lite/gemini-2.0-flash/gemini-2.0-pro-exp/gemini-3-flash-preview
+model = genai.GenerativeModel('gemini-3-flash-preview')
 
 def fetch_top_stories(limit=100):
     """获取 Hacker News 上的热门文章链接"""
