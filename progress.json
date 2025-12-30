@@ -1,67 +1,291 @@
 [
   {
-    "id": "46422009",
-    "title": "Static Allocation with Zig",
-    "url": "https://nickmonad.blog/2025/static-allocation-with-zig-kv/",
-    "summary": "The article explores the implementation of **kv**, a Redis-compatible key/value server written in Zig, specifically focusing on \"TigerStyle\" **static memory allocation**. This design pattern requires all memory to be allocated at startup, eliminating dynamic allocation or freeing during runtime to ensure performance predictability, avoid use-after-free errors, and force a deeper understanding of system limits.\n\nThe author breaks the implementation down into three core areas:\n\n*   **Connection Handling:** Using `io_uring` for asynchronous I/O, the server pre-allocates pools for connection structures and buffers. A `std.heap.MemoryPool` manages active connections, while a custom `ByteArrayPool` handles fixed-size receive and send buffers. If the pool is exhausted, new connections are rejected, ensuring the system never exceeds its memory bounds.\n*   **Command Parsing:** To parse the RESP (Redis Serialization Protocol) format, the server utilizes a `std.heap.FixedBufferAllocator`. This acts as a \"bump allocator\" that is reset after every request. It facilitates a zero-copy approach by creating slices that point directly into the request buffer, with the buffer size determined by the maximum possible command length.\n*   **Key/Value Storage:** The system utilizes Zig’s `std.StringHashMapUnmanaged`. By calling `ensureTotalCapacity` at startup, the server can use `putAssumeCapacity` during runtime, bypassing the need for an allocator. Actual key/value data is stored in a pre-allocated `ByteArrayPool`.\n\nThe author acknowledges significant challenges, such as potential poor memory utilization when handling lists and the complexity of managing \"tombstones\" during hash map deletions. Despite these hurdles, the author concludes that static allocation results in a more robust, stable, and maintainable system by forcing developers to consider all usage patterns upfront.",
-    "chinese_title": "使用 Zig 进行静态分配",
-    "chinese_summary": "本文探讨了使用 Zig 语言编写的兼容 Redis 的键值服务器 **kv** 的实现，重点介绍了 “TigerStyle” **静态内存分配**。这种设计模式要求在启动时分配所有内存，在运行时消除动态分配或释放，以确保性能的可预测性，避免“释放后使用”（use-after-free）错误，并促使开发者更深入地理解系统限制。\n\n作者将实现过程分为三个核心领域：\n\n*   **连接处理：** 该服务器使用 `io_uring` 进行异步 I/O，并为连接结构和缓冲区预分配池。`std.heap.MemoryPool` 用于管理活动连接，而自定义的 `ByteArrayPool` 则处理固定大小的接收和发送缓冲区。如果池耗尽，新连接将被拒绝，从而确保系统永远不会超出其内存边界。\n*   **命令解析：** 为了解析 RESP（Redis 序列化协议）格式，服务器使用了 `std.heap.FixedBufferAllocator`。它充当“堆栈分配器”（bump allocator），在每次请求后重置。通过创建直接指向请求缓冲区的切片（slice），它实现了一种零拷贝方法，其缓冲区大小由最大可能的命令长度决定。\n*   **键值存储：** 系统利用了 Zig 的 `std.StringHashMapUnmanaged`。通过在启动时调用 `ensureTotalCapacity`，服务器可以在运行时使用 `putAssumeCapacity`，从而绕过对分配器的需求。实际的键值数据存储在预分配的 `ByteArrayPool` 中。\n\n作者承认该方案存在重大挑战，例如处理列表时潜在的内存利用率低下，以及哈希表删除过程中管理“墓碑”（tombstones）的复杂性。尽管存在这些障碍，作者得出的结论是：静态分配通过迫使开发者预先考虑所有使用模式，构建出了一个更稳健、稳定且易于维护的系统。"
+    "id": "46433579",
+    "title": "Public Sans – A strong, neutral typeface",
+    "url": "https://public-sans.digital.gov/",
+    "summary": "**Public Sans** is a strong, neutral typeface designed by the United States Web Design System (USWDS) for versatile use across interfaces, body text, and headings. Currently at version 2.001, it is an open-source project hosted on GitHub, where the public can download the font and contribute to its ongoing development.",
+    "chinese_title": "Public Sans —— 一款强健、中性的字体",
+    "chinese_summary": "**Public Sans** 是一款由美国网络设计系统 (USWDS) 设计的稳重且中性的字体，适用于界面、正文和标题等多种场景。该项目目前版本为 2.001，是一个托管在 GitHub 上的开源项目，公众可以下载该字体并为其持续开发做出贡献。"
   },
   {
-    "id": "46422412",
-    "title": "GOG is getting acquired by its original co-founder: What it means for you",
-    "url": "https://www.gog.com/blog/gog-is-getting-acquired-by-its-original-co-founder-what-it-means-for-you/",
-    "summary": "GOG has announced that it has been acquired from CD PROJEKT by its original co-founder, Michał Kiciński. This transition marks a shift toward independence, allowing GOG to double down on its founding philosophy of game preservation and DRM-free ownership.\n\n**Key highlights of the acquisition include:**\n\n*   **Core Values:** The platform will remain dedicated to a DRM-free model, ensuring users retain genuine ownership of their games through offline installers and optional clients (GOG GALAXY).\n*   **User Experience:** There will be no changes to user accounts, existing libraries, or data privacy. GOG remains the controller of user data.\n*   **Relationship with CD PROJEKT RED:** Despite the separation, the two companies will maintain a close partnership. All current and future CD PROJEKT RED titles will continue to be released on GOG.\n*   **Financial Health and Strategy:** The move is not a result of financial instability—GOG reports a strong year—but rather a strategic realignment. CD PROJEKT aims to focus exclusively on developing high-quality RPGs, while Kiciński intends to grow GOG’s mission of making \"games live forever.\"\n*   **Future Initiatives:** GOG plans to expand its Preservation Program and support for indie developers. Funds from \"GOG Patrons\" and tips will stay within the company to fund \"ambitious rescue missions\" for classic games, with more community-driven initiatives planned for 2026.\n\nIn summary, the acquisition represents a \"return to roots\" for GOG, ensuring its operations remain independent and focused on a non-predatory, preservation-first approach to the PC gaming market.",
-    "chinese_title": "GOG 将被其原联合创始人收购：这对你意味着什么",
-    "chinese_summary": "GOG宣布，其原联合创始人Michał Kiciński已从CD PROJEKT手中将其收购。此次过渡标志着GOG转向独立运营，使其能够进一步强化其游戏保存和无DRM（数字版权管理）所有权的创始理念。\n\n**此次收购的核心要点包括：**\n\n*   **核心价值：** 平台将继续致力于无DRM模式，通过离线安装包和可选客户端（GOG GALAXY）确保用户拥有游戏的真实所有权。\n*   **用户体验：** 用户账号、现有游戏库或数据隐私不会发生任何变化。GOG依然是用户数据的控制方。\n*   **与CD PROJEKT RED的关系：** 尽管分家，两家公司仍将保持紧密的合作伙伴关系。CD PROJEKT RED所有现有及未来的作品将继续在GOG平台发布。\n*   **财务状况与战略：** 此举并非源于财务不稳定——GOG报告了强劲的年度业绩——而是战略调整。CD PROJEKT旨在专注于开发高质量的RPG游戏，而Kiciński则意在拓展GOG“让游戏长存”的使命。\n*   **未来计划：** GOG计划扩大其“保存计划”并加强对独立开发者的支持。来自“GOG赞助者”的资金和打赏将留在公司内部，用于资助针对经典游戏的“宏大救援任务”，并计划在2026年推出更多社区驱动的倡议。\n\n总而言之，此次收购代表了GOG的“回归初心”，确保其在PC游戏市场中保持独立运营，并专注于非掠夺式、保存至上的经营理念。"
+    "id": "46435418",
+    "title": "Toro: Deploy Applications as Unikernels",
+    "url": "https://github.com/torokernel/torokernel",
+    "summary": "**Toro** is a minimalist unikernel designed specifically for deploying applications as microVMs. By leveraging **virtio-fs** for filesystem access and **virtio-vsocket** for networking, Toro achieves a lightweight architecture optimized for performance and efficiency.\n\n**Key Features:**\n*   **Architecture & Hardware:** Supports x86-64 systems and up to 512GB of RAM.\n*   **Virtualization:** Compatible with QEMU-KVM microvm and Firecracker.\n*   **Performance:** Features fast boot times, tiny image sizes, and a cooperative, I/O-bound threading scheduler.\n*   **Debugging:** Includes a built-in gdbstub for easier troubleshooting.\n\n**Deployment and Usage:**\nDevelopers can quickly test Toro using a pre-configured Docker image (`torokernel/torokernel-dev`), which contains all necessary tools. Deployment is managed via the `CloudIt.py` script. The project provides several practical examples:\n1.  **HelloWorld:** A basic demonstration of the unikernel in action.\n2.  **StaticWebServer:** Illustrates file serving using `virtiofsd` and port forwarding via `socat` over vsock.\n3.  **Intercore Communication:** Demonstrates how multiple cores communicate using the VirtIOBus device.\n\n**Community and Development:**\nToro is an open-source project licensed under **GPLv3**. It has a long history of development, documented through various presentations at FOSDEM, KVM Forum, and Open Source Summit from 2015 to 2024. Recent updates include support for MPI (Message Passing Interface) applications. Users can contribute to the project via its GitHub repository or join the dedicated Google Group for discussion.",
+    "chinese_title": "Toro：将应用程序部署为单内核",
+    "chinese_summary": "**Toro** 是一个专为将应用程序部署为微型虚拟机 (microVMs) 而设计的极简 Unikernel。通过利用 **virtio-fs** 进行文件系统访问以及 **virtio-vsocket** 进行网络通信，Toro 实现了针对性能和效率优化的轻量级架构。\n\n**核心特性：**\n*   **架构与硬件：** 支持 x86-64 系统和高达 512GB 的内存。\n*   **虚拟化：** 兼容 QEMU-KVM microvm 和 Firecracker。\n*   **性能：** 具备极速启动、微型镜像体积，以及协作式 I/O 密集型线程调度器。\n*   **调试：** 内置 gdbstub，便于故障排查。\n\n**部署与使用：**\n开发者可以使用预配置的 Docker 镜像 (`torokernel/torokernel-dev`) 快速测试 Toro，该镜像包含了所有必要工具。部署由 `CloudIt.py` 脚本管理。该项目提供了几个实际示例：\n1.  **HelloWorld：** Unikernel 运行的基础演示。\n2.  **StaticWebServer：** 演示使用 `virtiofsd` 提供文件服务，并通过 `socat` 在 vsock 上进行端口转发。\n3.  **Intercore Communication：** 演示多核如何利用 VirtIOBus 设备进行通信。\n\n**社区与开发：**\nToro 是一个采用 **GPLv3** 协议的开源项目。它拥有悠久的开发历史，在 2015 年至 2024 年间的 FOSDEM、KVM Forum 和 Open Source Summit 等会议上均有相关技术分享。最近的更新包括对 MPI（消息传递接口）应用程序的支持。用户可以通过 GitHub 仓库为项目做出贡献，或加入专门的 Google Group 参与讨论。"
   },
   {
-    "id": "46415225",
-    "title": "What an unprocessed photo looks like",
-    "url": "https://maurycyz.com/misc/raw_photo/",
+    "id": "46431560",
+    "title": "Netflix: Open Content",
+    "url": "https://opencontent.netflix.com/",
     "summary": "生成摘要时出错",
-    "chinese_title": "未经处理的照片是什么样子的",
+    "chinese_title": "Netflix: Open Content",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46420672",
-    "title": "Libgodc: Write Go Programs for Sega Dreamcast",
-    "url": "https://github.com/drpaneas/libgodc",
-    "summary": "**Libgodc** is a specialized Go runtime designed specifically for the Sega Dreamcast. It replaces the standard Go runtime to accommodate the console's unique hardware constraints, including its 16MB of RAM, single-core SH-4 CPU, and the absence of an operating system. Despite these limitations, libgodc maintains core Go functionality, providing support for goroutines, channels, and garbage collection.\n\nThe project is supported by the **godc** CLI tool, which streamlines the development workflow by handling toolchain setup, project initialization, and the building of binaries. Comprehensive documentation is included, covering runtime architecture, best practices for \"Effective Dreamcast Go,\" and KOS (KallistiOS) wrappers for calling C functions from Go code.\n\nPerformance benchmarks on real SH-4 hardware demonstrate the runtime's efficiency:\n*   **Context switching:** ~6.4 μs\n*   **Goroutine spawning:** ~31 μs\n*   **GC pauses:** Between 72 μs and 6 ms\n\nTo help developers get started, the repository features several example projects. These range from basic \"Hello World\" and BIOS font rendering to more complex applications such as a filesystem browser and fully playable games like *Pong* and *Breakout*. \n\nLibgodc is released under the BSD 3-Clause License and requires Go version 1.25.3 or higher.",
-    "chinese_title": "Libgodc：为世嘉 Dreamcast 编写 Go 语言程序",
-    "chinese_summary": "**Libgodc** 是专为世嘉 Dreamcast 设计的定制化 Go 运行时。它取代了标准的 Go 运行时，以适应游戏机独特的硬件限制，包括 16MB 内存、单核 SH-4 CPU 以及无操作系统的环境。尽管存在这些限制，libgodc 仍保留了 Go 的核心功能，支持 goroutine、channel 和垃圾回收。\n\n该项目由 **godc** 命令行工具提供支持，通过处理工具链配置、项目初始化和二进制文件构建来简化开发流程。配套文档内容详尽，涵盖了运行时架构、“高效 Dreamcast Go” 最佳实践，以及用于从 Go 代码调用 C 函数的 KOS (KallistiOS) 封装。\n\n在真实 SH-4 硬件上的性能基准测试证明了该运行时的效率：\n*   **上下文切换：** 约 6.4 μs\n*   **Goroutine 启动：** 约 31 μs\n*   **GC 停顿：** 介于 72 μs 至 6 ms 之间\n\n为了帮助开发者快速上手，仓库中提供了多个示例项目。这些项目涵盖了从基础的 “Hello World” 和 BIOS 字体渲染，到文件系统浏览器以及《乒乓球》(Pong) 和《打砖块》(Breakout) 等完整可玩的游戏。\n\nLibgodc 采用 BSD 3-Clause 许可证发布，并要求 Go 版本为 1.25.3 或更高。"
+    "id": "46432311",
+    "title": "Non-Zero-Sum Games",
+    "url": "https://nonzerosum.games/",
+    "summary": "**Non-Zero-Sum Games** is a \"world-help\" website and podcast hosted by \"Non-Zero-Sum James.\" The platform is dedicated to exploring the concept of win-win scenarios—situations where cooperation leads to mutual benefit—and how these dynamics are essential for solving complex global problems and building a better future.\n\nThe content focuses on several core disciplines, including:\n*   **Game Theory:** Analyzing strategic interactions and cooperative play.\n*   **Moral Philosophy and Ethical Economics:** Aligning financial and social systems with human values and ethics.\n*   **Artificial Intelligence:** Navigating the future of technology and its role in society.\n*   **Nature and Complexity:** Studying cooperation in the wild and the foundations of consciousness and history.\n\nThe site is organized into diverse categories ranging from \"The Fun Zone\" for newcomers to deep dives into \"Non-Zero Heroes\" (champions of cooperation) and interactive simulations. James, who draws on his background in creativity, positions the project as a collaborative journey. He encourages community participation through sharing, debating, and co-creating, all grounded in the philosophical belief that our success is inextricably linked to the well-being of others.",
+    "chinese_title": "非零和博弈",
+    "chinese_summary": "**非零和博弈**（Non-Zero-Sum Games）是一个由“非零和詹姆斯”（Non-Zero-Sum James）主持的“助益世界”型网站和播客。该平台致力于探索“双赢局面”的概念——即通过合作实现互利的场景——并探讨这些动态机制对于解决复杂的全球问题和构建美好未来为何至关重要。\n\n其内容聚焦于几个核心领域，包括：\n*   **博弈论：** 分析策略互动与协作博弈。\n*   **道德哲学与伦理经济学：** 使金融和社会体系与人类价值观及伦理保持一致。\n*   **人工智能：** 探索技术的未来及其在社会中的作用。\n*   **自然与复杂性：** 研究自然界中的合作以及意识与历史的基础。\n\n网站设有丰富多样的类别，从面向新手的“趣味区”，到对“非零和英雄”（合作的倡导者）的深度探讨以及互动模拟。詹姆斯凭借其创意背景，将该项目定位为一场协作之旅。他鼓励通过分享、辩论和共同创作来进行社区参与，这一切都植根于这样一个哲学信念：我们的成功与他人的福祉密不可分。"
+  },
+  {
+    "id": "46432999",
+    "title": "The British Empire's Resilient Subsea Telegraph Network",
+    "url": "https://subseacables.blogspot.com/2025/12/the-british-empires-resilient-subsea.html",
+    "summary": "By 1902, the British Empire had established the \"Red Line,\" a global subsea telegraph network that revolutionized imperial communication by reducing delivery times to minutes or hours. As highlighted by Dr. Michael Delaunay, the network's defining characteristic was its extreme resilience.\n\nThis reliability was achieved through several strategic layers:\n*   **Redundant Topology:** The network utilized a ring configuration, allowing traffic to be rerouted in the opposite direction if a disruption occurred.\n*   **Multiple Links:** By placing numerous cables between endpoints, the British military ensured that total communication failure was nearly impossible. For instance, the Committee of Imperial Defense estimated that isolating the British Isles would require severing 57 separate cables.\n*   **Self-Sufficiency:** The Empire controlled the entire lifecycle of the network, possessing the sole capability to manufacture and repair all components.\n*   **Naval Protection:** The security of this infrastructure was further guaranteed by the British Navy, which at the time had no equal.\n\nUltimately, the Red Line provided a secure, redundant, and independently maintained communication backbone that was vital to the administration and defense of the British Empire.",
+    "chinese_title": "大英帝国的韧性海底电报网络",
+    "chinese_summary": "By 1902, the British Empire had established the \"Red Line,\" a global subsea telegraph network that revolutionized imperial communication by reducing delivery times to minutes or hours. As highlighted by Dr. Michael Delaunay, the network's defining characteristic was its extreme resilience.\n\nThis reliability was achieved through several strategic layers:\n*   **Redundant Topology:** The network utilized a ring configuration, allowing traffic to be rerouted in the opposite direction if a disruption occurred.\n*   **Multiple Links:** By placing numerous cables between endpoints, the British military ensured that total communication failure was nearly impossible. For instance, the Committee of Imperial Defense estimated that isolating the British Isles would require severing 57 separate cables.\n*   **Self-Sufficiency:** The Empire controlled the entire lifecycle of the network, possessing the sole capability to manufacture and repair all components.\n*   **Naval Protection:** The security of this infrastructure was further guaranteed by the British Navy, which at the time had no equal.\n\nUltimately, the Red Line provided a secure, redundant, and independently maintained communication backbone that was vital to the administration and defense of the British Empire."
+  },
+  {
+    "id": "46433832",
+    "title": "The Legacy of Undersea Cables",
+    "url": "https://blog.sciencemuseumgroup.org.uk/the-legacy-of-undersea-cables/",
+    "summary": "Undersea cables are the backbone of global communication, carrying 97% of the world’s internet data. While modern users often credit satellites or \"The Cloud,\" this critical infrastructure relies on 1.2 million kilometers of fibre-optic cables that facilitate global commerce, government, and military functions.\n\nThe article highlights how today’s network is rooted in 19th-century imperialism. The first telegraph cables, pioneered by Britain and the USA, were tools of geopolitical influence designed to strengthen colonial ties. A key material for these early cables was gutta percha, a natural waterproof plastic sourced from Malayan trees. The massive demand for this sap nearly drove the species to extinction. Furthermore, while the West claimed the technological success, the crucial environmental knowledge and labor provided by the Malay people were largely overlooked.\n\nGeopolitically, cables were strategically routed through \"networked islands\" such as Fiji, which served as hubs for Britain’s \"all red line\"—a secure communication system that never touched foreign soil. Modern fibre-optic lines frequently follow these same imperial routes. \n\nToday, while 99% of undersea cables are privately owned, they remain at the center of global power dynamics. They are vulnerable to both natural disasters and intentional sabotage, as seen in recent Baltic Sea disruptions. However, they also offer significant economic potential; initiatives like Google’s Pacific Connect project aim to bring digital resilience and career opportunities to Pacific islands. Ultimately, the history of undersea cables reflects a legacy of colonial control, environmental impact, and the ongoing strategic importance of physical connectivity in a digital age.",
+    "chinese_title": "海底电缆的遗产",
+    "chinese_summary": "海底电缆是全球通信的支柱，承载着全球97%的互联网数据。虽然现代用户往往将其归功于卫星或“云端”，但这一关键基础设施实际上依赖于长达120万公里的光缆，它们支撑着全球商业、政府及军事运作。\n\n本文强调了当今的网络是如何植根于19世纪的帝国主义。由英美两国开创的首批电报电缆曾是地缘政治影响力的工具，旨在加强殖民联系。这些早期电缆的一种关键材料是古塔胶，这是一种从马来亚树木中提取的天然防水塑料。对这种树液的巨大需求几乎导致该物种灭绝。此外，尽管西方声称取得了技术上的成功，但马来人提供的关键环境知识和劳动力在很大程度上被忽视了。\n\n在地缘政治上，电缆被战略性地布置在斐济等“网络化岛屿”上，这些岛屿曾是英国“全红线”（all red line）的枢纽——这是一套从未触及外国领土的安全通信系统。现代光缆通常沿袭这些相同的帝国路线。\n\n如今，尽管99%的海底电缆由私人所有，但它们仍处于全球权力格局的中心。正如近期波罗的海发生的干扰事件所反映的那样，它们极易受到自然灾害和蓄意破坏的影响。然而，电缆也蕴含着巨大的经济潜力；例如谷歌的“太平洋连接”（Pacific Connect）等项目，旨在为太平洋岛屿提升数字化韧性并创造就业机会。归根结底，海底电缆的历史反映了殖民控制的遗产、对环境的影响，以及在数字时代物理连接持续存在的战略重要性。"
+  },
+  {
+    "id": "46379765",
+    "title": "Postgres extension complements pgvector for performance and scale",
+    "url": "https://github.com/timescale/pgvectorscale",
+    "summary": "**pgvectorscale** is an open-source PostgreSQL extension developed in Rust by Timescale to complement **pgvector**, significantly enhancing performance and scalability for AI applications. It introduces three primary innovations:\n\n1.  **StreamingDiskANN:** A new index type inspired by Microsoft’s DiskANN research, designed for high-performance embedding searches.\n2.  **Statistical Binary Quantization (SBQ):** A compression method that improves upon standard binary quantization to optimize storage and speed.\n3.  **Label-based Filtered Search:** Based on Microsoft’s Filtered DiskANN, this allows users to combine vector similarity searches with label filtering (using smallint arrays) for more precise and efficient results.\n\n**Performance Benchmarks**\nOn a dataset of 50 million embeddings, PostgreSQL equipped with `pgvectorscale` outperformed Pinecone’s storage-optimized (s1) index. It achieved **28x lower p95 latency** and **16x higher query throughput** at **75% less cost** when self-hosted on AWS.\n\n**Key Functionality**\n*   **Indexing:** Supports cosine, L2, and inner product distances using the `diskann` index.\n*   **Filtering:** Offers two methods—optimized label-based filtering integrated into the index and standard post-filtering via arbitrary `WHERE` clauses.\n*   **Tuning:** Provides tunable parameters for both index build-time (e.g., `num_neighbors`, `storage_layout`) and query-time (e.g., `query_rescore`) to balance accuracy and performance.\n*   **Scalability:** Supports parallel index building for large datasets and is optimized for memory-efficient storage.\n\n**Installation and Access**\nThe extension is written in Rust using the PGRX framework. It can be installed via pre-built Docker containers, from source, or as a managed service on Timescale Cloud. When creating the extension, the `CASCADE` command automatically installs the required `pgvector` dependency.",
+    "chinese_title": "Postgres 扩展补充 pgvector，提升性能与扩展性。",
+    "chinese_summary": "**pgvectorscale** 是由 Timescale 使用 Rust 开发的一款开源 PostgreSQL 扩展，旨在补充 **pgvector**，显著提升 AI 应用的性能和可扩展性。它引入了三大核心创新：\n\n1. **StreamingDiskANN：** 一种受微软 DiskANN 研究启发的新型索引类型，专为高性能嵌入（embedding）搜索而设计。\n2. **统计二值量化 (SBQ)：** 一种在标准二值量化基础上改进的压缩方法，旨在优化存储并提升速度。\n3. **基于标签的过滤搜索：** 基于微软的 Filtered DiskANN，允许用户将向量相似度搜索与标签过滤（使用 smallint 数组）相结合，以获得更精确、更高效的结果。\n\n**性能基准测试**\n在 5000 万条嵌入的数据集上，配备 `pgvectorscale` 的 PostgreSQL 表现优于 Pinecone 的存储优化型 (s1) 索引。在 AWS 自托管环境下，其 **p95 延迟降低了 28 倍**，**查询吞吐量提升了 16 倍**，且**成本降低了 75%**。\n\n**核心功能**\n* **索引：** 支持使用 `diskann` 索引进行余弦、L2 和内积距离计算。\n* **过滤：** 提供两种方法——集成在索引中的优化版标签过滤，以及通过任意 `WHERE` 子句进行的标准后置过滤。\n* **调优：** 为索引构建阶段（如 `num_neighbors`、`storage_layout`）和查询阶段（如 `query_rescore`）提供可调参数，以平衡准确性与性能。\n* **可扩展性：** 支持大规模数据集的并行索引构建，并针对内存效率进行了存储优化。\n\n**安装与获取**\n该扩展使用 PGRX 框架编写。可以通过预构建的 Docker 容器、源码编译或作为 Timescale Cloud 的托管服务进行安装。在创建扩展时，使用 `CASCADE` 命令会自动安装所需的 `pgvector` 依赖项。"
+  },
+  {
+    "id": "46432916",
+    "title": "Approachable Swift Concurrency",
+    "url": "https://fuckingapproachableswiftconcurrency.com/en/",
+    "summary": "This article outlines a modern, simplified approach to Swift Concurrency, moving away from complex callbacks and manual thread management toward a compiler-enforced \"isolation\" model.\n\n**Async/Await and Tasks**\nSwift uses `async/await` to handle waiting for I/O-bound work without blocking threads. Code pauses at `await` (suspension) and resumes when work finishes. For parallel work, `async let` and `TaskGroup` provide structured concurrency, ensuring child tasks are managed, cancelled, and cleaned up correctly. `Tasks` serve as the bridge between synchronous and asynchronous code.\n\n**Isolation Domains**\nThe system replaces traditional thread management with isolation boundaries:\n*   **MainActor:** A global actor for UI-related work, ensuring all updates happen on the main thread.\n*   **Actors:** Protect their own mutable state, allowing only one piece of code to access data at a time to prevent data races.\n*   **Nonisolated:** Code that opts out of isolation for general utility functions.\n\n**Data Safety with Sendable**\nTo prevent data races, Swift uses the `Sendable` protocol. It ensures that only thread-safe data—such as value types (structs), immutable classes, or actors—can cross isolation boundaries. Non-sendable types, like mutable classes, are restricted to prevent multiple threads from modifying the same memory.\n\n**Approachable Concurrency (Xcode 26)**\nThe article highlights new \"Approachable Concurrency\" settings in Xcode 26 (`SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`) that significantly reduce compiler friction. By defaulting code to the `MainActor` and preventing unnecessary \"thread hopping,\" the compiler becomes less aggressive with errors for standard app development. Developers only need to opt into background execution using `@concurrent` for CPU-intensive tasks, making the concurrency model much more intuitive for the average developer.",
+    "chinese_title": "易于上手的 Swift 并发",
+    "chinese_summary": "本文概述了一种现代且简化的 Swift 并发处理方法，即从复杂的回调和手动线程管理转向由编译器强制执行的“隔离”模型。\n\n**Async/Await 与任务 (Tasks)**\nSwift 使用 `async/await` 来处理对 I/O 密集型工作的等待，而不会阻塞线程。代码在 `await` 处暂停（挂起），并在工作完成后恢复。对于并行工作，`async let` 和 `TaskGroup` 提供了结构化并发，确保子任务得到正确的管理、取消和清理。`Tasks` 充当了同步代码与异步代码之间的桥梁。\n\n**隔离域 (Isolation Domains)**\n该系统通过隔离边界取代了传统的线程管理：\n*   **MainActor**：一个用于 UI 相关工作的全局 Actor，确保所有更新都在主线程上进行。\n*   **Actors**：保护其自身的可变状态，一次只允许一段代码访问数据，以防止数据竞争。\n*   **Nonisolated**：针对通用工具函数，选择退出隔离的代码。\n\n**通过 Sendable 确保数据安全**\n为了防止数据竞争，Swift 使用了 `Sendable` 协议。它确保只有线程安全的数据——如值类型（结构体）、不可变类或 Actor——才能跨越隔离边界。非 Sendable 类型（如可变类）会受到限制，以防止多个线程修改同一块内存。\n\n**易于上手的并发模型 (Xcode 26)**\n本文强调了 Xcode 26 中新的“易于上手并发（Approachable Concurrency）”设置（`SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`），该设置显著减少了编译器阻力。通过将代码默认隔离到 `MainActor` 并防止不必要的“线程跳转”，编译器在处理标准应用开发时的报错将不再那么激进。开发者只需针对 CPU 密集型任务使用 `@concurrent` 选择进入后台执行，这使得并发模型对普通开发者来说更加直观。"
+  },
+  {
+    "id": "46431028",
+    "title": "Go away Python",
+    "url": "https://lorentz.app/blog-item.html?id=go-shebang",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Go away Python",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46366010",
+    "title": "Reverse Engineering a Mysterious UDP Stream in My Hotel (2016)",
+    "url": "https://www.gkbrk.com/hotel-music",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Reverse Engineering a Mysterious UDP Stream in My Hotel (2016)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46422412",
+    "title": "GOG is getting acquired by its original co-founder",
+    "url": "https://www.gog.com/blog/gog-is-getting-acquired-by-its-original-co-founder-what-it-means-for-you/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "GOG is getting acquired by its original co-founder",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433661",
+    "title": "Hive (YC S14) Is Hiring a Staff Software Engineer (Data Systems)",
+    "url": "https://jobs.ashbyhq.com/hive.co/cb0dc490-0e32-4734-8d91-8b56a31ed497",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Hive (YC S14) Is Hiring a Staff Software Engineer (Data Systems)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433915",
+    "title": "What Happened to Abit Motherboards",
+    "url": "https://dfarq.homeip.net/what-happened-to-abit-motherboards/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "What Happened to Abit Motherboards",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46427586",
+    "title": "Stranger Things creator says turn off \"garbage\" settings",
+    "url": "https://screenrant.com/stranger-things-creator-turn-off-settings-premiere/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Stranger Things creator says turn off \"garbage\" settings",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46384975",
+    "title": "Show HN: One clean, developer-focused page for every Unicode symbol",
+    "url": "https://fontgenerator.design/symbols",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: One clean, developer-focused page for every Unicode symbol",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433029",
+    "title": "No strcpy either",
+    "url": "https://daniel.haxx.se/blog/2025/12/29/no-strcpy-either/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "No strcpy either",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46432862",
+    "title": "Times New American: A Tale of Two Fonts",
+    "url": "https://hsu.cy/2025/12/times-new-american/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Times New American: A Tale of Two Fonts",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46423290",
+    "title": "Tesla's 4680 battery supply chain collapses as partner writes down deal by 99%",
+    "url": "https://electrek.co/2025/12/29/tesla-4680-battery-supply-chain-collapses-partner-writes-down-dea/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Tesla's 4680 battery supply chain collapses as partner writes down deal by 99%",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46430558",
+    "title": "Charm Ruby – Glamorous Terminal Libraries for Ruby",
+    "url": "https://charm-ruby.dev/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Charm Ruby – Glamorous Terminal Libraries for Ruby",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46428496",
+    "title": "Hacking Washing Machines [video]",
+    "url": "https://media.ccc.de/v/39c3-hacking-washing-machines",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Hacking Washing Machines [video]",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46402132",
+    "title": "Concurrent Hash Table Designs",
+    "url": "https://bluuewhale.github.io/posts/concurrent-hashmap-designs/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Concurrent Hash Table Designs",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46432057",
+    "title": "Nicolas Guillou, French ICC judge sanctioned by the US and “debanked”",
+    "url": "https://www.lemonde.fr/en/international/article/2025/11/19/nicolas-guillou-french-icc-judge-sanctioned-by-the-us-you-are-effectively-blacklisted-by-much-of-the-world-s-banking-system_6747628_4.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Nicolas Guillou, French ICC judge sanctioned by the US and “debanked”",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424233",
+    "title": "The future of software development is software developers",
+    "url": "https://codemanship.wordpress.com/2025/11/25/the-future-of-software-development-is-software-developers/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The future of software development is software developers",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46426534",
+    "title": "ManusAI Joins Meta",
+    "url": "https://manus.im/blog/manus-joins-meta-for-next-era-of-innovation",
+    "summary": "生成摘要时出错",
+    "chinese_title": "ManusAI Joins Meta",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46364136",
+    "title": "UNIX Fourth Edition",
+    "url": "http://squoze.net/UNIX/v4/README",
+    "summary": "生成摘要时出错",
+    "chinese_title": "UNIX Fourth Edition",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424200",
+    "title": "AI is forcing us to write good code",
+    "url": "https://bits.logic.inc/p/ai-is-forcing-us-to-write-good-code",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AI is forcing us to write good code",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46390688",
+    "title": "Graph Algorithms in Rayon",
+    "url": "https://davidlattimore.github.io/posts/2025/11/27/graph-algorithms-in-rayon.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Graph Algorithms in Rayon",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46391490",
+    "title": "Turning an old Amazon Kindle into a eInk development platform (2021)",
+    "url": "https://blog.lidskialf.net/2021/02/08/turning-an-old-kindle-into-a-eink-development-platform/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Turning an old Amazon Kindle into a eInk development platform (2021)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46432781",
+    "title": "Singapore Study Links Heavy Infant Screen Time to Teen Anxiety",
+    "url": "https://www.bloomberg.com/news/articles/2025-12-30/singapore-study-links-heavy-infant-screen-time-to-teen-anxiety",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Singapore Study Links Heavy Infant Screen Time to Teen Anxiety",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46425198",
+    "title": "Google is dead. Where do we go now?",
+    "url": "https://www.circusscientist.com/2025/12/29/google-is-dead-where-do-we-go-now/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Google is dead. Where do we go now?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46435477",
+    "title": "'Commuting Is Bad'–Particularly for Women",
+    "url": "https://www.theatlantic.com/family/2025/12/commute-gender-wage-gap-mothers/685265/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "'Commuting Is Bad'–Particularly for Women",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46427920",
+    "title": "MongoDB Server Security Update, December 2025",
+    "url": "https://www.mongodb.com/company/blog/news/mongodb-server-security-update-december-2025",
+    "summary": "生成摘要时出错",
+    "chinese_title": "MongoDB Server Security Update, December 2025",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46428154",
+    "title": "Outside, Dungeon, Town: Integrating the Three Places in Videogames (2024)",
+    "url": "https://keithburgun.net/outside-dungeon-town-integrating-the-three-places-in-videogames/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Outside, Dungeon, Town: Integrating the Three Places in Videogames (2024)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46434301",
+    "title": "2025 Was Another Exceptionally Hot Year",
+    "url": "https://e360.yale.edu/digest/2025-second-hottest-year",
+    "summary": "生成摘要时出错",
+    "chinese_title": "2025 Was Another Exceptionally Hot Year",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46384153",
+    "title": "Incremental Backups of Gmail Takeouts",
+    "url": "https://baecher.dev/stdout/incremental-backups-of-gmail-takeouts/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Incremental Backups of Gmail Takeouts",
+    "chinese_summary": "生成摘要时出错"
   },
   {
     "id": "46419970",
     "title": "Kidnapped by Deutsche Bahn",
     "url": "https://www.theocharis.dev/blog/kidnapped-by-deutsche-bahn/",
-    "summary": "In the article \"Kidnapped by Deutsche Bahn,\" the author provides a satirical and frustrated account of a travel disaster on Christmas Eve 2024. Attempting a modest 35-kilometer journey from Cologne to Meckenheim, the narrator’s trip spirals into an absurd ordeal that highlights the systemic failures of Germany’s national railway, Deutsche Bahn (DB).\n\nThe journey begins with a delayed train and a detour due to \"issues near Bonn.\" The narrator plans to disembark at Troisdorf to meet his father, but the situation turns surreal when the driver announces that the train cannot stop at Troisdorf because it was not properly registered for the tracks it was using. As a result, the narrator is forced to stay on the train as it bypasses several stations, eventually depositing him in Neuwied—63 kilometers away and in a different federal state.\n\nThe author uses this \"kidnapping\" as a springboard to critique DB’s operations and corporate culture. Key points of criticism include:\n*   **Misleading Statistics:** The author notes that DB considers trains \"on time\" if they are less than six minutes late and excludes canceled trains from punctuality metrics entirely.\n*   **Poor Communication:** Announcements regarding major detours were made only in German, leaving non-German speakers unaware of their destination.\n*   **Inadequate Compensation:** Despite the significant detour and delay, the author’s calculated compensation amounted to only 1.50 EUR—well below the 4.00 EUR minimum payout threshold.\n\nUltimately, the piece portrays the German rail experience as one where passengers are treated like \"livestock\" or \"cargo,\" subjected to unpredictable delays and bureaucratic indifference.",
-    "chinese_title": "被德铁绑架",
-    "chinese_summary": "在《被德国铁路“绑架”》一文中，作者以讽刺且沮丧的笔调，记录了2024年平安夜的一次旅行灾难。讲述者原本只想进行一段从科隆到梅肯海姆、全长仅35公里的短途旅行，结果却演变成了一场荒诞的折磨，突显出德国国家铁路公司（DB）的系统性溃败。\n\n旅程伊始，列车便因“波恩附近的故障”而延误并改道。讲述者原计划在特罗斯多夫下车与父亲汇合，但情况随后变得离奇：司机宣布列车无法在特罗斯多夫停靠，因为该列车在当时所行驶的轨道上未进行正确的停靠注册。结果，讲述者被迫留在车上，眼睁睁看着列车驶过多个车站，最终被带到了63公里外、位于另一个联邦州的诺伊维德。\n\n作者以这次“绑架”为契机，批判了德铁的运营和企业文化。主要批评点包括：\n*   **误导性的统计数据：** 作者指出，德铁将延误少于6分钟的列车视为“准点”，并将取消的班次完全排除在准点率指标之外。\n*   **沟通不力：** 关于重大改道的广播通知仅使用德语，导致不懂德语的乘客对目的地一无所知。\n*   **补偿不足：** 尽管发生了严重的改道和延误，作者计算出的补偿金仅为1.50欧元，远低于4欧元的最低支付门槛。\n\n最后，这篇文章将德国铁路的出行体验描述为：乘客被视同“牲畜”或“货物”，不得不忍受不可预知的延误和官僚主义的冷漠。"
-  },
-  {
-    "id": "46420453",
-    "title": "Show HN: Vibe coding a bookshelf with Claude Code",
-    "url": "https://balajmarius.com/writings/vibe-coding-a-bookshelf-with-claude-code/",
-    "summary": "In this article, the author describes how they used \"Claude Code\" to finally catalog a personal library of over 500 books—a project that had remained in the \"someday pile\" for years due to the tedious nature of manual data entry. \n\nFrustrated by the failure of traditional ISBN scanners on Romanian and obscure editions, the author photographed 470 book spines and used Claude to write scripts that processed these images through OpenAI’s vision API. This pipeline extracted metadata, normalized titles, and handled image resizing. The author highlights a shift in roles: while the AI achieved 90% accuracy, they provided the \"human judgment\" to manually fix the remaining edge cases rather than over-engineering a perfect technical solution.\n\nThe project’s UI moved beyond a standard grid to recreate the aesthetic of a physical shelf. Using Claude, the author implemented color quantization to generate realistic book spines and mapped page counts to spine widths. They also refined the user experience through \"vibe coding\"—iterating on Framer Motion animations until the \"tilt\" of the books felt natural and choosing to delete technically functional code (like infinite scroll) because it hindered the user experience.\n\nThe author concludes that AI has collapsed the cost of execution, fundamentally changing the role of the developer. In this new paradigm, the AI handles the mechanical implementation, while the human focuses on **taste and direction**. The project’s success was not due to the AI being perfect, but because it allowed the author to focus on the \"vibe\" and final 10% of the work that makes a project meaningful.",
-    "chinese_title": "Show HN：用 Claude Code 氛围编码一个书架",
-    "chinese_summary": "在这篇文章中，作者讲述了他们如何利用 “Claude Code” 最终完成了 500 多本个人藏书的编目工作。由于手动录入数据过于繁琐，该项目多年来一直被搁置在“待办清单”中。\n\n由于传统的 ISBN 扫描仪无法识别罗马尼亚语书籍和生僻版本，作者拍摄了 470 张书脊照片，并使用 Claude 编写脚本，通过 OpenAI 的视觉 API 处理这些图像。这一流程实现了元数据提取、标题规范化以及图像缩放。作者强调了角色的转变：虽然 AI 达到了 90% 的准确率，但他选择通过“人类判断”来手动修复剩余的边缘案例，而不是过度设计一个完美的纯技术方案。\n\n该项目的 UI 突破了传统的网格布局，重现了实体书架的美感。作者利用 Claude 实现了色彩量化以生成逼真的书脊，并将页数映射为相应的书脊宽度。他还通过“氛围编码”（vibe coding）精进了用户体验——反复迭代 Framer Motion 动画，直到书籍的“倾斜感”显得自然，并果断删除了像“无限滚动”这种虽然技术上可行但有碍体验的代码。\n\n作者总结道，AI 大幅降低了执行成本，从根本上改变了开发者的角色。在这种新范式下，AI 负责机械性的实现，而人类则专注于**品味与方向**。项目的成功并非源于 AI 的完美，而是因为它让作者能够专注于塑造“氛围感”，以及那最后 10% 让项目变得真正有意义的关键工作。"
-  },
-  {
-    "id": "46417815",
-    "title": "Show HN: Z80-μLM, a 'Conversational AI' That Fits in 40KB",
-    "url": "https://github.com/HarryR/z80ai",
-    "summary": "**Z80-μLM** is a micro language model designed for retrocomputing, specifically optimized to run on the Z80 processor (4MHz) with only 64KB of RAM. The project fits an entire \"conversational AI\" system—including the inference engine, model weights, and a chat UI—into a single 40KB .COM binary for CP/M systems.\n\n**Technical Architecture**\nTo achieve performance on 1970s hardware, the model employs several extreme optimization techniques:\n*   **Trigram Hash Encoding:** Input text is hashed into 128 buckets. This makes the model typo-tolerant and word-order invariant, though it limits the understanding of complex sentence structures.\n*   **2-Bit Quantization:** Weights are restricted to four values ({-2, -1, 0, +1}) and packed four per byte.\n*   **Integer Inference:** The system avoids floating-point math, using native 16-bit Z80 register pairs for multiply-accumulate loops and fixed-point scaling.\n*   **Quantization-Aware Training (QAT):** This ensures the model remains stable and expressive despite the heavy numerical constraints.\n\n**Capabilities and Limitations**\nWhile it does not possess general intelligence or a deep grasp of grammar, Z80-μLM provides personality-driven, autoregressive responses. It is particularly effective at fuzzy matching and short, terse interactions. Included examples feature \"tinychat,\" a casual chatbot, and \"guess,\" a 20 Questions-style game. \n\nThe project demonstrates that even on 8-bit hardware, it is possible to create a functional \"personality\" engine that responds to the \"shape\" of human input. The project is open-source (MIT/Apache-2.0) and includes tools to train custom models using modern LLMs like Claude or Ollama.",
-    "chinese_title": "Show HN：Z80-μLM，一个仅 40KB 的“对话式 AI”",
-    "chinese_summary": "**Z80-μLM** 是一款专为复古计算设计的微型语言模型，针对仅有 64KB RAM 的 Z80 处理器 (4MHz) 进行了专门优化。该项目将整个“对话式 AI”系统——包括推理引擎、模型权重和聊天界面——全部集成到了一个仅 40KB 的 CP/M 系统 .COM 二进制文件中。\n\n**技术架构**\n为了在 20 世纪 70 年代的硬件上实现性能突破，该模型采用了几种极端的优化技术：\n*   **三元组哈希编码 (Trigram Hash Encoding)：** 输入文本被哈希到 128 个桶中。这使得模型具有容错性（对拼写错误不敏感）且不依赖词序，尽管这限制了其对复杂句式的理解。\n*   **2 比特量化：** 权重被限制为四个值（{-2, -1, 0, +1}），每个字节打包存储四个权重。\n*   **整数推理：** 系统避开了浮点运算，利用 Z80 原生的 16 位寄存器对进行乘累加循环和定点缩放。\n*   **量化感知训练 (QAT)：** 确保模型在严苛的数值限制下仍能保持稳定性和表达能力。\n\n**功能与局限性**\n虽然 Z80-μLM 不具备通用智能或深厚的语法功底，但它可以提供具有性格特征的自回归响应。它在模糊匹配和简短交互方面表现尤为出色。内置示例包括休闲聊天机器人 \"tinychat\" 和“二十个问题”风格的猜谜游戏 \"guess\"。\n\n该项目证明，即使在 8 位硬件上，也可以创建一个能够根据人类输入“形态”做出响应的功能性“人格”引擎。该项目已开源（MIT/Apache-2.0 协议），并提供了使用 Claude 或 Ollama 等现代大模型训练自定义模型的工具。"
-  },
-  {
-    "id": "46416945",
-    "title": "You can make up HTML tags",
-    "url": "https://maurycyz.com/misc/make-up-tags/",
-    "summary": "This article highlights a standardized but often underutilized feature of web development: the ability to create and use **custom HTML tags**. \n\nInstead of nesting multiple generic `<div>` elements with various class names, developers can use descriptive, custom tags like `<main-article>` or `<article-quote>`. \n\n**Key takeaways include:**\n\n*   **Browser Behavior:** Modern browsers treat unrecognized tags as generic elements. They carry no default styling, allowing developers to define their appearance entirely through CSS using the tag name as a selector.\n*   **Future-Proofing:** By including a hyphen in the tag name (a convention associated with the Web Components standard), developers can guarantee that their custom tags will never conflict with future additions to the official HTML specification.\n*   **Improved Readability:** Custom tags solve the problem of \"div soup.\" When code is deeply nested, it is often difficult to identify which `</div>` closes which section. Descriptive tag names make the document structure clear and much easier to navigate.\n*   **Best Practices:** While developers should still use built-in semantic tags (like `<nav>` or `<header>`) whenever appropriate, custom tags are a superior alternative to generic `<div>` or `<span>` tags when a specific semantic element does not exist.\n\nUltimately, the author argues that using custom tags leads to cleaner, more maintainable code by replacing confusing class-heavy structures with intuitive, readable elements.",
-    "chinese_title": "You can make up HTML tags",
-    "chinese_summary": "This article highlights a standardized but often underutilized feature of web development: the ability to create and use **custom HTML tags**. \n\nInstead of nesting multiple generic `<div>` elements with various class names, developers can use descriptive, custom tags like `<main-article>` or `<article-quote>`. \n\n**Key takeaways include:**\n\n*   **Browser Behavior:** Modern browsers treat unrecognized tags as generic elements. They carry no default styling, allowing developers to define their appearance entirely through CSS using the tag name as a selector.\n*   **Future-Proofing:** By including a hyphen in the tag name (a convention associated with the Web Components standard), developers can guarantee that their custom tags will never conflict with future additions to the official HTML specification.\n*   **Improved Readability:** Custom tags solve the problem of \"div soup.\" When code is deeply nested, it is often difficult to identify which `</div>` closes which section. Descriptive tag names make the document structure clear and much easier to navigate.\n*   **Best Practices:** While developers should still use built-in semantic tags (like `<nav>` or `<header>`) whenever appropriate, custom tags are a superior alternative to generic `<div>` or `<span>` tags when a specific semantic element does not exist.\n\nUltimately, the author argues that using custom tags leads to cleaner, more maintainable code by replacing confusing class-heavy structures with intuitive, readable elements."
+    "summary": "生成摘要时出错",
+    "chinese_title": "Kidnapped by Deutsche Bahn",
+    "chinese_summary": "生成摘要时出错"
   },
   {
     "id": "46419968",
@@ -72,27 +296,187 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46419273",
-    "title": "Feynman's Hughes Lectures: 950 pages of notes",
-    "url": "https://thehugheslectures.info/the-lectures/",
+    "id": "46422009",
+    "title": "Static Allocation with Zig",
+    "url": "https://nickmonad.blog/2025/static-allocation-with-zig-kv/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Feynman's Hughes Lectures: 950 pages of notes",
+    "chinese_title": "Static Allocation with Zig",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46418415",
-    "title": "You can't design software you don't work on",
-    "url": "https://www.seangoedecke.com/you-cant-design-software-you-dont-work-on/",
+    "id": "46426624",
+    "title": "Show HN: Stop Claude Code from forgetting everything",
+    "url": "https://github.com/mutable-state-inc/ensue-skill",
     "summary": "生成摘要时出错",
-    "chinese_title": "You can't design software you don't work on",
+    "chinese_title": "Show HN: Stop Claude Code from forgetting everything",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46419822",
-    "title": "Show HN: See what readers who loved your favorite book/author also loved to read",
-    "url": "https://shepherd.com/bboy/2025",
+    "id": "46415225",
+    "title": "What an unprocessed photo looks like",
+    "url": "https://maurycyz.com/misc/raw_photo/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: See what readers who loved your favorite book/author also loved to read",
+    "chinese_title": "What an unprocessed photo looks like",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46427376",
+    "title": "Parsing Advances",
+    "url": "https://matklad.github.io/2025/12/28/parsing-advances.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Parsing Advances",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424460",
+    "title": "When someone says they hate your product",
+    "url": "https://www.getflack.com/p/responding-to-negative-feedback",
+    "summary": "生成摘要时出错",
+    "chinese_title": "When someone says they hate your product",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433117",
+    "title": "MH370 vanished in 2014.New search aims to find answers families desperately want",
+    "url": "https://www.abc.net.au/news/2025-12-30/mh370-search-resumes-for-malaysia-airlines-missing-plane/106186962",
+    "summary": "生成摘要时出错",
+    "chinese_title": "MH370 vanished in 2014.New search aims to find answers families desperately want",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46427582",
+    "title": "I migrated to an almost all-EU stack and saved 500€ per year",
+    "url": "https://www.zeitgeistofbytes.com/p/bye-bye-big-tech-how-i-migrated-to",
+    "summary": "生成摘要时出错",
+    "chinese_title": "I migrated to an almost all-EU stack and saved 500€ per year",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46401052",
+    "title": "Flame Graphs vs Tree Maps vs Sunburst (2017)",
+    "url": "https://www.brendangregg.com/blog/2017-02-06/flamegraphs-vs-treemaps-vs-sunburst.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Flame Graphs vs Tree Maps vs Sunburst (2017)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46389338",
+    "title": "Easily Dealing with Any-Dimensional Planes",
+    "url": "https://gpfault.net/posts/hyperplanes.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Easily Dealing with Any-Dimensional Planes",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46430815",
+    "title": "Quickemu: Quickly create and run optimised Windows, macOS and Linux VMs",
+    "url": "https://github.com/quickemu-project/quickemu",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Quickemu: Quickly create and run optimised Windows, macOS and Linux VMs",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46380697",
+    "title": "Vitest Browser Mode Guide",
+    "url": "https://howtotestfrontend.com/resources/vitest-browser-mode-guide-and-setup-info",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Vitest Browser Mode Guide",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46423566",
+    "title": "List of domains censored by German ISPs",
+    "url": "https://cuiiliste.de/domains",
+    "summary": "生成摘要时出错",
+    "chinese_title": "List of domains censored by German ISPs",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46420672",
+    "title": "Libgodc: Write Go Programs for Sega Dreamcast",
+    "url": "https://github.com/drpaneas/libgodc",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Libgodc: Write Go Programs for Sega Dreamcast",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46373168",
+    "title": "Stanford Lecture: Dr. Don Knuth – Adventures with Knight's Tours [video]",
+    "url": "https://www.youtube.com/watch?v=MKiRte-tnMY",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Stanford Lecture: Dr. Don Knuth – Adventures with Knight's Tours [video]",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46423521",
+    "title": "A production bug that made me care about undefined behavior",
+    "url": "https://gaultier.github.io/blog/the_production_bug_that_made_me_care_about_undefined_behavior.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "A production bug that made me care about undefined behavior",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46371486",
+    "title": "Show HN: A 45x45 Connections Puzzle To Commemorate 2025=45*45",
+    "url": "https://thomaswc.com/2025.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: A 45x45 Connections Puzzle To Commemorate 2025=45*45",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46390154",
+    "title": "The Signature Flicker",
+    "url": "https://steipete.me/posts/2025/signature-flicker",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The Signature Flicker",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46432791",
+    "title": "Groq investor sounds alarm on data centers",
+    "url": "https://www.axios.com/2025/12/29/groq-alex-davis-data-center-concerns",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Groq investor sounds alarm on data centers",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46368739",
+    "title": "Show HN: Superset – Terminal to run 10 parallel coding agents",
+    "url": "https://superset.sh/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Superset – Terminal to run 10 parallel coding agents",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46431450",
+    "title": "Harvard Youth Poll (51st Edition – Fall 2025)",
+    "url": "https://iop.harvard.edu/youth-poll/51st-edition-fall-2025",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Harvard Youth Poll (51st Edition – Fall 2025)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424262",
+    "title": "All Delisted Steam Games",
+    "url": "https://delistedgames.com/all-delisted-steam-games/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "All Delisted Steam Games",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46427181",
+    "title": "Geology of the Gulf of the Farallones National Marine Sanctuary",
+    "url": "https://pubs.usgs.gov/fs/farallones/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Geology of the Gulf of the Farallones National Marine Sanctuary",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46392382",
+    "title": "Streaming compression beats framed compression",
+    "url": "https://bou.ke/blog/compressed/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Streaming compression beats framed compression",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -104,35 +488,59 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46396824",
-    "title": "Developing a Beautiful and Performant Block Editor in Qt C++ and QML",
-    "url": "https://rubymamistvalove.com/block-editor",
+    "id": "46386878",
+    "title": "Show HN: Aroma: Every TCP Proxy Is Detectable with RTT Fingerprinting",
+    "url": "https://github.com/Sakura-sx/Aroma",
     "summary": "生成摘要时出错",
-    "chinese_title": "Developing a Beautiful and Performant Block Editor in Qt C++ and QML",
+    "chinese_title": "Show HN: Aroma: Every TCP Proxy Is Detectable with RTT Fingerprinting",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46354243",
-    "title": "The Cost of Allocation Errors",
-    "url": "https://varietyiq.com/blog/misallocation",
+    "id": "46433035",
+    "title": "Win32 is the stable Linux ABI",
+    "url": "https://loss32.org/",
     "summary": "生成摘要时出错",
-    "chinese_title": "The Cost of Allocation Errors",
+    "chinese_title": "Win32 is the stable Linux ABI",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46397537",
-    "title": "Show HN: Spacelist, a TUI for Aerospace window manager",
-    "url": "https://github.com/magicmark/spacelist",
+    "id": "46419273",
+    "title": "Feynman's Hughes Lectures: 950 pages of notes",
+    "url": "https://thehugheslectures.info/the-lectures/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Spacelist, a TUI for Aerospace window manager",
+    "chinese_title": "Feynman's Hughes Lectures: 950 pages of notes",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46393003",
-    "title": "My coworker's 36 key Corne open-source keyboard setup",
-    "url": "https://nuon.co/blog/nuon-keyboard-culture/",
+    "id": "46395714",
+    "title": "Karpathy on Programming: “I've never felt this much behind”",
+    "url": "https://twitter.com/karpathy/status/2004607146781278521",
     "summary": "生成摘要时出错",
-    "chinese_title": "My coworker's 36 key Corne open-source keyboard setup",
+    "chinese_title": "Karpathy on Programming: “I've never felt this much behind”",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46401982",
+    "title": "Why is calling my asm function from Rust slower than calling it from C?",
+    "url": "https://ohadravid.github.io/posts/2025-12-rav1d-faster-asm/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why is calling my asm function from Rust slower than calling it from C?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46419822",
+    "title": "Show HN: See what readers who loved your favorite book/author also loved to read",
+    "url": "https://shepherd.com/bboy/2025",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: See what readers who loved your favorite book/author also loved to read",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433269",
+    "title": "1Password extension is injecting Prism.js and breaking all <code> highlighting",
+    "url": "https://twitter.com/youyuxi/status/2005904473332564339",
+    "summary": "生成摘要时出错",
+    "chinese_title": "1Password extension is injecting Prism.js and breaking all <code> highlighting",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -144,102 +552,6 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46415338",
-    "title": "As AI gobbles up chips, prices for devices may rise",
-    "url": "https://www.npr.org/2025/12/28/nx-s1-5656190/ai-chips-memory-prices-ram",
-    "summary": "生成摘要时出错",
-    "chinese_title": "As AI gobbles up chips, prices for devices may rise",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46414819",
-    "title": "Unity's Mono problem: Why your C# code runs slower than it should",
-    "url": "https://marekfiser.com/blog/mono-vs-dot-net-in-unity/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Unity's Mono problem: Why your C# code runs slower than it should",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46417748",
-    "title": "Show HN: My not-for-profit search engine with no ads, no AI, & all DDG bangs",
-    "url": "https://nilch.org",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: My not-for-profit search engine with no ads, no AI, & all DDG bangs",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46414723",
-    "title": "Software engineers should be a little bit cynical",
-    "url": "https://www.seangoedecke.com/a-little-bit-cynical/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Software engineers should be a little bit cynical",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46419659",
-    "title": "Kubernetes egress control with squid proxy",
-    "url": "https://interlaye.red/kubernetes_002degress_002dsquid.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Kubernetes egress control with squid proxy",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46420289",
-    "title": "UK accounting body to halt remote exams amid AI cheating",
-    "url": "https://www.theguardian.com/business/2025/dec/29/uk-accounting-remote-exams-ai-cheating-acca",
-    "summary": "生成摘要时出错",
-    "chinese_title": "UK accounting body to halt remote exams amid AI cheating",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415129",
-    "title": "Researchers discover molecular difference in autistic brains",
-    "url": "https://medicine.yale.edu/news-article/molecular-difference-in-autistic-brains/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Researchers discover molecular difference in autistic brains",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46414475",
-    "title": "MongoBleed Explained Simply",
-    "url": "https://bigdata.2minutestreaming.com/p/mongobleed-explained-simply",
-    "summary": "生成摘要时出错",
-    "chinese_title": "MongoBleed Explained Simply",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46417227",
-    "title": "Fast GPU Interconnect over Radio",
-    "url": "https://spectrum.ieee.org/rf-over-fiber",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Fast GPU Interconnect over Radio",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46413975",
-    "title": "PySDR: A Guide to SDR and DSP Using Python",
-    "url": "https://pysdr.org/content/intro.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "PySDR: A Guide to SDR and DSP Using Python",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46417844",
-    "title": "Staying ahead of censors in 2025",
-    "url": "https://forum.torproject.org/t/staying-ahead-of-censors-in-2025-what-weve-learned-from-fighting-censorship-in-iran-and-russia/20898",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Staying ahead of censors in 2025",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415458",
-    "title": "Spherical Cow",
-    "url": "https://lib.rs/crates/spherical-cow",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Spherical Cow",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
     "id": "46418966",
     "title": "Asking Gemini 3 to generate Brainfuck code results in an infinite loop",
     "url": "https://teodordyakov.github.io/brainfuck-agi/",
@@ -248,275 +560,19 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46389325",
-    "title": "Koine",
-    "url": "https://github.com/pattern-zones-co/koine",
+    "id": "46396824",
+    "title": "Developing a Beautiful and Performant Block Editor in Qt C++ and QML",
+    "url": "https://rubymamistvalove.com/block-editor",
     "summary": "生成摘要时出错",
-    "chinese_title": "Koine",
+    "chinese_title": "Developing a Beautiful and Performant Block Editor in Qt C++ and QML",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46396912",
-    "title": "Mouse: Computer Programming Language (2006)",
-    "url": "http://mouse.davidgsimpson.com/",
+    "id": "46390218",
+    "title": "Show HN: Euclidle – Guess the Coordinates in N‑Dimensional Space",
+    "url": "https://euclidle.com/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Mouse: Computer Programming Language (2006)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46383593",
-    "title": "Line scan camera image processing",
-    "url": "https://daniel.lawrence.lu/blog/2025-09-21-line-scan-camera-image-processing/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Line scan camera image processing",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46421909",
-    "title": "Sauron, home security startup, plucks CEO out of Sonos",
-    "url": "https://techcrunch.com/2025/12/28/from-sonos-to-sauron-new-ceo-takes-on-high-end-home-security-startup-still-in-development/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Sauron, home security startup, plucks CEO out of Sonos",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46360844",
-    "title": "Formally Verifying Peephole Optimisations in Lean",
-    "url": "https://l-m.dev/cs/formally-verifying-peephole-optimisations-in-lean/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Formally Verifying Peephole Optimisations in Lean",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46408984",
-    "title": "C++ says “We have try... finally at home”",
-    "url": "https://devblogs.microsoft.com/oldnewthing/20251222-00/?p=111890",
-    "summary": "生成摘要时出错",
-    "chinese_title": "C++ says “We have try... finally at home”",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46421870",
-    "title": "The Performance of Arch Linux Powered CachyOS on AMD EPYC Servers",
-    "url": "https://www.phoronix.com/review/epyc-cachyos-server-preview",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Performance of Arch Linux Powered CachyOS on AMD EPYC Servers",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46421653",
-    "title": "I switched to eSIM in 2025, and I am full of regret",
-    "url": "https://arstechnica.com/gadgets/2025/12/i-switched-to-esim-in-2025-and-i-am-full-of-regret/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "I switched to eSIM in 2025, and I am full of regret",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415448",
-    "title": "Slaughtering Competition Problems with Quantifier Elimination (2021)",
-    "url": "https://grossack.site/2021/12/22/qe-competition.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Slaughtering Competition Problems with Quantifier Elimination (2021)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415570",
-    "title": "Fast CVVDP implementation in C",
-    "url": "https://github.com/halidecx/fcvvdp",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Fast CVVDP implementation in C",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46369231",
-    "title": "Finding Jingle Town: Debugging an N64 Game Without Symbols",
-    "url": "https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Finding Jingle Town: Debugging an N64 Game Without Symbols",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46408613",
-    "title": "Calendar",
-    "url": "https://neatnik.net/calendar/?year=2026",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Calendar",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46419282",
-    "title": "Market design can feed the poor",
-    "url": "https://worksinprogress.co/issue/how-market-design-can-feed-the-poor/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Market design can feed the poor",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46380054",
-    "title": "2D Signed Distance Functions",
-    "url": "https://iquilezles.org/articles/distfunctions2d/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "2D Signed Distance Functions",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46410449",
-    "title": "Langfuse (YC W23) Is Hiring in Berlin, Germany",
-    "url": "https://langfuse.com/careers",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Langfuse (YC W23) Is Hiring in Berlin, Germany",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46352615",
-    "title": "A bitwise reproducible deep learning framework",
-    "url": "https://github.com/microsoft/RepDL",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A bitwise reproducible deep learning framework",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46421940",
-    "title": "Are We Ready to Be Governed by Artificial Intelligence?",
-    "url": "https://www.merionwest.com/are-we-ready-to-be-governed-by-arti/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Are We Ready to Be Governed by Artificial Intelligence?",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46400564",
-    "title": "Formulaic Delimiters in the Iliad and the Odyssey",
-    "url": "https://glthr.com/formulaic-delimiters-in-the-iliad-and-the-odyssey",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Formulaic Delimiters in the Iliad and the Odyssey",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46414837",
-    "title": "Why I Disappeared – My week with minimal internet in a remote island chain",
-    "url": "https://www.kenklippenstein.com/p/why-i-disappeared",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Why I Disappeared – My week with minimal internet in a remote island chain",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46413365",
-    "title": "Remembering Lou Gerstner",
-    "url": "https://newsroom.ibm.com/2025-12-28-Remembering-Lou-Gerstner",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Remembering Lou Gerstner",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415426",
-    "title": "62 years in the making: NYC's newest water tunnel nears the finish line",
-    "url": "https://ny1.com/nyc/all-boroughs/news/2025/11/09/water--dep--tunnels-",
-    "summary": "生成摘要时出错",
-    "chinese_title": "62 years in the making: NYC's newest water tunnel nears the finish line",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415522",
-    "title": "How to complain (2024)",
-    "url": "https://outerproduct.net/trivial/2024-03-25_complain.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How to complain (2024)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46419954",
-    "title": "Father rescues abducted daughter by tracking her cell phone after kidnapping",
-    "url": "https://nypost.com/2025/12/27/us-news/heroic-texas-father-rescues-abducted-daughter-by-tracking-her-cell-phone-after-christmas-day-kidnapping/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Father rescues abducted daughter by tracking her cell phone after kidnapping",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46418401",
-    "title": "Kiorg v1.4.1 – A modern battery included file manager with Vim inspired keybind",
-    "url": "https://github.com/houqp/kiorg/releases/tag/v1.4.1",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Kiorg v1.4.1 – A modern battery included file manager with Vim inspired keybind",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46418310",
-    "title": "Two decades of evolution: How Ext4 has changed",
-    "url": "https://llmnativeos.github.io/specfs/#/statistics",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Two decades of evolution: How Ext4 has changed",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46413790",
-    "title": "No, it's not a battleship",
-    "url": "https://www.navalgazing.net/No-its-not",
-    "summary": "生成摘要时出错",
-    "chinese_title": "No, it's not a battleship",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46414078",
-    "title": "Stepping down as Mockito maintainer after ten years",
-    "url": "https://github.com/mockito/mockito/issues/3777",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Stepping down as Mockito maintainer after ten years",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46379579",
-    "title": "Golfing Is Not Rowing",
-    "url": "https://taylor.town/golf-vs-rowing",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Golfing Is Not Rowing",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46357686",
-    "title": "Doublespeak: In-Context Representation Hijacking",
-    "url": "https://mentaleap.ai/doublespeak/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Doublespeak: In-Context Representation Hijacking",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46417752",
-    "title": "Panoramas of Star Trek Sets",
-    "url": "https://mijofr.github.io/st-panorama/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Panoramas of Star Trek Sets",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46407337",
-    "title": "Replacing JavaScript with Just HTML",
-    "url": "https://www.htmhell.dev/adventcalendar/2025/27/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Replacing JavaScript with Just HTML",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46408365",
-    "title": "Rust errors without dependencies",
-    "url": "https://vincents.dev/blog/rust-errors-without-dependencies/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Rust errors without dependencies",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46410402",
-    "title": "Building a macOS app to know when my Mac is thermal throttling",
-    "url": "https://stanislas.blog/2025/12/macos-thermal-throttling-app/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Building a macOS app to know when my Mac is thermal throttling",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46410210",
-    "title": "Learn computer graphics from scratch and for free",
-    "url": "https://www.scratchapixel.com",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Learn computer graphics from scratch and for free",
+    "chinese_title": "Show HN: Euclidle – Guess the Coordinates in N‑Dimensional Space",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -528,83 +584,187 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46401612",
-    "title": "Floor796",
-    "url": "https://floor796.com/",
+    "id": "46416945",
+    "title": "You can make up HTML tags",
+    "url": "https://maurycyz.com/misc/make-up-tags/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Floor796",
+    "chinese_title": "You can make up HTML tags",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46411539",
-    "title": "Designing Predictable LLM-Verifier Systems for Formal Method Guarantee",
-    "url": "https://arxiv.org/abs/2512.02080",
+    "id": "46387028",
+    "title": "Intelligence – A Mystery Investigation Game",
+    "url": "https://intelligencegame.tech/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Designing Predictable LLM-Verifier Systems for Formal Method Guarantee",
+    "chinese_title": "Intelligence – A Mystery Investigation Game",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46389336",
-    "title": "Time in C++: Inter-Clock Conversions, Epochs, and Durations",
-    "url": "https://www.sandordargo.com/blog/2025/12/24/clocks-part-5-conversions",
+    "id": "46424782",
+    "title": "Which Humans? (2023)",
+    "url": "https://osf.io/preprints/psyarxiv/5b26t_v1",
     "summary": "生成摘要时出错",
-    "chinese_title": "Time in C++: Inter-Clock Conversions, Epochs, and Durations",
+    "chinese_title": "Which Humans? (2023)",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46413256",
-    "title": "If you care about security you might want to move the iPhone Camera app",
-    "url": "https://blog.jgc.org/2025/12/if-you-care-about-security-you-might.html",
+    "id": "46415945",
+    "title": "Rich Hickey: Thanks AI",
+    "url": "https://gist.github.com/richhickey/ea94e3741ff0a4e3af55b9fe6287887f",
     "summary": "生成摘要时出错",
-    "chinese_title": "If you care about security you might want to move the iPhone Camera app",
+    "chinese_title": "Rich Hickey: Thanks AI",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46414916",
-    "title": "Dolphin Progress Report: Release 2512",
-    "url": "https://dolphin-emu.org/blog/2025/12/22/dolphin-progress-report-release-2512/",
+    "id": "46417815",
+    "title": "Show HN: Z80-μLM, a 'Conversational AI' That Fits in 40KB",
+    "url": "https://github.com/HarryR/z80ai",
     "summary": "生成摘要时出错",
-    "chinese_title": "Dolphin Progress Report: Release 2512",
+    "chinese_title": "Show HN: Z80-μLM, a 'Conversational AI' That Fits in 40KB",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46418690",
-    "title": "Measuring out-of-sync clocks on the Internet",
-    "url": "https://alexsci.com/blog/clock-skew/",
+    "id": "46431456",
+    "title": "Show HN: Tetris Time",
+    "url": "https://tetris-time.koenvangilst.nl/?mode=countdown&to=2026-01-01T00:00:00.000Z&speed=3",
     "summary": "生成摘要时出错",
-    "chinese_title": "Measuring out-of-sync clocks on the Internet",
+    "chinese_title": "Show HN: Tetris Time",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46405866",
-    "title": "Public Domain Day 2026",
-    "url": "https://web.law.duke.edu/cspd/publicdomainday/2026/",
+    "id": "46423010",
+    "title": "Nvidia takes $5B stake in Intel under September agreement",
+    "url": "https://www.reuters.com/legal/transactional/nvidia-takes-5-billion-stake-intel-under-september-agreement-2025-12-29/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Public Domain Day 2026",
+    "chinese_title": "Nvidia takes $5B stake in Intel under September agreement",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46354282",
-    "title": "One year of keeping a tada list",
-    "url": "https://www.ducktyped.org/p/one-year-of-keeping-a-tada-list",
+    "id": "46418415",
+    "title": "You can't design software you don't work on",
+    "url": "https://www.seangoedecke.com/you-cant-design-software-you-dont-work-on/",
     "summary": "生成摘要时出错",
-    "chinese_title": "One year of keeping a tada list",
+    "chinese_title": "You can't design software you don't work on",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46409928",
-    "title": "Hungry Fat Cells Could Someday Starve Cancer",
-    "url": "https://www.ucsf.edu/news/2025/01/429411/how-hungry-fat-cells-could-someday-starve-cancer-death",
+    "id": "46417748",
+    "title": "Show HN: My not-for-profit search engine with no ads, no AI, & all DDG bangs",
+    "url": "https://nilch.org",
     "summary": "生成摘要时出错",
-    "chinese_title": "Hungry Fat Cells Could Someday Starve Cancer",
+    "chinese_title": "Show HN: My not-for-profit search engine with no ads, no AI, & all DDG bangs",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46401499",
-    "title": "OrangePi 6 Plus Review",
-    "url": "https://boilingsteam.com/orange-pi-6-plus-review/",
+    "id": "46428389",
+    "title": "Benchmarking Self-Hosted S3-Compatible Storage",
+    "url": "https://www.repoflow.io/blog/benchmarking-self-hosted-s3-compatible-storage-a-practical-performance-comparison",
     "summary": "生成摘要时出错",
-    "chinese_title": "OrangePi 6 Plus Review",
+    "chinese_title": "Benchmarking Self-Hosted S3-Compatible Storage",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46431355",
+    "title": "Show HN: Lazy-image – Node.js image library with static binaries (Rust/NAPI)",
+    "url": "https://github.com/albert-einshutoin/lazy-image",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Lazy-image – Node.js image library with static binaries (Rust/NAPI)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424789",
+    "title": "Obelisk 0.32: Cancellation, WebAPI, Postgres",
+    "url": "https://obeli.sk/blog/announcing-obelisk-0-32/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Obelisk 0.32: Cancellation, WebAPI, Postgres",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46370446",
+    "title": "Static Allocation for Compilers",
+    "url": "https://matklad.github.io/2025/12/23/static-allocation-compilers.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Static Allocation for Compilers",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46371120",
+    "title": "High-performance C++ hash table using grouped SIMD metadata scanning",
+    "url": "https://github.com/Cranot/grouped-simd-hashtable",
+    "summary": "生成摘要时出错",
+    "chinese_title": "High-performance C++ hash table using grouped SIMD metadata scanning",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46433289",
+    "title": "Election betting on prediction markets apps is set to boom ahead of midterms",
+    "url": "https://www.npr.org/2025/12/23/nx-s1-5647749/rise-of-prediction-markets",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Election betting on prediction markets apps is set to boom ahead of midterms",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46430716",
+    "title": "Still using Firefox – but not because of its vision",
+    "url": "https://blog.kulman.sk/stuck-with-firefox/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Still using Firefox – but not because of its vision",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46417227",
+    "title": "Fast GPU Interconnect over Radio",
+    "url": "https://spectrum.ieee.org/rf-over-fiber",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Fast GPU Interconnect over Radio",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46420289",
+    "title": "UK accounting body to halt remote exams amid AI cheating",
+    "url": "https://www.theguardian.com/business/2025/dec/29/uk-accounting-remote-exams-ai-cheating-acca",
+    "summary": "生成摘要时出错",
+    "chinese_title": "UK accounting body to halt remote exams amid AI cheating",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46393003",
+    "title": "My coworker's 36 key Corne open-source keyboard setup",
+    "url": "https://nuon.co/blog/nuon-keyboard-culture/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "My coworker's 36 key Corne open-source keyboard setup",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46421653",
+    "title": "Swapping SIM cards used to be easy, and then came eSIM",
+    "url": "https://arstechnica.com/gadgets/2025/12/i-switched-to-esim-in-2025-and-i-am-full-of-regret/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Swapping SIM cards used to be easy, and then came eSIM",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46424475",
+    "title": "IUseLinux: Access iMessage from your Linux (or windows) computer",
+    "url": "https://www.iuselinux.com/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "IUseLinux: Access iMessage from your Linux (or windows) computer",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46408613",
+    "title": "Calendar",
+    "url": "https://neatnik.net/calendar/?year=2026",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Calendar",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "46434301",
+    "title": "2025 Was Another Exceptionally Hot Year",
+    "url": "https://e360.yale.edu/digest/2025-second-hottest-year",
+    "summary": "生成摘要时出错",
+    "chinese_title": "2025 Was Another Exceptionally Hot Year",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -616,187 +776,27 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46398906",
-    "title": "Pre-commit hooks are broken",
-    "url": "https://jyn.dev/pre-commit-hooks-are-fundamentally-broken/",
+    "id": "46432066",
+    "title": "Ruby Array Pack Bleed – Impacts Ruby 1.6.7 to 4.0.0",
+    "url": "https://nastystereo.com/security/ruby-pack.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "Pre-commit hooks are broken",
+    "chinese_title": "Ruby Array Pack Bleed – Impacts Ruby 1.6.7 to 4.0.0",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46377081",
-    "title": "John Malone and the Invention of Liquid-Based Engines",
-    "url": "https://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-93-1350-25",
+    "id": "46415338",
+    "title": "As AI gobbles up chips, prices for devices may rise",
+    "url": "https://www.npr.org/2025/12/28/nx-s1-5656190/ai-chips-memory-prices-ram",
     "summary": "生成摘要时出错",
-    "chinese_title": "John Malone and the Invention of Liquid-Based Engines",
+    "chinese_title": "As AI gobbles up chips, prices for devices may rise",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "46393992",
-    "title": "How uv got so fast",
-    "url": "https://nesbitt.io/2025/12/26/how-uv-got-so-fast.html",
+    "id": "46424892",
+    "title": "Binance's Trust Wallet extension hacked; users lose $7M",
+    "url": "https://www.web3isgoinggreat.com/?id=trust-wallet-hack",
     "summary": "生成摘要时出错",
-    "chinese_title": "How uv got so fast",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46375067",
-    "title": "Show HN: LoongArch Userspace Emulator",
-    "url": "https://github.com/libriscv/libloong",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: LoongArch Userspace Emulator",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46419753",
-    "title": "Starlink Hits 9M Customers, Adds More Than 20k Users a Day",
-    "url": "https://www.businessinsider.com/spacex-starlink-customer-numbers-surge-9-million-elon-musk-ipo-2025-12",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Starlink Hits 9M Customers, Adds More Than 20k Users a Day",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46422477",
-    "title": "OnlyFans is no longer accessible in China",
-    "url": "https://www.cnn.com/2024/12/05/tech/china-onlyfans-accessible-hnk-intl",
-    "summary": "生成摘要时出错",
-    "chinese_title": "OnlyFans is no longer accessible in China",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46384992",
-    "title": "Oral History of Richard Greenblatt (2005) [pdf]",
-    "url": "https://archive.computerhistory.org/resources/text/Oral_History/Greenblatt_Richard/greenblatt.oral_history_transcript.2005.102657935.pdf",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Oral History of Richard Greenblatt (2005) [pdf]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46411930",
-    "title": "All my Deutschlandtickets gone: Fraud at an industrial scale [video]",
-    "url": "https://media.ccc.de/v/39c3-all-my-deutschlandtickets-gone-fraud-at-an-industrial-scale",
-    "summary": "生成摘要时出错",
-    "chinese_title": "All my Deutschlandtickets gone: Fraud at an industrial scale [video]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46389973",
-    "title": "Intermission: Battle Pulses",
-    "url": "https://acoup.blog/2025/12/18/intermission-battle-pulses/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Intermission: Battle Pulses",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46367224",
-    "title": "Fabrice Bellard Releases MicroQuickJS",
-    "url": "https://github.com/bellard/mquickjs/blob/main/README.md",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Fabrice Bellard Releases MicroQuickJS",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46368177",
-    "title": "Clock synchronization is a nightmare",
-    "url": "https://arpitbhayani.me/blogs/clock-sync-nightmare/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Clock synchronization is a nightmare",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46415819",
-    "title": "My app just won best iOS Japanese learning tool of 2025 award (blog)",
-    "url": "https://skerritt.blog/best-japanese-learning-tools-2025-award-show/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "My app just won best iOS Japanese learning tool of 2025 award (blog)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46351457",
-    "title": "Mruby: Ruby for Embedded Systems",
-    "url": "https://github.com/mruby/mruby",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Mruby: Ruby for Embedded Systems",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46365105",
-    "title": "Show HN: Mysti – Claude, Codex, and Gemini debate your code, then synthesize",
-    "url": "https://github.com/DeepMyst/Mysti",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Mysti – Claude, Codex, and Gemini debate your code, then synthesize",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46416489",
-    "title": "NextDNS is my new favourite DNS service (2020)",
-    "url": "https://stanislas.blog/2020/04/nextdns/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "NextDNS is my new favourite DNS service (2020)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46408988",
-    "title": "Growing up in “404 Not Found”: China's nuclear city in the Gobi Desert",
-    "url": "https://substack.com/inbox/post/182743659",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Growing up in “404 Not Found”: China's nuclear city in the Gobi Desert",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46351744",
-    "title": "Vibration Isolation of Precision Objects (2005) [pdf]",
-    "url": "http://www.sandv.com/downloads/0607rivi.pdf",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Vibration Isolation of Precision Objects (2005) [pdf]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46380377",
-    "title": "Writing non-English languages with a QWERTY keyboard",
-    "url": "https://altgr-weur.eu/altgr-intl.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Writing non-English languages with a QWERTY keyboard",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46404848",
-    "title": "How we lost communication to entertainment",
-    "url": "https://ploum.net/2025-12-15-communication-entertainment.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How we lost communication to entertainment",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46420273",
-    "title": "Are We Ready to Be Governed by Artificial Intelligence?",
-    "url": "https://www.schneier.com/blog/archives/2025/12/are-we-ready-to-be-governed-by-artificial-intelligence.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Are We Ready to Be Governed by Artificial Intelligence?",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46417029",
-    "title": "LineageOS for QEMU Virtual Machines",
-    "url": "https://github.com/jqssun/android-lineage-qemu",
-    "summary": "生成摘要时出错",
-    "chinese_title": "LineageOS for QEMU Virtual Machines",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46403291",
-    "title": "Janet Jackson had the power to crash laptop computers (2022)",
-    "url": "https://devblogs.microsoft.com/oldnewthing/20220816-00/?p=106994",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Janet Jackson had the power to crash laptop computers (2022)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "46403200",
-    "title": "Gpg.fail",
-    "url": "https://gpg.fail",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Gpg.fail",
+    "chinese_title": "Binance's Trust Wallet extension hacked; users lose $7M",
     "chinese_summary": "生成摘要时出错"
   }
 ]
