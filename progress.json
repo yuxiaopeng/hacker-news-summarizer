@@ -1,250 +1,338 @@
 [
   {
+    "id": "49289112",
+    "title": "Gemini 3.7 Flash",
+    "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash",
+    "summary": "Gemini 3.7 Flash is the latest high-capability, natively multimodal reasoning model in the Gemini series. Now generally available via the Interactions API and Google AI Studio, it is designed for speed and advanced problem-solving.\n\n**Key Technical Specifications:**\n*   **Input Support:** Processes text, images, video, audio, and PDFs.\n*   **Token Limits:** Features a massive 1,048,576 input token limit and a 65,536 output token limit.\n*   **Versions:** The stable model code is `gemini-3.7-flash`.\n\n**Core Capabilities:**\nThe model introduces a specialized **\"Thinking\"** feature, allowing users to select low, medium, or high reasoning intensities. It supports advanced developer features such as **Computer Use (Preview)**, code execution, function calling, file search, and structured outputs. Additionally, it offers grounding through Google Search and Google Maps to ensure data accuracy.\n\n**Availability and Constraints:**\nWhile the model excels in reasoning and processing, it does not currently support native audio generation, image generation, or the Live API. It is accessible through various consumption models, including Batch API, Flex inference, and Priority inference. According to the documentation, the latest update was recorded in August 2026.",
+    "chinese_title": "Gemini 3.7 Flash",
+    "chinese_summary": "Gemini 3.7 Flash 是 Gemini 系列中最新的高性能原生多模态推理模型。现已通过 Interactions API 和 Google AI Studio 全面开放，专为提升速度和解决复杂问题而设计。\n\n**关键技术规格：**\n*   **输入支持：** 支持处理文本、图像、视频、音频和 PDF。\n*   **Token 限制：** 拥有高达 1,048,576 个输入 Token 和 65,536 个输出 Token 的庞大限制。\n*   **版本：** 稳定版模型代码为 `gemini-3.7-flash`。\n\n**核心能力：**\n该模型引入了专门的**“思考 (Thinking)”**功能，允许用户选择低、中、高三种推理强度。它支持高级开发者功能，如**计算机使用（预览版）**、代码执行、函数调用、文件搜索和结构化输出。此外，它还支持通过 Google 搜索和 Google 地图进行 Grounding（数据核实），以确保信息的准确性。\n\n**可用性与限制：**\n尽管该模型在推理和处理方面表现出色，但目前暂不支持原生音频生成、图像生成或 Live API。用户可以通过多种调用模式访问，包括 Batch API、Flex 推理和 Priority 推理。根据文档显示，最近一次更新记录于 2026 年 8 月。"
+  },
+  {
+    "id": "49286341",
+    "title": "Spaghettifying DRAM",
+    "url": "https://github.com/xoreaxeaxeax/skitter-creek-bath-salts",
+    "summary": "The article \"Spaghettifying DRAM\" details a project called **skitter-creek-bath-salts**, which demonstrates how to bypass hardware security boundaries by manipulating the DRAM controller’s internal address translation logic.\n\n**The Core Mechanism**\nThe author argues that while CPUs use multiple layers of protection (MMU, IOMMU, and memory-region exclusion) to wall off sensitive areas like System Management Mode (SMM) and the Platform Security Processor (PSP), these guards operate on **physical addresses**. However, the Memory Controller (MCT) and DRAM Controller (DCT) perform a final, often undocumented translation of those physical addresses into raw DRAM coordinates (bank, rank, row, and column).\n\n**The Exploit: \"Spaghettification\"**\nBy modifying specific registers in the DRAM controller—such as the bank-swizzle-mode—an attacker can \"rewire\" the bottom layer of the memory hierarchy. This causes a physical address to land in a different location in DRAM than intended. Because the security \"fences\" sit above this layer, they continue to monitor the original physical addresses, unaware that the data beneath them has been redirected. This allows an attacker to create an \"alias\" to access protected memory regions that are otherwise invisible to the kernel.\n\n**Technical Implementation**\nThe exploit involves a high-speed \"poke\" to the DRAM controller registers while minimizing DRAM interaction (disabling interrupts and priming the cache) to prevent a system crash. Since the specific hardware transforms are often undocumented, the author uses linear algebra to resolve the new mapping. By treating the DRAM controller’s transform as a **GF(2) linear map**, they use the **Z3 SMT solver** to reconstruct the translation matrix from observed memory patterns.\n\n**Target Systems**\nThe research was developed and tested on **AMD Family 16h CPUs**, where the DRAM controller registers are documented and remain unlocked. The author suggests the underlying principle—the \"odyssey of *p\"—is applicable across most modern architectures, including ARM and RISC-V.",
+    "chinese_title": "DRAM 面条化",
+    "chinese_summary": "《DRAM 乱序化》（Spaghettifying DRAM）一文详述了一个名为 **skitter-creek-bath-salts** 的项目，该项目展示了如何通过操纵 DRAM 控制器的内部地址转换逻辑来绕过硬件安全边界。\n\n**核心机制**\n作者指出，尽管 CPU 使用多层保护（如 MMU、IOMMU 和内存区域排除）来隔离系统管理模式（SMM）和平台安全处理器（PSP）等敏感区域，但这些防护机制是基于**物理地址**运行的。然而，内存控制器（MCT）和 DRAM 控制器（DCT）会对这些物理地址进行最后的、通常未公开的转换，将其变为原始的 DRAM 坐标（Bank、Rank、行和列）。\n\n**攻击手段：“乱序化”（Spaghettification）**\n通过修改 DRAM 控制器中的特定寄存器（例如 Bank-Swizzle 模式），攻击者可以“重连”内存层级的底层逻辑。这会导致物理地址最终指向的 DRAM 位置与预期不符。由于安全“围栏”位于该层级之上，它们会继续监控原始物理地址，却察觉不到其下方的数据已被重定向。这使得攻击者能够创建“别名”来访问受保护的内存区域，而这些区域对内核而言原本是不可见的。\n\n**技术实现**\n该利用技术涉及对 DRAM 控制器寄存器进行高速“注入”（poke），同时通过禁用中断和预填充缓存来尽量减少 DRAM 交互，以防止系统崩溃。由于特定的硬件转换通常未公开，作者利用线性代数来解析新的映射关系。通过将 DRAM 控制器的转换视为 **GF(2) 线性映射**，他们使用 **Z3 SMT 求解器**从观察到的内存模式中重构出转换矩阵。\n\n**目标系统**\n该研究在 **AMD Family 16h CPU** 上开发并测试，这些处理器的 DRAM 控制器寄存器已有文档说明且未锁定。作者认为，其底层原理——“*p 的奥德赛”——适用于包括 ARM 和 RISC-V 在内的大多数现代架构。"
+  },
+  {
+    "id": "49288889",
+    "title": "Mistral OCR 4.1",
+    "url": "https://docs.mistral.ai/models/ocr-4-1",
+    "summary": "Mistral OCR 4.1, launched in Public Preview on July 16, 2026, is a premier service designed to power Mistral’s Document AI stack. This update introduces significant technical enhancements aimed at improving the precision and utility of document digitization.\n\n**Key Features:**\n*   **Granular Extraction:** Native paragraph-level bounding box extraction and structural block labels.\n*   **Quality Control:** Block-level confidence scores to ensure data accuracy.\n*   **API Integration:** Support for structured annotations and batch processing via the `/v1/ocr` and `/v1/batch` endpoints.\n\n**Pricing:**\nThe model (`mistral-ocr-4-1`) is priced competitively at:\n*   **Standard OCR:** €3.5 (approx. $3.81) per 1,000 pages.\n*   **Annotated Pages:** €4.38 (approx. $4.77) per 1,000 pages.\n\nBy prioritizing speed and performance, Mistral OCR 4.1 positions itself as a robust solution within an ecosystem that includes other specialized models such as Z.ai GLM 5.2 and Shieldstral 1.0. This release marks a significant step forward in providing developers with the tools necessary for complex, structured document analysis.",
+    "chinese_title": "Mistral OCR 4.1",
+    "chinese_summary": "Mistral OCR 4.1 于 2026 年 7 月 16 日开启公开预览（Public Preview），是专为赋能 Mistral 文档 AI 技术栈而设计的顶级服务。此次更新引入了重大的技术增强，旨在提升文档数字化的精确度与实用性。\n\n**核心特性：**\n*   **细粒度提取：** 原生支持段落级边界框（Bounding Box）提取及结构化区块标注。\n*   **质量控制：** 提供区块级置信度评分，以确保数据准确性。\n*   **API 集成：** 通过 `/v1/ocr` 和 `/v1/batch` 端点支持结构化注释和批量处理。\n\n**定价方案：**\n该模型（`mistral-ocr-4-1`）的定价极具竞争力：\n*   **标准 OCR：** 每 1,000 页 3.5 欧元（约合 3.81 美元）。\n*   **标注页：** 每 1,000 页 4.38 欧元（约合 4.77 美元）。\n\n通过优先提升速度与性能，Mistral OCR 4.1 将自身定位为生态系统中的强大解决方案，该生态系统还包括 Z.ai GLM 5.2 和 Shieldstral 1.0 等其他专业模型。此次发布标志着在为开发者提供复杂结构化文档分析所需工具方面迈出了重要一步。"
+  },
+  {
+    "id": "49258428",
+    "title": "Come for ENIAC, Stay for UNIVAC and Skeduflo",
+    "url": "https://uniqueatpenn.wordpress.com/2026/08/05/come-for-eniac-stay-for-univac-and-skeduflo/",
+    "summary": "This article highlights the life and legacy of computer pioneer John Mauchly, whose extensive personal papers are housed at the Kislak Center for Special Collections. While Mauchly is best known for co-inventing the ENIAC—the world's first general-purpose electronic computer—with J. Presper Eckert in 1946, the author emphasizes that his contributions extended far beyond this single achievement.\n\nFollowing the ENIAC, Mauchly and Eckert developed several other groundbreaking systems, including the BINAC, the EDVAC, and the UNIVAC, the world’s first commercial electronic computer. The author specifically highlights Mauchly’s leadership at the UNIVAC Applications and Research Center (UARC) during the 1950s. At UARC, Mauchly shifted the focus from using computers to solve existing problems to proactively seeking new ways for businesses and governments to utilize technology. This era of innovation also supported other pioneers, such as Admiral Grace Murray Hopper.\n\nMauchly’s forward-thinking nature is further evidenced by the \"Skeduflo,\" a portable computer in a suitcase designed for construction scheduling. Remarkably, in 1967, Mauchly predicted that businessmen would eventually carry computers in their pockets, a vision realized by the modern smartphone.\n\nThe article concludes by reflecting on Mauchly’s character. Quoting J. Presper Eckert’s eulogy, the author describes Mauchly as both a \"brilliant\" innovator and a \"good man.\" The Kislak Center invites the public to explore Mauchly's rich collection to better understand the man who helped launch the modern computer industry.",
+    "chinese_title": "为ENIAC而来，为UNIVAC和Skeduflo而留",
+    "chinese_summary": "本文重点介绍了计算机先驱约翰·莫奇利（John Mauchly）的生平与遗产，其大量的个人档案现收藏于基斯拉特特藏中心。尽管莫奇利因 1946 年与 J. 普雷斯珀·埃克特共同发明了世界上第一台通用电子计算机 ENIAC 而闻名于世，但作者强调，他的贡献远不止于这一单一成就。\n\n在 ENIAC 之后，莫奇利与埃克特又开发了多个具有里程碑意义的系统，包括 BINAC、EDVAC 以及世界上第一台商用电子计算机 UNIVAC。作者特别突出了莫奇利在 20 世纪 50 年代领导 UNIVAC 应用与研究中心（UARC）时期的成就。在 UARC，莫奇利将重点从仅用计算机解决现有问题，转向主动为商业机构和政府探索利用技术的新途径。这一创新时代也为包括葛丽丝·穆雷·霍珀准将在内的其他先驱提供了支持。\n\n莫奇利的前瞻性通过“Skeduflo”得到了进一步印证，这是一款装在手提箱中、专为建筑进度调度设计的便携式计算机。令人惊叹的是，莫奇利在 1967 年就预言商人终将随身携带口袋式计算机，这一愿景在现代智能手机上得到了实现。\n\n文章最后对莫奇利的品格进行了回顾。作者引用了 J. 普雷斯珀·埃克特在悼词中的话，将莫奇利描述为一位“卓越”的创新者，同时也是一位“正直的人”。基斯拉特中心邀请公众探索莫奇利的丰富藏品，以进一步了解这位助力开启现代计算机工业的伟人。"
+  },
+  {
+    "id": "49289512",
+    "title": "Choose Boring Technology (2015)",
+    "url": "https://mcfunley.com/choose-boring-technology",
+    "summary": "In \"Choose Boring Technology,\" Dan McKinley argues that a company’s success depends on its ability to focus on its core business mission rather than technical novelty. He introduces the concept of **innovation tokens**: a finite resource (roughly three) that a company can spend on new or unproven technologies. Overspending these tokens on \"shiny\" tools—like new databases or languages—diverts critical attention away from the company's actual goals.\n\n**Boring vs. Shiny**\nMcKinley defines \"boring\" technology (e.g., Postgres, Python, Memcached) as tools with well-understood capabilities and, more importantly, well-understood failure modes. New technologies are risky because they are full of \"unknown unknowns.\" While they may seem exciting, their unpredictable behavior during crises creates an operational burden that can \"crush\" a team.\n\n**Global Optimization**\nThe author challenges the \"best tool for the job\" mentality, calling it a local optimization that ignores \"global\" costs. Every new piece of technology adds a permanent tax in the form of operational overhead, monitoring, and cognitive load. Therefore, the \"best\" tool is often the \"least worst\" option already in your stack. Developers should aim to solve as many problems as possible with the smallest set of tools.\n\n**Adopting New Tech**\nMcKinley suggests a disciplined process for adding new technology:\n1.  **Exhaust existing tools:** Try to solve the problem with the current stack first.\n2.  **Define the gap:** Explicitly state why the current stack is prohibitively expensive or difficult for this specific task.\n3.  **Commit to migration:** If a new tool replaces an old one, there must be a plan to migrate old functionality to prevent \"wreckage.\"\n\nUltimately, the goal is to **\"Just Ship.\"** By choosing boring technology, engineers gain the cognitive freedom to solve meaningful business problems instead of wasting time on infrastructure management.",
+    "chinese_title": "选择乏味的技术 (2015)",
+    "chinese_summary": "在《选择乏味的技术》中，丹·麦金利（Dan McKinley）认为，公司的成功取决于其专注于核心业务使命而非技术新颖性的能力。他提出了“**创新令牌**”（innovation tokens）的概念：这是一种有限的资源（通常约为三个），公司可以将其用于采用新技术或未经证实的技术。在“光鲜亮丽”的工具（如新数据库或新语言）上过度消耗这些令牌，会分散公司对实际目标的关键注意力。\n\n**乏味 vs. 光鲜**\n麦金利将“乏味”技术（如 Postgres、Python、Memcached）定义为能力已被充分理解，且更重要的是其故障模式也已被充分理解的工具。新技术充满风险，因为它们充斥着“未知的未知数”。虽然它们看起来令人兴奋，但危机期间不可预测的表现会产生沉重的运维负担，甚至可能“压垮”团队。\n\n**全局优化**\n作者对“最适合该工作的工具”这一观念提出了挑战，称其为忽略了“全局”成本的局部优化。每一项新技术都会以运维开销、监控和认知负荷的形式增加永久性的“税收”。因此，“最佳”工具往往是现有技术栈中“最不差”的选择。开发人员应致力于用最少的一套工具解决尽可能多的问题。\n\n**采用新技术**\n麦金利建议采用严谨的流程来引入新技术：\n1. **穷尽现有工具**：首先尝试用当前技术栈解决问题。\n2. **定义差距**：明确说明为什么当前技术栈在处理此特定任务时成本极高或极其困难。\n3. **承诺迁移**：如果新工具是为了替代旧工具，必须有迁移旧功能的计划，以防止留下“残骸”。\n\n最终的目标是“**交付即可**”（Just Ship）。通过选择乏味的技术，工程师可以获得认知上的自由，去解决有意义的业务问题，而不是把时间浪费在基础设施管理上。"
+  },
+  {
+    "id": "49285244",
+    "title": "DeepSeek Harness developer preview",
+    "url": "https://deepseek.com/harness/en/",
+    "summary": "DeepSeek has announced the developer preview of **DeepSeek Harness (DSH)**, an open-source framework designed to build, manage, and deploy AI agents. The platform operates on the core philosophy that \"Everything is a plugin,\" allowing developers to swap or recompose every capability—including models, tools, sandboxes, storage, and the UI—without modifying the source code.\n\nBuilt on the **Cordis kernel**, DSH manages plugin dependencies and events to ensure a highly modular environment. It defines an agent as the combination of a \"Model\" (the soul) and a \"Harness\" (the environment and tools). \n\nKey features include:\n*   **Complete Traceability:** Every interaction, including reasoning, tool calls, and context injections, is recorded in an append-only session log. This enables a \"Trajectory view\" where users can resume, fork, search, or replay any part of the event stream.\n*   **Multiple Runtime Modes:** \n    *   **Standard:** A comprehensive coding agent with full web and file search capabilities.\n    *   **Code:** Uses a TypeScript SDK to allow the model to orchestrate complex, multi-step operations in a single program.\n    *   **Minimal:** A lightweight environment featuring only a shell and file editor, optimized for model benchmarking.\n    *   **Creator:** A specialized mode for inspecting the runtime and authoring custom agent presets.\n\nDeepSeek Harness is currently available for worldwide testing. Developers can get started by running `npx @deepseek-ai/dsh web` or by cloning the repository from GitHub. The project aims to foster an open-source ecosystem of reusable and composable agent infrastructure.",
+    "chinese_title": "DeepSeek Harness 开发者预览版",
+    "chinese_summary": "DeepSeek 宣布推出 DeepSeek Harness (DSH) 开发者预览版，这是一个旨在构建、管理和部署 AI 智能体（AI Agents）的开源框架。该平台秉持“一切皆插件”的核心理念，允许开发者在不修改源代码的情况下，自由更换或重组包括模型、工具、沙箱、存储和 UI 在内的每一项能力。\n\nDSH 基于 Cordis 内核构建，通过管理插件依赖和事件来确保高度模块化的环境。它将智能体定义为“模型”（灵魂）与“Harness”（环境和工具）的结合。\n\n核心特性包括：\n*   **全流程可追溯性：** 每一次交互（包括推理、工具调用和上下文注入）都会记录在仅追加的会话日志中。这实现了“轨迹视图”，用户可以恢复、派生、搜索或重放事件流中的任何部分。\n*   **多种运行模式：** \n    *   **Standard（标准模式）：** 具备完整网页和文件搜索能力的综合性编码智能体。\n    *   **Code（代码模式）：** 利用 TypeScript SDK 允许模型在单个程序中编排复杂的多步操作。\n    *   **Minimal（极简模式）：** 仅包含 Shell 和文件编辑器的轻量化环境，针对模型基准测试进行了优化。\n    *   **Creator（创作者模式）：** 用于检查运行时并编写自定义智能体预设的专用模式。\n\nDeepSeek Harness 目前已面向全球开放测试。开发者可以通过运行 `npx @deepseek-ai/dsh web` 或从 GitHub 克隆仓库开始体验。该项目旨在培育一个可复用、可组合的智能体基础设施开源生态系统。"
+  },
+  {
+    "id": "49289026",
+    "title": "Tocharian Online",
+    "url": "https://lrc.la.utexas.edu/eieol/tokol/0",
+    "summary": "\"Tocharian Online\" provides a comprehensive introduction to Tocharian A and B, two distinct but closely related Indo-European languages discovered in the Tarim Basin of East Turkestan (modern-day Xinjiang). Recovered from Silk Road sites like Turfan and Kučā, the surviving documents date primarily between the 6th and 8th centuries AD.\n\nWhile most Tocharian texts are Buddhist translations written in a variant of the Brāhmī script, secular documents—such as caravan passes and business letters—exist exclusively in Tocharian B. This leads scholars to suggest that Tocharian A may have already been an extinct liturgical language, similar to Latin, by the time these records were created.\n\nThe name \"Tocharian\" is a historical misnomer. Early 20th-century scholars mistakenly identified the language with the \"Toxrï\" people of Bactria; however, research now shows these groups were distinct. Native terms for the languages likely included *ārśi* (Tocharian A) and *kuśiññe* (Tocharian B).\n\nTocharian holds a unique place in historical linguistics as the easternmost Indo-European language. Surprisingly, it is a \"centum\" language—a characteristic usually reserved for western branches like Celtic and Germanic. This discovery overturned previous theories that divided Indo-European dialects strictly by geography. Furthermore, the language features a reduced phonetic inventory (lacking voiced stops like *b, d, g*) and an agglutinative case system. These features suggest a long period of contact with non-Indo-European families, such as Turkic, Uralic, and Mongolian. \n\nThe article serves as a preface to a series of lessons from the University of Texas at Austin aimed at documenting and preserving these ancient languages.",
+    "chinese_title": "吐火罗语在线",
+    "chinese_summary": "\"Tocharian Online\" provides a comprehensive introduction to Tocharian A and B, two distinct but closely related Indo-European languages discovered in the Tarim Basin of East Turkestan (modern-day Xinjiang). Recovered from Silk Road sites like Turfan and Kučā, the surviving documents date primarily between the 6th and 8th centuries AD.\n\nWhile most Tocharian texts are Buddhist translations written in a variant of the Brāhmī script, secular documents—such as caravan passes and business letters—exist exclusively in Tocharian B. This leads scholars to suggest that Tocharian A may have already been an extinct liturgical language, similar to Latin, by the time these records were created.\n\nThe name \"Tocharian\" is a historical misnomer. Early 20th-century scholars mistakenly identified the language with the \"Toxrï\" people of Bactria; however, research now shows these groups were distinct. Native terms for the languages likely included *ārśi* (Tocharian A) and *kuśiññe* (Tocharian B).\n\nTocharian holds a unique place in historical linguistics as the easternmost Indo-European language. Surprisingly, it is a \"centum\" language—a characteristic usually reserved for western branches like Celtic and Germanic. This discovery overturned previous theories that divided Indo-European dialects strictly by geography. Furthermore, the language features a reduced phonetic inventory (lacking voiced stops like *b, d, g*) and an agglutinative case system. These features suggest a long period of contact with non-Indo-European families, such as Turkic, Uralic, and Mongolian. \n\nThe article serves as a preface to a series of lessons from the University of Texas at Austin aimed at documenting and preserving these ancient languages."
+  },
+  {
+    "id": "49279638",
+    "title": "How art invented humanity",
+    "url": "https://aeon.co/essays/humans-did-not-invent-art-it-was-the-other-way-around",
+    "summary": "生成摘要时出错",
+    "chinese_title": "How art invented humanity",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285982",
+    "title": "Gloomberb",
+    "url": "https://gloom.sh/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Gloomberb",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286485",
+    "title": "Kubernetes on Oxide: How customer needs shaped our integrations",
+    "url": "https://oxide.computer/blog/kubernetes-on-oxide",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Kubernetes on Oxide: How customer needs shaped our integrations",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49289465",
+    "title": "Donkey.bas is 45 Years Old – 131 line of Glory",
+    "url": "https://donkeybas.com/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Donkey.bas is 45 Years Old – 131 line of Glory",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288293",
+    "title": "We Have AI at Home Chapter 1: A Box of Scraps",
+    "url": "https://jdagostino.github.io/ai-pt1-box-o-scraps/index.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "We Have AI at Home Chapter 1: A Box of Scraps",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285770",
+    "title": "Ordinary Abundance",
+    "url": "https://ordinaryabundance.com/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Ordinary Abundance",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49281916",
+    "title": "Codex in ChatGPT desktop app for Linux is now in preview",
+    "url": "https://community.openai.com/t/codex-in-chatgpt-desktop-app-for-linux-is-now-in-preview/1390027",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Codex in ChatGPT desktop app for Linux is now in preview",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285718",
+    "title": "I built a 500k-domain search engine for makers in a weekend for $10",
+    "url": "https://alexmorleyfinch.github.io/marlin/history/v1/article/the_birth.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "I built a 500k-domain search engine for makers in a weekend for $10",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286073",
+    "title": "Show HN: MCP Memory – Fast Agent Memory Using Google's OKF and SQLite FTS5",
+    "url": "https://github.com/fellowgeek/mcp-memory",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: MCP Memory – Fast Agent Memory Using Google's OKF and SQLite FTS5",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286424",
+    "title": "Graduate student proves a quantum uncertainty principle for fractals",
+    "url": "https://www.quantamagazine.org/graduate-student-proves-the-fractal-uncertainty-principle-20260812/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Graduate student proves a quantum uncertainty principle for fractals",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49284697",
+    "title": "ATG (YC F25) Is Hiring Member of Technical Staff (Data Platform)",
+    "url": "https://atg.science/careers",
+    "summary": "生成摘要时出错",
+    "chinese_title": "ATG (YC F25) Is Hiring Member of Technical Staff (Data Platform)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285327",
+    "title": "Choosing an AI model: one prompt, 11 models, different results",
+    "url": "https://www.netlify.com/blog/one-prompt-11-models-very-different-results/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Choosing an AI model: one prompt, 11 models, different results",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286357",
+    "title": "We eliminated 1,400 CVEs in NanoClaw's container images",
+    "url": "https://www.echo.ai/blog/echo-xnanoclaw-under-the-hood",
+    "summary": "生成摘要时出错",
+    "chinese_title": "We eliminated 1,400 CVEs in NanoClaw's container images",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49273922",
+    "title": "Show HN: OJCP – an open protocol for agent-consumable job data",
+    "url": "https://ojcp.dev/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: OJCP – an open protocol for agent-consumable job data",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286662",
+    "title": "I requested a copy of my data from McDonald’s loyalty program",
+    "url": "https://www.wired.com/story/mcdonalds-built-a-515-page-dossier-on-me-it-says-ill-never-leave/",
+    "summary": "A WIRED reporter exercised their legal rights under California privacy law to request their personal data from McDonald’s loyalty program, receiving a staggering 515-page report. The document revealed that the company’s \"secret sauce\" is extensive commercial surveillance, tracking every transaction, app interaction, and location visit.\n\nThe report’s most striking feature was its use of predictive algorithms. McDonald’s estimated the reporter’s future behavior over a six-week period, predicting exactly how many times they would visit (2.16), their average spend per order ($13.49), and their total predicted value ($29.15). The system even assigned an \"attrition\" score of zero, suggesting the reporter was a guaranteed lifelong customer. Furthermore, the data categorized the author into behavioral archetypes, such as \"Food-Led Afternoon Snack,\" and ranked their most relevant products based on frequency and recency.\n\nPrivacy experts noted that while individual data points might seem innocuous, the aggregation of years of information creates an invasive profile of a consumer’s life. They highlighted a stark power imbalance where technology is designed to maximize profit through long-term surveillance rather than just providing deals.\n\nUltimately, the author found the level of detail and predictive \"dossier\" concerning. They requested that McDonald’s delete their stored information and decided to stop eating at the chain—not just for health reasons, but to defy the algorithm’s prediction of their \"zero\" attrition. The article serves as a wake-up call regarding the hidden costs of digital loyalty programs and the extensive data mining practiced by major corporations.",
+    "chinese_title": "我向麦当劳会员计划索取了一份我的个人数据副本。",
+    "chinese_summary": "A WIRED reporter exercised their legal rights under California privacy law to request their personal data from McDonald’s loyalty program, receiving a staggering 515-page report. The document revealed that the company’s \"secret sauce\" is extensive commercial surveillance, tracking every transaction, app interaction, and location visit.\n\nThe report’s most striking feature was its use of predictive algorithms. McDonald’s estimated the reporter’s future behavior over a six-week period, predicting exactly how many times they would visit (2.16), their average spend per order ($13.49), and their total predicted value ($29.15). The system even assigned an \"attrition\" score of zero, suggesting the reporter was a guaranteed lifelong customer. Furthermore, the data categorized the author into behavioral archetypes, such as \"Food-Led Afternoon Snack,\" and ranked their most relevant products based on frequency and recency.\n\nPrivacy experts noted that while individual data points might seem innocuous, the aggregation of years of information creates an invasive profile of a consumer’s life. They highlighted a stark power imbalance where technology is designed to maximize profit through long-term surveillance rather than just providing deals.\n\nUltimately, the author found the level of detail and predictive \"dossier\" concerning. They requested that McDonald’s delete their stored information and decided to stop eating at the chain—not just for health reasons, but to defy the algorithm’s prediction of their \"zero\" attrition. The article serves as a wake-up call regarding the hidden costs of digital loyalty programs and the extensive data mining practiced by major corporations."
+  },
+  {
+    "id": "49232039",
+    "title": "Better Gaussian Splatting in Julia",
+    "url": "https://pxl-th.github.io/blog/better-gs-julia/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Better Gaussian Splatting in Julia",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49284774",
+    "title": "Deutsche Bank becomes first foreign yuan clearing bank in Europe",
+    "url": "https://tradersunion.com/news/central-banks/show/2973571-deutsche-bank-becomes/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Deutsche Bank becomes first foreign yuan clearing bank in Europe",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49279627",
+    "title": "The Indo-European Family Tree",
+    "url": "https://djbinder.com/language-tree/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The Indo-European Family Tree",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288296",
+    "title": "GoAccess – Open-source real-time log analyzer and interactive viewer",
+    "url": "https://goaccess.io/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "GoAccess – Open-source real-time log analyzer and interactive viewer",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49254376",
+    "title": "The mathematical physics of rainbows and glories (2001) [pdf]",
+    "url": "https://tlakoba.w3.uvm.edu/AppliedUGMath/auxpaper_rainbow_glory_review.pdf",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The mathematical physics of rainbows and glories (2001) [pdf]",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286030",
+    "title": "Time to Move On: Querying Without Nulls and Bags",
+    "url": "https://arxiv.org/abs/2608.10863",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Time to Move On: Querying Without Nulls and Bags",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49283063",
+    "title": "Launch HN: Bullet (YC S26) – A Faster Coding Agent",
+    "url": "https://www.codewithbullet.com",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Launch HN: Bullet (YC S26) – A Faster Coding Agent",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49243687",
+    "title": "The lattice of sets of natural numbers is rich (2021)",
+    "url": "https://jdh.hamkins.org/the-lattice-of-sets-of-natural-numbers-is-rich/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The lattice of sets of natural numbers is rich (2021)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49218514",
+    "title": "Translating the Renaissance: 17,000+ historical source texts",
+    "url": "https://sourcelibrary.org",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Translating the Renaissance: 17,000+ historical source texts",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285418",
+    "title": "Nine PBS could lose 70 years of archives after cloud vendor goes defunct",
+    "url": "https://www.tomshardware.com/software/cloud-storage/nine-pbs-loses-access-to-70-years-of-data-after-contracted-cloud-storage-vendor-goes-defunct-public-tv-channel-sues-iron-mountain-data-center-which-hosts-archival-materials-to-ensure-preservation",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Nine PBS could lose 70 years of archives after cloud vendor goes defunct",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49224997",
+    "title": "Picking berries is my meditation",
+    "url": "https://www.tsoon.com/posts/picking-berries-meditation/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Picking berries is my meditation",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288198",
+    "title": "Show HN: At 16K features, flat autoencoders break. Curved space doesn't",
+    "url": "https://github.com/vishal-dehurdle/hypersae",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: At 16K features, flat autoencoders break. Curved space doesn't",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288138",
+    "title": "OpenCV AI Competition 2026",
+    "url": "https://opencv.org/opencv-ai-competition-2026/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "OpenCV AI Competition 2026",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285160",
+    "title": "DeepSeek API Pricing Update",
+    "url": "https://twitter.com/deepseek_ai/status/2087864589895798968",
+    "summary": "生成摘要时出错",
+    "chinese_title": "DeepSeek API Pricing Update",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49242698",
+    "title": "Antiqua–Fraktur dispute",
+    "url": "https://en.wikipedia.org/wiki/Antiqua%E2%80%93Fraktur_dispute",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Antiqua–Fraktur dispute",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49280061",
+    "title": "Flutter 3.47",
+    "url": "https://flutter.dev/blog/whats-new-in-flutter-3-47",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Flutter 3.47",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286211",
+    "title": "Build a Stratum 1 PTP Grandmaster on a Budget",
+    "url": "https://opscode.io/posts/ptp-grandmaster-cm4-sr1723u10/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Build a Stratum 1 PTP Grandmaster on a Budget",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49289304",
+    "title": "Amazon will train on Twitch streamers' content by default, unless they opt out",
+    "url": "https://techcrunch.com/2026/08/12/amazon-will-train-on-twitch-streamers-content-by-default-unless-they-opt-out/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Amazon will train on Twitch streamers' content by default, unless they opt out",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286270",
+    "title": "Heart aerospace completes first flight of largest electric aircraft",
+    "url": "https://www.heartaerospace.com/newsroom/heart-aerospace-completes-first-flight-of-world-s-largest-electric-aircraft",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Heart aerospace completes first flight of largest electric aircraft",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
     "id": "49274600",
     "title": "DeepSeek V4 Pro 0813",
     "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-    "summary": "Unable to access the article link.",
-    "chinese_title": "DeepSeek V4 专业版 0813",
-    "chinese_summary": "无法访问文章链接。"
-  },
-  {
-    "id": "49272832",
-    "title": "Tailscale Traces Database Corruption to 16y/o SQLite WAL-Reset Bug",
-    "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
-    "summary": "Tailscale recently resolved a series of recurring database corruption incidents by helping uncover a 16-year-old bug in SQLite. Over six months, Tailscale’s control plane—which utilizes a sharded SQLite architecture with manual checkpointing—suffered 19 instances of corruption that caused service instability and minor metadata loss.\n\nThe bug proved difficult to diagnose because it was unreproducible in test environments and occurred sporadically. Tailscale collaborated with SQLite’s core developers, implementing a transaction logging pipeline and a custom virtual filesystem tracing shim (`tmstmpvfs`) to capture the error in production. They discovered that committed data was \"vanishing\" during the checkpointing process, where data is moved from the Write-Ahead Log (WAL) to the main database file.\n\nThe root cause was identified as the **\"WAL-Reset bug,\"** a rare race condition between a write transaction and a checkpoint. Under specific timing, the checkpoint process would incorrectly conclude that certain pages had already been copied to the main database, leaving them behind and causing permanent corruption when the WAL was subsequently reset. Tailscale was particularly susceptible due to its aggressive use of manual checkpoints for backups.\n\nThe resolution faced a brief hurdle when the initial fix (SQLite 3.52.0) caused false corruption warnings due to a change in floating-point rounding for expression indexes. Tailscale mitigated this by adjusting their timestamp precision, while SQLite developers released specialized fixes in versions 3.51.3 and 3.53.0. Following the deployment of these updates, Tailscale has reported a return to service stability, successfully ending a months-long forensic investigation into one of SQLite’s longest-standing hidden flaws.",
-    "chinese_title": "Tailscale 将数据库损坏追溯到存在 16 年之久的 SQLite WAL 重置漏洞",
-    "chinese_summary": "Tailscale 最近通过协助发现 SQLite 中一个潜伏了 16 年的漏洞，解决了一系列频发的数据库损坏事件。在过去的六个月里，Tailscale 的控制面（采用手动检查点的分片式 SQLite 架构）遭遇了 19 次损坏，导致了服务不稳定和轻微的元数据丢失。\n\n由于该漏洞无法在测试环境中复现且呈现偶发性，诊断过程异常困难。Tailscale 与 SQLite 核心开发者合作，实施了事务日志流水线和自定义虚拟文件系统追踪层（`tmstmpvfs`），以便在生产环境中捕获该错误。他们发现，已提交的数据在“检查点（checkpointing）”过程中“消失”了，即数据从预写日志（WAL）移动到主数据库文件的过程中发生了丢失。\n\n根本原因被确定为“WAL-Reset 漏洞”，这是一种在写事务与检查点之间发生的罕见竞态条件。在特定的时机下，检查点进程会错误地认为某些数据页已复制到主数据库并将其遗漏；当 WAL 随后被重置时，便会导致永久性的数据损坏。由于 Tailscale 频繁使用手动检查点进行备份，因此特别容易受到该漏洞的影响。\n\n修复过程曾遭遇短暂阻碍：最初的修复版本（SQLite 3.52.0）由于表达式索引中浮点数舍入规则的变化，触发了虚假的损坏警告。Tailscale 通过调整其时间戳精度缓解了这一问题，而 SQLite 开发者则在 3.51.3 和 3.53.0 版本中发布了专门的修复补丁。随着这些更新的部署，Tailscale 报告服务已恢复稳定，成功结束了这场针对 SQLite 潜伏时间最长的隐蔽缺陷之一、为期数月的深入调查。"
-  },
-  {
-    "id": "49270953",
-    "title": "2026 Eclipse Webcams",
-    "url": "https://jonty.github.io/2026_eclipse_webcams/",
     "summary": "生成摘要时出错",
-    "chinese_title": "2026年日食网络摄像头",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49275132",
-    "title": "Glaciers on the Climate Dashboard",
-    "url": "https://climate.metoffice.cloud/glaciers.html",
-    "summary": "This article explores the state of global glaciers, their role in the environment, and the methods used to track their decline. Glaciers are formed from compacted snow and act as vital reservoirs, providing freshwater during dry seasons. However, their melting contributes significantly to rising global sea levels, threatening coastal communities.\n\n**Current Trends and Observations**\nData from the World Glacier Monitoring Service (WGMS) indicates that glaciers have been in long-term retreat since the 19th century, with a marked acceleration in shrinking since the late 1980s. Since 1976, the cumulative mass loss of reference glaciers amounts to approximately 20 meters of \"water equivalent.\" Satellite data from multiple agencies, including NASA and CSIRO, confirm a consistent long-term increase in global sea levels resulting from this melt.\n\n**Drivers of Change**\nA glacier’s health is determined by its \"mass balance\"—the difference between snow accumulation and ice loss. While glaciers are sensitive to natural factors such as temperature, precipitation, humidity, and cloud cover, the IPCC AR5 concludes with high confidence that human influence is a substantial driver of the observed mass loss since the 1960s.\n\n**Monitoring Techniques**\nScientists measure glacier changes using several methods:\n*   **Physical measurements:** Using stakes to quantify ice loss and digging snow pits or analyzing crevasses to measure accumulation.\n*   **Remote sensing:** Utilizing satellite-based radar and visible light sensors to map height and shape.\n*   **Gravitational missions:** Using technology like GRACE to monitor large ice masses by measuring changes in Earth’s gravitational field.\n\nStandardizing these measurements through \"water equivalent\" allows researchers to maintain consistency across different ice and snow densities, providing a clearer picture of global environmental change.",
-    "chinese_title": "气候仪表盘上的冰川",
-    "chinese_summary": "本文探讨了全球冰川的现状、其在环境中的作用以及追踪其消退的方法。冰川由积雪压缩而成，充当着重要的水库，在旱季提供淡水。然而，冰川融化是全球海平面上升的主要原因，威胁着沿海社区。\n\n**当前趋势与观测**\n世界冰川监测服务处 (WGMS) 的数据表明，自 19 世纪以来，冰川一直处于长期退缩状态，且自 20 世纪 80 年代末以来，其缩减速度明显加快。自 1976 年以来，参考冰川的累计质量损失约为 20 米“水当量”。包括美国国家航空航天局 (NASA) 和澳大利亚联邦科学与工业研究组织 (CSIRO) 在内的多家机构的卫星数据证实，由于这种消融，全球海平面呈持续长期上升趋势。\n\n**变化的驱动因素**\n冰川的健康状况取决于其“质量平衡”——即积雪量与冰流失量之间的差值。虽然冰川对气温、降水、湿度和云量等自然因素非常敏感，但政府间气候变化专门委员会第五次评估报告 (IPCC AR5) 以高度可信度得出结论，自 20 世纪 60 年代以来观测到的质量损失中，人为影响是一个主要驱动因素。\n\n**监测技术**\n科学家使用以下几种方法测量冰川变化：\n*   **物理测量：** 利用测量杆量化冰流失，并通过挖掘雪坑或分析冰裂隙来测量积雪量。\n*   **遥感技术：** 利用卫星雷达和可见光传感器测绘高度和形状。\n*   **重力任务：** 使用 GRACE 等技术，通过测量地球引力场的变化来监测大规模冰体。\n\n通过“水当量”将这些测量结果标准化，使研究人员能够在不同的冰雪密度之间保持一致性，从而更清晰地描绘全球环境变化的图景。"
-  },
-  {
-    "id": "49272655",
-    "title": "Tim King, AmigaDOS developer, has died",
-    "url": "https://amiga-news.de/en/news/AN-2026-08-00070-EN.html",
-    "summary": "Dr. Tim King, a pivotal figure in computer science and the history of the Amiga computer, passed away in late July 2026. \n\nKing earned his Ph.D. from the University of Cambridge in 1979, where he developed **Tripos**, a preemptive multitasking operating system written in BCPL. In 1984, he joined the company MetaComCo, where Tripos was adapted to become **AmigaDOS**, the foundational operating system for the Amiga. \n\nFollowing his work on the Amiga, King founded Perihelion in 1986, focusing on parallel processing and transputer technology. He also later founded the Internet service provider UK Online. King is remembered for his significant technical contributions to the evolution of operating systems and his lasting legacy within the Amiga community.",
-    "chinese_title": "AmigaDOS 开发者 Tim King 逝世",
-    "chinese_summary": "计算机科学及 Amiga 电脑历史上的关键人物蒂姆·金博士（Dr. Tim King）于 2026 年 7 月下旬逝世。\n\n金于 1979 年在剑桥大学获得博士学位，并在那里开发了 Tripos，这是一个使用 BCPL 编写的抢占式多任务操作系统。1984 年，他加入 MetaComCo 公司，期间 Tripos 被改编为 Amiga 电脑的基础操作系统 AmigaDOS。\n\n在结束 Amiga 的工作后，金于 1986 年创立了 Perihelion 公司，专注于并行处理和跨处理机（transputer）技术。此后，他还创办了互联网服务提供商 UK Online。金因其对操作系统演进做出的重大技术贡献，以及他在 Amiga 社区留下的深远遗产而为人所铭记。"
-  },
-  {
-    "id": "49272569",
-    "title": "Someone is running mass vulnerability scans, spoofing AI bots like ClaudeBot",
-    "url": "https://knownagents.com/insights",
-    "summary": "The **Agentic Web Index** reveals a significant shift in internet traffic, where machines—including AI agents, crawlers, and scrapers—now account for **35% of all web visits**. While overall bot traffic has seen a slight dip, \"agentrification\" (AI-related bot activity) has surged by 11%, indicating that the web is increasingly being optimized for and consumed by artificial intelligence.\n\nKey findings from the report include:\n\n*   **Bot Compliance:** Despite the rise in automated traffic, bots remain highly disciplined, adhering to `robots.txt` protocols **98.5%** of the time. \n*   **Dominant Players:** A few major operators control the majority of AI traffic. **OpenAI** dominates \"AI Fetching\" (real-time data retrieval for RAG) with an 86.4% market share. **Anthropic’s ClaudeBot** leads in \"AI Scraping\" (data collection for model training) at 27%, followed closely by Meta and Amazon.\n*   **Search and SEO:** Traditional search engine crawlers (Googlebot, bingbot) and SEO tools (Ahrefs) still represent the highest volume of total bot traffic. However, AI-specific search indexers like Huawei’s **PetalBot**, Amzn-SearchBot, and Applebot are carving out significant niches.\n*   **User Behavior:** AI agents that autonomously browse the web to complete tasks for humans currently average session durations of one minute, visiting roughly 7.6 pages per session. \n*   **Referral Trends:** While AI bots are consuming massive amounts of data, they currently drive very little human traffic back to websites; AI chat referrals account for only **0.1%** of human visits.\n\nIn summary, the data depicts an evolving digital landscape where AI companies are aggressively scraping and indexing content to power the next generation of assistants and search engines, even as direct human click-throughs from these tools remain minimal.",
-    "chinese_title": "有人正伪装成 ClaudeBot 等 AI 机器人进行大规模漏洞扫描",
-    "chinese_summary": "**智能体网络指数 (Agentic Web Index)** 揭示了互联网流量的重大转变：包括 AI 智能体、爬虫和抓取工具在内的机器流量现在已占到**所有网页访问量的 35%**。尽管整体机器人流量略有下降，但“智能体化”（与 AI 相关的机器人活动）激增了 11%，表明互联网正日益针对人工智能进行优化，并越来越多地被其消耗。\n\n报告的核心发现包括：\n\n*   **机器人合规性：** 尽管自动化流量有所上升，但机器人表现得高度自律，在 **98.5%** 的情况下都遵循 `robots.txt` 协议。\n*   **主导厂商：** 少数几家主要运营商控制了绝大部分 AI 流量。**OpenAI** 在“AI 获取”（用于 RAG 的实时数据检索）领域占据主导地位，市场份额达 86.4%。**Anthropic 的 ClaudeBot** 则在“AI 抓取”（用于模型训练的数据收集）方面以 27% 的份额领跑，Meta 和亚马逊紧随其后。\n*   **搜索与 SEO：** 传统搜索引擎爬虫（Googlebot、bingbot）和 SEO 工具（Ahrefs）仍占据机器人总流量的最大份额。然而，华为的 **PetalBot**、Amzn-SearchBot 和 Applebot 等 AI 专用搜索索引器正在开辟重要的细分市场。\n*   **用户行为：** 目前，自主浏览网页以替人类完成任务的 AI 智能体平均会话时长为 1 分钟，每次会话访问约 7.6 个页面。\n*   **引流趋势：** 尽管 AI 机器人消耗了海量数据，但目前它们为网站引回的人类流量极少；AI 聊天带来的引流仅占人类访问量的 **0.1%**。\n\n总之，数据描绘了一个不断演变的数字图景：AI 公司正积极地抓取并索引内容，以为下一代助手和搜索引擎提供动力，即便这些工具带来的直接人类点击量目前仍微乎其微。"
-  },
-  {
-    "id": "49275385",
-    "title": "SpaceXAI's Grok 4.6 Scores 61 on the Artificial Analysis Intelligence Index",
-    "url": "https://artificialanalysis.ai/articles/grok-4-6-benchmarks-and-analysis",
-    "summary": "SpaceXAI has released **Grok 4.6**, achieving a score of **61** on the Artificial Analysis Intelligence Index. This 5-point increase over its predecessor places the model on the industry frontier alongside GPT-5.6 Sol, trailing only Anthropic’s Claude Opus 5 and Fable 5.\n\nKey highlights of the release include:\n\n*   **Agentic Excellence:** Grok 4.6 excels in real-world agentic tasks, earning a 1753 Elo on GDPval-AA v2. It ranks among the top performers in specialized benchmarks, including $\\tau^3$-Banking (50.7%) and Terminal-Bench v2.1 (88.4%), proving highly effective at multi-turn tool use and software tasks.\n*   **Cost Efficiency:** Disrupting the frontier market, SpaceXAI maintained Grok 4.5’s pricing of **$2 per 1M input tokens and $6 per 1M output tokens**. This is over 60% more affordable than comparable models from OpenAI and Anthropic. With an average cost per task of $0.84, Grok 4.6 sits on the Intelligence vs. Cost Pareto frontier.\n*   **Operational Efficiency:** In long-horizon work (AA-Briefcase), the model demonstrated significant token efficiency. It completes tasks in approximately **53 turns** using 0.5B input tokens—roughly half the turns and 25% of the input tokens required by Claude Opus 5 to reach similar results.\n*   **Technical Specs:** The model retains a **500k context window**. While headline pricing is flat, the cost for cache hits has increased slightly to $0.5 per 1M tokens.\n\nOverall, Grok 4.6 positions SpaceXAI as a leader in \"turn-efficient\" intelligence, offering frontier-level performance at a fraction of the cost of its primary competitors.",
-    "chinese_title": "SpaceXAI 的 Grok 4.6 在人工分析智能指数中获 61 分",
-    "chinese_summary": "SpaceXAI 发布了 Grok 4.6，在人工智能分析智能指数（Artificial Analysis Intelligence Index）中取得了 61 分。这一得分较其前代产品提升了 5 分，使该模型与 GPT-5.6 Sol 共同跻身行业前沿，仅次于 Anthropic 的 Claude Opus 5 和 Fable 5。\n\n本次发布的主要亮点包括：\n\n*   **卓越的智能体能力：** Grok 4.6 在现实世界的智能体任务中表现优异，在 GDPval-AA v2 上获得了 1753 Elo 评分。它在多项专业基准测试中名列前茅，包括 $\\tau^3$-Banking (50.7%) 和 Terminal-Bench v2.1 (88.4%)，证明了其在多轮工具调用和软件任务处理方面的高效性。\n*   **成本效益：** 颠覆了前沿模型市场，SpaceXAI 维持了 Grok 4.5 的定价：每 100 万输入 token 为 2 美元，每 100 万输出 token 为 6 美元。这比 OpenAI 和 Anthropic 的同类模型便宜 60% 以上。凭借每项任务 0.84 美元的平均成本，Grok 4.6 处于“智能 vs. 成本”的帕累托前沿（Pareto frontier）。\n*   **运营效率：** 在长周期任务（AA-Briefcase）中，该模型展现了显著的 token 效率。它仅需约 53 轮对话及 5 亿（0.5B）输入 token 即可完成任务——在达成相似效果的情况下，其所需的轮数仅为 Claude Opus 5 的一半，输入 token 消耗仅为后者的 25%。\n*   **技术规格：** 该模型保留了 500k 的上下文窗口。虽然基础定价保持不变，但缓存命中（cache hits）的成本略微上涨至每 100 万 token 0.5 美元。\n\n总体而言，Grok 4.6 将 SpaceXAI 定位为“轮次效率型”智能的领导者，以主要竞争对手极小比例的成本提供了行业顶尖的性能。"
-  },
-  {
-    "id": "49275465",
-    "title": "Reflex (YC W23) Is hiring Growth and GTM Roles",
-    "url": "https://www.ycombinator.com/companies/reflex/jobs/71x5GFb-growth-engineer",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Reflex (YC W23) 正在招聘增长与 GTM 岗位",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272549",
-    "title": "Why Tiny JPEGs Look Different in Chrome",
-    "url": "https://guillaumetech.github.io/posts/jpg-scaling-chrome/",
-    "summary": "This article explores why small JPEG images, such as icons, often appear \"thicker\" or distorted in Chrome compared to other browsers like Firefox. The author discovered that this visual discrepancy is not a bug, but rather a performance optimization within Chrome’s rendering engine, Skia, and its JPEG library, libjpeg-turbo.\n\nThe core of the issue lies in how JPEGs are decoded. Traditionally, a browser would fully decompress a large image into memory before scaling it down—a process that is memory-intensive and wasteful for tiny display sizes. To save resources, Chrome utilizes **partial IDCT (Inverse Discrete Cosine Transform) scaling**.\n\nJPEGs store data in 8x8 pixel blocks converted into the frequency domain. In this format, low-frequency coefficients represent flat colors and basic shapes, while high-frequency coefficients capture fine details and sharp edges. When an image is scaled down significantly, most high-frequency information is naturally lost. Chrome takes advantage of this by skipping the high-frequency coefficients during the decoding process. It decodes the image at a fraction of its size (typically a denominator of eight) using only the low-frequency data, then performs a final downsampling to the desired dimensions.\n\nWhile this optimization makes rendering faster and significantly reduces memory consumption, it results in the loss of edge softening and subtle gradients. This causes small graphics to look blockier or \"thicker.\" The author concludes that because JPEGs are designed specifically for photographs—as the name **Joint Photographic Experts Group** suggests—they are ill-suited for icons. For small UI elements and logos, SVGs are recommended to ensure consistent rendering across all platforms.",
-    "chinese_title": "Why Tiny JPEGs Look Different in Chrome",
-    "chinese_summary": "This article explores why small JPEG images, such as icons, often appear \"thicker\" or distorted in Chrome compared to other browsers like Firefox. The author discovered that this visual discrepancy is not a bug, but rather a performance optimization within Chrome’s rendering engine, Skia, and its JPEG library, libjpeg-turbo.\n\nThe core of the issue lies in how JPEGs are decoded. Traditionally, a browser would fully decompress a large image into memory before scaling it down—a process that is memory-intensive and wasteful for tiny display sizes. To save resources, Chrome utilizes **partial IDCT (Inverse Discrete Cosine Transform) scaling**.\n\nJPEGs store data in 8x8 pixel blocks converted into the frequency domain. In this format, low-frequency coefficients represent flat colors and basic shapes, while high-frequency coefficients capture fine details and sharp edges. When an image is scaled down significantly, most high-frequency information is naturally lost. Chrome takes advantage of this by skipping the high-frequency coefficients during the decoding process. It decodes the image at a fraction of its size (typically a denominator of eight) using only the low-frequency data, then performs a final downsampling to the desired dimensions.\n\nWhile this optimization makes rendering faster and significantly reduces memory consumption, it results in the loss of edge softening and subtle gradients. This causes small graphics to look blockier or \"thicker.\" The author concludes that because JPEGs are designed specifically for photographs—as the name **Joint Photographic Experts Group** suggests—they are ill-suited for icons. For small UI elements and logos, SVGs are recommended to ensure consistent rendering across all platforms."
-  },
-  {
-    "id": "49274894",
-    "title": "Wednesday, August 12: GitHub, Incident with Pull Requests and Issues",
-    "url": "https://www.githubstatus.com/incidents/76t89hbfb09h",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Wednesday, August 12: GitHub, Incident with Pull Requests and Issues",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49275335",
-    "title": "HTML over WebSockets: real-time SPAs with barely any JavaScript",
-    "url": "https://en.andros.dev/blog/ef4968f5/html-over-websockets-real-time-spas-with-barely-any-javascript/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "HTML over WebSockets: real-time SPAs with barely any JavaScript",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273165",
-    "title": "License plate reader searches should require a warrant",
-    "url": "https://andrewpwheeler.com/2026/08/12/license-plate-reader-searches-should-require-a-warrant/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "车牌识别器搜查应需搜查令",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271994",
-    "title": "AI is removing the middle class of software engineering",
-    "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "AI is removing the middle class of software engineering",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274757",
-    "title": "Pixel Watch 5",
-    "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-5/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Pixel Watch 5",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274950",
-    "title": "Qwen3.8-2.4T",
-    "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Qwen3.8-2.4T",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274854",
-    "title": "Bike Bureau: Report Bike Lane Obstructions",
-    "url": "https://loudbicycle.com/bb",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Bike Bureau: Report Bike Lane Obstructions",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273478",
-    "title": "Qwen/Qwen3.8-2.4T-A95B",
-    "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Qwen/Qwen3.8-2.4T-A95B",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270022",
-    "title": "What sort of maths are LLMs good at?",
-    "url": "https://gowers.wordpress.com/2026/08/12/what-sort-of-maths-are-llms-good-at/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "What sort of maths are LLMs good at?",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274858",
-    "title": "We just raised $400M in Series C",
-    "url": "https://lovable.dev/blog/series-c",
-    "summary": "生成摘要时出错",
-    "chinese_title": "We just raised $400M in Series C",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271757",
-    "title": "Shade Map",
-    "url": "https://shademap.app",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Shade Map",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49218190",
-    "title": "The Bit Player: My Father with Steve Zissou",
-    "url": "https://www.theparisreview.org/blog/2026/07/27/the-bit-player-my-father-with-steve-zissou/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Bit Player: My Father with Steve Zissou",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270040",
-    "title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-    "url": "https://woxi.ad-si.com",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Woxi - Open-source Mathematica / Wolfram Language reimplementation",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273175",
-    "title": "Hax – a minimalist, terminal-native coding agent written in C",
-    "url": "https://usehax.dev/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Hax – a minimalist, terminal-native coding agent written in C",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49244339",
-    "title": "Felix and I",
-    "url": "https://jacobfilipp.com/felix/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Felix and I",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270621",
-    "title": "Delphi 13 Community Edition Is Now Available",
-    "url": "https://blogs.embarcadero.com/delphi-13-community-edition-is-now-available/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Delphi 13 Community Edition Is Now Available",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272282",
-    "title": "Automatic1111 for Apple metal, 40% speed up sd1.5",
-    "url": "https://therad.ninja/from-8-10-seconds-to-3-7-teaching-automatic1111-to-speak-metal-on-an-m3-pro/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Automatic1111 for Apple metal, 40% speed up sd1.5",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272484",
-    "title": "My Agent Setup",
-    "url": "https://chad.cm/posts/2026-8-11-my-agent-setup",
-    "summary": "生成摘要时出错",
-    "chinese_title": "My Agent Setup",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49194856",
-    "title": "High-Res Photo Shows Sand-Capped Butte Rising from Mars Plain of Polygons",
-    "url": "https://petapixel.com/2026/08/04/amazing-high-res-photo-shows-a-butte-rising-from-mars/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "High-Res Photo Shows Sand-Capped Butte Rising from Mars Plain of Polygons",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49177765",
-    "title": "Solving the Shortest Vector Problem in $2^{0.6039n}$ Time via Mid-Point Hessian",
-    "url": "https://arxiv.org/abs/2608.02478",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Solving the Shortest Vector Problem in $2^{0.6039n}$ Time via Mid-Point Hessian",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49206200",
-    "title": "Bigos (Polish Hunter's Stew) Recipe Builder",
-    "url": "https://chefsbinge.com/bigos-recipe-builder/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Bigos (Polish Hunter's Stew) Recipe Builder",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49263260",
-    "title": "The Ultimate Horse",
-    "url": "https://worksinprogress.co/issue/the-ultimate-horse/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Ultimate Horse",
+    "chinese_title": "DeepSeek V4 Pro 0813",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -256,11 +344,219 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49204173",
-    "title": "ArenaAllocators don't play nicely with ArrayLists",
-    "url": "https://www.openmymind.net/Arena-Allocators-and-ArrayLists/",
+    "id": "49288940",
+    "title": "Rails Is Built for AI",
+    "url": "https://rubyonrails.org/ai",
     "summary": "生成摘要时出错",
-    "chinese_title": "ArenaAllocators don't play nicely with ArrayLists",
+    "chinese_title": "Rails Is Built for AI",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288051",
+    "title": "Samsung is using Claude to verify chip designs. It's not going smoothly",
+    "url": "https://www.neowin.net/news/samsung-is-using-claude-to-verify-chip-designs-and-its-not-going-smoothly/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Samsung is using Claude to verify chip designs. It's not going smoothly",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288607",
+    "title": "US Navy sailors try to throw themselves overboard after 250 days at sea",
+    "url": "https://www.telegraph.co.uk/world-news/2026/08/13/us-navy-sailors-jump-overboard-after-nine-months-at-sea/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "US Navy sailors try to throw themselves overboard after 250 days at sea",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49272832",
+    "title": "Tracking down the 16-year-old WAL-reset SQLite bug",
+    "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Tracking down the 16-year-old WAL-reset SQLite bug",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49287881",
+    "title": "DeepSeek up to 1000% price hike is live",
+    "url": "https://xcancel.com/deepseek_ai/status/2087864589895798968",
+    "summary": "生成摘要时出错",
+    "chinese_title": "DeepSeek up to 1000% price hike is live",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49287176",
+    "title": "Show HN: Track habits, metrics, time and whateven you think worth tracking",
+    "url": "https://habitpocket.io/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Track habits, metrics, time and whateven you think worth tracking",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49269429",
+    "title": "Why Target Common Lisp for Code Generation?",
+    "url": "http://funcall.blogspot.com/2026/08/why-vibe-code-in-lisp.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why Target Common Lisp for Code Generation?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49279013",
+    "title": "Thanks to social media, canned sardines are a scarcity on the supermarket shelf",
+    "url": "https://corneroffifth.studio/why-cant-you-find-canned-sardines-right-now/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Thanks to social media, canned sardines are a scarcity on the supermarket shelf",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286644",
+    "title": "You Can't Copy Palantir",
+    "url": "https://ethanding.substack.com/p/why-you-cant-copy-palantir",
+    "summary": "生成摘要时出错",
+    "chinese_title": "You Can't Copy Palantir",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49280103",
+    "title": "Happy 45th Birthday to the IBM PC and Model F/XT",
+    "url": "https://sharktastica.co.uk/articles/pc-fxt-45",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Happy 45th Birthday to the IBM PC and Model F/XT",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49273478",
+    "title": "Qwen3.8-2.4T",
+    "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Qwen3.8-2.4T",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285414",
+    "title": "Three years after police raid on Kansas newspaper, reporter settles for $850K",
+    "url": "https://kansasreflector.com/2026/08/11/three-years-after-police-raid-on-kansas-newspaper-reporter-settles-lawsuit-for-850k/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Three years after police raid on Kansas newspaper, reporter settles for $850K",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286057",
+    "title": "AI Generated 3D Models Flood Market, but Almost No One Is Buying Them",
+    "url": "https://www.404media.co/ai-generated-3d-models-flood-market-but-almost-no-one-is-buying-them/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AI Generated 3D Models Flood Market, but Almost No One Is Buying Them",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288810",
+    "title": "Previewing Ultrafast mode: GPT‑5.6 Sol at up to 14X the speed",
+    "url": "https://openai.com/index/previewing-ultrafast/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Previewing Ultrafast mode: GPT‑5.6 Sol at up to 14X the speed",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49276574",
+    "title": "Delta",
+    "url": "https://zed.dev/blog/introducing-delta",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Delta",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49279928",
+    "title": "Principia Mathematica is modern and insightful",
+    "url": "https://okmij.org/ftp/Computation/Impressions/PrincipiaMathematica.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Principia Mathematica is modern and insightful",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49277799",
+    "title": "Breaking the WAL",
+    "url": "https://antithesis.com/blog/2026/wal-reset-bug/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Breaking the WAL",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49285909",
+    "title": "Anthropic: Introducing The Conceptual Reasoning Index",
+    "url": "https://alignment.anthropic.com/2026/conceptual-reasoning-index/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Anthropic: Introducing The Conceptual Reasoning Index",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288687",
+    "title": "In a first, US will allow some private firms to carry out cyberattacks",
+    "url": "https://techcrunch.com/2026/08/13/in-a-first-us-will-allow-some-private-firms-to-carry-out-cyberattacks/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "In a first, US will allow some private firms to carry out cyberattacks",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49286172",
+    "title": "White House taps security firms for offensive hack-back operations",
+    "url": "https://www.bleepingcomputer.com/news/security/white-house-taps-security-firms-for-offensive-hack-back-operations/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "White House taps security firms for offensive hack-back operations",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49193533",
+    "title": "The Three-Stroke Problem",
+    "url": "https://penpot.app/blog/the-three-stroke-problem/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The Three-Stroke Problem",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49274757",
+    "title": "Pixel Watch 5",
+    "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-watch-5/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Pixel Watch 5",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49289000",
+    "title": "Anthropic in talks to buy Decart AI for $6B",
+    "url": "https://www.reuters.com/technology/anthropic-talks-buy-decart-ai-source-says-2026-08-13/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Anthropic in talks to buy Decart AI for $6B",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49274858",
+    "title": "Lovable raises $400M Series C",
+    "url": "https://lovable.dev/blog/series-c",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Lovable raises $400M Series C",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49270726",
+    "title": "uBlock Origin is giving up the fight to keep ads off Facebook",
+    "url": "https://digitalescapetools.com/2026/08/ublock-origin-stops-chasing-facebook-ads.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "uBlock Origin is giving up the fight to keep ads off Facebook",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49218040",
+    "title": "Mushroom behind 'tiny people' hallucinations identified",
+    "url": "https://phys.org/news/2026-08-qa-mushroom-tiny-people-hallucinations.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Mushroom behind 'tiny people' hallucinations identified",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288324",
+    "title": "Mozilla says stricter antitrust measures against Google 'threaten Firefox'",
+    "url": "https://www.techcentral.ie/mozilla-says-stricter-antitrust-measures-against-google-threaten-firefox/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Mozilla says stricter antitrust measures against Google 'threaten Firefox'",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -272,51 +568,67 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49272132",
-    "title": "Commodore 8-Bit 5¼\" Disk Images",
-    "url": "https://www.masswerk.at/nowgobang/2026/commodore-disk-images",
+    "id": "49280047",
+    "title": "Build Wide, Ship Narrow",
+    "url": "https://adapt.com/blog/build-wide-ship-narrow",
     "summary": "生成摘要时出错",
-    "chinese_title": "Commodore 8-Bit 5¼\" Disk Images",
+    "chinese_title": "Build Wide, Ship Narrow",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49270726",
-    "title": "uBlock Origin Is Giving Up the Fight to Keep Ads Off Facebook",
-    "url": "https://digitalescapetools.com/2026/08/ublock-origin-stops-chasing-facebook-ads.html",
+    "id": "49238831",
+    "title": "From rubber boots to Copa: When MicroProse Soccer revolutionized football",
+    "url": "https://spillhistorie.no/2026/08/08/fra-gummistovler-til-copa-da-microprose-soccer-revolusjonerte-fotballen/",
     "summary": "生成摘要时出错",
-    "chinese_title": "uBlock Origin Is Giving Up the Fight to Keep Ads Off Facebook",
+    "chinese_title": "From rubber boots to Copa: When MicroProse Soccer revolutionized football",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49208693",
-    "title": "Worms: The Future of Yesterday's Worms Today",
-    "url": "https://worm.net/",
+    "id": "49287153",
+    "title": "Text AI watermarks will always be trivial to remove",
+    "url": "https://www.seangoedecke.com/text-ai-watermarks/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Worms: The Future of Yesterday's Worms Today",
+    "chinese_title": "Text AI watermarks will always be trivial to remove",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49274018",
-    "title": "DeepSeek-V4-Pro-0813 Publish",
-    "url": "https://api-docs.deepseek.com/",
+    "id": "49270953",
+    "title": "2026 Eclipse Webcams",
+    "url": "https://jonty.github.io/2026_eclipse_webcams/",
     "summary": "生成摘要时出错",
-    "chinese_title": "DeepSeek-V4-Pro-0813 Publish",
+    "chinese_title": "2026 Eclipse Webcams",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49269818",
-    "title": "Controversial creators are benefiting from monetization programs run by Meta",
-    "url": "https://www.abc.net.au/news/2026-08-06/ragebait-how-facebook-is-paying-controversial-creators/106940696",
+    "id": "49194856",
+    "title": "High-Res Photo Shows Sand-Capped Butte Rising from Mars Plain of Polygons",
+    "url": "https://petapixel.com/2026/08/04/amazing-high-res-photo-shows-a-butte-rising-from-mars/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Controversial creators are benefiting from monetization programs run by Meta",
+    "chinese_title": "High-Res Photo Shows Sand-Capped Butte Rising from Mars Plain of Polygons",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49272620",
-    "title": "German advocacy group lodges criminal complaint over Meta AI glasses",
-    "url": "https://www.reuters.com/legal/government/german-advocacy-group-lodges-criminal-complaint-over-meta-ai-glasses-2026-08-12/",
+    "id": "49281960",
+    "title": "The Strongest El Niño Ever Forecast and the Hunger It Will Leave Behind",
+    "url": "https://www.4hunger.org/p/scorched-harvest-the-strongest-el",
     "summary": "生成摘要时出错",
-    "chinese_title": "German advocacy group lodges criminal complaint over Meta AI glasses",
+    "chinese_title": "The Strongest El Niño Ever Forecast and the Hunger It Will Leave Behind",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49273165",
+    "title": "License plate reader searches should require a warrant",
+    "url": "https://andrewpwheeler.com/2026/08/12/license-plate-reader-searches-should-require-a-warrant/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "License plate reader searches should require a warrant",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49273330",
+    "title": "Pixel 11 Pro Fold",
+    "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Pixel 11 Pro Fold",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -328,379 +640,35 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49270881",
-    "title": "Show HN: KidScreen, a finite YouTube shelf chosen by parents",
-    "url": "https://kidscreen.app",
+    "id": "49287380",
+    "title": "LoongLeak: A Vulnerability Affecting Chinese Loongson 3A5000 and 3A6000 CPUs",
+    "url": "https://loongleakattack.com/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: KidScreen, a finite YouTube shelf chosen by parents",
+    "chinese_title": "LoongLeak: A Vulnerability Affecting Chinese Loongson 3A5000 and 3A6000 CPUs",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49274776",
-    "title": "Fail Faster",
-    "url": "https://derickrethans.nl/fail-faster.html",
+    "id": "49283344",
+    "title": "Record heat is drying up Europe's major rivers, as these striking images show",
+    "url": "https://www.washingtonpost.com/climate-environment/interactive/2026/08/12/see-receding-water-levels-europes-major-rivers/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Fail Faster",
+    "chinese_title": "Record heat is drying up Europe's major rivers, as these striking images show",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49274713",
-    "title": "Decrypting my Flume water monitor's MQTT traffic with a passive relay",
-    "url": "https://lithostech.com/2026/08/decrypting-flume-water-monitor-traffic/",
+    "id": "49288454",
+    "title": "Amazon loses US court ban on Perplexity's AI shopping tools",
+    "url": "https://www.reuters.com/business/retail-consumer/amazon-loses-us-court-ban-perplexitys-ai-shopping-tools-2026-08-04/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Decrypting my Flume water monitor's MQTT traffic with a passive relay",
+    "chinese_title": "Amazon loses US court ban on Perplexity's AI shopping tools",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49274672",
-    "title": "DosTips, Windows scripting knowledge trove, scraped to death",
-    "url": "https://www.dostips.com/",
+    "id": "49272655",
+    "title": "Tim King, AmigaDOS developer, has died",
+    "url": "https://amiga-news.de/en/news/AN-2026-08-00070-EN.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "DosTips, Windows scripting knowledge trove, scraped to death",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49265879",
-    "title": "US hires over 2k video gamers as air traffic controllers",
-    "url": "https://www.cbsnews.com/news/video-gamer-air-traffic-controllers-faa-recruitment-sean-duffy/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "US hires over 2k video gamers as air traffic controllers",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274620",
-    "title": "Grok 4.6 (High) Intelligence, Performance and Price Analysis",
-    "url": "https://artificialanalysis.ai/models/grok-4-6",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Grok 4.6 (High) Intelligence, Performance and Price Analysis",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270766",
-    "title": "FDA Admitted in Print That Nothing It Knows of Will Wash Cyclospora Off Lettuce",
-    "url": "https://www.marlerblog.com/case-news/fda-just-admitted-in-print-that-nothing-it-knows-of-will-wash-cyclospora-off-your-lettuce-then-it-never-told-anyone-to-test-the-water-for-it/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "FDA Admitted in Print That Nothing It Knows of Will Wash Cyclospora Off Lettuce",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274489",
-    "title": "Show HN: /show-me: agent skill for compact visual representations",
-    "url": "https://www.humanlayer.com/blog/show-me-skill",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: /show-me：用于紧凑视觉呈现的智能体技能",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274420",
-    "title": "SpaceXAI: Grok 4.6",
-    "url": "https://openrouter.ai/x-ai/grok-4.6",
-    "summary": "生成摘要时出错",
-    "chinese_title": "SpaceXAI: Grok 4.6",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274374",
-    "title": "Introducing Grok 4.6",
-    "url": "https://cursor.com/blog/grok-4-6",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Introducing Grok 4.6",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49276088",
-    "title": "USS Abraham Lincoln sailors tried to jump overboard amid extended deployment",
-    "url": "https://www.theguardian.com/us-news/2026/aug/12/uss-abraham-lincoln-overboard-extended-deployment",
-    "summary": "生成摘要时出错",
-    "chinese_title": "USS Abraham Lincoln sailors tried to jump overboard amid extended deployment",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49266277",
-    "title": "CFTC declares market emergency, orders Kalshi to continue to operate in New York",
-    "url": "https://www.cftc.gov/PressRoom/PressReleases/9281-26",
-    "summary": "生成摘要时出错",
-    "chinese_title": "CFTC declares market emergency, orders Kalshi to continue to operate in New York",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49263461",
-    "title": "Bluesky's active user base is shrinking as its focus expands beyond the app",
-    "url": "https://techcrunch.com/2026/08/11/blueskys-active-user-base-is-shrinking-as-its-focus-expands-beyond-the-app/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Bluesky's active user base is shrinking as its focus expands beyond the app",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49267108",
-    "title": "The Human Is the Loop",
-    "url": "https://brentfitzgerald.com/posts/the-human-is-the-loop/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Human Is the Loop",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49275746",
-    "title": "Netflix Has Peaked",
-    "url": "https://daringfireball.net/linked/2026/08/11/netflix-has-peaked",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Netflix Has Peaked",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49182772",
-    "title": "I built a jellyfish laboratory in my backyard [video]",
-    "url": "https://www.youtube.com/watch?v=MILwxfQBm6Q",
-    "summary": "生成摘要时出错",
-    "chinese_title": "I built a jellyfish laboratory in my backyard [video]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274160",
-    "title": "Show HN: Seisin – a desktop app that turns your job search into analytics",
-    "url": "https://getseisin.com",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Seisin – a desktop app that turns your job search into analytics",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272048",
-    "title": "Bb: The IDE that builds itself",
-    "url": "https://getbb.app/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Bb: The IDE that builds itself",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273330",
-    "title": "Google launches Pixel 11 Pro Fold",
-    "url": "https://blog.google/products-and-platforms/devices/pixel/pixel-11-pro-fold/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Google launches Pixel 11 Pro Fold",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49276021",
-    "title": "Aaron Rodgers secretly funded his town's Flock-style cameras",
-    "url": "https://www.foiaball.com/p/aaron-rodgers-secretly-bought-police-alpr-cameras",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Aaron Rodgers secretly funded his town's Flock-style cameras",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49267928",
-    "title": "llama.cpp",
-    "url": "https://llama.app",
-    "summary": "生成摘要时出错",
-    "chinese_title": "llama.cpp",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49197565",
-    "title": "A shell exclamation mark is not for yelling. Be lazy",
-    "url": "https://refp.se/articles/your-shell-and-the-lazy-exclamation-mark",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A shell exclamation mark is not for yelling. Be lazy",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271105",
-    "title": "European scientists developed a tactile sensor capable of 100 μm resolution",
-    "url": "https://spectrum.ieee.org/robot-finger",
-    "summary": "生成摘要时出错",
-    "chinese_title": "European scientists developed a tactile sensor capable of 100 μm resolution",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271050",
-    "title": "Electricity Pricing in the Age of AI",
-    "url": "https://power2026.ai/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Electricity Pricing in the Age of AI",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273886",
-    "title": "A BSON symbol namespace bypasses MongoDB's authorization check (CVE-2026-18690)",
-    "url": "https://hellorecon.com/blog/cve-2026-18690-mongodb-symbol-type-authz-bypass",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A BSON symbol namespace bypasses MongoDB's authorization check (CVE-2026-18690)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49273848",
-    "title": "See what solar eclipses would look like from other planets",
-    "url": "https://benmccarthy.com.au/p/eclipses",
-    "summary": "生成摘要时出错",
-    "chinese_title": "See what solar eclipses would look like from other planets",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272264",
-    "title": "Show HN: Smarter Shell History for Zsh",
-    "url": "https://github.com/overflowy/zhist",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Smarter Shell History for Zsh",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272252",
-    "title": "Show HN: Meteor shower, planet alignment, eclipse kit",
-    "url": "https://lifesprites.com/share/0ACA25",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Meteor shower, planet alignment, eclipse kit",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271390",
-    "title": "The little-known winstart.bat batch file",
-    "url": "https://devblogs.microsoft.com/oldnewthing/20260811-00/?p=112605",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The little-known winstart.bat batch file",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49263497",
-    "title": "Compression is prediction",
-    "url": "https://ngrok.com/blog/compression-is-prediction",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Compression is prediction",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49276089",
-    "title": "Signal adds new security feature to thwart man-in-the-middle attacks",
-    "url": "https://www.bleepingcomputer.com/news/security/signal-adds-new-security-feature-to-thwart-man-in-the-middle-attacks/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Signal adds new security feature to thwart man-in-the-middle attacks",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49276072",
-    "title": "Lazarus hackers exploited Windows zero-day to target defense firms",
-    "url": "https://www.bleepingcomputer.com/news/security/lazarus-hackers-exploited-windows-zero-day-to-target-defense-firms/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Lazarus hackers exploited Windows zero-day to target defense firms",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49266921",
-    "title": "The lifesaving secret hidden inside a horseshoe crab's blue blood",
-    "url": "https://whdh.com/news/the-lifesaving-secret-hidden-inside-a-horseshoe-crabs-blue-blood-and-the-race-to-protect-the-species/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The lifesaving secret hidden inside a horseshoe crab's blue blood",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49271423",
-    "title": "The Neurosurgery Resident Who Proved Crouzeix's Conjecture [pdf]",
-    "url": "https://alextownsend.net/essays/SIAMNews_CrouzeixConjecture.pdf",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Neurosurgery Resident Who Proved Crouzeix's Conjecture [pdf]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49274960",
-    "title": "92 percent of US adults are not going to the doctor – too expensive",
-    "url": "https://www.independent.co.uk/us/money/us-medical-costs-doctors-health-insurance-b3026479.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "92 percent of US adults are not going to the doctor – too expensive",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49269809",
-    "title": "Turbo Pascal on CP/M, MSX-DOS and MS-DOS – Pascal for Small Machines",
-    "url": "http://pascal.hansotten.com/delphi/turbo-pascal-on-cpm-msx-dos-and-ms-dos/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Turbo Pascal on CP/M, MSX-DOS and MS-DOS – Pascal for Small Machines",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49265051",
-    "title": "WorldClaw Agentic 3D open-world generation at scale",
-    "url": "https://tencent-hunyuan.github.io/Hunyuan3D-WorldClaw/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "WorldClaw Agentic 3D open-world generation at scale",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49191130",
-    "title": "Retire the Abstractions",
-    "url": "https://hazyresearch.stanford.edu/blog/2026-08-05-retire-the-abstractions",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Retire the Abstractions",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49257160",
-    "title": "OpenAI’s head of ethics leaves less than a year after joining",
-    "url": "https://www.ft.com/content/e49dfb75-f841-4466-a577-f7aaff8779a0",
-    "summary": "生成摘要时出错",
-    "chinese_title": "OpenAI’s head of ethics leaves less than a year after joining",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270833",
-    "title": "Computer scientists today are in the position of economists in the early 2000s",
-    "url": "https://statmodeling.stat.columbia.edu/2026/08/11/computer-scientists-today-are-like-economists-in-the-early-2000s-and-freudian-psychiatrists-in-the-1950s/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Computer scientists today are in the position of economists in the early 2000s",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49275633",
-    "title": "The Government Is Monitoring Anti-Flock TikTok and Instagram Accounts",
-    "url": "https://www.404media.co/the-government-is-monitoring-anti-flock-tiktok-and-instagram-accounts/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Government Is Monitoring Anti-Flock TikTok and Instagram Accounts",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270779",
-    "title": "How hot has the European summer been? 22 cities of 42 beat records",
-    "url": "https://thelongswell.com/heat/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How hot has the European summer been? 22 cities of 42 beat records",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49257876",
-    "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
-    "url": "https://stolen-thoughts.com/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Stealing Reasoning Traces from Proprietary LLM APIs",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49270761",
-    "title": "Putting away the tools of his trade for good",
-    "url": "https://www.ahwatukee.com/business/putting-away-the-tools-of-his-trade-for-good/article_14b2a9b1-cb5b-45db-be57-d11b29606f70.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Putting away the tools of his trade for good",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49261133",
-    "title": "Go is an ideal language for AI-assisted software engineering",
-    "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Go is an ideal language for AI-assisted software engineering",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49272784",
-    "title": "Unearthing a 31 year old Easter egg in Ecco the Dolphin",
-    "url": "https://32bits.substack.com/p/under-the-microscope-ecco-the-dolphin-98c",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Unearthing a 31 year old Easter egg in Ecco the Dolphin",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "49210199",
-    "title": "Show HN: Tamron Lens Utility Alternative on Linux",
-    "url": "https://github.com/yikerman/tamron-lens-control",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Tamron Lens Utility Alternative on Linux",
+    "chinese_title": "Tim King, AmigaDOS developer, has died",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -712,91 +680,123 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49272398",
-    "title": "Jellyfish-hit French nuclear plant shuts down three reactors",
-    "url": "https://www.reuters.com/business/energy/jellyfish-hit-french-nuclear-plant-shuts-down-three-reactors-2026-08-11/",
+    "id": "49285292",
+    "title": "2026 Clacton By-Election",
+    "url": "https://en.wikipedia.org/wiki/2026_Clacton_by-election",
     "summary": "生成摘要时出错",
-    "chinese_title": "Jellyfish-hit French nuclear plant shuts down three reactors",
+    "chinese_title": "2026 Clacton By-Election",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49261128",
-    "title": "Mojo 1.0",
-    "url": "https://www.modular.com/blog/modular-26-5-mojo-1-0-is-here",
+    "id": "49275335",
+    "title": "HTML over WebSockets: real-time SPAs with barely any JavaScript",
+    "url": "https://en.andros.dev/blog/ef4968f5/html-over-websockets-real-time-spas-with-barely-any-javascript/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Mojo 1.0",
+    "chinese_title": "HTML over WebSockets: real-time SPAs with barely any JavaScript",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49196657",
-    "title": "Show HN: Line9 – A Mermaid rendering engine with its own layout",
-    "url": "https://line9.ai/diagram",
+    "id": "49288325",
+    "title": "Why is C the symbol for the speed of light? (2004)",
+    "url": "https://math.ucr.edu/home/baez/physics/Relativity/SpeedOfLight/c.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Line9 – A Mermaid rendering engine with its own layout",
+    "chinese_title": "Why is C the symbol for the speed of light? (2004)",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49263340",
-    "title": "Nvidia Nemotron 3.5 Lightning and NeMo Switchyard",
-    "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+    "id": "49288201",
+    "title": "Perplexity blocks Time's ads served to AI agents, calling them 'deceptive'",
+    "url": "https://digiday.com/media/perplexity-blocks-times-ads-served-to-ai-agents-calling-them-deceptive/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Nvidia Nemotron 3.5 Lightning and NeMo Switchyard",
+    "chinese_title": "Perplexity blocks Time's ads served to AI agents, calling them 'deceptive'",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49259611",
-    "title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
-    "url": "https://github.com/TheRealYT/git-knife",
+    "id": "49288155",
+    "title": "Hiroshi Okuda, Toyota chair who pushed for the Prius, dies at 93",
+    "url": "https://www.japantimes.co.jp/business/2026/08/12/companies/toyota-hiroshi-okada-death/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Git-knife – Edit commit messages, authors, and dates like a spreadsheet",
+    "chinese_title": "Hiroshi Okuda, Toyota chair who pushed for the Prius, dies at 93",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49261417",
-    "title": "CSS properties you should know for better text designs",
-    "url": "https://master.dev/blog/typographic-css-tricks/",
+    "id": "49288146",
+    "title": "OpenAI Hires New Chief Revenue Officer After Less Than a Year",
+    "url": "https://www.bloomberg.com/news/articles/2026-08-13/openai-hires-new-chief-revenue-officer-after-less-than-a-year",
     "summary": "生成摘要时出错",
-    "chinese_title": "CSS properties you should know for better text designs",
+    "chinese_title": "OpenAI Hires New Chief Revenue Officer After Less Than a Year",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49258764",
-    "title": "Manus will return to operating as an independent company",
-    "url": "https://manus.im/blog/a-note-to-our-users",
+    "id": "49280184",
+    "title": "Show HN: Ballet – Workflow automation that writes integrations against any API",
+    "url": "https://www.ballet.dev/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Manus will return to operating as an independent company",
+    "chinese_title": "Show HN: Ballet – Workflow automation that writes integrations against any API",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49270795",
-    "title": "What good requirements look like (and how to write them)",
-    "url": "https://projan.ai/blog/what-good-requirements-look-like-and-how-to-write-them",
+    "id": "49288129",
+    "title": "The 37signals Manager Playbook",
+    "url": "https://basecamp.com/managers",
     "summary": "生成摘要时出错",
-    "chinese_title": "What good requirements look like (and how to write them)",
+    "chinese_title": "The 37signals Manager Playbook",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49275240",
-    "title": "In case you think there is consciousness, intelligence or personality in an LLM [video]",
-    "url": "https://www.youtube.com/watch?v=vXV2ltVdLMQ",
+    "id": "49288124",
+    "title": "Anthropic investors bet on $2T valuation in record IPO",
+    "url": "https://www.ft.com/content/840ac156-af1c-4a82-b260-ae791072fcfa",
     "summary": "生成摘要时出错",
-    "chinese_title": "In case you think there is consciousness, intelligence or personality in an LLM [video]",
+    "chinese_title": "Anthropic investors bet on $2T valuation in record IPO",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49250836",
-    "title": "As AI eats the web, the internet’s collective memory is disappearing",
-    "url": "https://thewalrus.ca/google-search-is-dying/",
+    "id": "49211530",
+    "title": "The punched card tabulator",
+    "url": "https://www.ibm.com/history/punched-card-tabulator",
     "summary": "生成摘要时出错",
-    "chinese_title": "As AI eats the web, the internet’s collective memory is disappearing",
+    "chinese_title": "The punched card tabulator",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "49257853",
-    "title": "Neutrinos from Deep Inside Earth Provide a New Picture of the Mantle",
-    "url": "https://www.quantamagazine.org/neutrinos-from-deep-inside-earth-provide-a-new-picture-of-the-mantle-20260807/",
+    "id": "49244339",
+    "title": "Felix and I",
+    "url": "https://jacobfilipp.com/felix/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Neutrinos from Deep Inside Earth Provide a New Picture of the Mantle",
+    "chinese_title": "Felix and I",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49288092",
+    "title": "Temperature Zero for Culture: Why Everything Is Starting to Look the Same",
+    "url": "https://laurenleek.substack.com/p/temperature-zero-for-culture-why",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Temperature Zero for Culture: Why Everything Is Starting to Look the Same",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49272549",
+    "title": "Why tiny JPEGs look different in Chrome",
+    "url": "https://guillaumetech.github.io/posts/jpg-scaling-chrome/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why tiny JPEGs look different in Chrome",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49279197",
+    "title": "Process as a Proxy for Motivation",
+    "url": "https://bengodfrey.dev/blog/process/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Process as a Proxy for Motivation",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "49208693",
+    "title": "Worms: The Future of Yesterday's Worms Today",
+    "url": "https://worm.net/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Worms: The Future of Yesterday's Worms Today",
     "chinese_summary": "生成摘要时出错"
   }
 ]
