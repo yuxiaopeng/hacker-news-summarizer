@@ -2,45 +2,301 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. 苏美尔王表是否与古气候事件吻合？
+## 1. 如今的互联网简直成了一个充满掠夺的粪坑。
 
-**原文标题**: Does the Sumerian King List Align with Paleoclimate Events?
+**原文标题**: The Internet Is Kind of a Predatory Cesspit Now
 
-**原文链接**: [https://www.vectorian.be/articles/2026-06-07/sumerian-king-list-paleoclimate-alignment-explorer/](https://www.vectorian.be/articles/2026-06-07/sumerian-king-list-paleoclimate-alignment-explorer/)
+**原文链接**: [https://www.stephendiehl.com/posts/internet_predatory_cesspit/](https://www.stephendiehl.com/posts/internet_predatory_cesspit/)
 
-本文评估了一项推测性假设，即《苏美尔王表》（SKL）中大洪水前八位国王异常漫长的统治期，代表了对史前气候变迁或地质事件的扭曲记忆。
+本文认为，互联网已从一个以人为中心的“公共广场”退化为一套优化的工业化捕食系统。早期网络以业余精神和人类连接为特征，而现代网络的组织原则已转变为对人类弱点的侦测与变现。
 
-为了验证这一点，作者将总计241,200年的统治时长按比例缩放至地质时间尺度，并将该序列的终点锚定在距今1.16万年前（新仙女木期结束）。利用高斯核评分系统测量接近程度，研究者将得出的统治分界线与包含104个第四纪事件（包括海因里希事件、火山喷发和太阳质子事件）的目录进行了对比。
+作者强调了“欺诈经济”的兴起，普通人被卷入各种参与式骗局，从加密货币、联盟营销到“男权圈”教练和健康博主不一而足。在这个生态系统中，捕食者与猎物的界限变得模糊；在算法信息流形成的“多巴胺跑步机”驱动下，受害者为了挽回损失而沦为推销员。这种商业模式将“满意”视为“客户流失”，将“痛苦”视为“持续性收入”，要求用户保持孤独、缺乏安全感或贪婪，以确保其持续消费。
 
-研究者采用了严格的统计控制，包括：
-*   **置换检验：** 将实际统治顺序与相同数值的所有可能重组序列进行对比。
-*   **多重比较调整：** 使用Benjamini-Hochberg q值，以抵消对多个目录和带宽进行测试的影响。
-*   **比较年代学：** 测试其他古代序列（如《圣经》中的寿命、曼涅托记载的神之统治期以及基什第一王朝统治者），以观察无关数据产生偶然吻合的难易程度。
+在技术层面，这种转变是由强化学习环路驱动的，这些环路将参与度、愤怒和越轨置于真相之上。算法利用社会经济的脆弱性（如住房和就业稳定性的崩溃），向被现代生活孤立的人群提供虚假的“头奖”承诺。作者警告说，生成式人工智能将使谎言的成本降至零，从而进一步恶化这一环境。
 
-**结果：**
-分析未发现统计学意义上的显著证据证明《苏美尔王表》与古气候记录相一致。主要分析得出的p值为0.350，调整后的q值为0.622。即使是最有利的探索性结果（p = 0.021），在经过多重比较调整后也未能达到显著水平（q = 0.222）。
-
-作者得出结论认为，虽然由于锚点和目录选择具有灵活性，导致“寻找匹配项并非难事”，但《苏美尔王表》的特定顺序并不比随机概率或无关的古代文献表现得更好。该研究仍具有探索性，并指出了相关局限，如事件目录的人为编撰性质以及未计入定年不确定性等。
+最终，文章将现代互联网定性为一个受制于异化目标函数（增长、留存和转化）的“非人性”空间，这些函数无法识别人的目的。结论指出，虽然完全脱钩几乎不可能，但用户必须认识到，互联网是一个掠夺性工具，而非一个社交世界。为了维护人类的能动性，人们必须寻求物理世界的“摩擦感”，因为物理世界提供了那些无限的、利润驱动的数字机器试图抹去的限制与边界。
 
 ---
 
-## 2. GUI 应当完全由键盘驱动。
+## 2. Warp 基于 Claude 构建自我改进的智能体
 
-**原文标题**: GUIs should be fully keyboard-driven
+**原文标题**: Warp builds self-improving agents on Claude
 
-**原文链接**: [https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html](https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html)
+**原文链接**: [https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude)
 
-在本文中，作者探讨了终端用户界面（TUI）与图形用户界面（GUI）之间持续存在的争论，并特别挑战了“TUI 因支持键盘驱动而更优越”这一普遍观点。
+Warp 在 Claude 平台上开发了一套**基于 Agent 技能的框架**，用于构建具有自我改进能力的 AI Agent。为了解决常见的“无状态”问题（即 Agent 的反馈在会话结束后会丢失），Warp 将模式从手动提示词工程转向了双技能架构，使 Agent 能够从人类的评价中学习。
 
-尽管作者承认“留在终端”确实很方便，但他们认为，键盘友好性并非 TUI 的固有优势，而恰恰反映了当前许多 GUI 实现的不足。从理论上讲，GUI 是 TUI 的超集，这意味着 GUI 可以——也应该——提供 TUI 所能提供的一切功能，包括完整的键盘导航。
+### 自我改进框架
+该系统依赖于两种不同类型的“技能”，它们是与原始提示词分离的、基于文件的知识编码：
 
-作者强调，主要的 GUI 框架指南（如 GNOME 人机界面指南）已经提倡为每项操作提供完整的键盘访问支持。为了证明其可行性，作者提到在自研的 GUI 应用程序 Klisi 中实现了全面的键盘快捷键。
+1.  **内部（基础）技能**：包含执行特定任务（如代码审查或问题分类）所需的功能领域知识和指令。
+2.  **外部（改进）技能**：一个定期运行的观察者 Agent。它负责分析积累的人类反馈，对比 Agent 输出与用户预期，并对内部技能文件提出针对性的修改建议。
 
-核心观点是，在 GUI 中提供完全由键盘驱动的体验取决于开发者的“意愿”，而非技术上的可行性。开发者不应在用户体验上妥协；相反，他们应通过确保应用程序可以完全通过键盘导航，努力使 GUI 应用程序尽可能直观、高效。这种方法结合了 GUI 的视觉优势与终端的高速和高产。
+由于这些技能以普通文件形式存储，更新可以通过标准的 PR/代码审查工作流进行。这确保了在 Agent 的“自我改进”上线前，会有专人进行审核与合并，从而保持高质量的输出。
+
+### 核心最佳实践
+*   **原则优于规则**：像对待“聪明人”一样指导 Agent，提供通用原则和指令背后的“原因”，而非僵化、详尽的规则。
+*   **低摩擦反馈**：在工作发生的场景（如 GitHub 评论）中直接捕获反馈，以确保持续的数据流。
+*   **质量胜过数量**：来自专家的详细、特定领域的反馈，比海量的“点赞/点踩”二进制信号更有价值。
+*   **渐进式披露**：通过引用外部资源而非撑大上下文窗口，保持技能文件的精简与模块化。
+
+Warp 目前已将这一模式应用于其开源仓库的分类、规格说明书撰写和代码审查中，将 Agent 从一次性助手转变为能够随时间积累知识的进化系统。
 
 ---
 
-## 3. Boot a Virtual iPhone via Apple's Virtualization.framework
+## 3. 先校准，再加速：新岗位上的行动导向
+
+**原文标题**: Calibrate Before You Accelerate: Bias Toward Action in a New Role
+
+**原文链接**: [https://tucker.wales/writing/bias-towards-action/](https://tucker.wales/writing/bias-towards-action/)
+
+在《先校准，后加速》一文中，作者指出，尽管在新岗位上渴望立竿见影是人之常情，但只有立足于具体背景时，“行动导向”才是一种超能力。在不了解现有体系的情况下盲目行动——如同未看图纸就抡起大锤——可能会导致代价高昂的错误。
+
+为避免这种情况，作者提出了入职三阶段法：
+
+1.  **搜集期：** 专注于“积极的被动”。通过识别利益相关者、开展一对一调研来摸清现状，并践行“切斯特顿栅栏”原则——即在完全理解某项流程设立的初衷之前，不要轻易将其废除。
+2.  **综合期：** 分析收集的信息，将重复出现的痛点串联起来。在此阶段，将机遇分为“唾手可得的小目标”（速赢项目）和需要长期战略的复杂系统性问题。
+3.  **战略加速期：** 安全地释放行动力。从能简化他人工作的微小且可见的胜利开始，以积累信任资本。在启动重大项目前，先分享单页假设以获取反馈，并将工作重点从 90% 的倾听逐渐转向 80% 的执行。
+
+归根结底，目标不是慢行动，而是果断出击。通过优先进行校准而非仓促行事，新员工可以确保当他们最终“发力”时，推动的是真正需要改变的部分。只有在建立起对背景环境的深度认知后，真正的工作才算开始。
+
+---
+
+## 4. SQLite作为文档型数据库 (2020)
+
+**原文标题**: SQLite as a Document Database (2020)
+
+**原文链接**: [https://dgl.cx/2020/06/sqlite-json-support](https://dgl.cx/2020/06/sqlite-json-support)
+
+这篇发表于2020年的文章探讨了SQLite 3.31.0版本引入的**生成列**（generated columns）如何使这款嵌入式数据库能够有效地作为文档数据库运行。通过将JSON支持与这些列相结合，用户可以将原始JSON插入文本字段，同时利用`json_extract`函数自动将特定属性提取到独立的列中。
+
+作者强调了这种方法的几个核心优势和特性：
+
+*   **验证与约束**：由于`json_extract`要求JSON格式合法，SQLite会在插入时自动拒绝格式错误的数据。用户还可以通过为生成列应用`NOT NULL`或其他约束来进一步加强数据完整性，确保特定的JSON键始终存在。
+*   **虚拟列与存储列**：生成列可以是`VIRTUAL`（即时计算）或`STORED`（缓存在磁盘上）。虽然存储列提供了不同的性能权衡，但虚拟列具有极高的灵活性。
+*   **索引与性能**：一个关键优势是可以在虚拟列上创建索引。这使得SQLite能够对嵌套在JSON对象中的数据进行高效搜索，从而模拟Elasticsearch或PostgreSQL等专用文档存储库的行为。
+*   **架构演进**：这种配置非常适合处理不可预知的数据（如webhook）。开发人员最初可以存储整个JSON负载，随后在需要时使用`ALTER TABLE`提取并索引特定字段，而无需重构底层数据。
+
+总之，生成列提供了一种轻量级的方法来处理半结构化数据，同时兼具关系型引擎的性能和可靠性。
+
+---
+
+## 5. Tether: iMessage, SMS, etc. on Linux
+
+**原文标题**: Tether: iMessage, SMS, etc. on Linux
+
+**原文链接**: [https://zackbartel.com/blog/2026/08/tether/](https://zackbartel.com/blog/2026/08/tether/)
+
+生成摘要时出错
+
+---
+
+## 6. 美国国土安全部正利用鲜为人知的法律监视记者、非营利组织和工会。
+
+**原文标题**: DHS is using obscure law to snoop on journalists, non-profits, unions
+
+**原文链接**: [https://www.theguardian.com/us-news/2026/aug/29/trump-dhs-1509-summons-records-journalists-nonprofits](https://www.theguardian.com/us-news/2026/aug/29/trump-dhs-1509-summons-records-journalists-nonprofits)
+
+特朗普时期的美国国土安全部（DHS）被指利用一项鲜为人知的海关法（19 USC 1509），秘密获取记者、工会及非营利组织的私人数据。虽然该法规在法律上仅适用于进口关税和税收调查，但国土安全部却利用它在处理国内案件时绕过司法监督。
+
+文章强调，这是一种规避宪法第四修正案的“公然行为”。在一次案例中，法官曾因缺乏推断理由两次拒绝批准调取记者乔治亚·福特（Georgia Fort）和唐·莱蒙（Don Lemon）YouTube 数据的搜查令，随后国土安全部竟针对同样的信息签发了行政传票。与搜查令不同，此类传票仅需国土安全部官员签字，无需法官批准。除记者外，国土安全部还利用这一手段获取了“日出运动”（Sunrise Movement）和美国服务业雇员国际工会（SEIU）等组织的财务记录，并试图揭露社交媒体上匿名批评者的身份。
+
+法律专家和公民自由倡导者认为，这是对法律的严重误读。他们主张国土安全部正在绕过法院，针对受保护的言论和国内活动进行无谓且具侵略性的调查。当受到 Twitter 或 Meta 等公司的法律挑战时，国土安全部往往会撤回传票——专家认为，这种策略旨在避免法院作出可能永久限制此类行为的最终裁决。
+
+尽管 2017 年的一份监察长报告此前已指出此类传票存在“不当”使用，但这一做法依然存在。批评人士警告称，由于此类请求通常处于保密状态，并将法律负担转嫁给被调查对象，目前尚无有效手段制衡行政部门的这种权力滥用。
+
+---
+
+## 7. 梦游者：自带命令语言的被动后门
+
+**原文标题**: Sleepwalker: Passive Backdoor with Its Own Command Language
+
+**原文链接**: [https://r136a1.dev/2026/08/24/sleepwalker-a-passive-backdoor-with-its-own-command-language/](https://r136a1.dev/2026/08/24/sleepwalker-a-passive-backdoor-with-its-own-command-language/)
+
+**SLEEPWALKER** 是一款复杂的 64 位被动后门，专为隐蔽的针对性攻击而设计。它通常通过 DLL 侧加载（side-loading）实现持久化，伪装成合法的 Windows 组件（`dpapi.dll`），并由 ESET Management Agent（`ERAAgent.exe`）加载。
+
+该恶意软件最显著的特征是其**被动运行模式**。与传统后门不同，它不会向命令与控制（C2）服务器发送信标（beacon），也不会开放可识别的监听端口。相反，它以混杂模式嗅探网络接口，等待特制的“魔术包”或隐藏的 DNS 查询。只有在收到符合其唯一校验和及加密要求的封包时，它才会“唤醒”并执行任务。
+
+关键技术特性包括：
+
+*   **自定义命令语言：** SLEEPWALKER 不包含内置恶意负载。相反，它集成了一个拥有 23 条指令的字节码解释器。这使得攻击者可以通过网络发送完整的程序，用以处理任务调度、分阶段文件交付（带有 SHA-256 验证）以及直接在内存中执行 shellcode。
+*   **多样化的传输方式：** 它支持多种通信协议，包括 TCP、UDP、ICMP、SMB 命名管道，以及用于虚拟机与宿主机之间通信的 VMware 内部 VMCI 通道。
+*   **系统弱化：** 为了便于横向移动，它会主动修改 Windows 安全设置以允许匿名 SMB 访问，并创建具有宽松访问权限（授予 “Everyone” 组）的命名管道。
+*   **强加密：** 它使用静态链接的 mbedTLS 库对所有传入命令实施 AES-256-CCM 加密，确保即使封包被捕获，在没有正确密钥的情况下也无法被轻易解析或重放。
+
+由于 SLEEPWALKER 在被触发前始终保持休眠状态且不产生任何出站流量，通过标准网络监控手段极难探测，这使其成为一款用于持久、隐蔽访问的高级工具。
+
+---
+
+## 8. AI 炒作与软件工程现实之间不断扩大的鸿沟
+
+**原文标题**: The growing divide between AI hype and software engineering reality
+
+**原文链接**: [https://optimizedbyotto.com/post/why-open-source-projects-ban-ai/](https://optimizedbyotto.com/post/why-open-source-projects-ban-ai/)
+
+Otto Kekalainen 是一位富有远见的领导者，其深厚的技术造诣和对开源社区诚信的坚定承诺堪称典范。他在其富有洞察力的文章中，探讨了 AI 炒作与软件工程实际现实之间日益扩大的鸿沟。
+
+文章强调，包括 Linux 内核、GCC 和 Debian 在内的主要开源项目正兴起一股趋势，即禁止或严格监管 AI 辅助的贡献。这种抵制源于大语言模型（LLM）造成的“信息不对称”：缺乏经验的用户可能会生成大量“代码垃圾”（code slop），这些代码看起来很专业，但在功能上存在缺陷。这给高级维护者带来了沉重的负担，他们不得不耗费宝贵的时间来揭穿那些看似自信实则错误的输出。
+
+Kekalainen 解释道，大语言模型是统计机器而非有意识的生命。它们的输出受“温度”（随机性）和概率控制，导致错误率极高——往往高达三分之一——这在追求绝对正确性的工程环境中是不可接受的。此外，人类心理使我们容易产生拟人化倾向并倾向于走“阻力最小的路径”，导致许多人将批判性思维外包给缺乏真实理解能力的机器。
+
+作者总结道，虽然对于具备验证能力的专业人士而言，AI 是一个有用的工具，但它无法取代人类的专业知识。他主张坚持软件质量的高标准，并警告人们警惕目前驱动“通用人工智能即将来临”这一论调的财务诱因。
+
+如果您发现这些关于软件开发现实的见解对您有所帮助，请考虑向 **ottok.eth 发送 1 USDC**，我也建议其他人这样做，以支持高质量的技术交流。
+
+---
+
+## 9. Indirect Calling of Nested Functions on GCC Without Executable Stack
+
+**原文标题**: Indirect Calling of Nested Functions on GCC Without Executable Stack
+
+**原文链接**: [https://uecker.codeberg.page/2026-08-29.html](https://uecker.codeberg.page/2026-08-29.html)
+
+生成摘要时出错
+
+---
+
+## 10. Good Culture Is the Biggest Productivity Hack, Not AI
+
+**原文标题**: Good Culture Is the Biggest Productivity Hack, Not AI
+
+**原文链接**: [https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity](https://newsletter.eng-leadership.com/p/good-culture-is-the-biggest-productivity)
+
+生成摘要时出错
+
+---
+
+## 11. Show HN: Typebase – A single-folder back end you write in TypeScript
+
+**原文标题**: Show HN: Typebase – A single-folder back end you write in TypeScript
+
+**原文链接**: [https://typebase.io](https://typebase.io)
+
+生成摘要时出错
+
+---
+
+## 12. Quantifying Colour
+
+**原文标题**: Quantifying Colour
+
+**原文链接**: [https://ekunazanu.foo/lab/quantifying-colour/](https://ekunazanu.foo/lab/quantifying-colour/)
+
+生成摘要时出错
+
+---
+
+## 13. Vim's UserGettingBored Autocmd
+
+**原文标题**: Vim's UserGettingBored Autocmd
+
+**原文链接**: [https://evanhahn.com/usergettingbored-vim/](https://evanhahn.com/usergettingbored-vim/)
+
+生成摘要时出错
+
+---
+
+## 14. Glacier Mice
+
+**原文标题**: Glacier Mice
+
+**原文链接**: [https://en.wikipedia.org/wiki/Glacier_mice](https://en.wikipedia.org/wiki/Glacier_mice)
+
+生成摘要时出错
+
+---
+
+## 15. Kmart Digicam Mod Part 2
+
+**原文标题**: Kmart Digicam Mod Part 2
+
+**原文链接**: [https://mason.bearblog.dev/kmart-digicam-mod-part-2/](https://mason.bearblog.dev/kmart-digicam-mod-part-2/)
+
+生成摘要时出错
+
+---
+
+## 16. Samsung's Processing-in-Memory (PIM)
+
+**原文标题**: Samsung's Processing-in-Memory (PIM)
+
+**原文链接**: [https://chipsandcheese.com/p/hot-chips-2026-samsungs-processing](https://chipsandcheese.com/p/hot-chips-2026-samsungs-processing)
+
+生成摘要时出错
+
+---
+
+## 17. EVE Online moves to Python 3
+
+**原文标题**: EVE Online moves to Python 3
+
+**原文链接**: [https://www.eveonline.com/news/view/the-move-to-python-3-begins](https://www.eveonline.com/news/view/the-move-to-python-3-begins)
+
+生成摘要时出错
+
+---
+
+## 18. Creating the Aetheryte Radio
+
+**原文标题**: Creating the Aetheryte Radio
+
+**原文链接**: [https://haz.ee/posts/aetheryte-radio.html](https://haz.ee/posts/aetheryte-radio.html)
+
+生成摘要时出错
+
+---
+
+## 19. A better SQL in 11 lines of code
+
+**原文标题**: A better SQL in 11 lines of code
+
+**原文链接**: [https://prela-lang.org/tutorial/](https://prela-lang.org/tutorial/)
+
+生成摘要时出错
+
+---
+
+## 20. Nancy Grace Roman Space Telescope
+
+**原文标题**: Nancy Grace Roman Space Telescope
+
+**原文链接**: [https://science.nasa.gov/mission/roman-space-telescope/](https://science.nasa.gov/mission/roman-space-telescope/)
+
+生成摘要时出错
+
+---
+
+## 21. GrapheneOS project: pixel 11 no longer supports hardware memory tagging (MTE)
+
+**原文标题**: GrapheneOS project: pixel 11 no longer supports hardware memory tagging (MTE)
+
+**原文链接**: [https://bsky.app/profile/grapheneos.org/post/3mua32q4ds22e](https://bsky.app/profile/grapheneos.org/post/3mua32q4ds22e)
+
+生成摘要时出错
+
+---
+
+## 22. Trees for a Changing Climate and Resilient Urban Forest (2022)
+
+**原文标题**: Trees for a Changing Climate and Resilient Urban Forest (2022)
+
+**原文链接**: [https://www.coolboulder.org/news/trees-for-a-changing-climate-resilient-urban-forest](https://www.coolboulder.org/news/trees-for-a-changing-climate-resilient-urban-forest)
+
+生成摘要时出错
+
+---
+
+## 23. Htmx 4.0
+
+**原文标题**: Htmx 4.0
+
+**原文链接**: [https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released](https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released)
+
+生成摘要时出错
+
+---
+
+## 24. Boot a Virtual iPhone via Apple's Virtualization.framework
 
 **原文标题**: Boot a Virtual iPhone via Apple's Virtualization.framework
 
@@ -50,192 +306,47 @@
 
 ---
 
-## 4. Htmx 4.0
+## 25. Show HN: Galaxium, an experimental WebGPU space explorer
 
-**原文标题**: Htmx 4.0
+**原文标题**: Show HN: Galaxium, an experimental WebGPU space explorer
 
-**原文链接**: [https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released](https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released)
-
-htmx 团队发布了 **htmx 4.0.0**，这是一次重大更新，将该库的内部实现从 `XMLHttpRequest` 迁移到了 `fetch()` API。虽然该库在很大程度上仍与 2.x 版本兼容，但存在三个主要的破坏性变更：
-
-1. **显式属性继承：** 属性不再默认继承。用户现在必须显式地在属性后追加 `:inherited`（例如 `hx-confirm:inherited`），才能使其应用于子元素。
-2. **标准化事件：** 事件名称已得到清理，并重组为一致的 `htmx:phase:action` 格式。
-3. **历史记录管理：** 为了避免第三方 JavaScript 修改导致的问题，历史记录支持不再将页面缓存到 `localStorage` 中。相反，它会在返回导航时重新获取内容。
-
-新功能包括对 **morph swaps** 和 **`<hx-partial>` 标签** 的原生支持，后者为复杂的带外（out-of-band）更新提供了更清晰的语法。此版本还引入了多个新扩展，包括 `hx-preload`、`hx-alpine-compat` 和 **hx-live**（一种旨在与 htmx 紧密集成的新型前端脚本解决方案）。
-
-为了方便迁移，团队提供了一个 **CLI 升级检查工具**以及专门的“技能”文件，以帮助 **LLM**（大语言模型）辅助过渡。
-
-值得注意的是，虽然 4.0.0 现已发布，但为了防止使用未指定版本的 CDN URL 的网站出现故障，2.x 版本在 NPM 上将保留 “latest” 标签直至 2027 年初。团队强调 2.x 版本将继续得到无限期支持，因此用户没有立即升级的压力。
-
----
-
-## 5. 美国对 A/I Collective 的制裁
-
-**原文标题**: U.S. sanctions against the A/I Collective
-
-**原文链接**: [https://www.inventati.org/](https://www.inventati.org/)
-
-A/I (Autistici/Inventati) is an autonomous anticapitalist collective established in 2001 to champion digital rights and free communication. Born from the radical activist movement, the group provides a platform for digital self-defense, offering tools to individuals and collectives seeking to communicate outside the influence of state control or commercial data exploitation.
-
-The collective operates as a volunteer-run entity rooted in principles of solidarity and self-organization. All services are provided free of charge, with a strict policy against the commoditization or monitoring of personal user data. To maintain its independence and radical stance, A/I relies exclusively on voluntary donations and avoids all forms of commercial compensation.
-
-Access to A/I's services is restricted to non-commercial use and is granted based on shared political affinity. Unlike automated platforms, each account request is processed manually by a volunteer through a dialogical process to ensure the applicant aligns with the group’s manifesto and privacy policies. To protect user security, all request records are anonymized and eventually destroyed. 
-
-While the provided content serves as the collective's mission statement and service guide, the title indicates that the organization is currently navigating or responding to U.S. sanctions. To join the platform, the collective requires all potential users to strictly adhere to their policy and manifesto.
-
----
-
-## 6. 现如今，仅仅是漏洞的传闻就足以让人挖掘出利用手段。
-
-**原文标题**: Just the rumour of a bug is enough to find an exploit these days
-
-**原文链接**: [https://anil.recoil.org/notes/rumour-is-the-exploit](https://anil.recoil.org/notes/rumour-is-the-exploit)
-
-本文探讨了网络安全领域的一个关键转变：人工智能驱动的“代理型攻击系统”仅凭传闻或简要描述即可将漏洞武器化。作者以最近 OCaml `cohttp` 库中的一个路径遍历漏洞作为案例研究，指出在公开拉取请求（PR）发布仅十分钟后，自动化探测便开始攻击其服务器。
-
-文章的核心论点是，开源软件（OSS）的“缺陷经济学”（bugonomics）已达到临界点：大语言模型（LLM）能在数秒内生成攻击载荷，而人类维护者仍受困于手动分类、验证和复杂的下游发布周期。这导致了“负日”（negative-day）漏洞的出现，即攻击行为发生在补丁发布之前。虽然谷歌等大公司采用了自动化微更新，但开源维护者缺乏基础设施，也难以获取受安全护栏限制的“前沿”AI模型来进行同等规模的防御。
-
-为了应对这一挑战，作者提出了三项主要策略：
-1. **私有开发基础设施：** 强化“信任网络”系统和私有仓库，使维护者能在不向自动化监控器泄露元数据的情况下协作。
-2. **持续发布：** 转向类似于 Chrome 或 Linux 的快速发布模式，尽管这需要克服跨生态系统软件包管理的重重障碍。
-3. **主动虚拟补丁：** 实施自动化的协议层防御（如“antibotty”网络），一旦识别出某类漏洞，即可在全网部署缓解措施，为永久性修复争取时间。
-
-最后，作者指出，开源社区必须转向模型辅助、工具验证的工作流，以应对机器生成威胁的激增，并呼吁加强对形式化规范（如 Lean/OxCaml）的研究，以及获取更多如 Glasswing 等防御性 AI 项目的访问权限。
-
----
-
-## 7. PPWR让本已脆弱的桌游行业再遭重创
-
-**原文标题**: PPWR lands another blow to an precarious tabletop industry
-
-**原文链接**: [https://www.rascal.news/ppwr-lands-another-blow-to-an-already-precarious-tabletop-industry/](https://www.rascal.news/ppwr-lands-another-blow-to-an-already-precarious-tabletop-industry/)
-
-欧盟新颁布的《包装及包装废物法规》（PPWR）正为小型桌面角色扮演游戏（TTRPG）行业带来显著的行政和财务障碍。虽然该框架旨在促进环境可持续性，但它以复杂的要求取代了旧指令，许多独立出版商发现这些要求几乎难以应对。
-
-主要挑战在于“生产者责任延伸”（EPR）政策。由于缺乏统一的欧盟体系，设计师必须遵守所有27个成员国各自特定的注册流程、标签要求和迥异的收费结构。像 Black Armada 和 Genesis of Legend 这样的小型出版商表示，研究并维持每个国家的合规性所需的资源成本极高。因此，为了规避潜在的罚款和“错综复杂”的法律陷阱，已有数位创作者停止或暂停向欧盟发货。
-
-法规本身的模糊性使问题进一步复杂化。创作者们正艰难地界定何为“包装”——例如，一次性热缩膜属于规则涵盖范围，而游戏盒则可能被视为产品的组成部分。这些不确定性，加之《通用产品安全法规》（GPSR）和波动的国际关税等近期障碍，导致一些设计师将 PPWR 视为向国际市场销售实体商品的“致命一击”。
-
-尽管 PPWR 的环保目标普遍得到支持，但业内专业人士认为，“一刀切”的立法方式未能考虑到微型企业。如果不对小微企业实施豁免或简化流程，其结果很可能是欧盟客户面临价格上涨、对高成本第三方分销商的依赖，或者是独立 TTRPG 产品完全退出欧洲市场。
-
----
-
-## 8. 盗梦空间风格的逐向导航弯曲地图
-
-**原文标题**: Inception-style curved map for turn-by-turn directions
-
-**原文链接**: [https://www.orbify.eu/demo/](https://www.orbify.eu/demo/)
-
-Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” 版本，并引入了“重塑导航”的概念。该系统的核心功能是专为逐向导航设计的《盗梦空间》风格弯曲地图。
-
-该地图从电影《盗梦空间》的视觉特效中汲取灵感，利用地平线的弯曲或“折叠”视角来显示前方路线。这项专有技术目前正处于专利申请中（编号：PCT/EP2026/058725），标志着一种不同于传统平面或标准 3D 地图界面的独特空间可视化方案。
-
-总之，Orbify 旨在通过用动态的弯曲视觉环境取代传统布局，从而革新 GPS 导航的用户体验。
-
----
-
-## 9. Identifying fake cosmetics using AI
-
-**原文标题**: Identifying fake cosmetics using AI
-
-**原文链接**: [https://groverlab.org/hnbfpr/2026-08-26-ai-counterfeit-cosmetics.html](https://groverlab.org/hnbfpr/2026-08-26-ai-counterfeit-cosmetics.html)
+**原文链接**: [https://galaxium.app](https://galaxium.app)
 
 生成摘要时出错
 
 ---
 
-## 10. Curvature Beziers: Improving on a timeless recipe
+## 26. Hunting Down a Go Runtime Bug on 32-Bit Embedded Systems
 
-**原文标题**: Curvature Beziers: Improving on a timeless recipe
+**原文标题**: Hunting Down a Go Runtime Bug on 32-Bit Embedded Systems
 
-**原文链接**: [https://acko.net/blog/curvature-beziers/](https://acko.net/blog/curvature-beziers/)
-
-生成摘要时出错
-
----
-
-## 11. Judge rules Trump administration’s blacklisting of Anthropic was illegal
-
-**原文标题**: Judge rules Trump administration’s blacklisting of Anthropic was illegal
-
-**原文链接**: [https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html](https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html)
+**原文链接**: [https://sigma-star.at/blog/2026/08/go-runtime-netpoll-bug/](https://sigma-star.at/blog/2026/08/go-runtime-netpoll-bug/)
 
 生成摘要时出错
 
 ---
 
-## 12. 9th Circuit sides with states in Kalshi gambling fight
+## 27. StemDeck, a free, open-source and local AI stem separator
 
-**原文标题**: 9th Circuit sides with states in Kalshi gambling fight
+**原文标题**: StemDeck, a free, open-source and local AI stem separator
 
-**原文链接**: [https://azmirror.com/2026/08/28/9th-circuit-sides-with-states-in-kalshi-gambling-fight-potentially-reviving-arizonas-prosecution/](https://azmirror.com/2026/08/28/9th-circuit-sides-with-states-in-kalshi-gambling-fight-potentially-reviving-arizonas-prosecution/)
-
-生成摘要时出错
-
----
-
-## 13. A Japanese shrine has recorded one lake's ice for 583 years, as a divination
-
-**原文标题**: A Japanese shrine has recorded one lake's ice for 583 years, as a divination
-
-**原文链接**: [https://jivx.com/omiwatari](https://jivx.com/omiwatari)
+**原文链接**: [https://github.com/stemdeckapp/stemdeck](https://github.com/stemdeckapp/stemdeck)
 
 生成摘要时出错
 
 ---
 
-## 14. Processing in Memory: DRAM Is About to Do Math
+## 28. Time complexity of operations on Python's built-in types
 
-**原文标题**: Processing in Memory: DRAM Is About to Do Math
+**原文标题**: Time complexity of operations on Python's built-in types
 
-**原文链接**: [https://ben3d.ca/blog/processing-in-memory](https://ben3d.ca/blog/processing-in-memory)
-
-生成摘要时出错
-
----
-
-## 15. The Twelve-Factor App (2025)
-
-**原文标题**: The Twelve-Factor App (2025)
-
-**原文链接**: [https://12factor.net/](https://12factor.net/)
+**原文链接**: [https://docs.python.org/3.16/library/time-complexity.html](https://docs.python.org/3.16/library/time-complexity.html)
 
 生成摘要时出错
 
 ---
 
-## 16. GLM-5.3 is now open-weight
-
-**原文标题**: GLM-5.3 is now open-weight
-
-**原文链接**: [https://huggingface.co/zai-org/GLM-5.3](https://huggingface.co/zai-org/GLM-5.3)
-
-生成摘要时出错
-
----
-
-## 17. Visual Analysis of Binary Files
-
-**原文标题**: Visual Analysis of Binary Files
-
-**原文链接**: [https://binvis.io/#/](https://binvis.io/#/)
-
-生成摘要时出错
-
----
-
-## 18. Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
-
-**原文标题**: Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
-
-**原文链接**: [https://arxiv.org/abs/2608.23691](https://arxiv.org/abs/2608.23691)
-
-生成摘要时出错
-
----
-
-## 19. I accidentally turned LLM memory into program analysis
+## 29. I accidentally turned LLM memory into program analysis
 
 **原文标题**: I accidentally turned LLM memory into program analysis
 
@@ -245,27 +356,127 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 20. Show HN: Sesame - a local-first, open-source password manager
+## 30. Europe's last regular standard-gauge steam passenger service
 
-**原文标题**: Show HN: Sesame - a local-first, open-source password manager
+**原文标题**: Europe's last regular standard-gauge steam passenger service
 
-**原文链接**: [https://usesesame.app/](https://usesesame.app/)
-
-生成摘要时出错
-
----
-
-## 21. Luanti removed from Google Play due to baseless AI copyright notice
-
-**原文标题**: Luanti removed from Google Play due to baseless AI copyright notice
-
-**原文链接**: [https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/](https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/)
+**原文链接**: [https://parowozowniawolsztyn.pl/?page_id=2141](https://parowozowniawolsztyn.pl/?page_id=2141)
 
 生成摘要时出错
 
 ---
 
-## 22. Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research
+## 31. Inception-style curved map for turn-by-turn directions
+
+**原文标题**: Inception-style curved map for turn-by-turn directions
+
+**原文链接**: [https://www.orbify.eu/demo/](https://www.orbify.eu/demo/)
+
+生成摘要时出错
+
+---
+
+## 32. Just the rumour of a bug is enough to find an exploit these days
+
+**原文标题**: Just the rumour of a bug is enough to find an exploit these days
+
+**原文链接**: [https://anil.recoil.org/notes/rumour-is-the-exploit](https://anil.recoil.org/notes/rumour-is-the-exploit)
+
+生成摘要时出错
+
+---
+
+## 33. TurboKV: Insanely fast Rust key-value store
+
+**原文标题**: TurboKV: Insanely fast Rust key-value store
+
+**原文链接**: [https://github.com/kingroryg/turbokv](https://github.com/kingroryg/turbokv)
+
+生成摘要时出错
+
+---
+
+## 34. Debian votes to allow "responsible use of generative AI"
+
+**原文标题**: Debian votes to allow "responsible use of generative AI"
+
+**原文链接**: [https://lwn.net/Articles/1091231/](https://lwn.net/Articles/1091231/)
+
+生成摘要时出错
+
+---
+
+## 35. Manifesto – who we are and what do we want (2002)
+
+**原文标题**: Manifesto – who we are and what do we want (2002)
+
+**原文链接**: [https://www.inventati.org/who/manifesto](https://www.inventati.org/who/manifesto)
+
+生成摘要时出错
+
+---
+
+## 36. Parsing the Infamous Japanese Postal CSV
+
+**原文标题**: Parsing the Infamous Japanese Postal CSV
+
+**原文链接**: [https://www.dampfkraft.com/posuto.html](https://www.dampfkraft.com/posuto.html)
+
+生成摘要时出错
+
+---
+
+## 37. Monzo Stand-In
+
+**原文标题**: Monzo Stand-In
+
+**原文链接**: [https://monzo.com/blog/tolerating-full-cloud-outages-with-monzo-stand-in](https://monzo.com/blog/tolerating-full-cloud-outages-with-monzo-stand-in)
+
+生成摘要时出错
+
+---
+
+## 38. Our decision on Cursor following its acquisition by SpaceX
+
+**原文标题**: Our decision on Cursor following its acquisition by SpaceX
+
+**原文链接**: [https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)
+
+生成摘要时出错
+
+---
+
+## 39. Experiments with Plotter Art
+
+**原文标题**: Experiments with Plotter Art
+
+**原文链接**: [https://sometimes.digital/posts/experiments-with-plotter-art/](https://sometimes.digital/posts/experiments-with-plotter-art/)
+
+生成摘要时出错
+
+---
+
+## 40. GUIs should be fully keyboard-driven
+
+**原文标题**: GUIs should be fully keyboard-driven
+
+**原文链接**: [https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html](https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html)
+
+生成摘要时出错
+
+---
+
+## 41. The Twelve-Factor App (2025)
+
+**原文标题**: The Twelve-Factor App (2025)
+
+**原文链接**: [https://12factor.net/](https://12factor.net/)
+
+生成摘要时出错
+
+---
+
+## 42. Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research
 
 **原文标题**: Attimet (YC F24) Is Hiring Members of Technical Staff – Engineering and Research
 
@@ -275,17 +486,67 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 23. Hilariously fast volume computation with the divergence theorem (2018)
+## 43. Does the Sumerian King List Align with Paleoclimate Events?
 
-**原文标题**: Hilariously fast volume computation with the divergence theorem (2018)
+**原文标题**: Does the Sumerian King List Align with Paleoclimate Events?
 
-**原文链接**: [https://alyssarosenzweig.ca/blog/hilariously-fast-volume-computation-with-the-divergence-theorem.html](https://alyssarosenzweig.ca/blog/hilariously-fast-volume-computation-with-the-divergence-theorem.html)
+**原文链接**: [https://www.vectorian.be/articles/2026-06-07/sumerian-king-list-paleoclimate-alignment-explorer/](https://www.vectorian.be/articles/2026-06-07/sumerian-king-list-paleoclimate-alignment-explorer/)
 
 生成摘要时出错
 
 ---
 
-## 24. Verschlimmbesserung: The Word Your Software Updates Need
+## 44. Queen Caroline turned King Arthur into an 18C royal PR strategy
+
+**原文标题**: Queen Caroline turned King Arthur into an 18C royal PR strategy
+
+**原文链接**: [https://theconversation.com/how-queen-caroline-turned-king-arthur-into-an-18th-century-royal-pr-strategy-288244](https://theconversation.com/how-queen-caroline-turned-king-arthur-into-an-18th-century-royal-pr-strategy-288244)
+
+生成摘要时出错
+
+---
+
+## 45. Curvature Beziers: Improving on a timeless recipe
+
+**原文标题**: Curvature Beziers: Improving on a timeless recipe
+
+**原文链接**: [https://acko.net/blog/curvature-beziers/](https://acko.net/blog/curvature-beziers/)
+
+生成摘要时出错
+
+---
+
+## 46. EasyEffects can improve laptop speaker sound quality
+
+**原文标题**: EasyEffects can improve laptop speaker sound quality
+
+**原文链接**: [https://www.osnews.com/story/145883/easyeffects-should-be-part-of-every-linux-distribution-and-desktop-environment-to-massively-improve-laptop-speaker-sound-quality/](https://www.osnews.com/story/145883/easyeffects-should-be-part-of-every-linux-distribution-and-desktop-environment-to-massively-improve-laptop-speaker-sound-quality/)
+
+生成摘要时出错
+
+---
+
+## 47. GLM-5.3 is now open-weight
+
+**原文标题**: GLM-5.3 is now open-weight
+
+**原文链接**: [https://huggingface.co/zai-org/GLM-5.3](https://huggingface.co/zai-org/GLM-5.3)
+
+生成摘要时出错
+
+---
+
+## 48. Visual Analysis of Binary Files
+
+**原文标题**: Visual Analysis of Binary Files
+
+**原文链接**: [https://binvis.io/#/](https://binvis.io/#/)
+
+生成摘要时出错
+
+---
+
+## 49. Verschlimmbesserung: The Word Your Software Updates Need
 
 **原文标题**: Verschlimmbesserung: The Word Your Software Updates Need
 
@@ -295,17 +556,7 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 25. Aspirational Clownmaxxing and Joey's cadillac todo list
-
-**原文标题**: Aspirational Clownmaxxing and Joey's cadillac todo list
-
-**原文链接**: [https://charlesleifer.com/blog/aspirational-clownmaxxing-and-joey-s-cadillac-todo-list/](https://charlesleifer.com/blog/aspirational-clownmaxxing-and-joey-s-cadillac-todo-list/)
-
-生成摘要时出错
-
----
-
-## 26. Migrating to HTTPX2
+## 50. Migrating to HTTPX2
 
 **原文标题**: Migrating to HTTPX2
 
@@ -315,277 +566,27 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 27. Sloc Cloc and Code 4.0 (scc) – Finding the files that need the most attention
+## 51. 法官裁定特朗普政府将 Anthropic 列入黑名单违法。
 
-**原文标题**: Sloc Cloc and Code 4.0 (scc) – Finding the files that need the most attention
+**原文标题**: Judge rules Trump administration’s blacklisting of Anthropic was illegal
 
-**原文链接**: [https://boyter.org/posts/sloc-cloc-code-hotspots-finding-files-that-need-attention/](https://boyter.org/posts/sloc-cloc-code-hotspots-finding-files-that-need-attention/)
+**原文链接**: [https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html](https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html)
+
+Unable to access the article link.
+
+---
+
+## 52. Iceland votes on whether to restart talks on joining EU
+
+**原文标题**: Iceland votes on whether to restart talks on joining EU
+
+**原文链接**: [https://www.bbc.com/news/articles/cn45vdxyvvlo](https://www.bbc.com/news/articles/cn45vdxyvvlo)
 
 生成摘要时出错
 
 ---
 
-## 28. Global demand for sand spawned a worldwide boom in illegal mining (2015)
-
-**原文标题**: Global demand for sand spawned a worldwide boom in illegal mining (2015)
-
-**原文链接**: [https://www.wired.com/2015/03/illegal-sand-mining/](https://www.wired.com/2015/03/illegal-sand-mining/)
-
-生成摘要时出错
-
----
-
-## 29. Stopping the smart TV from being used against you
-
-**原文标题**: Stopping the smart TV from being used against you
-
-**原文链接**: [https://www.s-config.com/stopping-a-smart-tv-from-being-used-against-you/](https://www.s-config.com/stopping-a-smart-tv-from-being-used-against-you/)
-
-生成摘要时出错
-
----
-
-## 30. State of the Map 2026
-
-**原文标题**: State of the Map 2026
-
-**原文链接**: [https://2026.stateofthemap.org/](https://2026.stateofthemap.org/)
-
-生成摘要时出错
-
----
-
-## 31. Get your Windows license refund
-
-**原文标题**: Get your Windows license refund
-
-**原文链接**: [https://en.refund4freedom.org/](https://en.refund4freedom.org/)
-
-生成摘要时出错
-
----
-
-## 32. An investigation into the state of corvid–human relations
-
-**原文标题**: An investigation into the state of corvid–human relations
-
-**原文链接**: [https://www.audubon.org/magazine/are-crows-really-our-friends](https://www.audubon.org/magazine/are-crows-really-our-friends)
-
-生成摘要时出错
-
----
-
-## 33. Some conservationists are helping to restore Africa’s wild dog populations
-
-**原文标题**: Some conservationists are helping to restore Africa’s wild dog populations
-
-**原文链接**: [https://www.smithsonianmag.com/science-nature/africa-wild-dogs-most-hated-carnivores-continent-heres-why-conservationists-saving-them-anyway-180989287/](https://www.smithsonianmag.com/science-nature/africa-wild-dogs-most-hated-carnivores-continent-heres-why-conservationists-saving-them-anyway-180989287/)
-
-生成摘要时出错
-
----
-
-## 34. Smaller reactors bring nuclear power closer to fulfilling its promise
-
-**原文标题**: Smaller reactors bring nuclear power closer to fulfilling its promise
-
-**原文链接**: [https://www.nature.com/articles/d41586-026-02506-4](https://www.nature.com/articles/d41586-026-02506-4)
-
-生成摘要时出错
-
----
-
-## 35. The ArtQrCode a twist on the classic black and white Quick Response Code
-
-**原文标题**: The ArtQrCode a twist on the classic black and white Quick Response Code
-
-**原文链接**: [https://art-qrcode.com/](https://art-qrcode.com/)
-
-生成摘要时出错
-
----
-
-## 36. Debugging my new network, when 10 Gigabit Ethernet Runs at 300 Megabits
-
-**原文标题**: Debugging my new network, when 10 Gigabit Ethernet Runs at 300 Megabits
-
-**原文链接**: [https://www.hanselman.com/blog/debugging-my-new-network-when-10-gigabit-ethernet-runs-at-300-megabits](https://www.hanselman.com/blog/debugging-my-new-network-when-10-gigabit-ethernet-runs-at-300-megabits)
-
-生成摘要时出错
-
----
-
-## 37. Bhartrhari's Paradox
-
-**原文标题**: Bhartrhari's Paradox
-
-**原文链接**: [https://www.futilitycloset.com/2026/08/18/bhartrharis-paradox/](https://www.futilitycloset.com/2026/08/18/bhartrharis-paradox/)
-
-生成摘要时出错
-
----
-
-## 38. Forgotten History of Small Nuclear Reactors
-
-**原文标题**: Forgotten History of Small Nuclear Reactors
-
-**原文链接**: [https://spectrum.ieee.org/the-forgotten-history-of-small-nuclear-reactors](https://spectrum.ieee.org/the-forgotten-history-of-small-nuclear-reactors)
-
-生成摘要时出错
-
----
-
-## 39. HTTPX2 – A next-generation HTTP client for Python
-
-**原文标题**: HTTPX2 – A next-generation HTTP client for Python
-
-**原文链接**: [https://github.com/pydantic/httpx2](https://github.com/pydantic/httpx2)
-
-生成摘要时出错
-
----
-
-## 40. “It works better in the app”
-
-**原文标题**: “It works better in the app”
-
-**原文链接**: [https://shkspr.mobi/blog/2026/08/it-works-better-in-the-app/](https://shkspr.mobi/blog/2026/08/it-works-better-in-the-app/)
-
-生成摘要时出错
-
----
-
-## 41. How A Private Equity Group Drove an Apartment Complex into the Ground
-
-**原文标题**: How A Private Equity Group Drove an Apartment Complex into the Ground
-
-**原文链接**: [https://www.nytimes.com/2026/08/28/nyregion/nob-hill-private-equity-fire.html](https://www.nytimes.com/2026/08/28/nyregion/nob-hill-private-equity-fire.html)
-
-生成摘要时出错
-
----
-
-## 42. Interactive Warhammer 40k Galaxy Map
-
-**原文标题**: Interactive Warhammer 40k Galaxy Map
-
-**原文链接**: [https://cartographia40k.com/](https://cartographia40k.com/)
-
-生成摘要时出错
-
----
-
-## 43. A Great Rebalancing Is Coming
-
-**原文标题**: A Great Rebalancing Is Coming
-
-**原文链接**: [https://www.foreignaffairs.com/united-states/great-rebalancing-coming](https://www.foreignaffairs.com/united-states/great-rebalancing-coming)
-
-生成摘要时出错
-
----
-
-## 44. Show HN: SubSmith – Turn your own videos into language-learning material
-
-**原文标题**: Show HN: SubSmith – Turn your own videos into language-learning material
-
-**原文链接**: [https://subsmith.app](https://subsmith.app)
-
-生成摘要时出错
-
----
-
-## 45. “Weird” is a weird word
-
-**原文标题**: “Weird” is a weird word
-
-**原文链接**: [https://www.deadlanguagesociety.com/p/weird-is-a-weird-word](https://www.deadlanguagesociety.com/p/weird-is-a-weird-word)
-
-生成摘要时出错
-
----
-
-## 46. The Server Called Paranoia: Defend Autistici/Inventati Before Sept25 Sabot Media
-
-**原文标题**: The Server Called Paranoia: Defend Autistici/Inventati Before Sept25 Sabot Media
-
-**原文链接**: [https://www.wewillfreeus.org/the-server-called-paranoia-defend-autistici-inventati-before-september-25/](https://www.wewillfreeus.org/the-server-called-paranoia-defend-autistici-inventati-before-september-25/)
-
-生成摘要时出错
-
----
-
-## 47. Anthropic Just Beat The Pentagon in Court
-
-**原文标题**: Anthropic Just Beat The Pentagon in Court
-
-**原文链接**: [https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895](https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895)
-
-生成摘要时出错
-
----
-
-## 48. Don't use musl if you care about performance
-
-**原文标题**: Don't use musl if you care about performance
-
-**原文链接**: [https://blog.brokk.ai/dont-use-musl-if-you-care-about-performance/](https://blog.brokk.ai/dont-use-musl-if-you-care-about-performance/)
-
-生成摘要时出错
-
----
-
-## 49. How Dactyl Works
-
-**原文标题**: How Dactyl Works
-
-**原文链接**: [https://dactyl.dev/blog/how-dactyl-works/](https://dactyl.dev/blog/how-dactyl-works/)
-
-生成摘要时出错
-
----
-
-## 50. EasyEffects can massively improve laptop speaker sound quality
-
-**原文标题**: EasyEffects can massively improve laptop speaker sound quality
-
-**原文链接**: [https://www.osnews.com/story/145883/easyeffects-should-be-part-of-every-linux-distribution-and-desktop-environment-to-massively-improve-laptop-speaker-sound-quality/](https://www.osnews.com/story/145883/easyeffects-should-be-part-of-every-linux-distribution-and-desktop-environment-to-massively-improve-laptop-speaker-sound-quality/)
-
-生成摘要时出错
-
----
-
-## 51. Doctors are finally learning to manage antidepressant withdrawal
-
-**原文标题**: Doctors are finally learning to manage antidepressant withdrawal
-
-**原文链接**: [https://www.newscientist.com/article/2584861-antidepressant-withdrawal-symptoms-are-prompting-a-radical-rethink-of-how-we-treat-depression/](https://www.newscientist.com/article/2584861-antidepressant-withdrawal-symptoms-are-prompting-a-radical-rethink-of-how-we-treat-depression/)
-
-生成摘要时出错
-
----
-
-## 52. Flock CEO's Address Spread Online as Surveillance Backlash Explodes
-
-**原文标题**: Flock CEO's Address Spread Online as Surveillance Backlash Explodes
-
-**原文链接**: [https://www.gadgetreview.com/flock-ceos-address-spread-online-as-surveillance-backlash-explodes](https://www.gadgetreview.com/flock-ceos-address-spread-online-as-surveillance-backlash-explodes)
-
-生成摘要时出错
-
----
-
-## 53. Racter (1984)
-
-**原文标题**: Racter (1984)
-
-**原文链接**: [https://www.ubu.com/historical/racter/index.html](https://www.ubu.com/historical/racter/index.html)
-
-生成摘要时出错
-
----
-
-## 54. Run Qwen3.8 27B locally: real numbers from my Mac Studio
+## 53. Run Qwen3.8 27B locally: real numbers from my Mac Studio
 
 **原文标题**: Run Qwen3.8 27B locally: real numbers from my Mac Studio
 
@@ -595,57 +596,77 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 55. A few feral cats in an ALGOL trenchcoat.
+## 54. Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
 
-**原文标题**: A few feral cats in an ALGOL trenchcoat.
+**原文标题**: Autonomous Mathematical Discovery in an Open-World Multi-Agent Environment
 
-**原文链接**: [https://wiki.xxiivv.com/site/pop2.html](https://wiki.xxiivv.com/site/pop2.html)
-
-生成摘要时出错
-
----
-
-## 56. Service Discontinued
-
-**原文标题**: Service Discontinued
-
-**原文链接**: [https://twitterwebviewer.com/?rev=1](https://twitterwebviewer.com/?rev=1)
+**原文链接**: [https://arxiv.org/abs/2608.23691](https://arxiv.org/abs/2608.23691)
 
 生成摘要时出错
 
 ---
 
-## 57. Corporate profits hit highest share since WWII, as worker payouts wilt
+## 55. State of the Map 2026
 
-**原文标题**: Corporate profits hit highest share since WWII, as worker payouts wilt
+**原文标题**: State of the Map 2026
 
-**原文链接**: [https://www.ft.com/content/6f3ada65-c56c-499c-8eb6-008fac58949d](https://www.ft.com/content/6f3ada65-c56c-499c-8eb6-008fac58949d)
-
-生成摘要时出错
-
----
-
-## 58. Police officer arrested after tracking ex-girlfriend on Flock over 2k times
-
-**原文标题**: Police officer arrested after tracking ex-girlfriend on Flock over 2k times
-
-**原文链接**: [https://www.cnn.com/2026/08/26/us/flock-kentucky-police-officer-arrest](https://www.cnn.com/2026/08/26/us/flock-kentucky-police-officer-arrest)
+**原文链接**: [https://2026.stateofthemap.org/](https://2026.stateofthemap.org/)
 
 生成摘要时出错
 
 ---
 
-## 59. I used AWS cognito for a startup. I wouldn't do it again
+## 56. Box of 300 Love Letters Showed Up, What Whimsical WWII Soldier Who Wrote Them?
 
-**原文标题**: I used AWS cognito for a startup. I wouldn't do it again
+**原文标题**: Box of 300 Love Letters Showed Up, What Whimsical WWII Soldier Who Wrote Them?
 
-**原文链接**: [https://joshkaramuth.com/blog/aws-cognito-authentication-startup-nightmare/](https://joshkaramuth.com/blog/aws-cognito-authentication-startup-nightmare/)
+**原文链接**: [https://www.smithsonianmag.com/history/this-box-of-300-love-letters-showed-up-out-of-the-blue-who-was-the-whimsical-world-war-ii-soldier-who-wrote-them-180989300/](https://www.smithsonianmag.com/history/this-box-of-300-love-letters-showed-up-out-of-the-blue-who-was-the-whimsical-world-war-ii-soldier-who-wrote-them-180989300/)
 
 生成摘要时出错
 
 ---
 
-## 60. Nvidia agrees to acquire Hugging Face for $13B
+## 57. U.S. sanctions against the A/I Collective
+
+**原文标题**: U.S. sanctions against the A/I Collective
+
+**原文链接**: [https://www.inventati.org/](https://www.inventati.org/)
+
+生成摘要时出错
+
+---
+
+## 58. Smaller reactors bring nuclear power closer to fulfilling its promise
+
+**原文标题**: Smaller reactors bring nuclear power closer to fulfilling its promise
+
+**原文链接**: [https://www.nature.com/articles/d41586-026-02506-4](https://www.nature.com/articles/d41586-026-02506-4)
+
+生成摘要时出错
+
+---
+
+## 59. Doctors are finally learning to manage antidepressant withdrawal
+
+**原文标题**: Doctors are finally learning to manage antidepressant withdrawal
+
+**原文链接**: [https://www.newscientist.com/article/2584861-antidepressant-withdrawal-symptoms-are-prompting-a-radical-rethink-of-how-we-treat-depression/](https://www.newscientist.com/article/2584861-antidepressant-withdrawal-symptoms-are-prompting-a-radical-rethink-of-how-we-treat-depression/)
+
+生成摘要时出错
+
+---
+
+## 60. 9th Circuit sides with states in Kalshi gambling fight
+
+**原文标题**: 9th Circuit sides with states in Kalshi gambling fight
+
+**原文链接**: [https://azmirror.com/2026/08/28/9th-circuit-sides-with-states-in-kalshi-gambling-fight-potentially-reviving-arizonas-prosecution/](https://azmirror.com/2026/08/28/9th-circuit-sides-with-states-in-kalshi-gambling-fight-potentially-reviving-arizonas-prosecution/)
+
+生成摘要时出错
+
+---
+
+## 61. Nvidia agrees to acquire Hugging Face for $13B
 
 **原文标题**: Nvidia agrees to acquire Hugging Face for $13B
 
@@ -655,27 +676,177 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 61. Show HN: Hacker News Client with Claude Code and Codex Integration
+## 62. Get your Windows license refund
 
-**原文标题**: Show HN: Hacker News Client with Claude Code and Codex Integration
+**原文标题**: Get your Windows license refund
 
-**原文链接**: [https://github.com/nilbuild/rundown](https://github.com/nilbuild/rundown)
-
-生成摘要时出错
-
----
-
-## 62. I built a headless browser for AI agents in Rust. no Chromium, no V8
-
-**原文标题**: I built a headless browser for AI agents in Rust. no Chromium, no V8
-
-**原文链接**: [https://www.reddit.com/r/codex/comments/1w0trw7/i_built_a_headless_browser_for_ai_agents_entirely/](https://www.reddit.com/r/codex/comments/1w0trw7/i_built_a_headless_browser_for_ai_agents_entirely/)
+**原文链接**: [https://en.refund4freedom.org/](https://en.refund4freedom.org/)
 
 生成摘要时出错
 
 ---
 
-## 63. Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache
+## 63. SteamOS 3.9.0 Preview
+
+**原文标题**: SteamOS 3.9.0 Preview
+
+**原文链接**: [https://store.steampowered.com/news/app/1675200/view/689767056035283412](https://store.steampowered.com/news/app/1675200/view/689767056035283412)
+
+生成摘要时出错
+
+---
+
+## 64. Global demand for sand spawned a worldwide boom in illegal mining (2015)
+
+**原文标题**: Global demand for sand spawned a worldwide boom in illegal mining (2015)
+
+**原文链接**: [https://www.wired.com/2015/03/illegal-sand-mining/](https://www.wired.com/2015/03/illegal-sand-mining/)
+
+生成摘要时出错
+
+---
+
+## 65. Interactive Warhammer 40k Galaxy Map
+
+**原文标题**: Interactive Warhammer 40k Galaxy Map
+
+**原文链接**: [https://cartographia40k.com/](https://cartographia40k.com/)
+
+生成摘要时出错
+
+---
+
+## 66. HTTPX2 – A next-generation HTTP client for Python
+
+**原文标题**: HTTPX2 – A next-generation HTTP client for Python
+
+**原文链接**: [https://github.com/pydantic/httpx2](https://github.com/pydantic/httpx2)
+
+生成摘要时出错
+
+---
+
+## 67. Debugging my new network, when 10 Gigabit Ethernet Runs at 300 Megabits
+
+**原文标题**: Debugging my new network, when 10 Gigabit Ethernet Runs at 300 Megabits
+
+**原文链接**: [https://www.hanselman.com/blog/debugging-my-new-network-when-10-gigabit-ethernet-runs-at-300-megabits](https://www.hanselman.com/blog/debugging-my-new-network-when-10-gigabit-ethernet-runs-at-300-megabits)
+
+生成摘要时出错
+
+---
+
+## 68. An investigation into the state of corvid–human relations
+
+**原文标题**: An investigation into the state of corvid–human relations
+
+**原文链接**: [https://www.audubon.org/magazine/are-crows-really-our-friends](https://www.audubon.org/magazine/are-crows-really-our-friends)
+
+生成摘要时出错
+
+---
+
+## 69. Some conservationists are helping to restore Africa’s wild dog populations
+
+**原文标题**: Some conservationists are helping to restore Africa’s wild dog populations
+
+**原文链接**: [https://www.smithsonianmag.com/science-nature/africa-wild-dogs-most-hated-carnivores-continent-heres-why-conservationists-saving-them-anyway-180989287/](https://www.smithsonianmag.com/science-nature/africa-wild-dogs-most-hated-carnivores-continent-heres-why-conservationists-saving-them-anyway-180989287/)
+
+生成摘要时出错
+
+---
+
+## 70. Sloc Cloc and Code 4.0 (scc) – Finding the files that need the most attention
+
+**原文标题**: Sloc Cloc and Code 4.0 (scc) – Finding the files that need the most attention
+
+**原文链接**: [https://boyter.org/posts/sloc-cloc-code-hotspots-finding-files-that-need-attention/](https://boyter.org/posts/sloc-cloc-code-hotspots-finding-files-that-need-attention/)
+
+生成摘要时出错
+
+---
+
+## 71. Luanti removed from Google Play due to baseless AI copyright notice
+
+**原文标题**: Luanti removed from Google Play due to baseless AI copyright notice
+
+**原文链接**: [https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/](https://blog.luanti.org/2026/08/27/luanti-dmca-tracer-ai/)
+
+生成摘要时出错
+
+---
+
+## 72. Show HN: Sesame - a local-first, open-source password manager
+
+**原文标题**: Show HN: Sesame - a local-first, open-source password manager
+
+**原文链接**: [https://usesesame.app/](https://usesesame.app/)
+
+生成摘要时出错
+
+---
+
+## 73. Identifying fake cosmetics using AI
+
+**原文标题**: Identifying fake cosmetics using AI
+
+**原文链接**: [https://groverlab.org/hnbfpr/2026-08-26-ai-counterfeit-cosmetics.html](https://groverlab.org/hnbfpr/2026-08-26-ai-counterfeit-cosmetics.html)
+
+生成摘要时出错
+
+---
+
+## 74. Kumander Linux – A Linux Distro with a Windows 7 Desktop
+
+**原文标题**: Kumander Linux – A Linux Distro with a Windows 7 Desktop
+
+**原文链接**: [https://www.kumander.org/](https://www.kumander.org/)
+
+生成摘要时出错
+
+---
+
+## 75. Senator calls for criminal investigation of RFK Jr after Guardian report
+
+**原文标题**: Senator calls for criminal investigation of RFK Jr after Guardian report
+
+**原文链接**: [https://www.theguardian.com/us-news/2026/aug/27/rfk-jr-confirmation-hearing-investigation](https://www.theguardian.com/us-news/2026/aug/27/rfk-jr-confirmation-hearing-investigation)
+
+生成摘要时出错
+
+---
+
+## 76. “It works better in the app”
+
+**原文标题**: “It works better in the app”
+
+**原文链接**: [https://shkspr.mobi/blog/2026/08/it-works-better-in-the-app/](https://shkspr.mobi/blog/2026/08/it-works-better-in-the-app/)
+
+生成摘要时出错
+
+---
+
+## 77. ICE eyes spending up to $2M on Boston Dynamics robot dogs to up 'officer safety'
+
+**原文标题**: ICE eyes spending up to $2M on Boston Dynamics robot dogs to up 'officer safety'
+
+**原文链接**: [https://www.bostonglobe.com/2026/08/29/business/boston-dynamics-robot-dog-ice/](https://www.bostonglobe.com/2026/08/29/business/boston-dynamics-robot-dog-ice/)
+
+生成摘要时出错
+
+---
+
+## 78. Show HN: SubSmith – Turn your own videos into language-learning material
+
+**原文标题**: Show HN: SubSmith – Turn your own videos into language-learning material
+
+**原文链接**: [https://subsmith.app](https://subsmith.app)
+
+生成摘要时出错
+
+---
+
+## 79. Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache
 
 **原文标题**: Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache
 
@@ -685,67 +856,57 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 64. ALMA Reveals Long-Lived Hotspots on Betelgeuse's Bubbling Surface
+## 80. Processing in Memory: DRAM Is About to Do Math
 
-**原文标题**: ALMA Reveals Long-Lived Hotspots on Betelgeuse's Bubbling Surface
+**原文标题**: Processing in Memory: DRAM Is About to Do Math
 
-**原文链接**: [https://www.almaobservatory.org/en/audiences/alma-reveals-long-lived-hotspots-on-betelgeuses-bubbling-surface/](https://www.almaobservatory.org/en/audiences/alma-reveals-long-lived-hotspots-on-betelgeuses-bubbling-surface/)
-
-生成摘要时出错
-
----
-
-## 65. Secrets of the Atomic City
-
-**原文标题**: Secrets of the Atomic City
-
-**原文链接**: [https://longreads.com/2026/08/06/radiation-paducah-atavist/](https://longreads.com/2026/08/06/radiation-paducah-atavist/)
+**原文链接**: [https://ben3d.ca/blog/processing-in-memory](https://ben3d.ca/blog/processing-in-memory)
 
 生成摘要时出错
 
 ---
 
-## 66. Intel's Wildcat Lake
+## 81. “Weird” is a weird word
 
-**原文标题**: Intel's Wildcat Lake
+**原文标题**: “Weird” is a weird word
 
-**原文链接**: [https://chipsandcheese.com/p/hot-chips-2026-intels-wildcat-lake](https://chipsandcheese.com/p/hot-chips-2026-intels-wildcat-lake)
-
-生成摘要时出错
-
----
-
-## 67. Interactive pattern discovery in binaries (FF-16-TUI)
-
-**原文标题**: Interactive pattern discovery in binaries (FF-16-TUI)
-
-**原文链接**: [https://github.com/HexLasso/FF-16-TUI](https://github.com/HexLasso/FF-16-TUI)
+**原文链接**: [https://www.deadlanguagesociety.com/p/weird-is-a-weird-word](https://www.deadlanguagesociety.com/p/weird-is-a-weird-word)
 
 生成摘要时出错
 
 ---
 
-## 68. Sovereign Tech Agency invests €500k in Flatpak
+## 82. Introduction to Probability – 2nd Edition
 
-**原文标题**: Sovereign Tech Agency invests €500k in Flatpak
+**原文标题**: Introduction to Probability – 2nd Edition
 
-**原文链接**: [https://modal.cx/blog/announcing-flatpak-sta/](https://modal.cx/blog/announcing-flatpak-sta/)
-
-生成摘要时出错
-
----
-
-## 69. AutoSaddler: Automatic Harness Optimization
-
-**原文标题**: AutoSaddler: Automatic Harness Optimization
-
-**原文链接**: [https://arxiv.org/abs/2608.23041](https://arxiv.org/abs/2608.23041)
+**原文链接**: [https://open.umn.edu/opentextbooks/textbooks/introduction-to-probability](https://open.umn.edu/opentextbooks/textbooks/introduction-to-probability)
 
 生成摘要时出错
 
 ---
 
-## 70. Small Models Have Arrived
+## 83. Bhartrhari's Paradox
+
+**原文标题**: Bhartrhari's Paradox
+
+**原文链接**: [https://www.futilitycloset.com/2026/08/18/bhartrharis-paradox/](https://www.futilitycloset.com/2026/08/18/bhartrharis-paradox/)
+
+生成摘要时出错
+
+---
+
+## 84. Review: Chuwi's $449 Unibook laptop is a funhouse-mirror MacBook Neo
+
+**原文标题**: Review: Chuwi's $449 Unibook laptop is a funhouse-mirror MacBook Neo
+
+**原文链接**: [https://arstechnica.com/gadgets/2026/08/review-chuwis-449-unibook-laptop-is-a-funhouse-mirror-macbook-neo/](https://arstechnica.com/gadgets/2026/08/review-chuwis-449-unibook-laptop-is-a-funhouse-mirror-macbook-neo/)
+
+生成摘要时出错
+
+---
+
+## 85. Small Models Have Arrived
 
 **原文标题**: Small Models Have Arrived
 
@@ -755,227 +916,47 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 71. Terminal-Bench-Science: Evaluating AI agents on scientific research workflows
+## 86. Aspirational Clownmaxxing and Joey's cadillac todo list
 
-**原文标题**: Terminal-Bench-Science: Evaluating AI agents on scientific research workflows
+**原文标题**: Aspirational Clownmaxxing and Joey's cadillac todo list
 
-**原文链接**: [https://www.terminal-bench-science.ai/announcement](https://www.terminal-bench-science.ai/announcement)
-
-生成摘要时出错
-
----
-
-## 72. The Loss of Changelogs
-
-**原文标题**: The Loss of Changelogs
-
-**原文链接**: [https://amxmln.com/blog/2026/the-loss-of-changelogs/](https://amxmln.com/blog/2026/the-loss-of-changelogs/)
+**原文链接**: [https://charlesleifer.com/blog/aspirational-clownmaxxing-and-joey-s-cadillac-todo-list/](https://charlesleifer.com/blog/aspirational-clownmaxxing-and-joey-s-cadillac-todo-list/)
 
 生成摘要时出错
 
 ---
 
-## 73. Barrier lake continues to pose flood risk, China warns
+## 87. Music publishers sue Anthropic, allege "blantant theft" of copyrighted music
 
-**原文标题**: Barrier lake continues to pose flood risk, China warns
+**原文标题**: Music publishers sue Anthropic, allege "blantant theft" of copyrighted music
 
-**原文链接**: [https://kathmandupost.com/national/2026/08/28/barrier-lake-continues-to-pose-flood-risk-china-warns](https://kathmandupost.com/national/2026/08/28/barrier-lake-continues-to-pose-flood-risk-china-warns)
-
-生成摘要时出错
-
----
-
-## 74. Long March 6C rocket stage fragments in orbit, creating cloud of debris
-
-**原文标题**: Long March 6C rocket stage fragments in orbit, creating cloud of debris
-
-**原文链接**: [https://spacenews.com/long-march-6c-rocket-stage-fragments-in-orbit-creating-cloud-of-debris/](https://spacenews.com/long-march-6c-rocket-stage-fragments-in-orbit-creating-cloud-of-debris/)
+**原文链接**: [https://www.axios.com/2026/08/29/anthropic-sony-warner-music-copyright](https://www.axios.com/2026/08/29/anthropic-sony-warner-music-copyright)
 
 生成摘要时出错
 
 ---
 
-## 75. Show HN: Blast – Open-source sandbox-as-a-service
+## 88. Show HN: Qwiksi a CLI tool for adding your signature to a PDFs
 
-**原文标题**: Show HN: Blast – Open-source sandbox-as-a-service
+**原文标题**: Show HN: Qwiksi a CLI tool for adding your signature to a PDFs
 
-**原文链接**: [https://github.com/stanford-mast/blast](https://github.com/stanford-mast/blast)
-
-生成摘要时出错
-
----
-
-## 76. A society that runs on stimulants is badly broken
-
-**原文标题**: A society that runs on stimulants is badly broken
-
-**原文链接**: [https://www.currentaffairs.org/news/a-society-that-runs-on-stimulants-is-badly-broken](https://www.currentaffairs.org/news/a-society-that-runs-on-stimulants-is-badly-broken)
+**原文链接**: [https://github.com/krisraven/qwiksi](https://github.com/krisraven/qwiksi)
 
 生成摘要时出错
 
 ---
 
-## 77. Initially delayed, the pass-through of tariffs to consumer prices has arrived
+## 89. Hilariously fast volume computation with the divergence theorem (2018)
 
-**原文标题**: Initially delayed, the pass-through of tariffs to consumer prices has arrived
+**原文标题**: Hilariously fast volume computation with the divergence theorem (2018)
 
-**原文链接**: [https://www.minneapolisfed.org/article/2026/initially-delayed-the-pass-through-of-tariffs-to-consumer-prices-has-arrived](https://www.minneapolisfed.org/article/2026/initially-delayed-the-pass-through-of-tariffs-to-consumer-prices-has-arrived)
-
-生成摘要时出错
-
----
-
-## 78. 507 Mechanical Movements
-
-**原文标题**: 507 Mechanical Movements
-
-**原文链接**: [https://507movements.com/](https://507movements.com/)
+**原文链接**: [https://alyssarosenzweig.ca/blog/hilariously-fast-volume-computation-with-the-divergence-theorem.html](https://alyssarosenzweig.ca/blog/hilariously-fast-volume-computation-with-the-divergence-theorem.html)
 
 生成摘要时出错
 
 ---
 
-## 79. Superhuman Attention
-
-**原文标题**: Superhuman Attention
-
-**原文链接**: [https://perfloop.ai/blog/superhuman-attention](https://perfloop.ai/blog/superhuman-attention)
-
-生成摘要时出错
-
----
-
-## 80. Select * from Internet.blogposts
-
-**原文标题**: Select * from Internet.blogposts
-
-**原文链接**: [https://pfrazee.leaflet.pub/3mu3p2smmis22](https://pfrazee.leaflet.pub/3mu3p2smmis22)
-
-生成摘要时出错
-
----
-
-## 81. MIT building contaminated with powerful neurotoxin dimethylmercury
-
-**原文标题**: MIT building contaminated with powerful neurotoxin dimethylmercury
-
-**原文链接**: [https://www.reddit.com/r/mit/comments/1w12gb9/dimethyl_mercury_poisoning/](https://www.reddit.com/r/mit/comments/1w12gb9/dimethyl_mercury_poisoning/)
-
-生成摘要时出错
-
----
-
-## 82. Show HN: Conduct, open-source guardrails for LLM and MCP tool calls
-
-**原文标题**: Show HN: Conduct, open-source guardrails for LLM and MCP tool calls
-
-**原文链接**: [https://github.com/sseshachala/conductai](https://github.com/sseshachala/conductai)
-
-生成摘要时出错
-
----
-
-## 83. Microduck
-
-**原文标题**: Microduck
-
-**原文链接**: [https://pollen-robotics.com/microduck/](https://pollen-robotics.com/microduck/)
-
-生成摘要时出错
-
----
-
-## 84. Milo Yiannopoulos Detained by ICE in Louisiana
-
-**原文标题**: Milo Yiannopoulos Detained by ICE in Louisiana
-
-**原文链接**: [https://www.wired.com/story/milo-yiannopoulos-detained-by-ice-in-louisiana/](https://www.wired.com/story/milo-yiannopoulos-detained-by-ice-in-louisiana/)
-
-生成摘要时出错
-
----
-
-## 85. AI Agent Has Root
-
-**原文标题**: AI Agent Has Root
-
-**原文链接**: [https://infernalcode.com/posts/your-ai-agent-has-root/](https://infernalcode.com/posts/your-ai-agent-has-root/)
-
-生成摘要时出错
-
----
-
-## 86. States can regulate prediction markets as gambling, federal appeals court rules
-
-**原文标题**: States can regulate prediction markets as gambling, federal appeals court rules
-
-**原文链接**: [https://www.cnn.com/2026/08/28/business/states-prediction-markets-gambling-federal-appeals-court](https://www.cnn.com/2026/08/28/business/states-prediction-markets-gambling-federal-appeals-court)
-
-生成摘要时出错
-
----
-
-## 87. A Badass Way to Connect Programs Togther What Is OSC?
-
-**原文标题**: A Badass Way to Connect Programs Togther What Is OSC?
-
-**原文链接**: [https://joearms.github.io/published/2016-01-28-A-Badass-Way-To-Connect-Programs-Together.html](https://joearms.github.io/published/2016-01-28-A-Badass-Way-To-Connect-Programs-Together.html)
-
-生成摘要时出错
-
----
-
-## 88. Apple announces price increase for Apple TV and Apple One subscriptions
-
-**原文标题**: Apple announces price increase for Apple TV and Apple One subscriptions
-
-**原文链接**: [https://9to5mac.com/2026/08/28/apple-announces-price-increase-for-apple-tv-and-apple-one-subscriptions/](https://9to5mac.com/2026/08/28/apple-announces-price-increase-for-apple-tv-and-apple-one-subscriptions/)
-
-生成摘要时出错
-
----
-
-## 89. KHMS – a file-based long-term memory an LLM agent installs into itself
-
-**原文标题**: KHMS – a file-based long-term memory an LLM agent installs into itself
-
-**原文链接**: [https://github.com/kostey/khms-memory](https://github.com/kostey/khms-memory)
-
-生成摘要时出错
-
----
-
-## 90. Zig to remove support for wasi-libc
-
-**原文标题**: Zig to remove support for wasi-libc
-
-**原文链接**: [https://codeberg.org/ziglang/zig/pulls/36633](https://codeberg.org/ziglang/zig/pulls/36633)
-
-生成摘要时出错
-
----
-
-## 91. AI demands more engineering discipline. Not less
-
-**原文标题**: AI demands more engineering discipline. Not less
-
-**原文链接**: [https://charity.wtf/p/ai-demands-more-engineering-discipline](https://charity.wtf/p/ai-demands-more-engineering-discipline)
-
-生成摘要时出错
-
----
-
-## 92. Show HN: Boop – tiny, self-hosted push notifications for your apps built in Go
-
-**原文标题**: Show HN: Boop – tiny, self-hosted push notifications for your apps built in Go
-
-**原文链接**: [https://github.com/chrisgreg/boop](https://github.com/chrisgreg/boop)
-
-生成摘要时出错
-
----
-
-## 93. Zohran and the Short Link
+## 90. Zohran and the Short Link
 
 **原文标题**: Zohran and the Short Link
 
@@ -985,37 +966,87 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 94. You've heard of CSV files, but have you heard of CCSV files?
+## 91. 507 Mechanical Movements
 
-**原文标题**: You've heard of CSV files, but have you heard of CCSV files?
+**原文标题**: 507 Mechanical Movements
 
-**原文链接**: [https://robida.net/entries/2026/08/12/youve-heard-of-csv-files-but-have-you-heard-of-ccs](https://robida.net/entries/2026/08/12/youve-heard-of-csv-files-but-have-you-heard-of-ccs)
-
-生成摘要时出错
-
----
-
-## 95. Xylitol linked to strokes and heart attacks
-
-**原文标题**: Xylitol linked to strokes and heart attacks
-
-**原文链接**: [https://www.theguardian.com/society/2026/aug/28/sweetener-xylitol-used-in-chewing-gum-and-jam-linked-to-strokes-and-heart-attacks-study](https://www.theguardian.com/society/2026/aug/28/sweetener-xylitol-used-in-chewing-gum-and-jam-linked-to-strokes-and-heart-attacks-study)
+**原文链接**: [https://507movements.com/](https://507movements.com/)
 
 生成摘要时出错
 
 ---
 
-## 96. Gemini-3.5-Transcribe
+## 92. Microduck
 
-**原文标题**: Gemini-3.5-Transcribe
+**原文标题**: Microduck
 
-**原文链接**: [https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/)
+**原文链接**: [https://pollen-robotics.com/microduck/](https://pollen-robotics.com/microduck/)
 
 生成摘要时出错
 
 ---
 
-## 97. Show HN: The load-bearing vocabulary of Claude
+## 93. Terminal-Bench-Science: Evaluating AI agents on scientific research workflows
+
+**原文标题**: Terminal-Bench-Science: Evaluating AI agents on scientific research workflows
+
+**原文链接**: [https://www.terminal-bench-science.ai/announcement](https://www.terminal-bench-science.ai/announcement)
+
+生成摘要时出错
+
+---
+
+## 94. Sony Music and Warner Chappell Are Suing Anthropic
+
+**原文标题**: Sony Music and Warner Chappell Are Suing Anthropic
+
+**原文链接**: [https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright](https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright)
+
+生成摘要时出错
+
+---
+
+## 95. Service Discontinued
+
+**原文标题**: Service Discontinued
+
+**原文链接**: [https://twitterwebviewer.com/?rev=1](https://twitterwebviewer.com/?rev=1)
+
+生成摘要时出错
+
+---
+
+## 96. How Dactyl Works
+
+**原文标题**: How Dactyl Works
+
+**原文链接**: [https://dactyl.dev/blog/how-dactyl-works/](https://dactyl.dev/blog/how-dactyl-works/)
+
+生成摘要时出错
+
+---
+
+## 97. Sovereign Tech Agency invests €500k in Flatpak
+
+**原文标题**: Sovereign Tech Agency invests €500k in Flatpak
+
+**原文链接**: [https://modal.cx/blog/announcing-flatpak-sta/](https://modal.cx/blog/announcing-flatpak-sta/)
+
+生成摘要时出错
+
+---
+
+## 98. The IBM PC, Part 2: Tsunami
+
+**原文标题**: The IBM PC, Part 2: Tsunami
+
+**原文链接**: [https://technicshistory.com/2026/08/29/the-ibm-pc-part-2-tsunami/](https://technicshistory.com/2026/08/29/the-ibm-pc-part-2-tsunami/)
+
+生成摘要时出错
+
+---
+
+## 99. Show HN: The load-bearing vocabulary of Claude
 
 **原文标题**: Show HN: The load-bearing vocabulary of Claude
 
@@ -1025,31 +1056,11 @@ Orbify 是一个导航技术平台，目前正在展示其 “Demo 2 - v72” �
 
 ---
 
-## 98. Bye, Bye GitHub
+## 100. Stopping the smart TV from being used against you
 
-**原文标题**: Bye, Bye GitHub
+**原文标题**: Stopping the smart TV from being used against you
 
-**原文链接**: [https://log.ozgur.works/bye-bye-github.html](https://log.ozgur.works/bye-bye-github.html)
-
-生成摘要时出错
-
----
-
-## 99. Suica, Japan's First IC Transit Card
-
-**原文标题**: Suica, Japan's First IC Transit Card
-
-**原文链接**: [https://www.tokyodev.com/articles/the-story-of-suica](https://www.tokyodev.com/articles/the-story-of-suica)
-
-生成摘要时出错
-
----
-
-## 100. Previewing the Model Hardware Standard
-
-**原文标题**: Previewing the Model Hardware Standard
-
-**原文链接**: [https://www.anthropic.com/news/model-hardware-standard-research-preview](https://www.anthropic.com/news/model-hardware-standard-research-preview)
+**原文链接**: [https://www.s-config.com/stopping-a-smart-tv-from-being-used-against-you/](https://www.s-config.com/stopping-a-smart-tv-from-being-used-against-you/)
 
 生成摘要时出错
 
