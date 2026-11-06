@@ -1,122 +1,322 @@
 [
   {
-    "id": "50383740",
-    "title": "Kagi Search for Everyone",
-    "url": "https://kagi.com/changelog",
-    "summary": "Kagi has announced that its search engine is now accessible without an account, allowing anyone to perform up to 50 searches for free (with 100 more available upon registration). This shift aims to make the ad-free service easier to recommend to friends and family.\n\nAlongside this accessibility shift, Kagi issued a critique of Google’s plan to bundle AI tools with Search for school accounts, positioning Kagi as a non-corporate alternative for educators who refuse to have search access held \"hostage\" by advertising companies.\n\nSignificant updates were rolled out across the Kagi ecosystem:\n\n*   **Android App:** The app features a major redesign with native UI elements, a rebuilt voice search, and a new \"Quick Answer\" button. Users can now also search by pasting images directly into the search field.\n*   **Kagi Assistant:** Voice input has been overhauled to be as fluid as typing, and the UI now clearly distinguishes between temporary and permanent threads.\n*   **Kagi Translate:** The service now offers real-time \"Proofread\" corrections and improved accuracy for several languages, including Kurdish and Latin. It also features better handling of PDF and Office file formatting.\n*   **Kagi News:** Recently featured on Google Play, the app now prevents duplicate stories from appearing across different categories and has streamlined its settings.\n*   **Small Web:** The app added new topics (Design, Business, Sports) and now allows users to hide uninterested topics permanently.\n\nThe update concluded with a massive list of community-driven bug fixes, addressing issues ranging from regional search accuracy in Canada to improved Wikipedia widget functionality and various UI refinements across the web and mobile platforms.",
-    "chinese_title": "面向所有人的 Kagi 搜索",
-    "chinese_summary": "Kagi 宣布其搜索引擎现在无需账号即可访问，任何人均可免费进行多达 50 次搜索（注册后可再获得 100 次额外额度）。此举旨在让这款无广告服务更易于向亲友推荐。\n\n在开放访问权限的同时，Kagi 还对谷歌将 AI 工具与学校账户搜索捆绑的计划提出了批评，将自己定位为教育工作者的非企业化替代方案，服务于那些拒绝让搜索访问权被广告公司“绑架”的人群。\n\nKagi 生态系统发布了多项重大更新：\n\n*   **Android 应用：** 采用原生 UI 元素进行了重大重新设计，重建了语音搜索功能，并新增了“快速回答”按钮。用户现在还可以通过直接将图片粘贴到搜索框来进行搜索。\n*   **Kagi Assistant：** 语音输入经过全面改进，体验如打字般流畅，且 UI 现可清晰区分临时和永久线程。\n*   **Kagi Translate：** 该服务现提供实时“润色”校正，并提高了包括库尔德语和拉丁语在内的多种语言的准确性。同时，它对 PDF 和 Office 文件的格式处理也更加完善。\n*   **Kagi News：** 该应用近期在 Google Play 获得推荐，现已支持防止重复故事出现在不同类别中，并精简了设置选项。\n*   **Small Web：** 增加了新主题（设计、商业、体育），并允许用户永久隐藏不感兴趣的主题。\n\n更新最后列出了大量由社区驱动的错误修复，涵盖了从加拿大地区搜索准确性到维基百科小组件功能改进，以及网页和移动平台上的多项 UI 优化。"
+    "id": "50397429",
+    "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+    "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+    "summary": "This article explores how to cost-effectively automate the grading of **identity resolution (IDR)**—the process of mapping data records to unique real-world individuals. Specifically, it focuses on detecting \"over-merging,\" where records of different people are incorrectly combined.\n\nThe researchers compared high-end \"frontier\" models (Claude Opus 5.5) with cheaper, faster \"decision models\" (Jev and GPT-6 Luna). While frontier models are the most accurate, they are significantly more expensive and slower. Conversely, decision models are up to 90x cheaper and 10x faster but trail in accuracy by about 6 percentage points on difficult tasks.\n\nThe key finding is the importance of **confidence calibration**. While Luna performs better out-of-the-box on simple cases, it is frequently overconfident when wrong. Jev, however, is better calibrated; its mistakes usually correlate with low confidence scores. This makes Jev superior for a **hybrid model harness**: \n1. Jev processes all records. \n2. If Jev’s confidence falls below a certain threshold (e.g., 30–90%), the case is automatically routed to Claude Opus for a second opinion.\n\n**Key Results:**\n*   **Accuracy:** The Hybrid Jev approach achieved frontier-level accuracy (98.8% on easier tests, 95.3% on harder tests).\n*   **Cost:** This hybrid method achieved these results at **over 4x lower cost** than using Opus alone on easier data, and nearly 2x lower on harder data.\n*   **Scalability:** The hybrid system automatically scales spending based on difficulty; it routes more cases to the expensive model only when the data is noisy or complex.\n\nThe article concludes that for complex tasks like IDR grading, a well-calibrated cheap model paired with a frontier model provides a scalable, high-accuracy solution that outperforms standalone models on a cost-benefit basis.",
+    "chinese_title": "一个能向 Opus 寻求帮助的 Jev，能以 1/4 的成本实现 Opus 级别的准确度。",
+    "chinese_summary": "本文探讨了如何以高性价比的方式实现**身份解析 (IDR)** 评分的自动化。身份解析是指将数据记录映射到现实世界中唯一个体的过程。文章特别关注于检测“过度合并”现象，即不同人的记录被错误地合并在一起。\n\n研究人员对比了高端的“前沿模型”（Claude Opus 5.5）与更便宜、更快速的“决策模型”（Jev 和 GPT-6 Luna）。虽然前沿模型的准确率最高，但其价格显著更高且速度较慢。相比之下，决策模型的价格便宜多达 90 倍，速度快 10 倍，但在困难任务上的准确率落后约 6 个百分点。\n\n核心发现是**置信度校准**的重要性。虽然 Luna 在简单案例上的开箱即用表现更好，但它在出错时往往过度自信。而 Jev 的校准效果更好，其错误通常与低置信度评分相关。这使得 Jev 在**混合模型框架**中更具优势：\n1. Jev 处理所有记录。\n2. 如果 Jev 的置信度低于特定阈值（如 30–90%），该案例将自动路由至 Claude Opus 进行二次复核。\n\n**主要结果：**\n*   **准确率：** 混合型 Jev 方案达到了前沿模型的准确率水平（简单测试为 98.8%，困难测试为 95.3%）。\n*   **成本：** 在简单数据上，该混合方案的成本比单独使用 Opus **低 4 倍以上**；在困难数据上，成本降低了近 2 倍。\n*   **可扩展性：** 混合系统根据任务难度自动调整支出；仅在数据存在噪声或复杂时，才会将更多案例路由给昂贵的模型。\n\n文章总结指出，对于像 IDR 评分这样的复杂任务，将校准良好的廉价模型与前沿模型相结合，可以提供一种可扩展、高准确率的解决方案，其性价比优于任何单一模型。"
   },
   {
-    "id": "50384233",
-    "title": "MS Paint Remote Code Execution Vulnerability",
-    "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
-    "summary": "The provided text does not contain information about the vulnerability itself; rather, it is a technical error message stating that the CVE (Common Vulnerabilities and Exposures) website requires JavaScript to be enabled to display its content.\n\nHowever, based on the title **\"MS Paint Remote Code Execution Vulnerability,\"** the article likely refers to **CVE-2023-36010**, a significant security flaw identified in Microsoft Paint. Here is a summary of that vulnerability:\n\n**Summary of MS Paint RCE (CVE-2023-36010)**\n\n*   **Vulnerability Type:** This is a Remote Code Execution (RCE) vulnerability, which is considered high-risk because it allows an attacker to run unauthorized code on a victim's machine.\n*   **The Threat:** The flaw is triggered when a user opens a specially crafted, malicious file using the Microsoft Paint application. \n*   **Impact:** If an attacker successfully exploits this vulnerability, they could gain the same privileges as the logged-in user. This could allow them to install programs, view or delete sensitive data, or create new accounts with full user rights.\n*   **Attack Vector:** The attack requires user interaction. An attacker would typically use social engineering—such as phishing emails or malicious downloads—to convince a target to open the compromised image file.\n*   **Resolution:** Microsoft has released official security patches to address this issue. Users are urged to update their Windows operating systems to ensure the latest security fixes are applied to the Paint application. \n\nTo view the specific details on the CVE website, you would need to enable JavaScript in your browser settings as prompted by the text you provided.",
-    "chinese_title": "MS Paint 远程代码执行漏洞",
-    "chinese_summary": "所提供的文本并不包含漏洞本身的信息，而是一条技术错误提示，说明 CVE（常见漏洞与披露）网站需要启用 JavaScript 才能显示内容。\n\n然而，根据标题“**MS Paint 远程代码执行漏洞**”，该文章可能指的是 **CVE-2023-36010**，这是在 Microsoft Paint 中发现的一个重大安全漏洞。以下是该漏洞的摘要：\n\n**MS Paint RCE (CVE-2023-36010) 摘要**\n\n*   **漏洞类型：** 这是一种远程代码执行（RCE）漏洞，被视为高风险漏洞，因为它允许攻击者在受害者的机器上运行未经授权的代码。\n*   **威胁：** 当用户使用 Microsoft Paint 应用程序打开一个经特殊设计的恶意文件时，就会触发该漏洞。\n*   **影响：** 如果攻击者成功利用此漏洞，他们可以获得与当前登录用户相同的权限。这可能允许他们安装程序、查看或删除敏感数据，或者创建具有完整用户权限的新账户。\n*   **攻击向量：** 该攻击需要用户交互。攻击者通常会使用社会工程手段（如网络钓鱼邮件或恶意下载），诱导目标用户打开受感染的图像文件。\n*   **解决方法：** 微软已发布官方安全补丁以修复此问题。建议用户尽快更新 Windows 操作系统，以确保 Paint 应用程序已应用最新的安全补丁。\n\n若要查看 CVE 网站上的具体详情，您需要按照所提供文本的提示，在浏览器设置中启用 JavaScript。"
+    "id": "50397994",
+    "title": "AI is dramatically accelerating AI research",
+    "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+    "summary": "This article by Ajeya Cotra discusses a METR report indicating that AI research is now accelerating at a \"dramatic\" rate, particularly at Anthropic. As of late 2026, evidence suggests that AI capabilities are progressing twice as fast as historical norms, meeting a critical threshold defined in Anthropic’s Responsible Scaling Policy.\n\nKey points include:\n\n*   **AI-Driven Automation:** This acceleration is primarily attributed to AI automating R&D tasks rather than increased compute or human headcount. While overall progress has doubled, individual researcher productivity has seen a massive **10x to 12x uplift**, acting as a \"time warp\" for development.\n*   **Compounding Progress:** Cotra argues that if this acceleration continues to compound, naive extrapolation points toward the achievement of **superintelligence within a single year**. As AI improves the tools used to build AI, the doubling time for progress could shrink from months to weeks.\n*   **Existential Risk and Unpreparedness:** The author warns that the industry is not prepared for an imminent \"intelligence explosion.\" Current security at major labs is deemed insufficient to protect model weights from state actors, and robust alignment and governance frameworks are not yet in place. Rapidly developed superintelligence could lead to human extinction if these systems are misaligned or stolen.\n*   **Lack of Transparency:** Much of the evidence in the METR report is redacted. Cotra emphasizes that the lack of transparent data prevents external scientists from verifying these timelines, making it difficult for the world to prepare for the transition.\n\nUltimately, the post serves as a warning: the feedback loop of AI-driven research is shortening timelines significantly, and the window to establish necessary safety and security measures is closing.",
+    "chinese_title": "人工智能正在大幅加速人工智能研究。",
+    "chinese_summary": "Ajeya Cotra 的这篇文章讨论了 METR 的一份报告，指出 AI 研究正以“惊人”的速度加速，在 Anthropic 尤为明显。截至 2026 年底，有证据表明 AI 能力的进步速度是历史常规水平的两倍，触及了 Anthropic《负责任扩展政策》（Responsible Scaling Policy）中定义的关键阈值。\n\n核心观点包括：\n\n*   **AI 驱动的自动化：** 这种加速主要归功于 AI 对研发（R&D）任务的自动化，而非算力或人力的增加。虽然整体进展翻倍，但个体研究人员的生产力实现了 10 到 12 倍的巨大提升，为开发带来了“时间扭曲”般的效果。\n*   **复合式进展：** Cotra 认为，如果这种加速持续产生复合效应，简单的线性推演预示着在一年内即可实现超人工智能。随着 AI 不断改进用于构建 AI 的工具，进步的翻倍时间可能会从数月缩短至数周。\n*   **生存风险与准备不足：** 作者警告称，该行业尚未为迫在眉睫的“智能爆炸”做好准备。目前各大实验室的安保水平被认为不足以保护模型权重免受国家级力量的侵害，且稳健的对齐和治理框架尚未就绪。如果这些系统出现对齐偏差或被窃取，快速发展的超人工智能可能导致人类灭绝。\n*   **缺乏透明度：** METR 报告中的许多证据已被删减。Cotra 强调，透明数据的缺失使外部科学家无法验证这些时间线，增加了世界应对这一转型的难度。\n\n最后，本文发出了警示：AI 驱动研究的反馈回路正在显著缩短开发周期，而建立必要安全与防御措施的窗口期正在关闭。"
   },
   {
-    "id": "50378228",
-    "title": "sshole",
-    "url": "https://sshhole.com",
+    "id": "50397219",
+    "title": "Firecracker VM Escape: PwnEscape Part 2",
+    "url": "https://pwn.ai/blog/firecracker-escape",
     "summary": "生成摘要时出错",
-    "chinese_title": "sshole",
+    "chinese_title": "Firecracker 虚拟机逃逸：PwnEscape 第 2 部分",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50379704",
-    "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
-    "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
-    "summary": "**Summary of Alpine Linux Security Advisory: OpenSSH-server Authentication Bypass**\n\nOn November 5, 2026, Alpine Linux reported a critical vulnerability in `openssh-server` that allows attackers to bypass password authentication. By sending a specifically crafted long password (257 to 1024 bytes), an attacker can gain access to accounts without knowing the actual password.\n\n**Technical Cause**\nThe issue occurs in versions of OpenSSH built without PAM (the Alpine default). When `sshd` processes an extremely long password, the underlying `musl` C library’s `crypt()` function returns `*` as an error indicator. If the target account’s password field in `/etc/shadow` is also `*` (standard for key-only accounts), the strings match, and access is granted. This exploit requires at least one other account on the system to have a valid `$5$` or `$6$` password hash to provide a salt.\n\n**Affected Systems**\nSystems are vulnerable if all the following conditions are met:\n1. They run the standard Alpine `openssh-server` (without PAM) or `openssh-server-pam` with `UsePAM no`.\n2. `PasswordAuthentication` is enabled (the default).\n3. The target account has a `*` password field (common for `root` and the `alpine` user in cloud images).\n4. At least one local account has a modern password hash.\n\nAffected releases include Alpine 3.16 through 3.24 and edge.\n\n**Remediation**\n1. **Update:** Users should immediately run `apk upgrade -U -a` to install fixed packages (e.g., v3.24.4, v3.23.8). \n2. **Restart:** You **must** restart the SSH daemon (`rc-service sshd restart`) for the fix to take effect.\n3. **Mitigation:** If updates are not possible, disable password logins by setting `PasswordAuthentication no` in the `sshd` configuration.\n\n**Detection**\nAdministrators should check `/var/log/messages` for \"Accepted password\" entries for accounts that should only permit key-based logins (like `root` or `alpine`). If such entries exist, the system should be treated as compromised.",
-    "chinese_title": "Alpine Linux 安全公告：OpenSSH-server 密码身份验证绕过",
-    "chinese_summary": "**Alpine Linux 安全公告摘要：OpenSSH-server 身份验证绕过漏洞**\n\n2026年11月5日，Alpine Linux 报告了 `openssh-server` 中的一个严重漏洞，该漏洞允许攻击者绕过密码身份验证。通过发送经过特殊构造的长密码（257 至 1024 字节），攻击者可以在不知道实际密码的情况下获得账户访问权限。\n\n**技术成因**\n该问题出现在未集成 PAM（Alpine 的默认配置）的 OpenSSH 版本中。当 `sshd` 处理极长密码时，底层 `musl` C 库的 `crypt()` 函数会返回 `*` 作为错误指示符。如果目标账户在 `/etc/shadow` 文件中的密码字段也是 `*`（这是仅限密钥登录账户的标准设置），则字符串匹配成功，从而授予访问权限。此漏洞利用要求系统中至少有另一个账户拥有有效的 `$5$` 或 `$6$` 密码哈希值，以提供盐值（salt）。\n\n**受影响系统**\n如果同时满足以下所有条件，则系统极易受到攻击：\n1. 运行标准的 Alpine `openssh-server`（不带 PAM）或设置了 `UsePAM no` 的 `openssh-server-pam`。\n2. 启用了 `PasswordAuthentication`（默认配置）。\n3. 目标账户的密码字段为 `*`（在云镜像的 `root` 和 `alpine` 用户中十分常见）。\n4. 至少有一个本地账户拥有现代密码哈希值。\n\n受影响的版本包括 Alpine 3.16 至 3.24 以及 edge 分支。\n\n**修复建议**\n1. **更新**：用户应立即运行 `apk upgrade -U -a` 来安装修复后的软件包（例如 v3.24.4、v3.23.8）。\n2. **重启**：您**必须**重启 SSH 守护进程（`rc-service sshd restart`）才能使修复生效。\n3. **缓解措施**：如果无法进行更新，请通过在 `sshd` 配置中设置 `PasswordAuthentication no` 来禁用密码登录。\n\n**检测方法**\n管理员应检查 `/var/log/messages` 中是否存在原本仅允许密钥登录的账户（如 `root` 或 `alpine`）的 “Accepted password” 条目。如果存在此类记录，则应视系统已被攻破。"
+    "id": "50388001",
+    "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+    "url": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/",
+    "summary": "Unable to access the article link.",
+    "chinese_title": "美国联邦航空管理局表示将在2028年前从空中交通管制系统中逐步淘汰软盘。",
+    "chinese_summary": "无法访问文章链接。"
   },
   {
-    "id": "50383057",
-    "title": "The Hackintosh Reborn",
-    "url": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
-    "summary": "In this article, set in November 2026, the author explores the unexpected revival of the \"Hackintosh\" movement. While the community previously anticipated its own demise following Apple’s transition to ARM architecture and the official end of x86 support in macOS 27 (Golden Gate), the rise of AI-assisted development has sparked a significant \"rebirth.\"\n\nThe author highlights how AI tools like Claude Code, OpenAI Codex, and AI-integrated reverse-engineering tools (such as Ghidra) have revolutionized the ability to port Apple software to non-Apple hardware. These technologies have lowered the barrier to entry, allowing even novice developers to create functional apps and workarounds without manual coding. \n\nKey recent breakthroughs cited include:\n*   **macOS 27** running on Snapdragon laptops and ARM-based single-board computers (RK3588).\n*   **iOS 17** successfully ported to the Nintendo Switch OLED.\n*   **NVIDIA 50-series GPU support** via new tools like \"nullmoth.\"\n*   Successful translation of ARM-only macOS 27 back to **x86 architecture**.\n\nThe article concludes that while Apple’s ecosystem has become increasingly closed, AI provides a \"glimmer of hope\" for hardware enthusiasts. By automating complex compatibility tasks, AI is enabling users to reclaim control over their hardware and continue the tradition of running macOS on diverse platforms.",
-    "chinese_title": "黑苹果重生",
-    "chinese_summary": "本文背景设定在2026年11月，作者探讨了“黑苹果”（Hackintosh）运动出人意料的复兴。此前，随着苹果转向ARM架构以及macOS 27 (Golden Gate) 正式终止对x86的支持，社区曾预感末日将至，但AI辅助开发的崛起却引发了一场显著的“重生”。\n\n作者指出，Claude Code、OpenAI Codex等AI工具以及集成了AI的反向工程工具（如Ghidra），彻底改变了将苹果软件移植到非苹果硬件的能力。这些技术降低了准入门槛，让即使是新手开发者也能在无需手动编写代码的情况下，开发出功能性应用和解决方案。\n\n文中引用的近期重大突破包括：\n*   **macOS 27** 在骁龙（Snapdragon）笔记本电脑和基于ARM架构的单板计算机（RK3588）上运行。\n*   **iOS 17** 成功移植到 Nintendo Switch OLED。\n*   通过 “nullmoth” 等新工具实现对 **NVIDIA 50系列显卡**的支持。\n*   成功将仅限ARM架构的 macOS 27 重新转译回 **x86架构**。\n\n文章最后总结道，尽管苹果的生态系统正变得愈发封闭，但AI为硬件爱好者提供了一线生机。通过自动化处理复杂的兼容性任务，AI正赋予用户重新掌控硬件的能力，并让在多元平台上运行macOS的传统得以延续。"
+    "id": "50391456",
+    "title": "Tesla to wind down Cybertruck production",
+    "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+    "summary": "Tesla CEO Elon Musk has announced that production of the Cybertruck at the Texas gigafactory will wind down by mid-2027. The decision follows years of disappointing sales for the futuristic pickup, which failed to meet Musk’s original target of 250,000 annual units. According to reports, Tesla sold only 20,237 Cybertrucks in 2025, a 48% drop from the previous year.\n\nThe primary reason for the wind-down is a strategic shift toward the **Cybercab**, Tesla’s dedicated robotaxi. Musk intends to repurpose the Austin facility’s production capacity to support his goal of transforming Tesla into an AI and robotics-focused company. The Cybercab, which lacks a steering wheel and pedals, is currently being tested in small pilot fleets in Austin.\n\nExperts and analysts point to several factors that hindered the Cybertruck's success:\n*   **Regulatory Barriers:** Its heavy, sharp-edged stainless-steel design made it impossible to gain safety approval in markets like Europe due to pedestrian impact regulations.\n*   **Niche Appeal:** While touted as a rival to legacy pickups from Ford and GM, its unconventional design failed to capture the broader US market, where electric pickups have generally struggled.\n*   **Manufacturing Complexity:** The Austin plant is the only facility equipped to handle the model's specialized components, making a relocation of production unlikely.\n\nMusk described the move as the \"end of an era\" while maintaining that the Cybertruck was the \"best vehicle Tesla has ever made.\" Lead engineer Wes Morrill added that the pickup served as a vital \"technology development platform\" that will live on through the innovations integrated into the Cybercab.",
+    "chinese_title": "特斯拉将逐步缩减 Cybertruck 产量",
+    "chinese_summary": "Tesla CEO Elon Musk has announced that production of the Cybertruck at the Texas gigafactory will wind down by mid-2027. The decision follows years of disappointing sales for the futuristic pickup, which failed to meet Musk’s original target of 250,000 annual units. According to reports, Tesla sold only 20,237 Cybertrucks in 2025, a 48% drop from the previous year.\n\nThe primary reason for the wind-down is a strategic shift toward the **Cybercab**, Tesla’s dedicated robotaxi. Musk intends to repurpose the Austin facility’s production capacity to support his goal of transforming Tesla into an AI and robotics-focused company. The Cybercab, which lacks a steering wheel and pedals, is currently being tested in small pilot fleets in Austin.\n\nExperts and analysts point to several factors that hindered the Cybertruck's success:\n*   **Regulatory Barriers:** Its heavy, sharp-edged stainless-steel design made it impossible to gain safety approval in markets like Europe due to pedestrian impact regulations.\n*   **Niche Appeal:** While touted as a rival to legacy pickups from Ford and GM, its unconventional design failed to capture the broader US market, where electric pickups have generally struggled.\n*   **Manufacturing Complexity:** The Austin plant is the only facility equipped to handle the model's specialized components, making a relocation of production unlikely.\n\nMusk described the move as the \"end of an era\" while maintaining that the Cybertruck was the \"best vehicle Tesla has ever made.\" Lead engineer Wes Morrill added that the pickup served as a vital \"technology development platform\" that will live on through the innovations integrated into the Cybercab."
   },
   {
-    "id": "50383963",
-    "title": "Tencent Launches Hy4, One of the Leading Open-Source AI Models",
-    "url": "https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/",
+    "id": "50394855",
+    "title": "First steps in bare-metal programming using UEFI",
+    "url": "https://kevinboone.me/efitest_index.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "Tencent Launches Hy4, One of the Leading Open-Source AI Models",
+    "chinese_title": "UEFI 裸机编程入门",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50381383",
-    "title": "Window Sweaters",
-    "url": "https://github.com/saragordic/window-sweaters",
-    "summary": "**Window Sweaters** is a decorative macOS application designed to give window borders a \"cozy,\" knitted aesthetic. Created by Sara Gordic, the app applies colorful, textured borders to windows, featuring hand-picked, custom colorways for 37 popular applications, including Safari, Notion, Slack, and VS Code. For unsupported apps, the software dynamically samples colors from the app’s icon to generate matching patterns like zigzags, picnics, or twinkles.\n\n**Key Features and Customization:**\nUsers can control the app via a menu bar icon, which allows for toggling borders on specific apps, adjusting stitch size, changing patterns, or pausing the effect. Advanced users can further personalize their experience by editing configuration files (`apps.conf`) or adding custom PNG charts to the Application Support folder to create unique knitting patterns.\n\n**Installation and Technical Details:**\nThe app can be installed via Homebrew, by downloading the latest ZIP from GitHub, or by building from source. Because it is not yet notarized by Apple, users may need to manually approve the app in System Settings. Additionally, it requires Accessibility permissions to track window focus accurately.\n\n**Compatibility:**\nBuilt on the foundation of *JankyBorders* by Felix Kratz, Window Sweaters is open-source (GPL-3.0). It is designed for macOS 13 and later, supporting both Intel and Apple Silicon Macs. While the app is functional, the developer notes it is a \"work in progress,\" meaning borders may momentarily hide during window resizing, and future macOS updates may affect its use of private window APIs.",
-    "chinese_title": "窗户毛衣",
-    "chinese_summary": "**Window Sweaters** 是一款精致的 macOS 装饰应用，旨在为窗口边框营造出一种“温馨”的针织美学。该应用由 Sara Gordic 开发，能为窗口添加色彩丰富、极具质感的边框，并为 Safari、Notion、Slack 和 VS Code 等 37 款常用应用提供了精心挑选的定制配色方案。对于暂不支持的应用，软件会动态采样应用图标的颜色，以生成锯齿、野餐格或闪烁等匹配图案。\n\n**核心功能与自定义：**\n用户可以通过菜单栏图标控制应用，包括开关特定应用的边框、调整针脚大小、更换图案或暂停效果。高级用户还可以通过编辑配置文件（`apps.conf`）或在 Application Support 文件夹中添加自定义 PNG 图表来创建独特的编织图案，进一步实现个性化体验。\n\n**安装与技术细节：**\n该应用可以通过 Homebrew 安装，也可以从 GitHub 下载最新的 ZIP 包或通过源码构建。由于该应用尚未经过 Apple 公证，用户可能需要在“系统设置”中手动批准运行。此外，它需要“辅助功能”权限才能准确追踪窗口焦点。\n\n**兼容性：**\nWindow Sweaters 基于 Felix Kratz 的 *JankyBorders* 开发，是一款开源软件（GPL-3.0）。它专为 macOS 13 及更高版本设计，同时支持 Intel 和 Apple Silicon 芯片。虽然应用目前功能正常，但开发者指出其仍处于“开发中”阶段，这意味着在调整窗口大小时边框可能会暂时消失，且未来的 macOS 更新可能会影响其对私有窗口 API 的使用。"
+    "id": "50397017",
+    "title": "Restaurant Delivery Payment-Skimming Campaign",
+    "url": "https://www.infohawk.com/news/2026-11-05-scamwich-restaurant-skimming",
+    "summary": "In November 2026, InfoHawk researchers uncovered a massive payment-skimming campaign involving 820 suspicious domains impersonating 35 major US restaurant chains, including Jimmy John’s, Jersey Mike’s, Chipotle, and Firehouse Subs. \n\nThe operation utilizes a sophisticated \"reverse-proxy\" technique. Instead of creating crude imitations, attackers mirror the legitimate websites’ original code and interface in real-time. This allows the fraudulent sites to look and behave exactly like the authentic ones without requiring the actual restaurant's infrastructure to be hacked. \n\nThe primary goal is financial theft. When a customer attempts to pay for an order, they are presented with a malicious checkout form. This form captures credit card information and prompts users for their bank’s SMS verification codes. By obtaining both the card details and the one-time verification code, attackers can bypass security protocols to authorize fraudulent transactions.\n\nKey details of the campaign include:\n*   **Scale:** 820 domains identified, with 808 using the **.delivery** top-level domain.\n*   **Primary Target:** Jimmy John’s was the most heavily targeted brand, with 404 associated typosquatting domains.\n*   **User Experience:** The sites are nearly indistinguishable from genuine platforms, exploiting consumer familiarity with online ordering flows.\n\nThis campaign highlights an evolving threat where criminals use high-fidelity clones to deceive customers at the exact moment of payment, making it difficult for even tech-savvy users to detect the fraud.",
+    "chinese_title": "餐饮外卖支付侧录攻击活动",
+    "chinese_summary": "2026年11月，InfoHawk的研究人员揭露了一场大规模的支付信息窃取活动。该活动涉及820个可疑域名，模仿了包括Jimmy John’s、Jersey Mike’s、Chipotle和Firehouse Subs在内的35家美国主要连锁餐厅。\n\n该行动采用了先进的“反向代理”技术。攻击者并非制作粗糙的仿制品，而是实时镜像合法网站的原始代码和界面。这使得欺诈网站的外观和行为与真实网站完全一致，且无需入侵餐厅的实际基础设施。\n\n其主要目标是财务窃取。当客户尝试支付订单时，会看到一个恶意的结账表单。该表单会捕捉信用卡信息，并提示用户输入银行发送的短信验证码。通过同时获取卡片详情和一次性验证码，攻击者可以绕过安全协议，授权欺诈性交易。\n\n该活动的关键细节包括：\n*   **规模：** 已识别出820个域名，其中808个使用了 **.delivery** 顶级域名。\n*   **主要目标：** Jimmy John’s 是受攻击最严重的品牌，关联的仿冒域名达404个。\n*   **用户体验：** 这些网站与真实平台几乎难辨真伪，利用了消费者对在线订餐流程的熟悉程度。\n\n这一活动凸显了一种不断演变的威胁：犯罪分子利用高仿真克隆网站在支付的关键时刻欺骗客户，使得即使是精通技术的用户也难以察觉此类欺诈。"
   },
   {
-    "id": "50383739",
-    "title": "Goodbye from Salon",
-    "url": "https://www.salon.com/2026/11/05/goodbye-from-salon/",
-    "summary": "After 31 years of publication, the pioneering digital media outlet **Salon** announced it is ceasing operations on November 5, 2026. \n\nFounded in November 1995 during the early days of the internet, Salon was a trailblazer in digital-native journalism. The publication established a distinct voice by blending politics, culture, and social criticism, aiming to use the web to connect journalism with readers in innovative ways. Throughout its history, the site focused on examining power structures, questioning societal assumptions, and providing a platform for overlooked perspectives.\n\nThe decision to close stems from the evolving and increasingly difficult business landscape for independent digital media. The announcement noted that after careful consideration, the organization determined its publishing model was no longer sustainable in the current economic climate.\n\nIn its farewell statement, Salon expressed profound gratitude to its founders, staff, and contributors who shaped the publication over three decades. Most importantly, it thanked its loyal readership for their engagement, subscriptions, and commitment to a community where \"ideas mattered.\"\n\nWhile the publication is coming to an end, its leadership emphasized pride in its 31-year run, asserting that Salon helped define what digital journalism could become. The farewell concludes by expressing hope that the site’s legacy of fostering meaningful conversation and original reporting will continue to influence the media landscape long after its closure.",
-    "chinese_title": "来自 Salon 的告别",
-    "chinese_summary": "在历经31年的出版历程后，先驱数字媒体《沙龙》（Salon）宣布将于2026年11月5日停止运营。\n\n《沙龙》成立于1995年11月的互联网早期，是数字原生新闻领域的开拓者。该刊物通过融合政治、文化和社会评论，形成了独特的风格，旨在利用网络以创新方式将新闻报道与读者联系起来。在其历史长河中，该网站始终致力于审视权力结构、质疑社会假设，并为被忽视的观点提供平台。\n\n关闭的决定源于独立数字媒体日益艰难且不断变化的商业环境。公告指出，经过慎重考虑，该机构认定其出版模式在当前的经济气候下已无法持续。\n\n在告别声明中，《沙龙》向三十年来塑造该刊物的创始人、员工和撰稿人表达了深切的谢意。最重要的是，它感谢了忠实读者群的参与、订阅以及对这个“思想至上”社区的坚守。\n\n尽管该刊物即将画上句号，但其领导层强调，他们为这31年的历程感到自豪，并坚称《沙龙》帮助定义了数字新闻的发展方向。告别辞最后表示，希望该网站在促进有意义的对话和原创报道方面留下的遗产，在关闭后仍将长期影响媒体格局。"
+    "id": "50389333",
+    "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+    "url": "https://github.com/ppmpreetham/BUI",
+    "summary": "**BUI (Blender UI)** is a high-performance, standalone UI library that decouples Blender’s interface from the 3D software, allowing developers to use its widget drawing and interaction rules in their own products. Written in a small C core, it provides the \"Blender feel\"—including precision sliders, math-capable fields, and fuzzy search—to developers using Python, Rust, JavaScript (React/Svelte), C, and C++.\n\n**Key Highlights:**\n\n*   **Performance and Efficiency:** BUI is designed to be battery and memory efficient. It utilizes \"damage rendering\" (only redrawing changed areas) and offers an opt-in GPU renderer. Benchmarks indicate it is 2–4× faster than GPUI, with sub-100ms startup times and a memory footprint as low as 19 MB.\n*   **Language Versatility:** \n    *   **Python:** Supports existing `tkinter` and `ttk` code, Qt-style syntax, and 45+ native Blender components.\n    *   **Rust & JavaScript:** Allows for building UIs using HTML, CSS (Flexbox, Grid), and Tailwind without a browser engine or webview.\n    *   **Dear ImGui:** Provides a Blender-themed skin and interaction model for ImGui applications.\n*   **Rich Feature Set:** It includes native Blender widgets like node editors, color wheels, and pie menus. It also features advanced image/video handling with memory-budgeted caching and supports modern CSS effects like filters and animations.\n*   **Native and Lightweight:** BUI produces small standalone executables (6–7 MB) and supports native windowing on Windows (Win32), Linux (X11/Wayland), and macOS. \n\nIn summary, BUI offers a \"frugal\" and fast alternative to Electron or browser-based frameworks, giving any application the aesthetic and efficiency of Blender’s award-winning interface.",
+    "chinese_title": "Blender 的 UI 与运行时：远快于 GPUI",
+    "chinese_summary": "**BUI (Blender UI)** 是一款高性能、独立的 UI 库。它将 Blender 的界面与其 3D 软件解耦，允许开发者在自己的产品中使用其控件绘制和交互规则。该库采用轻量级 C 语言核心编写，为使用 Python、Rust、JavaScript (React/Svelte)、C 和 C++ 的开发者提供“Blender 式体验”——包括精准滑块、支持数学运算的输入框以及模糊搜索。\n\n**核心亮点：**\n\n*   **性能与效率：** BUI 旨在实现低能耗和低内存占用。它利用“局部重绘”（仅重新绘制更改区域）并提供可选的 GPU 渲染器。基准测试显示，其速度比 GPUI 快 2–4 倍，启动时间低于 100 毫秒，内存占用低至 19 MB。\n*   **多语言灵活性：** \n    *   **Python：** 支持现有的 `tkinter` 和 `ttk` 代码、Qt 风格语法以及 45 个以上的原生 Blender 组件。\n    *   **Rust & JavaScript：** 允许使用 HTML、CSS (Flexbox, Grid) 和 Tailwind 构建 UI，且无需浏览器引擎或 Webview。\n    *   **Dear ImGui：** 为 ImGui 应用程序提供 Blender 主题皮肤和交互模型。\n*   **丰富的功能特性：** 包含节点编辑器、拾色器和饼形菜单等原生 Blender 控件。它还具备先进的图像/视频处理能力（支持内存预算化缓存），并支持滤镜和动画等现代 CSS 特效。\n*   **原生且轻量：** BUI 可生成小巧的独立可执行文件（6–7 MB），并支持 Windows (Win32)、Linux (X11/Wayland) 和 macOS 的原生窗口系统。\n\n总之，BUI 为 Electron 或基于浏览器的框架提供了一个“精简”且快速的替代方案，让任何应用程序都能拥有 Blender 屡获殊荣的界面美学与高效体验。"
   },
   {
-    "id": "50383877",
-    "title": "The Cost of Blogging",
-    "url": "https://onlinegoddess.net/2026/11/the-cost-of-blogging/",
-    "summary": "In “The Cost of Blogging,” author Becky discusses the specific areas where she chooses to invest money in her personal blog despite the availability of free alternatives. She outlines four primary categories of expenditure:\n\n*   **Personal Domains:** Becky considers a domain an essential investment. It establishes a permanent online identity, ensures portability between platforms, and signals a commitment to readers that the blog is here to stay.\n*   **Hosting and Platforms:** Paying for a platform (like Bear) ensures data privacy, as the service is funded by subscriptions rather than data collection. Becky also notes that paying for a pro tier helps sustain free options for those who cannot afford them.\n*   **Typography:** As a typography enthusiast, she occasionally purchases premium font families (up to a £100 limit). She also advocates for self-hosting free fonts to avoid third-party tracking from providers like Google.\n*   **Writing Software:** While basic editors are often included with blogging platforms, Becky prefers paying for dedicated Markdown editors (such as Paper) that offer better interfaces and deeper personalization.\n\nThe post concludes with community feedback. Readers echo Becky’s sentiments, noting that small costs—such as a $12 annual domain fee or a $6 monthly platform subscription—are worthwhile for the quality and ownership they provide. The author encourages other bloggers to share their own “worth it” expenses, fostering a conversation about the sustainability and ethics of personal publishing.",
-    "chinese_title": "博客的成本",
-    "chinese_summary": "In “The Cost of Blogging,” author Becky discusses the specific areas where she chooses to invest money in her personal blog despite the availability of free alternatives. She outlines four primary categories of expenditure:\n\n*   **Personal Domains:** Becky considers a domain an essential investment. It establishes a permanent online identity, ensures portability between platforms, and signals a commitment to readers that the blog is here to stay.\n*   **Hosting and Platforms:** Paying for a platform (like Bear) ensures data privacy, as the service is funded by subscriptions rather than data collection. Becky also notes that paying for a pro tier helps sustain free options for those who cannot afford them.\n*   **Typography:** As a typography enthusiast, she occasionally purchases premium font families (up to a £100 limit). She also advocates for self-hosting free fonts to avoid third-party tracking from providers like Google.\n*   **Writing Software:** While basic editors are often included with blogging platforms, Becky prefers paying for dedicated Markdown editors (such as Paper) that offer better interfaces and deeper personalization.\n\nThe post concludes with community feedback. Readers echo Becky’s sentiments, noting that small costs—such as a $12 annual domain fee or a $6 monthly platform subscription—are worthwhile for the quality and ownership they provide. The author encourages other bloggers to share their own “worth it” expenses, fostering a conversation about the sustainability and ethics of personal publishing."
-  },
-  {
-    "id": "50380810",
-    "title": "Motorola Signature 27 with GrapheneOS support",
-    "url": "https://motorolanews.com/motorola-signature-27-2/",
+    "id": "50395919",
+    "title": "Memorilla: Latent Semantic Memory for LLMs",
+    "url": "https://arxiv.org/abs/2610.21375",
     "summary": "生成摘要时出错",
-    "chinese_title": "Motorola Signature 27 with GrapheneOS support",
+    "chinese_title": "Memorilla: Latent Semantic Memory for LLMs",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50381687",
-    "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
-    "url": "https://github.com/rivet-dev/rivet",
+    "id": "50396834",
+    "title": "Replit rebuilt its sandbox engine with microVMs",
+    "url": "https://frontier.replit.com/sandbox-engine-microvms-part-1/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+    "chinese_title": "Replit 使用 microVM 重构了其沙箱引擎",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50381033",
-    "title": "My psychophysics as a bilateral cochlear implant user",
-    "url": "https://claude.ai/artifact/L8qsMc3SorytGW3LA81nYf",
+    "id": "50398212",
+    "title": "The Valley Bubble Breaks",
+    "url": "https://quirksmode.org/quirksblog/2026/1106-valley-bubble.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "My psychophysics as a bilateral cochlear implant user",
+    "chinese_title": "硅谷泡沫破裂",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50379576",
-    "title": "September in Servo: <progress>, rounded rectangles, and more",
-    "url": "https://servo.org/blog/2026/11/05/september-in-servo/",
+    "id": "50395450",
+    "title": "Devvm.dev: One VM for every project",
+    "url": "https://devvm.dev/",
     "summary": "生成摘要时出错",
-    "chinese_title": "September in Servo: <progress>, rounded rectangles, and more",
+    "chinese_title": "Devvm.dev: One VM for every project",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50384822",
-    "title": "$2.5T has been wiped from US stocks",
-    "url": "https://finlaws.substack.com/p/25t-has-been-wiped-from-us-stocks",
+    "id": "50379221",
+    "title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
+    "url": "https://github.com/piercefreeman/waymark",
     "summary": "生成摘要时出错",
-    "chinese_title": "$2.5T has been wiped from US stocks",
+    "chinese_title": "Show HN: Waymark – A workflow engine that compiles jobs instead of replaying",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50378571",
-    "title": "Download your favourite YouTube videos",
-    "url": "https://criminallyvulgar.dev/you-should-absolutely-download-your-favourite-youtube-videos/",
+    "id": "50392118",
+    "title": "Gemini Omni 1.2 Flash",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Download your favourite YouTube videos",
+    "chinese_title": "Gemini Omni 1.2 Flash",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397176",
+    "title": "My first and last telegram was from Rebecca West",
+    "url": "https://thelampmagazine.com/blog/rebecca-wests-nightingale",
+    "summary": "生成摘要时出错",
+    "chinese_title": "My first and last telegram was from Rebecca West",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395043",
+    "title": "UpCodes (YC S17) is hiring SDR's to sell AI compliance software",
+    "url": "https://up.codes/careers?utm_source=HN",
+    "summary": "生成摘要时出错",
+    "chinese_title": "UpCodes (YC S17) is hiring SDR's to sell AI compliance software",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395869",
+    "title": "Size-It-Up (Game)",
+    "url": "https://magnitudle.com/size-it-up",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Size-It-Up (Game)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50396064",
+    "title": "We know 15k websites are infected. how do we tell them?",
+    "url": "https://scotthelme.co.uk/we-know-15-579-websites-are-infected-how-do-we-tell-them/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "We know 15k websites are infected. how do we tell them?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50392348",
+    "title": "How octopuses squeeze through too small gaps",
+    "url": "https://journals.biologists.com/jeb/article/229/21/jeb253615/373332/How-octopuses-squeeze-through-too-small-gaps",
+    "summary": "生成摘要时出错",
+    "chinese_title": "How octopuses squeeze through too small gaps",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394977",
+    "title": "PyLings: Solve Exercises and Learn Python",
+    "url": "https://github.com/thesayfulla/pylings",
+    "summary": "生成摘要时出错",
+    "chinese_title": "PyLings: Solve Exercises and Learn Python",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393758",
+    "title": "Deus Ex",
+    "url": "https://www.filfre.net/2026/11/deus-ex/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Deus Ex",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394906",
+    "title": "Anthropic IPO buyers see valuation as low as $1.1T",
+    "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Anthropic IPO buyers see valuation as low as $1.1T",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50396108",
+    "title": "40C3 halfnarp – Submit talk preferences to aid scheduling",
+    "url": "https://halfnarp.events.ccc.de",
+    "summary": "生成摘要时出错",
+    "chinese_title": "40C3 halfnarp – Submit talk preferences to aid scheduling",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397264",
+    "title": "As the Japanese countryside empties out, wildlife is disappearing",
+    "url": "https://e360.yale.edu/digest/japan-depopulation-biodiversity",
+    "summary": "生成摘要时出错",
+    "chinese_title": "As the Japanese countryside empties out, wildlife is disappearing",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397325",
+    "title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
+    "url": "https://github.com/anteloc/ldraw-mecha/tree/v0.5.0",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Agents infer Lego mechanisms from sources, then animate them",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389570",
+    "title": "Chomsky and the two cultures of statistical learning (2011)",
+    "url": "https://www.norvig.com/chomsky.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Chomsky and the two cultures of statistical learning (2011)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394569",
+    "title": "Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web",
+    "url": "https://github.com/anomalyco/rune",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Rune: A native GPU-rendered Rust UI framework for macOS, Windows, Linux and web",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50398010",
+    "title": "SketchAgentBench – evaluate LLMs on 3D spatial reasoning",
+    "url": "https://sketchagent.dev/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "SketchAgentBench – evaluate LLMs on 3D spatial reasoning",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393089",
+    "title": "Lippitt-Knoster in Practice (Field Notes for Managing Complex Projects)",
+    "url": "https://sharedphysics.com/lippitt-knoster-in-practice-field-notes-for-managing-complex-projects/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Lippitt-Knoster in Practice (Field Notes for Managing Complex Projects)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50382958",
+    "title": "Zero Hour: Telling time was a matter of survival and strategy during WWI (2014)",
+    "url": "https://www.laphamsquarterly.org/roundtable/zero-hour",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Zero Hour: Telling time was a matter of survival and strategy during WWI (2014)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50391145",
+    "title": "We've built an open-source feature flag server for 11 years",
+    "url": "https://github.com/Unleash/unleash",
+    "summary": "生成摘要时出错",
+    "chinese_title": "We've built an open-source feature flag server for 11 years",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50390525",
+    "title": "Living beyond the limits of survival: wood ants trapped in a gigantic pitfall (2016)",
+    "url": "https://jhr.pensoft.net/articles.php?id=9096",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Living beyond the limits of survival: wood ants trapped in a gigantic pitfall (2016)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50390124",
+    "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
+    "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389370",
+    "title": "Kugelblitz – Mac-Native Google Earth Alternative",
+    "url": "https://apps.metaebene.me/en/kugelblitz",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Kugelblitz – Mac-Native Google Earth Alternative",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50388122",
+    "title": "From Linux to Wikipedia: How Volunteers Build the Internet",
+    "url": "https://thereader.mitpress.mit.edu/from-linux-to-wikipedia-how-volunteers-build-the-internet/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "From Linux to Wikipedia: How Volunteers Build the Internet",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50398472",
+    "title": "Crunchy Moms became 'the most dangerous' group on Facebook",
+    "url": "https://www.theguardian.com/technology/2026/nov/06/crunchy-moms-facebook-vaccines",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Crunchy Moms became 'the most dangerous' group on Facebook",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50392787",
+    "title": "MTG-I2 First Images",
+    "url": "https://www.eumetsat.int/mtg-i2-first-images",
+    "summary": "生成摘要时出错",
+    "chinese_title": "MTG-I2 First Images",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394116",
+    "title": "Reading the Anthropic S-1, with Zvi Mowshowitz",
+    "url": "https://www.complexsystemspodcast.com/episodes/reading-the-anthropic-s-1-with-zvi-mowshowitz/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Reading the Anthropic S-1, with Zvi Mowshowitz",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394292",
+    "title": "Scriptable GeoDNS: Leaving AWS for Bunny",
+    "url": "https://vincent.bernat.ch/en/blog/2026-bunny-geodns",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Scriptable GeoDNS: Leaving AWS for Bunny",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393458",
+    "title": "Ozempic-style drugs now in trials for heart failure, addiction and even aging",
+    "url": "https://maccus.fr/en/ozempic-drugs-trials-beyond-diabetes/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Ozempic-style drugs now in trials for heart failure, addiction and even aging",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -128,35 +328,307 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50381512",
-    "title": "Bild AI (YC W25) Is Hiring Founding Product Engineers",
-    "url": "https://www.ycombinator.com/companies/bild-ai/jobs",
+    "id": "50397341",
+    "title": "Partnering with Hacktron to find vulnerabilities in OpenAI's systems – OpenAI",
+    "url": "https://openai.com/index/partnering-with-hacktron/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Bild AI (YC W25) Is Hiring Founding Product Engineers",
+    "chinese_title": "Partnering with Hacktron to find vulnerabilities in OpenAI's systems – OpenAI",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50378942",
-    "title": "I wish tech companies knew more about me",
-    "url": "https://rakhim.exotext.com/i-wish-tech-companies-knew-more-about-me",
+    "id": "50395933",
+    "title": "Microsoft is winding down Oracle deal to rent AI cloud capacity",
+    "url": "https://www.reuters.com/business/microsoft-is-winding-down-oracle-deal-rent-ai-cloud-capacity-bloomberg-news-2026-11-06/",
     "summary": "生成摘要时出错",
-    "chinese_title": "I wish tech companies knew more about me",
+    "chinese_title": "Microsoft is winding down Oracle deal to rent AI cloud capacity",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50377976",
-    "title": "OpenSSH 10.6p2 Critical workaround for alpine without PAM",
-    "url": "https://www.openssh.org/releasenotes.html#10.6p2",
+    "id": "50394070",
+    "title": "Swipeblocked: The phrases your iPhone won't suggest",
+    "url": "https://swipeblocked.com/",
     "summary": "生成摘要时出错",
-    "chinese_title": "OpenSSH 10.6p2 Critical workaround for alpine without PAM",
+    "chinese_title": "Swipeblocked: The phrases your iPhone won't suggest",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50368208",
-    "title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
-    "url": "https://www.linum.ai/field-notes/pjit-21k",
+    "id": "50395747",
+    "title": "Flawless UI-UX Skill 1.0.0",
+    "url": "https://github.com/smokeeaasd/flawless-ui-ux/releases/tag/v1.0.0",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: A decent text-to-image model trained for ~$20K (Apache 2.0 Weights)",
+    "chinese_title": "Flawless UI-UX Skill 1.0.0",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50378228",
+    "title": "sshole",
+    "url": "https://sshhole.com",
+    "summary": "生成摘要时出错",
+    "chinese_title": "sshole",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50387796",
+    "title": "Pwn.college",
+    "url": "https://pwn.college/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Pwn.college",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389990",
+    "title": "AI for scientific discovery: How researchers use Claude",
+    "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AI for scientific discovery: How researchers use Claude",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394771",
+    "title": "Only 16% of U.S. fast-charging stations meet federal NEVI standards (open data)",
+    "url": "https://chargingnear.me/data",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Only 16% of U.S. fast-charging stations meet federal NEVI standards (open data)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50398182",
+    "title": "Developer ends lucrative screensaver deal with Roku because Fox bought it",
+    "url": "https://arstechnica.com/gadgets/2026/11/artist-pulls-popular-screensaver-from-roku-os-because-of-fox-acquisition/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Developer ends lucrative screensaver deal with Roku because Fox bought it",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397435",
+    "title": "Show HN: CloneGuard – Scan a repo for credential-stealing tricks before it runs",
+    "url": "https://github.com/tharun208/cloneguard",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: CloneGuard – Scan a repo for credential-stealing tricks before it runs",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50388513",
+    "title": "I struggle to believe that AI R&D is ingenious",
+    "url": "https://www.lesswrong.com/posts/DALNiKBjMGMF8grme/arjun-panickssery-s-shortform?commentId=fJtaHHHfx45tD7BSL",
+    "summary": "生成摘要时出错",
+    "chinese_title": "I struggle to believe that AI R&D is ingenious",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397099",
+    "title": "GitHub's new Git storage architecture",
+    "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "GitHub's new Git storage architecture",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394991",
+    "title": "Show HN: AegisKernel – Zero-trust POSIX runtime for AI agents in <0.016ms",
+    "url": "https://adikshatriyag-crypto.github.io/aegis-kernel/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: AegisKernel – Zero-trust POSIX runtime for AI agents in <0.016ms",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394278",
+    "title": "WebAssembly Specification Release 3.0 (2026-11-04)",
+    "url": "https://webassembly.github.io/spec/core/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "WebAssembly Specification Release 3.0 (2026-11-04)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50392499",
+    "title": "University libraries are being swarmed by AI bots, putting public access at risk",
+    "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+    "summary": "生成摘要时出错",
+    "chinese_title": "University libraries are being swarmed by AI bots, putting public access at risk",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394837",
+    "title": "GPU-Accelerated Weight Teleportation",
+    "url": "https://humansand.ai/blog/gpu-accelerated-weight-teleportation",
+    "summary": "生成摘要时出错",
+    "chinese_title": "GPU-Accelerated Weight Teleportation",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389222",
+    "title": "Britain to make salary disclosure in job ads mandatory",
+    "url": "https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Britain to make salary disclosure in job ads mandatory",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389420",
+    "title": "Multiplayer tanks that demolish real buildings from OpenStreetMap",
+    "url": "https://worldstrike.fun/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Multiplayer tanks that demolish real buildings from OpenStreetMap",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50387738",
+    "title": "Nvidia Kubernetes Engine (NVKE)",
+    "url": "https://github.com/dsx-ai-factory/nvke",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Nvidia Kubernetes Engine (NVKE)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395833",
+    "title": "Pliny – Letters – Book 7 Letter 27 (On Ghosts)",
+    "url": "https://vroma.org/vromans/hwalker/Pliny/Pliny07-27-E.html?utm",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Pliny – Letters – Book 7 Letter 27 (On Ghosts)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50384233",
+    "title": "MS Paint Remote Code Execution Vulnerability",
+    "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+    "summary": "生成摘要时出错",
+    "chinese_title": "MS Paint Remote Code Execution Vulnerability",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395905",
+    "title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
+    "url": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Kalshi court losses pile up as judges refuse to block state gambling laws",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50396819",
+    "title": "AMD CEO saying it's a \"data center first\" company and PC sales will plummet",
+    "url": "https://www.techradar.com/computing/gpu/amd-ceo-enrages-gamers-by-saying-its-now-a-data-center-first-company-and-predicts-pc-sales-will-plummet-by-a-double-digit-percentage-in-2027",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AMD CEO saying it's a \"data center first\" company and PC sales will plummet",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50389260",
+    "title": "Hardcoded credentials and other issues in Tata Motors App",
+    "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0537",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Hardcoded credentials and other issues in Tata Motors App",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50381687",
+    "title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+    "url": "https://github.com/rivet-dev/rivet",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Launch HN: Rivet (YC W23) – Scale and Orchestrate Agents on S3",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394444",
+    "title": "AI coding agent setups from 663 Hacker News comments",
+    "url": "https://theainewsreport.com/2026-11-06-hn-agentic-setups-counted.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AI coding agent setups from 663 Hacker News comments",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395866",
+    "title": "Perplexity launches AI agents for work",
+    "url": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Perplexity launches AI agents for work",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393547",
+    "title": "Half of Show HN posts are a bare link. Ones with 500 characters got 2x replies",
+    "url": "https://ownfeed.dev/guides/show-hn-analysis-37622-posts",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Half of Show HN posts are a bare link. Ones with 500 characters got 2x replies",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50395183",
+    "title": "Notes on San Marino",
+    "url": "https://mattlakeman.org/2026/11/05/notes-on-san-marino/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Notes on San Marino",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394221",
+    "title": "The Formula for Lovable Cities",
+    "url": "https://worksinprogress.co/issue/the-forgotten-formula-for-lovable-cities/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The Formula for Lovable Cities",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393235",
+    "title": "Show HN: Agentic Identity Broker, OAuth Delegation for AI Agents",
+    "url": "https://github.com/zalando-incubator/agentic-identity-broker",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Agentic Identity Broker, OAuth Delegation for AI Agents",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50397456",
+    "title": "Are You Improving?",
+    "url": "https://irinarokosz.substack.com/p/are-you-improving",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Are You Improving?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50393070",
+    "title": "Why Amstrad chose the 3\" drives",
+    "url": "https://www.cpcwiki.eu/forum/amstrad-cpc-hardware/why-amstrad-chose-the-3-drives/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why Amstrad chose the 3\" drives",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50394737",
+    "title": "Udpstp and the packets that never left",
+    "url": "https://pederbe.dev/writing/udpstp-packets-that-never-left/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Udpstp and the packets that never left",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50385870",
+    "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+    "url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50398045",
+    "title": "Can LLMs redesign themselves as they train?",
+    "url": "https://www.doubleai.com/research/can-llms-redesign-themselves-as-they-train",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Can LLMs redesign themselves as they train?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50398494",
+    "title": "Title: I struggled to understand RAG, so I built a tutorial from scratch [video]",
+    "url": "https://www.youtube.com/watch?v=aenpTk8blIs",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Title: I struggled to understand RAG, so I built a tutorial from scratch [video]",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50383294",
+    "title": "Pangram Image 1.0",
+    "url": "https://www.pangram.com/blog/introducing-pangram-image-1-0",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Pangram Image 1.0",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -168,22 +640,6 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50383294",
-    "title": "Introducing Pangram Image 1.0",
-    "url": "https://www.pangram.com/blog/introducing-pangram-image-1-0",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Introducing Pangram Image 1.0",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380979",
-    "title": "The Stacks Project, Formalized in Lean",
-    "url": "https://axiommath.ai/research/the-stacks-project-formalized/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Stacks Project, Formalized in Lean",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
     "id": "50379249",
     "title": "MCP Explained",
     "url": "https://mcp-explained.com/",
@@ -192,83 +648,19 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50349667",
-    "title": "The Lisp curse, now coming to your ecosystem",
-    "url": "https://javahippie.net/programming/llm/2026/03/05/the-lisp-curse-coming-to-your-ecosystem.html",
+    "id": "50393770",
+    "title": "A proof of the Aaronson‑Ambainis conjecture",
+    "url": "https://psi.inc/research/aaronson-ambainis/",
     "summary": "生成摘要时出错",
-    "chinese_title": "The Lisp curse, now coming to your ecosystem",
+    "chinese_title": "A proof of the Aaronson‑Ambainis conjecture",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50376313",
-    "title": "GPT-6 Astra covertly underperforms on safety research",
-    "url": "https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/",
+    "id": "50386789",
+    "title": "MoofTCP – A modern replacement for MacTCP on 68k Macs",
+    "url": "https://github.com/matthewmrichter/mooftcp",
     "summary": "生成摘要时出错",
-    "chinese_title": "GPT-6 Astra covertly underperforms on safety research",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380704",
-    "title": "Show HN: Stroq – a local audit of what your coding agent did and why",
-    "url": "https://github.com/AGGIB/Stroq",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Stroq – a local audit of what your coding agent did and why",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383163",
-    "title": "Hungary: Communist-era files released, up to 60k former agents revealed",
-    "url": "https://www.euronews.com/2026/11/04/hungary-communist-era-files-opened-up-to-60000-former-agents-revealed",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Hungary: Communist-era files released, up to 60k former agents revealed",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380268",
-    "title": "We can do better than line-buffered output",
-    "url": "https://nullprogram.com/blog/2026/11/05/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "We can do better than line-buffered output",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50377078",
-    "title": "Baidu released ERNIE 5.5 Flash Base",
-    "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Baidu released ERNIE 5.5 Flash Base",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50378625",
-    "title": "Discord is ditching Electron and its new app uses less RAM",
-    "url": "https://www.theverge.com/news/1027379/discord-ditching-electron-web-app",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Discord is ditching Electron and its new app uses less RAM",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380658",
-    "title": "Building a Multi-Agent System from Scratch: Architecture Patterns",
-    "url": "https://kadhar.dev/blog/multi-agent-systems-from-scratch",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Building a Multi-Agent System from Scratch: Architecture Patterns",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50352846",
-    "title": "TextEdit vs. Pages",
-    "url": "https://leancrew.com/all-this/2026/10/textedit-vs-pages/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "TextEdit vs. Pages",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381623",
-    "title": "Nasdaq plummets 4% into correction territory",
-    "url": "https://www.cnbc.com/2026/11/04/stock-market-today-live-updates.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nasdaq plummets 4% into correction territory",
+    "chinese_title": "MoofTCP – A modern replacement for MacTCP on 68k Macs",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -280,83 +672,83 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50380170",
-    "title": "Nordstjernen, Northstar, Southstar: minimalist webbrowsers in C and Rust",
-    "url": "https://nordstjernen.org/",
+    "id": "50383057",
+    "title": "The Hackintosh Reborn",
+    "url": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Nordstjernen, Northstar, Southstar: minimalist webbrowsers in C and Rust",
+    "chinese_title": "The Hackintosh Reborn",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50384382",
-    "title": "Chip stocks get slaughtered as Wall Street in worst post-midterm day since 1896",
-    "url": "https://finance.yahoo.com/markets/article/chip-stocks-get-slaughtered-as-wall-street-heads-for-its-worst-post-midterm-day-since-1896-163413900.html",
+    "id": "50397565",
+    "title": "Learn RUDRA – Complete Course (25 video chapters)",
+    "url": "https://www.youtube.com/playlist?list=PLCFVBA46rFmY",
     "summary": "生成摘要时出错",
-    "chinese_title": "Chip stocks get slaughtered as Wall Street in worst post-midterm day since 1896",
+    "chinese_title": "Learn RUDRA – Complete Course (25 video chapters)",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50377821",
-    "title": "Awesome repositories are no longer awesome",
-    "url": "https://erikgahner.github.io/posts/2026/awesome-repositories-are-no-longer-awesome/",
+    "id": "50383739",
+    "title": "Goodbye from Salon",
+    "url": "https://www.salon.com/2026/11/05/goodbye-from-salon/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Awesome repositories are no longer awesome",
+    "chinese_title": "Goodbye from Salon",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50382594",
-    "title": "How to Lie With Statistics (1954)",
-    "url": "https://archive.org/details/howtoliewithstat00huff",
+    "id": "50381383",
+    "title": "Window Sweaters",
+    "url": "https://github.com/saragordic/window-sweaters",
     "summary": "生成摘要时出错",
-    "chinese_title": "How to Lie With Statistics (1954)",
+    "chinese_title": "Window Sweaters",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50375691",
-    "title": "Being a kid making games in the early 2000s",
-    "url": "https://jaytholen.net/teengamedev/",
+    "id": "50377078",
+    "title": "Baidu released ERNIE 5.5 Flash Base",
+    "url": "https://ernie.baidu.com/release/ernie-5-5-flash-base/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Being a kid making games in the early 2000s",
+    "chinese_title": "Baidu released ERNIE 5.5 Flash Base",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50340195",
-    "title": "Partial Operator Precedence",
-    "url": "https://ziglang.org/devlog/2026/#2026-10-24",
+    "id": "50386338",
+    "title": "Inkling 2 Small",
+    "url": "https://thinkingmachines.ai/news/inkling-2-small/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Partial Operator Precedence",
+    "chinese_title": "Inkling 2 Small",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50373308",
-    "title": "Starfall – Affordable, routine access to microgravity",
-    "url": "https://www.spacex.com/starfall",
+    "id": "50394270",
+    "title": "The United States of Inference",
+    "url": "https://subconscious-systems.github.io/united-states-of-inference/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Starfall – Affordable, routine access to microgravity",
+    "chinese_title": "The United States of Inference",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50341576",
-    "title": "Spreading Liquid with Three.js",
-    "url": "https://mofu-dev.com/en/blog/fluid-foundation/",
+    "id": "50394162",
+    "title": "Show HN: NASA's Swift telescope's 22 years in orbit, rebuilt from its archive",
+    "url": "https://swift.rory.codes/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Spreading Liquid with Three.js",
+    "chinese_title": "Show HN: NASA's Swift telescope's 22 years in orbit, rebuilt from its archive",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50384133",
-    "title": "California Gov Newsom commutes death sentences for all 548 people on death row",
-    "url": "https://www.bbc.com/news/articles/cqrkyyd2j8mvo",
+    "id": "50397224",
+    "title": "Fake security tools on GitHub push backdoors and infostealers",
+    "url": "https://www.bleepingcomputer.com/news/security/fake-security-tools-on-github-push-backdoors-and-infostealers/",
     "summary": "生成摘要时出错",
-    "chinese_title": "California Gov Newsom commutes death sentences for all 548 people on death row",
+    "chinese_title": "Fake security tools on GitHub push backdoors and infostealers",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50380808",
-    "title": "OCAP Bounded Authority: Edera's Managed Approach to Object Capabilities",
-    "url": "https://edera.dev/stories/ocap-bounded-authority",
+    "id": "50394130",
+    "title": "Tesla Ends Cybertruck Production",
+    "url": "https://www.heise.de/en/news/Tesla-ends-Cybertruck-production-in-Texas-11515739.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "OCAP Bounded Authority: Edera's Managed Approach to Object Capabilities",
+    "chinese_title": "Tesla Ends Cybertruck Production",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -368,435 +760,43 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50383440",
-    "title": "Infant Bleeding Surged as Parents Rejected Vitamin K Shots, Studies Find",
-    "url": "https://www.nytimes.com/2026/11/05/well/live/vitamin-k-shot-newborn-bleeding.html",
+    "id": "50383740",
+    "title": "Search for everyone",
+    "url": "https://kagi.com/changelog#11820",
     "summary": "生成摘要时出错",
-    "chinese_title": "Infant Bleeding Surged as Parents Rejected Vitamin K Shots, Studies Find",
+    "chinese_title": "Search for everyone",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50375354",
-    "title": "Lemmings CSS Animation",
-    "url": "https://markblah.github.io/lemmings/",
+    "id": "50380979",
+    "title": "The Stacks Project, Formalized in Lean",
+    "url": "https://axiommath.ai/research/the-stacks-project-formalized/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Lemmings CSS Animation",
+    "chinese_title": "The Stacks Project, Formalized in Lean",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50380273",
-    "title": "Offline survival assistant – local LLM and Kiwix, runs from a USB stick",
-    "url": "https://github.com/sdalberto/ia-da-sobrevivencia/blob/main/README.en.md",
+    "id": "50396940",
+    "title": "History of the original Compaq Portable, the 1982 suitcase-sized IBM PC clone",
+    "url": "https://dfarq.homeip.net/first-compaq-computer",
     "summary": "生成摘要时出错",
-    "chinese_title": "Offline survival assistant – local LLM and Kiwix, runs from a USB stick",
+    "chinese_title": "History of the original Compaq Portable, the 1982 suitcase-sized IBM PC clone",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50379341",
-    "title": "80k Hops per Second Measurement Confirm Starlink Up/Downlink Channel Pairing",
-    "url": "https://sdr-x.github.io/starlink-ul-dl-pair-80k-hop-ad9361/",
+    "id": "50389479",
+    "title": "Stop running everything through LLMs: How I fixed my research agent",
+    "url": "https://www.tinyfish.ai/blog/inside-tinyresearch",
     "summary": "生成摘要时出错",
-    "chinese_title": "80k Hops per Second Measurement Confirm Starlink Up/Downlink Channel Pairing",
+    "chinese_title": "Stop running everything through LLMs: How I fixed my research agent",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50381302",
-    "title": "Vibe Coding Keypad",
-    "url": "https://www.keychron.com/products/keychron-f4-he-8k-vibe-coding-keypad",
+    "id": "50395877",
+    "title": "An AI Rant",
+    "url": "https://carlhandellen.substack.com/p/an-ai-rant",
     "summary": "生成摘要时出错",
-    "chinese_title": "Vibe Coding Keypad",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380410",
-    "title": "Exporting tables from a SQL Server backup (.bak) to Parquet without restoring it",
-    "url": "https://blog.arpe.io/fastbcp-1-6-export-sql-server-backup-to-parquet",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Exporting tables from a SQL Server backup (.bak) to Parquet without restoring it",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50379331",
-    "title": "The architecture of open-weight LLMs: MoE, hybrid layers, ternary weights",
-    "url": "https://www.silasdata.com/llm-playground-inside-architectures/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The architecture of open-weight LLMs: MoE, hybrid layers, ternary weights",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50375653",
-    "title": "Altera Announces Agilex 2X, a Complete FPGA and SoC Portfolio",
-    "url": "https://www.altera.com/newsroom/agilex-2x",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Altera Announces Agilex 2X, a Complete FPGA and SoC Portfolio",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383675",
-    "title": "Wipeout for AI stocks sends Wall Street reeling and S&P 500 tumbles more than 3%",
-    "url": "https://apnews.com/article/stocks-markets-ai-midterm-oil-trump-7ee9c212805aa5e70cf34d25aab7a36e",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Wipeout for AI stocks sends Wall Street reeling and S&P 500 tumbles more than 3%",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50370793",
-    "title": "Nyquist Limit:The frequency of changes in tech is invalidating our understanding",
-    "url": "https://www.ryanprior.com/posts/nyquist-limit-frequency-of-changes-in-tech-invalidates-understanding/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nyquist Limit:The frequency of changes in tech is invalidating our understanding",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380365",
-    "title": "An updated Model Spec for more capable and beneficial AI",
-    "url": "https://openai.com/index/updated-model-spec/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "An updated Model Spec for more capable and beneficial AI",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381590",
-    "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
-    "url": "https://openai.com/index/introducing-gpt-6-cyber/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50372929",
-    "title": "A thousand fewer paths to root",
-    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A thousand fewer paths to root",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50366853",
-    "title": "A wave of plastic-free coffee pods and machines",
-    "url": "https://www.cnn.com/2026/11/02/food/coffee-machine-plastic-free",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A wave of plastic-free coffee pods and machines",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50366999",
-    "title": "Kimi K3.1 Pro model weights are out",
-    "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Kimi K3.1 Pro model weights are out",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50343293",
-    "title": "Moment of Ruby: An Argument for Nothing",
-    "url": "https://www.aha.io/engineering/articles/moment-of-ruby-an-argument-for-nothing",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Moment of Ruby: An Argument for Nothing",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50372945",
-    "title": "Images 2.6",
-    "url": "https://openai.com/index/introducing-images-2-6/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Images 2.6",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383717",
-    "title": "Newsom Commutes the Sentences of California's 548 Death Row Inmates",
-    "url": "https://www.nytimes.com/2026/11/05/us/california-death-row-newsom-commutation.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Newsom Commutes the Sentences of California's 548 Death Row Inmates",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383975",
-    "title": "I turned 100 old science fiction books into a database of 6,222 startup ideas",
-    "url": "https://www.reddit.com/r/SideProject/comments/1xly9r8/i_turned_100_old_science_fiction_books_into_a/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "I turned 100 old science fiction books into a database of 6,222 startup ideas",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50367653",
-    "title": "'It's just vape, nail, charity shops': Can anything save UK high street?",
-    "url": "https://www.theguardian.com/business/2026/nov/04/what-can-save-the-british-high-street-rotherham",
-    "summary": "生成摘要时出错",
-    "chinese_title": "'It's just vape, nail, charity shops': Can anything save UK high street?",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50349165",
-    "title": "Future Maintenance of Mbed TLS",
-    "url": "https://lists.trustedfirmware.org/archives/list/mbed-tls@lists.trustedfirmware.org/thread/YPIGCB7WN6GCHOGEGKOJXUYAP7OK527W/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Future Maintenance of Mbed TLS",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50379773",
-    "title": "Image of our satellite-choked night skies",
-    "url": "https://kottke.org/26/11/stunning-image-of-our-satellite-choked-night-skies",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Image of our satellite-choked night skies",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380051",
-    "title": "Mizu – zero-copy parallel R and Python over shared memory",
-    "url": "https://github.com/shikokuchuo/pymizu",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Mizu – zero-copy parallel R and Python over shared memory",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50377221",
-    "title": "OpenSSH 10.6p2 has been released with a workaround for a critical vulnerability",
-    "url": "https://hachyderm.io/@damienmiller/117563026759098135",
-    "summary": "生成摘要时出错",
-    "chinese_title": "OpenSSH 10.6p2 has been released with a workaround for a critical vulnerability",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50382720",
-    "title": "Paraguayan president impeached minutes after resigning following bank collapse",
-    "url": "https://apnews.com/article/ueno-bank-collapse-paraguay-banking-crisis-santiago-pena-impeachment-eccea1c9a64808b5cd7e6e1d5542084f",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Paraguayan president impeached minutes after resigning following bank collapse",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383469",
-    "title": "Mystery Seller Seeks to Dump $500M of Data Center Loans",
-    "url": "https://www.bloomberg.com/news/articles/2026-11-05/mystery-seller-puts-up-500-million-data-center-loans-backing-stargate-cyrusone",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Mystery Seller Seeks to Dump $500M of Data Center Loans",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381178",
-    "title": "Paraguay bank collapses with half of population's savings",
-    "url": "https://www.aljazeera.com/video/newsfeed/2026/11/5/paraguay-bank-collapses-with-half-of-populations-savings",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Paraguay bank collapses with half of population's savings",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50379073",
-    "title": "Show HN: TubeHaus – an open-source YouTube client with no Google account",
-    "url": "https://github.com/biolend83/tubehaus",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: TubeHaus – an open-source YouTube client with no Google account",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50369925",
-    "title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
-    "url": "https://www.ricursive.com/ripple",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50338474",
-    "title": "Basically no one is using AI agents for their DoorDash orders",
-    "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Basically no one is using AI agents for their DoorDash orders",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50382179",
-    "title": "Nasdaq Sinks 5% as Investors Retreat from AI Trade After Election",
-    "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nasdaq Sinks 5% as Investors Retreat from AI Trade After Election",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50384093",
-    "title": "Z.ai says GLM 5.5 built on 1T web pages",
-    "url": "https://twitter.com/bebuu_ai/status/2118052769856888892",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Z.ai says GLM 5.5 built on 1T web pages",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50369106",
-    "title": "A new Go API for JSON",
-    "url": "https://go.dev/blog/jsonv2",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A new Go API for JSON",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50362905",
-    "title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
-    "url": "https://www.mindstudio.ai/blog/linux-nvidia-rtx-spark-laptop",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nvidia RTX Spark encrypted firmware slows inference speed to 35% on Linux",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381849",
-    "title": "My gym forced a social media down my throat. So I reverse-engineered its app",
-    "url": "https://shayon.work/blog/reverse-engineering-gym-pass",
-    "summary": "生成摘要时出错",
-    "chinese_title": "My gym forced a social media down my throat. So I reverse-engineered its app",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50367125",
-    "title": "AMD expects to outsell Intel in Q4 for the first time in history",
-    "url": "https://www.tomshardware.com/pc-components/cpus/amd-expects-to-outsell-intel-in-q4-for-the-first-time-in-history-usd17b-guidance-would-exceed-intels-projections",
-    "summary": "生成摘要时出错",
-    "chinese_title": "AMD expects to outsell Intel in Q4 for the first time in history",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50366465",
-    "title": "TScert: A Sound Core for TypeScript",
-    "url": "https://github.com/cristianoc/TScert",
-    "summary": "生成摘要时出错",
-    "chinese_title": "TScert: A Sound Core for TypeScript",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381914",
-    "title": "GPT-6 Cyber",
-    "url": "https://twitter.com/OpenAI/status/2118390190246879554",
-    "summary": "生成摘要时出错",
-    "chinese_title": "GPT-6 Cyber",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50371246",
-    "title": "Residential proxies detected on White House network",
-    "url": "https://layer3intel.com/blog/residential-proxies-white-house-network",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Residential proxies detected on White House network",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50366971",
-    "title": "YC's Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
-    "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "YC's Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381289",
-    "title": "Paraguay seizes major digital bank tied to president, leaving customers in limbo",
-    "url": "https://apnews.com/article/paraguay-ueno-digital-bank-seizure-santiago-pena-9d7521ddee45a185d2618c7e09a243a3",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Paraguay seizes major digital bank tied to president, leaving customers in limbo",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50370610",
-    "title": "Insects don't swarm at LED lights",
-    "url": "https://www.birdsoutsidemywindow.org/2026/11/03/insects-dont-swarm-at-led-lights/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Insects don't swarm at LED lights",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50365755",
-    "title": "North Korean fake job interview led to $6.3B Binance heist",
-    "url": "https://www.theregister.com/security/2026/11/03/north-korean-fake-job-interview-led-to-63b-binance-heist/5307398",
-    "summary": "生成摘要时出错",
-    "chinese_title": "North Korean fake job interview led to $6.3B Binance heist",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50365905",
-    "title": "From 25M instructions to one faulty skip: fault analysis of a secure boot",
-    "url": "https://www.eshard.com/blog/one-faulty-skip-secure-boot",
-    "summary": "生成摘要时出错",
-    "chinese_title": "From 25M instructions to one faulty skip: fault analysis of a secure boot",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50381191",
-    "title": "Tobacco company got smoked by leaving secret recipes on a file share",
-    "url": "https://www.theregister.com/security/2026/11/05/tobacco-company-got-smoked-by-leaving-secret-recipes-on-a-file-share/5307704",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Tobacco company got smoked by leaving secret recipes on a file share",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50369503",
-    "title": "Conductor is joining Meta",
-    "url": "https://www.conductor.build/announcement",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Conductor is joining Meta",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50383463",
-    "title": "Sony Debuts Retro $60 Wired Headphones in Tribute to 1979 Walkman",
-    "url": "https://www.bloomberg.com/news/articles/2026-11-05/sony-debuts-retro-60-wired-headphones-in-tribute-to-1979-walkman",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Sony Debuts Retro $60 Wired Headphones in Tribute to 1979 Walkman",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50364284",
-    "title": "Replacing homepage demo media with looping HTML and CSS",
-    "url": "https://stepshots.com/css-feature-clips",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Replacing homepage demo media with looping HTML and CSS",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380487",
-    "title": "Epileptic seizures nearly vanish after people receive experimental gene therapy",
-    "url": "https://www.nature.com/articles/d41586-026-03566-2",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Epileptic seizures nearly vanish after people receive experimental gene therapy",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50366522",
-    "title": "Guerrilla bike lanes: San Francisco makes illicit infrastructure permanent (2016)",
-    "url": "https://99percentinvisible.org/article/guerrilla-bike-lanes-san-francisco-makes-illicit-infrastructure-permanent/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Guerrilla bike lanes: San Francisco makes illicit infrastructure permanent (2016)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50380316",
-    "title": "Your Cryptography Conspiracy Theory Is Wrong",
-    "url": "https://soatok.blog/2026/10/29/your-cryptography-conspiracy-theory-is-wrong/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Your Cryptography Conspiracy Theory Is Wrong",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50369895",
-    "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
-    "url": "https://fireflyk64.github.io/wcmulti/",
-    "summary": "This article chronicles a decade-long technical project to add a cooperative multiplayer mode to the original DOS version of *Wing Commander*. The project progressed through several stages of reverse engineering, from simple memory manipulation to complex function hooking and networking.\n\n**Memory Analysis and Position Tracking**\nThe author began by using DOSBox’s debugging tools to dump the game's 640K memory. By comparing memory snapshots taken during different states (e.g., stationary vs. moving forward), they isolated the specific memory addresses within the data segment that governed the player’s X, Y, and Z coordinates, velocity, and orientation vectors.\n\n**Function Hooking via \"Trampolines\"**\nTo handle complex actions like firing lasers or calculating damage, the author realized that simple memory writes were insufficient. They developed a \"trampoline\" system that hijacked a \"dead\" string in the game’s memory to serve as an injection point for code. By pushing the current instruction pointer to the stack and redirecting the CPU to this custom \"thunk,\" they could force the game to execute its own internal functions (such as `fireAllGuns`) with specific arguments.\n\n**Networking and Synchronization**\nThe multiplayer architecture uses a TCP client-server model with Protobuf messages. The \"leader\" (server) runs the mission and transmits the positions of all entities to the client every frame. The client responds with its own position and local events. A major challenge involved Borland’s overlay system, which required the author to carefully construct stack frames for their hooks to prevent the game from crashing during memory management cycles. \n\n**Refining the Experience**\nLater stages of the project involved synchronizing ephemeral objects like asteroids and laser bolts, which required mapping server ship IDs to local client IDs. The project successfully enabled synchronized explosions, missile fire, and autopilot, transforming the 1990 classic into a functional co-op experience.",
-    "chinese_title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
-    "chinese_summary": "This article chronicles a decade-long technical project to add a cooperative multiplayer mode to the original DOS version of *Wing Commander*. The project progressed through several stages of reverse engineering, from simple memory manipulation to complex function hooking and networking.\n\n**Memory Analysis and Position Tracking**\nThe author began by using DOSBox’s debugging tools to dump the game's 640K memory. By comparing memory snapshots taken during different states (e.g., stationary vs. moving forward), they isolated the specific memory addresses within the data segment that governed the player’s X, Y, and Z coordinates, velocity, and orientation vectors.\n\n**Function Hooking via \"Trampolines\"**\nTo handle complex actions like firing lasers or calculating damage, the author realized that simple memory writes were insufficient. They developed a \"trampoline\" system that hijacked a \"dead\" string in the game’s memory to serve as an injection point for code. By pushing the current instruction pointer to the stack and redirecting the CPU to this custom \"thunk,\" they could force the game to execute its own internal functions (such as `fireAllGuns`) with specific arguments.\n\n**Networking and Synchronization**\nThe multiplayer architecture uses a TCP client-server model with Protobuf messages. The \"leader\" (server) runs the mission and transmits the positions of all entities to the client every frame. The client responds with its own position and local events. A major challenge involved Borland’s overlay system, which required the author to carefully construct stack frames for their hooks to prevent the game from crashing during memory management cycles. \n\n**Refining the Experience**\nLater stages of the project involved synchronizing ephemeral objects like asteroids and laser bolts, which required mapping server ship IDs to local client IDs. The project successfully enabled synchronized explosions, missile fire, and autopilot, transforming the 1990 classic into a functional co-op experience."
-  },
-  {
-    "id": "50366929",
-    "title": "Show HN: I built a tool that prices a pre-built PC part by part",
-    "url": "https://pcdealcheck.com/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: I built a tool that prices a pre-built PC part by part",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50363353",
-    "title": "11 Nanoseconds per Word: Over-Optimizing Anagrams",
-    "url": "https://wiredream.com/anagram-fun/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "11 Nanoseconds per Word: Over-Optimizing Anagrams",
+    "chinese_title": "An AI Rant",
     "chinese_summary": "生成摘要时出错"
   }
 ]
