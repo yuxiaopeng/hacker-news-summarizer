@@ -2,177 +2,465 @@
 
 这是今日 [Hacker News](https://news.ycombinator.com/) 上最热门的文章摘要。
 
-## 1. Claude Fable 5.2 和 Mythos 5.2
+## 1. .name 延续旧制
 
-**原文标题**: Claude Fable 5.2 and Mythos 5.2
+**原文标题**: .name Grandfathered
 
-**原文链接**: [https://www.anthropic.com/claude-fable-and-mythos-5-2](https://www.anthropic.com/claude-fable-and-mythos-5-2)
+**原文链接**: [https://neil.fraser.name/news/2026/11/10/](https://neil.fraser.name/news/2026/11/10/)
 
-Anthropic 宣布推出 **Claude Fable 5.2 和 Claude Mythos 5.2**。作为升级版模型，这两款模型旨在应对编程、推理和科学领域的复杂技术挑战。尽管两者基于相同的底层架构，但 Fable 为通用场景内置了强健的网络安全和生物安全防护，而 Mythos 则专供生命科学和网络验证计划中的经认证组织使用。
+在这篇日期为2026年11月10日的文章中，尼尔·弗雷泽（Neil Fraser）报道了关于 .name 顶级域名争端成功解决的消息。经过一场漫长且耗资巨大的行动，威瑞信（Verisign）撤回了其终止约22,000个三级域名和电子邮件转发服务的争议性计划。
 
-**关键性能提升：**
-5.2 版本模型在多项基准测试中超越了前代产品及竞争对手（包括 GPT-6 Astra 和 Gemini 4 Carbon）。显著成就包括：
-*   **速度与成本：** 生成速度比 5.1 版本快 30%，成本降至每百万输入 Token 8 美元，每百万输出 Token 40 美元。可选的“快速模式”可进一步提供 2.5 倍的速度提升。
-*   **技术里程碑：** 在测试中，该模型仅用 30 小时就完成了费马大定理的形式化证明，并实现了从零设计操作系统以及解决黑洞物理学中的悬案。
-*   **智能体能力：** Fable 5.2 在“智能体”（Agentic）任务中表现卓越，例如管理 1,000 多个子智能体以构建软件，或执行长达 12 小时的自主安全审计。
+此次决定的关键结果包括：
+*   **既有权益保留：** 所有现有的 .name 三级域名和电子邮件转发将无限期保持激活状态。
+*   **注册变更：** 在保护现有用户的同时，威瑞信将正式关闭任何新的 .name 三级域名注册通道。
 
-**战略应用场景：**
-Anthropic 将 Fable 5.2 定位为处理开放式技术工作的终极“顾问”或“编排”模型，其层级高于 Claude Opus 5.5。来自 Vercel、Shopify 和 Datadog 等公司的早期采用者报告称，该模型展现出了“资深级”的工程判断力、卓越的意图识别能力，并能在模糊、陌生的系统中工作而不产生幻觉。
+弗雷泽强调，这次胜利是涉及多方利益相关者的重大“团队协作”成果。该行动采用了多种策略向ICANN和威瑞信施压，包括：
+*   **亲身游说：** 利益相关者前往巴厘岛直接向ICANN陈述诉求。
+*   **法律干预：** 聘请法律团队对ICANN的程序提出挑战。
+*   **正式程序：** 许多个人提交了正式的重新考虑请求和支持信，以抗议终止计划。
 
-**安全与对齐：**
-发布前测试重点关注了高风险领域，包括沙箱逃逸和蒸馏攻击。与 5.1 版本相比，新模型表现出更好的对齐性，且“不必要的屏蔽”更少，确保了先进能力不会损害安全性。Claude Mythos 5.2 在漏洞发现方面比 Opus 5.5 提升了 10.2%，使其成为网络安全工程的顶尖工具。
-
----
-
-## 2. USPS 现已提供官方邮政编码边界多边形
-
-**原文标题**: USPS now offers official ZIP Code boundary polygons
-
-**原文链接**: [https://postalpro.usps.com/zcb](https://postalpro.usps.com/zcb)
-
-美国邮政管理局（USPS）推出了 **USPS® 邮政编码边界 (USPS® ZIP Code Boundaries)**，这是一款官方全国性地图产品，根据实际投递地址和位置数据提供精确的邮政编码多边形。作为邮政编码区域的“权威基准”，这些边界每季度更新一次，以反映新的投递位置和不断变化的配送模式。
-
-**主要特点与优势：**
-*   **准确性：** 提供官方数据，用于纠正或补充现有的绘图和邮寄数据库。
-*   **行业应用：** 支持房地产、保险、物流、市场营销和交通等多个领域。
-*   **应用场景：** 协助整理人口统计数据、优化路径规划，并为空间分析提供可靠的框架。
-
-**产品级别：**
-该数据提供三种不同的许可选项，所有选项均包含四次季度更新：
-1.  **内部版 (Internal)：** 仅限单一组织内部使用。
-2.  **企业版 (Enterprise)：** 包含面向子公司和合作伙伴的有限分发权。
-3.  **发布版 (Publication)：** 用于有限的公开分发。
-
-**支持与实施：**
-为了便于集成，USPS 提供了多种资源，包括技术指南、GeoJSON 示例文件、简报和许可协议。这些工具允许用户将官方边界数据整合到其现有的地理信息系统 (GIS) 和工作流中。
+弗雷泽将胜利归功于技术专家、法律顾问以及ICANN内部同情者的共同努力，他们挑战了官僚体系，以保护成千上万用户的数字身份。
 
 ---
 
-## 3. TPU 8tx 和 TPU 8i Max
+## 2. 丰田旗下品牌 Scion 回归，并将在美国销售一款轻型货车。
 
-**原文标题**: TPU 8tx and TPU 8i Max
+**原文标题**: Toyota brand Scion is back and it's going to sell a kei truck in America
 
-**原文链接**: [https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/)
+**原文链接**: [https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/](https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/)
 
-谷歌推出了 TPU 8tx 和 TPU 8i Max，扩展了其第八代 TPU 产品系列，这标志着其在一年内以前所未有的节奏发布了四款 TPU 系统。这些新增产品专为“智能体时代”量身打造，重点关注硬件级安全、推理能力以及超大规模上下文窗口。
+丰田官方正以“Scion by Toyota”之名正式重启 Scion 品牌。该品牌告别了最初作为经济型青年品牌的使命，被重新定位为一个致力于非常规移动设计和小众车型概念的“自由实验室”。
 
-**核心硬件更新：**
-*   **TPU 8tx：** 针对**安全和机密推理**进行了优化，该系统提供硬件级加密，以在模型运行过程中保护敏感数据和权重。它专为受监管行业设计，在处理智能体工作负载时，其延迟比 TPU 8t 降低了多达 2 倍。
-*   **TPU 8i Max：** 旨在突破“内存墙”，该系统将两颗 8i 芯片封装在一起，从而实现**算力、SRAM 和 HBM 带宽翻倍**。它专为处理超大规模上下文窗口（数百万个 token）而设计，并提供单机架最高的计算密度。
+此次品牌复兴的核心是 KEI-01，这是一款基于大发 Hijet 开发的量产版“轻型货车”（kei truck）。该车专为实用性和灵活性而设计，配备 660cc 发动机、CVT 变速箱和四驱系统，有效载荷为 600 磅。然而，受限于美国安全法规，KEI-01 被归类为低速车辆（LSV）。这将其最高时速限制在 25 英里/小时，且仅限在限速 35 英里/小时及以下的道路上行驶。虽然该车配备了空调等标准舒适配置，但其主要面向商业、农业和高密度城市车队，而非普通消费者的日常通勤。
 
-**软件与易用性增强：**
-谷歌还致力于消除采用门槛，使 TPU 像通用硬件一样易于使用：
-*   **PyTorch 集成：** 通过开源的 **TorchTPU**，开发者无需重写代码即可在 TPU 上原生运行 PyTorch 代码和 Hugging Face 模型。
-*   **开发者工具：** 全新的 TPU 智能体套件可自动化入门流程并自动调优自定义内核，而 **XLA 服务引擎 (XLA Serving Engine)** 则简化了生产环境的部署。
-*   **效率与扩展性：** **智能体计算引擎 (Agent Compute Engine)** 通过挂起闲置会话来降低成本，而 **TPU Sync** 和 **GKE 动态切分 (dynamic slicing)** 则优化了大集群中的存储层级和硬件利用率。
+丰田计划于 2027 年底启动小批量车队试点项目，正式推出 KEI-01。是否向更广泛的消费市场推广将取决于该初始阶段的运行表现。
 
-通过软硬件协同设计，谷歌现已为 AI 生命周期的每个阶段提供专门的加速器：训练 (8t)、实时推理 (8i)、机密计算 (8tx) 以及长上下文智能体工作负载 (8i Max)。
+除货车外，Scion 还推出了两款概念产品：
+* **SxS Concept：** 一款高性能混合动力并列式全地形车，配备 300 马力涡轮增压发动机和电动“静音模式”。
+* **BKE Concept：** 一款专为狭窄越野路径设计且易于运输的耐用型个人移动设备。
+
+目前，SxS 和 BKE 仍处于概念阶段，而 KEI-01 将作为该品牌重返美国市场的首个步伐。
 
 ---
 
-## 4. Google Gemini 将个人云端硬盘文件和电子邮件发送给人工标注员
+## 3. Smart home devices should work without the internet
 
-**原文标题**: Google Gemini routes personal Drive files and emails to human annotators
+**原文标题**: Smart home devices should work without the internet
 
-**原文链接**: [https://github.com/thisisme6598/gemini_files/](https://github.com/thisisme6598/gemini_files/)
-
-Google 正式撤回了其在 2023 年做出的承诺，即 Workspace 扩展程序（Gmail、Docs 和 Drive）中的个人数据将与人工审核员隔离。更新后的政策文档和博文现已明确证实，来自这些关联应用的内容会被输送到人工审核流程中。
-
-测试显示，这种数据摄取是**自主且具有概率性**的。即使没有明确使用“@”标签，提及个人话题（如账单或旅行计划）的语境也可能触发后台查询。由于系统是非确定性的，交互呈现出四种状态：
-1. **零检索：** 未提取任何数据。
-2. **元数据/通用摘要：** 生成高层级的摘要。
-3. **部分未脱敏提取：** 提取包含敏感个人身份信息 (PII) 的简短引用。
-4. **全文件摄取：** 文档或电子邮件的完整、未脱敏文本被拉入对话上下文中。
-
-Google 现已明确警告用户，如果 Workspace 应用中包含机密信息，请勿将其连接到 Gemini。由于 Google 的自动去标识化清理程序往往无法删除敏感的描述性数据（如账号、确认码以及个人详细信息的独特组合），这一风险变得更加复杂。
-
-总而言之，最初承诺用于 Workspace 集成的严格隐私屏障已被移除。个人文件可能会在日常对话中被摄取，并随后被人工外包人员查看，这使得该平台不再适合处理敏感或机密信息。
-
----
-
-## 5. Fable 5.2 秒杀了我侄子梦想中的游戏。
-
-**原文标题**: Fable 5.2 one-shotted my nephew's dream game
-
-**原文链接**: [https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game](https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game)
-
-Lex Toumbourou 的文章详细记录了生成式 AI 领域的一个重要里程碑：利用（虚构的）**Claude Fable 5.2**，根据其侄子 Aiden 的手绘设计，“一次性（one-shot）”生成了一款复杂且高质量的清版动作游戏。
-
-受《忍者神龟》等经典游戏的启发，Aiden 提议开发一款以家庭成员为英雄并包含 12 个独特 Boss 的游戏。在 2026 年初使用旧模型（Opus 4.8）进行的尝试效果不佳后，Toumbourou 利用 Fable 5.2 的早期访问权限和 **Claude Code** 尝试了全自动构建。
-
-通过提供一个宏大的提示词和 Aiden 的素描草图，该 AI 独立完成了以下工作：
-*   整合了 **OpenAI 的 ChatGPT Images 2.5** 用于生成精灵图和背景，并使用 **ElevenLabs** 生成音乐和音效。
-*   生成了约 175 张图像和 140 个音频剪辑。
-*   编写了一个自动测试机器人，在无头浏览器中运行全部 12 个关卡，以识别并修复视觉或机制漏洞。
-*   将角色阵容从 5 名英雄扩展到 18 名可解锁角色，其中包括宠物以及被重新构思为“天使”的已故亲人。
-
-整个项目消耗了约 3.4 亿个 token，并产出了一个包含过场动画、特殊招式和 12 个 Boss 关卡、制作精良的四人游戏体验。Toumbourou 总结道，该项目的成功标志着智能体（agentic）工具的一个“疯狂里程碑”。它证明了 AI 已经超越了生成简单代码片段的阶段，进化到能够根据粗略的创意构想，在极少人工干预的情况下，执行整个有趣且功能完备的软件项目。
-
----
-
-## 6. 加拿大支付协会宣布启动加拿大实时支付系统 (RTR)
-
-**原文标题**: Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system
-
-**原文链接**: [https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy](https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy)
-
-2026年11月9日，加拿大支付协会（Payments Canada）正式推出“实时支付系统”（Real-Time Rail，简称RTR）。这一全新的国家级支付系统提供全年无休（24/7/365）的即时清算与结算。RTR由加拿大支付协会运营，并与CGI、德勤（Deloitte）、IBM及Interac等合作伙伴共同开发，标志着加拿大金融基础设施的一次重大现代化升级。
-
-该系统采用ISO 20022报文标准以支持数据丰富的交易，为企业和消费者提供实时的现金流透明度和即时资金到账。其经济影响十分显著：据C.D. Howe研究所预测，通过降低处理成本和缩短“资金占用期”，RTR将节省高达145亿加元的成本，并带来160亿至270亿加元的广泛经济收益。
-
-安全性是该系统的一大亮点；加拿大是七国集团（G7）中首个在启动时即强制实施集中化反欺诈服务的国家。这些服务包括“收款人确认”服务、交易安全评分以及一个旨在降低所有用户风险的集中式欺诈情报平台。
-
-首批参与机构涵盖了金融科技公司和银行，包括Wealthsimple、KOHO、Questbank和美国银行（Bank of America）。虽然该系统采用分阶段推广，但其设计具备快速扩展能力；随着各大主要金融机构陆续接入，预计RTR在运行首年内将覆盖超过90%的加拿大人。
-
-政府及行业领袖，包括财政部长商鹏飞（François-Philippe Champagne）和加拿大央行行长蒂夫·麦克勒姆（Tiff Macklem），将此次启动称作“加拿大团队”（Team Canada）的里程碑。他们强调，RTR提供了一个安全且植根于加拿大的基础，用以驱动创新、增强全球竞争力，并支持更具包容性的数字经济。
-
----
-
-## 7. E-means: Outperforming k-means in one-tenth the epochs
-
-**原文标题**: E-means: Outperforming k-means in one-tenth the epochs
-
-**原文链接**: [https://e-means.github.io/](https://e-means.github.io/)
+**原文链接**: [https://docodethatmatters.com/home-automation-overnight-success/](https://docodethatmatters.com/home-automation-overnight-success/)
 
 生成摘要时出错
 
 ---
 
-## 8. Claude Fable 5.2 在 Artificial Analysis 获 65 分，创下目前最高纪录
+## 4. 陶哲轩：数学六大要素
 
-**原文标题**: Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far
+**原文标题**: Six Math Essentials by Terence Tao
 
-**原文链接**: [https://artificialanalysis.ai/models/claude-fable-5-2](https://artificialanalysis.ai/models/claude-fable-5-2)
+**原文链接**: [https://teorth.github.io/tao-web/six-math-essentials.html](https://teorth.github.io/tao-web/six-math-essentials.html)
 
-Anthropic’s **Claude Fable 5.2 (Max)** has set a new record in AI performance, scoring **65** on the Artificial Analysis Intelligence Index—the highest recorded to date and well above the industry median of 40. Released in November 2026, this proprietary reasoning model leads in intelligence but comes with significant trade-offs in speed and cost.
+《数学六要素》（Six Math Essentials）是著名数学家、菲尔兹奖得主陶哲轩（Terence Tao）即将于2026年底出版的新书。该书由 Quanta Books 出版（美国由 Farrar, Straus and Giroux 发行，英国由 Pelican 发行），旨在作为一份通俗易懂的指南，介绍塑造数学思维及我们对世界理解的基础概念。
 
-**Key Performance Metrics:**
-*   **Intelligence:** Ranked #1 out of 734 models. It excels in complex benchmarks like AA-Briefcase (agentic work), FrontierCode 2.0 (software engineering), and HLE-Diamond (reasoning).
-*   **Speed and Latency:** The model is notably slow, averaging **44.1 minutes per task** compared to a 12.9-minute median. It has a high "time to first answer token" of 231.55 seconds, though it maintains an output speed of 103 tokens per second.
-*   **Cost:** Pricing is premium at **$8.00 per 1M input tokens** and **$40.00 per 1M output tokens**. The average cost per intelligence task is $26.54, significantly higher than competitors.
-*   **Verbosity:** The model is highly verbose, generating 275M tokens during the Intelligence Index evaluation—nearly four times the median volume.
+在这部篇幅精炼的著作中，陶哲轩确定并探讨了数学的六大“核心”支柱：
 
-**Technical Specifications:**
-Claude Fable 5.2 supports multimodal inputs (text and images) and features a **1M token context window**. It is categorized as a reasoning model, designed for high-level analytical quality and transparency.
+1. **数字：** 定量思维的入口。
+2. **代数：** 抽象化的基础。
+3. **几何：** 超越直观感知的计算工具。
+4. **概率：** 应对不确定性的严谨框架。
+5. **分析：** 掌控极端尺度（从极宏观到极微观）的手段。
+6. **动力学：** 研究变化的数学。
 
-**Summary:**
-While Claude Fable 5.2 establishes a new frontier for AI intelligence and agentic capabilities, its high operational costs and slow processing times position it as a specialized tool for complex reasoning tasks rather than high-speed, low-cost applications.
+本书追溯了这些概念从古代起源到现代研究前沿的发展历程，展示了它们如何帮助我们对复杂系统进行建模。英国版书名为《数学六要素：如何为世界建模》（Six Maths Essentials: How to Model the World），定于2026年10月27日发行；美国版将于2026年11月10日出版。该书将提供精装本、电子书和数字音频格式。
 
 ---
 
-## 9. Our Smallest, Most Efficient Model: Muse Ember
+## 5. Synaptics 专利主张导致 DisplayLink 驱动程序停止开发
 
-**原文标题**: Our Smallest, Most Efficient Model: Muse Ember
+**原文标题**: Synaptics patent claims stop work on DisplayLink drivers
 
-**原文链接**: [https://research.meta.ai/blog/muse-ember](https://research.meta.ai/blog/muse-ember)
+**原文链接**: [https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/](https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/)
+
+开发者 Mike Lothian 为 DisplayLink 扩展坞开发开源 Linux 驱动程序的尝试，因母公司 Synaptics 的激进法律行动而被迫中止。Lothian 此前开发了名为“Vino”的 Rust 驱动程序，旨在取代 Synaptics 性能低下且平台支持有限的封闭源代码二进制软件。
+
+在 Lothian 就专有的“DL3”协议向 Synaptics 寻求技术协助后，该公司的法律团队发出了停止侵权函。Synaptics 指控 Vino 项目侵犯了其广泛的专利组合，要求 Lothian 停止开发，撤回向 Linux 内核及公共仓库提交的所有代码，并提供签署的合规确认书。此外，Synaptics 还威胁称若不服从将面临每周 2.5 万美元的罚款，声称 Lothian 正在“削减”其竞争优势。
+
+Lothian 曾尝试通过开放发明网络（OIN）寻求保护，他和 Synaptics 都是该专利共享组织的成员。然而，OIN 最终判定无法提供保护，因为涉案专利涉及视频编解码器，而这被明确排除在 OIN 的“Linux 系统定义”之外。
+
+由于无力承担与大公司进行昂贵法律诉讼的费用，Lothian 最终服从了要求，并将代码从公众视野中删除。这一事件严峻地提醒了人们，软件专利对独立开源开发者构成了持续威胁。目前，DisplayLink 硬件的 Linux 用户仍只能受限于厂商表现不佳的专有驱动，无法实现功能对等，也缺乏开源的替代方案。
+
+---
+
+## 6. 《谢尔曼反托拉斯法》（1890）
+
+**原文标题**: Sherman Anti-Trust Act (1890
+
+**原文链接**: [https://www.archives.gov/milestone-documents/sherman-anti-trust-act](https://www.archives.gov/milestone-documents/sherman-anti-trust-act)
+
+《谢尔曼反托拉斯法》于1890年7月2日批准通过，是美国国会通过的第一部禁止托拉斯和取缔垄断性商业行为的联邦立法。该法案以俄亥俄州参议员约翰·谢尔曼的名字命名，利用宪法赋予国会监管州际贸易的权力，旨在恢复市场竞争并保护自由市场。
+
+该立法专门针对“托拉斯”——即股东将股份转让给受托人委员会以合并收益并消除竞争的安排，标准石油托拉斯便是这一做法的典型。法案宣布，任何州际间或与外国之间“限制贸易”的合同、联合或阴谋均为非法。其关键条款授权联邦政府提起诉讼以解散托拉斯，对违规者设立了罚款和监禁等刑事处罚，并允许受害方起诉索要三倍赔偿。
+
+尽管初衷明确，但该法案早期的效力因措辞含糊以及1895年最高法院在“美国诉E.C.奈特公司案”中的限制性裁决而受到削弱，该裁决认为制造业不构成“贸易”。然而，在西奥多·罗斯福总统的“反垄断”时代，该法案重新焕发生机，并由塔夫脱总统在1911年成功用于解散标准石油和美国烟草等巨头公司。
+
+《谢尔曼反托拉斯法》至今仍是美国经济政策的基石。其深远意义体现在一个多世纪后的持续应用中，最著名的案例便是20世纪90年代政府针对微软发起的反垄断诉讼。
+
+---
+
+## 7. Val Town 即将停运
+
+**原文标题**: Val Town is winding down
+
+**原文链接**: [https://blog.val.town/winding-down](https://blog.val.town/winding-down)
+
+Val Town 首席执行官 Steve Krouse 于 2026 年 11 月 10 日宣布，由于无法在竞争激烈的云计算市场中进行有效竞争，该平台在运营四年后将逐步停止服务。
+
+关闭流程将按以下时间表进行：
+*   **2026 年 11 月 10 日：** 停止新用户注册和方案升级。
+*   **2026 年 12 月 10 日：** 平台转入只读模式。
+*   **2027 年 1 月 10 日：** 所有服务正式终止。
+*   **2027 年 2 月 1 日：** Val Town 将正式开源。
+
+为了协助用户过渡，Val Town 已暂停所有计费，并将在关闭前免费提供现有的订阅服务。年度计划用户有权获得部分退款。
+
+官方鼓励用户将项目迁移至 Cloudflare、Vercel、Netlify 或 Render 等替代托管服务商。公司已提供专门的迁移指南，并建议利用大语言模型（LLM）来辅助迁移工作。用户仍可通过 Discord 和电子邮件获取技术支持。Krouse 在最后向 Val Town 团队、投资者及社区的创造力与支持表达了感谢。
+
+---
+
+## 8. Show HN：让你的编程智能体告别 ~2019 年的 JavaScript，转向现代 Web 原语
+
+**原文标题**: Show HN: Get your coding agent off ~2019 JavaScript, onto modern web primitives
+
+**原文链接**: [https://github.com/GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance)
 
 生成摘要时出错
 
 ---
 
-## 10. Fold Epic Paper Airplanes
+## 9. AlphaProof Code
 
-**原文标题**: Fold Epic Paper Airplanes
+**原文标题**: AlphaProof Code
+
+**原文链接**: [https://deepmind.google/blog/introducing-alphaproof-code/](https://deepmind.google/blog/introducing-alphaproof-code/)
+
+Based on the text provided, here is a concise summary:
+
+Introduced in October 2025, **CodeMender** is an AI agent specifically designed to enhance **code security**. Released with a focus on **responsibility and safety**, the tool serves as a proactive solution for identifying and mitigating vulnerabilities within software development. By integrating AI-driven oversight into the coding process, CodeMender aims to improve the overall integrity and protection of software ecosystems, ensuring that security remains a primary consideration in automated development environments.
+
+---
+
+## 10. What objective is reasoning solving?
+
+**原文标题**: What objective is reasoning solving?
+
+**原文链接**: [https://alexwang.ai/posts/reasoning-as-pathfinding/](https://alexwang.ai/posts/reasoning-as-pathfinding/)
+
+生成摘要时出错
+
+---
+
+## 11. AMD's Zen 6 Family: Feeding the Beast
+
+**原文标题**: AMD's Zen 6 Family: Feeding the Beast
+
+**原文链接**: [https://chipsandcheese.com/p/amds-zen-6-family-feeding-the-beast](https://chipsandcheese.com/p/amds-zen-6-family-feeding-the-beast)
+
+生成摘要时出错
+
+---
+
+## 12. A comprehensive study of how fingerprintable users are
+
+**原文标题**: A comprehensive study of how fingerprintable users are
+
+**原文链接**: [https://fingerprinting.study/](https://fingerprinting.study/)
+
+生成摘要时出错
+
+---
+
+## 13. Ableton Live 13
+
+**原文标题**: Ableton Live 13
+
+**原文链接**: [https://www.ableton.com/en/live/](https://www.ableton.com/en/live/)
+
+生成摘要时出错
+
+---
+
+## 14. Show HN: Valencia, Spain in Sim City/Isometric View
+
+**原文标题**: Show HN: Valencia, Spain in Sim City/Isometric View
+
+**原文链接**: [https://tinyvalencia.com/](https://tinyvalencia.com/)
+
+生成摘要时出错
+
+---
+
+## 15. Process Explorer for macOS
+
+**原文标题**: Process Explorer for macOS
+
+**原文链接**: [https://github.com/microsoft/Procexp-Mac](https://github.com/microsoft/Procexp-Mac)
+
+生成摘要时出错
+
+---
+
+## 16. Blender 5.3 released with Gaussian Splat support
+
+**原文标题**: Blender 5.3 released with Gaussian Splat support
+
+**原文链接**: [https://www.blender.org/download/releases/5-3/](https://www.blender.org/download/releases/5-3/)
+
+生成摘要时出错
+
+---
+
+## 17. rVPN – stealth VPN with end-to-end encryption
+
+**原文标题**: rVPN – stealth VPN with end-to-end encryption
+
+**原文链接**: [https://rvpn.org/](https://rvpn.org/)
+
+生成摘要时出错
+
+---
+
+## 18. Life on Claude Nine
+
+**原文标题**: Life on Claude Nine
+
+**原文链接**: [https://babuschk.in/posts/2026-01-25-life-on-claude-nine.html](https://babuschk.in/posts/2026-01-25-life-on-claude-nine.html)
+
+生成摘要时出错
+
+---
+
+## 19. An Open Field Guide to Inference Engineering
+
+**原文标题**: An Open Field Guide to Inference Engineering
+
+**原文链接**: [https://docs.modelplane.ai/guides/inference-guide](https://docs.modelplane.ai/guides/inference-guide)
+
+生成摘要时出错
+
+---
+
+## 20. What's new in the .NET 11 runtime
+
+**原文标题**: What's new in the .NET 11 runtime
+
+**原文链接**: [https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/runtime](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-11/runtime)
+
+生成摘要时出错
+
+---
+
+## 21. The planet Vulcan: a cautionary tale
+
+**原文标题**: The planet Vulcan: a cautionary tale
+
+**原文链接**: [https://kevinboone.me/vulcan.html](https://kevinboone.me/vulcan.html)
+
+生成摘要时出错
+
+---
+
+## 22. AI usage generates a fragile codebase
+
+**原文标题**: AI usage generates a fragile codebase
+
+**原文链接**: [https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/](https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/)
+
+生成摘要时出错
+
+---
+
+## 23. Claude Whiteboards, Claude Sheets, and Claude Data
+
+**原文标题**: Claude Whiteboards, Claude Sheets, and Claude Data
+
+**原文链接**: [https://claude.com/resources/articles/sheets-whiteboards-data](https://claude.com/resources/articles/sheets-whiteboards-data)
+
+生成摘要时出错
+
+---
+
+## 24. I deleted all my SSH keys
+
+**原文标题**: I deleted all my SSH keys
+
+**原文链接**: [https://blog.infected.systems/posts/2026-11-03-i-deleted-all-my-ssh-keys/](https://blog.infected.systems/posts/2026-11-03-i-deleted-all-my-ssh-keys/)
+
+生成摘要时出错
+
+---
+
+## 25. What constant surveillance is doing to children and parents
+
+**原文标题**: What constant surveillance is doing to children and parents
+
+**原文链接**: [https://www.theatlantic.com/magazine/2026/12/location-tracking-apps-parental-surveillance/689031/](https://www.theatlantic.com/magazine/2026/12/location-tracking-apps-parental-surveillance/689031/)
+
+生成摘要时出错
+
+---
+
+## 26. M John Harrison becomes first science fiction author to win the Booker
+
+**原文标题**: M John Harrison becomes first science fiction author to win the Booker
+
+**原文链接**: [https://www.theguardian.com/books/2026/nov/09/m-john-harrison-the-end-of-everything-wins-2026-booker-prize](https://www.theguardian.com/books/2026/nov/09/m-john-harrison-the-end-of-everything-wins-2026-booker-prize)
+
+生成摘要时出错
+
+---
+
+## 27. NetBSD 11 desktop on a Raspberry Pi 4
+
+**原文标题**: NetBSD 11 desktop on a Raspberry Pi 4
+
+**原文链接**: [https://neongd.com/articles/netbsd11-rpi4.gmi](https://neongd.com/articles/netbsd11-rpi4.gmi)
+
+生成摘要时出错
+
+---
+
+## 28. Queens Public Library under ransomware attack
+
+**原文标题**: Queens Public Library under ransomware attack
+
+**原文链接**: [https://connect.queenslibrary.org/](https://connect.queenslibrary.org/)
+
+生成摘要时出错
+
+---
+
+## 29. Apple has new Mac app coming to make running local AI models easy
+
+**原文标题**: Apple has new Mac app coming to make running local AI models easy
+
+**原文链接**: [https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/](https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/)
+
+生成摘要时出错
+
+---
+
+## 30. Taking another shot at the cheap IP camera, part 2
+
+**原文标题**: Taking another shot at the cheap IP camera, part 2
+
+**原文链接**: [https://ericswpark.com/blog/2026/2026-11-09-ip-camera-pt2/](https://ericswpark.com/blog/2026/2026-11-09-ip-camera-pt2/)
+
+生成摘要时出错
+
+---
+
+## 31. The Hardest Tarball?
+
+**原文标题**: The Hardest Tarball?
+
+**原文链接**: [https://stoppels.ch/2026/11/07/the-hardest-tarball.html](https://stoppels.ch/2026/11/07/the-hardest-tarball.html)
+
+生成摘要时出错
+
+---
+
+## 32. Variable-width Bézier curves (2025)
+
+**原文标题**: Variable-width Bézier curves (2025)
+
+**原文链接**: [https://luthert.web.illinois.edu/blog/posts/775.html](https://luthert.web.illinois.edu/blog/posts/775.html)
+
+生成摘要时出错
+
+---
+
+## 33. Fossil CO2 emissions decrease in 2026
+
+**原文标题**: Fossil CO2 emissions decrease in 2026
+
+**原文链接**: [https://news.exeter.ac.uk/faculty-of-environment-science-and-economy/fossil-co2-emissions-decrease-in-2026/](https://news.exeter.ac.uk/faculty-of-environment-science-and-economy/fossil-co2-emissions-decrease-in-2026/)
+
+生成摘要时出错
+
+---
+
+## 34. The death knell of digital search
+
+**原文标题**: The death knell of digital search
+
+**原文链接**: [https://www.newyorker.com/culture/infinite-scroll/the-death-knell-of-digital-search](https://www.newyorker.com/culture/infinite-scroll/the-death-knell-of-digital-search)
+
+生成摘要时出错
+
+---
+
+## 35. Starlink Mini 2
+
+**原文标题**: Starlink Mini 2
+
+**原文链接**: [https://starlink.com/mini-2](https://starlink.com/mini-2)
+
+生成摘要时出错
+
+---
+
+## 36. Businesses in ChatGPT – OpenAI
+
+**原文标题**: Businesses in ChatGPT – OpenAI
+
+**原文链接**: [https://openai.com/index/introducing-businesses-chatgpt/](https://openai.com/index/introducing-businesses-chatgpt/)
+
+生成摘要时出错
+
+---
+
+## 37. Billion Watts in the Speaker [video]
+
+**原文标题**: Billion Watts in the Speaker [video]
+
+**原文链接**: [https://www.youtube.com/watch?v=PHOcTXYaMfg](https://www.youtube.com/watch?v=PHOcTXYaMfg)
+
+生成摘要时出错
+
+---
+
+## 38. Show HN: I have trained 15 blood glucose forecasting models on my own data
+
+**原文标题**: Show HN: I have trained 15 blood glucose forecasting models on my own data
+
+**原文链接**: [https://github.com/0xdeadf1sh/T1DMAI](https://github.com/0xdeadf1sh/T1DMAI)
+
+生成摘要时出错
+
+---
+
+## 39. A failed experiment in laptop cooling (2025)
+
+**原文标题**: A failed experiment in laptop cooling (2025)
+
+**原文链接**: [https://kevinboone.me/failed_cooling.html](https://kevinboone.me/failed_cooling.html)
+
+生成摘要时出错
+
+---
+
+## 40. Amazon saves millions by replacing Sonnet 4.6 with Strands Decider
+
+**原文标题**: Amazon saves millions by replacing Sonnet 4.6 with Strands Decider
+
+**原文链接**: [https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/](https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/)
+
+生成摘要时出错
+
+---
+
+## 41. Foldable Flight: The Best Paper Airplanes
+
+**原文标题**: Foldable Flight: The Best Paper Airplanes
 
 **原文链接**: [https://www.foldableflight.com](https://www.foldableflight.com)
 
@@ -180,715 +468,107 @@ While Claude Fable 5.2 establishes a new frontier for AI intelligence and agenti
 
 ---
 
-## 11. Infineon marks innovation milestone with 300mm power silicon carbide wafer
+## 42. Show HN: Ghanaian street games you can play in the browser
 
-**原文标题**: Infineon marks innovation milestone with 300mm power silicon carbide wafer
+**原文标题**: Show HN: Ghanaian street games you can play in the browser
 
-**原文链接**: [https://www.infineon.com/press-release/2026/infpr202611-028](https://www.infineon.com/press-release/2026/infpr202611-028)
+**原文链接**: [https://www.ghanastreetgames.com/](https://www.ghanastreetgames.com/)
 
 生成摘要时出错
 
 ---
 
-## 12. Magenta solar panels may be agrivoltaics' cleverest trick yet
+## 43. Your TV can see through walls (2025)
 
-**原文标题**: Magenta solar panels may be agrivoltaics' cleverest trick yet
+**原文标题**: Your TV can see through walls (2025)
 
-**原文链接**: [https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/](https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/)
+**原文链接**: [https://maurycyz.com/projects/fading/](https://maurycyz.com/projects/fading/)
 
 生成摘要时出错
 
 ---
 
-## 13. Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)
+## 44. Let over Lambda–50 Years of Lisp (2008)
 
-**原文标题**: Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)
+**原文标题**: Let over Lambda–50 Years of Lisp (2008)
 
-**原文链接**: [https://parkgraph.com/parking-app-fees](https://parkgraph.com/parking-app-fees)
+**原文链接**: [https://letoverlambda.com/](https://letoverlambda.com/)
 
 生成摘要时出错
 
 ---
 
-## 14. Exact – a new cross platform UI framework by the Expo team
+## 45. Work at the Frontier: AI's effect on freelance work
 
-**原文标题**: Exact – a new cross platform UI framework by the Expo team
+**原文标题**: Work at the Frontier: AI's effect on freelance work
 
-**原文链接**: [https://github.com/expo/exact](https://github.com/expo/exact)
+**原文链接**: [https://openai.com/index/ai-effect-on-freelance-work](https://openai.com/index/ai-effect-on-freelance-work)
 
 生成摘要时出错
 
 ---
 
-## 15. A primer on GPUs and kernel optimization
+## 46. Simon Winchester, Author of 'The Professor and the Madman,' Has Died
 
-**原文标题**: A primer on GPUs and kernel optimization
+**原文标题**: Simon Winchester, Author of 'The Professor and the Madman,' Has Died
 
-**原文链接**: [https://www.nabo.dev/blogs/kernel-primer](https://www.nabo.dev/blogs/kernel-primer)
+**原文链接**: [https://www.nytimes.com/2026/11/04/obituaries/simon-winchester-dead.html](https://www.nytimes.com/2026/11/04/obituaries/simon-winchester-dead.html)
 
-Based on the article **"A primer on GPUs and kernel optimization"** by Nabil Omi, here is a concise summary:
-
-The article provides a foundational overview of GPU architecture and the techniques required to optimize GPU kernels for high-performance computing. It begins by contrasting **CPUs and GPUs**, noting that while CPUs are designed for low-latency serial processing, GPUs are throughput-oriented engines designed to handle thousands of threads simultaneously.
-
-**Key Architectural Concepts:**
-*   **SIMT (Single Instruction, Multiple Threads):** The core execution model where multiple threads execute the same instruction on different data points.
-*   **Hierarchical Structure:** Threads are organized into **Blocks**, which are further grouped into a **Grid**. These blocks are mapped to **Streaming Multiprocessors (SMs)** on the hardware.
-*   **Memory Hierarchy:** The author emphasizes the speed differences between memory layers, moving from fast registers and shared memory to the significantly slower global memory.
-
-**Kernel Optimization Strategies:**
-The article highlights several critical areas for improving performance:
-1.  **Memory Coalescing:** Ensuring that threads in a warp access contiguous memory locations to minimize the number of global memory transactions.
-2.  **Shared Memory Utilization:** Using shared memory as a programmable cache to reduce redundant global memory reads and lower latency.
-3.  **Thread Divergence:** Minimizing conditional branching (like `if/else` statements) within a warp, which forces threads to execute serially and wastes computational cycles.
-4.  **Occupancy:** Balancing register and shared memory usage to maximize the number of active warps on an SM, which helps "hide" memory latency.
-
-Ultimately, Omi argues that effective GPU programming requires a deep understanding of hardware constraints, shifting the focus from simple algorithmic logic to strategic data movement and parallel resource management.
-
----
-
-## 16. Show HN: Every satellite that passed over any place this week, and its photos
-
-**原文标题**: Show HN: Every satellite that passed over any place this week, and its photos
-
-**原文链接**: [https://www.watched.earth](https://www.watched.earth)
-
-生成摘要时出错
-
----
-
-## 17. CUI – Native UI components for C
-
-**原文标题**: CUI – Native UI components for C
-
-**原文链接**: [https://yappologistic.github.io/CUI/](https://yappologistic.github.io/CUI/)
-
-生成摘要时出错
-
----
-
-## 18. Is Opus 5.5 nerfed? Thinking patterns changed on November 3
-
-**原文标题**: Is Opus 5.5 nerfed? Thinking patterns changed on November 3
-
-**原文链接**: [https://twitter.com/shanemelaugh/status/2119192075505893695](https://twitter.com/shanemelaugh/status/2119192075505893695)
-
-In a social media post dated November 7, 2026, Shane Melaugh raised questions regarding whether the AI model **Opus 5.5** has been "nerfed" (intentionally downgraded in performance).
-
-Melaugh reported that an analysis conducted by **Gemini 4 Argon**, which examined 1,400 Claude Code sessions, identified a significant shift in the model's behavior occurring on **November 3**. According to the findings, while the model’s name remained the same, its approach to reasoning underwent a "sharp turn." This suggests that behind-the-scenes updates may have fundamentally altered the model's logic or capabilities without a formal version change.
-
----
-
-## 19. An ode to livelyness analysis; SSA to registers
-
-**原文标题**: An ode to livelyness analysis; SSA to registers
-
-**原文链接**: [https://xnacly.me/posts/2026/an-ode-to-livelyness-analysis/](https://xnacly.me/posts/2026/an-ode-to-livelyness-analysis/)
-
-生成摘要时出错
-
----
-
-## 20. Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse
-
-**原文标题**: Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse
-
-**原文链接**: [https://meowdisplay.app/](https://meowdisplay.app/)
-
-生成摘要时出错
-
----
-
-## 21. Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling
-
-**原文标题**: Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling
-
-**原文链接**: [https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer](https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer)
-
-生成摘要时出错
-
----
-
-## 22. A year after the 100% AI mandate nobody understands our code
-
-**原文标题**: A year after the 100% AI mandate nobody understands our code
-
-**原文链接**: [https://www.reddit.com/r/ClaudeCode/comments/1xq2n3t/a_year_after_the_100_ai_mandate_nobody/](https://www.reddit.com/r/ClaudeCode/comments/1xq2n3t/a_year_after_the_100_ai_mandate_nobody/)
-
-生成摘要时出错
-
----
-
-## 23. A renowned scientist, a deadly snakebite, and a diary that documented it all
-
-**原文标题**: A renowned scientist, a deadly snakebite, and a diary that documented it all
-
-**原文链接**: [https://www.cbsnews.com/chicago/news/field-museum-karl-patterson-schmidt-deadly-snakebite-diary/](https://www.cbsnews.com/chicago/news/field-museum-karl-patterson-schmidt-deadly-snakebite-diary/)
-
-生成摘要时出错
-
----
-
-## 24. DeepX 宣称其 1000 亿参数推理功耗低于 5 瓦。
-
-**原文标题**: DeepX claims inference up to 100B parameters at less than 5 W
-
-**原文链接**: [https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/](https://www.eetimes.com/deepx-tapes-out-second-gen-chip-projects-6-7x-performance-gain-with-lpddr5x-pim/)
-
-生成摘要时出错
-
----
-
-## 25. What is malloc doing, anyway?
-
-**原文标题**: What is malloc doing, anyway?
-
-**原文链接**: [https://benmandrew.com/articles/what-is-malloc-doing-anyway](https://benmandrew.com/articles/what-is-malloc-doing-anyway)
-
-生成摘要时出错
-
----
-
-## 26. Possible 19th-century castaway camp found on Isla de los Estados
-
-**原文标题**: Possible 19th-century castaway camp found on Isla de los Estados
-
-**原文链接**: [https://phys.org/news/2026-11-archaeologists-uncover-19th-century-castaway.html](https://phys.org/news/2026-11-archaeologists-uncover-19th-century-castaway.html)
-
-生成摘要时出错
-
----
-
-## 27. Deuterium's Impact on OLED Displays (2024)
-
-**原文标题**: Deuterium's Impact on OLED Displays (2024)
-
-**原文链接**: [https://www.oled-info.com/deuteriums-impact-oled-displays](https://www.oled-info.com/deuteriums-impact-oled-displays)
-
-生成摘要时出错
-
----
-
-## 28. Magnets and Rare Earths
-
-**原文标题**: Magnets and Rare Earths
-
-**原文链接**: [https://robodienst.com/learning-paths/magnets-and-rare-earths](https://robodienst.com/learning-paths/magnets-and-rare-earths)
-
-生成摘要时出错
-
----
-
-## 29. Show HN: Someone Was Here – Find out who used your Mac while you were away
-
-**原文标题**: Show HN: Someone Was Here – Find out who used your Mac while you were away
-
-**原文链接**: [https://someonewashere.app/](https://someonewashere.app/)
-
-生成摘要时出错
-
----
-
-## 30. Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100
-
-**原文标题**: Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100
-
-**原文链接**: [https://github.com/Dodaios/ste80-humanizer](https://github.com/Dodaios/ste80-humanizer)
-
-生成摘要时出错
-
----
-
-## 31. Supply chain attack on Qubole customers
-
-**原文标题**: Supply chain attack on Qubole customers
-
-**原文链接**: [https://sentra.io/blog/breaches/inside-the-qubole-supply-chain-attack](https://sentra.io/blog/breaches/inside-the-qubole-supply-chain-attack)
-
-生成摘要时出错
-
----
-
-## 32. Pigshell: Unix the Web
-
-**原文标题**: Pigshell: Unix the Web
-
-**原文链接**: [http://pigshell.com/v/0.6.4/](http://pigshell.com/v/0.6.4/)
-
-生成摘要时出错
-
----
-
-## 33. The Web Is More Than Enough
-
-**原文标题**: The Web Is More Than Enough
-
-**原文链接**: [https://ftrain.com/aboard-the-web-is-more-than-enough](https://ftrain.com/aboard-the-web-is-more-than-enough)
-
-生成摘要时出错
-
----
-
-## 34. Cryptocurrency lawsuit: Ethereum Foundation required "suicide pledge"
-
-**原文标题**: Cryptocurrency lawsuit: Ethereum Foundation required "suicide pledge"
-
-**原文链接**: [https://www.denverpost.com/2026/11/06/ethereum-suicide-pledge-lawsuit-mandate-boulder-crypto/](https://www.denverpost.com/2026/11/06/ethereum-suicide-pledge-lawsuit-mandate-boulder-crypto/)
-
-生成摘要时出错
-
----
-
-## 35. French blood banks hacked in latest cyber-attack on Europe
-
-**原文标题**: French blood banks hacked in latest cyber-attack on Europe
-
-**原文链接**: [https://www.theguardian.com/technology/2026/nov/04/france-national-blood-service-hack-cyber-attack-europe](https://www.theguardian.com/technology/2026/nov/04/france-national-blood-service-hack-cyber-attack-europe)
-
-生成摘要时出错
-
----
-
-## 36. Show HN: Recalc – Spreadsheet where cells can be Claude Code or Codex terminals
-
-**原文标题**: Show HN: Recalc – Spreadsheet where cells can be Claude Code or Codex terminals
-
-**原文链接**: [https://github.com/sshah03/recalc](https://github.com/sshah03/recalc)
-
-生成摘要时出错
-
----
-
-## 37. Try Gleam
-
-**原文标题**: Try Gleam
-
-**原文链接**: [https://nchagnet.eu/blog/you-should-try-gleam](https://nchagnet.eu/blog/you-should-try-gleam)
-
-生成摘要时出错
-
----
-
-## 38. Claude Fable 5.2 launch offers
-
-**原文标题**: Claude Fable 5.2 launch offers
-
-**原文链接**: [https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers](https://support.claude.com/en/articles/17506494-claude-fable-5-2-launch-offers)
-
-生成摘要时出错
-
----
-
-## 39. When will this stop? The Raspberry Pi 5 16GB SBC now sells for $385
-
-**原文标题**: When will this stop? The Raspberry Pi 5 16GB SBC now sells for $385
-
-**原文链接**: [https://www.cnx-software.com/2026/11/03/when-will-this-stop-the-raspberry-pi-5-16gb-sbc-now-sells-for-385/](https://www.cnx-software.com/2026/11/03/when-will-this-stop-the-raspberry-pi-5-16gb-sbc-now-sells-for-385/)
-
-The article reports a significant price increase for the Raspberry Pi 5 16GB, which has risen to **$385**—an $80 jump from the previous hike and a massive increase from its $120 launch price. Other models are also affected; the Compute Module 5 (CM5) now starts at $375, though the Raspberry Pi 500+ keyboard PC remains steady at $410.
-
-This surge is part of a broader industry trend throughout 2026 driven by a severe global RAM shortage. Other major players like **NVIDIA** (with price hikes up to 101%) and **Arduino** have also raised prices. While lesser-known vendors like Orange Pi and Radxa are similarly impacted, their increases have been less publicized.
-
-Key factors contributing to this market volatility include:
-*   **Prolonged Shortages:** Industry leaders Micron and SK Hynix predict RAM supply issues could last until 2028 or 2030.
-*   **Geopolitical Tensions:** Conflict in the Middle East threatens the supply of helium, a critical material for wafer and chip manufacturing.
-*   **Economic Uncertainty:** Crashing token values and questions regarding the long-term profitability of AI have made financing difficult for some customers.
-*   **Market Instability:** Despite high prices, memory vendor stock prices have recently cratered as investors worry about the sustainability of current profit cycles.
-
-Ultimately, the article paints a grim picture for the affordability of single-board computers, suggesting that the era of low-cost hobbyist hardware is facing a prolonged disruption.
-
----
-
-## 40. Starship Flight 15 on 11/13 plans to catch both booster and ship
-
-**原文标题**: Starship Flight 15 on 11/13 plans to catch both booster and ship
-
-**原文链接**: [https://www.spacex.com/launches/starship-flight-15](https://www.spacex.com/launches/starship-flight-15)
-
-生成摘要时出错
-
----
-
-## 41. Children of Men: The future is a mirror for the present
-
-**原文标题**: Children of Men: The future is a mirror for the present
-
-**原文链接**: [https://reactormag.com/children-of-men-the-future-is-a-mirror-for-the-present/](https://reactormag.com/children-of-men-the-future-is-a-mirror-for-the-present/)
-
-生成摘要时出错
-
----
-
-## 42. Zebkit – Chromium as an embeddable library
-
-**原文标题**: Zebkit – Chromium as an embeddable library
-
-**原文链接**: [https://github.com/ikey4u/zebkit](https://github.com/ikey4u/zebkit)
-
-生成摘要时出错
-
----
-
-## 43. Testing Jev for IAM Access Decisions
-
-**原文标题**: Testing Jev for IAM Access Decisions
-
-**原文链接**: [https://www.trustle.com/post/jev-least-privilege](https://www.trustle.com/post/jev-least-privilege)
-
-生成摘要时出错
-
----
-
-## 44. Drones built to look like birds evaded detection at Air Force tech exercise
-
-**原文标题**: Drones built to look like birds evaded detection at Air Force tech exercise
-
-**原文链接**: [https://taskandpurpose.com/news/drone-mimicking-bird-test/](https://taskandpurpose.com/news/drone-mimicking-bird-test/)
-
-生成摘要时出错
-
----
-
-## 45. Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation
-
-**原文标题**: Next-Concept Modeling: Fast, Parallel Coarse-to-Fine Text Generation
-
-**原文链接**: [https://arxiv.org/abs/2610.14162](https://arxiv.org/abs/2610.14162)
-
-生成摘要时出错
-
----
-
-## 46. The Qlobe: Rotating Quine (2010)
-
-**原文标题**: The Qlobe: Rotating Quine (2010)
-
-**原文链接**: [http://mamememo.blogspot.com/2010/09/qlobe.html](http://mamememo.blogspot.com/2010/09/qlobe.html)
-
-生成摘要时出错
-
----
-
-## 47. Courses built from Hacker News posts
-
-**原文标题**: Courses built from Hacker News posts
-
-**原文链接**: [https://hackertutorials.com/](https://hackertutorials.com/)
-
-生成摘要时出错
-
----
-
-## 48. M4 Pro vs. M5 Pro (24GB): Qwen 3.8 Flash Next at 374 Tok/S Prefill with MoEShift
-
-**原文标题**: M4 Pro vs. M5 Pro (24GB): Qwen 3.8 Flash Next at 374 Tok/S Prefill with MoEShift
-
-**原文链接**: [https://github.com/davide-troiani/moeshift](https://github.com/davide-troiani/moeshift)
-
-生成摘要时出错
-
----
-
-## 49. I ran 120B MoE models on my 32GB M1 Max using under 16 GB
-
-**原文标题**: I ran 120B MoE models on my 32GB M1 Max using under 16 GB
-
-**原文链接**: [https://mitln.github.io/moe-inference-engine/](https://mitln.github.io/moe-inference-engine/)
-
-生成摘要时出错
-
----
-
-## 50. Indie Game Development with AI
-
-**原文标题**: Indie Game Development with AI
-
-**原文链接**: [https://www.sandromaglione.com/articles/indie-game-development-with-ai](https://www.sandromaglione.com/articles/indie-game-development-with-ai)
-
-生成摘要时出错
-
----
-
-## 51. Fun things to do with your VM/370 CE machine – Fun with big computers
-
-**原文标题**: Fun things to do with your VM/370 CE machine – Fun with big computers
-
-**原文链接**: [https://rbanffy.github.io/fun-with-big-computers/fun-with-vm370/](https://rbanffy.github.io/fun-with-big-computers/fun-with-vm370/)
-
-生成摘要时出错
-
----
-
-## 52. Which VPNs have published an independent audit, with sources
-
-**原文标题**: Which VPNs have published an independent audit, with sources
-
-**原文链接**: [https://top10vpns.com/tools/vpn-audit-tracker](https://top10vpns.com/tools/vpn-audit-tracker)
-
-生成摘要时出错
-
----
-
-## 53. Testing Claude on real-world electronics design
-
-**原文标题**: Testing Claude on real-world electronics design
-
-**原文链接**: [https://www.anthropic.com/research/claude-electronics-design](https://www.anthropic.com/research/claude-electronics-design)
-
-生成摘要时出错
-
----
-
-## 54. Evaporative cooling cuts solar panel temperature by about 30 C in tests
-
-**原文标题**: Evaporative cooling cuts solar panel temperature by about 30 C in tests
-
-**原文链接**: [https://spectrum.ieee.org/solar-panel-cooling](https://spectrum.ieee.org/solar-panel-cooling)
-
-生成摘要时出错
-
----
-
-## 55. RAM-Altman reports unused RAM on your machine, one email a day
-
-**原文标题**: RAM-Altman reports unused RAM on your machine, one email a day
-
-**原文链接**: [https://github.com/IainKay/ram-altman](https://github.com/IainKay/ram-altman)
-
-生成摘要时出错
-
----
-
-## 56. USB: A trust layer for AI skills and MCP servers
-
-**原文标题**: USB: A trust layer for AI skills and MCP servers
-
-**原文链接**: [https://github.com/PeepSick/usbplus](https://github.com/PeepSick/usbplus)
-
-生成摘要时出错
-
----
-
-## 57. Norway has purchased 500k drones for Ukraine (Norwegian)
-
-**原文标题**: Norway has purchased 500k drones for Ukraine (Norwegian)
-
-**原文链接**: [https://www.forsvaretsforum.no/droner-fma-forsvarsmateriell/noreg-har-kjopt-500000-dronar-til-ukraina/531540](https://www.forsvaretsforum.no/droner-fma-forsvarsmateriell/noreg-har-kjopt-500000-dronar-til-ukraina/531540)
-
-生成摘要时出错
-
----
-
-## 58. Pointer Provenance in Rust vs. C++: Pointers Are Not Just Glorified Ints
-
-**原文标题**: Pointer Provenance in Rust vs. C++: Pointers Are Not Just Glorified Ints
-
-**原文链接**: [https://sofiabelen.github.io/projects/pointer-provenance-in-rust-vs-cpp/](https://sofiabelen.github.io/projects/pointer-provenance-in-rust-vs-cpp/)
-
-生成摘要时出错
-
----
-
-## 59. The same H100 costs $2.69 or $12.29 an hour depending where you rent it
-
-**原文标题**: The same H100 costs $2.69 or $12.29 an hour depending where you rent it
-
-**原文链接**: [https://github.com/datareceipts/data-receipts/tree/main/109-gpu-pricing](https://github.com/datareceipts/data-receipts/tree/main/109-gpu-pricing)
-
-生成摘要时出错
-
----
-
-## 60. Shake Signals – The economy through a small business owner's eyes
-
-**原文标题**: Shake Signals – The economy through a small business owner's eyes
-
-**原文链接**: [https://shakegraph.com/signals](https://shakegraph.com/signals)
-
-生成摘要时出错
-
----
-
-## 61. Unlocking any car from X brand in most of the world
-
-**原文标题**: Unlocking any car from X brand in most of the world
-
-**原文链接**: [https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/](https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/)
-
-生成摘要时出错
-
----
-
-## 62. Going back two years on Hacker News is like entering another, better universe
-
-**原文标题**: Going back two years on Hacker News is like entering another, better universe
-
-**原文链接**: [https://news.ycombinator.com/front?day=2024-11-08](https://news.ycombinator.com/front?day=2024-11-08)
-
-生成摘要时出错
-
----
-
-## 63. The Learjet Repo Man (2009)
-
-**原文标题**: The Learjet Repo Man (2009)
-
-**原文链接**: [https://www.salon.com/2009/06/06/lear_jet_repo_man/](https://www.salon.com/2009/06/06/lear_jet_repo_man/)
-
-生成摘要时出错
-
----
-
-## 64. Active Benchmarking
-
-**原文标题**: Active Benchmarking
-
-**原文链接**: [https://www.brendangregg.com/activebenchmarking.html](https://www.brendangregg.com/activebenchmarking.html)
-
-生成摘要时出错
-
----
-
-## 65. Quasi-Logarithmic Kitchen Timer
-
-**原文标题**: Quasi-Logarithmic Kitchen Timer
-
-**原文链接**: [https://blog.coredump.cx/p/quasi-logarithmic-kitchen-timer](https://blog.coredump.cx/p/quasi-logarithmic-kitchen-timer)
-
-生成摘要时出错
-
----
-
-## 66. Show HN: Flide: Make Jev-like decision models up to 9.5x faster
-
-**原文标题**: Show HN: Flide: Make Jev-like decision models up to 9.5x faster
-
-**原文链接**: [https://github.com/OmniJev/Flide](https://github.com/OmniJev/Flide)
-
-生成摘要时出错
-
----
-
-## 67. KetchUp – Open-source SketchUp alternative built with Rust and WebGPU
-
-**原文标题**: KetchUp – Open-source SketchUp alternative built with Rust and WebGPU
-
-**原文链接**: [https://ketchup3d.github.io/app/](https://ketchup3d.github.io/app/)
-
-生成摘要时出错
-
----
-
-## 68. I saw your HN comment
-
-**原文标题**: I saw your HN comment
-
-**原文链接**: [https://joshstrange.com/2026/11/09/i-saw-your-hn-comment/](https://joshstrange.com/2026/11/09/i-saw-your-hn-comment/)
-
-生成摘要时出错
-
----
-
-## 69. Show HN: Airgap-check – find what your AI app silently downloads offline
-
-**原文标题**: Show HN: Airgap-check – find what your AI app silently downloads offline
-
-**原文链接**: [https://github.com/humanethq/airgap-check](https://github.com/humanethq/airgap-check)
-
-生成摘要时出错
-
----
-
-## 70. PixelOS
-
-**原文标题**: PixelOS
-
-**原文链接**: [https://pixelos.net/](https://pixelos.net/)
-
-生成摘要时出错
-
----
-
-## 71. Psalm 7 release: PHP security&static analysis software
-
-**原文标题**: Psalm 7 release: PHP security&static analysis software
-
-**原文链接**: [https://psalm.dev/articles/psalm-7](https://psalm.dev/articles/psalm-7)
-
-生成摘要时出错
-
----
-
-## 72. Nvidia CEO Jensen Huang's letter to staff about affair
-
-**原文标题**: Nvidia CEO Jensen Huang's letter to staff about affair
-
-**原文链接**: [https://nvidianews.nvidia.com/news/a-message-to-our-company](https://nvidianews.nvidia.com/news/a-message-to-our-company)
-
-生成摘要时出错
-
----
-
-## 73. Show HN: Rollare – Bracket maker with registration and live scoring
-
-**原文标题**: Show HN: Rollare – Bracket maker with registration and live scoring
-
-**原文链接**: [https://rollare.com/](https://rollare.com/)
-
 生成摘要时出错
 
 ---
 
-## 74. LHCb finds evidence for the decay B0 to mu+ mu-, with improved B0s measurement
+## 47. Locating the source of a mysterious beep
 
-**原文标题**: LHCb finds evidence for the decay B0 to mu+ mu-, with improved B0s measurement
+**原文标题**: Locating the source of a mysterious beep
 
-**原文链接**: [https://arxiv.org/abs/2611.00230](https://arxiv.org/abs/2611.00230)
+**原文链接**: [https://simonwillison.net/2026/Nov/9/mysterious-beeps/](https://simonwillison.net/2026/Nov/9/mysterious-beeps/)
 
 生成摘要时出错
 
 ---
 
-## 75. Why Is AI Slop So Frustrating to Read?
+## 48. Why, oh why, is it so hard to buy a digital bus ticket in 2026?
 
-**原文标题**: Why Is AI Slop So Frustrating to Read?
+**原文标题**: Why, oh why, is it so hard to buy a digital bus ticket in 2026?
 
-**原文链接**: [https://zonderlabs.com/slop](https://zonderlabs.com/slop)
+**原文链接**: [https://www.jotaen.net/lEkNG/buying-a-digital-bus-ticket-in-2026/](https://www.jotaen.net/lEkNG/buying-a-digital-bus-ticket-in-2026/)
 
 生成摘要时出错
 
 ---
 
-## 76. Borrowing a Microsoft-signed shim to abuse Secure Boot on corporate hardware
+## 49. Fireworks AI security breach impacts Notion and their customers
 
-**原文标题**: Borrowing a Microsoft-signed shim to abuse Secure Boot on corporate hardware
+**原文标题**: Fireworks AI security breach impacts Notion and their customers
 
-**原文链接**: [https://leosmith.wtf/blog/not-so-secure-boot.html](https://leosmith.wtf/blog/not-so-secure-boot.html)
+**原文链接**: [https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor](https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor)
 
 生成摘要时出错
 
 ---
 
-## 77. Boston Dynamics – Atlas on a Roll [video]
+## 50. Tailscale's DNS IPv6 spells out "Tailscale"
 
-**原文标题**: Boston Dynamics – Atlas on a Roll [video]
+**原文标题**: Tailscale's DNS IPv6 spells out "Tailscale"
 
-**原文链接**: [https://www.youtube.com/watch?v=NL65Awuv8gU](https://www.youtube.com/watch?v=NL65Awuv8gU)
+**原文链接**: [https://www.reddit.com/r/Tailscale/comments/1xsr24r/tailscales_dns_ipv6_spells_out_tailscale_easter/](https://www.reddit.com/r/Tailscale/comments/1xsr24r/tailscales_dns_ipv6_spells_out_tailscale_easter/)
 
 生成摘要时出错
 
 ---
 
-## 78. How Australia played the first music on a computer
+## 51. Claude Fable 5.2 and Mythos 5.2
 
-**原文标题**: How Australia played the first music on a computer
+**原文标题**: Claude Fable 5.2 and Mythos 5.2
 
-**原文链接**: [https://www.pearcey.org.au/heritage/csirac/how-australia-played-the-worlds-first-music-on-a-computer/](https://www.pearcey.org.au/heritage/csirac/how-australia-played-the-worlds-first-music-on-a-computer/)
+**原文链接**: [https://www.anthropic.com/claude-fable-and-mythos-5-2](https://www.anthropic.com/claude-fable-and-mythos-5-2)
 
 生成摘要时出错
 
 ---
 
-## 79. Here comes the sun[light]:An ambient Daylight Clock with time and space controls
+## 52. Here comes the sun[light]:An ambient Daylight Clock with time and space controls
 
 **原文标题**: Here comes the sun[light]:An ambient Daylight Clock with time and space controls
 
@@ -898,211 +578,481 @@ Ultimately, the article paints a grim picture for the affordability of single-bo
 
 ---
 
-## 80. Nvidia was in 1 in 11 startup rounds over $100M last year
+## 53. Show HN: TheoremSmith: Mass-Producing Hard Proof Problems to Train LLMs
 
-**原文标题**: Nvidia was in 1 in 11 startup rounds over $100M last year
+**原文标题**: Show HN: TheoremSmith: Mass-Producing Hard Proof Problems to Train LLMs
 
-**原文链接**: [https://datahyena.com/research/a-chipmaker-was-in-one-of-every-eleven-100m-rounds/](https://datahyena.com/research/a-chipmaker-was-in-one-of-every-eleven-100m-rounds/)
-
-生成摘要时出错
-
----
-
-## 81. Declarative Dragging
-
-**原文标题**: Declarative Dragging
-
-**原文链接**: [https://declarative-dragging.github.io/](https://declarative-dragging.github.io/)
+**原文链接**: [https://charleshuang.me/2026/09/27/theoremsmith/](https://charleshuang.me/2026/09/27/theoremsmith/)
 
 生成摘要时出错
 
 ---
 
-## 82. Goldman Sachs is pulling Claude Code from its bankers and traders
+## 54. PHP2Shell Deep Dive
 
-**原文标题**: Goldman Sachs is pulling Claude Code from its bankers and traders
+**原文标题**: PHP2Shell Deep Dive
 
-**原文链接**: [https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers](https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers)
-
-生成摘要时出错
-
----
-
-## 83. Turning the HEIC decoder into a SHA-256 computer
-
-**原文标题**: Turning the HEIC decoder into a SHA-256 computer
-
-**原文链接**: [https://www.irisc2.com/blog/heic-hashquine](https://www.irisc2.com/blog/heic-hashquine)
+**原文链接**: [https://djad04.github.io/php2shell-deep-dive/](https://djad04.github.io/php2shell-deep-dive/)
 
 生成摘要时出错
 
 ---
 
-## 84. Ur-Nammu Founder of the Sumerian Renaissance
+## 55. Show HN: WolveKafka – Consume Kafka with a plain HTTP endpoint
 
-**原文标题**: Ur-Nammu Founder of the Sumerian Renaissance
+**原文标题**: Show HN: WolveKafka – Consume Kafka with a plain HTTP endpoint
 
-**原文链接**: [https://www.worldhistory.org/Ur-Nammu/](https://www.worldhistory.org/Ur-Nammu/)
-
-生成摘要时出错
-
----
-
-## 85. I'm not convinced the AI bubble exists
-
-**原文标题**: I'm not convinced the AI bubble exists
-
-**原文链接**: [https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists](https://matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html#im-not-convinced-the-ai-bubble-exists)
+**原文链接**: [https://github.com/wolveflake/wolvekafka](https://github.com/wolveflake/wolvekafka)
 
 生成摘要时出错
 
 ---
 
-## 86. Canadian Stephanie Case is the first woman to run 100mi in Antarctica
+## 56. Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling
 
-**原文标题**: Canadian Stephanie Case is the first woman to run 100mi in Antarctica
+**原文标题**: Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling
 
-**原文链接**: [https://www.cbc.ca/news/canada/canadian-ultramarathon-antarctica-woman-stephanie-case-9.7415361](https://www.cbc.ca/news/canada/canadian-ultramarathon-antarctica-woman-stephanie-case-9.7415361)
-
-生成摘要时出错
-
----
-
-## 87. Outlook.com is rejecting email from domains without DMARC
-
-**原文标题**: Outlook.com is rejecting email from domains without DMARC
-
-**原文链接**: [https://mailroute.net/blog/outlook-rejecting-email-without-dmarc](https://mailroute.net/blog/outlook-rejecting-email-without-dmarc)
+**原文链接**: [https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer](https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer)
 
 生成摘要时出错
 
 ---
 
-## 88. The secret retreat being built for the ultra-rich in the Arctic wilderness
+## 57. How hard is it to check for whitespace?
 
-**原文标题**: The secret retreat being built for the ultra-rich in the Arctic wilderness
+**原文标题**: How hard is it to check for whitespace?
 
-**原文链接**: [https://www.cnn.com/travel/octola-three-arctic-finland-secret-retreat](https://www.cnn.com/travel/octola-three-arctic-finland-secret-retreat)
-
-生成摘要时出错
-
----
-
-## 89. Burying the Evidence: nine out of every 10 time capsules go missing
-
-**原文标题**: Burying the Evidence: nine out of every 10 time capsules go missing
-
-**原文链接**: [https://longreads.com/2026/11/05/time-capsules-ashley-stimpson/](https://longreads.com/2026/11/05/time-capsules-ashley-stimpson/)
+**原文链接**: [https://serce.me/posts/2026-10-30-how-hard-is-it-to-check-for-whitespace](https://serce.me/posts/2026-10-30-how-hard-is-it-to-check-for-whitespace)
 
 生成摘要时出错
 
 ---
 
-## 90. Corruption Is a Cost-of-Living Issue: App Store Edition
+## 58. AI Users have workdays up to 90 min longer than non-users
 
-**原文标题**: Corruption Is a Cost-of-Living Issue: App Store Edition
+**原文标题**: AI Users have workdays up to 90 min longer than non-users
 
-**原文链接**: [https://infrequently.org/2026/11/app-stores-pwas-and-corruption/](https://infrequently.org/2026/11/app-stores-pwas-and-corruption/)
-
-生成摘要时出错
-
----
-
-## 91. A Death from Dengue May Signal That the Disease in U.S. Is Here to Stay
-
-**原文标题**: A Death from Dengue May Signal That the Disease in U.S. Is Here to Stay
-
-**原文链接**: [https://www.nytimes.com/2026/11/09/us/dengue-united-states-florida-mosquitos.html](https://www.nytimes.com/2026/11/09/us/dengue-united-states-florida-mosquitos.html)
+**原文链接**: [https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/](https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/)
 
 生成摘要时出错
 
 ---
 
-## 92. Sleep wearables are training AI on your brainwaves without explicit consent
+## 59. Apple is working on a new app called Harbor
 
-**原文标题**: Sleep wearables are training AI on your brainwaves without explicit consent
+**原文标题**: Apple is working on a new app called Harbor
 
-**原文链接**: [https://www.tomshardware.com/peripherals/wearable-tech/wearable-sleep-trackers-are-using-your-brainwaves-to-train-ai-models-without-explicit-user-consent-tens-of-millions-of-hours-of-eeg-data-harvested](https://www.tomshardware.com/peripherals/wearable-tech/wearable-sleep-trackers-are-using-your-brainwaves-to-train-ai-models-without-explicit-user-consent-tens-of-millions-of-hours-of-eeg-data-harvested)
-
-生成摘要时出错
-
----
-
-## 93. JIT bitmap text rendering for microcontrollers
-
-**原文标题**: JIT bitmap text rendering for microcontrollers
-
-**原文链接**: [https://linebender.org/blog/jit-bitmap-text/](https://linebender.org/blog/jit-bitmap-text/)
+**原文链接**: [https://twitter.com/aaronp613/status/2120229190477992162](https://twitter.com/aaronp613/status/2120229190477992162)
 
 生成摘要时出错
 
 ---
 
-## 94. Commerce Dept Inquiry into Megaspeed Halted After Nvdia Intervention
+## 60. Horible public key tricks
 
-**原文标题**: Commerce Dept Inquiry into Megaspeed Halted After Nvdia Intervention
+**原文标题**: Horible public key tricks
 
-**原文链接**: [https://www.nytimes.com/2026/11/09/business/economy/nvidia-megaspeed-investigation-huang.html](https://www.nytimes.com/2026/11/09/business/economy/nvidia-megaspeed-investigation-huang.html)
-
-生成摘要时出错
-
----
-
-## 95. Too many men suffering in silence, national health report finds (Canada)
-
-**原文标题**: Too many men suffering in silence, national health report finds (Canada)
-
-**原文链接**: [https://www.westcentralonline.com/articles/too-many-men-suffering-in-silence-national-health-report-finds](https://www.westcentralonline.com/articles/too-many-men-suffering-in-silence-national-health-report-finds)
+**原文链接**: [https://maurycyz.com/projects/badcert/](https://maurycyz.com/projects/badcert/)
 
 生成摘要时出错
 
 ---
 
-## 96. Chimera Vocal Synth
+## 61. USPS now offers official ZIP Code boundary polygons
 
-**原文标题**: Chimera Vocal Synth
+**原文标题**: USPS now offers official ZIP Code boundary polygons
 
-**原文链接**: [https://chimera-vocal-synth.vercel.app/](https://chimera-vocal-synth.vercel.app/)
-
-生成摘要时出错
-
----
-
-## 97. Show HN: Vegetable Gardening for Engineers
-
-**原文标题**: Show HN: Vegetable Gardening for Engineers
-
-**原文链接**: [https://jrcpl.us/contrib/2020/gardening-for-engineers/](https://jrcpl.us/contrib/2020/gardening-for-engineers/)
+**原文链接**: [https://postalpro.usps.com/zcb](https://postalpro.usps.com/zcb)
 
 生成摘要时出错
 
 ---
 
-## 98. Claude Fable 5.2
+## 62. Ultorg: The User Interface for Relational Databases
 
-**原文标题**: Claude Fable 5.2
+**原文标题**: Ultorg: The User Interface for Relational Databases
 
-**原文链接**: [https://twitter.com/claudeai/status/2119867114450268322](https://twitter.com/claudeai/status/2119867114450268322)
-
-生成摘要时出错
-
----
-
-## 99. 6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here
-
-**原文标题**: 6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here
-
-**原文链接**: [https://github.com/samir-sarwar/samir-vllm](https://github.com/samir-sarwar/samir-vllm)
+**原文链接**: [https://www.ultorg.com/](https://www.ultorg.com/)
 
 生成摘要时出错
 
 ---
 
-## 100. The French Cake Cooked on a Spit (2018) [video]
+## 63. Building an OOO RISC-V CPU from scratch
 
-**原文标题**: The French Cake Cooked on a Spit (2018) [video]
+**原文标题**: Building an OOO RISC-V CPU from scratch
 
-**原文链接**: [https://www.youtube.com/watch?v=havcACdx0Y0](https://www.youtube.com/watch?v=havcACdx0Y0)
+**原文链接**: [https://prawns.dev/blogs/specula](https://prawns.dev/blogs/specula)
+
+生成摘要时出错
+
+---
+
+## 64. ClickHouse Acquires Xata
+
+**原文标题**: ClickHouse Acquires Xata
+
+**原文链接**: [https://xata.io/blog/xata-is-joining-clickhouse](https://xata.io/blog/xata-is-joining-clickhouse)
+
+生成摘要时出错
+
+---
+
+## 65. Show HN: Every satellite that passed over any place this week, and its photos
+
+**原文标题**: Show HN: Every satellite that passed over any place this week, and its photos
+
+**原文链接**: [https://www.watched.earth](https://www.watched.earth)
+
+生成摘要时出错
+
+---
+
+## 66. A primer on GPUs and kernel optimization
+
+**原文标题**: A primer on GPUs and kernel optimization
+
+**原文链接**: [https://www.nabo.dev/blogs/kernel-primer](https://www.nabo.dev/blogs/kernel-primer)
+
+生成摘要时出错
+
+---
+
+## 67. Alpine Linux and OpenSSH patch flaw that's as bad as it can get
+
+**原文标题**: Alpine Linux and OpenSSH patch flaw that's as bad as it can get
+
+**原文链接**: [https://www.zdnet.com/tech/alpine-linux-openssh-patch-flaw/](https://www.zdnet.com/tech/alpine-linux-openssh-patch-flaw/)
+
+生成摘要时出错
+
+---
+
+## 68. Fable 5.2 and Jagged AGI
+
+**原文标题**: Fable 5.2 and Jagged AGI
+
+**原文链接**: [https://www.oneusefulthing.org/p/fable-52-and-jagged-agi](https://www.oneusefulthing.org/p/fable-52-and-jagged-agi)
+
+生成摘要时出错
+
+---
+
+## 69. Gemini 4 Carbon is now available
+
+**原文标题**: Gemini 4 Carbon is now available
+
+**原文链接**: [https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/)
+
+生成摘要时出错
+
+---
+
+## 70. Anthropic Targets $1.4T Valuation in IPO
+
+**原文标题**: Anthropic Targets $1.4T Valuation in IPO
+
+**原文链接**: [https://www.bloomberg.com/news/videos/2026-11-10/anthropic-targets-1-4-trillion-valuation-in-ipo-video](https://www.bloomberg.com/news/videos/2026-11-10/anthropic-targets-1-4-trillion-valuation-in-ipo-video)
+
+生成摘要时出错
+
+---
+
+## 71. Formalizing CPython
+
+**原文标题**: Formalizing CPython
+
+**原文链接**: [https://broyojo.com/python-formalization/](https://broyojo.com/python-formalization/)
+
+生成摘要时出错
+
+---
+
+## 72. The first 300-millimeter power silicon carbide (SiC) wafer
+
+**原文标题**: The first 300-millimeter power silicon carbide (SiC) wafer
+
+**原文链接**: [https://www.infineon.com/press-release/2026/infpr202611-028](https://www.infineon.com/press-release/2026/infpr202611-028)
+
+生成摘要时出错
+
+---
+
+## 73. On Being an Engineer in 2026
+
+**原文标题**: On Being an Engineer in 2026
+
+**原文链接**: [https://shahar.blog/2026/11/08/on-being-an-engineer-in-2026/](https://shahar.blog/2026/11/08/on-being-an-engineer-in-2026/)
+
+生成摘要时出错
+
+---
+
+## 74. Google Gemini routes personal Drive files and emails to human annotators
+
+**原文标题**: Google Gemini routes personal Drive files and emails to human annotators
+
+**原文链接**: [https://github.com/thisisme6598/gemini_files/](https://github.com/thisisme6598/gemini_files/)
+
+生成摘要时出错
+
+---
+
+## 75. Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system
+
+**原文标题**: Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system
+
+**原文链接**: [https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy](https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy)
+
+生成摘要时出错
+
+---
+
+## 76. Saltline: First-person shooter built by Fable 5.2
+
+**原文标题**: Saltline: First-person shooter built by Fable 5.2
+
+**原文链接**: [https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp](https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp)
+
+生成摘要时出错
+
+---
+
+## 77. E-means: Outperforming k-means in one-tenth the epochs
+
+**原文标题**: E-means: Outperforming k-means in one-tenth the epochs
+
+**原文链接**: [https://e-means.github.io/](https://e-means.github.io/)
+
+生成摘要时出错
+
+---
+
+## 78. Time for AVIF everywhere?
+
+**原文标题**: Time for AVIF everywhere?
+
+**原文链接**: [https://www.michaelponders.com/2026/11/isnt-it-time-for-avif-everywhere.html](https://www.michaelponders.com/2026/11/isnt-it-time-for-avif-everywhere.html)
+
+生成摘要时出错
+
+---
+
+## 79. Windows Search RCE Vulnerability
+
+**原文标题**: Windows Search RCE Vulnerability
+
+**原文链接**: [https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116928](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-116928)
+
+生成摘要时出错
+
+---
+
+## 80. Muse Ember: Our smallest, most efficient model
+
+**原文标题**: Muse Ember: Our smallest, most efficient model
+
+**原文链接**: [https://research.meta.ai/blog/muse-ember](https://research.meta.ai/blog/muse-ember)
+
+生成摘要时出错
+
+---
+
+## 81. The Web Is More Than Enough
+
+**原文标题**: The Web Is More Than Enough
+
+**原文链接**: [https://ftrain.com/aboard-the-web-is-more-than-enough](https://ftrain.com/aboard-the-web-is-more-than-enough)
+
+生成摘要时出错
+
+---
+
+## 82. macOS 27.2.1 Fixes eMudhra Certificate Flaw in Command-Line Tools
+
+**原文标题**: macOS 27.2.1 Fixes eMudhra Certificate Flaw in Command-Line Tools
+
+**原文链接**: [https://www.macrumors.com/2026/11/09/macos-27-2-1-emudhra-fix/](https://www.macrumors.com/2026/11/09/macos-27-2-1-emudhra-fix/)
+
+生成摘要时出错
+
+---
+
+## 83. Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse
+
+**原文标题**: Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse
+
+**原文链接**: [https://meowdisplay.app/](https://meowdisplay.app/)
+
+生成摘要时出错
+
+---
+
+## 84. Fable 5.2 one-shotted my nephew's dream game
+
+**原文标题**: Fable 5.2 one-shotted my nephew's dream game
+
+**原文链接**: [https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game](https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game)
+
+生成摘要时出错
+
+---
+
+## 85. Never Gonna Print You Up
+
+**原文标题**: Never Gonna Print You Up
+
+**原文链接**: [https://dixken.de/blog/never-gonna-print-you-up](https://dixken.de/blog/never-gonna-print-you-up)
+
+生成摘要时出错
+
+---
+
+## 86. Starship Flight 15 on 11/13 plans to catch both booster and ship
+
+**原文标题**: Starship Flight 15 on 11/13 plans to catch both booster and ship
+
+**原文链接**: [https://www.spacex.com/launches/starship-flight-15](https://www.spacex.com/launches/starship-flight-15)
+
+生成摘要时出错
+
+---
+
+## 87. Is Opus 5.5 nerfed? Thinking patterns changed on November 3
+
+**原文标题**: Is Opus 5.5 nerfed? Thinking patterns changed on November 3
+
+**原文链接**: [https://twitter.com/shanemelaugh/status/2119192075505893695](https://twitter.com/shanemelaugh/status/2119192075505893695)
+
+生成摘要时出错
+
+---
+
+## 88. Show HN: Someone Was Here – Find out who used your Mac while you were away
+
+**原文标题**: Show HN: Someone Was Here – Find out who used your Mac while you were away
+
+**原文链接**: [https://someonewashere.app/](https://someonewashere.app/)
+
+生成摘要时出错
+
+---
+
+## 89. Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100
+
+**原文标题**: Show HN: STE80 Humanizer – de-AI text by writing 80% of the way to ASD-STE100
+
+**原文链接**: [https://github.com/Dodaios/ste80-humanizer](https://github.com/Dodaios/ste80-humanizer)
+
+生成摘要时出错
+
+---
+
+## 90. Drones built to look like birds evaded detection at Air Force tech exercise
+
+**原文标题**: Drones built to look like birds evaded detection at Air Force tech exercise
+
+**原文链接**: [https://taskandpurpose.com/news/drone-mimicking-bird-test/](https://taskandpurpose.com/news/drone-mimicking-bird-test/)
+
+生成摘要时出错
+
+---
+
+## 91. Contract: Digital Archivist, Historical Systems
+
+**原文标题**: Contract: Digital Archivist, Historical Systems
+
+**原文链接**: [https://careers.nintendo.com/jobs/4458631009/](https://careers.nintendo.com/jobs/4458631009/)
+
+生成摘要时出错
+
+---
+
+## 92. Semi-transparent, colored cadmium telluride photovoltaic panels in agrivoltaics
+
+**原文标题**: Semi-transparent, colored cadmium telluride photovoltaic panels in agrivoltaics
+
+**原文链接**: [https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/](https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/)
+
+生成摘要时出错
+
+---
+
+## 93. Show HN: Y Recombinator – The HN threads HN keeps recommending
+
+**原文标题**: Show HN: Y Recombinator – The HN threads HN keeps recommending
+
+**原文链接**: [https://yrecombinator.org/](https://yrecombinator.org/)
+
+生成摘要时出错
+
+---
+
+## 94. Statement from the Independent Members of the Nvidia Board
+
+**原文标题**: Statement from the Independent Members of the Nvidia Board
+
+**原文链接**: [https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board](https://nvidianews.nvidia.com/news/statement-from-the-independent-members-of-the-nvidia-board)
+
+生成摘要时出错
+
+---
+
+## 95. Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far
+
+**原文标题**: Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far
+
+**原文链接**: [https://artificialanalysis.ai/models/claude-fable-5-2](https://artificialanalysis.ai/models/claude-fable-5-2)
+
+生成摘要时出错
+
+---
+
+## 96. Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)
+
+**原文标题**: Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)
+
+**原文链接**: [https://parkgraph.com/parking-app-fees](https://parkgraph.com/parking-app-fees)
+
+生成摘要时出错
+
+---
+
+## 97. Anthropic to Seek $1.3T Valuation in IPO
+
+**原文标题**: Anthropic to Seek $1.3T Valuation in IPO
+
+**原文链接**: [https://www.wsj.com/finance/stocks/anthropic-to-seek-1-3-trillion-valuation-in-ipo-8337b669](https://www.wsj.com/finance/stocks/anthropic-to-seek-1-3-trillion-valuation-in-ipo-8337b669)
+
+生成摘要时出错
+
+---
+
+## 98. An ode to livelyness analysis; SSA to registers
+
+**原文标题**: An ode to livelyness analysis; SSA to registers
+
+**原文链接**: [https://xnacly.me/posts/2026/an-ode-to-livelyness-analysis/](https://xnacly.me/posts/2026/an-ode-to-livelyness-analysis/)
+
+生成摘要时出错
+
+---
+
+## 99. Try Gleam
+
+**原文标题**: Try Gleam
+
+**原文链接**: [https://nchagnet.eu/blog/you-should-try-gleam](https://nchagnet.eu/blog/you-should-try-gleam)
+
+生成摘要时出错
+
+---
+
+## 100. Russia's combat losses in the data of Rosstat
+
+**原文标题**: Russia's combat losses in the data of Rosstat
+
+**原文链接**: [https://rosstat-leaks.com/?lang=en](https://rosstat-leaks.com/?lang=en)
 
 生成摘要时出错
 
