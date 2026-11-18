@@ -1,594 +1,394 @@
 [
   {
+    "id": "50538240",
+    "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+    "url": "https://calif.io/java4shell/",
+    "summary": "The article discloses **Java4Shell** (CVE-2026-114938), a critical memory-corruption vulnerability in the OpenJDK Base64 decoder with a CVSS score of 9.2. \n\n**Technical Details**\nThe flaw resides in the hand-rolled assembly code used to optimize Base64 decoding via x86-64 AVX-512 VBMI instructions. When processing specific malformed inputs—such as 64 \"A\" characters followed by an equals sign—the decoder calculates a negative output length. This results in an out-of-bounds write that can overwrite neighboring memory, potentially leading to sensitive data disclosure or Remote Code Execution (RCE).\n\n**Impact and Scope**\nBecause Base64 is fundamental to authentication and data transfer, the vulnerability affects a vast array of Java-based infrastructure. The researchers demonstrated RCE in widely used applications including Jenkins, Atlassian Jira/Confluence, Keycloak, and Elasticsearch. Both server-side and client-side (via malicious TLS connections) exploitations are possible.\n\n**Key Themes**\n*   **The \"Centaur Hacker\":** The vulnerability was discovered and weaponized in just three hours using a combination of AI agents and human researchers (\"centaur hacking\"), highlighting how AI can accelerate exploit development.\n*   **The Risk of Optimization:** While Java is generally memory-safe, its low-level performance optimizations (written in C++ or Assembly) bypass these protections, introducing \"legacy\" memory corruption risks into modern stacks.\n*   **Vibe-Uncoding:** The authors advocate for reducing attack surfaces by using AI to identify and delete unnecessary, bloated, or \"dead\" code—a process they call \"vibe-uncoding.\" They argue that many systems inherit risks from complex optimizations or outdated protocols (like FTP) that they do not actually require.",
+    "chinese_title": "Java4Shell：OpenJDK 处理 Base64 时存在的远程代码执行漏洞",
+    "chinese_summary": "本文披露了 **Java4Shell** (CVE-2026-114938)，这是 OpenJDK Base64 解码器中一个严重的内存损坏漏洞，其 CVSS 评分高达 9.2。\n\n**技术细节**\n该缺陷存在于为了通过 x86-64 AVX-512 VBMI 指令优化 Base64 解码而使用的手写汇编代码中。在处理特定的恶意输入时（例如 64 个“A”字符后跟一个等号），解码器会计算出负的输出长度。这会导致越界写入并覆盖邻近内存，进而可能导致敏感数据泄露或远程代码执行 (RCE)。\n\n**影响与范围**\n由于 Base64 是身份验证和数据传输的基础，该漏洞影响了极其广泛的 Java 基础设施。研究人员已在 Jenkins、Atlassian Jira/Confluence、Keycloak 和 Elasticsearch 等广泛使用的应用程序中成功演示了 RCE。服务端和客户端（通过恶意的 TLS 连接）攻击均可行。\n\n**核心主题**\n*   **“半人马黑客”：** 该漏洞在短短三小时内通过 AI 代理与人类研究员的协作（即“半人马式黑客攻击”）被发现并武器化，凸显了 AI 如何加速漏洞利用程序的开发。\n*   **优化的风险：** 尽管 Java 通常是内存安全的，但其底层性能优化（由 C++ 或汇编编写）绕过了这些保护机制，从而将“传统”内存损坏风险引入了现代技术栈。\n*   **Vibe-Uncoding：** 作者主张利用 AI 识别并删除不必要的、臃肿的或“死”代码，以减少攻击面，并称这一过程为 “Vibe-Uncoding”。他们认为，许多系统从其并不真正需要的复杂优化或过时协议（如 FTP）中继承了安全风险。"
+  },
+  {
+    "id": "50535230",
+    "title": "GPT‑6.2 Astra and Sol",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "summary": "Unable to access the article link.",
+    "chinese_title": "GPT-6.2 阿斯特拉与索尔",
+    "chinese_summary": "无法访问文章链接。"
+  },
+  {
+    "id": "50538994",
+    "title": "Quad9's withdrawal from France: A canary in the coal mine",
+    "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+    "summary": "**Summary: Quad9’s Withdrawal from France**\n\nThe Swiss non-profit Quad9 is withdrawing its public DNS resolver from France following a court ruling that imposed financial penalties for the organization’s refusal to block domains linked to copyright infringement. Quad9 argues that the order placed them in an impossible position: either face crippling litigation or fundamentally compromise the privacy and security of their service.\n\nThe article highlights several critical consequences of this withdrawal:\n\n*   **Immediate Infrastructure Disruption:** Because Quad9 does not track users, it cannot notify them of the shutdown. Consequently, many individuals and organizations—including hospitals, universities, and government bodies—may experience sudden internet failure without explanation.\n*   **Ineffectiveness of DNS Blocking:** Cloudflare argues that DNS blocking is a \"blunt instrument\" that is easily bypassed. It blocks entire domains rather than specific infringing files and fails to remove the actual content from the internet.\n*   **A Growing Trend:** Quad9 is not alone; Cisco previously withdrew OpenDNS from several European countries under similar pressure, and Cloudflare, Google, and Cisco currently face a Belgian court order to begin blocking sites by 2027.\n*   **Collateral Damage:** Targeting reputable, transparent resolvers pushes users toward less trustworthy, anonymous services that may monetize data or lack security features like malware protection.\n\nCloudflare and other industry leaders contend that rightsholders should focus anti-piracy efforts on hosting providers—where the content actually resides—rather than basic infrastructure layers. They warn that continued legal pressure on DNS resolvers threatens the stability of the open internet and creates a dangerous precedent where individual countries can dictate global content accessibility. Currently, Cloudflare and its peers are appealing similar rulings to prevent further fragmentation of internet services.",
+    "chinese_title": "Quad9 撤出法国：煤矿里的金丝雀",
+    "chinese_summary": "**摘要：Quad9 撤出法国**\n\n瑞士非营利组织 Quad9 正将其公共 DNS 解析服务撤出法国。此前，法院因该组织拒绝屏蔽涉及侵权的域名而对其处以罚款。Quad9 认为，该裁决使其陷入了两难境地：要么面临毁灭性的诉讼，要么从根本上牺牲其服务的隐私和安全性。\n\n文章强调了此次撤出的几项关键后果：\n\n*   **基础设施立即中断：** 由于 Quad9 不追踪用户，因此无法通知他们服务关停。结果，包括医院、大学和政府机构在内的许多个人和组织可能会在不明原因的情况下突然遭遇断网。\n*   **DNS 屏蔽的无效性：** Cloudflare 认为 DNS 屏蔽是一种容易被绕过的“笨拙工具”。它屏蔽的是整个域名而非特定的侵权文件，且无法从互联网上移除实际内容。\n*   **日益增长的趋势：** Quad9 并非孤例。此前，思科（Cisco）在类似压力下已将其 OpenDNS 服务撤出多个欧洲国家；目前，Cloudflare、谷歌和思科还面临比利时法院的裁决，要求在 2027 年前开始屏蔽相关网站。\n*   **附带损害：** 针对声誉良好且透明的解析服务，会将用户推向信誉较低的匿名服务，而这些服务可能会利用数据牟利，或缺乏恶意软件防护等安全功能。\n\nCloudflare 及其他行业领导者主张，版权持有者应将反盗版工作的重点放在托管服务商（即内容实际存放地）上，而非基础架构层。他们警告称，对 DNS 解析器持续施加法律压力会威胁开放互联网的稳定性，并开创一个危险的先例，即个别国家可以主宰全球内容的访问权限。目前，Cloudflare 及其同行正就类似裁决提起上诉，以防止互联网服务的进一步碎片化。"
+  },
+  {
+    "id": "50537156",
+    "title": "jQuery 4.1.0",
+    "url": "https://github.com/jquery/jquery/releases/tag/4.1.0",
+    "summary": "On November 17, 2026, jQuery version 4.1.0 was released alongside version 3.8.0. This update focuses on modernizing the codebase, improving security, and expanding compatibility with modern web standards.\n\n**Key Technical Updates:**\n*   **Core Modernization:** A significant shift sees the library dropping legacy `getElementsByTagName` and `getElementsByClassName` methods in favor of the more modern `querySelectorAll`. Core loops were also refactored to prevent array bound errors.\n*   **Security and Selectors:** The release addresses a ReDoS (Regular Expression Denial of Service) vulnerability in identifier matching. It also includes a workaround for a regex interpreter bug in Safari 27 and optimizes `jQuery.uniqueSort` for better performance.\n*   **Ajax and Serialization:** The `jqXHR` object now includes a `responseURL` field. Additionally, the serialization module now supports form-associated custom elements, and new callback APIs were added for transports.\n*   **XML and CSS:** Enhanced support for XML documents was implemented via `createElementNS`, and fixes were applied to table style probing.\n\n**Documentation and Community:**\nThe release notes introduce several organizational updates, including:\n*   Guidelines for managing **machine-generated (AI) contributions**.\n*   The addition of **TuxCare** as a new commercial support vendor.\n*   Updated links for jQuery NES (Never-Ending Support) via HeroDevs.\n\n**Testing:**\nThe release includes comprehensive test suite updates, specifically improving coverage for SVG data, animations, and AJAX binary data. It also adjusts test expectations for specific browser behaviors in Chrome and Internet Explorer.\n\nOverall, jQuery 4.1.0 represents a continued effort to keep the library performant and secure for modern environments while maintaining its legacy of cross-browser reliability.",
+    "chinese_title": "jQuery 4.1.0",
+    "chinese_summary": "2026年11月17日，jQuery 4.1.0 版本与 3.8.0 版本同步发布。此次更新重点在于代码库的现代化、安全性提升，以及对现代 Web 标准兼容性的扩展。\n\n**核心技术更新：**\n*   **核心现代化：** 库架构发生了重大转变，放弃了传统的 `getElementsByTagName` 和 `getElementsByClassName` 方法，转而采用更现代的 `querySelectorAll`。同时重构了核心循环以防止数组越界错误。\n*   **安全与选择器：** 该版本修复了标识符匹配中的 ReDoS（正则表达式拒绝服务）漏洞。此外，它还包含针对 Safari 27 中正则表达式解释器错误的临时解决方案，并优化了 `jQuery.uniqueSort` 以提升性能。\n*   **Ajax 与序列化：** `jqXHR` 对象现在包含 `responseURL` 字段。此外，序列化模块现已支持表单关联的自定义元素，并为传输层（transports）添加了新的回调 API。\n*   **XML 与 CSS：** 通过 `createElementNS` 增强了对 XML 文档的支持，并修复了表格样式探测的相关问题。\n\n**文档与社区：**\n发布说明中引入了多项组织更新，包括：\n*   管理**机器生成（AI）贡献**的指南。\n*   新增 **TuxCare** 为商业支持供应商。\n*   更新了通过 HeroDevs 获取 jQuery NES（永无止境支持）的链接。\n\n**测试：**\n该版本包含了全面的测试套件更新，特别加强了对 SVG 数据、动画和 AJAX 二进制数据的覆盖，并针对 Chrome 和 Internet Explorer 中的特定浏览器行为调整了测试预期。\n\n总体而言，jQuery 4.1.0 展现了在保持其跨浏览器可靠性传统的同时，致力于让该库在现代环境中保持高效与安全的持续努力。"
+  },
+  {
+    "id": "50534631",
+    "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+    "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+    "summary": "In its latest annual regulatory filing, Nvidia has ceased the individual disclosure of revenue from Singapore, a market that previously accounted for a disproportionately large share of its sales. This change occurs as the company’s total annual revenue surged 126% to $60.9 billion, with recent quarterly figures putting it on an annualized run rate of over $100 billion.\n\nHistorically, Singapore was highlighted as a major market for Nvidia, representing roughly 15% of total revenue in late 2023. The city-state’s prominence is primarily due to its status as a global hub for data centers and cloud service providers. However, the high volume of sales to Singapore attracted scrutiny regarding U.S. export controls. Analysts have questioned whether the region serves as a \"pass-through\" point for advanced AI chips destined for China, which is currently under strict U.S. trade restrictions.\n\nNvidia attributes its geographical revenue to the \"billing location\" of the customer rather than the final destination of the product. By reclassifying Singapore into an \"Other countries\" category, the company has reduced transparency regarding specific regional sales during a period of intense geopolitical tension over semiconductor technology.\n\nDespite the reporting change, Nvidia’s overall growth remains unprecedented, driven by the massive demand for its AI hardware. The company continues to dominate the global AI infrastructure market while navigating complex trade regulations and evolving disclosure standards.",
+    "chinese_title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+    "chinese_summary": "在其最新的年度监管文件中，英伟达（Nvidia）已停止单独披露来自新加坡的收入，该市场此前在该公司销售额中占据了极高的份额。这一变化发生在该公司年度总营收飙升126%至609亿美元之际，而近期的季度数据表明其年化营收规模已突破1000亿美元。\n\n历史上，新加坡一直被列为英伟达的主要市场，在2023年底约占其总营收的15%。该国之所以地位显著，主要是因其作为全球数据中心和云服务提供商枢纽的地位。然而，对新加坡的高额销售引发了外界对美国出口管制执行情况的审视。分析师质疑该地区是否被用作向中国运送先进制程AI芯片的“中转站”，而中国目前正面临严厉的美国贸易限制。\n\n英伟达将地理营收归因于客户的“账单地址”而非产品的最终目的地。通过将新加坡重新分类至“其他国家”类别，在半导体技术地缘政治紧张局势加剧的背景下，该公司降低了特定地区销售数据的透明度。\n\n尽管报告方式有所改变，但在AI硬件巨大需求的推动下，英伟达的整体增长势头依然是前所未有的。在应对复杂的贸易法规和不断变化的披露标准的同时，该公司继续主导着全球AI基础设施市场。"
+  },
+  {
+    "id": "50535885",
+    "title": "MAI Code 2 and Code 2 Flash",
+    "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+    "summary": "Based on the provided text, here is a concise summary:\n\nOn November 17, 2026, information was released regarding **MAI Cyber 2 Flash**, a variant of the MAI Code 2 series. The announcement highlights two primary value propositions for this new offering: **leading-edge security** and **reduced costs**. The product is positioned as a high-performance security solution designed to be more accessible or budget-friendly than previous iterations.",
+    "chinese_title": "MAI Code 2 和 Code 2 Flash",
+    "chinese_summary": "根据提供的文本，以下是简明摘要：\n\n2026年11月17日，MAI Code 2 系列的衍生版本 MAI Cyber 2 Flash 的相关信息正式发布。公告强调了该新品的两大核心价值主张：领先的安全性和更低的成本。该产品被定位为一种高性能安全解决方案，旨在比以往版本更具价格优势且更易普及。"
+  },
+  {
+    "id": "50536813",
+    "title": "350 years ago, Ole Rømer discovered that light has a finite speed",
+    "url": "https://www.sciencenorway.no/culture-history-history-of-science/350-years-ago-this-man-discovered-that-light-has-a-finite-speed/2737969",
+    "summary": "In 1676, Danish astronomer Ole Rømer revolutionized science by proving that light travels at a finite speed, debunking the long-held belief that it moved instantaneously. While working at the Paris Observatory, Rømer spent years observing Io, one of Jupiter's moons. He noticed a consistent pattern: Io emerged from Jupiter’s shadow later than predicted when Earth was moving away from Jupiter and earlier when Earth was moving closer.\n\nRømer correctly deduced that these discrepancies occurred because light had to travel varying distances to reach Earth. In September 1676, he made a successful public prediction that Io would appear ten minutes later than expected on November 9. Based on his observations, he estimated that light took approximately 22 minutes to cross the diameter of Earth’s orbit. This placed the speed of light at roughly 225,000 km/s—about 25% lower than the actual speed of 300,000 km/s, but an impressive feat for the 17th century.\n\nThough initially met with some skepticism, Rømer's findings were eventually supported by prominent figures like Christiaan Huygens and Isaac Newton. His discovery was fully confirmed 50 years later by James Bradley’s observation of stellar aberration. \n\nRømer’s work remains a cornerstone of modern astronomy. By proving that light takes time to travel, he enabled the understanding that looking into deep space is equivalent to looking back in time. This concept is fundamental to how we study the history and evolution of the universe today.",
+    "chinese_title": "",
+    "chinese_summary": "1676年，丹麦天文学家奥勒·罗默（Ole Rømer）证明了光以有限的速度传播，推翻了长期以来认为光是瞬时传播的观念，从而彻底改变了科学界。在巴黎天文台工作期间，罗默花了数年时间观测木星的卫星之一——木卫一。他发现了一个规律：当地球远离木星时，木卫一从木星阴影中出现的时间比预期的要晚；而当地球靠近木星时，出现的时间则比预期的要早。\n\n罗默正确地推断出，这种差异的出现是因为光到达地球时所经过的距离不同。1676年9月，他成功做出公开预言，称11月9日木卫一的出现将比预期晚10分钟。根据他的观测，他估计光穿越地球轨道直径大约需要22分钟。这得出光速约为22.5万公里/秒——虽然比30万公里/秒的实际速度低了约25%，但在17世纪这已是一项了不起的成就。\n\n尽管最初受到了一些质疑，但罗默的发现最终得到了克里斯蒂安·惠更斯和艾萨克·牛顿等著名科学家的支持。50年后，詹姆斯·布拉德利对恒星光行差的观测充分证实了他的结论。\n\n罗默的研究成果至今仍是现代天文学的基石。通过证明光的传播需要时间，他开启了这样一种认知：观测深空等同于回望过去。这一概念对于我们今天研究宇宙的历史和演化至关重要。"
+  },
+  {
+    "id": "50535992",
+    "title": "Phrack 73 Released",
+    "url": "https://phrack.org/issues/73/introduction_md",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Phrack 73 发布",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50532849",
+    "title": "Highly classified US national security communications network goes down",
+    "url": "https://www.cnn.com/2026/11/17/politics/highly-classified-national-security-communications-network-goes-down",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Highly classified US national security communications network goes down",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50532118",
+    "title": "Java4Shell: pre-auth RCE flaw in Java 17 puts servers at risk (CVE-2026-114938)",
+    "url": "https://www.aikido.dev/blog/java-17-rce-vulnerability-cve-2026-114938",
+    "summary": "**Java4Shell (CVE-2026-114938)** is a critical unauthenticated remote code execution (RCE) vulnerability affecting Java 17, 21, 25, and 27. Rated with a high severity score of **9.2 (CVSS 4.0)**, the flaw allows attackers to execute code remotely without authentication. While the vulnerability specifically targets the Java 17 line and newer releases, Oracle Java SE 8 and 11 are confirmed to be unaffected by this specific CVE.\n\nOracle released emergency patches on November 17, 2026. Organizations are urged to update their Java environments to the following fixed versions (or newer):\n*   **Java 17:** 17.0.21.1\n*   **Java 21:** 21.0.13.1\n*   **Java 25:** 25.0.5.1\n*   **Java 27:** 27.0.1.1\n\nThe scope of the vulnerability includes various distributions such as Amazon Corretto, Eclipse Temurin, Azul Zulu, and Microsoft Build of OpenJDK, as well as JDKs bundled inside containers and applications. While Amazon Corretto has released fixed builds, other vendors may be on different release schedules.\n\nAs of the report date, there have been no confirmed instances of exploitation in the wild. however, technical details are expected to be made public soon, which often leads to a surge in attack attempts. Security experts recommend prioritizing updates for internet-facing services. Currently, no workarounds exist; the only effective mitigation is upgrading to a patched runtime.",
+    "chinese_title": "Java4Shell：Java 17 中的预身份验证 RCE 漏洞使服务器面临风险 (CVE-2026-114938)",
+    "chinese_summary": "**Java4Shell (CVE-2026-114938)** is a critical unauthenticated remote code execution (RCE) vulnerability affecting Java 17, 21, 25, and 27. Rated with a high severity score of **9.2 (CVSS 4.0)**, the flaw allows attackers to execute code remotely without authentication. While the vulnerability specifically targets the Java 17 line and newer releases, Oracle Java SE 8 and 11 are confirmed to be unaffected by this specific CVE.\n\nOracle released emergency patches on November 17, 2026. Organizations are urged to update their Java environments to the following fixed versions (or newer):\n*   **Java 17:** 17.0.21.1\n*   **Java 21:** 21.0.13.1\n*   **Java 25:** 25.0.5.1\n*   **Java 27:** 27.0.1.1\n\nThe scope of the vulnerability includes various distributions such as Amazon Corretto, Eclipse Temurin, Azul Zulu, and Microsoft Build of OpenJDK, as well as JDKs bundled inside containers and applications. While Amazon Corretto has released fixed builds, other vendors may be on different release schedules.\n\nAs of the report date, there have been no confirmed instances of exploitation in the wild. however, technical details are expected to be made public soon, which often leads to a surge in attack attempts. Security experts recommend prioritizing updates for internet-facing services. Currently, no workarounds exist; the only effective mitigation is upgrading to a patched runtime."
+  },
+  {
+    "id": "50539610",
+    "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+    "url": "https://github.com/microsoft/onnxruntime",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50536387",
+    "title": "Solid 2.0",
+    "url": "https://www.solidjs.com/blog/solid-2-0-the-long-hold/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Solid 2.0",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50537290",
+    "title": "Web Browser Engineering (2021)",
+    "url": "https://browser.engineering/",
+    "summary": "**Web Browser Engineering (2021)** is a comprehensive guide designed to explain the inner workings of web browsers by teaching readers how to build a functional browser from scratch. Using approximately 2,000 lines of Python, the book covers the entire process—from initial networking to complex JavaScript execution.\n\nPublished by Oxford University Press, the book’s curriculum is divided into four main parts:\n\n1.  **Loading Pages:** Focuses on the basics of networking, including URLs, HTTP requests, and rendering text to a screen.\n2.  **Viewing Documents:** Explores the mechanics of parsing HTML and CSS, as well as managing inline and block layouts.\n3.  **Running Applications:** Details the interactive side of the web, covering form submissions, JavaScript integration, and security protocols like cookies and XSS protection.\n4.  **Modern Browsers:** Addresses advanced features such as the rendering pipeline, GPU-accelerated animations, task scheduling, accessibility, and performance optimization.\n\nIn addition to the technical chapters, the book includes a glossary, bibliography, and a list of academic courses that utilize the text. It is available in English, Korean, and Japanese. The authors also maintain a supporting community through a blog, GitHub discussion forum, and social media channels to provide updates and facilitate reader engagement.",
+    "chinese_title": "Web Browser Engineering (2021)",
+    "chinese_summary": "**Web Browser Engineering (2021)** is a comprehensive guide designed to explain the inner workings of web browsers by teaching readers how to build a functional browser from scratch. Using approximately 2,000 lines of Python, the book covers the entire process—from initial networking to complex JavaScript execution.\n\nPublished by Oxford University Press, the book’s curriculum is divided into four main parts:\n\n1.  **Loading Pages:** Focuses on the basics of networking, including URLs, HTTP requests, and rendering text to a screen.\n2.  **Viewing Documents:** Explores the mechanics of parsing HTML and CSS, as well as managing inline and block layouts.\n3.  **Running Applications:** Details the interactive side of the web, covering form submissions, JavaScript integration, and security protocols like cookies and XSS protection.\n4.  **Modern Browsers:** Addresses advanced features such as the rendering pipeline, GPU-accelerated animations, task scheduling, accessibility, and performance optimization.\n\nIn addition to the technical chapters, the book includes a glossary, bibliography, and a list of academic courses that utilize the text. It is available in English, Korean, and Japanese. The authors also maintain a supporting community through a blog, GitHub discussion forum, and social media channels to provide updates and facilitate reader engagement."
+  },
+  {
+    "id": "50532191",
+    "title": "What is the best harness for each model?",
+    "url": "https://runta.com/blog/introducing-frontierharness-eval-v1-1/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "What is the best harness for each model?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50535238",
+    "title": "Apple Services Down",
+    "url": "https://developer.apple.com/system-status/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Apple Services Down",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50537120",
+    "title": "Effects of a Nuclear Detonation in Low Earth Orbit",
+    "url": "https://arxiv.org/abs/2611.09827",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Effects of a Nuclear Detonation in Low Earth Orbit",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50535208",
+    "title": "Who Builds the Machines That Build the Machines?",
+    "url": "https://read.corematter.com/p/section-232-us-machine-tools",
+    "summary": "生成摘要时出错",
+    "chinese_title": "谁在制造“制造机器的机器”？",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50539747",
+    "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+    "url": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50497872",
+    "title": "Mouse Party",
+    "url": "https://aboard.com/lets-have-a-mouse-party/",
+    "summary": "In the article \"Mouse Party,\" tech thinker Paul Ford introduces a free, open-source macOS application designed to help friends watch videos and interact online without the need for a dedicated web server. \n\nCreated as a response to the \"male loneliness epidemic,\" Mouse Party aims to simplify digital social gatherings. The app’s primary innovation is its use of Cloudflare’s \"quick tunnel\" technology, which allows a user to host a secure, temporary web server directly from their desktop. The process is intentionally simple: a host drags a video or file (such as an MP3, PDF, or ePub) into the app, which generates a disposable link to share with friends. Once the app is closed, the link, the server, and the chat history vanish forever.\n\nFord highlights several key features and philosophies behind the tool:\n*   **Simplicity and Ephemerality:** It avoids the complexity of traditional server setups, offering a \"no-login\" experience that prioritizes privacy through its temporary nature.\n*   **Collaborative Tools:** Beyond video, the app includes mini-apps for sketching, word games, and document sharing.\n*   **Content Sourcing:** It is optimized for files and Archive.org links, encouraging a \"digital campfire\" atmosphere where friends can \"talk trash\" over retro commercials or niche documentaries.\n*   **Social Trust:** Designed for friends rather than the general public, it lacks moderation tools; if a guest is disruptive, the host simply ends the session.\n\nUltimately, Mouse Party serves as a proof of concept for a more decentralized web, proving that users can create rich, collaborative experiences without relying on massive enterprise platforms or complex systems administration.",
+    "chinese_title": "Mouse Party",
+    "chinese_summary": "In the article \"Mouse Party,\" tech thinker Paul Ford introduces a free, open-source macOS application designed to help friends watch videos and interact online without the need for a dedicated web server. \n\nCreated as a response to the \"male loneliness epidemic,\" Mouse Party aims to simplify digital social gatherings. The app’s primary innovation is its use of Cloudflare’s \"quick tunnel\" technology, which allows a user to host a secure, temporary web server directly from their desktop. The process is intentionally simple: a host drags a video or file (such as an MP3, PDF, or ePub) into the app, which generates a disposable link to share with friends. Once the app is closed, the link, the server, and the chat history vanish forever.\n\nFord highlights several key features and philosophies behind the tool:\n*   **Simplicity and Ephemerality:** It avoids the complexity of traditional server setups, offering a \"no-login\" experience that prioritizes privacy through its temporary nature.\n*   **Collaborative Tools:** Beyond video, the app includes mini-apps for sketching, word games, and document sharing.\n*   **Content Sourcing:** It is optimized for files and Archive.org links, encouraging a \"digital campfire\" atmosphere where friends can \"talk trash\" over retro commercials or niche documentaries.\n*   **Social Trust:** Designed for friends rather than the general public, it lacks moderation tools; if a guest is disruptive, the host simply ends the session.\n\nUltimately, Mouse Party serves as a proof of concept for a more decentralized web, proving that users can create rich, collaborative experiences without relying on massive enterprise platforms or complex systems administration."
+  },
+  {
+    "id": "50535740",
+    "title": "Not Everything Needs an LLM",
+    "url": "https://newsletter.posthog.com/p/decision-models",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Not Everything Needs an LLM",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50538184",
+    "title": "Tencent Hy4 Flash",
+    "url": "https://hy.tencent.ai/research/hy4-flash",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Tencent Hy4 Flash",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50539039",
+    "title": "Latent Lattice Language Models",
+    "url": "https://shivamduggal4.github.io/latent-lattice-language-models/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Latent Lattice Language Models",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50536468",
+    "title": "Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos",
+    "url": "https://starsling.dev",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Launch HN: StarSling (YC P25) – Self-improving CI for agent-volume repos",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50511657",
+    "title": "Zoltraak and the Dynamics of Military Innovation",
+    "url": "https://jgeekstudies.org/2026/11/15/zoltraak-military-innovation-in-frieren/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Zoltraak and the Dynamics of Military Innovation",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50530163",
+    "title": "New Evidence Shows School Phone Bans Are Gradually Improving Test Scores",
+    "url": "https://www.nytimes.com/2026/11/17/upshot/school-phone-bans-study-scores.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "New Evidence Shows School Phone Bans Are Gradually Improving Test Scores",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50532385",
+    "title": "Show HN: Alloy CSS, dialogs, menus and tabs that work with JavaScript off",
+    "url": "https://alloyhtml.com/example.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: Alloy CSS, dialogs, menus and tabs that work with JavaScript off",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50529612",
+    "title": "How the Claude Code team thinks about verification",
+    "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Claude Code 团队如何看待验证",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50533270",
+    "title": "Show HN: TrnRT – An open-source LLM inference engine for AWS Trainium",
+    "url": "https://github.com/RunanywhereAI/trnrt",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Show HN: TrnRT – An open-source LLM inference engine for AWS Trainium",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50535898",
+    "title": "Advancing computer-use agents for healthcare teams",
+    "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Advancing computer-use agents for healthcare teams",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50499520",
+    "title": "Fixing a WebKit bug to see if promises are made of train tracks",
+    "url": "https://alistair.sh/thenables",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Fixing a WebKit bug to see if promises are made of train tracks",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50518328",
+    "title": "First Photos of the Poles of a Rod-Shaped Bacterium",
+    "url": "https://nautil.us/check-out-the-first-photos-of-the-poles-of-a-rod-shaped-bacterium-1286664",
+    "summary": "生成摘要时出错",
+    "chinese_title": "First Photos of the Poles of a Rod-Shaped Bacterium",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50515291",
+    "title": "Elephant-Goldfish Model",
+    "url": "https://egm.dev/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Elephant-Goldfish Model",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50506928",
+    "title": "New Species of Giant Fungus Discovered in China Grows Up to 20 Inches Tall",
+    "url": "https://www.wired.com/story/new-species-of-giant-fungus-discovered-in-china-grows-up-to-20-inches-tall/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "New Species of Giant Fungus Discovered in China Grows Up to 20 Inches Tall",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50538942",
+    "title": "Nvidia Chair Harvey Jones says board doesn't intend to reinstate Huang as CEO",
+    "url": "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Nvidia Chair Harvey Jones says board doesn't intend to reinstate Huang as CEO",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
     "id": "50522980",
     "title": "Carnegie Mellon is putting computer science courses on YouTube for free",
     "url": "https://www.cs.cmu.edu/learn/",
-    "summary": "Carnegie Mellon University (CMU) has significantly expanded access to its world-class education by uploading several of its computer science courses to YouTube for free. This initiative, primarily driven by the CMU School of Computer Science, aims to democratize high-level technical knowledge and provide a global audience with access to the same lectures delivered to enrolled students.\n\nThe \"CMU Courses\" YouTube channel features comprehensive, full-semester lecture series covering a wide range of foundational and advanced topics. Key subject areas include:\n\n*   **Database Systems:** Including advanced implementation and distributed databases.\n*   **Computer Systems:** Covering architecture and the inner workings of modern hardware.\n*   **Operating Systems:** Deep dives into kernel development and system management.\n*   **Software Engineering and Algorithms:** Specialized content focusing on practical application and theoretical foundations.\n\nThe initiative is particularly significant because Carnegie Mellon is consistently ranked as one of the top computer science institutions in the world. By providing these resources at no cost, the university is removing financial and geographical barriers for self-taught developers, students at other institutions, and lifelong learners. \n\nUnlike short-form tutorials, these videos are full-length recordings of actual classroom sessions, offering a rigorous academic experience. While viewers do not receive college credit or access to faculty grading, the availability of these high-quality materials represents a major contribution to the open-source education movement and supports the global community of researchers and engineers.",
-    "chinese_title": "卡内基梅隆大学在 YouTube 上免费提供计算机科学课程",
-    "chinese_summary": "卡内基梅隆大学（CMU）通过将多门计算机科学课程免费上传至 YouTube，显著扩大了其世界级教育资源的覆盖范围。这一举措主要由 CMU 计算机科学学院推动，旨在促进高水平技术知识的普及，让全球受众都能获取与在校学生相同的课程资源。\n\n“CMU Courses” YouTube 频道提供完整的学期系列讲座，涵盖了从基础到高级的广泛主题。重点领域包括：\n\n*   **数据库系统：** 包括高级实现和分布式数据库。\n*   **计算机系统：** 涵盖架构及现代硬件的内部运作。\n*   **操作系统：** 深入探讨内核开发和系统管理。\n*   **软件工程与算法：** 专注于实际应用和理论基础的专业内容。\n\n由于卡内基梅隆大学始终位居世界顶尖计算机科学机构之列，这一举措显得尤为重要。通过免费提供这些资源，该大学为自学者、其他院校的学生以及终身学习者消除了经济和地理障碍。\n\n与短篇教程不同，这些视频是实际课堂教学的全程记录，提供了严谨的学术体验。虽然观看者无法获得大学学分或导师评分，但这些高质量材料的公开是对开源教育运动的重大贡献，也为全球研究人员和工程师群体提供了有力支持。"
-  },
-  {
-    "id": "50524736",
-    "title": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
-    "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
-    "summary": "Recent reverse engineering of the Windows 11 binary `MissionControlAggregator.dll` has revealed that Microsoft is specifically tracking the usage of AI coding agents and developer tools. The investigation found that the system monitors for executables such as `claude.exe`, `cursor.exe`, `copilot.exe`, and `codex.exe`, as well as standard development tools like `python.exe`, `gcc.exe`, `node.exe`, and `code.exe`.\n\nThe tracking mechanism does not scan processes directly; instead, it subscribes to existing Event Tracing for Windows (ETW) logs and WSL (Windows Subsystem for Linux) events. When a matched executable is detected, the system updates a local bitset stored in `C:\\ProgramData\\Microsoft\\Diagnosis\\`. This information is then compiled into a report titled `Segments.SubCohorts`, which categorizes usage into specific tool and agent \"slots.\"\n\nCrucially, these reports are transmitted to Microsoft via the `DiagTrack` service (Connected User Experiences and Telemetry). The data is classified as \"optional diagnostic data,\" a setting that is enabled by default in many regions, including the United States. Testing confirmed that even simply renaming an executable to one of the tracked names triggers the detection and queues a telemetry report for upload.\n\nWhile the current reports appear to track only the presence of the tools rather than specific source code or AI prompts, the granular monitoring of developer workflows raises significant privacy concerns. Users who wish to prevent this data collection must manually opt-out by disabling \"Send optional diagnostic data\" under the **Diagnostics & feedback** section of Windows **Privacy & security** settings.",
-    "chinese_title": "Windows 11 正在收集你使用的编程助手和开发工具数据",
-    "chinese_summary": "最近对 Windows 11 二进制文件 `MissionControlAggregator.dll` 的逆向工程显示，微软正在专门追踪 AI 编程助手和开发工具的使用情况。调查发现，该系统会监控 `claude.exe`、`cursor.exe`、`copilot.exe` 和 `codex.exe` 等可执行文件，以及 `python.exe`、`gcc.exe`、`node.exe` 和 `code.exe` 等标准开发工具。\n\n该追踪机制并不直接扫描进程；相反，它通过订阅现有的 Windows 事件追踪 (ETW) 日志和 WSL (Windows Subsystem for Linux) 事件来实现。当检测到匹配的可执行文件时，系统会更新存储在 `C:\\ProgramData\\Microsoft\\Diagnosis\\` 中的本地位图 (bitset)。这些信息随后会被编译成名为 `Segments.SubCohorts` 的报告，将使用情况分类到特定的工具和助手“槽位”中。\n\n至关重要的一点是，这些报告会通过 `DiagTrack` 服务（连接的用户体验和遥测）传输给微软。该数据被归类为“可选诊断数据”，这一设置在包括美国在内的许多地区默认是开启的。测试证实，即使只是将一个可执行文件重命名为受追踪的名称之一，也会触发检测并将遥测报告加入上传队列。\n\n虽然目前的报告似乎仅追踪工具的存在，而非具体的源代码或 AI 提示词，但对开发者工作流的这种细颗粒度监控引发了严重的隐私疑虑。希望阻止此数据收集的用户必须手动选择退出，方法是在 Windows“**隐私与安全**”设置的“**诊断与反馈**”部分中禁用“发送可选诊断数据”。"
-  },
-  {
-    "id": "50523601",
-    "title": "BugMeNot has closed",
-    "url": "https://www.bugmenot.com/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "BugMeNot has closed",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523300",
-    "title": "World's Largest Brands Infected With Malware Via Optimizely",
-    "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
-    "summary": "On November 16, 2026, a significant supply chain attack compromised 188 JavaScript snippets across 178 organizations via the Optimizely Web experimentation platform. High-profile targets included Zoom, the BBC, CNN, Salesforce, HSBC, and IKEA.\n\nThe attack exploited Optimizely’s \"Project JavaScript\" field, allowing malicious code to be served directly from the trusted `cdn.optimizely.com` domain. Because the scripts were delivered from a host already trusted by the affected sites, the injection bypassed many standard security filters. The malware was multi-functional, performing several malicious activities:\n\n*   **Cryptocurrency Theft:** It automatically swapped valid wallet addresses with the attacker's addresses in page text, clipboards, and outgoing web requests.\n*   **Financial Skimming:** It captured credit card details (numbers, expiry, and CVV) from form submissions and POST requests.\n*   **Data Exfiltration:** It stole cookies (not marked HttpOnly) and utilized `html2canvas` to capture screenshots of infected pages.\n*   **iOS Exploitation:** It delivered the Coruna and DarkSword exploit kits to iPhones and iPads running vulnerable versions of iOS (18.6 or earlier).\n\nBy the time the breach was largely mitigated, the attackers had stolen approximately $7,040 in cryptocurrency. While most malicious code was removed within 24 hours, the incident serves as a stark reminder that third-party dependencies can be weaponized even if the original infrastructure remains unbreached. Security experts emphasize that robust Content Security Policies (CSP) and monitoring for unexpected changes in trusted JavaScript are vital for detecting such sophisticated injections.",
-    "chinese_title": "全球最大品牌经由 Optimizely 感染恶意软件",
-    "chinese_summary": "2026年11月16日，一场重大的供应链攻击通过 Optimizely Web 实验平台，导致 178 家机构的 188 个 JavaScript 代码片段遭到破坏。受影响的高知名度目标包括 Zoom、BBC、CNN、Salesforce、汇丰银行（HSBC）和宜家（IKEA）。\n\n此次攻击利用了 Optimizely 的“Project JavaScript”字段，使得恶意代码可以直接从受信任的 `cdn.optimizely.com` 域名分发。由于这些脚本来自受影响网站已经信任的主机，这种注入方式绕过了许多标准安全过滤器。该恶意软件具有多种功能，可执行以下恶意活动：\n\n*   **加密货币窃取：** 它会自动将页面文本、剪贴板和传出的网络请求中的合法钱包地址替换为攻击者的地址。\n*   **财务信息窃取：** 它从表单提交和 POST 请求中获取信用卡详情（卡号、有效期和 CVV 码）。\n*   **数据外泄：** 它窃取了（未标记为 HttpOnly 的）Cookie，并利用 `html2canvas` 截取受感染页面的屏幕截图。\n*   **iOS 漏洞利用：** 它向运行易受攻击版本（iOS 18.6 或更早版本）的 iPhone 和 iPad 投送 Coruna 和 DarkSword 漏洞利用工具包。\n\n在漏洞影响被基本消除时，攻击者已窃取了价值约 7,040 美元的加密货币。尽管大部分恶意代码在 24 小时内被移除，但此次事件敲响了警钟：即使原始基础设施未被攻破，第三方依赖项仍可能被武器化。安全专家强调，实施强大的内容安全策略（CSP）并监控受信任 JavaScript 的异常更改，对于检测此类复杂的注入攻击至关重要。"
-  },
-  {
-    "id": "50524225",
-    "title": "How to Break into Security, Ptacek Edition (2012)",
-    "url": "https://krebsonsecurity.com/2012/06/how-to-break-into-security-ptacek-edition/",
-    "summary": "In this 2012 interview, Thomas Ptacek, founder of Matasano Security, provides a roadmap for entering the information security field, emphasizing that it is a lucrative, meritocratic, and intellectually stimulating alternative to traditional software development.\n\nPtacek’s primary advice is to **learn to program**. He argues that the ability to solve problems through code is the single most important factor in gaining career autonomy. While various languages are acceptable (Python, Ruby, Java), understanding the underlying logic is essential for high-level security work.\n\nHe identifies **Application Security (AppSec)** as the field's most vital and promising niche. Unlike reactive roles like firewall administration, AppSec involves attacking software to find vulnerabilities or devising countermeasures to prevent them. \n\nFor those looking to break into the industry, Ptacek outlines a specific three-step practical approach:\n1.  **Study:** Read *The Web Application Hacker’s Handbook*.\n2.  **Practice:** Set up a \"shooting range\" using an Amazon EC2 account. \n3.  **Experiment:** Install vulnerable, older versions of software (like WordPress) and use industry-standard tools like Burp Suite or WebScarab to find bugs.\n\nFor professionals already in IT, Ptacek suggests transitioning by positioning oneself near software development through **QA or DevOps** roles. By instituting basic security testing processes within these departments, individuals can gain significant influence and transition into senior security management.\n\nUltimately, Ptacek defines security as the art of manipulating technology. He encourages aspirants to dive deep into how systems work—from microarchitecture to compiler theory—and to gain hands-on experience through constant experimentation.",
-    "chinese_title": "如何进入安全领域：Ptacek 版 (2012)",
-    "chinese_summary": "在2012年的这场访谈中，Matasano Security的创始人托马斯·普塔塞克（Thomas Ptacek）为进入信息安全领域提供了一份路线图。他强调，相比传统的软件开发，信息安全是一个高薪、唯才是举且充满智力挑战的选择。\n\n普塔塞克的首要建议是**学习编程**。他认为，通过代码解决问题的能力是获得职业自主权最重要的因素。虽然掌握各种语言（如 Python、Ruby、Java）都是可以的，但理解底层逻辑对于高阶安全工作至关重要。\n\n他将**应用安全（AppSec）**视为该领域中最关键且最具前景的细分方向。与防火墙管理等被动防御角色不同，应用安全涉及通过攻击软件来发现漏洞，或制定对策来预防漏洞。\n\n对于想要进入该行业的人，普塔塞克概述了具体的三个实践步骤：\n1. **学习：** 阅读《Web应用黑客手册》（*The Web Application Hacker’s Handbook*）。\n2. **练习：** 利用 Amazon EC2 账号搭建一个“打靶场”。\n3. **实验：** 安装存在漏洞的旧版软件（如 WordPress），并使用 Burp Suite 或 WebScarab 等行业标准工具来寻找漏洞。\n\n对于已在 IT 行业的专业人士，普塔塞克建议通过担任**测试（QA）或运维（DevOps）**角色来靠近软件开发，从而实现转型。通过在这些部门建立基础的安全测试流程，个人可以获得显著的影响力，并晋升至高级安全管理职位。\n\n最终，普塔塞克将安全定义为操纵技术的艺术。他鼓励向往者深入研究系统的工作原理——从微架构到编译原理——并通过不断的实验积累实践经验。"
-  },
-  {
-    "id": "50523459",
-    "title": "OpenCode Browse",
-    "url": "https://opencode.ai/product/browse",
-    "summary": "生成摘要时出错",
-    "chinese_title": "OpenCode 浏览",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50524767",
-    "title": "Optimizely Compromised, Served Malware on Zoom, GitLab",
-    "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
-    "summary": "On November 16, 2026, a major supply-chain attack compromised the Optimizely Web experimentation platform, serving malicious JavaScript to visitors of 178 organizations. High-profile targets included **Zoom, the BBC, GitLab, Salesforce, HSBC, and Equifax**.\n\n**The Mechanism**\nAttackers gained unauthorized write access to Optimizely’s \"Project JavaScript\" field, allowing them to inject malicious code directly into the snippets served via Optimizely’s trusted CDN. Because the scripts were delivered from a trusted domain (`cdn.optimizely.com`) with a valid certificate, the injection bypassed many standard security filters.\n\n**The Malware’s Capabilities**\nThe injected payload was a sophisticated, multi-purpose kit that performed the following:\n*   **Crypto Swapping:** It identified cryptocurrency wallet addresses on a page or in the clipboard and replaced them with the attacker’s addresses.\n*   **Card Skimming:** It intercepted credit card data (numbers, CVVs, and expiry dates) from non-hosted form fields.\n*   **Data Theft:** It captured cookies and used `html2canvas` to take screenshots of sensitive pages.\n*   **iOS Exploits:** It delivered the \"Coruna\" and \"DarkSword\" exploit kits to iPhones and iPads running older versions of iOS.\n\n**Impact and Lessons**\nThe attack resulted in confirmed cryptocurrency thefts totaling several thousand dollars within hours. While most malicious code was removed by late evening, the incident highlights a critical vulnerability: **third-party dependencies.** A website can be compromised without its own infrastructure being breached if its trusted external scripts are weaponized. \n\nSecurity experts noted that a robust **Content Security Policy (CSP)** and subresource monitoring could have detected or blocked the unauthorized external connections and script changes, even when originating from a trusted partner like Optimizely.",
-    "chinese_title": "Optimizely 遭入侵，在 Zoom 和 GitLab 分发恶意软件",
-    "chinese_summary": "2026年11月16日，Optimizely Web 实验平台遭遇了一场重大的供应链攻击，导致 178 家机构的访客被植入了恶意 JavaScript。受影响的高知名度目标包括 **Zoom、BBC、GitLab、Salesforce、汇丰银行 (HSBC) 以及艾可飞 (Equifax)**。\n\n**攻击机制**\n攻击者获得了对 Optimizely “项目 JavaScript” (Project JavaScript) 字段的未经授权写入权限，使他们能够直接在通过 Optimizely 受信任 CDN 分发的代码片段中注入恶意代码。由于脚本是从受信任域名 (`cdn.optimizely.com`) 分发并带有有效证书，这种注入绕过了许多标准的安全性过滤。\n\n**恶意软件功能**\n注入的有效载荷是一个精密的多功能套件，执行了以下操作：\n*   **加密货币替换：** 识别页面或剪贴板中的加密货币钱包地址，并将其替换为攻击者的地址。\n*   **信用卡盗刷：** 从非托管表单字段中拦截信用卡数据（卡号、CVV 和有效期）。\n*   **数据窃取：** 捕获 Cookie 并利用 `html2canvas` 对敏感页面进行截图。\n*   **iOS 漏洞利用：** 向运行旧版本 iOS 的 iPhone 和 iPad 投送 “Coruna” 和 “DarkSword” 漏洞利用套件。\n\n**影响与启示**\n此次攻击在短短数小时内造成了已确认的总计达数千美元的加密货币窃取。虽然大部分恶意代码在深夜前已被清除，但此事件凸显了一个关键漏洞：**第三方依赖**。即使网站自身的基础设施未被入侵，如果其信任的外部脚本被武器化，该网站仍会受到侵害。\n\n安全专家指出，强大的**内容安全策略 (CSP)** 和子资源监控原本可以检测或阻断这些未经授权的外部连接和脚本更改，即便它们源自像 Optimizely 这样受信任的合作伙伴。"
-  },
-  {
-    "id": "50522643",
-    "title": "Chemistry is Actually Geometry",
-    "url": "https://chillphysicsenjoyer.substack.com/p/chemistry-is-actually-geometry",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Chemistry is Actually Geometry",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520182",
-    "title": "Grazing sheep in fields with solar arrays",
-    "url": "https://news.cornell.edu/stories/2026/10/sheep-grazing-solar-fields-offers-farmers-economic-ecological-gains",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Grazing sheep in fields with solar arrays",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50519744",
-    "title": "Jiff 1.0: A datetime library for Rust",
-    "url": "https://burntsushi.net/jiff/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Jiff 1.0: A datetime library for Rust",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50519354",
-    "title": "Frame – 31.5\" color ePaper display",
-    "url": "https://trmnl.com/blog/introducing-frame",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Frame – 31.5\" color ePaper display",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50521045",
-    "title": "Technical issue at JPMorgan Chase triggers online banking delays for US banks",
-    "url": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Technical issue at JPMorgan Chase triggers online banking delays for US banks",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50497621",
-    "title": "Formal Verification Is Not Verifiable",
-    "url": "https://alperenkeles.com/posts/formal-verification-is-not-verifiable/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Formal Verification Is Not Verifiable",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50522563",
-    "title": "Rust changed me as a developer",
-    "url": "https://blog.startifact.com/posts/how-rust-changed-me/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Rust changed me as a developer",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50516689",
-    "title": "Do Repeat Yourself",
-    "url": "https://arcentry.com/blog/do-repeat-yourself/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Do Repeat Yourself",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50515151",
-    "title": "Squircles",
-    "url": "https://linebender.org/wiki/curves/squircle/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Squircles",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50524165",
-    "title": "United Airlines experiencing a widespread system outage, airline says",
-    "url": "https://www.cnn.com/2026/11/16/us/united-airlines-outage",
-    "summary": "生成摘要时出错",
-    "chinese_title": "United Airlines experiencing a widespread system outage, airline says",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50525052",
-    "title": "Show HN: Sutra-OS – A self-hosted ontology platform",
-    "url": "https://github.com/0nelight/sutra-os",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Sutra-OS – A self-hosted ontology platform",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523784",
-    "title": "Spamhaus new email sender requirements in November",
-    "url": "https://www.spamhaus.org/sender-guidelines/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Spamhaus new email sender requirements in November",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523291",
-    "title": "My Quest to push native Three.js quality match AAA Game Engines",
-    "url": "https://ben3d.ca/blog/building-the-aaa-lighting-pipeline-in-threejs",
-    "summary": "生成摘要时出错",
-    "chinese_title": "My Quest to push native Three.js quality match AAA Game Engines",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50517321",
-    "title": "Microsoft blames monster email outage on software defect introduced in July fix",
-    "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
-    "summary": "生成摘要时出错",
-    "chinese_title": "微软将大规模邮件故障归咎于7月修复程序引入的软件缺陷",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50516473",
-    "title": "The Secret ThinkPad Powerbutton Code to Bring Dead Laptops Back to Life (2007)",
-    "url": "https://masnick.com/posts/the-secret-thinkpad-powerbutton-code-to-bring-dead-laptops-back-to-life/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Secret ThinkPad Powerbutton Code to Bring Dead Laptops Back to Life (2007)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520518",
-    "title": "Michael Mann's 'Heat' Copyright Fight Turns on a Deal with Himself",
-    "url": "https://copyrightlately.com/michael-mann-heat-copyright-termination/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Michael Mann's 'Heat' Copyright Fight Turns on a Deal with Himself",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50521870",
-    "title": "How to Intercept HTTP/3 Traffic: QUIC and Qpack",
-    "url": "https://interceptsuite.com/blog/intercept-http3-traffic-quic-qpack-explained/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How to Intercept HTTP/3 Traffic: QUIC and Qpack",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520270",
-    "title": "Aristotle Expands into Rust",
-    "url": "https://www.harmonic.fun/news/aristotle-rust-verification/",
-    "summary": "Aristotle has announced its expansion into the Rust programming language, adding to its existing support for C and Verilog. This development marks a significant step in the company’s mission to move beyond traditional testing toward formal verification—mathematically proving that code functions exactly as intended before it is deployed.\n\nThe expansion is particularly vital for mission-critical sectors such as aerospace, finance, and cybersecurity. A primary focus is the Solana blockchain, where Aristotle helps secure smart contracts. Because blockchain transactions are irreversible and high-stakes, Aristotle provides a crucial layer of security by proving code properties across all possible inputs and catching flaws that manual audits might miss. Key capabilities include proving the absence of undefined behavior (even in `unsafe` blocks) and ensuring that C-to-Rust rewrites maintain behavioral equivalence to the original code.\n\nEarly real-world successes include identifying a rounding bug in the Manifest open-source order book and proving the transaction consistency of Project 0’s prime brokerage system. To support wider adoption, Aristotle is partnering with the Solana Foundation to help developers verify their programs continuously with every code update.\n\nAristotle for Rust is available now through a self-serve, consumption-based pricing model at aristotle.harmonic.fun, with custom enterprise options and dedicated support also available.",
-    "chinese_title": "Aristotle Expands into Rust",
-    "chinese_summary": "Aristotle has announced its expansion into the Rust programming language, adding to its existing support for C and Verilog. This development marks a significant step in the company’s mission to move beyond traditional testing toward formal verification—mathematically proving that code functions exactly as intended before it is deployed.\n\nThe expansion is particularly vital for mission-critical sectors such as aerospace, finance, and cybersecurity. A primary focus is the Solana blockchain, where Aristotle helps secure smart contracts. Because blockchain transactions are irreversible and high-stakes, Aristotle provides a crucial layer of security by proving code properties across all possible inputs and catching flaws that manual audits might miss. Key capabilities include proving the absence of undefined behavior (even in `unsafe` blocks) and ensuring that C-to-Rust rewrites maintain behavioral equivalence to the original code.\n\nEarly real-world successes include identifying a rounding bug in the Manifest open-source order book and proving the transaction consistency of Project 0’s prime brokerage system. To support wider adoption, Aristotle is partnering with the Solana Foundation to help developers verify their programs continuously with every code update.\n\nAristotle for Rust is available now through a self-serve, consumption-based pricing model at aristotle.harmonic.fun, with custom enterprise options and dedicated support also available."
-  },
-  {
-    "id": "50517488",
-    "title": "Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings",
-    "url": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50519345",
-    "title": "Jolt – Clojure that speaks C",
-    "url": "https://jolt-lang.net/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Jolt – Clojure that speaks C",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520804",
-    "title": "Strengthening the fight against online child sexual abuse",
-    "url": "https://openai.com/index/strengthening-online-child-safety/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Strengthening the fight against online child sexual abuse",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50485327",
-    "title": "The origins of the placenta",
-    "url": "https://www.caltech.edu/about/news/uncovering-the-hidden-origins-of-the-placenta",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The origins of the placenta",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523037",
-    "title": "Kubernetes Is Strengthening Its Position as the AI Platform of Choice",
-    "url": "https://cloudnativenow.com/features/kubernetes-is-strengthening-its-position-as-the-ai-platform-of-choice/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Kubernetes Is Strengthening Its Position as the AI Platform of Choice",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523025",
-    "title": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
-    "url": "https://arstechnica.com/tech-policy/2026/11/comcast-falsely-advertises-cable-internet-as-fiber-powered-att-lawsuit-says/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50490159",
-    "title": "OOS – an open operating system for the Rigol Scopes",
-    "url": "https://www.eevblog.com/forum/testgear/oos-an-open-operating-system-for-the-rigol-scopes/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "OOS – an open operating system for the Rigol Scopes",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50518567",
-    "title": "Nvidia was in trouble before the Jensen Huang mess",
-    "url": "https://www.wired.com/story/nvidia-was-already-in-trouble-before-the-jensen-huang-mess/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nvidia was in trouble before the Jensen Huang mess",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523895",
-    "title": "Beyond Floating Point: Next-Generation Computer Arithmetic",
-    "url": "https://web.stanford.edu/class/ee380/Abstracts/170201.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Beyond Floating Point: Next-Generation Computer Arithmetic",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50516245",
-    "title": "Coffeehouses and the Rise of Science [pdf]",
-    "url": "https://www.monirbounadi.com/Bounadi_JMP.pdf",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Coffeehouses and the Rise of Science [pdf]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50519153",
-    "title": "First phase of embedded assessments at OpenAI",
-    "url": "https://openai.com/index/our-first-phase-of-embedded-assessments/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "First phase of embedded assessments at OpenAI",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50515058",
-    "title": "Interpreting claims that a theorem is correct because it was checked in Lean",
-    "url": "https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Interpreting claims that a theorem is correct because it was checked in Lean",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50486745",
-    "title": "Researchers track whole body movement with just a smartwatch",
-    "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Researchers track whole body movement with just a smartwatch",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520866",
-    "title": "Software is breaking down at a systemic level",
-    "url": "https://www.breck-mckye.com/blog/2026/11/software-is-breaking-down-at-a-systemic-level/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Software is breaking down at a systemic level",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50518068",
-    "title": "A 512 KiB binary message teaching chess without a shared language",
-    "url": "https://artemlegotin.com/golden-board/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A 512 KiB binary message teaching chess without a shared language",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50494033",
-    "title": "Eight years of running DocSpring on Convox",
-    "url": "https://docspring.com/blog/posts/eight-years-running-docspring-convox/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Eight years of running DocSpring on Convox",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50524728",
-    "title": "US will say \"no\" to global ban on killer robots",
-    "url": "https://www.newsweek.com/us-expected-to-block-killer-robot-treaty-talks-12722369",
-    "summary": "生成摘要时出错",
-    "chinese_title": "US will say \"no\" to global ban on killer robots",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50524538",
-    "title": "Uber says hackers stole information on close to 150k DLs during data breach",
-    "url": "https://techcrunch.com/2026/11/16/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Uber says hackers stole information on close to 150k DLs during data breach",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50497746",
-    "title": "Smallest possible nopert polyhedra: the Septopert",
-    "url": "https://github.com/tom7/noperts/blob/main/septopert.md",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Smallest possible nopert polyhedra: the Septopert",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523377",
-    "title": "Show HN: Open-source, real-time object tracking for live video feeds",
-    "url": "https://github.com/aryamandarda/tamserve",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Open-source, real-time object tracking for live video feeds",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50514470",
-    "title": "How to make almost anything",
-    "url": "https://pub.cba.mit.edu/863.26/site/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How to make almost anything",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50524038",
-    "title": "FBI has possession of router that the FAA says is behind Friday's ATC meltdown",
-    "url": "https://www.cnn.com/2026/11/16/politics/video/the-arena-fbi-possesion-router-faa-atc-meltdown",
-    "summary": "生成摘要时出错",
-    "chinese_title": "FBI has possession of router that the FAA says is behind Friday's ATC meltdown",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50515182",
-    "title": "Winudf – DVD / BluRay driver for DOS, Windows 1.x – 3x / 95 / 98 / ME",
-    "url": "https://github.com/ages2001/WINUDF",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Winudf – DVD / BluRay driver for DOS, Windows 1.x – 3x / 95 / 98 / ME",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50517815",
-    "title": "The Active Directory Era Is Finally Over",
-    "url": "https://infisical.com/blog/active-directory-machine-identity",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Active Directory Era Is Finally Over",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50525658",
-    "title": "Pentagon fails ninth straight audit despite progress in organizing finances",
-    "url": "https://www.reuters.com/business/aerospace-defense/pentagon-fails-ninth-straight-audit-despite-progress-organizing-finances-2026-11-16/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Pentagon fails ninth straight audit despite progress in organizing finances",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50518690",
-    "title": "Psychic: Like fzf but learns from your actions",
-    "url": "https://klauria.tech/psychic/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Psychic: Like fzf but learns from your actions",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50513160",
-    "title": "Universal XSS in uBlock Origin from website-driven element picker",
-    "url": "https://iter.ca/post/ubo-uxss/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Universal XSS in uBlock Origin from website-driven element picker",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520402",
-    "title": "Elementary Applied Topology, 2nd Ed by Robert Ghrist [pdf]",
-    "url": "https://www2.math.upenn.edu/~ghrist/books/EAT.pdf",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Elementary Applied Topology, 2nd Ed by Robert Ghrist [pdf]",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50523346",
-    "title": "The Fed Is Worried AI Agents Could Trigger a Bank Run",
-    "url": "https://gizmodo.com/the-fed-is-worried-ai-agents-could-trigger-a-bank-run-2000840566",
-    "summary": "生成摘要时出错",
-    "chinese_title": "The Fed Is Worried AI Agents Could Trigger a Bank Run",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520148",
-    "title": "How Billions in Safe Insurance Money Is Being Bet on A.I. Debt",
-    "url": "https://www.nytimes.com/2026/11/16/business/insurance-ai-debt.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "How Billions in Safe Insurance Money Is Being Bet on A.I. Debt",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50520741",
-    "title": "Show HN: Fakemetrics.com – \"build in public\" like a superstar",
-    "url": "https://fakemetrics.com/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Fakemetrics.com – \"build in public\" like a superstar",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50519517",
-    "title": "3D Sword Coast Map with weather and day/night cycle (Rust to WebGL)",
-    "url": "https://swordcoastmap.com/",
-    "summary": "生成摘要时出错",
-    "chinese_title": "3D Sword Coast Map with weather and day/night cycle (Rust to WebGL)",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50495325",
-    "title": "Nature-Based Sanitation. Cihuatlán: A Large-Scale Artificial Wetland",
-    "url": "https://revista.unaminternacional.unam.mx/en/nota/12/saneamiento-basado-en-la-naturaleza-cihuatlan-un-humedal-construido-de-gran-escala",
-    "summary": "生成摘要时出错",
-    "chinese_title": "Nature-Based Sanitation. Cihuatlán: A Large-Scale Artificial Wetland",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50486880",
-    "title": "A quest to create the perfect whiskey glass",
-    "url": "https://www.nytimes.com/2026/11/13/dining/drinks/kurt-josef-zalto-whiskey-glass.html",
-    "summary": "生成摘要时出错",
-    "chinese_title": "A quest to create the perfect whiskey glass",
-    "chinese_summary": "生成摘要时出错"
-  },
-  {
-    "id": "50484998",
-    "title": "Do we still have to denormalize? Have your schema and search it too",
-    "url": "https://www.paradedb.com/blog/joins",
     "summary": "生成摘要时出错",
-    "chinese_title": "Do we still have to denormalize? Have your schema and search it too",
+    "chinese_title": "Carnegie Mellon is putting computer science courses on YouTube for free",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50518111",
-    "title": "Obituaries",
-    "url": "https://stratechery.com/2026/obituaries/",
+    "id": "50511874",
+    "title": "VisualBasic.World: A gallery of Planet Source Code programs from 1997 to 2012",
+    "url": "https://visualbasic.world/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Obituaries",
+    "chinese_title": "VisualBasic.World: A gallery of Planet Source Code programs from 1997 to 2012",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50462816",
-    "title": "The Lasting Influence of John Berger",
-    "url": "https://www.newyorker.com/magazine/2026/11/16/john-berger-a-life-tom-overton-book-review",
+    "id": "50470523",
+    "title": "Rows vs. Columns: How different are they, really?",
+    "url": "https://spiraldb.com/blog/rows-vs-columns",
     "summary": "生成摘要时出错",
-    "chinese_title": "The Lasting Influence of John Berger",
+    "chinese_title": "Rows vs. Columns: How different are they, really?",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50524437",
-    "title": "United Halts Flights as It Addresses 'Widespread System Outage'",
-    "url": "https://www.nytimes.com/2026/11/16/business/united-airlines-outage-flights.html",
+    "id": "50517375",
+    "title": "Exploiting Replay Protected Monotonic Counters to Brute-Force Windows Hello PINs",
+    "url": "https://arxiv.org/abs/2611.18126",
     "summary": "生成摘要时出错",
-    "chinese_title": "United Halts Flights as It Addresses 'Widespread System Outage'",
+    "chinese_title": "Exploiting Replay Protected Monotonic Counters to Brute-Force Windows Hello PINs",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50512235",
-    "title": "What's Next for Nvidia?",
-    "url": "https://steveblank.com/2026/11/15/whats-next-for-nvidia/",
+    "id": "50538841",
+    "title": "California bans Waymo autonomous vehicles from state freeways",
+    "url": "https://apnews.com/article/waymo-driverless-vehicle-california-freeway-ban-37bcd5371a4699a1850b7666b271946b",
     "summary": "生成摘要时出错",
-    "chinese_title": "What's Next for Nvidia?",
+    "chinese_title": "California bans Waymo autonomous vehicles from state freeways",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50500963",
-    "title": "SpaceX catches the Starship to end Flight 15",
-    "url": "https://www.spacex.com/launches/starship-flight-15",
+    "id": "50509456",
+    "title": "Turbo Pascal Compiler Written in Turbo Pascal",
+    "url": "https://turbo51.com/compiler-design/tpc16-turbo-pascal-compiler-written-in-turbo-pascal",
     "summary": "生成摘要时出错",
-    "chinese_title": "SpaceX catches the Starship to end Flight 15",
+    "chinese_title": "Turbo Pascal Compiler Written in Turbo Pascal",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50513215",
-    "title": "Qwen4-Max",
-    "url": "https://qwen.ai/blog?id=qwen4-max",
+    "id": "50536031",
+    "title": "Purism Launches Librem 5 v2, a RISC-V Phone to Empower People",
+    "url": "https://puri.sm/posts/purism-launches-librem-5-v2-a-risc-v-phone-to-empower-people/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Qwen4-Max",
+    "chinese_title": "Purism Launches Librem 5 v2, a RISC-V Phone to Empower People",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50520796",
-    "title": "FBI says Artex AI open-source hacking tool used to breach networks",
-    "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+    "id": "50532773",
+    "title": "Antfly learned to stop worrying and love Apache 2.0",
+    "url": "https://antfly.io/thoughts/how-antfly-learned-to-stop-worrying-and-love-apache-2",
     "summary": "生成摘要时出错",
-    "chinese_title": "FBI says Artex AI open-source hacking tool used to breach networks",
+    "chinese_title": "Antfly learned to stop worrying and love Apache 2.0",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50511395",
-    "title": "Old Bitly links are being hijacked",
-    "url": "https://ransomnews.com/burger-king-tweet-bitly-link-hijack-2026/",
+    "id": "50512779",
+    "title": "Nimony: A New Compiler for Nim",
+    "url": "https://nimony.org/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Old Bitly links are being hijacked",
+    "chinese_title": "Nimony: A New Compiler for Nim",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50456548",
-    "title": "Making Atuin sync 32x faster with packfiles",
-    "url": "https://blog.atuin.sh/making-atuin-sync-32x-faster-with-packfiles/",
+    "id": "50537832",
+    "title": "Computer Graphics from Scratch",
+    "url": "https://www.gabrielgambetta.com/computer-graphics-from-scratch/index.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "Making Atuin sync 32x faster with packfiles",
+    "chinese_title": "Computer Graphics from Scratch",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50520853",
-    "title": "Some OLED MacBook Pro Owners Report Eye Strain and Dizziness",
-    "url": "https://www.macrumors.com/2026/11/16/oled-macbook-pro-owners-report-eye-strain/",
+    "id": "50538303",
+    "title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
+    "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Some OLED MacBook Pro Owners Report Eye Strain and Dizziness",
+    "chinese_title": "Harvard researchers find AI coding agents shifted the bottleneck to code review",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50488948",
-    "title": "The Opportunivore's Dilemma",
-    "url": "https://www.vqronline.org/essays/opportunivores-dilemma",
+    "id": "50508845",
+    "title": "Japan's Hometown Tax (2018)",
+    "url": "https://www.kalzumeus.com/2018/10/19/japanese-hometown-tax/",
     "summary": "生成摘要时出错",
-    "chinese_title": "The Opportunivore's Dilemma",
+    "chinese_title": "Japan's Hometown Tax (2018)",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50521780",
-    "title": "SignuDoc: Open-source document signature platform",
-    "url": "https://github.com/NYLLON-SOFTWARE/signudoc",
+    "id": "50537580",
+    "title": "Apple faces French trial over alleged planned obsolescence of iPhones",
+    "url": "https://us.afpnews.com/article/?apple-faces-french-trial-over-alleged-planned-obsolescence-of-iphones-source,D7NH6NW",
     "summary": "生成摘要时出错",
-    "chinese_title": "SignuDoc: Open-source document signature platform",
+    "chinese_title": "Apple faces French trial over alleged planned obsolescence of iPhones",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50485275",
-    "title": "Artificial Intelligence for the Z80",
-    "url": "https://www.dfsantos.com/en/libro-ia-z80",
+    "id": "50536565",
+    "title": "Anthropic Paid Rubio's Ex-Chief of Staff's Firm $740k.it Lobbied His NSC",
+    "url": "https://www.zerohedge.com/political/anthropic-paid-rubios-ex-chief-staffs-firm-740000-after-jensen-memo-it-lobbied-his-nsc",
     "summary": "生成摘要时出错",
-    "chinese_title": "Artificial Intelligence for the Z80",
+    "chinese_title": "Anthropic Paid Rubio's Ex-Chief of Staff's Firm $740k.it Lobbied His NSC",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50509837",
-    "title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
-    "url": "https://bruceroettgers.eu/blog/protomaps/",
+    "id": "50535268",
+    "title": "iCloud, App Store, and other Apple services hit by ongoing outage",
+    "url": "https://9to5mac.com/2026/11/17/icloud-app-store-and-other-apple-services-hit-by-ongoing-outage/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Protomaps: Self-hosting map tiles has gotten cheap and easy",
+    "chinese_title": "iCloud, App Store, and other Apple services hit by ongoing outage",
     "chinese_summary": "生成摘要时出错"
   },
   {
@@ -600,203 +400,403 @@
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50467599",
-    "title": "Simple 8085 Computer",
-    "url": "https://www.hackster.io/mit41301/simple-8085-computer-9fe156",
+    "id": "50539397",
+    "title": "Nvidia Beats Estimates, Raises Guidance After Huang's Ouster",
+    "url": "https://www.wsj.com/tech/ai/nvidia-nvda-3q-2027-earnings-report-stock-6e642303",
     "summary": "生成摘要时出错",
-    "chinese_title": "Simple 8085 Computer",
+    "chinese_title": "Nvidia Beats Estimates, Raises Guidance After Huang's Ouster",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50524254",
-    "title": "United Airlines experiencing 'widespread system outage'",
-    "url": "https://www.nbcchicago.com/news/local/united-airlines-experiencing-widespread-system-outage/4017556/",
+    "id": "50539385",
+    "title": "Nvidia says it does not intend to reinstate Jensen Huang as CEO",
+    "url": "https://www.theverge.com/report/1035465/nvidia-says-it-will-not-reinstate-jensen-huang-as-ceo",
     "summary": "生成摘要时出错",
-    "chinese_title": "United Airlines experiencing 'widespread system outage'",
+    "chinese_title": "Nvidia says it does not intend to reinstate Jensen Huang as CEO",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50509411",
-    "title": "Microsoft 365 outage leads to chlorine gas poisoning of 15 hotel guests",
-    "url": "https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html",
+    "id": "50496787",
+    "title": "Show HN: Zigzag, a native Mac browser for people leaving Arc",
+    "url": "https://github.com/ZigaoWang/zigzag",
     "summary": "生成摘要时出错",
-    "chinese_title": "Microsoft 365 outage leads to chlorine gas poisoning of 15 hotel guests",
+    "chinese_title": "Show HN: Zigzag, a native Mac browser for people leaving Arc",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50509972",
-    "title": "Handwriting, as a Font",
-    "url": "https://ductus.sorenblank.com",
+    "id": "50497656",
+    "title": "Too Many Stadiums with Roofs",
+    "url": "https://sharptext.net/2026/too-many-stadiums-with-roofs/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Handwriting, as a Font",
+    "chinese_title": "Too Many Stadiums with Roofs",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50512441",
-    "title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
-    "url": "https://forum.torproject.org/t/security-release-0-4-9-17/22454",
+    "id": "50532086",
+    "title": "We don't need more apps, we need better open source",
+    "url": "https://jordankrueger.com/blog/better-open-source-not-more-apps/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Tor Project Issues Rapid-Response DoS-Defense Fix Amid Sustained DDoS Attack",
+    "chinese_title": "We don't need more apps, we need better open source",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50509416",
-    "title": "Eclipse Mosquitto – An open source MQTT broker",
-    "url": "https://github.com/eclipse-mosquitto/mosquitto",
+    "id": "50524767",
+    "title": "Optimizely compromised, served malware on Zoom, GitLab",
+    "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Eclipse Mosquitto – An open source MQTT broker",
+    "chinese_title": "Optimizely compromised, served malware on Zoom, GitLab",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50487628",
-    "title": "Exact Gradients Through a BRep Kernel",
-    "url": "https://muni.works/research/vcad",
+    "id": "50530114",
+    "title": "My Empire of Dirt",
+    "url": "https://geohot.github.io//blog/jekyll/update/2026/11/17/my-empire-of-dirt.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "Exact Gradients Through a BRep Kernel",
+    "chinese_title": "My Empire of Dirt",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50512296",
-    "title": "Skydio's asymmetrical F10 Lightrunner solves a problem with fixed-wing drones",
-    "url": "https://spectrum.ieee.org/skydio-f10-lightrunner-asymmetrical-drone",
+    "id": "50538555",
+    "title": "Uncontacted Awá people approach government post in Brazil, ask for food",
+    "url": "https://www.popsci.com/environment/uncontacted-indigenous-tribe-asks-help-brazil/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Skydio's asymmetrical F10 Lightrunner solves a problem with fixed-wing drones",
+    "chinese_title": "Uncontacted Awá people approach government post in Brazil, ask for food",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50523545",
-    "title": "Reports of AI-related child sexual abuse material rise 8,400% in two years",
-    "url": "https://www.theguardian.com/technology/2026/nov/16/ai-related-child-sexual-abuse-material-rise-exploitation-deepfakes",
+    "id": "50537745",
+    "title": "CA DMV bans Waymos from operating on state freeways after Bay Area incidents",
+    "url": "https://abc7news.com/story/california-dmv-bans-waymos-operating-state-freeways-bay-area-traffic-incidents/20046974/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Reports of AI-related child sexual abuse material rise 8,400% in two years",
+    "chinese_title": "CA DMV bans Waymos from operating on state freeways after Bay Area incidents",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50452230",
-    "title": "Show HN: ThingStudio, Node-RED style programming for microcontrollers",
-    "url": "https://thingstudio.net/",
+    "id": "50509100",
+    "title": "Witches, vampires, ancient aliens–you'll find them all in Malta",
+    "url": "https://www.nationalgeographic.com/travel/article/explore-folklore-in-malta-witches-vampires-ancient-aliens",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: ThingStudio, Node-RED style programming for microcontrollers",
+    "chinese_title": "Witches, vampires, ancient aliens–you'll find them all in Malta",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50517225",
-    "title": "C-like bit flags in Ruby",
-    "url": "https://citizen428.net/blog/c-like-bit-flags-ruby/",
+    "id": "50523601",
+    "title": "BugMeNot has closed",
+    "url": "https://www.bugmenot.com/",
     "summary": "生成摘要时出错",
-    "chinese_title": "C-like bit flags in Ruby",
+    "chinese_title": "BugMeNot has closed",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50521575",
-    "title": "U.S. tightens controls on remote access to AI technology amid Nvidia fallout",
-    "url": "https://www.npr.org/2026/11/16/nx-s1-6042883/nvidia-jensen-huang-commerce-department",
+    "id": "50516689",
+    "title": "Do Repeat Yourself",
+    "url": "https://arcentry.com/blog/do-repeat-yourself/",
     "summary": "生成摘要时出错",
-    "chinese_title": "U.S. tightens controls on remote access to AI technology amid Nvidia fallout",
+    "chinese_title": "Do Repeat Yourself",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50512231",
-    "title": "Mini.nvim Is Now on Tangled",
-    "url": "https://tangled.org/nvim-mini.org/mini.nvim",
+    "id": "50514093",
+    "title": "Stop Filming in Log?",
+    "url": "https://digitalfilms.wordpress.com/2026/11/15/stop-filming-in-log/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Mini.nvim Is Now on Tangled",
+    "chinese_title": "Stop Filming in Log?",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50514680",
-    "title": "Atomic Nuked Veteran",
-    "url": "https://www.armscontrolwonk.com/archive/201309/atomic-nuked-veteran/",
+    "id": "50515603",
+    "title": "Show HN: VennDB: append-only in-memory Rust DB for rows queried using bit flags",
+    "url": "https://github.com/plabayo/venndb",
     "summary": "生成摘要时出错",
-    "chinese_title": "Atomic Nuked Veteran",
+    "chinese_title": "Show HN: VennDB: append-only in-memory Rust DB for rows queried using bit flags",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50523955",
-    "title": "No matter how you ask, more Americans are negative than positive about AI",
-    "url": "https://ourworldindata.org/no-matter-how-you-ask-more-americans-are-negative-than-positive-about-ai",
+    "id": "50537962",
+    "title": "Human.md",
+    "url": "https://www.human-md.ai/",
     "summary": "生成摘要时出错",
-    "chinese_title": "No matter how you ask, more Americans are negative than positive about AI",
+    "chinese_title": "Human.md",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50506719",
-    "title": "The MacBook Pro's OLED PWM problem",
-    "url": "https://macanorak.com/the-macbook-pros-oled-pwm-problem-when-a-better-display-becomes-worse-to-use/",
+    "id": "50497621",
+    "title": "Formal Verification Is Not Verifiable",
+    "url": "https://alperenkeles.com/posts/formal-verification-is-not-verifiable/",
     "summary": "生成摘要时出错",
-    "chinese_title": "The MacBook Pro's OLED PWM problem",
+    "chinese_title": "Formal Verification Is Not Verifiable",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50443844",
-    "title": "Giant Roadside Attractions Face Mounting Costs and an Uncertain Future",
-    "url": "https://www.nytimes.com/2026/11/08/world/canada/roadside-attractions-giant-dinosaur.html",
+    "id": "50539054",
+    "title": "Leak of 15M Deutsche Bank files exposes systemic failures",
+    "url": "https://www.ft.com/content/df518845-ed97-4a38-8a38-7fa9d4d24003",
     "summary": "生成摘要时出错",
-    "chinese_title": "Giant Roadside Attractions Face Mounting Costs and an Uncertain Future",
+    "chinese_title": "Leak of 15M Deutsche Bank files exposes systemic failures",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50499017",
-    "title": "Lovable apps expose passport details and more than 200K private messages",
-    "url": "https://www.crissyfield.de/research/lovable-en/",
+    "id": "50536438",
+    "title": "GPT-6.2 Astra scores 100% on ARC-AGI-3",
+    "url": "https://twitter.com/arcprize/status/2122751233442156678",
     "summary": "生成摘要时出错",
-    "chinese_title": "Lovable apps expose passport details and more than 200K private messages",
+    "chinese_title": "GPT-6.2 Astra scores 100% on ARC-AGI-3",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50508715",
-    "title": "Clice v1.0 Released: Welcome to Modern C++",
-    "url": "https://ykiko.me/en/articles/2105384023094834022/",
+    "id": "50523459",
+    "title": "OpenCode Browse",
+    "url": "https://opencode.ai/product/browse",
     "summary": "生成摘要时出错",
-    "chinese_title": "Clice v1.0 Released: Welcome to Modern C++",
+    "chinese_title": "OpenCode Browse",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50463399",
-    "title": "Claude Code and Codex reverse engineered my 1994 Jeep's ECU over a $3 Arduino [video]",
-    "url": "https://www.youtube.com/watch?v=WPj3aQ-xxpI",
+    "id": "50521045",
+    "title": "Technical issue at JPMorgan Chase triggers online banking delays for US banks",
+    "url": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda",
     "summary": "生成摘要时出错",
-    "chinese_title": "Claude Code and Codex reverse engineered my 1994 Jeep's ECU over a $3 Arduino [video]",
+    "chinese_title": "Technical issue at JPMorgan Chase triggers online banking delays for US banks",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50512218",
-    "title": "Parcel: A desktop mail client for Linux, built with Zig",
-    "url": "https://tangled.org/rockorager.dev/parcel",
+    "id": "50536648",
+    "title": "Show HN: SSH into DOS: I wrote an x86 (IBM PC) emulator",
+    "url": "https://www.dialup.net/farcall/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Parcel: A desktop mail client for Linux, built with Zig",
+    "chinese_title": "Show HN: SSH into DOS: I wrote an x86 (IBM PC) emulator",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50452621",
-    "title": "Notes on Mathematics for Engineers (1959) [pdf]",
-    "url": "https://websites.umich.edu/~ners311/CourseLibrary/MathNotes.pdf",
+    "id": "50515151",
+    "title": "Squircles",
+    "url": "https://linebender.org/wiki/curves/squircle/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Notes on Mathematics for Engineers (1959) [pdf]",
+    "chinese_title": "Squircles",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50474883",
-    "title": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
-    "url": "https://unemploymentlabs.com/checkpoint-forensics",
+    "id": "50537920",
+    "title": "As Voyager 1 reaches one light-day from Earth, scientists reflect on its past",
+    "url": "https://www.livescience.com/space/space-exploration/out-there-moving-into-the-unknown-as-voyager-1-reaches-one-light-day-from-earth-scientists-reflect-on-its-past-and-its-future",
     "summary": "生成摘要时出错",
-    "chinese_title": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
+    "chinese_title": "As Voyager 1 reaches one light-day from Earth, scientists reflect on its past",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50506588",
-    "title": "A NES emulator written in Odin",
-    "url": "https://lucypero.com/lucynes.html",
+    "id": "50537890",
+    "title": "Isomorphic Labs $5B Series C",
+    "url": "https://www.cnbc.com/2026/11/17/isomorphic-labs-series-c-ai-drug-discovery-.html",
     "summary": "生成摘要时出错",
-    "chinese_title": "A NES emulator written in Odin",
+    "chinese_title": "Isomorphic Labs $5B Series C",
     "chinese_summary": "生成摘要时出错"
   },
   {
-    "id": "50516995",
-    "title": "Show HN: Deslop skill based on corpus-linguistics and psycholinguistics research",
-    "url": "https://github.com/etodanik/deslop",
+    "id": "50515035",
+    "title": "Test/verification technique effectiveness with Astra",
+    "url": "https://danluu.com/astra-testing/",
     "summary": "生成摘要时出错",
-    "chinese_title": "Show HN: Deslop skill based on corpus-linguistics and psycholinguistics research",
+    "chinese_title": "Test/verification technique effectiveness with Astra",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50526560",
+    "title": "If an App Asks for Full Disk Access or System and App Protection Override",
+    "url": "https://support.apple.com/en-us/149699",
+    "summary": "生成摘要时出错",
+    "chinese_title": "If an App Asks for Full Disk Access or System and App Protection Override",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50523784",
+    "title": "Spamhaus new email sender requirements in November",
+    "url": "https://www.spamhaus.org/sender-guidelines/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Spamhaus new email sender requirements in November",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50512576",
+    "title": "The Fossils That Haunted Lovecraft",
+    "url": "https://paleonerdish.wordpress.com/2026/10/30/halloween-special-xiv-the-fossils-that-haunted-lovecraft/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "The Fossils That Haunted Lovecraft",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50525575",
+    "title": "Why 3dfx 1 cards had such a washed out color output?",
+    "url": "https://twitter.com/id_aa_carmack/status/2122478083319992513",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why 3dfx 1 cards had such a washed out color output?",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50510969",
+    "title": "Why did modems have speakers? (2019)",
+    "url": "https://retrocomputing.stackexchange.com/questions/11765",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Why did modems have speakers? (2019)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50538656",
+    "title": "Texas Attorney General composed songs for Dragon Ball Z",
+    "url": "https://www.reddit.com/r/interestingasfuck/comments/1xo0eyv/the_composer_of_this_dragon_ball_z_scene_has_just/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Texas Attorney General composed songs for Dragon Ball Z",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50524225",
+    "title": "How to Break into Security, Ptacek Edition (2012)",
+    "url": "https://krebsonsecurity.com/2012/06/how-to-break-into-security-ptacek-edition/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "How to Break into Security, Ptacek Edition (2012)",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50523291",
+    "title": "My Quest to push native Three.js quality match AAA Game Engines",
+    "url": "https://ben3d.ca/blog/building-the-aaa-lighting-pipeline-in-threejs",
+    "summary": "生成摘要时出错",
+    "chinese_title": "My Quest to push native Three.js quality match AAA Game Engines",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50539026",
+    "title": "Qwen3.8-Flash-Next 180B running in real time on a 16G MacBook Pro",
+    "url": "https://twitter.com/jalenluorion/status/2122758656668184633",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Qwen3.8-Flash-Next 180B running in real time on a 16G MacBook Pro",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50522643",
+    "title": "Chemistry is Actually Geometry",
+    "url": "https://chillphysicsenjoyer.substack.com/p/chemistry-is-actually-geometry",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Chemistry is Actually Geometry",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50519354",
+    "title": "Frame – 31.5\" color ePaper display",
+    "url": "https://trmnl.com/blog/introducing-frame",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Frame – 31.5\" color ePaper display",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50523025",
+    "title": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
+    "url": "https://arstechnica.com/tech-policy/2026/11/comcast-falsely-advertises-cable-internet-as-fiber-powered-att-lawsuit-says/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Comcast's \"fiber-powered Wi-Fi\" is cable, AT&T says in false advertising case",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50515058",
+    "title": "Interpreting claims that a theorem is correct because it was checked in Lean",
+    "url": "https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Interpreting claims that a theorem is correct because it was checked in Lean",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50524736",
+    "title": "Windows 11 is collecting data on which coding agents and developer tools you use",
+    "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Windows 11 is collecting data on which coding agents and developer tools you use",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50526152",
+    "title": "Running coding agents without handing them my credentials",
+    "url": "https://blog.antonio.cx/running-agents-with-lend",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Running coding agents without handing them my credentials",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50517321",
+    "title": "Microsoft blames monster email outage on software defect introduced in July fix",
+    "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Microsoft blames monster email outage on software defect introduced in July fix",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50538361",
+    "title": "Nvidia Announces Financial Results for Third Quarter and Fiscal 2027",
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Nvidia Announces Financial Results for Third Quarter and Fiscal 2027",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50517488",
+    "title": "Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings",
+    "url": "http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Many of Amazon’s Black Friday and Cyber Monday “deals” offered no savings",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50519744",
+    "title": "Jiff 1.0: A datetime library for Rust",
+    "url": "https://burntsushi.net/jiff/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Jiff 1.0: A datetime library for Rust",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50537924",
+    "title": "Stripe Press",
+    "url": "https://stripe.press/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Stripe Press",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50538172",
+    "title": "AI tool has been used to automate cyber intrusions",
+    "url": "https://abcnews.com/amp/Politics/open-source-ai-tool-automate-cyber-intrusions-fbi/story",
+    "summary": "生成摘要时出错",
+    "chinese_title": "AI tool has been used to automate cyber intrusions",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50533312",
+    "title": "Flipper One – Open Linux Multi-Tool",
+    "url": "https://www.kickstarter.com/projects/flipper-devices/flipper-one",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Flipper One – Open Linux Multi-Tool",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50486745",
+    "title": "Researchers track whole body movement with just a smartwatch",
+    "url": "https://news.cornell.edu/stories/2026/11/researchers-track-whole-body-movement-just-smartwatch",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Researchers track whole body movement with just a smartwatch",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50520270",
+    "title": "Aristotle Expands into Rust",
+    "url": "https://www.harmonic.fun/news/aristotle-rust-verification/",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Aristotle Expands into Rust",
+    "chinese_summary": "生成摘要时出错"
+  },
+  {
+    "id": "50520182",
+    "title": "Grazing sheep in fields with solar arrays",
+    "url": "https://news.cornell.edu/stories/2026/10/sheep-grazing-solar-fields-offers-farmers-economic-ecological-gains",
+    "summary": "生成摘要时出错",
+    "chinese_title": "Grazing sheep in fields with solar arrays",
     "chinese_summary": "生成摘要时出错"
   }
 ]
